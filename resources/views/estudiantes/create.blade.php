@@ -9,7 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
-        <!-- Styles 
+        <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 24px;
             }
 
             .links > a {
@@ -61,7 +61,7 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-        </style>-->
+        </style>
 
     </head>
     <body>
@@ -81,8 +81,14 @@
             @endif
 
             <div class="content">
+
+            <div class="title m-b-md">
+                    Crear nuevo estudiante
+                </div>
                 
-                <form method = "POST" action ="estudiantes.store">
+                <form method = "POST" action ={{route('estudiantes.store')}} >
+
+                        @csrf
 
                         <p><label for="nombre">
                             Nombres 

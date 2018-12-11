@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class EstudianteController extends Controller
@@ -13,7 +15,7 @@ class EstudianteController extends Controller
      */
     public function index()
     {
-        return view('index');
+        return view('estudiantes.index');
     }
 
     /**
@@ -23,7 +25,7 @@ class EstudianteController extends Controller
      */
     public function create()
     {
-        return view('estudiantes.create');
+       return view('estudiantes.create');
     }
 
     /**
@@ -34,7 +36,17 @@ class EstudianteController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('estudiantes')->insert([
+            "nombres"=> $request->input('nombre'),
+            "apellidos"=> $request->input('apellido'),
+            "cuenta"=> $request->input('cuenta'),
+            "fecha_nacimiento"=> $request->input('fecha_nacimiento'),
+            "activo"=> $request->input('activo'),
+            "created_at"=> Carbon::now(),
+            "updated_at"=> Carbon::now()
+        ]);
+
+        return redirect()->route('estudiantes.index');
     }
 
     /**
