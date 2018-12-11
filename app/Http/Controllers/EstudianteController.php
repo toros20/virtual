@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class EstudianteController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the estudiante.
      *
      * @return \Illuminate\Http\Response
      */
@@ -17,7 +17,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Show the form for creating a new estudiante.
      *
      * @return \Illuminate\Http\Response
      */
@@ -27,7 +27,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created estudiante in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -38,7 +38,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified estudiante.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -49,7 +49,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified estudiante.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -60,7 +60,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified estudiante in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -72,7 +72,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified estudiante from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
