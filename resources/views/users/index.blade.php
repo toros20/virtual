@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Estudiante</title>
+        <title>usuarios</title>
 
     </head>
     <body>
 
-        <h1>Ver estudiantes</h1>
+        <h1>Ver usuarios</h1>
 
         <table>
             <thead>
@@ -17,6 +17,8 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Cuenta</th>
+                <th>Rol</th>
+                <th>email</th>
                 <th>Fecha Nacimiento</th>
                 <th>Activo</th>
             </tr>
@@ -24,13 +26,15 @@
 
             <tbody>
 
-                @foreach ($estudiantes as $estudiante)
+                @foreach ($users as $user)
                      <tr>
-                        <td> {{$estudiante->nombres}} </td>
-                        <td> {{$estudiante->apellidos}}</td>
-                        <td> {{$estudiante->cuenta}}</td>
-                        <td> {{$estudiante->fecha_nacimiento}}</td>
-                        <td> {{$estudiante->activo}}</td>
+                        <td> {{$user->name}} </td>
+                        <td> {{$user->lastname}}</td>
+                        <td> {{$user->cuenta}}</td>
+                        <td> {{$user->role}}</td>
+                        <td> {{$user->email}}</td>
+                        <td> {{$user->fecha_nacimiento}}</td>
+                        <td> {{$user->activo}}</td>
                     </tr>
                 @endforeach
             </tbody>

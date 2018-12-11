@@ -6,52 +6,56 @@ use DB;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
-class EstudianteController extends Controller
+class UserController extends Controller
 {
     /**
-     * Display a listing of the estudiante.
+     * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-        $estudiantes = DB::table('estudiantes')->get();
-        return view('estudiantes.index',compact('estudiantes'));
+    {
+        $users = DB::table('users')->get();
+        return view('users.index',compact('users'));
     }
 
     /**
-     * Show the form for creating a new estudiante.
+     * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create_estudiante()
     {
-       return view('estudiantes.create');
+        //return "VAMOS BIEN";
+        return view('users.create_estudiante');
     }
 
     /**
-     * Store a newly created estudiante in storage.
+     * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        DB::table('estudiantes')->insert([
-            "nombres"=> $request->input('nombre'),
-            "apellidos"=> $request->input('apellido'),
+        DB::table('users')->insert([
+            "name"=> $request->input('name'),
+            "lastname"=> $request->input('lastname'),
             "cuenta"=> $request->input('cuenta'),
+            "role"=> $request->input('role'),
             "fecha_nacimiento"=> $request->input('fecha_nacimiento'),
+            "email"=> $request->input('email'),
+            "password"=> bcrypt($request->input('password')),
             "activo"=> $request->input('activo'),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
         ]);
 
-        return redirect()->route('estudiantes.index');
+        return redirect()->route('users.index');
     }
 
     /**
-     * Display the specified estudiante.
+     * Display the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -62,7 +66,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Show the form for editing the specified estudiante.
+     * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -73,7 +77,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Update the specified estudiante in storage.
+     * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
@@ -85,7 +89,7 @@ class EstudianteController extends Controller
     }
 
     /**
-     * Remove the specified estudiante from storage.
+     * Remove the specified resource from storage.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response

@@ -16,4 +16,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('estudiantes', 'EstudianteController');
+
+Route::resource('users', 'UserController');
+
+//crear ruta para el formulario de crear estudiantes nuevo
+Route::get('create_estudiante', 'UserController@create_estudiante');

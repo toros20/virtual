@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Crear un nuevo Estudiante2</title>
+        <title>Crear un nuevo Estudiante</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -83,26 +83,39 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Crear nuevo estudiante
+                    Crear un nuevo estudiante
                 </div>
                 
-                <form method = "POST" action ={{route('estudiantes.store')}} >
+                <form method = "POST" action ={{route('users.store')}} >
 
                         @csrf
 
                         <p><label for="nombre">
                             Nombres 
-                            <input type="text" name ="nombre">
+                            <input type="text" name ="name">
                         </label></p>
 
                         <p><label for="apellido">
                             Apellidos 
-                            <input type="text" name ="apellido">
+                            <input type="text" name ="lastname">
                         </label></p>
 
                         <p><label for="cuenta">
                             Cuenta 
                             <input type="text" name ="cuenta" value="20181001">
+                        </label></p>
+                                                   
+                        <input type="hidden" name ="role" value="estudiante">
+                        <input type="hidden" name ="activo" value=1>
+
+                        <p><label for="email">
+                            Correo Electr&oacute;nico 
+                            <input type="email" name ="email">
+                        </label></p>
+
+                        <p><label for="password">
+                            Elije una Constrase&ntilde;a 
+                            <input type="password" name ="password">
                         </label></p>
 
                         <p><label for="fecha_nacimiento">
@@ -112,10 +125,6 @@
 
                         <p>                          
                             <input type="submit"  value="Enviar">
-                        </p>
-
-                        <p>                          
-                            <input type="hidden" name ="activo" value=1>
                         </p>
 
                 </form>
