@@ -14,8 +14,9 @@ class EstudianteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('estudiantes.index');
+    {   
+        $estudiantes = DB::table('estudiantes')->get();
+        return view('estudiantes.index',compact('estudiantes'));
     }
 
     /**
