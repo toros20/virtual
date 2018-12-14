@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name','lastname','cuenta', 'fecha_nacimiento','role','activo', 'email', 'password'
     ];
 
     /**
@@ -27,4 +27,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    //el siguiente codigo se utiliza para encriptar el campo de password
+    public function setPasswordAttribute($value)
+        {
+            if($value != ""){
+                $this->attributes['password'] = bcrypt($value);
+            }
+        }
 }

@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <h1>Ver usuarios</h1>
+        <h1>Modulo de Estudiantes</h1>
 
         <table>
             <thead>
@@ -27,19 +27,19 @@
 
             <tbody>
 
-                @foreach ($users as $user)
+                @foreach ($students as $student)
                      <tr>
-                        <td> <a href=" {{route('users.show',$user->id)}} ">
-                        {{$user->name}} </a></td>
-                        <td> {{$user->lastname}}</td>
-                        <td> {{$user->cuenta}}</td>
-                        <td> {{$user->role}}</td>
-                        <td> {{$user->email}}</td>
-                        <td> {{$user->fecha_nacimiento}}</td>
-                        <td> {{$user->activo}}</td>
-                        <td> <a href=" {{route('users.edit',$user->id)}} ">
+                        <td> <a href=" {{route('users.show',$student->id)}} ">
+                        {{$student->name}} </a></td>
+                        <td> {{$student->lastname}}</td>
+                        <td> {{$student->cuenta}}</td>
+                        <td> {{$student->role}}</td>
+                        <td> {{$student->email}}</td>
+                        <td> {{$student->fecha_nacimiento}}</td>
+                        <td> {{$student->activo}}</td>
+                        <td> <a href=" {{route('users.edit',$student->id)}} ">
                         Editar </a>
-                            <form style="display:inline" method="POST" action=" {{route('users.destroy',$user->id)}} ">
+                            <form style="display:inline" method="POST" action=" {{route('users.destroy',$student->id)}} ">
                                     @csrf
                                      {{ method_field('DELETE') }}
                                      <button type="submit">ELIMINAR </button>

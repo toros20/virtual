@@ -83,44 +83,45 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Crear un nuevo estudiante
+                    Editar a  {{$user->name}} - {{$user->lastname}}
                 </div>
                 
-                <form method = "POST" action ={{route('users.store')}} >
-
+                <form method = "POST" action=" {{route('users.update', $user->id)}} ">
+                       
+                         {{ method_field('PUT') }}
                         @csrf
 
                         <p><label for="nombre">
                             Nombres 
-                            <input type="text" name ="name" value=" {{old('name')}} ">
+                            <input type="text" name ="name"  value=" {{$user->name}} ">
                         </label></p>
 
                         <p><label for="apellido">
                             Apellidos 
-                            <input type="text" name ="lastname" value=" {{old('lastname')}} ">
+                            <input type="text" name ="lastname" value=" {{$user->lastname}} ">
                         </label></p>
 
                         <p><label for="cuenta">
                             Cuenta 
-                            <input type="text" name ="cuenta" value=" {{old('cuenta')}} " >
+                            <input type="text" name ="cuenta" value=" {{$user->cuenta}} ">
                         </label></p>
                                                    
-                        <input type="hidden" name ="role" value="student">
-                        <input type="hidden" name ="activo" value=1>
+                        <input type="hidden" name ="role" value="estudiante">
+
+                        
+                        <p><label for="email">
+                            Estudiante Activo 
+                           <input type="text " name ="activo" value=" {{$user->activo}} ">
+                        </label></p>
 
                         <p><label for="email">
                             Correo Electr&oacute;nico 
-                            <input type="email" name ="email" value=" {{old('email')}} ">
-                        </label></p>
-
-                        <p><label for="password">
-                            Elije una Constrase&ntilde;a 
-                            <input type="password" name ="password" value=" {{old('password')}} ">
+                            <input type="email" name ="email" value=" {{$user->email}} ">
                         </label></p>
 
                         <p><label for="fecha_nacimiento">
                             Fecha de Nacimiento 
-                            <input type="text" name ="fecha_nacimiento" value=" {{old('fecha_nacimiento')}} ">
+                            <input type="text" name ="fecha_nacimiento" value=" {{$user->fecha_nacimiento}} ">
                         </label></p>
 
                         <p>                          

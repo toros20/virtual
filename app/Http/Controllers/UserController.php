@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -15,7 +16,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
+        //$users = DB::table('users')->get();
+        $users = User::all();
         return view('users.index',compact('users'));
     }
 
@@ -30,6 +32,15 @@ class UserController extends Controller
         return view('users.create_estudiante');
     }
 
+    public function students()
+    {
+        //selecciomos todos los usuarios del tipo student
+        //$students = DB::table('users')->where('role','student')->get();
+        $students = User::where('role','student')->get();
+        return view('users.students',compact('students'));
+
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -37,8 +48,11 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        DB::table('users')->insert([
+    {   
+        //comando para hacer depuracion
+        //dd($request->all());
+
+        /*DB::table('users')->insert([
             "name"=> $request->input('name'),
             "lastname"=> $request->input('lastname'),
             "cuenta"=> $request->input('cuenta'),
@@ -49,7 +63,13 @@ class UserController extends Controller
             "activo"=> $request->input('activo'),
             "created_at"=> Carbon::now(),
             "updated_at"=> Carbon::now()
-        ]);
+        ]);*/
+
+        /*$user = new User; // se crea un objeto vacio de tipo user
+        $user->name = $request->input('name'); //se asignan los valores 
+        $user->save();//en envian a guardar a la base de datos */
+        
+        User::create($request->all());
 
         return redirect()->route('users.index');
     }
@@ -62,7 +82,11 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        //
+        //$user=DB::table('users')->where('id',$id)->first();
+       // return view('users.show',compact('user'));
+
+       $user = User::findOrFail($id);
+       return view('users.show',compact('user'));
     }
 
     /**
@@ -73,7 +97,8 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        //
+        $user = User::findOrFail($id);
+       return view('users.edit',compact('user'));
     }
 
     /**
@@ -85,7 +110,20 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        /*DB::table('users')->where('id',$id)->update([
+            "name"=> $request->input('name'),
+            "lastname"=> $request->input('lastname'),
+            "cuenta"=> $request->input('cuenta'),
+            "fecha_nacimiento"=> $request->input('fecha_nacimiento'),
+            "email"=> $request->input('email'),
+            "activo"=> $request->input('activo'),
+            "updated_at"=> Carbon::now()
+        ]);*/
+
+        $user = User::findOrFail($id)->update($request->all());
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -96,6 +134,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        /*DB::table('users')->where('id',$id)->delete();*/
+        $user = User::findOrFail($id)->delete();
+        return redirect()->route('users.index');
     }
 }

@@ -16,8 +16,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//crear ruta para la seccion de listar estudiantes 
+Route::get('/users/students', 'UserController@students')->name('users.students');
 
+
+//rutas CRUD para los usuarios
 Route::resource('users', 'UserController');
+
+
 
 //crear ruta para el formulario de crear estudiantes nuevo
 Route::get('create_estudiante', 'UserController@create_estudiante');
