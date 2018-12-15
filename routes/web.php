@@ -31,6 +31,9 @@ Route::resource('modalities', 'ModalityController');
 //rutas CRUD para los cursos
 Route::resource('courses', 'CourseController');
 
+//rutas CRUD para las clases
+Route::resource('clases', 'ClaseController');
+
 
 
 //aqui van todas las rutas para el control de login, register, reset password, etc
