@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -36,4 +37,23 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    //los dos metodos siguientes fueron agregados para hacer login con el numero de cuenta o con email
+    protected function credentials(Request $request)
+        {
+            $login = $request->input($this->username());
+
+            // Comprobar si el input coincide con el formato de E-mail
+            $field = filter_var($login, FILTER_VALIDATE_EMAIL) ? 'email' : 'cuenta';
+
+            return [
+                $field => $login,
+                'password' => $request->input('password')
+            ];
+        }
+
+        public function username()
+        {
+        return 'login';
+        }
 }
