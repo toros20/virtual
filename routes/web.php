@@ -25,6 +25,9 @@ Route::get('/users/students/create', 'UserController@create_estudiante');
 //rutas CRUD para los usuarios
 Route::resource('users', 'UserController');
 
+//rutas CRUD para las modalidades
+Route::resource('modalities', 'ModalityController');
+
 //rutas CRUD para los cursos
 Route::resource('courses', 'CourseController');
 

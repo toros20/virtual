@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Crear un nuevo Curso</title>
+        <title>Crear una nueva Modalidad</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -83,40 +83,23 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Crear Curso
+                    Crear Modalidad
                 </div>
                 
-                <form method = "POST" action ={{route('courses.store')}} >
+                <form method = "POST" action ={{route('modalities.update', $modality->id)}} >
 
                         @csrf
-
+                        {{ method_field('PUT') }}
                         <p><label for="name">
-                            Nombre del Curso 
-                            <input type="text" name ="name" value=" {{old('name')}} ">
+                            Nombre de la Modalidad
+                            <input type="text" name ="name" value=" {{ $modality->name }} ">
                         </label></p>
 
-                        <p><label for="short_name">
-                             Nombre Corto 
-                            <input type="text" name ="short_name" value=" {{old('short_name')}} ">
+                        <p><label for="description">
+                             Descripci&oacute;n 
+                            <input type="text" name ="description" value=" {{ $modality->description }} ">
                         </label></p>
 
-                        <p><label for="is_semestral">
-                            Semestral 
-                             <select name="is_semestral">
-                                <option value=0>Curso No semestral</option>
-                                <option value=1>Curso Semestral</option>
-                                
-                            </select>
-                        </label></p>
-
-                        <p><label for="modality">
-                            Modalidad
-                            <select name="modality_id">
-                                <option value=1>Pre-Basica</option>
-                                <option value=2>Basica</option>
-                                <option value=3>Media</option>
-                            </select>
-                        </label></p>
                         <p>                          
                             <input type="submit"  value="Enviar">
                         </p>

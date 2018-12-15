@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Course;
+use App\Modality;
 use Illuminate\Http\Request;
 
-class CourseController extends Controller
+class ModalityController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CourseController extends Controller
      */
     public function index()
     {
-        $courses = Course::all();
-        return view('courses.index',compact('courses'));
+        $modalities = Modality::all();
+        return view('modalities.index',compact('modalities'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('courses.create');
+        return view('modalities.create');
     }
 
     /**
@@ -36,57 +36,56 @@ class CourseController extends Controller
      */
     public function store(Request $request)
     {
-        Course::create($request->all());
-        return redirect()->route('courses.index');
+        Modality::create($request->all());
+        return redirect()->route('modalities.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Modality  $modality
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-       $course = Course::findOrFail($id);
-       return view('courses.show',compact('course'));    
+       $modality = Modality::findOrFail($id);
+       return view('modalities.show',compact('modality'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Modality  $modality
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-       $course = Course::findOrFail($id);
-       return view('courses.edit',compact('course'));
+        $modality = Modality::findOrFail($id);
+        return view('modalities.edit',compact('modality'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Modality  $modality
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-         
-        $course = Course::findOrFail($id)->update($request->all());
-        return redirect()->route('courses.index');
+        $modality = Modality::findOrFail($id)->update($request->all());
+        return redirect()->route('modalities.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Modality  $modality
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $course = Course::findOrFail($id)->delete();
-        return redirect()->route('courses.index');
+        $modality = Modality::findOrFail($id)->delete();
+        return redirect()->route('modalities.index');
     }
 }
