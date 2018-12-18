@@ -4,12 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>usuarios estudiantes</title>
+        <title>usuarios docentes</title>
 
     </head>
     <body>
 
-        <h1>Modulo de Estudiantes</h1>
+        <h1>Modulo de Docentes</h1>
 
         <table>
             <thead>
@@ -27,19 +27,19 @@
 
             <tbody>
 
-                @foreach ($students as $student)
+                @foreach ($teachers as $teacher)
                      <tr>
-                        <td> <a href=" {{route('users.show',$student->id)}} ">
-                        {{$student->name}} </a></td>
-                        <td> {{$student->lastname}}</td>
-                        <td> {{$student->cuenta}}</td>
-                        <td> {{$student->role}}</td>
-                        <td> {{$student->email}}</td>
-                        <td> {{$student->fecha_nacimiento}}</td>
-                        <td> {{$student->activo}}</td>
-                        <td> <a href=" {{route('users.edit',$student->id)}} ">
+                        <td> <a href=" {{route('users.show',$teacher->id)}} ">
+                        {{$teacher->name}} </a></td>
+                        <td> {{$teacher->lastname}}</td>
+                        <td> {{$teacher->cuenta}}</td>
+                        <td> {{$teacher->role}}</td>
+                        <td> {{$teacher->email}}</td>
+                        <td> {{$teacher->fecha_nacimiento}}</td>
+                        <td> {{$teacher->activo}}</td>
+                        <td> <a href=" {{route('users.edit',$teacher->id)}} ">
                         Editar </a>
-                            <form style="display:inline" method="POST" action=" {{route('users.destroy',$student->id)}} ">
+                            <form style="display:inline" method="POST" action=" {{route('users.destroy',$teacher->id)}} ">
                                     @csrf
                                      {{ method_field('DELETE') }}
                                      <button type="submit">ELIMINAR </button>

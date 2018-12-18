@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Crear un nuevo Estudiante</title>
+        <title>Crear un nuevo Docente</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -83,7 +83,7 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Crear un nuevo estudiante
+                    Crear un nuevo docente
                 </div>
                 
                 <form method = "POST" action ={{route('users.store')}} >
@@ -105,7 +105,7 @@
                             <input type="text" name ="cuenta" value=" {{old('cuenta')}} " >
                         </label></p>
                                                    
-                        <input type="hidden" name ="role" value="student">
+                        <input type="hidden" name ="role" value="teacher">
                         <input type="hidden" name ="activo" value=1>
 
                         <p><label for="email">
@@ -121,35 +121,6 @@
                         <p><label for="fecha_nacimiento">
                             Fecha de Nacimiento 
                             <input type="text" name ="fecha_nacimiento" value=" {{old('fecha_nacimiento')}} ">
-                        </label></p>
-
-                         <p><label for="modality_id">
-                            Modalidad 
-                             <select name="modality_id">
-                                @foreach ($modalities as $modality)
-                                    <option value= {{ $modality->id }} >{{ $modality->name }}</option>
-                                @endforeach
-                            </select>
-                        </label></p>
-
-                         <p><label for="course_id">
-                            Curso 
-                             <select name="course_id">
-                                @foreach ($courses as $course)
-                                    <option value= {{ $course->id }} >{{ $course->name }}</option>
-                                @endforeach
-                            </select>
-                        </label></p>
-
-                         <p><label for="section">
-                            Secci&oacute;n 
-                             <select name="section">
-                                <option value=1>U</option>
-                                <option value=2>A</option>
-                                <option value=3>B</option>
-                                <option value=4>C</option>
-                                <option value=5>D</option>
-                            </select>
                         </label></p>
 
                         <p>                          

@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
-//use DB;
+use DB;
 use App\User;
+use App\Modality;
+use App\Course;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
@@ -28,8 +31,14 @@ class UserController extends Controller
      */
     public function create_estudiante()
     {
-        //return "VAMOS BIEN";
-        return view('users.create_estudiante');
+        $modalities = Modality::all();
+        $courses = Course::all();
+        return view('users.create_estudiante',compact('modalities','courses'));
+    }
+
+    public function create_teacher()
+    {
+        return view('users.create_teacher');
     }
 
     public function students()
@@ -38,6 +47,15 @@ class UserController extends Controller
         //$students = DB::table('users')->where('role','student')->get();
         $students = User::where('role','student')->get();
         return view('users.students',compact('students'));
+
+    }
+
+    public function teachers()
+    {
+        //selecciomos todos los usuarios del tipo student
+        //$students = DB::table('users')->where('role','student')->get();
+        $teachers = User::where('role','teacher')->get();
+        return view('users.teachers',compact('teachers'));
 
     }
 
@@ -69,9 +87,35 @@ class UserController extends Controller
         $user->name = $request->input('name'); //se asignan los valores 
         $user->save();//en envian a guardar a la base de datos */
         
-        User::create($request->all());
+        //insertamos el nuevo usuario student, de ingresarse correctamente ingresamos los datos de enrollments
+        if( $user=User::create($request->all()) ){
 
+            //id del usuario recien creado
+            $new_id= $user->id;
+
+            //obtenemos año actual
+            $now = new \DateTime();
+            $year = $now->format('Y');
+
+            //obtenemos el id del curso seleccionado
+            $course_id=$request->input('course_id');
+            $section=$request->input('section');
+
+            DB::table('enrollments')->insert([
+
+                'user_id'=>$new_id,
+                'year'=>$year,
+                'course_id'=>$course_id,
+                'section'=>$section,
+                'created_at'=> Carbon::now(),
+                'updated_at'=> Carbon::now()
+            ]);
+
+        }
+        
         return redirect()->route('users.index');
+
+       
     }
 
     /**

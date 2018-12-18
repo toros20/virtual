@@ -17,23 +17,30 @@ Route::get('/', function () {
 });
 
 
-//crear ruta para la seccion de listar estudiantes 
+//crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
-//crear ruta para el formulario de crear estudiantes nuevo
+//crear ruta para la seccion de listar teachers 
+Route::get('/users/teachers', 'UserController@teachers')->name('users.teachers');
+//crear ruta para el formulario de crear students nuevos
 Route::get('/users/students/create', 'UserController@create_estudiante');
+//crear ruta para el formulario de crear teachers nuevos
+Route::get('/users/teachers/create', 'UserController@create_teacher');
 
-//rutas CRUD para los usuarios
+
+//rutas CRUD para los users
 Route::resource('users', 'UserController');
 
-//rutas CRUD para las modalidades
+//rutas CRUD para las modalities
 Route::resource('modalities', 'ModalityController');
 
-//rutas CRUD para los cursos
+//rutas CRUD para los courses
 Route::resource('courses', 'CourseController');
 
 //rutas CRUD para las clases
 Route::resource('clases', 'ClaseController');
 
+//rutas CRUD para las enrollments
+Route::resource('enrollments', 'EnrollmentController');
 
 
 //aqui van todas las rutas para el control de login, register, reset password, etc
