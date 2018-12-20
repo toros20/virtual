@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
+        
         <!-- Styles -->
         <style>
             html, body {
@@ -62,7 +62,9 @@
                 margin-bottom: 30px;
             }
         </style>
-
+  
+        <script type="text/javascript" language="javascript" src="../../js/main.js"></script>
+        
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -88,7 +90,9 @@
                 
                 <form method = "POST" action ={{route('users.store')}} >
 
-                        @csrf
+                        {{-- @csrf --}}
+                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                        
 
                         <p><label for="nombre">
                             Nombres 
@@ -125,7 +129,8 @@
 
                          <p><label for="modality_id">
                             Modalidad 
-                             <select name="modality_id">
+                             <select name="modality_id" id="modalities" onchange="loadcourses()">
+                                    <option value= -1 >Seleccione Modalidad</option>
                                 @foreach ($modalities as $modality)
                                     <option value= {{ $modality->id }} >{{ $modality->name }}</option>
                                 @endforeach
@@ -134,10 +139,8 @@
 
                          <p><label for="course_id">
                             Curso 
-                             <select name="course_id">
-                                @foreach ($courses as $course)
-                                    <option value= {{ $course->id }} >{{ $course->name }}</option>
-                                @endforeach
+                             <select name="course_id" id="courses">
+                                <option>Seleccione Curso</option>
                             </select>
                         </label></p>
 
@@ -161,4 +164,6 @@
             </div>
         </div>
     </body>
+    <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js""></script>
+
 </html>

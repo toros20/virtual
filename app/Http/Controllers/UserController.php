@@ -182,4 +182,22 @@ class UserController extends Controller
         $user = User::findOrFail($id)->delete();
         return redirect()->route('users.index');
     }
+
+
+    /********************FUNCIONES AJAX****************** */
+
+    //funcion para retornar los cursos segun una modalidad seleccionada
+    /*function coursesbymodalityid(Request $request){
+       $id=$request->modality->id;
+       $courses = Course::where('id',$id)->get();
+       return view('users/ajax/coursesbymodalityid',compact('courses'));
+    }*/
+
+    public function coursesbymodalityid(Request $request){
+        
+        $id=$request->modality_id;
+       $courses = Course::where('modality_id',$id)->get();
+        return view('/users/ajax/coursesbymodalityid',compact('courses'));
+        
+     }
 }

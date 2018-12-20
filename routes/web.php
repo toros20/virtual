@@ -26,6 +26,9 @@ Route::get('/users/students/create', 'UserController@create_estudiante');
 //crear ruta para el formulario de crear teachers nuevos
 Route::get('/users/teachers/create', 'UserController@create_teacher');
 
+//crear ruta para la seccion de listar students 
+Route::post('/users/ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
+
 
 //rutas CRUD para los users
 Route::resource('users', 'UserController');
