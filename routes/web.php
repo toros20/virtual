@@ -27,7 +27,7 @@ Route::get('/users/students/create', 'UserController@create_estudiante');
 Route::get('/users/teachers/create', 'UserController@create_teacher');
 
 //crear ruta para la seccion de listar students 
-Route::post('/users/ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
+Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
 
 
 //rutas CRUD para los users
@@ -44,6 +44,9 @@ Route::resource('clases', 'ClaseController');
 
 //rutas CRUD para las enrollments
 Route::resource('enrollments', 'EnrollmentController');
+
+//rutas CRUD para las sectioncourses
+Route::resource('sectioncourses', 'SectioncourseController');
 
 
 //aqui van todas las rutas para el control de login, register, reset password, etc

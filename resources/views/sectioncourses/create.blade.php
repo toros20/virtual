@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Editar Curso</title>
+        <title>Crear una nueva Asignaci&oacute;n de Secci&oacute; a Curso</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -63,6 +63,8 @@
             }
         </style>
 
+        <script type="text/javascript" language="javascript" src="../../js/main.js"></script>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -83,41 +85,39 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Editar curso
+                    Crear Asignaci&oacute;n de Secci&oacute;n a Curso
                 </div>
                 
-                <form method = "POST" action ={{route('courses.update', $course->id)}} >
+                <form method = "POST" action ={{route('sectioncourses.store')}} >
 
-                        @csrf
-                        {{ method_field('PUT') }}
+                         {{-- @csrf --}}
+                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                        
 
-                        <p><label for="name">
-                            Nombre del Curso 
-                            <input type="text" name ="name" value=" {{ $course->name }} ">
-                        </label></p>
-
-                        <p><label for="short_name">
-                             Nombre Corto 
-                            <input type="text" name ="short_name" value=" {{ $course->short_name }} ">
-                        </label></p>
-
-                        <p><label for="is_semestral" >
-                            Semestral 
-                             <select name="is_semestral" value=" {{ $course->is_semestral }}" >
-                                <option value=0>Curso No semestral</option>
-                                <option value=1>Curso Semestral</option>
-                                
-                            </select>
+                        <p><label for="year">
+                           A&ntilde;o
+                            <input type="text" name ="year" value=" {{old('year')}} ">
                         </label></p>
 
                         <p><label for="modality_id">
-                            Modalidad
-                            <select name="modality_id" value=" {{ $course->modality_id }}" >
-                                <option value=1>Pre-Basica</option>
-                                <option value=2>Basica</option>
-                                <option value=3>Media</option>
+                            Seleccione Modalidad 
+                             <select name="modality_id" id="modalities" onchange="loadcourses()">
+                                    <option value= -1 >Seleccione Modalidad</option>
+                                @foreach ($modalities as $modality)
+                                    <option value= {{ $modality->id }} >{{ $modality->name }}</option>
+                                @endforeach
                             </select>
                         </label></p>
+
+                        <p><label for="course_id">
+                            Seleccione Curso 
+                             <select name="course_id" id="courses">
+                                <option>Seleccione Curso</option>
+                            </select>
+                        </label></p>
+
+                         @include('users.list_sections')
+
                         <p>                          
                             <input type="submit"  value="Enviar">
                         </p>
@@ -127,4 +127,6 @@
             </div>
         </div>
     </body>
+     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js""></script>
+
 </html>

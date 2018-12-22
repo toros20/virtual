@@ -196,8 +196,8 @@ class UserController extends Controller
     public function coursesbymodalityid(Request $request){
         
         $id=$request->modality_id;
-       $courses = Course::where('modality_id',$id)->get();
-        return view('/users/ajax/coursesbymodalityid',compact('courses'));
+        $courses = Course::where('modality_id',$id)->get();
+        return view('ajax/coursesbymodalityid',compact('courses'));
         
      }
 }
