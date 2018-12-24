@@ -48,6 +48,9 @@ Route::resource('enrollments', 'EnrollmentController');
 //rutas CRUD para las sectioncourses
 Route::resource('sectioncourses', 'SectioncourseController');
 
+//rutas CRUD para las clasecourses
+Route::resource('clasecourses', 'ClasecourseController');
+
 
 //aqui van todas las rutas para el control de login, register, reset password, etc
 //Auth::routes();

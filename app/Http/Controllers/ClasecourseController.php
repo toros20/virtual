@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Modality;
 use App\Course;
-use App\Sectioncourse;
+use App\Clase;
+use App\Clasecourse;
 use Illuminate\Http\Request;
 
-class SectioncourseController extends Controller
+class ClasecourseController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +17,8 @@ class SectioncourseController extends Controller
      */
     public function index()
     {
-        $sectioncourses = Sectioncourse::all();
-        return view('sectioncourses.index',compact('sectioncourses'));
+        $clasecourses = Clasecourse::all();
+        return view('clasecourses.index',compact('clasecourses'));
     }
 
     /**
@@ -29,8 +30,9 @@ class SectioncourseController extends Controller
     {
         $modalities = Modality::all();
         $courses = Course::all();
+        $clases = Clase::all();
 
-        return view('sectioncourses.create',compact('modalities','courses'));
+        return view('clasecourses.create',compact('modalities','courses','clases'));
     }
 
     /**
@@ -41,58 +43,60 @@ class SectioncourseController extends Controller
      */
     public function store(Request $request)
     {
-        Sectioncourse::create($request->all());
-        return redirect()->route('sectioncourses.index');
+        Clasecourse::create($request->all());
+        return redirect()->route('clasecourses.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Sectioncourse  $sectioncourse
+     * @param  \App\Clasecourse  $clasecourse
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-       $sectioncourse = Sectioncourse::findOrFail($id);
-       return view('sectioncourses.show',compact('sectioncourse'));
+       $clasecourse = Clasecourse::findOrFail($id);
+       return view('clasecourses.show',compact('clasecourse'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Sectioncourse  $sectioncourse
+     * @param  \App\Clasecourse  $clasecourse
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
         $modalities = Modality::all();
         $courses = Course::all();
-        $sectioncourse = Sectioncourse::findOrFail($id);
-        return view('sectioncourses.edit',compact('sectioncourse','modalities','courses'));
+        $clases = Clase::all();
+
+        $clasecourse = Clasecourse::findOrFail($id);
+        return view('clasecourses.edit',compact('clasecourse','clases','modalities','courses'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Sectioncourse  $sectioncourse
+     * @param  \App\Clasecourse  $clasecourse
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $sectioncourse = Sectioncourse::findOrFail($id)->update($request->all());
-        return redirect()->route('sectioncourses.index');
+        $clasecourse = Clasecourse::findOrFail($id)->update($request->all());
+        return redirect()->route('clasecourses.index');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Sectioncourse  $sectioncourse
+     * @param  \App\Clasecourse  $clasecourse
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $sectioncourse = Sectioncourse::findOrFail($id)->delete();
-        return redirect()->route('sectioncourses.index');
+        $clasecourse = Clasecourse::findOrFail($id)->delete();
+        return redirect()->route('clasecourses.index');
     }
 }

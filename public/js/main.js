@@ -20,7 +20,8 @@ function loadcourses(){
         error: function (response) {
             console.log(response);
           }
-    });
+    });onchange="loadcourses()"
    
 
 }
+
