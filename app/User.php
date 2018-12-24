@@ -31,9 +31,14 @@ class User extends Authenticatable
 
     //el siguiente codigo se utiliza para encriptar el campo de password
     public function setPasswordAttribute($value)
-        {
-            if($value != ""){
-                $this->attributes['password'] = bcrypt($value);
-            }
+    {
+        if($value != ""){
+            $this->attributes['password'] = bcrypt($value);
         }
+    }
+
+    public function assignment()
+    {
+        return $this->hasMany('App\Assignment');
+    }
 }

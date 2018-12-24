@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <h1>Modulo de Docentes</h1>
+        <h1>Modulo de Docentes o <a href="{{route('users.teachers.create')}} ">crear nuevo docente</a></h1>
 
         <table>
             <thead>

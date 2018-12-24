@@ -6,6 +6,9 @@ use DB;
 use App\User;
 use App\Modality;
 use App\Course;
+use App\Clase;
+use App\Sectioncourse;
+use App\Clasecourse;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -67,55 +70,47 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        //comando para hacer depuracion
-        //dd($request->all());
-
-        /*DB::table('users')->insert([
-            "name"=> $request->input('name'),
-            "lastname"=> $request->input('lastname'),
-            "cuenta"=> $request->input('cuenta'),
-            "role"=> $request->input('role'),
-            "fecha_nacimiento"=> $request->input('fecha_nacimiento'),
-            "email"=> $request->input('email'),
-            "password"=> bcrypt($request->input('password')),
-            "activo"=> $request->input('activo'),
-            "created_at"=> Carbon::now(),
-            "updated_at"=> Carbon::now()
-        ]);*/
-
-        /*$user = new User; // se crea un objeto vacio de tipo user
-        $user->name = $request->input('name'); //se asignan los valores 
-        $user->save();//en envian a guardar a la base de datos */
         
-        //insertamos el nuevo usuario student, de ingresarse correctamente ingresamos los datos de enrollments
-        if( $user=User::create($request->all()) ){
+        //Codigo para insertar student
+        if ($request->input('role')=='student') {
+            
+            //insertamos el nuevo usuario student, de ingresarse correctamente 
+            //ingresamos los datos de enrollments
+            if( $user=User::create($request->all()) ){
 
-            //id del usuario recien creado
-            $new_id= $user->id;
+                //id del usuario recien creado
+                $new_id= $user->id;
 
-            //obtenemos año actual
-            $now = new \DateTime();
-            $year = $now->format('Y');
+                //obtenemos año actual
+                $now = new \DateTime();
+                $year = $now->format('Y');
 
-            //obtenemos el id del curso seleccionado
-            $course_id=$request->input('course_id');
-            $section=$request->input('section');
+                //obtenemos el id del curso seleccionado
+                $course_id=$request->input('course_id');
+                $section=$request->input('section');
 
-            DB::table('enrollments')->insert([
+                DB::table('enrollments')->insert([
 
-                'user_id'=>$new_id,
-                'year'=>$year,
-                'course_id'=>$course_id,
-                'section'=>$section,
-                'created_at'=> Carbon::now(),
-                'updated_at'=> Carbon::now()
-            ]);
+                    'user_id'=>$new_id,
+                    'year'=>$year,
+                    'course_id'=>$course_id,
+                    'section'=>$section,
+                    'created_at'=> Carbon::now(),
+                    'updated_at'=> Carbon::now()
+                ]);
 
+                return redirect()->route('users.students');
+
+            }
+        }
+
+        //Codigo para insertar employees
+        if ($request->input('role')=='teacher') {
+            
+            $user=User::create($request->all()) ;
+            return redirect()->route('users.teachers');
         }
         
-        return redirect()->route('users.index');
-
-       
     }
 
     /**
@@ -155,18 +150,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
 
-        /*DB::table('users')->where('id',$id)->update([
-            "name"=> $request->input('name'),
-            "lastname"=> $request->input('lastname'),
-            "cuenta"=> $request->input('cuenta'),
-            "fecha_nacimiento"=> $request->input('fecha_nacimiento'),
-            "email"=> $request->input('email'),
-            "activo"=> $request->input('activo'),
-            "updated_at"=> Carbon::now()
-        ]);*/
-
         $user = User::findOrFail($id)->update($request->all());
-
         return redirect()->route('users.index');
     }
 
@@ -200,4 +184,29 @@ class UserController extends Controller
         return view('ajax/coursesbymodalityid',compact('courses'));
         
      }
+
+     public function sectionsbycoursesid(Request $request){
+        
+        $id=$request->course_id;
+        $sections = Sectioncourse::where('course_id',$id)->get();
+        return view('ajax/sectionsbycoursesid',compact('sections'));
+        
+     }
+
+     public function clasesbycoursesid(Request $request){
+        
+        $id=$request->course_id;
+        $clasescourses = Clasecourse::where('course_id',$id)->get();
+        return view('ajax/clasesbycoursesid',compact('clasescourses'));
+        
+     }
+
+     public function clasesbymodalityid(Request $request){
+        
+        $id=$request->modality_id;
+        $clases = Clase::where('modality_id',$id)->get();
+        return view('ajax/clasesbymodalityid',compact('clases'));
+        
+     }
 }
+

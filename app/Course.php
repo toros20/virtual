@@ -15,4 +15,9 @@ class Course extends Model
     {
         return $this->hasMany('App\Clasecourse');
     }
+
+    public function assignment()
+    {
+        return $this->hasMany('App\Assignment');
+    }
 }

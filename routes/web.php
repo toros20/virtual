@@ -13,7 +13,7 @@ git push -u origin master
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 
@@ -22,12 +22,24 @@ Route::get('/users/students', 'UserController@students')->name('users.students')
 //crear ruta para la seccion de listar teachers 
 Route::get('/users/teachers', 'UserController@teachers')->name('users.teachers');
 //crear ruta para el formulario de crear students nuevos
-Route::get('/users/students/create', 'UserController@create_estudiante');
+Route::get('/users/students/create', 'UserController@create_estudiante')->name('users.students.create');
 //crear ruta para el formulario de crear teachers nuevos
-Route::get('/users/teachers/create', 'UserController@create_teacher');
+Route::get('/users/teachers/create', 'UserController@create_teacher')->name('users.teachers.create');
 
-//crear ruta para la seccion de listar students 
+
+
+//crear ruta para la seccion de listar cursos segun modalidad seleccionada 
 Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
+
+//crear ruta para la seccion de listar secciones segun curso seleccionado 
+Route::post('ajax/sectionsbycoursesid', 'UserController@sectionsbycoursesid');
+
+//crear ruta para la seccion de listar clases segun curso seleccionado 
+Route::post('ajax/clasesbycoursesid', 'UserController@clasesbycoursesid');
+
+//crear ruta para la seccion de listar clases segun modalidad seleccionada 
+Route::post('ajax/clasesbymodalityid', 'UserController@clasesbymodalityid');
+
 
 
 //rutas CRUD para los users
@@ -50,6 +62,9 @@ Route::resource('sectioncourses', 'SectioncourseController');
 
 //rutas CRUD para las clasecourses
 Route::resource('clasecourses', 'ClasecourseController');
+
+//rutas CRUD para las assignments
+Route::resource('assignments', 'AssignmentController');
 
 
 //aqui van todas las rutas para el control de login, register, reset password, etc

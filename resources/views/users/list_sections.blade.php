@@ -3,11 +3,11 @@
 <p><label for="section">
     Seleccione Secci&oacute;n
     <select name="section">
-        <option value=1>U</option>
-        <option value=2>A</option>
-        <option value=3>B</option>
-        <option value=4>C</option>
-        <option value=5>D</option>
+        <option value=U>U</option>
+        <option value=A>A</option>
+        <option value=B>B</option>
+        <option value=C>C</option>
+        <option value=D>D</option>
     </select>
     </label>
 </p>

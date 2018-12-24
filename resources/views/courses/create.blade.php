@@ -112,9 +112,10 @@
                         <p><label for="modality">
                             Modalidad
                             <select name="modality_id">
-                                <option value=1>Pre-Basica</option>
-                                <option value=2>Basica</option>
-                                <option value=3>Media</option>
+                             <option value=0>Seleccione Modalidad</option>
+                                @foreach ($modalities as $modality)
+                                    <option value= {{ $modality->id }} >{{ $modality->name }}</option>
+                                @endforeach
                             </select>
                         </label></p>
                         <p>                          

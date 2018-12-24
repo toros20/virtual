@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Crear una nueva Asignaci&oacute;n de Clase a Curso</title>
+        <title>Crear una nueva Asignaci&oacute;n </title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
@@ -85,10 +85,10 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Crear Asignaci&oacute;n de Clase a Curso
+                    Crear Asignaci&oacute;n de Clase a Docente
                 </div>
                 
-                <form method = "POST" action ={{route('clasecourses.store')}} >
+                <form method = "POST" action ={{route('assignments.store')}} >
 
                          {{-- @csrf --}}
                         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -97,6 +97,16 @@
                         <p><label for="year">
                            A&ntilde;o
                             <input type="text" name ="year" value=" {{old('year')}} ">
+                        </label></p>
+
+                        <p><label for="user_id">
+                            Seleccione Modalidad 
+                             <select name="user_id" id="users">
+                                    <option value= -1 >Seleccione Docente</option>
+                                @foreach ($users as $user)
+                                    <option value= {{ $user->id }} >{{ $user->name }} {{ $user->lastname }}</option>
+                                @endforeach
+                            </select>
                         </label></p>
 
                         <p><label for="modality_id">
@@ -111,18 +121,24 @@
 
                         <p><label for="course_id">
                             Seleccione Curso 
-                             <select name="course_id" id="courses" onchange="loadclasesbymodality()">
+                             <select name="course_id" id="courses" onchange="loadsections()">
                                 <option>Seleccione Curso</option>
                             </select>
                         </label></p>
 
-                        <p><label for="clase_id">
-                            Seleccione Clase 
-                             <select name="clase_id" id="clases">
-                                <option value=-1>Seleccione Clase</option>
+                        <p><label for="sections" >
+                            Seleccione Secci&oacute;n 
+                             <select name="section" id="sections" onchange="loadclases()">
+                                <option>Seleccione Secci&oacute;n</option>
                             </select>
                         </label></p>
 
+                        <p><label for="clases">
+                            Seleccione Clase 
+                             <select name="clase_id" id="clases">
+                                <option>Seleccione Clase</option>
+                            </select>
+                        </label></p>
                          
                         <p>                          
                             <input type="submit"  value="Enviar">

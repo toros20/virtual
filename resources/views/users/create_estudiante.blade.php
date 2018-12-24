@@ -139,12 +139,17 @@
 
                          <p><label for="course_id">
                             Curso 
-                             <select name="course_id" id="courses">
+                             <select name="course_id" id="courses" onchange="loadsections()">
                                 <option>Seleccione Curso</option>
                             </select>
                         </label></p>
 
-                         @include('users.list_sections')
+                         <p><label for="sections" >
+                            Seleccione Secci&oacute;n 
+                             <select name="section" id="sections" onchange="loadclases()">
+                                <option>Seleccione Secci&oacute;n</option>
+                            </select>
+                        </label></p>
 
                         <p>                          
                             <input type="submit"  value="Enviar">

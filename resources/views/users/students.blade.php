@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <h1>Modulo de Estudiantes</h1>
+        <h1>Modulo de Estudiantes o <a href="{{route('users.students.create')}} ">crear nuevo estudiante</a></h1>
 
         <table>
             <thead>
