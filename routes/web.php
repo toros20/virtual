@@ -82,3 +82,6 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('password.update');
 //esta es la pgina a la que dirijira una vez que haga el login
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('students/panel', 'UserController@students_panel')->name('students_panel');

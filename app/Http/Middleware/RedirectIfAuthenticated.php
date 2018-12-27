@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class RedirectIfAuthenticated
@@ -17,8 +18,22 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        //dd($request->all());
+        //$cuenta=$request->login;
+        //echo "SIIII=". $cuenta;
+       // $cuenta = "'".$cuenta."'";
+        //echo "SIIII=". $cuenta;
+        //dd($cuenta);
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+
+            $user = User::where('cuenta','.$request->login.')->get();
+            dd($user);
+            /*if ($user->role =='student'){
+                return redirect('/students/panel');
+            }else{
+                return redirect('/home');
+            }*/
+           
         }
 
         return $next($request);

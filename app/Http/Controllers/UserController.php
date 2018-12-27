@@ -208,5 +208,14 @@ class UserController extends Controller
         return view('ajax/clasesbymodalityid',compact('clases'));
         
      }
+
+     public function students_panel(){
+        
+        /*$id=$request->modality_id;
+        $clases = Clase::where('modality_id',$id)->get();*/
+        return view('students/panel');
+        
+     }
+
 }
 
