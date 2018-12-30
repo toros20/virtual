@@ -209,14 +209,7 @@ class UserController extends Controller
         
      }
 
-     public function students_panel($id){
-       
-        /*$id=$request->modality_id;*/
-        $user = User::findOrFail($id);
-       // dd($user);
-        return view('students/panel',compact('user'));
-        
-     }
+     
 
      public function teachers_panel($id){
         

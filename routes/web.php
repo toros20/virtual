@@ -84,6 +84,6 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 Route::get('/home', 'HomeController@index')->name('home');
 
 //esta es la ruta para el panel de student despues de hacer login exitosamente
-Route::get('students/panel/{id}', 'UserController@students_panel')->name('students_panel/{id}');
+Route::get('students/panel/{id}', 'StudentController@students_panel')->name('students_panel/{id}');
 //esta es la ruta para el panel de teachers despues de hacer login exitosamente
 Route::get('teachers/panel/{id}', 'UserController@teachers_panel')->name('teachers_panel/{id}');
