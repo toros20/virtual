@@ -209,19 +209,19 @@ class UserController extends Controller
         
      }
 
-     public function students_panel(){
-        
-        /*$id=$request->modality_id;
-        $clases = Clase::where('modality_id',$id)->get();*/
-        return view('students/panel');
+     public function students_panel($id){
+       
+        /*$id=$request->modality_id;*/
+        $user = User::findOrFail($id);
+       // dd($user);
+        return view('students/panel',compact('user'));
         
      }
 
-     public function teachers_panel(){
+     public function teachers_panel($id){
         
-        /*$id=$request->modality_id;
-        $clases = Clase::where('modality_id',$id)->get();*/
-        return view('teachers/panel');
+        $user = User::findOrFail($id);
+        return view('teachers/panel',compact('user'));
         
      }
 

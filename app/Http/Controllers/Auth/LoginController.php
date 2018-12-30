@@ -24,11 +24,12 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         if ( $user->role == 'student' ) {
-            return redirect()->route('students_panel');
+            return redirect()->route('students_panel/{id}', ['id' => $user->id]);
+            
         }
 
         if ( $user->role == 'teacher' ) {
-            return redirect()->route('teachers_panel');
+            return redirect()->route('teachers_panel/{id}', ['id' => $user->id]);
         }
 
         return redirect('/login');
