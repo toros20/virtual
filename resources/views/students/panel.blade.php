@@ -937,7 +937,29 @@
 			<div id="newsfeed-items-grid">
 				<div class="ui-block">
 
+					<form class="comment-form inline-items">
 					
+						<div class="post__author author vcard inline-items">
+							<img src="../../img/boy.png" alt="author">
+					
+							<div class="form-group with-icon-right ">
+								<textarea class="form-control" placeholder=""></textarea>
+								<div class="add-options-message">
+									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+										<svg class="olymp-camera-icon">
+											<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</div>
+					
+						<button class="btn btn-md-2 btn-primary">Post Comment</button>
+					
+						<button class="btn btn-md-2 btn-border-think c-grey btn-transparent custom-color">Cancel</button>
+					
+					</form>
+
 					<!-- Post -->
 					
 					<article class="hentry post">
@@ -1643,67 +1665,6 @@
 				
 				<!-- .. end W-Twitter -->
 			</div>
-			
-			{{-- <div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Last Photos</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-				<div class="ui-block-content">
-					
-					<!-- W-Latest-Photo -->
-					
-					<ul class="widget w-last-photo js-zoom-gallery">
-						<li>
-							<a href="../../img/last-photo1-large.jpg">
-								<img src="../../img/last-photo1-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo2-large.jpg">
-								<img src="../../img/last-photo2-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo3-large.jpg">
-								<img src="../../img/last-photo3-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo4-large.jpg">
-								<img src="../../img/last-photo4-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-phot11-large.jpg">
-								<img src="../../img/last-phot11-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-phot12-large.jpg">
-								<img src="../../img/last-phot12-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo7-large.jpg">
-								<img src="../../img/last-photo7-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo8-large.jpg">
-								<img src="../../img/last-photo8-large.jpg" alt="photo">
-							</a>
-						</li>
-						<li>
-							<a href="../../img/last-photo9-large.jpg">
-								<img src="../../img/last-photo9-large.jpg" alt="photo">
-							</a>
-						</li>
-					</ul>
-					
-					<!-- ... end W-Latest-Photo -->				</div>
-			</div> --}}
-
 
 			<div class="ui-block">
 				<div class="ui-block-title">

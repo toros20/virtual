@@ -122,6 +122,15 @@
                             <input type="password" name ="password" value=" {{old('password')}} ">
                         </label></p>
 
+                         <p><label for="sexo">
+                            Seleccione Sexo 
+                             <select name="sexo" id="sexo">
+                                <option value="-1">Seleccione Sexo</option>
+                                <option value="F">Femenino</option>
+                                <option value="M">Masculino</option>
+                            </select>
+                        </label></p>
+
                         <p><label for="fecha_nacimiento">
                             Fecha de Nacimiento 
                             <input type="text" name ="fecha_nacimiento" value=" {{old('fecha_nacimiento')}} ">
