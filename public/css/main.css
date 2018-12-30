@@ -1541,7 +1541,8 @@ Description: "HTML-template"
     height: 60px;
     border-width: 2px; }
   .top-header.top-header-favorit .author-content {
-    margin-top: 0; }
+    /*margin-top: 0;*/
+    margin-top: 25%; }
   .top-header.top-header-favorit .profile-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

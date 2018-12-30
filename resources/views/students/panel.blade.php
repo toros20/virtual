@@ -229,16 +229,32 @@
 
 		</div>
 	</div>
+
+
+	
+
 </div>
 
 <!-- ... end Fixed Sidebar Left -->
+
+<div class="fixed-sidebar right fixed-sidebar-responsive">
+
+	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right-responsive">
+
+		<a href="#" class="olympus-chat inline-items js-chat-open">
+			<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+		</a>
+
+	</div>
+
+</div>
 
 <!-- Header-BP -->
 
 <header class="header" id="site-header">
 
 	<div class="page-title">
-		<h6>favourite page</h6>
+		<h6>ISJC-2019</h6>
 	</div>
 
 	<div class="header-content-wrapper">
@@ -251,130 +267,9 @@
 			</div>
 		</form>
 
-		<a href="#" class="link-find-friend">Find Friends</a>
+		{{-- <a href="#" class="link-find-friend">Find Friends</a> --}}
 
 		<div class="control-block">
-
-			<div class="control-icon more has-items">
-				<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-				<div class="label-avatar bg-blue">6</div>
-
-				<div class="more-dropdown more-with-triangle triangle-top-center">
-					<div class="ui-block-title ui-block-title-small">
-						<h6 class="title">FRIEND REQUESTS</h6>
-						<a href="#">Find Friends</a>
-						<a href="#">Settings</a>
-					</div>
-
-					<div class="mCustomScrollbar" data-mcs-theme="dark">
-						<ul class="notification-list friend-requests">
-							<li>
-								<div class="author-thumb">
-									<img src="../../img/avatar55-sm.jpg" alt="author">
-								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
-									<span class="chat-message-item">Mutual Friend: Sarah Hetfield</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								</div>
-							</li>
-
-							<li>
-								<div class="author-thumb">
-									<img src="../../img/avatar56-sm.jpg" alt="author">
-								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Tony Stevens</a>
-									<span class="chat-message-item">4 Friends in Common</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								</div>
-							</li>
-
-							<li class="accepted">
-								<div class="author-thumb">
-									<img src="../../img/avatar57-sm.jpg" alt="author">
-								</div>
-								<div class="notification-event">
-									You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
-								</div>
-								<span class="notification-icon">
-									<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
-								</div>
-							</li>
-
-							<li>
-								<div class="author-thumb">
-									<img src="../../img/avatar58-sm.jpg" alt="author">
-								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Stagg Clothing</a>
-									<span class="chat-message-item">9 Friends in Common</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								</div>
-							</li>
-
-						</ul>
-					</div>
-
-					<a href="#" class="view-all bg-blue">Check all your Events</a>
-				</div>
-			</div>
 
 			<div class="control-icon more has-items">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
@@ -584,12 +479,11 @@
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="../../img/author-page.jpg" class="avatar">
-					<span class="icon-status online"></span>
+					<img alt="author" src="../../img/boy_short.png" class="avatar">
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
 							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Your Account</h6>
+								<h6 class="title">Tu Cuenta</h6>
 							</div>
 
 							<ul class="account-settings">
@@ -598,7 +492,7 @@
 
 										<svg class="olymp-menu-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
-										<span>Profile Settings</span>
+										<span>Opciones de Perfil</span>
 									</a>
 								</li>
 								<li>
@@ -612,90 +506,20 @@
 									<a href="#">
 										<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
-										<span>Log Out</span>
+										<span>Salir</span>
 									</a>
 								</li>
 							</ul>
 
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Chat Settings</h6>
-							</div>
-
-							<ul class="chat-settings">
-								<li>
-									<a href="#">
-										<span class="icon-status online"></span>
-										<span>Online</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span class="icon-status away"></span>
-										<span>Away</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span class="icon-status disconected"></span>
-										<span>Disconnected</span>
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<span class="icon-status status-invisible"></span>
-										<span>Invisible</span>
-									</a>
-								</li>
-							</ul>
-
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Custom Status</h6>
-							</div>
-
-							<form class="form-group with-button custom-status">
-								<input class="form-control" placeholder="" type="text" value="Space Cowboy">
-
-								<button class="bg-purple">
-									<svg class="olymp-check-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-check-icon"></use></svg>
-								</button>
-							</form>
-
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">About Olympus</h6>
-							</div>
-
-							<ul>
-								<li>
-									<a href="#">
-										<span>Terms and Conditions</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>FAQs</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>Careers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>Contact</span>
-									</a>
-								</li>
-							</ul>
 						</div>
 
 					</div>
 				</div>
 				<a href="02-ProfilePage.html" class="author-name fn">
 					<div class="author-title">
-						James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
-					<span class="author-subtitle">SPACE COWBOY</span>
+					<span class="author-subtitle">{{$course[0]->name }}</span>
 				</a>
 			</div>
 
@@ -713,14 +537,7 @@
 
 	<div class="header-content-wrapper">
 		<ul class="nav nav-tabs mobile-app-tabs" role="tablist">
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#request" role="tab">
-					<div class="control-icon has-items">
-						<svg class="olymp-happy-face-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
-						<div class="label-avatar bg-blue">6</div>
-					</div>
-				</a>
-			</li>
+			
 
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#chat" role="tab">
@@ -740,12 +557,7 @@
 				</a>
 			</li>
 
-			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#search" role="tab">
-					<svg class="olymp-magnifying-glass-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</li>
+			
 		</ul>
 	</div>
 
@@ -1094,11 +906,11 @@
 						<img src="../../img/backtoschool.jpg" alt="nature">
 						<div class="top-header-author">
 							<div class="author-thumb">
-								<img src="../../img/author-main2.jpg" alt="author">
+								<img src="../../img/boy.png" alt="author">
 							</div>
 							<div class="author-content">
-								<a href="#" class="h3 author-name">{{$user->name}} {{$user->lastname}}</a>
-								<div class="country">{{$user->cuenta}}  |  San Francisco, CA</div>
+								<a href="#" class="h3 author-name">{{$user->name}} </a>
+								<div class="country">{{$user->cuenta}}  |  {{$course[0] ->name}} Secci&oacute;n {{$enroll[0]->section }} </div>
 							</div>
 						</div>
 					</div>
@@ -1107,10 +919,6 @@
 						<div class="control-block-button">
 							<a href="#" class="btn btn-control bg-primary">
 								<svg class="olymp-star-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-							</a>
-
-							<a href="#" class="btn btn-control bg-purple">
-								<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 							</a>
 
 						</div>
@@ -1596,249 +1404,247 @@
 		</div>
 
 		<div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-6 col-12">
+			
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<h6 class="title">Page Intro</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<h6 class="title">Asignaturas</h6>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
-				<div class="ui-block-content">
-					
-					<!-- W-Personal-Info -->
-					
-					<ul class="widget w-personal-info item-block">
-						<li>
-							<span class="text">We are Rock Band from Los Angeles, now based in San Francisco, come and listen to us play!</span>
-						</li>
-						<li>
-							<span class="title">Created:</span>
-							<span class="text">September 17th, 2013</span>
-						</li>
-						<li>
-							<span class="title">Based in:</span>
-							<span class="text">San Francisco, California</span>
-						</li>
-						<li>
-							<span class="title">Contact:</span>
-							<a href="#" class="text">greengoo_gigs@youmail.com</a>
-						</li>
-						<li>
-							<span class="title">Website:</span>
-							<a href="#" class="text">www.ggrock.com</a>
-						</li>
-						<li>
-							<span class="title">Favourites:</span>
-							<a href="#" class="text">5630 </a>
-						</li>
-					</ul>
-					
-					<!-- ... end W-Personal-Info -->
-					<!-- W-Socials -->
-					
-					<div class="widget w-socials">
-						<h6 class="title">Other Social Networks:</h6>
-						<a href="#" class="social-item bg-facebook">
-							<i class="fab fa-facebook-f" aria-hidden="true"></i>
-							Facebook
-						</a>
-						<a href="#" class="social-item bg-twitter">
-							<i class="fab fa-twitter" aria-hidden="true"></i>
-							Twitter
-						</a>
-						<a href="#" class="social-item bg-dribbble">
-							<i class="fab fa-dribbble" aria-hidden="true"></i>
-							Dribbble
-						</a>
-					</div>
-					
-					
-					<!-- ... end W-Socials -->				</div>
+
+				<!-- W-Friend-Pages-Added -->
+				
+				<ul class="widget w-friend-pages-added notification-list friend-requests">
+					<li class="inline-items">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event">
+							<a href="#" class="h6 notification-friend">ESPAÑOL</a>
+							<span class="chat-message-item">Lic. Luis Manzanares</span>
+						</div>
+						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+							<a href="#">
+								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+							</a>
+						</span>
+				
+					</li>
+				
+					<li class="inline-items">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event">
+							<a href="#" class="h6 notification-friend">MATEMÁTICAS</a>
+							<span class="chat-message-item">Lic. Ermis Barahona</span>
+						</div>
+						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+							<a href="#">
+								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+							</a>
+						</span>
+				
+					</li>
+				
+					<li class="inline-items">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event">
+							<a href="#" class="h6 notification-friend">TECNOLOGÍA</a>
+							<span class="chat-message-item">Lic. Daniel Amaya</span>
+						</div>
+						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+							<a href="#">
+								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+							</a>
+						</span>
+					</li>
+				
+					<li class="inline-items">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event">
+							<a href="#" class="h6 notification-friend">CIENCIAS NATURALES</a>
+							<span class="chat-message-item">Lic. Dimas Palma</span>
+						</div>
+						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+							<a href="#">
+								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+							</a>
+						</span>
+				
+					</li>
+				
+					<li class="inline-items">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event">
+							<a href="#" class="h6 notification-friend">EDUC. ARTÍSTICA</a>
+							<span class="chat-message-item">Lic. Jorge Osorio</span>
+						</div>
+						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+							<a href="#">
+								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+							</a>
+						</span>
+					</li>
+				
+				</ul>
+				
+				<!-- .. end W-Friend-Pages-Added -->
+			</div>
+			
+
+
 			</div>
 
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Location</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12">
+
+			<div class="ui-block" >
+				<div style="background-color:lightcoral;" class="ui-block-title">
+					<h6 style="color:white"  class="title">Tareas Para Hoy</h6>
 				</div>
 
-				
-				<!-- Contacts -->
-				
-				<div class="widget w-contacts">
-					<!-- Google map -->
-				
-					<!-- End Google map -->
-				
-					<ul>
-						<li>
-							<span class="title">Address:</span>
-							<span class="text">Fake Street 320, San Francisco California, USA.
-											</span>
-						</li>
-						<li>
-							<span class="title">Working Hours:</span>
-							<span class="text">Mon-Fri 9:00am to 6:00pm
-												Weekends 10:00am to 8:00pm
-											</span>
-						</li>
-					</ul>
-				</div>
-				
-				<!-- ... end Contacts -->			</div>
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Faved this Page</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-				<div class="ui-block-content">
-					
-					<!-- W-Faved-Page -->
-					
-					<ul class="widget w-faved-page">
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page1.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page2.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page3.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page4.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page5.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page6.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page7.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page8.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page9.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page7.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page10.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page11.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page7.jpg" alt="user">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/faved-page12.jpg" alt="user">
-							</a>
-						</li>
-						<li class="all-users">
-							<a href="#">+5k</a>
-						</li>
-					</ul>
-					
-					<!-- ... end W-Faved-Page -->				</div>
-			</div>
-
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Twitter Feed</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-
-				
 				<!-- W-Twitter -->
 				
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/twitter-avatar.png" alt="avatar">
+							<img src="../../img/teacher.png" alt="avatar">
 							<div class="author">
-								<a href="#" class="author-name">Green Goo Rock</a>
-								<a href="#" class="group">@greengoo_rock</a>
-								<span class="verified"><i class="fa fa-check" aria-hidden="true"></i></span>
+								<a href="#" class="author-name">Español</a>
+								<a href="#" class="group">Hoy</a>
 							</div>
 						</div>
-						<p>This Friday at 8pm we’ll be playing a song of our new album, come and join us! <a href="#" class="link-post">#NewsoftheGoo</a></p>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
 						<span class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-												4 hours ago
-											</time>
-										</span>
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace una semana
+							</time>
+						</span>
 					</li>
+					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/twitter-avatar.png" alt="avatar">
+							<img src="../../img/teacher.png" alt="avatar">
 							<div class="author">
-								<a href="#" class="author-name">Green Goo Rock</a>
-								<a href="#" class="group">@greengoo_rock</a>
-								<span class="verified"><i class="fa fa-check" aria-hidden="true"></i></span>
+								<a href="#" class="author-name">Tecnología</a>
+								<a href="#" class="group">Hoy</a>
 							</div>
 						</div>
-						<p>Tickets for the Marina Party are now available on <a href="#" class="link-post">www.ggrock.com</a></p>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
 						<span class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-												Yesterday
-											</time>
-										</span>
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace 4 dias
+							</time>
+						</span>
 					</li>
-					<li class="twitter-item">
-						<div class="author-folder">
-							<img src="../../img/twitter-avatar.png" alt="avatar">
-							<div class="author">
-								<a href="#" class="author-name">Green Goo Rock</a>
-								<a href="#" class="group">@greengoo_rock</a>
-								<span class="verified"><i class="fa fa-check" aria-hidden="true"></i></span>
-							</div>
-						</div>
-						<p>We had a great time playing in Italy. Thanks a lot to the incredible fans! <a href="#" class="link-post">#GGinRome #PisaArena </a></p>
-						<span class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-												5 days ago
-											</time>
-										</span>
-					</li>
-				</ul>
-				
-				<!-- ... end W-Twitter -->			</div>
-		</div>
 
-		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12">
+				</ul>				
+				
+				<!-- .. end W-Twitter -->
+			</div>
+
 			<div class="ui-block">
+				<div style="background-color:gold;" class="ui-block-title">
+					<h6 class="title">Tareas Para Mañana</h6>
+				</div>
+
+				<!-- W-Twitter -->
+				
+				<ul class="widget w-twitter">
+					<li class="twitter-item">
+						<div class="author-folder">
+							<img src="../../img/teacher.png" alt="avatar">
+							<div class="author">
+								<a href="#" class="author-name">Español</a>
+								<a href="#" class="group">Hoy</a>
+							</div>
+						</div>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
+						<span class="post__date">
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace una semana
+							</time>
+						</span>
+					</li>
+					
+					<li class="twitter-item">
+						<div class="author-folder">
+							<img src="../../img/teacher.png" alt="avatar">
+							<div class="author">
+								<a href="#" class="author-name">Tecnología</a>
+								<a href="#" class="group">Hoy</a>
+							</div>
+						</div>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
+						<span class="post__date">
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace 4 dias
+							</time>
+						</span>
+					</li>
+
+				</ul>				
+				
+				<!-- .. end W-Twitter -->
+			</div>
+
+			<div class="ui-block">
+				<div style="background-color:lightgreen;" class="ui-block-title">
+					<h6 class="title">Tareas Para Pasado Mañana</h6>
+				</div>
+
+				<!-- W-Twitter -->
+				
+				<ul class="widget w-twitter">
+					<li class="twitter-item">
+						<div class="author-folder">
+							<img src="../../img/teacher.png" alt="avatar">
+							<div class="author">
+								<a href="#" class="author-name">Español</a>
+								<a href="#" class="group">Hoy</a>
+							</div>
+						</div>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
+						<span class="post__date">
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace una semana
+							</time>
+						</span>
+					</li>
+					
+					<li class="twitter-item">
+						<div class="author-folder">
+							<img src="../../img/teacher.png" alt="avatar">
+							<div class="author">
+								<a href="#" class="author-name">Tecnología</a>
+								<a href="#" class="group">Hoy</a>
+							</div>
+						</div>
+						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
+							<a href="#" class="link-post">Ver Tarea.</a></p>
+						<span class="post__date">
+							<time class="published" datetime="2017-03-24T18:18">
+								Hace 4 dias
+							</time>
+						</span>
+					</li>
+
+				</ul>				
+				
+				<!-- .. end W-Twitter -->
+			</div>
+			
+			{{-- <div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Last Photos</h6>
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
@@ -1896,387 +1702,8 @@
 					</ul>
 					
 					<!-- ... end W-Latest-Photo -->				</div>
-			</div>
+			</div> --}}
 
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Green Goo’s Playlist</h6>
-					<a href="#" class="more">
-						<span class="c-green">
-							<svg class="olymp-remove-playlist-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-remove-playlist-icon"></use></svg>
-						</span>
-					</a>
-				</div>
-
-				<!-- W-Playlist -->
-				
-				<ol class="widget w-playlist">
-					<li class="js-open-popup" data-popup-target=".playlist-popup">
-						<div class="playlist-thumb">
-							<img src="../../img/playlist6.jpg" alt="thumb-composition">
-							<div class="overlay"></div>
-							<a href="#" class="play-icon">
-								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
-								</svg>
-							</a>
-						</div>
-				
-						<div class="composition">
-							<a href="#" class="composition-name">The Past Starts Slow...</a>
-							<a href="#" class="composition-author">System of a Revenge</a>
-						</div>
-				
-						<div class="composition-time">
-							<time class="published" datetime="2017-03-24T18:18">3:22</time>
-							<div class="more">
-								<svg class="olymp-three-dots-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Add Song to Player</a>
-									</li>
-									<li>
-										<a href="#">Add Playlist to Player</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-				
-					</li>
-				
-					<li class="js-open-popup" data-popup-target=".playlist-popup">
-						<div class="playlist-thumb">
-							<img src="../../img/playlist7.jpg" alt="thumb-composition">
-							<div class="overlay"></div>
-							<a href="#" class="play-icon">
-								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
-								</svg>
-							</a>
-						</div>
-				
-						<div class="composition">
-							<a href="#" class="composition-name">The Pretender</a>
-							<a href="#" class="composition-author">Kung Fighters</a>
-						</div>
-				
-						<div class="composition-time">
-							<time class="published" datetime="2017-03-24T18:18">5:48</time>
-							<div class="more">
-								<svg class="olymp-three-dots-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Add Song to Player</a>
-									</li>
-									<li>
-										<a href="#">Add Playlist to Player</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-				
-					</li>
-					<li class="js-open-popup" data-popup-target=".playlist-popup">
-						<div class="playlist-thumb">
-							<img src="../../img/playlist8.jpg" alt="thumb-composition">
-							<div class="overlay"></div>
-							<a href="#" class="play-icon">
-								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
-								</svg>
-							</a>
-						</div>
-				
-						<div class="composition">
-							<a href="#" class="composition-name">Blood Brothers</a>
-							<a href="#" class="composition-author">Iron Maid</a>
-						</div>
-				
-						<div class="composition-time">
-							<time class="published" datetime="2017-03-24T18:18">3:06</time>
-							<div class="more">
-								<svg class="olymp-three-dots-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Add Song to Player</a>
-									</li>
-									<li>
-										<a href="#">Add Playlist to Player</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-				
-					</li>
-					<li class="js-open-popup" data-popup-target=".playlist-popup">
-						<div class="playlist-thumb">
-							<img src="../../img/playlist9.jpg" alt="thumb-composition">
-							<div class="overlay"></div>
-							<a href="#" class="play-icon">
-								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
-								</svg>
-							</a>
-						</div>
-				
-						<div class="composition">
-							<a href="#" class="composition-name">Seven Nation Army</a>
-							<a href="#" class="composition-author">The Black Stripes</a>
-						</div>
-				
-						<div class="composition-time">
-							<time class="published" datetime="2017-03-24T18:18">6:17</time>
-							<div class="more">
-								<svg class="olymp-three-dots-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Add Song to Player</a>
-									</li>
-									<li>
-										<a href="#">Add Playlist to Player</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-				
-					</li>
-					<li class="js-open-popup" data-popup-target=".playlist-popup">
-						<div class="playlist-thumb">
-							<img src="../../img/playlist10.jpg" alt="thumb-composition">
-							<div class="overlay"></div>
-							<a href="#" class="play-icon">
-								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
-								</svg>
-							</a>
-						</div>
-				
-						<div class="composition">
-							<a href="#" class="composition-name">Killer Queen</a>
-							<a href="#" class="composition-author">Archiduke</a>
-						</div>
-				
-						<div class="composition-time">
-							<time class="published" datetime="2017-03-24T18:18">5:40</time>
-							<div class="more">
-								<svg class="olymp-three-dots-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-								</svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Add Song to Player</a>
-									</li>
-									<li>
-										<a href="#">Add Playlist to Player</a>
-									</li>
-								</ul>
-							</div>
-						</div>
-				
-					</li>
-				</ol>
-				
-				<!-- .. end W-Playlist -->
-			</div>
-
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Green Goo's Poll</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-				<div class="ui-block-content">
-					<!-- W-Pool -->
-					
-					<ul class="widget w-pool">
-						<li>
-							<p>If you had to choose, which actor do you prefer to be the next Darkman? </p>
-						</li>
-						<li>
-							<div class="skills-item">
-								<div class="skills-item-info">
-									<span class="skills-item-title">
-										<span class="radio">
-											<label>
-												<input type="radio" name="optionsRadios">
-												Thomas Bale
-											</label>
-										</span>
-									</span>
-									<span class="skills-item-count">
-										<span class="count-animate" data-speed="1000" data-refresh-interval="50" data-to="62" data-from="0"></span>
-										<span class="units">62%</span>
-									</span>
-								</div>
-								<div class="skills-item-meter">
-									<span class="skills-item-meter-active bg-primary" style="width: 62%"></span>
-								</div>
-					
-								<div class="counter-friends">12 friends voted for this</div>
-					
-								<ul class="friends-harmonic">
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic1.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic2.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic3.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic4.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic5.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic6.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic7.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic8.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic9.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#" class="all-users">+3</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					
-						<li>
-							<div class="skills-item">
-								<div class="skills-item-info">
-									<span class="skills-item-title">
-										<span class="radio">
-											<label>
-												<input type="radio" name="optionsRadios">
-												Ben Robertson
-											</label>
-										</span>
-									</span>
-									<span class="skills-item-count">
-										<span class="count-animate" data-speed="1000" data-refresh-interval="50" data-to="27" data-from="0"></span>
-										<span class="units">27%</span>
-									</span>
-								</div>
-								<div class="skills-item-meter">
-									<span class="skills-item-meter-active bg-primary" style="width: 27%"></span>
-								</div>
-								<div class="counter-friends">7 friends voted for this</div>
-					
-								<ul class="friends-harmonic">
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic7.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic8.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic9.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic10.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic11.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic12.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic13.jpg" alt="friend">
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					
-						<li>
-							<div class="skills-item">
-								<div class="skills-item-info">
-									<span class="skills-item-title">
-										<span class="radio">
-											<label>
-												<input type="radio" name="optionsRadios">
-												Michael Streiton
-											</label>
-										</span>
-									</span>
-									<span class="skills-item-count">
-										<span class="count-animate" data-speed="1000" data-refresh-interval="50" data-to="11" data-from="0"></span>
-										<span class="units">11%</span>
-									</span>
-								</div>
-								<div class="skills-item-meter">
-									<span class="skills-item-meter-active bg-primary" style="width: 11%"></span>
-								</div>
-					
-								<div class="counter-friends">2 people voted for this</div>
-					
-								<ul class="friends-harmonic">
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic14.jpg" alt="friend">
-										</a>
-									</li>
-									<li>
-										<a href="#">
-											<img src="../../img/friend-harmonic15.jpg" alt="friend">
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-					
-					<!-- .. end W-Pool -->
-					<a href="#" class="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
-				</div>
-			</div>
 
 			<div class="ui-block">
 				<div class="ui-block-title">
