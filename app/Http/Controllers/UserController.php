@@ -217,5 +217,13 @@ class UserController extends Controller
         
      }
 
+     public function teachers_panel(){
+        
+        /*$id=$request->modality_id;
+        $clases = Clase::where('modality_id',$id)->get();*/
+        return view('teachers/panel');
+        
+     }
+
 }
 

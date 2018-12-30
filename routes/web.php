@@ -83,5 +83,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset')->name('passw
 //esta es la pgina a la que dirijira una vez que haga el login
 Route::get('/home', 'HomeController@index')->name('home');
 
-
+//esta es la ruta para el panel de student despues de hacer login exitosamente
 Route::get('students/panel', 'UserController@students_panel')->name('students_panel');
+//esta es la ruta para el panel de teachers despues de hacer login exitosamente
+Route::get('teachers/panel', 'UserController@teachers_panel')->name('teachers_panel');

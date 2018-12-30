@@ -21,12 +21,25 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
+    protected function authenticated(Request $request, $user)
+    {
+        if ( $user->role == 'student' ) {
+            return redirect()->route('students_panel');
+        }
+
+        if ( $user->role == 'teacher' ) {
+            return redirect()->route('teachers_panel');
+        }
+
+        return redirect('/login');
+    }
+
     /**
      * Where to redirect users after login.
      *
      * @var string
      */
-    protected $redirectTo = '/login';
+    //protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.

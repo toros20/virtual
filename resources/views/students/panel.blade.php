@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 
 	<title>Panel Estudiant&iacute;l</title>
@@ -54,7 +54,7 @@
 			</g>
 		</svg>
 
-		<div class="text">Loading ...</div>
+		<div class="text">Cargando ...</div>
 	</div>
 </div>
 
@@ -68,7 +68,7 @@
 
 		<a href="02-ProfilePage.html" class="logo">
 			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
+				<img src="../img/logo.png" alt="Olympus">
 			</div>
 		</a>
 
@@ -76,57 +76,57 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="OPEN MENU"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+						<svg class="olymp-menu-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="OPEN MENU"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
+						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
+						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
 					</a>
 				</li>
 				<li>
 					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
+						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
 					</a>
 				</li>
 			</ul>
@@ -136,7 +136,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1">
 		<a href="02-ProfilePage.html" class="logo">
 			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
+				<img src="../img/logo.png" alt="Olympus">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">olympus</h6>
@@ -147,67 +147,67 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 						<span class="left-menu-title">Collapse Menu</span>
 					</a>
 				</li>
 				<li>
 					<a href="03-Newsfeed.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 						<span class="left-menu-title">Newsfeed</span>
 					</a>
 				</li>
 				<li>
 					<a href="16-FavPagesFeed.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 						<span class="left-menu-title">Fav Pages Feed</span>
 					</a>
 				</li>
 				<li>
 					<a href="17-FriendGroups.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
 						<span class="left-menu-title">Friend Groups</span>
 					</a>
 				</li>
 				<li>
 					<a href="18-MusicAndPlaylists.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
+						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
 						<span class="left-menu-title">Music & Playlists</span>
 					</a>
 				</li>
 				<li>
 					<a href="19-WeatherWidget.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
+						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
 						<span class="left-menu-title">Weather App</span>
 					</a>
 				</li>
 				<li>
 					<a href="20-CalendarAndEvents-MonthlyCalendar.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 						<span class="left-menu-title">Calendar and Events</span>
 					</a>
 				</li>
 				<li>
 					<a href="24-CommunityBadges.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
 						<span class="left-menu-title">Community Badges</span>
 					</a>
 				</li>
 				<li>
 					<a href="25-FriendsBirthday.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
 						<span class="left-menu-title">Friends Birthdays</span>
 					</a>
 				</li>
 				<li>
 					<a href="26-Statistics.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
 						<span class="left-menu-title">Account Stats</span>
 					</a>
 				</li>
 				<li>
 					<a href="27-ManageWidgets.html">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
+						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
 						<span class="left-menu-title">Manage Widgets</span>
 					</a>
 				</li>
@@ -241,7 +241,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="img/logo.png" alt="Olympus">
+			<img src="../img/logo.png" alt="Olympus">
 		</a>
 
 	</div>
@@ -249,7 +249,7 @@
 	<div class="fixed-sidebar-left sidebar--large" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="img/logo.png" alt="Olympus">
+				<img src="../img/logo.png" alt="Olympus">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">olympus</h6>
@@ -261,12 +261,12 @@
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
-						<img alt="author" src="img/author-page.jpg" class="avatar">
+						<img alt="author" src="../img/author-page.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
 						<div class="author-title">
-							James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+							James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 						</div>
 						<span class="author-subtitle">SPACE COWBOY</span>
 					</a>
@@ -280,67 +280,67 @@
 			<ul class="left-menu">
 				<li>
 					<a href="#" class="js-sidebar-open">
-						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+						<svg class="olymp-close-icon left-menu-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 						<span class="left-menu-title">Collapse Menu</span>
 					</a>
 				</li>
 				<li>
 					<a href="mobile-index.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
+						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
 						<span class="left-menu-title">Newsfeed</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-28-YourAccount-PersonalInformation.html">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 						<span class="left-menu-title">Fav Pages Feed</span>
 					</a>
 				</li>
 				<li>
 					<a href="mobile-29-YourAccount-AccountSettings.html">
-						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
+						<svg class="olymp-happy-faces-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FRIEND GROUPS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-faces-icon"></use></svg>
 						<span class="left-menu-title">Friend Groups</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-30-YourAccount-ChangePassword.html">
-						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
+						<svg class="olymp-headphones-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="MUSIC&PLAYLISTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-headphones-icon"></use></svg>
 						<span class="left-menu-title">Music & Playlists</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-31-YourAccount-HobbiesAndInterests.html">
-						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
+						<svg class="olymp-weather-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="WEATHER APP"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-weather-icon"></use></svg>
 						<span class="left-menu-title">Weather App</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-32-YourAccount-EducationAndEmployement.html">
-						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
+						<svg class="olymp-calendar-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="CALENDAR AND EVENTS"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
 						<span class="left-menu-title">Calendar and Events</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-33-YourAccount-Notifications.html">
-						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
+						<svg class="olymp-badge-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Community Badges"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-badge-icon"></use></svg>
 						<span class="left-menu-title">Community Badges</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-34-YourAccount-ChatMessages.html">
-						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
+						<svg class="olymp-cupcake-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Friends Birthdays"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-cupcake-icon"></use></svg>
 						<span class="left-menu-title">Friends Birthdays</span>
 					</a>
 				</li>
 				<li>
 					<a href="Mobile-35-YourAccount-FriendsRequests.html">
-						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
+						<svg class="olymp-stats-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Account Stats"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-stats-icon"></use></svg>
 						<span class="left-menu-title">Account Stats</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
+						<svg class="olymp-manage-widgets-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="Manage Widgets"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-manage-widgets-icon"></use></svg>
 						<span class="left-menu-title">Manage Widgets</span>
 					</a>
 				</li>
@@ -354,21 +354,21 @@
 				<li>
 					<a href="#">
 
-						<svg class="olymp-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+						<svg class="olymp-menu-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 						<span>Profile Settings</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+						<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 
 						<span>Create Fav Page</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+						<svg class="olymp-logout-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 						<span>Log Out</span>
 					</a>
@@ -418,71 +418,71 @@
 			<ul class="chat-users">
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar67-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar67-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar62-sm.jpg" class="avatar">
-						<span class="icon-status online"></span>
-					</div>
-				</li>
-
-				<li class="inline-items js-chat-open">
-					<div class="author-thumb">
-						<img alt="author" src="img/avatar68-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar62-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 				</li>
 
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar69-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar68-sm.jpg" class="avatar">
+						<span class="icon-status online"></span>
+					</div>
+				</li>
+
+				<li class="inline-items js-chat-open">
+					<div class="author-thumb">
+						<img alt="author" src="../img/avatar69-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 				</li>
 
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar70-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar70-sm.jpg" class="avatar">
 						<span class="icon-status disconected"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar64-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar64-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar71-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar71-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar72-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar72-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar63-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar63-sm.jpg" class="avatar">
 						<span class="icon-status status-invisible"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar72-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar72-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 				</li>
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar71-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar71-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 				</li>
@@ -491,12 +491,12 @@
 
 		<div class="search-friend inline-items">
 			<a href="#" class="js-sidebar-open">
-				<svg class="olymp-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+				<svg class="olymp-menu-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 			</a>
 		</div>
 
 		<a href="#" class="olympus-chat inline-items js-chat-open">
-			<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+			<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 		</a>
 
 	</div>
@@ -514,7 +514,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar67-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar67-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -523,19 +523,19 @@
 						<span class="status">ONLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -545,7 +545,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar62-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar62-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -554,19 +554,19 @@
 						<span class="status">AT WORK!</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -578,7 +578,7 @@
 
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar68-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar68-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -587,19 +587,19 @@
 						<span class="status">ONLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -612,7 +612,7 @@
 
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar69-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar69-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 
@@ -621,19 +621,19 @@
 						<span class="status">AWAY</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -646,7 +646,7 @@
 
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar70-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar70-sm.jpg" class="avatar">
 						<span class="icon-status disconected"></span>
 					</div>
 
@@ -655,19 +655,19 @@
 						<span class="status">OFFLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -687,7 +687,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar64-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar64-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -696,19 +696,19 @@
 						<span class="status">ONLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -726,7 +726,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar71-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar71-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -735,19 +735,19 @@
 						<span class="status">ONLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -758,7 +758,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar72-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar72-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 
@@ -767,19 +767,19 @@
 						<span class="status">AWAY</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -789,7 +789,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar63-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar63-sm.jpg" class="avatar">
 						<span class="icon-status status-invisible"></span>
 					</div>
 
@@ -798,19 +798,19 @@
 						<span class="status">INVISIBLE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -819,7 +819,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar72-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar72-sm.jpg" class="avatar">
 						<span class="icon-status away"></span>
 					</div>
 
@@ -828,19 +828,19 @@
 						<span class="status">AWAY</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -849,7 +849,7 @@
 				<li class="inline-items js-chat-open">
 
 					<div class="author-thumb">
-						<img alt="author" src="img/avatar71-sm.jpg" class="avatar">
+						<img alt="author" src="../img/avatar71-sm.jpg" class="avatar">
 						<span class="icon-status online"></span>
 					</div>
 
@@ -858,19 +858,19 @@
 						<span class="status">ONLINE</span>
 					</div>
 
-					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+					<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 
 						<ul class="more-icons">
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="START CONVERSATION" class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="ADD TO CONVERSATION" class="olymp-add-to-conversation-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-add-to-conversation-icon"></use></svg>
 							</li>
 
 							<li>
-								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
+								<svg data-toggle="tooltip" data-placement="top" data-original-title="BLOCK FROM CHAT" class="olymp-block-from-chat-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-block-from-chat-icon"></use></svg>
 							</li>
 						</ul>
 
@@ -886,18 +886,18 @@
 			</form>
 
 			<a href="29-YourAccount-AccountSettings.html" class="settings">
-				<svg class="olymp-settings-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg>
+				<svg class="olymp-settings-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-settings-icon"></use></svg>
 			</a>
 
 			<a href="#" class="js-sidebar-open">
-				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 		</div>
 
 		<a href="#" class="olympus-chat inline-items js-chat-open">
 
 			<h6 class="olympus-chat-title">OLYMPUS CHAT</h6>
-			<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+			<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 		</a>
 
 	</div>
@@ -913,7 +913,7 @@
 	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right-responsive">
 
 		<a href="#" class="olympus-chat inline-items js-chat-open">
-			<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+			<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 		</a>
 
 	</div>
@@ -936,7 +936,7 @@
 			<div class="form-group with-button">
 				<input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
 				<button>
-					<svg class="olymp-magnifying-glass-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+					<svg class="olymp-magnifying-glass-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
 				</button>
 			</div>
 		</form>
@@ -946,7 +946,7 @@
 		<div class="control-block">
 
 			<div class="control-icon more has-items">
-				<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+				<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 				<div class="label-avatar bg-blue">6</div>
 
 				<div class="more-dropdown more-with-triangle triangle-top-center">
@@ -960,7 +960,7 @@
 						<ul class="notification-list friend-requests">
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar55-sm.jpg" alt="author">
+									<img src="../img/avatar55-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
@@ -969,26 +969,26 @@
 								<span class="notification-icon">
 									<a href="#" class="accept-request">
 										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 									<a href="#" class="accept-request request-del">
 										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar56-sm.jpg" alt="author">
+									<img src="../img/avatar56-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Tony Stevens</a>
@@ -997,43 +997,43 @@
 								<span class="notification-icon">
 									<a href="#" class="accept-request">
 										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 									<a href="#" class="accept-request request-del">
 										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
 							<li class="accepted">
 								<div class="author-thumb">
-									<img src="img/avatar57-sm.jpg" alt="author">
+									<img src="../img/avatar57-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
 								</div>
 								<span class="notification-icon">
-									<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+									<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar58-sm.jpg" alt="author">
+									<img src="../img/avatar58-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Stagg Clothing</a>
@@ -1042,20 +1042,20 @@
 								<span class="notification-icon">
 									<a href="#" class="accept-request">
 										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 									<a href="#" class="accept-request request-del">
 										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 									</a>
 
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
@@ -1067,7 +1067,7 @@
 			</div>
 
 			<div class="control-icon more has-items">
-				<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+				<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 				<div class="label-avatar bg-purple">2</div>
 
 				<div class="more-dropdown more-with-triangle triangle-top-center">
@@ -1081,7 +1081,7 @@
 						<ul class="notification-list chat-message">
 							<li class="message-unread">
 								<div class="author-thumb">
-									<img src="img/avatar59-sm.jpg" alt="author">
+									<img src="../img/avatar59-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -1089,16 +1089,16 @@
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 								<span class="notification-icon">
-									<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+									<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 								</span>
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar60-sm.jpg" alt="author">
+									<img src="../img/avatar60-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Jake Parker</a>
@@ -1106,16 +1106,16 @@
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 								<span class="notification-icon">
-									<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+									<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 								</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar61-sm.jpg" alt="author">
+									<img src="../img/avatar61-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Elaine Dreyfuss</a>
@@ -1123,19 +1123,19 @@
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 9:56pm</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+										<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 									</span>
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
 							<li class="chat-group">
 								<div class="author-thumb">
-									<img src="img/avatar11-sm.jpg" alt="author">
-									<img src="img/avatar12-sm.jpg" alt="author">
-									<img src="img/avatar13-sm.jpg" alt="author">
-									<img src="img/avatar10-sm.jpg" alt="author">
+									<img src="../img/avatar11-sm.jpg" alt="author">
+									<img src="../img/avatar12-sm.jpg" alt="author">
+									<img src="../img/avatar13-sm.jpg" alt="author">
+									<img src="../img/avatar10-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">You, Faye, Ed &amp; Jet +3</a>
@@ -1144,10 +1144,10 @@
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 16th at 10:23am</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+										<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 									</span>
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 						</ul>
@@ -1158,7 +1158,7 @@
 			</div>
 
 			<div class="control-icon more has-items">
-				<svg class="olymp-thunder-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+				<svg class="olymp-thunder-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 
 				<div class="label-avatar bg-primary">8</div>
 
@@ -1173,96 +1173,96 @@
 						<ul class="notification-list">
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar62-sm.jpg" alt="author">
+									<img src="../img/avatar62-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+										<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 									</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
 							<li class="un-read">
 								<div class="author-thumb">
-									<img src="img/avatar63-sm.jpg" alt="author">
+									<img src="../img/avatar63-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div>You and <a href="#" class="h6 notification-friend">Nicholas Grissom</a> just became friends. Write on <a href="#" class="notification-link">his wall</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 hours ago</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+										<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 									</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
 							<li class="with-comment-photo">
 								<div class="author-thumb">
-									<img src="img/avatar64-sm.jpg" alt="author">
+									<img src="../img/avatar64-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">Sarah Hetfield</a> commented on your <a href="#" class="notification-link">photo</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 5:32am</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+										<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 									</span>
 
 								<div class="comment-photo">
-									<img src="img/comment-photo1.jpg" alt="photo">
+									<img src="../img/comment-photo1.jpg" alt="photo">
 									<span>“She looks incredible in that outfit! We should see each...”</span>
 								</div>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar65-sm.jpg" alt="author">
+									<img src="../img/avatar65-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">Green Goo Rock</a> invited you to attend to his event Goo in <a href="#" class="notification-link">Gotham Bar</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 5th at 6:43pm</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+										<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 									</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
 							<li>
 								<div class="author-thumb">
-									<img src="img/avatar66-sm.jpg" alt="author">
+									<img src="../img/avatar66-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">James Summers</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 2nd at 8:29pm</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+										<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 									</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 						</ul>
@@ -1274,7 +1274,7 @@
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
-					<img alt="author" src="img/author-page.jpg" class="avatar">
+					<img alt="author" src="../img/author-page.jpg" class="avatar">
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -1286,21 +1286,21 @@
 								<li>
 									<a href="29-YourAccount-AccountSettings.html">
 
-										<svg class="olymp-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
+										<svg class="olymp-menu-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 										<span>Profile Settings</span>
 									</a>
 								</li>
 								<li>
 									<a href="36-FavPage-SettingsAndCreatePopup.html">
-										<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+										<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 
 										<span>Create Fav Page</span>
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+										<svg class="olymp-logout-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 										<span>Log Out</span>
 									</a>
@@ -1347,7 +1347,7 @@
 								<input class="form-control" placeholder="" type="text" value="Space Cowboy">
 
 								<button class="bg-purple">
-									<svg class="olymp-check-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-check-icon"></use></svg>
+									<svg class="olymp-check-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-check-icon"></use></svg>
 								</button>
 							</form>
 
@@ -1383,7 +1383,7 @@
 				</div>
 				<a href="02-ProfilePage.html" class="author-name fn">
 					<div class="author-title">
-						James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+						James Spiegel <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
 					<span class="author-subtitle">SPACE COWBOY</span>
 				</a>
@@ -1406,7 +1406,7 @@
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#request" role="tab">
 					<div class="control-icon has-items">
-						<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+						<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 						<div class="label-avatar bg-blue">6</div>
 					</div>
 				</a>
@@ -1415,7 +1415,7 @@
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#chat" role="tab">
 					<div class="control-icon has-items">
-						<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+						<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 						<div class="label-avatar bg-purple">2</div>
 					</div>
 				</a>
@@ -1424,7 +1424,7 @@
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#notification" role="tab">
 					<div class="control-icon has-items">
-						<svg class="olymp-thunder-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+						<svg class="olymp-thunder-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 						<div class="label-avatar bg-primary">8</div>
 					</div>
 				</a>
@@ -1432,8 +1432,8 @@
 
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#search" role="tab">
-					<svg class="olymp-magnifying-glass-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-magnifying-glass-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</li>
 		</ul>
@@ -1453,7 +1453,7 @@
 				<ul class="notification-list friend-requests">
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar55-sm.jpg" alt="author">
+							<img src="../img/avatar55-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
@@ -1462,25 +1462,25 @@
 									<span class="notification-icon">
 										<a href="#" class="accept-request">
 											<span class="icon-add without-text">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 										<a href="#" class="accept-request request-del">
 											<span class="icon-minus">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 									</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar56-sm.jpg" alt="author">
+							<img src="../img/avatar56-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Tony Stevens</a>
@@ -1489,41 +1489,41 @@
 									<span class="notification-icon">
 										<a href="#" class="accept-request">
 											<span class="icon-add without-text">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 										<a href="#" class="accept-request request-del">
 											<span class="icon-minus">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 									</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 					<li class="accepted">
 						<div class="author-thumb">
-							<img src="img/avatar57-sm.jpg" alt="author">
+							<img src="../img/avatar57-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
 						</div>
 									<span class="notification-icon">
-										<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+										<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 									</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar58-sm.jpg" alt="author">
+							<img src="../img/avatar58-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Stagg Clothing</a>
@@ -1532,20 +1532,20 @@
 									<span class="notification-icon">
 										<a href="#" class="accept-request">
 											<span class="icon-add without-text">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 										<a href="#" class="accept-request request-del">
 											<span class="icon-minus">
-												<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+												<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 											</span>
 										</a>
 
 									</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 				</ul>
@@ -1566,7 +1566,7 @@
 				<ul class="notification-list chat-message">
 					<li class="message-unread">
 						<div class="author-thumb">
-							<img src="img/avatar59-sm.jpg" alt="author">
+							<img src="../img/avatar59-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -1574,16 +1574,16 @@
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 						</div>
 									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+										<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 									</span>
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar60-sm.jpg" alt="author">
+							<img src="../img/avatar60-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Jake Parker</a>
@@ -1591,16 +1591,16 @@
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 						</div>
 									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+										<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 									</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar61-sm.jpg" alt="author">
+							<img src="../img/avatar61-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Elaine Dreyfuss</a>
@@ -1608,19 +1608,19 @@
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 9:56pm</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+											<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 										</span>
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 
 					<li class="chat-group">
 						<div class="author-thumb">
-							<img src="img/avatar11-sm.jpg" alt="author">
-							<img src="img/avatar12-sm.jpg" alt="author">
-							<img src="img/avatar13-sm.jpg" alt="author">
-							<img src="img/avatar10-sm.jpg" alt="author">
+							<img src="../img/avatar11-sm.jpg" alt="author">
+							<img src="../img/avatar12-sm.jpg" alt="author">
+							<img src="../img/avatar13-sm.jpg" alt="author">
+							<img src="../img/avatar10-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">You, Faye, Ed &amp; Jet +3</a>
@@ -1629,10 +1629,10 @@
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 16th at 10:23am</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+											<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 										</span>
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 				</ul>
@@ -1654,96 +1654,96 @@
 				<ul class="notification-list">
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar62-sm.jpg" alt="author">
+							<img src="../img/avatar62-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+											<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 										</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 
 					<li class="un-read">
 						<div class="author-thumb">
-							<img src="img/avatar63-sm.jpg" alt="author">
+							<img src="../img/avatar63-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div>You and <a href="#" class="h6 notification-friend">Nicholas Grissom</a> just became friends. Write on <a href="#" class="notification-link">his wall</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">9 hours ago</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 
 					<li class="with-comment-photo">
 						<div class="author-thumb">
-							<img src="img/avatar64-sm.jpg" alt="author">
+							<img src="../img/avatar64-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Sarah Hetfield</a> commented on your <a href="#" class="notification-link">photo</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">Yesterday at 5:32am</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+											<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 										</span>
 
 						<div class="comment-photo">
-							<img src="img/comment-photo1.jpg" alt="photo">
+							<img src="../img/comment-photo1.jpg" alt="photo">
 							<span>“She looks incredible in that outfit! We should see each...”</span>
 						</div>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar65-sm.jpg" alt="author">
+							<img src="../img/avatar65-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Green Goo Rock</a> invited you to attend to his event Goo in <a href="#" class="notification-link">Gotham Bar</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 5th at 6:43pm</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+											<svg class="olymp-happy-face-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 										</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar66-sm.jpg" alt="author">
+							<img src="../img/avatar66-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">James Summers</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">March 2nd at 8:29pm</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+											<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 										</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 				</ul>
@@ -1781,10 +1781,10 @@
 			<div class="ui-block">
 				<div class="top-header top-header-favorit">
 					<div class="top-header-thumb">
-						<img src="img/top-header2.jpg" alt="nature">
+						<img src="../img/top-header2.jpg" alt="nature">
 						<div class="top-header-author">
 							<div class="author-thumb">
-								<img src="img/author-main2.jpg" alt="author">
+								<img src="../img/author-main2.jpg" alt="author">
 							</div>
 							<div class="author-content">
 								<a href="#" class="h3 author-name">Green Goo Rock</a>
@@ -1820,11 +1820,11 @@
 
 						<div class="control-block-button">
 							<a href="#" class="btn btn-control bg-primary">
-								<svg class="olymp-star-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+								<svg class="olymp-star-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 							</a>
 
 							<a href="#" class="btn btn-control bg-purple">
-								<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+								<svg class="olymp-chat---messages-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 							</a>
 
 						</div>
@@ -1849,7 +1849,7 @@
 					<article class="hentry post">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="img/avatar5-sm.jpg" alt="author">
+							<img src="../img/avatar5-sm.jpg" alt="author">
 					
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
@@ -1860,7 +1860,7 @@
 								</div>
 							</div>
 					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
 										<a href="#">Edit Post</a>
@@ -1887,34 +1887,34 @@
 						<div class="post-additional-info inline-items">
 					
 							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+								<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 								<span>36</span>
 							</a>
 					
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic7.jpg" alt="friend">
+										<img src="../img/friend-harmonic7.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic8.jpg" alt="friend">
+										<img src="../img/friend-harmonic8.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic9.jpg" alt="friend">
+										<img src="../img/friend-harmonic9.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic10.jpg" alt="friend">
+										<img src="../img/friend-harmonic10.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic11.jpg" alt="friend">
+										<img src="../img/friend-harmonic11.jpg" alt="friend">
 									</a>
 								</li>
 							</ul>
@@ -1927,12 +1927,12 @@
 					
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-speech-balloon-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+									<svg class="olymp-speech-balloon-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>17</span>
 								</a>
 					
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+									<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 									<span>24</span>
 								</a>
 							</div>
@@ -1943,15 +1943,15 @@
 						<div class="control-block-button post-control-button">
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-like-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
+								<svg class="olymp-like-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+								<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 							</a>
 					
 						</div>
@@ -1966,7 +1966,7 @@
 					<ul class="comments-list">
 						<li class="comment-item">
 							<div class="post__author author vcard inline-items">
-								<img src="img/avatar2-sm.jpg" alt="author">
+								<img src="../img/avatar2-sm.jpg" alt="author">
 					
 								<div class="author-date">
 									<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
@@ -1977,21 +1977,21 @@
 									</div>
 								</div>
 					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					
 							</div>
 					
 							<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
 					
 							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+								<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 								<span>6</span>
 							</a>
 							<a href="#" class="reply">Reply</a>
 						</li>
 						<li class="comment-item">
 							<div class="post__author author vcard inline-items">
-								<img src="img/avatar19-sm.jpg" alt="author">
+								<img src="../img/avatar19-sm.jpg" alt="author">
 					
 								<div class="author-date">
 									<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
@@ -2002,7 +2002,7 @@
 									</div>
 								</div>
 					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					
 							</div>
 					
@@ -2011,7 +2011,7 @@
 							</p>
 					
 							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+								<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 								<span>8</span>
 							</a>
 							<a href="#" class="reply">Reply</a>
@@ -2028,14 +2028,14 @@
 					<form class="comment-form inline-items">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="img/author-page.jpg" alt="author">
+							<img src="../img/author-page.jpg" alt="author">
 					
 							<div class="form-group with-icon-right ">
 								<textarea class="form-control" placeholder=""></textarea>
 								<div class="add-options-message">
 									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 										<svg class="olymp-camera-icon">
-											<use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+											<use xlink:href="../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 										</svg>
 									</a>
 								</div>
@@ -2059,7 +2059,7 @@
 					<article class="hentry post has-post-thumbnail">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="img/avatar5-sm.jpg" alt="author">
+							<img src="../img/avatar5-sm.jpg" alt="author">
 					
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
@@ -2070,7 +2070,7 @@
 								</div>
 							</div>
 					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
 										<a href="#">Edit Post</a>
@@ -2094,40 +2094,40 @@
 						</p>
 					
 						<div class="post-thumb">
-							<img src="img/post__thumb1.jpg" alt="photo">
+							<img src="../img/post__thumb1.jpg" alt="photo">
 						</div>
 					
 						<div class="post-additional-info inline-items">
 					
 							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+								<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 								<span>49</span>
 							</a>
 					
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic9.jpg" alt="friend">
+										<img src="../img/friend-harmonic9.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic10.jpg" alt="friend">
+										<img src="../img/friend-harmonic10.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic7.jpg" alt="friend">
+										<img src="../img/friend-harmonic7.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic8.jpg" alt="friend">
+										<img src="../img/friend-harmonic8.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic11.jpg" alt="friend">
+										<img src="../img/friend-harmonic11.jpg" alt="friend">
 									</a>
 								</li>
 							</ul>
@@ -2140,12 +2140,12 @@
 					
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-speech-balloon-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+									<svg class="olymp-speech-balloon-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>264</span>
 								</a>
 					
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+									<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 									<span>37</span>
 								</a>
 							</div>
@@ -2156,15 +2156,15 @@
 						<div class="control-block-button post-control-button">
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-like-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
+								<svg class="olymp-like-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+								<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 							</a>
 					
 						</div>
@@ -2181,7 +2181,7 @@
 					<article class="hentry post video">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="img/avatar5-sm.jpg" alt="author">
+							<img src="../img/avatar5-sm.jpg" alt="author">
 					
 							<div class="author-date">
 								<a class="h6 post__author-name fn" href="#">Gren Goo Rock</a> shared a <a href="#">link</a>
@@ -2192,7 +2192,7 @@
 								</div>
 							</div>
 					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								<ul class="more-dropdown">
 									<li>
 										<a href="#">Edit Post</a>
@@ -2215,9 +2215,9 @@
 					
 						<div class="post-video">
 							<div class="video-thumb">
-								<img src="img/video-youtube.jpg" alt="photo">
+								<img src="../img/video-youtube.jpg" alt="photo">
 								<a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video">
-									<svg class="olymp-play-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-play-icon"></use></svg>
+									<svg class="olymp-play-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-play-icon"></use></svg>
 								</a>
 							</div>
 					
@@ -2233,34 +2233,34 @@
 						<div class="post-additional-info inline-items">
 					
 							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+								<svg class="olymp-heart-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 								<span>18</span>
 							</a>
 					
 							<ul class="friends-harmonic">
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic9.jpg" alt="friend">
+										<img src="../img/friend-harmonic9.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic10.jpg" alt="friend">
+										<img src="../img/friend-harmonic10.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic7.jpg" alt="friend">
+										<img src="../img/friend-harmonic7.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic8.jpg" alt="friend">
+										<img src="../img/friend-harmonic8.jpg" alt="friend">
 									</a>
 								</li>
 								<li>
 									<a href="#">
-										<img src="img/friend-harmonic11.jpg" alt="friend">
+										<img src="../img/friend-harmonic11.jpg" alt="friend">
 									</a>
 								</li>
 							</ul>
@@ -2272,12 +2272,12 @@
 					
 							<div class="comments-shared">
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-speech-balloon-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+									<svg class="olymp-speech-balloon-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 									<span>0</span>
 								</a>
 					
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+									<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 									<span>16</span>
 								</a>
 							</div>
@@ -2288,15 +2288,15 @@
 						<div class="control-block-button post-control-button">
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-like-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
+								<svg class="olymp-like-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-like-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-comments-post-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								<svg class="olymp-comments-post-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 							</a>
 					
 							<a href="#" class="btn btn-control">
-								<svg class="olymp-share-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
+								<svg class="olymp-share-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-share-icon"></use></svg>
 							</a>
 					
 						</div>
@@ -2305,7 +2305,7 @@
 					
 					<!-- ... end Post -->				</div>
 			</div>
-			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 
 		</div>
 
@@ -2313,7 +2313,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Page Intro</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
 					
@@ -2371,7 +2371,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Location</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 
 				
@@ -2402,7 +2402,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Faved this Page</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
 					
@@ -2411,72 +2411,72 @@
 					<ul class="widget w-faved-page">
 						<li>
 							<a href="#">
-								<img src="img/faved-page1.jpg" alt="user">
+								<img src="../img/faved-page1.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page2.jpg" alt="user">
+								<img src="../img/faved-page2.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page3.jpg" alt="user">
+								<img src="../img/faved-page3.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page4.jpg" alt="user">
+								<img src="../img/faved-page4.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page5.jpg" alt="user">
+								<img src="../img/faved-page5.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page6.jpg" alt="user">
+								<img src="../img/faved-page6.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page7.jpg" alt="user">
+								<img src="../img/faved-page7.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page8.jpg" alt="user">
+								<img src="../img/faved-page8.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page9.jpg" alt="user">
+								<img src="../img/faved-page9.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page7.jpg" alt="user">
+								<img src="../img/faved-page7.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page10.jpg" alt="user">
+								<img src="../img/faved-page10.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page11.jpg" alt="user">
+								<img src="../img/faved-page11.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page7.jpg" alt="user">
+								<img src="../img/faved-page7.jpg" alt="user">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/faved-page12.jpg" alt="user">
+								<img src="../img/faved-page12.jpg" alt="user">
 							</a>
 						</li>
 						<li class="all-users">
@@ -2491,7 +2491,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Twitter Feed</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 
 				
@@ -2500,7 +2500,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="img/twitter-avatar.png" alt="avatar">
+							<img src="../img/twitter-avatar.png" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Green Goo Rock</a>
 								<a href="#" class="group">@greengoo_rock</a>
@@ -2516,7 +2516,7 @@
 					</li>
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="img/twitter-avatar.png" alt="avatar">
+							<img src="../img/twitter-avatar.png" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Green Goo Rock</a>
 								<a href="#" class="group">@greengoo_rock</a>
@@ -2532,7 +2532,7 @@
 					</li>
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="img/twitter-avatar.png" alt="avatar">
+							<img src="../img/twitter-avatar.png" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Green Goo Rock</a>
 								<a href="#" class="group">@greengoo_rock</a>
@@ -2555,7 +2555,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Last Photos</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
 					
@@ -2563,48 +2563,48 @@
 					
 					<ul class="widget w-last-photo js-zoom-gallery">
 						<li>
-							<a href="img/last-photo1-large.jpg">
-								<img src="img/last-photo1-large.jpg" alt="photo">
+							<a href="../img/last-photo1-large.jpg">
+								<img src="../img/last-photo1-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo2-large.jpg">
-								<img src="img/last-photo2-large.jpg" alt="photo">
+							<a href="../img/last-photo2-large.jpg">
+								<img src="../img/last-photo2-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo3-large.jpg">
-								<img src="img/last-photo3-large.jpg" alt="photo">
+							<a href="../img/last-photo3-large.jpg">
+								<img src="../img/last-photo3-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo4-large.jpg">
-								<img src="img/last-photo4-large.jpg" alt="photo">
+							<a href="../img/last-photo4-large.jpg">
+								<img src="../img/last-photo4-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-phot11-large.jpg">
-								<img src="img/last-phot11-large.jpg" alt="photo">
+							<a href="../img/last-phot11-large.jpg">
+								<img src="../img/last-phot11-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-phot12-large.jpg">
-								<img src="img/last-phot12-large.jpg" alt="photo">
+							<a href="../img/last-phot12-large.jpg">
+								<img src="../img/last-phot12-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo7-large.jpg">
-								<img src="img/last-photo7-large.jpg" alt="photo">
+							<a href="../img/last-photo7-large.jpg">
+								<img src="../img/last-photo7-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo8-large.jpg">
-								<img src="img/last-photo8-large.jpg" alt="photo">
+							<a href="../img/last-photo8-large.jpg">
+								<img src="../img/last-photo8-large.jpg" alt="photo">
 							</a>
 						</li>
 						<li>
-							<a href="img/last-photo9-large.jpg">
-								<img src="img/last-photo9-large.jpg" alt="photo">
+							<a href="../img/last-photo9-large.jpg">
+								<img src="../img/last-photo9-large.jpg" alt="photo">
 							</a>
 						</li>
 					</ul>
@@ -2617,7 +2617,7 @@
 					<h6 class="title">Green Goo’s Playlist</h6>
 					<a href="#" class="more">
 						<span class="c-green">
-							<svg class="olymp-remove-playlist-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-remove-playlist-icon"></use></svg>
+							<svg class="olymp-remove-playlist-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-remove-playlist-icon"></use></svg>
 						</span>
 					</a>
 				</div>
@@ -2627,11 +2627,11 @@
 				<ol class="widget w-playlist">
 					<li class="js-open-popup" data-popup-target=".playlist-popup">
 						<div class="playlist-thumb">
-							<img src="img/playlist6.jpg" alt="thumb-composition">
+							<img src="../img/playlist6.jpg" alt="thumb-composition">
 							<div class="overlay"></div>
 							<a href="#" class="play-icon">
 								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
+									<use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
 								</svg>
 							</a>
 						</div>
@@ -2645,7 +2645,7 @@
 							<time class="published" datetime="2017-03-24T18:18">3:22</time>
 							<div class="more">
 								<svg class="olymp-three-dots-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
 								</svg>
 								<ul class="more-dropdown">
 									<li>
@@ -2662,11 +2662,11 @@
 				
 					<li class="js-open-popup" data-popup-target=".playlist-popup">
 						<div class="playlist-thumb">
-							<img src="img/playlist7.jpg" alt="thumb-composition">
+							<img src="../img/playlist7.jpg" alt="thumb-composition">
 							<div class="overlay"></div>
 							<a href="#" class="play-icon">
 								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
+									<use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
 								</svg>
 							</a>
 						</div>
@@ -2680,7 +2680,7 @@
 							<time class="published" datetime="2017-03-24T18:18">5:48</time>
 							<div class="more">
 								<svg class="olymp-three-dots-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
 								</svg>
 								<ul class="more-dropdown">
 									<li>
@@ -2696,11 +2696,11 @@
 					</li>
 					<li class="js-open-popup" data-popup-target=".playlist-popup">
 						<div class="playlist-thumb">
-							<img src="img/playlist8.jpg" alt="thumb-composition">
+							<img src="../img/playlist8.jpg" alt="thumb-composition">
 							<div class="overlay"></div>
 							<a href="#" class="play-icon">
 								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
+									<use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
 								</svg>
 							</a>
 						</div>
@@ -2714,7 +2714,7 @@
 							<time class="published" datetime="2017-03-24T18:18">3:06</time>
 							<div class="more">
 								<svg class="olymp-three-dots-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
 								</svg>
 								<ul class="more-dropdown">
 									<li>
@@ -2730,11 +2730,11 @@
 					</li>
 					<li class="js-open-popup" data-popup-target=".playlist-popup">
 						<div class="playlist-thumb">
-							<img src="img/playlist9.jpg" alt="thumb-composition">
+							<img src="../img/playlist9.jpg" alt="thumb-composition">
 							<div class="overlay"></div>
 							<a href="#" class="play-icon">
 								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
+									<use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
 								</svg>
 							</a>
 						</div>
@@ -2748,7 +2748,7 @@
 							<time class="published" datetime="2017-03-24T18:18">6:17</time>
 							<div class="more">
 								<svg class="olymp-three-dots-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
 								</svg>
 								<ul class="more-dropdown">
 									<li>
@@ -2764,11 +2764,11 @@
 					</li>
 					<li class="js-open-popup" data-popup-target=".playlist-popup">
 						<div class="playlist-thumb">
-							<img src="img/playlist10.jpg" alt="thumb-composition">
+							<img src="../img/playlist10.jpg" alt="thumb-composition">
 							<div class="overlay"></div>
 							<a href="#" class="play-icon">
 								<svg class="olymp-music-play-icon-big">
-									<use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
+									<use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use>
 								</svg>
 							</a>
 						</div>
@@ -2782,7 +2782,7 @@
 							<time class="published" datetime="2017-03-24T18:18">5:40</time>
 							<div class="more">
 								<svg class="olymp-three-dots-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
 								</svg>
 								<ul class="more-dropdown">
 									<li>
@@ -2804,7 +2804,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Green Goo's Poll</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
 					<!-- W-Pool -->
@@ -2838,47 +2838,47 @@
 								<ul class="friends-harmonic">
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic1.jpg" alt="friend">
+											<img src="../img/friend-harmonic1.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic2.jpg" alt="friend">
+											<img src="../img/friend-harmonic2.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic3.jpg" alt="friend">
+											<img src="../img/friend-harmonic3.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic4.jpg" alt="friend">
+											<img src="../img/friend-harmonic4.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic5.jpg" alt="friend">
+											<img src="../img/friend-harmonic5.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic6.jpg" alt="friend">
+											<img src="../img/friend-harmonic6.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic7.jpg" alt="friend">
+											<img src="../img/friend-harmonic7.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic8.jpg" alt="friend">
+											<img src="../img/friend-harmonic8.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic9.jpg" alt="friend">
+											<img src="../img/friend-harmonic9.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
@@ -2912,37 +2912,37 @@
 								<ul class="friends-harmonic">
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic7.jpg" alt="friend">
+											<img src="../img/friend-harmonic7.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic8.jpg" alt="friend">
+											<img src="../img/friend-harmonic8.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic9.jpg" alt="friend">
+											<img src="../img/friend-harmonic9.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic10.jpg" alt="friend">
+											<img src="../img/friend-harmonic10.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic11.jpg" alt="friend">
+											<img src="../img/friend-harmonic11.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic12.jpg" alt="friend">
+											<img src="../img/friend-harmonic12.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic13.jpg" alt="friend">
+											<img src="../img/friend-harmonic13.jpg" alt="friend">
 										</a>
 									</li>
 								</ul>
@@ -2974,12 +2974,12 @@
 								<ul class="friends-harmonic">
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic14.jpg" alt="friend">
+											<img src="../img/friend-harmonic14.jpg" alt="friend">
 										</a>
 									</li>
 									<li>
 										<a href="#">
-											<img src="img/friend-harmonic15.jpg" alt="friend">
+											<img src="../img/friend-harmonic15.jpg" alt="friend">
 										</a>
 									</li>
 								</ul>
@@ -2995,7 +2995,7 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Last Videos</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				<div class="ui-block-content">
 					<!-- W-Latest-Video -->
@@ -3004,10 +3004,10 @@
 						<li>
 							<a href="https://vimeo.com/ondemand/viewfromabluemoon4k/147865858" class="play-video play-video--small">
 								<svg class="olymp-play-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-play-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
 								</svg>
 							</a>
-							<img src="img/video8.jpg" alt="video">
+							<img src="../img/video8.jpg" alt="video">
 							<div class="video-content">
 								<div class="title">System of a Revenge - Hypnotize...</div>
 								<time class="published" datetime="2017-03-24T18:18">3:25</time>
@@ -3017,10 +3017,10 @@
 						<li>
 							<a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video play-video--small">
 								<svg class="olymp-play-icon">
-									<use xlink:href="svg-icons/sprites/icons.svg#olymp-play-icon"></use>
+									<use xlink:href="../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
 								</svg>
 							</a>
-							<img src="img/video7.jpg" alt="video">
+							<img src="../img/video7.jpg" alt="video">
 							<div class="video-content">
 								<div class="title">Green Goo - Live at Dan’s Arena</div>
 								<time class="published" datetime="2017-03-24T18:18">5:48</time>
@@ -3043,7 +3043,7 @@
 <div class="window-popup playlist-popup" tabindex="-1" role="dialog" aria-labelledby="playlist-popup" aria-hidden="true">
 
 	<a href="" class="icon-close js-close-popup">
-		<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+		<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 	</a>
 
 	<div class="mCustomScrollbar">
@@ -3092,12 +3092,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist19.jpg" alt="thumb-composition">
+					<img src="../img/playlist19.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3122,7 +3122,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3130,12 +3130,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist6.jpg" alt="thumb-composition">
+					<img src="../img/playlist6.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3160,7 +3160,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3168,12 +3168,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist7.jpg" alt="thumb-composition">
+					<img src="../img/playlist7.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3198,7 +3198,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3206,12 +3206,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist8.jpg" alt="thumb-composition">
+					<img src="../img/playlist8.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3236,7 +3236,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3244,12 +3244,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist9.jpg" alt="thumb-composition">
+					<img src="../img/playlist9.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3274,7 +3274,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3282,12 +3282,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist10.jpg" alt="thumb-composition">
+					<img src="../img/playlist10.jpg" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -3312,7 +3312,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -3329,7 +3329,7 @@
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 
 			<div class="modal-header">
@@ -3338,7 +3338,7 @@
 
 			<div class="modal-body">
 				<a href="#" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+				<svg class="olymp-computer-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 
 				<h6>Upload Photo</h6>
 				<span>Browse your computer.</span>
@@ -3346,7 +3346,7 @@
 
 				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
-			<svg class="olymp-photos-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+			<svg class="olymp-photos-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 
 			<h6>Choose from My Photos</h6>
 			<span>Choose from your uploaded photos</span>
@@ -3366,7 +3366,7 @@
 
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 			<div class="modal-header">
 				<h6 class="title">Choose from My Photos</h6>
@@ -3375,12 +3375,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
-							<svg class="olymp-photos-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+							<svg class="olymp-photos-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-expanded="false">
-							<svg class="olymp-albums-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-albums-icon"></use></svg>
+							<svg class="olymp-albums-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-albums-icon"></use></svg>
 						</a>
 					</li>
 				</ul>
@@ -3394,7 +3394,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo1.jpg" alt="photo">
+									<img src="../img/choose-photo1.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3402,7 +3402,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo2.jpg" alt="photo">
+									<img src="../img/choose-photo2.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3410,32 +3410,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo3.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="img/choose-photo4.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="img/choose-photo5.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="img/choose-photo6.jpg" alt="photo">
+									<img src="../img/choose-photo3.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3444,7 +3419,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo7.jpg" alt="photo">
+									<img src="../img/choose-photo4.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3452,7 +3427,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo8.jpg" alt="photo">
+									<img src="../img/choose-photo5.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3460,7 +3435,32 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="img/choose-photo9.jpg" alt="photo">
+									<img src="../img/choose-photo6.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../img/choose-photo7.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../img/choose-photo8.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../img/choose-photo9.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -3475,7 +3475,7 @@
 
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo10.jpg" alt="photo">
+								<img src="../img/choose-photo10.jpg" alt="photo">
 								<figcaption>
 									<a href="#">South America Vacations</a>
 									<span>Last Added: 2 hours ago</span>
@@ -3484,7 +3484,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo11.jpg" alt="photo">
+								<img src="../img/choose-photo11.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Photoshoot Summer 2016</a>
 									<span>Last Added: 5 weeks ago</span>
@@ -3493,7 +3493,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo12.jpg" alt="photo">
+								<img src="../img/choose-photo12.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Amazing Street Food</a>
 									<span>Last Added: 6 mins ago</span>
@@ -3503,7 +3503,7 @@
 
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo13.jpg" alt="photo">
+								<img src="../img/choose-photo13.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Graffity & Street Art</a>
 									<span>Last Added: 16 hours ago</span>
@@ -3512,7 +3512,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo14.jpg" alt="photo">
+								<img src="../img/choose-photo14.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Amazing Landscapes</a>
 									<span>Last Added: 13 mins ago</span>
@@ -3521,7 +3521,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="img/choose-photo15.jpg" alt="photo">
+								<img src="../img/choose-photo15.jpg" alt="photo">
 								<figcaption>
 									<a href="#">The Majestic Canyon</a>
 									<span>Last Added: 57 mins ago</span>
@@ -3544,7 +3544,7 @@
 
 
 <a class="back-to-top" href="#">
-	<img src="svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
+	<img src="../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
 </a>
 
 
@@ -3559,8 +3559,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -3568,7 +3568,7 @@
 				<ul class="notification-list chat-message chat-message-field">
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -3578,7 +3578,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/author-page.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../img/author-page.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -3589,7 +3589,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -3606,146 +3606,146 @@
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="#" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 				</a>
 				<div class="options-message smile-block">
 
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-sticker-icon"></use></svg>
+					<svg class="olymp-happy-sticker-icon"><use xlink:href="../svg-icons/sprites/icons.svg#olymp-happy-sticker-icon"></use></svg>
 
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>
 							<a href="#">
-								<img src="img/icon-chat1.png" alt="icon">
+								<img src="../img/icon-chat1.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat2.png" alt="icon">
+								<img src="../img/icon-chat2.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat3.png" alt="icon">
+								<img src="../img/icon-chat3.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat4.png" alt="icon">
+								<img src="../img/icon-chat4.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat5.png" alt="icon">
+								<img src="../img/icon-chat5.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat6.png" alt="icon">
+								<img src="../img/icon-chat6.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat7.png" alt="icon">
+								<img src="../img/icon-chat7.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat8.png" alt="icon">
+								<img src="../img/icon-chat8.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat9.png" alt="icon">
+								<img src="../img/icon-chat9.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat10.png" alt="icon">
+								<img src="../img/icon-chat10.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat11.png" alt="icon">
+								<img src="../img/icon-chat11.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat12.png" alt="icon">
+								<img src="../img/icon-chat12.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat13.png" alt="icon">
+								<img src="../img/icon-chat13.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat14.png" alt="icon">
+								<img src="../img/icon-chat14.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat15.png" alt="icon">
+								<img src="../img/icon-chat15.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat16.png" alt="icon">
+								<img src="../img/icon-chat16.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat17.png" alt="icon">
+								<img src="../img/icon-chat17.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat18.png" alt="icon">
+								<img src="../img/icon-chat18.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat19.png" alt="icon">
+								<img src="../img/icon-chat19.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat20.png" alt="icon">
+								<img src="../img/icon-chat20.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat21.png" alt="icon">
+								<img src="../img/icon-chat21.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat22.png" alt="icon">
+								<img src="../img/icon-chat22.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat23.png" alt="icon">
+								<img src="../img/icon-chat23.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat24.png" alt="icon">
+								<img src="../img/icon-chat24.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat25.png" alt="icon">
+								<img src="../img/icon-chat25.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat26.png" alt="icon">
+								<img src="../img/icon-chat26.png" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat27.png" alt="icon">
+								<img src="../img/icon-chat27.png" alt="icon">
 							</a>
 						</li>
 					</ul>
