@@ -4,6 +4,8 @@
 /*------------------------------------------------------------------
 
 4677, 4679, 4777 . para el form del login
+1545 texto del nombre en el perfil
+1345 poner a la derecha el icono de la estrella en el banner
 
 Project name: "Olympus",
 Version: "1.0.0",
@@ -1339,7 +1341,8 @@ Description: "HTML-template"
     top: auto;
     position: absolute; }
   .top-header.top-header-favorit .profile-section .control-block-button {
-    right: 38px;
+    /*right: 38px;*/
+    right: 1px;
     top: -31px;
     left: auto;
     -webkit-transform: none;
@@ -1437,7 +1440,7 @@ Description: "HTML-template"
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: fixed;
+    position: fixed; 
     height: 100vh;
     width: 270px;
     -webkit-transform: translateX(calc(100% + 70px));
@@ -1542,7 +1545,7 @@ Description: "HTML-template"
     border-width: 2px; }
   .top-header.top-header-favorit .author-content {
     /*margin-top: 0;*/
-    margin-top: 25%; }
+    margin-top: 20%; }
   .top-header.top-header-favorit .profile-menu {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
