@@ -86,7 +86,7 @@
                     Crear Curso
                 </div>
                 
-                <form method = "POST" action ={{route('courses.store')}} >
+                <form method = "POST" action ={{ route('courses.store') }} >
 
                         @csrf
 

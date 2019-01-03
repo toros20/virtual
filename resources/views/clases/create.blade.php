@@ -116,12 +116,24 @@
                         </label></p>
 
                         <p><label for="oficial">
-                            Modalidad
+                            Clase Oficial
                             <select name="oficial">
                                 <option value=1>Si es Oficial</option>
                                 <option value=0>No es Oficial</option>
                             </select>
                         </label></p>
+                        <p>
+
+                        <p><label for="modality">
+                            Modalidad
+                            <select name="modality_id">
+                                <option value=0>Seleccione Modalidad</option>
+                                @foreach ($modalities as $modality)
+                                    <option value= {{ $modality->id }} >{{ $modality->name }}</option>
+                                @endforeach
+                            </select>
+                        </label></p>
+                        
                         <p>                          
                             <input type="submit"  value="Enviar">
                         </p>

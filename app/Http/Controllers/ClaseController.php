@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Clase;
+use App\Modality;
 use Illuminate\Http\Request;
 
 class ClaseController extends Controller
@@ -25,7 +26,8 @@ class ClaseController extends Controller
      */
     public function create()
     {
-        return view('clases.create');
+        $modalities = Modality::all();
+        return view('clases.create',compact('modalities'));
     }
 
     /**

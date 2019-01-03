@@ -653,162 +653,24 @@
 				<!-- W-Friend-Pages-Added -->
 				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">ESPAÑOL</a>
-							<span class="chat-message-item">Lic. Luis Manzanares</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">MATEMÁTICAS</a>
-							<span class="chat-message-item">Lic. Ermis Barahona</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">TECNOLOGÍA</a>
-							<span class="chat-message-item">Lic. Daniel Amaya</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">CIENCIAS NATURALES</a>
-							<span class="chat-message-item">Lic. Dimas Palma</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">EDUC. ARTÍSTICA</a>
-							<span class="chat-message-item">Lic. Jorge Osorio</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-					</li>
 
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">ESPAÑOL</a>
-							<span class="chat-message-item">Lic. Luis Manzanares</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">MATEMÁTICAS</a>
-							<span class="chat-message-item">Lic. Ermis Barahona</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">TECNOLOGÍA</a>
-							<span class="chat-message-item">Lic. Daniel Amaya</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">CIENCIAS NATURALES</a>
-							<span class="chat-message-item">Lic. Dimas Palma</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-				
-					</li>
-				
-					<li class="inline-items">
-						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
-						</div>
-						<div class="notification-event">
-							<a href="#" class="h6 notification-friend">EDUC. ARTÍSTICA</a>
-							<span class="chat-message-item">Lic. Jorge Osorio</span>
-						</div>
-						<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-							<a href="#">
-								<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-							</a>
-						</span>
-					</li>
-				
+					@foreach ($asignaciones as $asignacion)
+						<li class="inline-items">
+							<div class="author-thumb">
+								<img src="../../img/teacher.PNG" alt="author">
+							</div>
+							<div class="notification-event">
+								<a href="#" class="h6 notification-friend"> {{$asignacion->clase->short_name}} </a>
+								<span class="chat-message-item">Lic. {{$asignacion->user->name}} </span>
+							</div>
+							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+								<a href="#">
+									<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								</a>
+							</span>
+						</li>
+					@endforeach
+					
 				</ul>
 				
 				<!-- .. end W-Friend-Pages-Added -->
