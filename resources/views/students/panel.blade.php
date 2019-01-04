@@ -96,33 +96,33 @@
 						<div class="author-title">
 							{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 						</div>
-						<span class="author-subtitle">{{ $course[0]->name}} Secci&oacute;n {{$enroll[0]->section}} </span>
+						<span class="author-title">{{ $course[0]->name}} Secci&oacute;n {{$enroll[0]->section}} </span>
 					</a>
 				</div>
 			</div>
 			<hr>
-			<ul class="left-menu" >
+			<ul class="left-menu" style="padding: 0px;">
 				
-				<li>
-					<a href="mobile-index.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-						<span class="left-menu-title">ESPAÑOL</span>
-					</a>
-				</li>
+				@foreach ($asignaciones as $asignacion)
+						<li class="inline-items" style="padding: 0px 0 0px 15px;">
+							<div class="author-thumb">
+								<img src="../../img/teacher.PNG" alt="author">
+							</div>
+							<div class="notification-event" style="width:100px;">
+								<p class="h6 " > {{$asignacion->clase->short_name}} </p>
+								<p >Lic. {{$asignacion->user->lastname}} </p>
+								
+							</div>
+							<div class="notification-event" style="padding-left:50px;">
+								<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+									<a href="#">
+										<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+									</a>
+								</span>
+							</div>
+						</li><hr style="margin-bottom:0px; margin-top:0px">
 
-				<li>
-					<a href="mobile-index.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-						<span class="left-menu-title">MATEMATICAS</span>
-					</a>
-				</li>
-
-				<li>
-					<a href="mobile-index.html">
-						<svg class="olymp-newsfeed-icon left-menu-icon" data-toggle="tooltip" data-placement="right"   data-original-title="NEWSFEED"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-newsfeed-icon"></use></svg>
-						<span class="left-menu-title">TECNOLOGIA</span>
-					</a>
-				</li>
+					@endforeach
 			
 			</ul>
 
@@ -611,7 +611,7 @@
 					<form class="comment-form inline-items">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="../../img/author-page.jpg" alt="author">
+							<img src="../../img/boy.png" alt="author">
 					
 							<div class="form-group with-icon-right ">
 								<textarea class="form-control" placeholder=""></textarea>
@@ -661,7 +661,7 @@
 							</div>
 							<div class="notification-event">
 								<a href="#" class="h6 notification-friend"> {{$asignacion->clase->short_name}} </a>
-								<span class="chat-message-item">Lic. {{$asignacion->user->name}} </span>
+								<span class="chat-message-item">Lic. {{$asignacion->user->lastname}} </span>
 							</div>
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
@@ -873,292 +873,6 @@
 </div>
 {{-- FIN DEL PANEL CENTRAL --}}
 
-
-<!-- Playlist Popup -->
-
-<div class="window-popup playlist-popup" tabindex="-1" role="dialog" aria-labelledby="playlist-popup" aria-hidden="true">
-
-	<a href="" class="icon-close js-close-popup">
-		<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-	</a>
-
-	<div class="mCustomScrollbar">
-		<table class="playlist-popup-table">
-
-		<thead>
-
-		<tr>
-
-			<th class="play">
-				PLAY
-			</th>
-
-			<th class="cover">
-				COVER
-			</th>
-
-			<th class="song-artist">
-				SONG AND ARTIST
-			</th>
-
-			<th class="album">
-				ALBUM
-			</th>
-
-			<th class="released">
-				RELEASED
-			</th>
-
-			<th class="duration">
-				DURATION
-			</th>
-
-			<th class="spotify">
-				GET IT ON SPOTIFY
-			</th>
-
-			<th class="remove">
-				REMOVE
-			</th>
-		</tr>
-
-		</thead>
-
-		<tbody>
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist19.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">We Can Be Heroes</a>
-					<a href="#" class="composition-author">Jason Bowie</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition">Ziggy Firedust</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist6.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">The Past Starts Slow and Ends</a>
-					<a href="#" class="composition-author">System of a Revenge</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition">Wonderize</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist7.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">The Pretender</a>
-					<a href="#" class="composition-author">Kung Fighters</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition">Warping Lights</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist8.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">Seven Nation Army</a>
-					<a href="#" class="composition-author">The Black Stripes</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition ">Icky Strung (LIVE at Cube Garden)</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist9.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">Leap of Faith</a>
-					<a href="#" class="composition-author">Eden Artifact</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition">The Assassins’s Soundtrack</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-
-		<tr>
-			<td class="play">
-				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="../../svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
-				</a>
-			</td>
-			<td class="cover">
-				<div class="playlist-thumb">
-					<img src="../../img/playlist10.jpg" alt="thumb-composition">
-				</div>
-			</td>
-			<td class="song-artist">
-				<div class="composition">
-					<a href="#" class="composition-name">Killer Queen</a>
-					<a href="#" class="composition-author">Archiduke</a>
-				</div>
-			</td>
-			<td class="album">
-				<a href="#" class="album-composition ">News of the Universe</a>
-			</td>
-			<td class="released">
-				<div class="release-year">2014</div>
-			</td>
-			<td class="duration">
-				<div class="composition-time">
-					<time class="published" datetime="2017-03-24T18:18">6:17</time>
-				</div>
-			</td>
-			<td class="spotify">
-				<i class="fab fa-spotify composition-icon" aria-hidden="true"></i>
-			</td>
-			<td class="remove">
-				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
-				</a>
-			</td>
-		</tr>
-		</tbody>
-	</table>
-	</div>
-
-</div>
-
-<!-- ... end Playlist Popup -->
 <!-- Window-popup Update Header Photo -->
 
 <div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
@@ -1382,8 +1096,6 @@
 <a class="back-to-top" href="#">
 	<img src="../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
 </a>
-
-
 
 
 <!-- Window-popup-CHAT for responsive min-width: 768px -->
