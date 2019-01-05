@@ -101,6 +101,7 @@
 				</div>
 			</div>
 			<hr>
+			
 			<ul class="left-menu" style="padding: 0px;">
 				
 				@foreach ($asignaciones as $asignacion)
@@ -649,8 +650,6 @@
 					<h6 class="title">Asignaturas</h6>
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
-
-				<!-- W-Friend-Pages-Added -->
 				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
 
@@ -673,10 +672,7 @@
 					
 				</ul>
 				
-				<!-- .. end W-Friend-Pages-Added -->
 			</div>
-			
-
 
 		</div>
 		{{-- FIN DEL PANEL IZQUIERDO --}}
@@ -906,7 +902,6 @@
 	</div>
 </div>
 
-
 <!-- ... end Window-popup Update Header Photo -->
 
 <!-- Window-popup Choose from my Photo -->
@@ -1092,11 +1087,15 @@
 
 <!-- ... end Window-popup Choose from my Photo -->
 
-
-<a class="back-to-top" href="#">
+<a class="back-to-top" href="#" style="bottom: 10px;">
 	<img src="../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
 </a>
 
+<a class="back-to-top" href="#" style="bottom: 70px; line-height: 60px;">
+	<svg class="olymp-comments-post-icon">
+		<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
+	</svg>
+</a>
 
 <!-- Window-popup-CHAT for responsive min-width: 768px -->
 

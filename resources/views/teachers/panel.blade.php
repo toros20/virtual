@@ -86,7 +86,7 @@
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
 						@if ($user->sexo == 'M')
-							<img alt="author" src="../../img/boy_short.png" class="avatar">
+							<img alt="author" src="../../img/teacher.png" class="avatar">
 						@endif
 						@if ($user->sexo == 'F')
 							<img alt="author" src="../../img/girl_short.png" class="avatar">
@@ -101,9 +101,26 @@
 				</div>
 			</div>
 			<hr>
-			<ul class="left-menu" >
+			<ul class="left-menu" style="padding: 0px;">
 				
-				
+					@foreach ($asignaciones as $asignacion)
+					<li class="inline-items" style="padding: 0px 0 0px 15px;">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event" style="width:100px;">
+							<p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
+							<p>{{$asignacion->clase->short_name}} </p>
+						</div>
+						<div class="notification-event" style="padding-left:50px;">
+								<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+									<a href="#">
+										<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+									</a>
+								</span>
+							</div>
+						</li><hr style="margin-bottom:0px; margin-top:0px">
+				@endforeach
 			
 			</ul>
 
@@ -254,7 +271,7 @@
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					@if ($user->sexo == 'M')
-						<img alt="author" src="../../img/boy_short.png" class="avatar">
+						<img alt="author" src="../../img/teacher.png" class="avatar">
 					@endif
 					@if ($user->sexo == 'F')
 						<img alt="author" src="../../img/girl_short.png" class="avatar">
@@ -294,7 +311,7 @@
 					<div class="author-title">
 						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
-					<span class="author-subtitle">{{$course[0]->name }}</span>
+					<span class="author-subtitle">Lic....</span>
 				</a>
 			</div>
 			{{-- fin del Area de imagen de perfil --}}
@@ -426,15 +443,15 @@
 						<div class="top-header-author">
 							<div class="author-thumb">
 								@if ($user->sexo == 'M')
-									<img alt="author" src="../../img/boy.png" class="avatar">
+									<img alt="author" src="../../img/teacher.png" class="avatar">
 								@endif
 								@if ($user->sexo == 'F')
-									<img alt="author" src="../../img/girl.png" class="avatar">
+									<img alt="author" src="../../img/teacher.png" class="avatar">
 								@endif
 							</div>
 							<div class="author-content">
 								<a href="#" class="h3 author-name">{{$user->name}} </a>
-								<div class="country">{{$course[0] ->name}} Secci&oacute;n {{$enroll[0]->section }} </div>
+								<div class="country">LICENCIADO </div>
 							</div>
 						</div>
 					</div>
@@ -592,7 +609,7 @@
 					<form class="comment-form inline-items">
 					
 						<div class="post__author author vcard inline-items">
-							<img src="../../img/boy.png" alt="author">
+							<img src="../../img/teacher.png" alt="author">
 					
 							<div class="form-group with-icon-right ">
 								<textarea class="form-control" placeholder=""></textarea>
@@ -631,8 +648,6 @@
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 
-				<!-- W-Friend-Pages-Added -->
-				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
 
 					@foreach ($asignaciones as $asignacion)
@@ -641,8 +656,8 @@
 								<img src="../../img/teacher.PNG" alt="author">
 							</div>
 							<div class="notification-event">
-								<a href="#" class="h6 notification-friend"> {{$asignacion->clase->short_name}} </a>
-								<span class="chat-message-item">Lic. {{$asignacion->user->lastname}} </span>
+								<a href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a>
+								<span class="chat-message-item">{{$asignacion->clase->short_name}}  </span>
 							</div>
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
@@ -654,10 +669,8 @@
 					
 				</ul>
 				
-				<!-- .. end W-Friend-Pages-Added -->
 			</div>
 			
-
 
 		</div>
 		{{-- FIN DEL PANEL IZQUIERDO --}}
@@ -1074,9 +1087,15 @@
 <!-- ... end Window-popup Choose from my Photo -->
 
 
-<a class="back-to-top" href="#">
-	<img src="../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
-</a>
+<a class="back-to-top" href="#" style="bottom: 10px;">
+		<img src="../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
+	</a>
+	
+	<a class="back-to-top" href="#" style="bottom: 70px; line-height: 60px;">
+		<svg class="olymp-comments-post-icon">
+			<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
+		</svg>
+	</a>
 
 
 <!-- Window-popup-CHAT for responsive min-width: 768px -->
