@@ -101,7 +101,7 @@
 				</div>
 			</div>
 			<hr>
-			
+
 			<ul class="left-menu" style="padding: 0px;">
 				
 				@foreach ($asignaciones as $asignacion)
@@ -140,15 +140,16 @@
 						<span>Opciones de Cuenta</span>
 					</a>
 				</li>
+				
 				<li>
-					
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+					<form action="{{ route('logout') }}" method="POST">
+						<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+						<button type="submit">
+							<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
-						<span>Salir</span>
-					</a>
+							<span>Salir</span>
+						</button>
+					</form>
 				</li>
 			</ul>
 
@@ -297,11 +298,13 @@
 								</li>
 
 								<li>
-									<a href="#">
-										<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
-
-										<span>Salir</span>
-									</a>
+									<form action="{{ route('logout') }}" method="POST">
+										<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+										<button type="submit">
+											<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+											<span>Salir</span>
+										</button>
+									</form>
 								</li>
 							</ul>
 
