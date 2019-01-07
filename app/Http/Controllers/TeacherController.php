@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Assignment;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -13,18 +14,22 @@ class TeacherController extends Controller
        
         //obtenemos el id del usuario student
         $user = User::findOrFail($id);
-        
-        //obtenemos los datos de la matricula de este usuario
-        //$enroll = Enrollment::where('user_id',$id)->get();
-
-        //obtenemos los datos del curso de este student
-        //$course = Course::where('id',$enroll[0]->course_id)->get();
 
         //obtenemos las asignaciones de este curso, clases, y docentes
         $asignaciones = Assignment::where('user_id',$id)->get();
+
+        //obtenemos las primera clases asignada.
+        $firstclass = Assignment::where('user_id',$id)->first();
+
+        //obtenemos los primeros 10 mensajes de este usuario
+        $mensajes = DB::table('msj_'.$id)
+                        ->join('users', 'msj_'.$id.'.remitente', '=', 'users.id')
+                        ->limit(10)
+                        ->orderBy('msj_'.$id.'.id', 'desc')
+                        ->get();
         
         //se envian los datos a la vista panel
-        return view('teachers/panel',compact('user','asignaciones'));
+        return view('teachers/panel',compact('user','asignaciones','firstclass','mensajes'));
         
      }
 }

@@ -40,6 +40,10 @@ Route::post('ajax/clasesbycoursesid', 'UserController@clasesbycoursesid');
 //crear ruta para la seccion de listar clases segun modalidad seleccionada 
 Route::post('ajax/clasesbymodalityid', 'UserController@clasesbymodalityid');
 
+//crear ruta para la pubñicacion de posts por seccion 
+Route::post('ajax/post_in_section', 'UserController@post_in_section');
+
+
 
 
 //rutas CRUD para los users

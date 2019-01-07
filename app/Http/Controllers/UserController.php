@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
+
 use App\User;
 use App\Modality;
 use App\Course;
@@ -209,14 +210,30 @@ class UserController extends Controller
         
      }
 
-     
+     public function post_in_section(Request $request){
 
-     public function teachers_panel($id){
+        //dd($request);
         
-        $user = User::findOrFail($id);
-        return view('teachers/panel',compact('user'));
+       $msj= DB::table('msj_'.$request->user_id)->insert([
+
+            'remitente'=>$request->user_id,
+            'mensaje'=>$request->mensaje,
+            'fecha'=>Carbon::now(),
+            'tipo'=>"seccion",
+            
+        ]);
+
+        $id = DB::getPdo()->lastInsertId();
+       
+        $mensaje = DB::table('msj_'.$request->user_id)
+                        ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
+                        ->where('msj_'.$request->user_id.'.id',$id)->get();
+
+        return view('ajax/post_in_section',compact('mensaje'));
+        
         
      }
+
 
 }
 

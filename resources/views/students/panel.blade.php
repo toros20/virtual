@@ -6,6 +6,7 @@
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Bootstrap CSS -->
@@ -26,6 +27,8 @@
 			}
 		});
 	</script>
+
+	<script type="text/javascript" language="javascript" src="../../js/main.js"></script>
 
 </head>
 <body>
@@ -488,67 +491,64 @@
 				<div class="ui-block">
 
 					<!-- Post -->
-					
+					@foreach ($mensajes as $mensaje)
 					<article class="hentry post">
 					
-						<div class="post__author author vcard inline-items">
-							<img src="../../img/teacher.png" alt="author">
-					
-							<div class="author-date">
-								<a class="h6 post__author-name fn" href="#">Español | Lic. Luiz Manzanares</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										4 hours ago
-									</time>
+							<div class="post__author author vcard inline-items">
+								<img src="../../img/teacher.png" alt="author">
+						
+								<div class="author-date">
+									<a class="h6 post__author-name fn" href="#">Asignatura | Lic. {{$mensaje->name}}</a>
+									<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+												{{$mensaje->fecha}}
+										</time>
+									</div>
 								</div>
+						
+								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<ul class="more-dropdown">
+										<li>
+											<a href="#">Edit Post</a>
+										</li>
+										<li>
+											<a href="#">Delete Post</a>
+										</li>
+										<li>
+											<a href="#">Turn Off Notifications</a>
+										</li>
+										<li>
+											<a href="#">Select as Featured</a>
+										</li>
+									</ul>
+								</div>
+						
 							</div>
-					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Edit Post</a>
-									</li>
-									<li>
-										<a href="#">Delete Post</a>
-									</li>
-									<li>
-										<a href="#">Turn Off Notifications</a>
-									</li>
-									<li>
-										<a href="#">Select as Featured</a>
-									</li>
-								</ul>
-							</div>
-					
-						</div>
-					
-						<p>Hi guys! We just wanted to let everyone know that we are currently recording
-							our new album “News of the Goo”. We’ll be playing one of our new songs this Friday at 8pm in
-							our Fake Street 320 recording studio, come and join us!
-						</p>
-					
-						<div class="post-additional-info inline-items">
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>36 Me gusta</span>
-							</a>					
-					
-							<div class="comments-shared">
+						
+							<p> {{$mensaje->mensaje}}</p>
+						
+							<div class="post-additional-info inline-items">
+						
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-									<span>2 Comentarios</span>
-								</a>
-					
+									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<span> {{$mensaje->megusta}} Me gusta</span>
+								</a>					
+						
+								<div class="comments-shared">
+									<a href="#" class="post-add-icon inline-items">
+										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+										<span>2 Comentarios</span>
+									</a>
+						
+								</div>
+						
 							</div>
-					
-						</div>
-					
-					</article>
+						
+						</article>
+					@endforeach
 					
 					<!-- ... end Post -->
 
-					
 					<!-- Comments -->
 					
 					<ul class="comments-list">

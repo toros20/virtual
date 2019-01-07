@@ -93,7 +93,7 @@
                         {{-- @csrf --}}
                         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                         
-
+ 
                         <p><label for="nombre">
                             Nombres 
                             <input type="text" name ="name" value=" {{old('name')}} ">

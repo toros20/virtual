@@ -6,12 +6,14 @@
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="{{ csrf_token() }}">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-reboot.css">
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="../../css/toastr.min.css">
 
 	<!-- Main Styles CSS -->
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
@@ -27,6 +29,7 @@
 		});
 	</script>
 
+	<script type="text/javascript" language="javascript" src="../../js/main.js"></script>
 </head>
 <body>
 
@@ -478,74 +481,102 @@
 
 		{{-- INICIO DEL PANEL CENTRAL --}}
 		<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
+
+			<!-- Comment Form  -->
+					
+			<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
+					<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
+					<div class="post__author author vcard inline-items">
+						<img src="../../img/teacher.png" alt="author">
+						<input id="user" type="hidden" value="{{$user->id}} ">
+						<input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
+						<input id="course" type="hidden" value="{{$firstclass->course->id}} ">
+						<input id="section" type="hidden" value="{{$firstclass->section}} ">
+
+						<div class="form-group with-icon-right ">
+							<textarea id="mensaje" class="form-control" placeholder=""></textarea>
+							<div class="add-options-message">
+								<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+									<svg class="olymp-camera-icon">
+										<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+									</svg>
+								</a>
+							</div>
+						</div>
+					</div>
+					<button onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+				</div>
+				
+				<!-- ... end Comment Form  -->
+			
 			<div id="newsfeed-items-grid">
-				<div class="ui-block">
+
+				<div id="posts" class="ui-block">
 
 					<!-- Post -->
+					<div id="nuevo_post"></div>
 					
-					<article class="hentry post">
+					@foreach ($mensajes as $mensaje)
+						<article class="hentry post">
 					
-						<div class="post__author author vcard inline-items">
-							<img src="../../img/teacher.png" alt="author">
-					
-							<div class="author-date">
-								<a class="h6 post__author-name fn" href="#">Español | Lic. Luiz Manzanares</a>
-								<div class="post__date">
-									<time class="published" datetime="2017-03-24T18:18">
-										4 hours ago
-									</time>
+							<div class="post__author author vcard inline-items">
+								<img src="../../img/teacher.png" alt="author">
+						
+								<div class="author-date">
+									<a class="h6 post__author-name fn" href="#">Asignatura | Lic. {{$mensaje->name}}</a>
+									<div class="post__date">
+										<time class="published" datetime="2017-03-24T18:18">
+												{{$mensaje->fecha}}
+										</time>
+									</div>
 								</div>
+						
+								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<ul class="more-dropdown">
+										<li>
+											<a href="#">Edit Post</a>
+										</li>
+										<li>
+											<a href="#">Delete Post</a>
+										</li>
+										<li>
+											<a href="#">Turn Off Notifications</a>
+										</li>
+										<li>
+											<a href="#">Select as Featured</a>
+										</li>
+									</ul>
+								</div>
+						
 							</div>
-					
-							<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-								<ul class="more-dropdown">
-									<li>
-										<a href="#">Edit Post</a>
-									</li>
-									<li>
-										<a href="#">Delete Post</a>
-									</li>
-									<li>
-										<a href="#">Turn Off Notifications</a>
-									</li>
-									<li>
-										<a href="#">Select as Featured</a>
-									</li>
-								</ul>
-							</div>
-					
-						</div>
-					
-						<p>Hi guys! We just wanted to let everyone know that we are currently recording
-							our new album “News of the Goo”. We’ll be playing one of our new songs this Friday at 8pm in
-							our Fake Street 320 recording studio, come and join us!
-						</p>
-					
-						<div class="post-additional-info inline-items">
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>36 Me gusta</span>
-							</a>					
-					
-							<div class="comments-shared">
+						
+							<p> {{$mensaje->mensaje}}</p>
+						
+							<div class="post-additional-info inline-items">
+						
 								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-									<span>2 Comentarios</span>
-								</a>
-					
+									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<span> {{$mensaje->megusta}} Me gusta</span>
+								</a>					
+						
+								<div class="comments-shared">
+									<a href="#" class="post-add-icon inline-items">
+										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+										<span>2 Comentarios</span>
+									</a>
+						
+								</div>
+						
 							</div>
-					
-						</div>
-					
-					</article>
+						
+						</article>
+					@endforeach
 					
 					<!-- ... end Post -->
 
-					
 					<!-- Comments -->
 					
-					<ul class="comments-list">
+					{{-- <ul class="comments-list">
 						<li class="comment-item">
 							<div class="post__author author vcard inline-items">
 								<img src="../../img/avatar2-sm.jpg" alt="author">
@@ -598,37 +629,12 @@
 							</a>
 							
 						</li>
-					</ul>
+					</ul> --}}
 					
 					<!-- ... end Comments -->
 
-					<a href="#" class="more-comments">Ver mas comentarios <span>+</span></a>
+					{{-- <a href="#" class="more-comments">Ver mas comentarios <span>+</span></a> --}}
 
-					<!-- Comment Form  -->
-					
-					<form class="comment-form inline-items">
-					
-						<div class="post__author author vcard inline-items">
-							<img src="../../img/teacher.png" alt="author">
-					
-							<div class="form-group with-icon-right ">
-								<textarea class="form-control" placeholder=""></textarea>
-								<div class="add-options-message">
-									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
-										<svg class="olymp-camera-icon">
-											<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
-										</svg>
-									</a>
-								</div>
-							</div>
-						</div>
-					
-						<button class="btn btn-md-2 btn-primary">Comentar Post</button>
-					
-					
-					</form>
-					
-					<!-- ... end Comment Form  -->
 				 </div>
 
 			   </div>
@@ -1348,6 +1354,7 @@
 <script src="../../js/base-init.js"></script>
 <script defer src="../../fonts/fontawesome-all.js"></script>
 <script src="../../Bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="../../js/toastr.min.js"></script>
 
 </body>
 </html>

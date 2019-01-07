@@ -7,6 +7,7 @@ use App\Enrollment;
 use App\Course;
 use App\Clasecourse;
 use App\Assignment;
+use DB;
 
 use Illuminate\Http\Request;
 
@@ -29,8 +30,13 @@ class StudentController extends Controller
             ['section', '=', $enroll[0]->section],
         ])->get();
         
+        //obtenemos los primeros 10 mensajes de este usuario
+        $mensajes = DB::table('msj_'.$id)
+                        ->join('users', 'msj_'.$id.'.remitente', '=', 'users.id')
+                        ->limit(10)->get();
+        
         //se envian los datos a la vista panel
-        return view('students/panel',compact('user','course','enroll','clases','asignaciones'));
+        return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes'));
         
      }
 }
