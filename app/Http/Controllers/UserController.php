@@ -8,6 +8,8 @@ use App\User;
 use App\Modality;
 use App\Course;
 use App\Clase;
+use App\Enrollment;
+use App\Assignment;
 use App\Sectioncourse;
 use App\Clasecourse;
 
@@ -212,22 +214,52 @@ class UserController extends Controller
 
      public function post_in_section(Request $request){
 
-        //dd($request);
+       
+        //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
+        $id_users = Enrollment::where([
+            ['course_id', '=', $request->curso_id],
+            ['section', '=', $request->seccion_id],
+        ])->Select('user_id')->get();
         
-       $msj= DB::table('msj_'.$request->user_id)->insert([
+        //recorremos todos los usuarios encontrados y les eviamos el mensaje
+        foreach($id_users as $id_user)
+        {
+            $msj= DB::table('msj_'.$id_user->user_id)->insert([
 
-            'remitente'=>$request->user_id,
-            'mensaje'=>$request->mensaje,
-            'fecha'=>Carbon::now(),
-            'tipo'=>"seccion",
-            
-        ]);
+                'remitente'=>$request->user_id,
+                'mensaje'=>$request->mensaje,
+                'fecha'=>Carbon::now(),
+                'tipo'=>"seccion",
+                
+            ]);
+        }
 
-        $id = DB::getPdo()->lastInsertId();
+        //obtenemos los id de los usuarios maestros asignados en este curso y seccion
+        $id_users2 = Assignment::where([
+            ['course_id', '=', $request->curso_id],
+            ['section', '=', $request->seccion_id],
+        ])->Select('user_id')->get();
+
+        //recorremos todos los usuarios encontrados y les eviamos el mensaje
+        foreach($id_users2 as $id_user2)
+        {
+            $msj= DB::table('msj_'.$id_user2->user_id)->insert([
+
+                'remitente'=>$request->user_id,
+                'mensaje'=>$request->mensaje,
+                'fecha'=>Carbon::now(),
+                'tipo'=>"seccion",
+                
+            ]);
+        }
+
+        $id = DB::table('msj_'.$request->user_id)->max('id');
        
         $mensaje = DB::table('msj_'.$request->user_id)
                         ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
                         ->where('msj_'.$request->user_id.'.id',$id)->get();
+
+                        
 
         return view('ajax/post_in_section',compact('mensaje'));
         

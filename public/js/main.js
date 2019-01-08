@@ -119,53 +119,97 @@ function publicar(){
      var msj = $("#mensaje").val();
      var token = $("#token").val();
 
-    $.ajax({
+     if (msj=='') {
 
-        url:'../../ajax/post_in_section',
-        headers: token ,
-        data: {
-            curso_id:curso,
-            seccion_id:seccion,
-            user_id:usuario,
-            mensaje:msj,
-            _token:token
-        },
-        type:'POST',
-        datatype:'json',
-        success:function(data)
-        {
-            //console.log(response);
-            $("#mensaje").val('');
-          
-            $('#nuevo_post').prepend(data)
-            .fadeIn( 1000, function() {
-                $('#nuevo_post').css({"border": "4px solid red", "border-radius": "5px"});
-              });
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "500",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+          };
+          toastr.danger('debes ingresar un mensaje');
+         
+     }else{
+
+        $.ajax({
+
+            url:'../../ajax/post_in_section',
+            headers: token ,
+            data: {
+                curso_id:curso,
+                seccion_id:seccion,
+                user_id:usuario,
+                mensaje:msj,
+                _token:token
+            },
+            type:'POST',
+            datatype:'json',
+    
+            beforeSend: function(){
+                $('#btn_publicar').attr("disabled", true);
+                $('#circle').circleProgress({
+                    value: 0.75,
+                    size: 80,
+                    fill: {
+                      gradient: ["red", "orange"]
+                    }
+                  });
+            },
+            complete: function(){
+                $('#circle').hide();
+               
+            },
+    
+            success:function(data)
+            {
+                //console.log(response);
+                $("#mensaje").val('');
               
-              toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-top-center",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "500",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
+                $('#nuevo_post').prepend(data)
+                .fadeIn( 1000, function() {
+                    $('#nuevo_post').css({"border": "4px solid red", "border-radius": "5px"});
+                  });
+                  
+                  toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-top-center",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "500",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                  }
+                  toastr.success('Mensaje publicado exitósamente');
+                  $('#btn_publicar').attr("disabled", false);
+                
+            },
+            error: function (response) {
+                console.log(response);
               }
-              toastr.success('Mensaje publicado exitósamente');
-            
-        },
-        error: function (response) {
-            console.log(response);
-          }
-    });
+        });
+
+     }
+
+    
    
 
 }

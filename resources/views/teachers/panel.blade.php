@@ -478,12 +478,14 @@
 
 <div class="container">
 	<div class="row">
+		
 
 		{{-- INICIO DEL PANEL CENTRAL --}}
 		<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
 
 			<!-- Comment Form  -->
-					
+			{{-- imagen del load al momento de enviar post. --}}
+			<div align="center" id="circle"></div>
 			<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
 					<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
 					<div class="post__author author vcard inline-items">
@@ -494,7 +496,7 @@
 						<input id="section" type="hidden" value="{{$firstclass->section}} ">
 
 						<div class="form-group with-icon-right ">
-							<textarea id="mensaje" class="form-control" placeholder=""></textarea>
+							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 							<div class="add-options-message">
 								<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 									<svg class="olymp-camera-icon">
@@ -504,7 +506,7 @@
 							</div>
 						</div>
 					</div>
-					<button onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+					<button id="btn_publicar" onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
 				</div>
 				
 				<!-- ... end Comment Form  -->
