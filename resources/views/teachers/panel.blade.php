@@ -30,6 +30,7 @@
 	</script>
 
 	<script type="text/javascript" language="javascript" src="../../js/main.js"></script>
+	
 </head>
 <body>
 
@@ -492,8 +493,9 @@
 						<img src="../../img/teacher.png" alt="author">
 						<input id="user" type="hidden" value="{{$user->id}} ">
 						<input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
-						<input id="course" type="hidden" value="{{$firstclass->course->id}} ">
-						<input id="section" type="hidden" value="{{$firstclass->section}} ">
+						<input id="course" type="hidden" value="{{$firstcourse->course_id}} ">
+						<input id="course_shortname" type="hidden" value="{{$firstcourse->short_name}} ">
+						<input id="section" type="hidden" value="{{$firstcourse->section}} "> 
 
 						<div class="form-group with-icon-right ">
 							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
@@ -912,7 +914,19 @@
 	</div>
 </div>
 
-
+<div class="modal fade" id="modal_clase_actual" tabindex="-1" role="dialog" aria-labelledby="modal_clase_actual" aria-hidden="true">
+	<div class="modal-dialog window-popup update-header-photo" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h6 class="title">Informaci&oacute;n</h6>
+			</div>
+			<div class="modal-body">
+				<h6>Bienvenido a:</h6>
+				<span>{{$firstcourse->short_name}} Secci&oacute;n {{$firstcourse->section}}</span>			
+			</div>
+		</div>
+	</div>
+</div>
 <!-- ... end Window-popup Update Header Photo -->
 
 <!-- Window-popup Choose from my Photo -->
@@ -1159,161 +1173,6 @@
 				</ul>
 			</div>
 
-			<form class="need-validation">
-
-		<div class="form-group label-floating is-empty">
-			<label class="control-label">Press enter to post...</label>
-			<textarea class="form-control" placeholder=""></textarea>
-			<div class="add-options-message">
-				<a href="#" class="options-message">
-					<svg class="olymp-computer-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
-				</a>
-				<div class="options-message smile-block">
-
-					<svg class="olymp-happy-sticker-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-happy-sticker-icon"></use></svg>
-
-					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat1.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat2.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat3.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat4.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat5.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat6.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat7.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat8.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat9.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat10.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat11.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat12.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat13.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat14.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat15.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat16.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat17.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat18.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat19.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat20.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat21.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat22.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat23.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat24.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat25.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat26.png" alt="icon">
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<img src="../../img/icon-chat27.png" alt="icon">
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-	</form>
 		</div>
 	</div>
 
@@ -1360,7 +1219,18 @@
 <script src="../../js/base-init.js"></script>
 <script defer src="../../fonts/fontawesome-all.js"></script>
 <script src="../../Bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="../../js/toastr.min.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/toastr.min.js"></script>
+<script src="../../js/toastr.js.map"></script>
+<script>$(document).ready(function(){
 
+		var seccion = $("#section").val();
+		var course = $("#course_shortname").val();
+		//$("#modal_clase_actual").modal('show');  });
+		toastr.options = {
+		"positionClass": "toast-top-center"
+		}
+		toastr["success"]('<p style = "text-align:center;">Bienvenido a </p><p style = "text-align:center;">'+course+'Grado - Sección '+seccion+'</p>' );
+	});
+</script>
 </body>
 </html>

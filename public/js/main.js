@@ -138,7 +138,7 @@ function publicar(){
             "showMethod": "fadeIn",
             "hideMethod": "fadeOut"
           };
-          toastr.danger('debes ingresar un mensaje');
+          toastr.error('debes ingresar un mensaje');
          
      }else{
 

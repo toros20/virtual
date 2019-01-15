@@ -18,8 +18,13 @@ class TeacherController extends Controller
         //obtenemos las asignaciones de este curso, clases, y docentes
         $asignaciones = Assignment::where('user_id',$id)->get();
 
+        //$firstclass = Assignment::where('user_id',$id)->first();
+
         //obtenemos las primera clases asignada.
-        $firstclass = Assignment::where('user_id',$id)->first();
+        $firstcourse = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->where('assignments.user_id',$id)
+                        ->first();
 
         //obtenemos los primeros 10 mensajes de este usuario
         $mensajes = DB::table('msj_'.$id)
@@ -29,7 +34,7 @@ class TeacherController extends Controller
                         ->get();
         
         //se envian los datos a la vista panel
-        return view('teachers/panel',compact('user','asignaciones','firstclass','mensajes'));
+        return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes'));
         
-     }
+     } 
 }
