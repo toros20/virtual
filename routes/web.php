@@ -43,7 +43,8 @@ Route::post('ajax/clasesbymodalityid', 'UserController@clasesbymodalityid');
 //crear ruta para la pubñicacion de posts por seccion 
 Route::post('ajax/post_in_section', 'UserController@post_in_section');
 
-
+//crear ruta para la pubñicacion de posts por seccion 
+Route::post('ajax/filtrar_msj_byteacher', 'UserController@filtrar_msj_byteacher');
 
 
 //rutas CRUD para los users

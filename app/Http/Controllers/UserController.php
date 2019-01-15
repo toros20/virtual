@@ -211,10 +211,10 @@ class UserController extends Controller
         return view('ajax/clasesbymodalityid',compact('clases'));
         
      }
+    
 
      public function post_in_section(Request $request){
 
-       
         //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
         $id_users = Enrollment::where([
             ['course_id', '=', $request->curso_id],
@@ -230,6 +230,7 @@ class UserController extends Controller
                 'mensaje'=>$request->mensaje,
                 'fecha'=>Carbon::now(),
                 'tipo'=>"seccion",
+                'clase'=>$request->clase
                 
             ]);
         }
@@ -266,6 +267,16 @@ class UserController extends Controller
         
      }
 
+     public function filtrar_msj_byteacher(Request $request){
+         //obtenemos los ultimos 20 mensajes enviados por este docente
+        $mensajes = DB::table('msj_'.$request->user_id)
+                        ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
+                        ->where('msj_'.$request->user_id.'.remitente',$request->remitente)
+                        ->limit(20)
+                        ->get();
+                        
+        return view('ajax/filtrar_msj_byteacher',compact('mensajes'));
+    }
 
 }
 

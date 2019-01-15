@@ -3,7 +3,7 @@ var CRUMINA={};!function(e){"use strict";var n=e(window),t=e(document),o=e("body
 /*$(document).ready(function(){
     alert("HOLAAA");
    });*/
-
+   
 function loadcourses(){
 
     //obtenemos  el id de la modalidad seleccionada
@@ -178,7 +178,7 @@ function publicar(){
               
                 $('#nuevo_post').prepend(data)
                 .fadeIn( 1000, function() {
-                    $('#nuevo_post').css({"border": "4px solid red", "border-radius": "5px"});
+                    $('#nuevo_post').css({"border": "4px solid lightcoral", "border-radius": "5px"});
                   });
                   
                   toastr.options = {
@@ -211,5 +211,28 @@ function publicar(){
 
     
    
+
+}
+
+function filtrar_msj(teacher_id, student_id){
+
+    var token = $("#token").val();
+   
+   $.ajax({
+
+       url:'../../ajax/filtrar_msj_byteacher',
+       headers: token ,
+       data: {user_id:student_id,remitente:teacher_id,_token:token},
+       type:'POST',
+       datatype:'json',
+       success:function(data)
+       {
+           $('#modal_msj_byteacher').html(data);
+           $("#modal_msj_byteacher").modal('show');
+       },
+       error: function (response) {
+           console.log(response);
+         }
+   });
 
 }

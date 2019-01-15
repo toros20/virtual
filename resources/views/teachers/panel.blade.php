@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<title>Panel Estudiant&iacute;l</title>
+	<title>Panel Docente</title>
 
 	<!-- Required meta tags always come first -->
 	<meta charset="utf-8">
@@ -525,7 +525,11 @@
 								<img src="../../img/teacher.png" alt="author">
 						
 								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Asignatura | Lic. {{$mensaje->name}}</a>
+										@if ($mensaje->role === 'student')
+										<a class="h6 post__author-name fn" href="#">Estudiante: |  {{$mensaje->name}} {{$mensaje->lastname}}</a>
+										@else
+										<a class="h6 post__author-name fn" href="#">Lic. |  {{$mensaje->name}} {{$mensaje->lastname}}</a>
+										@endif
 									<div class="post__date">
 										<time class="published" datetime="2017-03-24T18:18">
 												{{$mensaje->fecha}}
@@ -533,7 +537,7 @@
 									</div>
 								</div>
 						
-								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+								{{-- <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 									<ul class="more-dropdown">
 										<li>
 											<a href="#">Edit Post</a>
@@ -548,7 +552,7 @@
 											<a href="#">Select as Featured</a>
 										</li>
 									</ul>
-								</div>
+								</div> --}}
 						
 							</div>
 						

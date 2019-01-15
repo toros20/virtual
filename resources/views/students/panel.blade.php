@@ -13,6 +13,7 @@
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-reboot.css">
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-grid.css">
+	<link rel="stylesheet" type="text/css" href="../../css/toastr.min.css">
 
 	<!-- Main Styles CSS -->
 	<link rel="stylesheet" type="text/css" href="../../css/main.css">
@@ -104,29 +105,29 @@
 				</div>
 			</div>
 			<hr>
-
+			<h5 style="text-align: center">Filtrar por docente.</h5>
+			<hr>
 			<ul class="left-menu" style="padding: 0px;">
 				
 				@foreach ($asignaciones as $asignacion)
-						<li class="inline-items" style="padding: 0px 0 0px 15px;">
-							<div class="author-thumb">
-								<img src="../../img/teacher.PNG" alt="author">
-							</div>
-							<div class="notification-event" style="width:100px;">
-								<p class="h6 " > {{$asignacion->clase->short_name}} </p>
-								<p >Lic. {{$asignacion->user->lastname}} </p>
-								
-							</div>
-							<div class="notification-event" style="padding-left:50px;">
-								<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
-									<a href="#">
-										<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
-									</a>
-								</span>
-							</div>
-						</li><hr style="margin-bottom:0px; margin-top:0px">
-
-					@endforeach
+						
+					<li class="inline-items" style="padding: 0px 0 0px 15px;">
+						<div class="author-thumb">
+							<img src="../../img/teacher.PNG" alt="author">
+						</div>
+						<div class="notification-event" style="width:100px;">
+							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  {{$asignacion->clase->short_name}} </a>
+						</div>
+						
+						<div class="notification-event" style="padding-left:50px;">
+							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="Escribir a docente">
+									<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+								</a>
+							</span>
+						</div>
+					</li><hr style="margin-bottom:0px; margin-top:0px">
+			
+				@endforeach
 			
 			</ul>
 
@@ -487,138 +488,21 @@
 
 		{{-- INICIO DEL PANEL CENTRAL --}}
 		<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
-			<div id="newsfeed-items-grid">
-				<div class="ui-block">
 
-					<!-- Post -->
-					@foreach ($mensajes as $mensaje)
-					<article class="hentry post">
-					
-							<div class="post__author author vcard inline-items">
-								<img src="../../img/teacher.png" alt="author">
-						
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Asignatura | Lic. {{$mensaje->name}}</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-												{{$mensaje->fecha}}
-										</time>
-									</div>
-								</div>
-						
-								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<ul class="more-dropdown">
-										<li>
-											<a href="#">Edit Post</a>
-										</li>
-										<li>
-											<a href="#">Delete Post</a>
-										</li>
-										<li>
-											<a href="#">Turn Off Notifications</a>
-										</li>
-										<li>
-											<a href="#">Select as Featured</a>
-										</li>
-									</ul>
-								</div>
-						
-							</div>
-						
-							<p> {{$mensaje->mensaje}}</p>
-						
-							<div class="post-additional-info inline-items">
-						
-								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-									<span> {{$mensaje->megusta}} Me gusta</span>
-								</a>					
-						
-								<div class="comments-shared">
-									<a href="#" class="post-add-icon inline-items">
-										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-										<span>2 Comentarios</span>
-									</a>
-						
-								</div>
-						
-							</div>
-						
-						</article>
-					@endforeach
-					
-					<!-- ... end Post -->
-
-					<!-- Comments -->
-					
-					<ul class="comments-list">
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="../../img/avatar2-sm.jpg" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											28 mins ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-					
-							</div>
-					
-							<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>6 Me gusta</span>
-							</a>
-							
-						</li>
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="../../img/avatar19-sm.jpg" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											2 hours ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-					
-							</div>
-					
-							<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
-								quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-							</p>
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>8 Me gusta</span>
-							</a>
-							
-						</li>
-					</ul>
-					
-					<!-- ... end Comments -->
-
-					<a href="#" class="more-comments">Ver mas comentarios <span>+</span></a>
-
-					<!-- Comment Form  -->
-					
-					<form class="comment-form inline-items">
-					
+				<!-- Comment Form  -->
+				{{-- imagen del load al momento de enviar post. --}}
+				<div align="center" id="circle"></div>
+				<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
+						<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
 						<div class="post__author author vcard inline-items">
-							<img src="../../img/boy.png" alt="author">
-					
+							<img src="../../img/teacher.png" alt="author">
+							<input id="user" type="hidden" value="{{$user->id}} ">
+							<input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
+							<input id="course" type="hidden" value="{{$course[0]->id}} ">
+							<input id="section" type="hidden" value="{{$enroll[0]->section}} ">
+	
 							<div class="form-group with-icon-right ">
-								<textarea class="form-control" placeholder=""></textarea>
+								<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 								<div class="add-options-message">
 									<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 										<svg class="olymp-camera-icon">
@@ -628,21 +512,149 @@
 								</div>
 							</div>
 						</div>
-					
-						<button class="btn btn-md-2 btn-primary">Comentar Post</button>
-					
-					
-					</form>
+						<button id="btn_publicar" onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+					</div>
 					
 					<!-- ... end Comment Form  -->
-				 </div>
-
-			   </div>
-
-			   
-			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-
-		</div>
+				
+				<div id="newsfeed-items-grid">
+	
+					<div id="posts" class="ui-block">
+	
+						<!-- Post -->
+						<div id="nuevo_post"></div>
+						
+						@foreach ($mensajes as $mensaje)
+							<article class="hentry post">
+						
+								<div class="post__author author vcard inline-items">
+									<img src="../../img/teacher.png" alt="author">
+							
+									<div class="author-date">
+											@if ($mensaje->role === 'student')
+											<a class="h6 post__author-name fn" href="#">Estudiante: |  {{$mensaje->name}} {{$mensaje->lastname}}</a>
+											@else
+											<a class="h6 post__author-name fn" href="#">Lic. |  {{$mensaje->name}} {{$mensaje->lastname}}</a>
+											@endif
+										
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18">
+													{{$mensaje->fecha}}
+											</time>
+										</div>
+									</div>
+							
+									{{-- <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+										<ul class="more-dropdown">
+											<li>
+												<a href="#">Edit Post</a>
+											</li>
+											<li>
+												<a href="#">Delete Post</a>
+											</li>
+											<li>
+												<a href="#">Turn Off Notifications</a>
+											</li>
+											<li>
+												<a href="#">Select as Featured</a>
+											</li>
+										</ul>
+									</div> --}}
+							
+								</div>
+							
+								<p> {{$mensaje->mensaje}}</p>
+							
+								<div class="post-additional-info inline-items">
+							
+									<a href="#" class="post-add-icon inline-items">
+										<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+										<span> {{$mensaje->megusta}} Me gusta</span>
+									</a>					
+							
+									<div class="comments-shared">
+										<a href="#" class="post-add-icon inline-items">
+											<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+											<span>2 Comentarios</span>
+										</a>
+							
+									</div>
+							
+								</div>
+							
+							</article>
+						@endforeach
+						
+						<!-- ... end Post -->
+	
+						<!-- Comments -->
+						
+						{{-- <ul class="comments-list">
+							<li class="comment-item">
+								<div class="post__author author vcard inline-items">
+									<img src="../../img/avatar2-sm.jpg" alt="author">
+						
+									<div class="author-date">
+										<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18">
+												28 mins ago
+											</time>
+										</div>
+									</div>
+						
+									<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						
+								</div>
+						
+								<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
+						
+								<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<span>6 Me gusta</span>
+								</a>
+								
+							</li>
+							<li class="comment-item">
+								<div class="post__author author vcard inline-items">
+									<img src="../../img/avatar19-sm.jpg" alt="author">
+						
+									<div class="author-date">
+										<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
+										<div class="post__date">
+											<time class="published" datetime="2017-03-24T18:18">
+												2 hours ago
+											</time>
+										</div>
+									</div>
+						
+									<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						
+								</div>
+						
+								<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
+									quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
+								</p>
+						
+								<a href="#" class="post-add-icon inline-items">
+									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<span>8 Me gusta</span>
+								</a>
+								
+							</li>
+						</ul> --}}
+						
+						<!-- ... end Comments -->
+	
+						{{-- <a href="#" class="more-comments">Ver mas comentarios <span>+</span></a> --}}
+	
+					 </div>
+	
+				   </div>
+	
+				<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+	
+			</div>
 		{{-- FIN DEL PANEL CENTRAL --}}
 
 		{{-- INICIO DEL PANEL IZQUIERDO --}}
@@ -650,27 +662,30 @@
 			
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<h6 class="title">Asignaturas</h6>
+					<h6 class="title">Filtrar por Docente</h6>
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 				
 				<ul class="widget w-friend-pages-added notification-list friend-requests">
 
 					@foreach ($asignaciones as $asignacion)
+						
 						<li class="inline-items">
 							<div class="author-thumb">
 								<img src="../../img/teacher.PNG" alt="author">
 							</div>
 							<div class="notification-event">
-								<a href="#" class="h6 notification-friend"> {{$asignacion->clase->short_name}} </a>
-								<span class="chat-message-item">Lic. {{$asignacion->user->lastname}} </span>
+								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  </a>
+								<span class="chat-message-item">{{$asignacion->clase->short_name}} </span>
 							</div>
-							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
+
+							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="Ver Comentarios">
 								<a href="#">
 									<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 								</a>
 							</span>
 						</li>
+
 					@endforeach
 					
 				</ul>
@@ -905,6 +920,10 @@
 	</div>
 </div>
 
+{{-- modal para mostrar los mensaje filtrados por docente --}}
+<div class="modal fade" id="modal_msj_byteacher" tabindex="-1" role="dialog" aria-labelledby="modal_msj_byteacher" aria-hidden="true">
+		
+</div>
 <!-- ... end Window-popup Update Header Photo -->
 
 <!-- Window-popup Choose from my Photo -->
@@ -1350,6 +1369,7 @@
 <script src="../../js/base-init.js"></script>
 <script defer src="../../fonts/fontawesome-all.js"></script>
 <script src="../../Bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="../../js/toastr.min.js"></script>
 
 </body>
 </html>
