@@ -35,6 +35,14 @@ class StudentController extends Controller
                         ->join('users', 'msj_'.$id.'.remitente', '=', 'users.id')
                         ->limit(10)
                         ->orderBy('msj_'.$id.'.id', 'desc')
+                        ->Select(
+                            'msj_'.$id.'.id as msj_id',
+                            'msj_'.$id.'.remitente', 
+                            'msj_'.$id.'.mensaje',
+                            'msj_'.$id.'.fecha',
+                            'msj_'.$id.'.tipo',
+                            'msj_'.$id.'.comentarios',
+                            'users.name','users.lastname','users.role','users.sexo' )
                         ->get();
         
         //se envian los datos a la vista panel

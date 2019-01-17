@@ -212,8 +212,14 @@ class UserController extends Controller
         
      }
     
-
+     // realizar una publicacion del tipo section (solo para los miembros de una seccion)
      public function post_in_section(Request $request){
+
+        //generamos un codigo identificador (tamaño 10) aleatorio para el mensaje
+        $key = '';
+        $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+        $max = strlen($pattern)-1;
+        for($i=0; $i < 12 ;$i++) $key .= $pattern{mt_rand(0,$max)};
 
         //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
         $id_users = Enrollment::where([
@@ -230,7 +236,8 @@ class UserController extends Controller
                 'mensaje'=>$request->mensaje,
                 'fecha'=>Carbon::now(),
                 'tipo'=>"seccion",
-                'clase'=>$request->clase
+                'clase'=>$request->clase,
+                'key'=>$key
                 
             ]);
         }
@@ -239,7 +246,7 @@ class UserController extends Controller
         $id_users2 = Assignment::where([
             ['course_id', '=', $request->curso_id],
             ['section', '=', $request->seccion_id],
-        ])->Select('user_id')->get();
+        ])->Select('user_id')->distinct()->get();
 
         //recorremos todos los usuarios encontrados y les eviamos el mensaje
         foreach($id_users2 as $id_user2)
@@ -250,20 +257,19 @@ class UserController extends Controller
                 'mensaje'=>$request->mensaje,
                 'fecha'=>Carbon::now(),
                 'tipo'=>"seccion",
+                'key'=>$key
                 
             ]);
         }
 
+        //obtenemos el id del mensaje recien guardado
         $id = DB::table('msj_'.$request->user_id)->max('id');
-       
+       //obtenemos el mensaje recien almacenado
         $mensaje = DB::table('msj_'.$request->user_id)
                         ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
                         ->where('msj_'.$request->user_id.'.id',$id)->get();
-
-                        
-
+        //enviamos el mensaje recien almacenado,para que aparezca
         return view('ajax/post_in_section',compact('mensaje'));
-        
         
      }
 

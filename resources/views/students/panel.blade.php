@@ -567,17 +567,20 @@
 							
 								<div class="post-additional-info inline-items">
 							
-									<a href="#" class="post-add-icon inline-items">
+									{{-- <a href="#" class="post-add-icon inline-items">
 										<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 										<span> {{$mensaje->megusta}} Me gusta</span>
-									</a>					
+									</a> --}}					
 							
 									<div class="comments-shared">
-										<a href="#" class="post-add-icon inline-items">
+										<a onclick="ver_comentarios({{$mensaje->msj_id}})" href="#" class="post-add-icon inline-items">
 											<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-											<span>2 Comentarios</span>
+											@if( $mensaje->comentarios == 0)
+												<span>Comentar</span>
+											@else 
+												<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
+											@endif
 										</a>
-							
 									</div>
 							
 								</div>

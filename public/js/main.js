@@ -236,3 +236,7 @@ function filtrar_msj(teacher_id, student_id){
    });
 
 }
+
+function ver_comentarios(id_msj){
+    alert("mensaje id = " + id_msj );
+}
