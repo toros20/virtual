@@ -237,6 +237,41 @@ function filtrar_msj(teacher_id, student_id){
 
 }
 
-function ver_comentarios(id_msj){
-    alert("mensaje id = " + id_msj );
+function comentar(key_msj){
+
+    var token = $("#token").val();
+    var curso_id = $("#course").val();
+    var section = $("#section").val();
+    var user_id = $("#user").val();
+
+   $.ajax({
+
+       url:'../../ajax/div_comentar',
+       headers: token ,
+       data: {_token:token, key:key_msj, curso:curso_id, seccion:section, usuario:user_id},
+       type:'POST',
+       datatype:'json',
+       success:function(data)
+       {
+           //console.log(response);
+           $('#comentar_msj_'+key_msj).prepend(data)
+           .fadeIn( 1000, function() {
+               $('#comentar_msj_'+key_msj).css({"border": "4px solid lightcoral", "border-radius": "5px"});
+             });
+             $('#comentar_'+key_msj).hide();
+             $('#mensaje_'+key_msj).focus();
+             
+       },
+       error: function (response) {
+           console.log(response);
+         }
+   });
+   
 }
+
+function ver_comentarios(key_msj){
+   
+   
+   
+}
+

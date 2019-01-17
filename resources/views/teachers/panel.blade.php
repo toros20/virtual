@@ -560,27 +560,34 @@
 						
 							<p> {{$mensaje->mensaje}}</p>
 						
-							<div class="post-additional-info inline-items">
+							<div id="comentar_{{$mensaje->key}}" class="post-additional-info inline-items">
 						
 								{{-- <a href="#" class="post-add-icon inline-items">
 									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 									<span> {{$mensaje->megusta}} Me gusta</span>
-								</a> --}}					
-						
+								</a> --}}	
+
+								@if( $mensaje->comentarios == 0)
 								<div class="comments-shared">
-									<a onclick="ver_comentarios({{$mensaje->msj_id}})" href="#" class="post-add-icon inline-items">
+									<a onclick="comentar('{{$mensaje->key}}')"  class="post-add-icon inline-items">
 										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-										@if( $mensaje->comentarios == 0)
-											<span>Comentar</span>
-										@else 
-											<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
-										@endif
+										<span>Comentar</span>
 									</a>
 								</div>
-						
+								@else 
+								<div class="comments-shared">
+									<a onclick="ver_comentarios('{{$mensaje->key}}')"  class="post-add-icon inline-items">
+										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+										<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
+									</a>
+								</div>
+								@endif
+
 							</div>
 						
 						</article>
+						<!-- ... div para el momento de comentar, aqui aparecera la caja de escritura -->
+						<div id="comentar_msj_{{$mensaje->key}}"></div>
 					@endforeach
 					
 					<!-- ... end Post -->

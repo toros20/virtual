@@ -46,6 +46,8 @@ Route::post('ajax/post_in_section', 'UserController@post_in_section');
 //crear ruta para la pubñicacion de posts por seccion 
 Route::post('ajax/filtrar_msj_byteacher', 'UserController@filtrar_msj_byteacher');
 
+//crear ruta para mostrar la caja de comentar 
+Route::post('ajax/div_comentar', 'UserController@div_comentar');
 
 //rutas CRUD para los users
 Route::resource('users', 'UserController');

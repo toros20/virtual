@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use DB;
-
+ 
 use App\User;
 use App\Modality;
 use App\Course;
@@ -283,6 +283,16 @@ class UserController extends Controller
                         
         return view('ajax/filtrar_msj_byteacher',compact('mensajes'));
     }
+
+    public function div_comentar(Request $request){
+        
+        $key_msj=$request->key;
+        $curso=$request->curso;
+        $seccion=$request->seccion;
+        $user=$request->usuario;
+        return view('ajax/div_comentar',compact('key_msj','curso','seccion','user'));
+        
+     }
 
 }
 

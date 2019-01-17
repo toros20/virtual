@@ -41,6 +41,7 @@ class StudentController extends Controller
                             'msj_'.$id.'.mensaje',
                             'msj_'.$id.'.fecha',
                             'msj_'.$id.'.tipo',
+                            'msj_'.$id.'.key',
                             'msj_'.$id.'.comentarios',
                             'users.name','users.lastname','users.role','users.sexo' )
                         ->get();
