@@ -49,6 +49,17 @@ Route::post('ajax/filtrar_msj_byteacher', 'UserController@filtrar_msj_byteacher'
 //crear ruta para mostrar la caja de comentar 
 Route::post('ajax/div_comentar', 'UserController@div_comentar');
 
+//crear ruta para mostrar recibir el mensaje
+Route::post('ajax/enviar_comentario', 'UserController@enviar_comentario');
+
+//crear ruta para mostrar recibir el mensaje
+Route::post('ajax/ver_comentarios', 'UserController@ver_comentarios');
+
+//crear ruta para guardar los comentarios despues de leer los primeros comentarios
+Route::post('ajax/publicarComentario', 'UserController@publicarComentario');
+
+
+
 //rutas CRUD para los users
 Route::resource('users', 'UserController');
 

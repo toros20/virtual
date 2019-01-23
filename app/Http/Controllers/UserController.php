@@ -294,5 +294,158 @@ class UserController extends Controller
         
      }
 
+
+    public function enviar_comentario(Request $request){
+
+        $key=$request->key_msj;
+        $curso=$request->curso;
+        $seccion=$request->seccion;
+        $user=$request->usuario;
+        $texto=$request->comentario;
+
+        //usamos una variable para reducir el nombre de la tabla
+        $tbl_comentarios = 'comentarios_'.$curso.'_'. $seccion;
+
+        //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
+        $msj= DB::table($tbl_comentarios)->insert([
+
+            'user_id'=>$user,
+            'msj_key'=>$key,
+            'fecha'=>Carbon::now(),
+            'comentario'=>$texto,
+            
+        ]);
+
+        
+        //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
+        $id_users = Enrollment::where([
+            ['course_id', '=', $curso],
+            ['section', '=', $seccion],
+        ])->Select('user_id')->get();
+        
+        //recorremos todos los usuarios encontrados y sumamos en 
+        //1 el comentario de ese mensaje por su iidentificador key
+        foreach($id_users as $id_user)
+        {
+            //DB::table('msj_'.$id_user->user_id)->increment('comentarios')->where('key' , $key);
+            //DB::table('msj_'.$id_user->user_id)->increment('comentarios')->where('key', $key) ;
+            DB::table('msj_'.$id_user->user_id)
+            ->where('key', $key) 
+            ->increment('comentarios');
+        }
+
+        //obtenemos los id de los usuarios maestros asignados en este curso y seccion
+        $id_users2 = Assignment::where([
+            ['course_id', '=', $curso],
+            ['section', '=', $seccion],
+        ])->Select('user_id')->distinct()->get();
+
+        //recorremos todos los usuarios encontrados y les eviamos el mensaje
+        foreach($id_users2 as $id_user2)
+        {
+           //DB::table('msj_'.$id_user2->user_id)->increment('comentarios',1, array('key' => $key));
+            DB::table('msj_'.$id_user2->user_id)
+            ->where('key', $key) 
+            ->increment('comentarios');
+
+            //DB::table('msj_'.$id_user2->user_id)->increment('comentarios')->where('key', $key) ;
+        }
+
+        //obtenemos el id del comentario recien guardado
+        $id = DB::table($tbl_comentarios)->max('id');
+        //obtenemos el comentario recien almacenado
+         $comentario = DB::table($tbl_comentarios)
+                         ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
+                         ->where($tbl_comentarios.'.id',$id)->get();
+         //enviamos el mensaje recien almacenado,para que aparezca
+         return view('ajax/enviar_comentario',compact('comentario'));
+
+    }
+
+    public function ver_comentarios(Request $request){
+        //obtener el identificador unico del post que estan viendo
+        $key=$request->key_msj;
+        $curso=$request->curso;
+        $seccion=strtolower($request->seccion);
+
+        //usamos una variable para reducir el nombre de la tabla
+        $tbl_comentarios = 'comentarios_'.$curso.'_'. $seccion;
+
+        //mostramos los ultimos 20 comentario creados 
+        $comentarios = DB::table($tbl_comentarios)
+                        ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
+                        ->where($tbl_comentarios.'.msj_key',$key)->get();
+            
+        
+        return view('ajax/ver_comentarios',compact('comentarios'));
+    }
+
+    public function publicarComentario(Request $request){
+
+         //obtener el identificador unico del post que estan viendo
+         $key=$request->key_msj;
+         $usuario = $request->user_id;
+         $comentario=$request->mensaje;
+         $curso=$request->curso_id;
+         $seccion=strtolower($request->seccion_id);
+
+        //almacenar comentario en la tabla de comentarios de este cursos y seccion
+
+        //usamos una variable para reducir el nombre de la tabla
+        $tbl_comentarios = 'comentarios_'.$curso.'_'. $seccion;
+
+        //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
+        $msj= DB::table($tbl_comentarios)->insert([
+
+            'user_id'=>$usuario,
+            'msj_key'=>$key,
+            'fecha'=>Carbon::now(),
+            'comentario'=>$comentario
+            
+        ]);
+ 
+         //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
+         $id_users = Enrollment::where([
+            ['course_id', '=', $curso],
+            ['section', '=', $seccion],
+        ])->Select('user_id')->get();
+        
+        //recorremos todos los usuarios encontrados y sumamos en 
+        //1 el comentario de ese mensaje por su iidentificador key
+        foreach($id_users as $id_user)
+        {
+            DB::table('msj_'.$id_user->user_id)
+            ->where('key', $key) 
+            ->increment('comentarios');
+        }
+
+        //obtenemos los id de los usuarios docente asignados en este curso y seccion
+        $id_users2 = Assignment::where([
+            ['course_id', '=', $curso],
+            ['section', '=', $seccion],
+        ])->Select('user_id')->distinct()->get();
+
+        //recorremos todos los usuarios encontrados y les eviamos el mensaje
+        foreach($id_users2 as $id_user2)
+        {
+           //DB::table('msj_'.$id_user2->user_id)->increment('comentarios',1, array('key' => $key));
+            DB::table('msj_'.$id_user2->user_id)
+            ->where('key', $key) 
+            ->increment('comentarios');
+
+            //DB::table('msj_'.$id_user2->user_id)->increment('comentarios')->where('key', $key) ;
+        }
+
+        //obtenemos el id del comentario recien guardado
+        $id = DB::table($tbl_comentarios)->max('id');
+        //obtenemos el comentario recien almacenado
+         $comentario = DB::table($tbl_comentarios)
+                         ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
+                         ->where($tbl_comentarios.'.id',$id)->get();
+         //enviamos el mensaje recien almacenado,para que aparezca
+         return view('ajax/publicarComentario',compact('comentario'));
+        
+    }
+
 }
 

@@ -479,7 +479,6 @@
 
 <div class="container">
 	<div class="row">
-		
 
 		{{-- INICIO DEL PANEL CENTRAL --}}
 		<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-sm-12 col-12">
@@ -500,11 +499,11 @@
 						<div class="form-group with-icon-right ">
 							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 							<div class="add-options-message">
-								<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+								{{-- <a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 									<svg class="olymp-camera-icon">
 										<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 									</svg>
-								</a>
+								</a> --}}
 							</div>
 						</div>
 					</div>
@@ -524,7 +523,11 @@
 						<article class="hentry post">
 					
 							<div class="post__author author vcard inline-items">
-								<img src="../../img/teacher.png" alt="author">
+								@if ($mensaje->role === 'student')
+									<img src="../../img/boy.png" >
+								@else
+									<img src="../../img/teacher.png" >
+								@endif
 						
 								<div class="author-date">
 										@if ($mensaje->role === 'student')
@@ -533,7 +536,7 @@
 										<a class="h6 post__author-name fn" href="#">Lic. |  {{$mensaje->name}} {{$mensaje->lastname}}</a>
 										@endif
 									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
+										<time class="published" >
 												{{$mensaje->fecha}}
 										</time>
 									</div>
@@ -566,7 +569,7 @@
 									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 									<span> {{$mensaje->megusta}} Me gusta</span>
 								</a> --}}	
-
+									
 								@if( $mensaje->comentarios == 0)
 								<div class="comments-shared">
 									<a onclick="comentar('{{$mensaje->key}}')"  class="post-add-icon inline-items">
@@ -582,8 +585,11 @@
 									</a>
 								</div>
 								@endif
+								
 
 							</div>
+							{{-- div para mostrar los comentarios del mensaje --}}
+							<div id="ver_comentarios_{{$mensaje->key}}"></div>
 						
 						</article>
 						<!-- ... div para el momento de comentar, aqui aparecera la caja de escritura -->

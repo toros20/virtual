@@ -2,7 +2,12 @@
  <article class="hentry post">
 					
         <div class="post__author author vcard inline-items">
-            <img src="../../img/teacher.png" alt="author">
+            
+            @if ($mensaje[0]->role === 'student')
+                <img src="../../img/boy.png" >
+            @else
+                <img src="../../img/teacher.png" >
+            @endif
     
             <div class="author-date">
                     @if ($mensaje[0]->role === 'student')
@@ -11,7 +16,6 @@
                     <a class="h6 post__author-name fn" href="#">Lic. - {{$mensaje[0]->name}} {{$mensaje[0]->lastname}}</a>
                     @endif
                     
-                
                 <div class="post__date">
                     <time class="published" datetime="2017-03-24T18:18">
                             {{$mensaje[0]->fecha}}
@@ -42,15 +46,15 @@
     
         <div class="post-additional-info inline-items">
     
-            <a href="#" class="post-add-icon inline-items">
+            {{-- <a href="#" class="post-add-icon inline-items">
                 <svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
                 <span> {{$mensaje[0]->megusta}} Me gusta</span>
-            </a>					
+            </a> --}}					
     
             <div class="comments-shared">
-                <a href="#" class="post-add-icon inline-items">
+                <a onclick="comentar('{{$mensaje[0]->key}}')"  class="post-add-icon inline-items">
                     <svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
-                    <span>2 Comentarios</span>
+                    <span>Comentar</span>
                 </a>
     
             </div>
@@ -58,5 +62,6 @@
         </div>
     
     </article> 
+    <div id="comentar_msj_{{$mensaje[0]->key}}"></div>
 
    
