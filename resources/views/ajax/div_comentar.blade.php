@@ -2,7 +2,11 @@
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
     <p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
     <div class="post__author author vcard inline-items">
-        <img src="../../img/teacher.png" alt="author">
+         {{--    @if ($user->role === 'student')
+                <img src="{{ URL::asset('img/boy.png')}}" >
+            @else
+                <img src="{{ URL::asset('img/teacher.png')}}" >
+            @endif --}}
         
         <input id="courseC" type="hidden" value="{{$curso}}">
         <input id="sectionC" type="hidden" value=" {{$seccion}}">  

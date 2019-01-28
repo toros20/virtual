@@ -10,17 +10,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-reboot.css">
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-grid.css">
-	<link rel="stylesheet" type="text/css" href="../../css/toastr.min.css">
+
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap-reboot.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap-grid.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/toastr.min.css') }}">
 
 	<!-- Main Styles CSS -->
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
-	<link rel="stylesheet" type="text/css" href="../../css/fonts.min.css">
 
-	<!-- Main Font -->
-	<script src="../../js/webfontloader.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/fonts.min.css')}}">
+
+	<!-- Main Font-->
+	<script src="{{ URL::asset('js/webfontloader.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -29,8 +31,8 @@
 		});
 	</script>
 
-	<script type="text/javascript" language="javascript" src="../../js/main.js"></script>
-
+	<script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>
+	
 </head>
 <body>
 
@@ -69,7 +71,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="../../img/logo.png" alt="San Jose del Carmen">
+			<img src="{{ URL::asset('img/logo.png') }}" alt="San Jose del Carmen">
 		</a>
 
 	</div>
@@ -77,7 +79,7 @@
 	<div class="fixed-sidebar-left sidebar--large js-sidebar-open" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="../../img/logo.png" alt="San Jose del Carmen">
+				<img src="{{ URL::asset('img/logo.png') }}" alt="San Jose del Carmen">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">ISJC</h6>
@@ -90,10 +92,10 @@
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
 						@if ($user->sexo == 'M')
-							<img alt="author" src="../../img/boy_short.png" class="avatar">
+							<img alt="author" src="{{ URL::asset('img/boy_short.png') }}" class="avatar">
 						@endif
 						@if ($user->sexo == 'F')
-							<img alt="author" src="../../img/girl_short.png" class="avatar">
+							<img alt="author" src="{{ URL::asset('img/girl_short.png')}}" class="avatar">
 						@endif
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
@@ -113,7 +115,7 @@
 						
 					<li class="inline-items" style="padding: 0px 0 0px 15px;">
 						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
+							<img src="{{ URL::asset('img/teacher.PNG') }}" alt="author">
 						</div>
 						<div class="notification-event" style="width:100px;">
 							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  {{$asignacion->clase->short_name}} </a>
@@ -453,10 +455,10 @@
 						<div class="top-header-author">
 							<div class="author-thumb">
 								@if ($user->sexo == 'M')
-									<img alt="author" src="../../img/boy.png" class="avatar">
+									<img alt="author" src="{{ URL::asset('img/boy.png')}}" class="avatar">
 								@endif
 								@if ($user->sexo == 'F')
-									<img alt="author" src="../../img/girl.png" class="avatar">
+									<img alt="author" src="{{ URL::asset('img/girl.png')}}" class="avatar">
 								@endif
 							</div>
 							<div class="author-content">
@@ -495,7 +497,7 @@
 				<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
 						<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
 						<div class="post__author author vcard inline-items">
-							<img src="../../img/teacher.png" alt="author">
+							<img src="{{ URL::asset('img/boy.png')}}">
 							<input id="user" type="hidden" value="{{$user->id}} ">
 							<input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
 							<input id="course" type="hidden" value="{{$course[0]->id}} ">
@@ -529,9 +531,9 @@
 						
 								<div class="post__author author vcard inline-items">
 									@if ($mensaje->role === 'student')
-										<img src="../../img/boy.png" >
+										<img src="{{ URL::asset('img/boy.png')}}" >
 									@else
-										<img src="../../img/teacher.png" >
+										<img src="{{ URL::asset('img/teacher.png')}}" >
 									@endif
 							
 									<div class="author-date">
@@ -601,65 +603,9 @@
 						@endforeach
 						
 						<!-- ... end Post -->
-	
-						<!-- Comments -->
-						
-						{{-- <ul class="comments-list">
-							<li class="comment-item">
-								<div class="post__author author vcard inline-items">
-									<img src="../../img/avatar2-sm.jpg" alt="author">
-						
-									<div class="author-date">
-										<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
-										<div class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-												28 mins ago
-											</time>
-										</div>
-									</div>
-						
-									<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-						
-								</div>
-						
-								<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-						
-								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-									<span>6 Me gusta</span>
-								</a>
-								
-							</li>
-							<li class="comment-item">
-								<div class="post__author author vcard inline-items">
-									<img src="../../img/avatar19-sm.jpg" alt="author">
-						
-									<div class="author-date">
-										<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
-										<div class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-												2 hours ago
-											</time>
-										</div>
-									</div>
-						
-									<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-						
-								</div>
-						
-								<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
-									quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-								</p>
-						
-								<a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-									<span>8 Me gusta</span>
-								</a>
-								
-							</li>
-						</ul> --}}
-						
-						<!-- ... end Comments -->
+
+
+
 	
 						{{-- <a href="#" class="more-comments">Ver mas comentarios <span>+</span></a> --}}
 	
@@ -687,7 +633,7 @@
 						
 						<li class="inline-items">
 							<div class="author-thumb">
-								<img src="../../img/teacher.PNG" alt="author">
+								<img src="{{ URL::asset('img/teacher.png')}}">
 							</div>
 							<div class="notification-event">
 								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  </a>
@@ -723,7 +669,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -740,7 +686,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -770,7 +716,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -787,7 +733,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -817,7 +763,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -834,7 +780,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -854,49 +800,8 @@
 				<!-- .. end W-Twitter -->
 			</div>
 
-			{{-- <div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Last Videos</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-				<div class="ui-block-content">
-					<!-- W-Latest-Video -->
-					
-					<ul class="widget w-last-video">
-						<li>
-							<a href="https://vimeo.com/ondemand/viewfromabluemoon4k/147865858" class="play-video play-video--small">
-								<svg class="olymp-play-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
-								</svg>
-							</a>
-							<img src="../../img/video8.jpg" alt="video">
-							<div class="video-content">
-								<div class="title">System of a Revenge - Hypnotize...</div>
-								<time class="published" datetime="2017-03-24T18:18">3:25</time>
-							</div>
-							<div class="overlay"></div>
-						</li>
-						<li>
-							<a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video play-video--small">
-								<svg class="olymp-play-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
-								</svg>
-							</a>
-							<img src="../../img/video7.jpg" alt="video">
-							<div class="video-content">
-								<div class="title">Green Goo - Live at Dan’s Arena</div>
-								<time class="published" datetime="2017-03-24T18:18">5:48</time>
-							</div>
-							<div class="overlay"></div>
-						</li>
-					</ul>
-					
-					<!-- .. end W-Latest-Video -->				</div>
-			</div> --}}
-
 		</div>
 		{{-- FIN DEL PANEL DERECHO --}}
-
 
 	</div>
 </div>
@@ -1347,44 +1252,44 @@
 
 
 <!-- JS Scripts -->
-<script src="../../js/jquery-3.2.1.js"></script>
-<script src="../../js/jquery.appear.js"></script>
-<script src="../../js/jquery.mousewheel.js"></script>
-<script src="../../js/perfect-scrollbar.js"></script>
-<script src="../../js/jquery.matchHeight.js"></script>
-<script src="../../js/svgxuse.js"></script>
-<script src="../../js/imagesloaded.pkgd.js"></script>
-<script src="../../js/Headroom.js"></script>
-<script src="../../js/velocity.js"></script>
-<script src="../../js/ScrollMagic.js"></script>
-<script src="../../js/jquery.waypoints.js"></script>
-<script src="../../js/jquery.countTo.js"></script>
-<script src="../../js/popper.min.js"></script>
-<script src="../../js/material.min.js"></script>
-<script src="../../js/bootstrap-select.js"></script>
-<script src="../../js/smooth-scroll.js"></script>
-<script src="../../js/selectize.js"></script>
-<script src="../../js/swiper.jquery.js"></script>
-<script src="../../js/moment.js"></script>
-<script src="../../js/daterangepicker.js"></script>
-<script src="../../js/simplecalendar.js"></script>
-<script src="../../js/fullcalendar.js"></script>
-<script src="../../js/isotope.pkgd.js"></script>
-<script src="../../js/ajax-pagination.js"></script>
-<script src="../../js/Chart.js"></script>
-<script src="../../js/chartjs-plugin-deferred.js"></script>
-<script src="../../js/circle-progress.js"></script>
-<script src="../../js/loader.js"></script>
-<script src="../../js/run-chart.js"></script>
-<script src="../../js/jquery.magnific-popup.js"></script>
-<script src="../../js/jquery.gifplayer.js"></script>
-<script src="../../js/mediaelement-and-player.js"></script>
-<script src="../../js/mediaelement-playlist-plugin.min.js"></script>
-<script src="../../js/ion.rangeSlider.js"></script>
-<script src="../../js/base-init.js"></script>
-<script defer src="../../fonts/fontawesome-all.js"></script>
-<script src="../../Bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script src="../../js/toastr.min.js"></script>
+<script src="{{ URL::asset('js/jquery-3.2.1.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.appear.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.mousewheel.js')}}"></script>
+<script src="{{ URL::asset('js/perfect-scrollbar.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.matchHeight.js')}}"></script>
+<script src="{{ URL::asset('js/svgxuse.js')}}"></script>
+<script src="{{ URL::asset('js/imagesloaded.pkgd.js')}}"></script>
+<script src="{{ URL::asset('js/Headroom.js')}}"></script>
+<script src="{{ URL::asset('js/velocity.js')}}"></script>
+<script src="{{ URL::asset('js/ScrollMagic.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.waypoints.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.countTo.js')}}"></script>
+<script src="{{ URL::asset('js/popper.min.js')}}"></script>
+<script src="{{ URL::asset('js/material.min.js')}}"></script>
+<script src="{{ URL::asset('js/bootstrap-select.js')}}"></script>
+<script src="{{ URL::asset('js/smooth-scroll.js')}}"></script>
+<script src="{{ URL::asset('js/selectize.js')}}"></script>
+<script src="{{ URL::asset('js/swiper.jquery.js')}}"></script>
+<script src="{{ URL::asset('js/moment.js')}}"></script>
+<script src="{{ URL::asset('js/daterangepicker.js')}}"></script>
+<script src="{{ URL::asset('js/simplecalendar.js')}}"></script>
+<script src="{{ URL::asset('js/fullcalendar.js')}}"></script>
+<script src="{{ URL::asset('js/isotope.pkgd.js')}}"></script>
+<script src="{{ URL::asset('js/ajax-pagination.js')}}"></script>
+<script src="{{ URL::asset('js/Chart.js')}}"></script>
+<script src="{{ URL::asset('js/chartjs-plugin-deferred.js')}}"></script>
+<script src="{{ URL::asset('js/circle-progress.js')}}"></script>
+<script src="{{ URL::asset('js/loader.js')}}"></script>
+<script src="{{ URL::asset('js/run-chart.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.magnific-popup.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.gifplayer.js')}}"></script>
+<script src="{{ URL::asset('js/mediaelement-and-player.js')}}"></script>
+<script src="{{ URL::asset('js/mediaelement-playlist-plugin.min.js')}}"></script>
+<script src="{{ URL::asset('js/ion.rangeSlider.js')}}"></script>
+<script src="{{ URL::asset('js/base-init.js')}}"></script>
+<script defer src="{{ URL::asset('fonts/fontawesome-all.js')}}"></script>
+<script src="{{ URL::asset('Bootstrap/dist/js/bootstrap.bundle.js')}}"></script>
+<script src="{{ URL::asset('js/toastr.min.js')}}"></script>
 
 </body>
 </html>

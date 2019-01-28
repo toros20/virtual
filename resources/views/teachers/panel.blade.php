@@ -10,17 +10,19 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-reboot.css">
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../../Bootstrap/dist/css/bootstrap-grid.css">
-	<link rel="stylesheet" type="text/css" href="../../css/toastr.min.css">
+
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap-reboot.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('Bootstrap/dist/css/bootstrap-grid.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/toastr.min.css') }}">
 
 	<!-- Main Styles CSS -->
-	<link rel="stylesheet" type="text/css" href="../../css/main.css">
-	<link rel="stylesheet" type="text/css" href="../../css/fonts.min.css">
 
-	<!-- Main Font -->
-	<script src="../../js/webfontloader.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/main.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ URL::asset('css/fonts.min.css')}}">
+
+	<!-- Main Font-->
+	<script src="{{ URL::asset('js/webfontloader.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {
@@ -29,7 +31,7 @@
 		});
 	</script>
 
-	<script type="text/javascript" language="javascript" src="../../js/main.js"></script>
+	<script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>
 	
 </head>
 <body>
@@ -69,7 +71,7 @@
 
 	<div class="fixed-sidebar-left sidebar--small" id="sidebar-left-responsive">
 		<a href="#" class="logo js-sidebar-open">
-			<img src="../../img/logo.png" alt="San Jose del Carmen">
+			<img src="{{ URL::asset('img/logo.png') }}" alt="San Jose del Carmen">
 		</a>
 
 	</div>
@@ -77,28 +79,28 @@
 	<div class="fixed-sidebar-left sidebar--large js-sidebar-open" id="sidebar-left-1-responsive">
 		<a href="#" class="logo">
 			<div class="img-wrap">
-				<img src="../../img/logo.png" alt="San Jose del Carmen">
+				<img src="{{ URL::asset('img/logo.png') }}" alt="San Jose del Carmen">
 			</div>
 			<div class="title-block">
 				<h6 class="logo-title">ISJC</h6>
 			</div>
 		</a>
-
+	
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 
 			<div class="control-block">
 				<div class="author-page author vcard inline-items">
 					<div class="author-thumb">
 						@if ($user->sexo == 'M')
-							<img alt="author" src="../../img/teacher.png" class="avatar">
+							<img alt="author" src="{{ URL::asset('img/teacher.png') }}" class="avatar">
 						@endif
 						@if ($user->sexo == 'F')
-							<img alt="author" src="../../img/girl_short.png" class="avatar">
+							<img alt="author" src="{{ URL::asset('girl_short.png') }}" class="avatar">
 						@endif
 					</div>
 					<a href="02-ProfilePage.html" class="author-name fn">
 						<div class="author-title">
-							{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+							{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 						</div>
 						<span class="author-subtitle">Licenciado </span>
 					</a>
@@ -110,7 +112,7 @@
 					@foreach ($asignaciones as $asignacion)
 					<li class="inline-items" style="padding: 0px 0 0px 15px;">
 						<div class="author-thumb">
-							<img src="../../img/teacher.PNG" alt="author">
+							<img src="{{ URL::asset('img/teacher.PNG') }}" >
 						</div>
 						<div class="notification-event" style="width:100px;">
 							<p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
@@ -119,7 +121,7 @@
 						<div class="notification-event" style="padding-left:50px;">
 								<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
 									<a href="#">
-										<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+										<svg class="olymp-comments-post-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 									</a>
 								</span>
 							</div>
@@ -141,15 +143,16 @@
 						<span>Opciones de Cuenta</span>
 					</a>
 				</li>
+				
 				<li>
-					
-				</li>
-				<li>
-					<a href="#">
-						<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+					<form action="{{ route('logout') }}" method="POST">
+						<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+						<button type="submit">
+							<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
-						<span>Salir</span>
-					</a>
+							<span>Salir</span>
+						</button>
+					</form>
 				</li>
 			</ul>
 
@@ -165,7 +168,7 @@
 	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right-responsive">
 
 		<a href="#" class="olympus-chat inline-items js-chat-open">
-			<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+			<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 		</a>
 
 	</div>
@@ -185,7 +188,7 @@
 			<div class="form-group with-button">
 				<input class="form-control js-user-search" placeholder="Buscar Mensaje por asigaturas" type="text">
 				<button>
-					<svg class="olymp-magnifying-glass-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
+					<svg class="olymp-magnifying-glass-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon"></use></svg>
 				</button>
 			</div>
 		</form>
@@ -196,7 +199,7 @@
 			
 			{{-- Area de los mensajes --}}
 			<div class="control-icon more has-items">
-				<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+				<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 				<div class="label-avatar bg-purple">1</div>
 
 				<div class="more-dropdown more-with-triangle triangle-top-center">
@@ -208,7 +211,7 @@
 						<ul class="notification-list chat-message">
 							<li class="message-unread">
 								<div class="author-thumb">
-									<img src="../../img/avatar59-sm.jpg" alt="author">
+									<img src="../../../../img/avatar59-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -216,10 +219,10 @@
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 								<span class="notification-icon">
-									<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+									<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 								</span>
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 								</div>
 							</li>
 
@@ -233,7 +236,7 @@
 
 			{{-- Area de las notificaciones --}}
 			<div class="control-icon more has-items">
-				<svg class="olymp-thunder-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+				<svg class="olymp-thunder-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 
 				<div class="label-avatar bg-primary">1</div>
 
@@ -246,19 +249,19 @@
 						<ul class="notification-list">
 							<li>
 								<div class="author-thumb">
-									<img src="../../img/avatar62-sm.jpg" alt="author">
+									<img src="../../../../img/avatar62-sm.jpg" alt="author">
 								</div>
 								<div class="notification-event">
 									<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 									<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 								</div>
 									<span class="notification-icon">
-										<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+										<svg class="olymp-comments-post-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 									</span>
 
 								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+									<svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+									<svg class="olymp-little-delete"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 								</div>
 							</li>
 
@@ -275,10 +278,10 @@
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					@if ($user->sexo == 'M')
-						<img alt="author" src="../../img/teacher.png" class="avatar">
+						<img alt="author" src="{{ URL::asset('img/teacher.png')}}" class="avatar">
 					@endif
 					@if ($user->sexo == 'F')
-						<img alt="author" src="../../img/girl_short.png" class="avatar">
+						<img alt="author" src="{{ URL::asset('img/teacher.png')}}" class="avatar">
 					@endif
 					
 					<div class="more-dropdown more-with-triangle">
@@ -289,20 +292,23 @@
 
 							<ul class="account-settings">
 								<li>
-									<a href="29-YourAccount-AccountSettings.html">
-
+									<a href="#">
+				
 										<svg class="olymp-menu-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
-
-										<span>Opciones de Perfil</span>
+				
+										<span>Opciones de Cuenta</span>
 									</a>
 								</li>
-
+								
 								<li>
-									<a href="#">
-										<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
-
-										<span>Salir</span>
-									</a>
+									<form action="{{ route('logout') }}" method="POST">
+										<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+										<button type="submit">
+											<svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+				
+											<span>Salir</span>
+										</button>
+									</form>
 								</li>
 							</ul>
 
@@ -313,7 +319,7 @@
 
 				<a href="02-ProfilePage.html" class="author-name fn">
 					<div class="author-title">
-						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
+						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
 					<span class="author-subtitle">Lic....</span>
 				</a>
@@ -339,7 +345,7 @@
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#chat" role="tab">
 					<div class="control-icon has-items">
-						<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+						<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 						<div class="label-avatar bg-purple">2</div>
 					</div>
 				</a>
@@ -348,7 +354,7 @@
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#notification" role="tab">
 					<div class="control-icon has-items">
-						<svg class="olymp-thunder-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
+						<svg class="olymp-thunder-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 						<div class="label-avatar bg-primary">2</div>
 					</div>
 				</a>
@@ -371,7 +377,7 @@
 				<ul class="notification-list chat-message">
 					<li class="message-unread">
 						<div class="author-thumb">
-							<img src="../../img/avatar59-sm.jpg" alt="author">
+							<img src="../../../../img/avatar59-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<a href="#" class="h6 notification-friend">Diana Jameson</a>
@@ -379,10 +385,10 @@
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 						</div>
 									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
+										<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 									</span>
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 						</div>
 					</li>
 
@@ -404,19 +410,19 @@
 					
 					<li>
 						<div class="author-thumb">
-							<img src="../../img/avatar62-sm.jpg" alt="author">
+							<img src="../../../../img/avatar62-sm.jpg" alt="author">
 						</div>
 						<div class="notification-event">
 							<div><a href="#" class="h6 notification-friend">Mathilda Brinker</a> commented on your new <a href="#" class="notification-link">profile status</a>.</div>
 							<span class="notification-date"><time class="entry-date updated" datetime="2004-07-24T18:18">4 hours ago</time></span>
 						</div>
 										<span class="notification-icon">
-											<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+											<svg class="olymp-comments-post-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 										</span>
 
 						<div class="more">
-							<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-							<svg class="olymp-little-delete"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+							<svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+							<svg class="olymp-little-delete"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 						</div>
 					</li>
 
@@ -443,14 +449,14 @@
 				<div class="top-header top-header-favorit">
 				
 					<div class="top-header-thumb">
-						<img src="../../img/backtoschool.jpg" alt="nature">
+						<img src="../../../../img/backtoschool.jpg" alt="nature">
 						<div class="top-header-author">
 							<div class="author-thumb">
 								@if ($user->sexo == 'M')
-									<img alt="author" src="../../img/teacher.png" class="avatar">
+									<img alt="author" src="{{ URL::asset('img/teacher.png')}}" class="avatar">
 								@endif
 								@if ($user->sexo == 'F')
-									<img alt="author" src="../../img/teacher.png" class="avatar">
+									<img alt="author" src="{{ URL::asset('img/teacher.png')}}" class="avatar">
 								@endif
 							</div>
 							<div class="author-content">
@@ -464,7 +470,7 @@
 						<div class="control-block-button">
 
 							 <a href="#" class="btn btn-control bg-primary">
-								<svg class="olymp-star-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
+								<svg class="olymp-star-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
 							 </a>
 
 						</div>
@@ -489,19 +495,23 @@
 			<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
 					<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
 					<div class="post__author author vcard inline-items">
-						<img src="../../img/teacher.png" alt="author">
+						<img src="{{ URL::asset('img/teacher.png')}}" >
 						<input id="user" type="hidden" value="{{$user->id}} ">
 						<input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
-						<input id="course" type="hidden" value="{{$firstcourse->course_id}} ">
-						<input id="course_shortname" type="hidden" value="{{$firstcourse->short_name}} ">
-						<input id="section" type="hidden" value="{{$firstcourse->section}} "> 
+						{{-- En este  div se actualizara los datos cuando el docente cambie de curso --}}
+						<div id="clase_actual()">
+							<input id="course" type="hidden" value="{{$firstcourse->course_id}} ">
+							<input id="course_shortname" type="hidden" value="{{$firstcourse->short_name}} ">
+							<input id="section" type="hidden" value="{{$firstcourse->section}} "> 
+						</div>
+						
 
 						<div class="form-group with-icon-right ">
 							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 							<div class="add-options-message">
 								{{-- <a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 									<svg class="olymp-camera-icon">
-										<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 									</svg>
 								</a> --}}
 							</div>
@@ -524,9 +534,9 @@
 					
 							<div class="post__author author vcard inline-items">
 								@if ($mensaje->role === 'student')
-									<img src="../../img/boy.png" >
+									<img src="{{ URL::asset('img/boy.png')}}" >
 								@else
-									<img src="../../img/teacher.png" >
+									<img src="{{ URL::asset('img/teacher.png')}}" >
 								@endif
 						
 								<div class="author-date">
@@ -542,7 +552,7 @@
 									</div>
 								</div>
 						
-								{{-- <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+								{{-- <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 									<ul class="more-dropdown">
 										<li>
 											<a href="#">Edit Post</a>
@@ -566,21 +576,21 @@
 							<div id="comentar_{{$mensaje->key}}" class="post-additional-info inline-items">
 						
 								{{-- <a href="#" class="post-add-icon inline-items">
-									<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+									<svg class="olymp-heart-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
 									<span> {{$mensaje->megusta}} Me gusta</span>
 								</a> --}}	
 									
 								@if( $mensaje->comentarios == 0)
 								<div class="comments-shared">
 									<a onclick="comentar('{{$mensaje->key}}')"  class="post-add-icon inline-items">
-										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 										<span>Comentar</span>
 									</a>
 								</div>
 								@else 
 								<div class="comments-shared">
 									<a onclick="ver_comentarios('{{$mensaje->key}}')"  class="post-add-icon inline-items">
-										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
+										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 										<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
 									</a>
 								</div>
@@ -595,67 +605,6 @@
 						<!-- ... div para el momento de comentar, aqui aparecera la caja de escritura -->
 						<div id="comentar_msj_{{$mensaje->key}}"></div>
 					@endforeach
-					
-					<!-- ... end Post -->
-
-					<!-- Comments -->
-					
-					{{-- <ul class="comments-list">
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="../../img/avatar2-sm.jpg" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Nicholas Grissom</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											28 mins ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-					
-							</div>
-					
-							<p>Dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit.</p>
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>6 Me gusta</span>
-							</a>
-							
-						</li>
-						<li class="comment-item">
-							<div class="post__author author vcard inline-items">
-								<img src="../../img/avatar19-sm.jpg" alt="author">
-					
-								<div class="author-date">
-									<a class="h6 post__author-name fn" href="#">Jimmy Elricson</a>
-									<div class="post__date">
-										<time class="published" datetime="2017-03-24T18:18">
-											2 hours ago
-										</time>
-									</div>
-								</div>
-					
-								<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-					
-							</div>
-					
-							<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
-								quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-							</p>
-					
-							<a href="#" class="post-add-icon inline-items">
-								<svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-								<span>8 Me gusta</span>
-							</a>
-							
-						</li>
-					</ul> --}}
-					
-					<!-- ... end Comments -->
 
 					{{-- <a href="#" class="more-comments">Ver mas comentarios <span>+</span></a> --}}
 
@@ -664,7 +613,7 @@
 			   </div>
 
 			   
-			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 
 		</div>
 		{{-- FIN DEL PANEL CENTRAL --}}
@@ -683,15 +632,16 @@
 					@foreach ($asignaciones as $asignacion)
 						<li class="inline-items">
 							<div class="author-thumb">
-								<img src="../../img/teacher.PNG" alt="author">
+								<img src="{{ URL::asset('img/teacher.png')}}" >
 							</div>
 							<div class="notification-event">
-								<a href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a>
+								{{-- <a href="#" onclick="cambio_de_seccion('{{$asignacion->course->id}}','{{$asignacion->section}}','{{$asignacion->course->short_name}}')" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a> --}}
+								<a href="/teachers/panel/{{$user->id}}/{{$asignacion->course->id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a>
 								<span class="chat-message-item">{{$asignacion->clase->short_name}}  </span>
 							</div>
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
 								<a href="#">
-									<svg class="olymp-comments-post-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
+									<svg class="olymp-comments-post-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use></svg>
 								</a>
 							</span>
 						</li>
@@ -718,7 +668,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -735,7 +685,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -765,7 +715,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -782,7 +732,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -812,7 +762,7 @@
 				<ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Español</a>
 								<a href="#" class="group">Hoy</a>
@@ -829,7 +779,7 @@
 					
 					<li class="twitter-item">
 						<div class="author-folder">
-							<img src="../../img/teacher.png" alt="avatar">
+							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<a href="#" class="author-name">Tecnología</a>
 								<a href="#" class="group">Hoy</a>
@@ -849,46 +799,6 @@
 				<!-- .. end W-Twitter -->
 			</div>
 
-			{{-- <div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Last Videos</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-				</div>
-				<div class="ui-block-content">
-					<!-- W-Latest-Video -->
-					
-					<ul class="widget w-last-video">
-						<li>
-							<a href="https://vimeo.com/ondemand/viewfromabluemoon4k/147865858" class="play-video play-video--small">
-								<svg class="olymp-play-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
-								</svg>
-							</a>
-							<img src="../../img/video8.jpg" alt="video">
-							<div class="video-content">
-								<div class="title">System of a Revenge - Hypnotize...</div>
-								<time class="published" datetime="2017-03-24T18:18">3:25</time>
-							</div>
-							<div class="overlay"></div>
-						</li>
-						<li>
-							<a href="https://youtube.com/watch?v=excVFQ2TWig" class="play-video play-video--small">
-								<svg class="olymp-play-icon">
-									<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-play-icon"></use>
-								</svg>
-							</a>
-							<img src="../../img/video7.jpg" alt="video">
-							<div class="video-content">
-								<div class="title">Green Goo - Live at Dan’s Arena</div>
-								<time class="published" datetime="2017-03-24T18:18">5:48</time>
-							</div>
-							<div class="overlay"></div>
-						</li>
-					</ul>
-					
-					<!-- .. end W-Latest-Video -->				</div>
-			</div> --}}
-
 		</div>
 		{{-- FIN DEL PANEL DERECHO --}}
 
@@ -903,7 +813,7 @@
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 
 			<div class="modal-header">
@@ -912,7 +822,7 @@
 
 			<div class="modal-body">
 				<a href="#" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+				<svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 
 				<h6>Upload Photo</h6>
 				<span>Browse your computer.</span>
@@ -920,7 +830,7 @@
 
 				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
-			<svg class="olymp-photos-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+			<svg class="olymp-photos-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 
 			<h6>Choose from My Photos</h6>
 			<span>Choose from your uploaded photos</span>
@@ -952,7 +862,7 @@
 
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
 			</a>
 			<div class="modal-header">
 				<h6 class="title">Choose from My Photos</h6>
@@ -961,12 +871,12 @@
 				<ul class="nav nav-tabs" role="tablist">
 					<li class="nav-item">
 						<a class="nav-link active" data-toggle="tab" href="#home" role="tab" aria-expanded="true">
-							<svg class="olymp-photos-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+							<svg class="olymp-photos-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" data-toggle="tab" href="#profile" role="tab" aria-expanded="false">
-							<svg class="olymp-albums-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-albums-icon"></use></svg>
+							<svg class="olymp-albums-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-albums-icon"></use></svg>
 						</a>
 					</li>
 				</ul>
@@ -980,7 +890,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo1.jpg" alt="photo">
+									<img src="../../../../img/choose-photo1.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -988,7 +898,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo2.jpg" alt="photo">
+									<img src="../../../../img/choose-photo2.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -996,32 +906,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo3.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="../../img/choose-photo4.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="../../img/choose-photo5.jpg" alt="photo">
-									<input type="radio" name="optionsRadios">
-								</label>
-							</div>
-						</div>
-						<div class="choose-photo-item" data-mh="choose-item">
-							<div class="radio">
-								<label class="custom-radio">
-									<img src="../../img/choose-photo6.jpg" alt="photo">
+									<img src="../../../../img/choose-photo3.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -1030,7 +915,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo7.jpg" alt="photo">
+									<img src="../../../../img/choose-photo4.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -1038,7 +923,7 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo8.jpg" alt="photo">
+									<img src="../../../../img/choose-photo5.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -1046,7 +931,32 @@
 						<div class="choose-photo-item" data-mh="choose-item">
 							<div class="radio">
 								<label class="custom-radio">
-									<img src="../../img/choose-photo9.jpg" alt="photo">
+									<img src="../../../../img/choose-photo6.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../../../../img/choose-photo7.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../../../../img/choose-photo8.jpg" alt="photo">
+									<input type="radio" name="optionsRadios">
+								</label>
+							</div>
+						</div>
+						<div class="choose-photo-item" data-mh="choose-item">
+							<div class="radio">
+								<label class="custom-radio">
+									<img src="../../../../img/choose-photo9.jpg" alt="photo">
 									<input type="radio" name="optionsRadios">
 								</label>
 							</div>
@@ -1061,7 +971,7 @@
 
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo10.jpg" alt="photo">
+								<img src="../../../../img/choose-photo10.jpg" alt="photo">
 								<figcaption>
 									<a href="#">South America Vacations</a>
 									<span>Last Added: 2 hours ago</span>
@@ -1070,7 +980,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo11.jpg" alt="photo">
+								<img src="../../../../img/choose-photo11.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Photoshoot Summer 2016</a>
 									<span>Last Added: 5 weeks ago</span>
@@ -1079,7 +989,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo12.jpg" alt="photo">
+								<img src="../../../../img/choose-photo12.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Amazing Street Food</a>
 									<span>Last Added: 6 mins ago</span>
@@ -1089,7 +999,7 @@
 
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo13.jpg" alt="photo">
+								<img src="../../../../img/choose-photo13.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Graffity & Street Art</a>
 									<span>Last Added: 16 hours ago</span>
@@ -1098,7 +1008,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo14.jpg" alt="photo">
+								<img src="../../../../img/choose-photo14.jpg" alt="photo">
 								<figcaption>
 									<a href="#">Amazing Landscapes</a>
 									<span>Last Added: 13 mins ago</span>
@@ -1107,7 +1017,7 @@
 						</div>
 						<div class="choose-photo-item" data-mh="choose-item">
 							<figure>
-								<img src="../../img/choose-photo15.jpg" alt="photo">
+								<img src="../../../../img/choose-photo15.jpg" alt="photo">
 								<figcaption>
 									<a href="#">The Majestic Canyon</a>
 									<span>Last Added: 57 mins ago</span>
@@ -1130,12 +1040,12 @@
 
 
 <a class="back-to-top" href="#" style="bottom: 10px;">
-		<img src="../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
+		<img src="../../../../svg-icons/back-to-top.svg" alt="arrow" class="back-icon">
 	</a>
 	
 	<a class="back-to-top" href="#" style="bottom: 70px; line-height: 60px;">
 		<svg class="olymp-comments-post-icon">
-			<use xlink:href="../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
+			<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
 		</svg>
 	</a>
 
@@ -1149,8 +1059,8 @@
 			<span class="icon-status online"></span>
 			<h6 class="title" >Chat</h6>
 			<div class="more">
-				<svg class="olymp-three-dots-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-				<svg class="olymp-little-delete js-chat-open"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
+				<svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+				<svg class="olymp-little-delete js-chat-open"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-little-delete"></use></svg>
 			</div>
 		</div>
 		<div class="modal-body">
@@ -1158,7 +1068,7 @@
 				<ul class="notification-list chat-message chat-message-field">
 					<li>
 						<div class="author-thumb">
-							<img src="../../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../../../../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -1168,7 +1078,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="../../img/author-page.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../../../../img/author-page.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -1179,7 +1089,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="../../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="../../../../img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -1198,55 +1108,56 @@
 
 
 <!-- JS Scripts -->
-<script src="../../js/jquery-3.2.1.js"></script>
-<script src="../../js/jquery.appear.js"></script>
-<script src="../../js/jquery.mousewheel.js"></script>
-<script src="../../js/perfect-scrollbar.js"></script>
-<script src="../../js/jquery.matchHeight.js"></script>
-<script src="../../js/svgxuse.js"></script>
-<script src="../../js/imagesloaded.pkgd.js"></script>
-<script src="../../js/Headroom.js"></script>
-<script src="../../js/velocity.js"></script>
-<script src="../../js/ScrollMagic.js"></script>
-<script src="../../js/jquery.waypoints.js"></script>
-<script src="../../js/jquery.countTo.js"></script>
-<script src="../../js/popper.min.js"></script>
-<script src="../../js/material.min.js"></script>
-<script src="../../js/bootstrap-select.js"></script>
-<script src="../../js/smooth-scroll.js"></script>
-<script src="../../js/selectize.js"></script>
-<script src="../../js/swiper.jquery.js"></script>
-<script src="../../js/moment.js"></script>
-<script src="../../js/daterangepicker.js"></script>
-<script src="../../js/simplecalendar.js"></script>
-<script src="../../js/fullcalendar.js"></script>
-<script src="../../js/isotope.pkgd.js"></script>
-<script src="../../js/ajax-pagination.js"></script>
-<script src="../../js/Chart.js"></script>
-<script src="../../js/chartjs-plugin-deferred.js"></script>
-<script src="../../js/circle-progress.js"></script>
-<script src="../../js/loader.js"></script>
-<script src="../../js/run-chart.js"></script>
-<script src="../../js/jquery.magnific-popup.js"></script>
-<script src="../../js/jquery.gifplayer.js"></script>
-<script src="../../js/mediaelement-and-player.js"></script>
-<script src="../../js/mediaelement-playlist-plugin.min.js"></script>
-<script src="../../js/ion.rangeSlider.js"></script>
-<script src="../../js/base-init.js"></script>
-<script defer src="../../fonts/fontawesome-all.js"></script>
-<script src="../../Bootstrap/dist/js/bootstrap.bundle.js"></script>
-<script type="text/javascript" language="javascript" src="../../js/toastr.min.js"></script>
-<script src="../../js/toastr.js.map"></script>
+<script src="{{ URL::asset('js/jquery-3.2.1.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.appear.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.mousewheel.js')}}"></script>
+<script src="{{ URL::asset('js/perfect-scrollbar.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.matchHeight.js')}}"></script>
+<script src="{{ URL::asset('js/svgxuse.js')}}"></script>
+<script src="{{ URL::asset('js/imagesloaded.pkgd.js')}}"></script>
+<script src="{{ URL::asset('js/Headroom.js')}}"></script>
+<script src="{{ URL::asset('js/velocity.js')}}"></script>
+<script src="{{ URL::asset('js/ScrollMagic.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.waypoints.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.countTo.js')}}"></script>
+<script src="{{ URL::asset('js/popper.min.js')}}"></script>
+<script src="{{ URL::asset('js/material.min.js')}}"></script>
+<script src="{{ URL::asset('js/bootstrap-select.js')}}"></script>
+<script src="{{ URL::asset('js/smooth-scroll.js')}}"></script>
+<script src="{{ URL::asset('js/selectize.js')}}"></script>
+<script src="{{ URL::asset('js/swiper.jquery.js')}}"></script>
+<script src="{{ URL::asset('js/moment.js')}}"></script>
+<script src="{{ URL::asset('js/daterangepicker.js')}}"></script>
+<script src="{{ URL::asset('js/simplecalendar.js')}}"></script>
+<script src="{{ URL::asset('js/fullcalendar.js')}}"></script>
+<script src="{{ URL::asset('js/isotope.pkgd.js')}}"></script>
+<script src="{{ URL::asset('js/ajax-pagination.js')}}"></script>
+<script src="{{ URL::asset('js/Chart.js')}}"></script>
+<script src="{{ URL::asset('js/chartjs-plugin-deferred.js')}}"></script>
+<script src="{{ URL::asset('js/circle-progress.js')}}"></script>
+<script src="{{ URL::asset('js/loader.js')}}"></script>
+<script src="{{ URL::asset('js/run-chart.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.magnific-popup.js')}}"></script>
+<script src="{{ URL::asset('js/jquery.gifplayer.js')}}"></script>
+<script src="{{ URL::asset('js/mediaelement-and-player.js')}}"></script>
+<script src="{{ URL::asset('js/mediaelement-playlist-plugin.min.js')}}"></script>
+<script src="{{ URL::asset('js/ion.rangeSlider.js')}}"></script>
+<script src="{{ URL::asset('js/base-init.js')}}"></script>
+<script defer src="{{ URL::asset('fonts/fontawesome-all.js')}}"></script>
+<script src="{{ URL::asset('Bootstrap/dist/js/bootstrap.bundle.js')}}"></script>
+<script src="{{ URL::asset('js/toastr.min.js')}}"></script>
+
+
 <script>$(document).ready(function(){
 
-		var seccion = $("#section").val();
-		var course = $("#course_shortname").val();
-		//$("#modal_clase_actual").modal('show');  });
-		toastr.options = {
-		"positionClass": "toast-top-center"
-		}
-		toastr["success"]('<p style = "text-align:center;">Bienvenido a </p><p style = "text-align:center;">'+course+'Grado - Sección '+seccion+'</p>' );
-	});
+	var seccion = $("#section").val();
+	var course = $("#course_shortname").val();
+	
+	toastr.options = {
+	"positionClass": "toast-top-center"
+	}
+	toastr["success"]('<p style = "text-align:center;">Bienvenido a </p><p style = "text-align:center;">'+course+'Grado - Sección '+seccion+'</p>' );
+});
 </script>
 </body>
 </html>

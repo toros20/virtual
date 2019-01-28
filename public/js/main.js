@@ -144,7 +144,7 @@ function publicar(){
 
         $.ajax({
 
-            url:'../../ajax/post_in_section',
+            url:'../../../../ajax/post_in_section',
             headers: token ,
             data: {
                 curso_id:curso,
@@ -243,7 +243,7 @@ function comentar(key_msj){
 
    $.ajax({
 
-       url:'../../ajax/div_comentar',
+       url:'../../../../ajax/div_comentar',
        headers: token ,
        data: {_token:token, key:key_msj, curso:curso_id, seccion:section, usuario:user_id},
        type:'POST',
@@ -256,7 +256,7 @@ function comentar(key_msj){
                $('#comentar_msj_'+key_msj).css({"border": "2px solid lightcoral", "border-radius": "5px"});
              });
              $('#comentar_'+key_msj).hide();
-             $('#mensaje_'+key_msj).focus();
+             $('#comentario_'+key_msj).focus();
              
        },
        error: function (response) {
@@ -277,7 +277,7 @@ function enviar_comentario(key_msj){
     
     $.ajax({
 
-        url:'../../ajax/enviar_comentario',
+        url:'../../../../ajax/enviar_comentario',
         headers: token ,
         data: {
             _token:token, 
@@ -296,6 +296,8 @@ function enviar_comentario(key_msj){
             .fadeIn( 1000, function() {
                 //$('#comentar_msj_'+key_msj).css({"border": "4px solid lightcoral", "border-radius": "5px"});
               });
+              $('#comentario_'+key_msj).val('');
+              $('#comentario_'+key_msj).focus();
               
         },
         error: function (response) {
@@ -314,7 +316,7 @@ function ver_comentarios(key_msj){
 
     $.ajax({
 
-        url:'../../ajax/ver_comentarios',
+        url:'../../../../ajax/ver_comentarios',
         headers: token ,
         data: {
             _token:token, 
@@ -380,7 +382,7 @@ function publicarComentario(key_msj){
 
        $.ajax({
 
-           url:'../../ajax/publicarComentario',
+           url:'../../../../ajax/publicarComentario',
            headers: token ,
            data: {
                curso_id:curso,
@@ -445,5 +447,22 @@ function publicarComentario(key_msj){
        });
 
     }
-
 }
+
+//funcion (docente) que se activa al cambiar de grado y seccion en el panel izquierdo
+/*function cambio_de_seccion(curso_id, seccion, short_name){
+    //actualizamos las variables globales 
+    $("#course").val(curso_id);
+    $("#course_shortname").val(short_name);
+    $("#section").val(seccion);
+
+    //enviamos el mensaje de bienvenida al grupo
+    toastr.options = {
+        "positionClass": "toast-top-center"
+        }
+        toastr["success"]('<p style = "text-align:center;"> Bienvenido a </p><p style = "text-align:center;">'+short_name+' Grado - Sección '+seccion+'</p>' );
+    
+    //cargar los mensajes del nuevo curso y seccion
+
+    
+}*/

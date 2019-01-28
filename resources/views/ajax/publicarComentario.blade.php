@@ -3,9 +3,9 @@
     <li class="comment-item">
         <div class="post__author author vcard inline-items">
                 @if ($comentario[0]->role === 'student')
-                    <img src="../../img/boy.png" >
+                    <img src="{{ URL::asset('img/boy.png')}}" >
                 @else
-                    <img src="../../img/teacher.png" >
+                    <img src="{{ URL::asset('img/teacher.png')}}" >
                 @endif
 
             <div class="author-date">

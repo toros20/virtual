@@ -186,7 +186,7 @@ class UserController extends Controller
         $courses = Course::where('modality_id',$id)->get();
         return view('ajax/coursesbymodalityid',compact('courses'));
         
-     }
+    }
 
      public function sectionsbycoursesid(Request $request){
         
@@ -236,7 +236,8 @@ class UserController extends Controller
                 'mensaje'=>$request->mensaje,
                 'fecha'=>Carbon::now(),
                 'tipo'=>"seccion",
-                'clase'=>$request->clase,
+                'curso_id'=>$request->curso_id,
+                'section'=>$request->seccion_id,
                 'key'=>$key
                 
             ]);
@@ -256,6 +257,8 @@ class UserController extends Controller
                 'remitente'=>$request->user_id,
                 'mensaje'=>$request->mensaje,
                 'fecha'=>Carbon::now(),
+                'curso_id'=>$request->curso_id,
+                'section'=>$request->seccion_id,
                 'tipo'=>"seccion",
                 'key'=>$key
                 
@@ -295,7 +298,8 @@ class UserController extends Controller
      }
 
 
-    public function enviar_comentario(Request $request){
+    
+     public function enviar_comentario(Request $request){
 
         $key=$request->key_msj;
         $curso=$request->curso;

@@ -4,8 +4,8 @@
     
     <li class="comment-item">
         <div class="post__author author vcard inline-items">
-            @if ($comentario->role === 'student')
-                <img src="../../img/boy.png" >
+            @if ($comentario->role == 'student')
+                <img src="{{ URL::asset('img/boy.png')}}" >
                 <div class="author-date">
                     <a class="h6 post__author-name fn" href="#">Estudiante:| {{$comentario->name}}</a>
                     <div class="post__date">
@@ -15,7 +15,7 @@
                     </div>
                 </div>
             @else
-                <img src="../../img/teacher.png" >
+                <img src="{{ URL::asset('img/teacher.png')}}" >
                 <div class="author-date">
                     <a class="h6 post__author-name fn" href="#">Lic:|{{$comentario->name}}</a>
                     <div class="post__date">
@@ -36,13 +36,13 @@
 </ul>
 <div align="center" id="circle{{$comentario->msj_key}}"></div>
 
-@if ($comentario->role === 'student')
+@if ($comentario->role == 'student')
 
 <div align="center"><h5>Comentar este Post</h5> </div>
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
         <p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
         <div class="post__author author vcard inline-items">
-            <img src="../../img/teacher.png" alt="author">
+            {{-- <img src="{{ URL::asset('img/boy.png')}}" alt="author"> --}}
            
             <input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
             <div class="form-group with-icon-right ">
@@ -64,7 +64,7 @@
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
     <p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
     <div class="post__author author vcard inline-items">
-        <img src="../../img/teacher.png" alt="author">
+        {{-- <img src="{{ URL::asset('img/teacher.png')}}" alt="author"> --}}
        
         <input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
 

@@ -30,7 +30,8 @@ class LoginController extends Controller
         }
 
         if ( $user->role == 'teacher' ) {
-            return redirect()->route('teachers_panel/{id}', ['id' => $user->id]);
+            return redirect()->route('teachers_panel/{user_id}/{course_id}/{section}', 
+            ['user_id' => $user->id,'course_id' => 0,'section' => 'x']);
         }
 
         return redirect('/login');
