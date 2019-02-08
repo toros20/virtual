@@ -106,3 +106,24 @@ Route::get('students/panel/{id}', 'StudentController@students_panel')->name('stu
 //esta es la ruta para el panel de teachers despues de hacer login exitosamente
 //Route::get('teachers/panel/{user_id?}/{course_id?}/{section?}', 'TeacherController@teachers_panel')->name('teachers_panel/{user_id?}/{course_id?}/{section?}');
 Route::get('teachers/panel/{user_id}/{course_id}/{section}',['uses' => 'TeacherController@teachers_panel'])->name('teachers_panel/{user_id}/{course_id}/{section}');
+
+//ruta para el panel inicial de la seccion academica
+Route::get('teachers/academia/{user_id}','TeacherController@academia')->name('academia/{user_id}');
+
+/*************** Rutas para los botones del panel academico del docente*/
+Route::get('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}','TeacherController@estudiantes')->name('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}','TeacherController@acumulativos')->name('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/documentos/{user_id}/{course_id}/{section}/{clase}','TeacherController@documentos')->name('teachers/documentos/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/examen/{user_id}/{course_id}/{section}/{clase}','TeacherController@examen')->name('teachers/examen/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','TeacherController@descargas')->name('teachers/descargas/{user_id}/{course_id}/{section}/{clase}');
+/***************FIN de las Rutas para los botones del panel academico del docente*/
+
+//crear ruta para generar las secciones asignadas a este curso de este docente
+Route::post('ajax/loadsectionsfordocentes', 'TeacherController@loadsectionsfordocentes');
+
+//crear ruta para generar las clases asignadas a este curso de este docente
+Route::post('ajax/loadclassesfordocente', 'TeacherController@loadclassesfordocente');
+
+//crear ruta para enviar una task nueva desde el formulario del docente
+Route::post('ajax/send_task', 'TeacherController@send_task');
+

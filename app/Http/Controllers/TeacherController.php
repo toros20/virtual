@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Assignment;
 use DB;
+use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
@@ -40,7 +41,7 @@ class TeacherController extends Controller
                             ['course_id', '=', $course_id],
                             ['section', '=', $section],
                             ])
-                         ->first();
+                         ->first(); 
  
          //obtenemos los primeros 30 mensajes de este usuario 
          //que sean de este curso y seccion (curso que ha seleccionado)
@@ -69,6 +70,174 @@ class TeacherController extends Controller
          return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes'));
          
      }
-    
+     
+     //seccion que controla el panel inicial de la seccion academica
+     function academia($user_id){
+
+        //obtenemos los datos del docente
+        $user = User::findOrFail($user_id);
+
+         //obtenemos las asignaciones de este docentes
+         $asignaciones = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
+                        ->where('assignments.user_id','=',$user_id)
+                        ->get();
+                       // dd($asignaciones);
+
+        return view('teachers/academia',compact('user','asignaciones'));
+     }
+
+     function  estudiantes(){
+
+     }
+     //funcion para enviar datos a la seccion de acumulativos de los docentes
+     function  acumulativos($user_id,$course,$section,$clase){
+
+         //obtenemos los datos del docente
+         $user = User::findOrFail($user_id);
+
+         //obtenemos los cursos a los cuales les da clase este docente
+         //se usan en el select
+         $cursos = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->Select('courses.id as course_id','courses.short_name as course')
+                        ->where('assignments.user_id','=',$user_id)
+                        ->distinct()->get();
+                       // dd($asignaciones);
+        $clase_actual=DB::table('clases')
+                        ->where('id','=',$clase)
+                        ->get();
+        $curso_actual=DB::table('courses')
+                        ->where('id','=',$course)
+                        ->get();
+        $section_actual=$section;
+
+        //obtener las tareas creadas para este curso seccion y clase
+        //para mostrar en la tabla
+        $tbl_task='task_'.$course.'_'.$section;//nombre de la tabla a buscar
+        $tasks = DB::table($tbl_task)
+        ->where([
+                ['clase', '=', $clase],
+                ['teacher', '=', $user_id],
+                ])
+        ->orderBy('id','ASC')
+        ->get();
+
+        return view('teachers/acumulativos',compact(
+            'user','cursos','tasks','clase_actual','curso_actual','section_actual'));
+
+    }
+
+     //funcion que devolvera las clases asignadas a un curso seleccinoado por el docente en acumulativos
+    function loadclassesfordocente(Request $request){
+
+         //recibimos el curso y el id del docente 
+         $user_id=$request->user;
+         $course_id=$request->course_id;
+ 
+         //determinar las secciones que tiene asignado este docente en este curso
+        $clases = DB::table('assignments')
+                    ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                    ->Select('clases.id as clase_id','clases.short_name as clase')
+                    ->where([
+                                ['course_id', '=', $course_id],
+                                ['user_id', '=', $user_id],
+                            ])
+                    ->distinct()->get();
+         //enviamos las seccinoes a la vista ajax
+         return view('ajax/loadclassesfordocente',compact('clases'));
+    }
+
+    //funcion que devolvera las secciones asignadas a un curso y clase seleccinoado por el docente en acumulativos
+    function loadsectionsfordocentes(Request $request){
+
+        //recibimos el curso y el id del docente 
+        $user_id=$request->user;
+        $course_id=$request->course_id;
+        $clase_id=$request->clase_id;
+
+        //determinar las secciones que tiene asignado este docente en este curso
+        $sections = Assignment::where([
+            ['course_id', '=', $course_id],
+            ['clase_id', '=', $clase_id],
+            ['user_id', '=', $user_id],
+        ])->Select('section')->distinct()->get();
+        //enviamos las seccinoes a la vista ajax
+        return view('ajax/loadsectionsfordocentes',compact('sections'));
+    }
+
+    //funcion para almacer una tarea creada por el docente
+    function send_task(Request $request){
+
+        //recibimos los datos de la tarea(task) a crear 
+        $course_id=$request->_course_id;
+        $clase_id=$request->_clase_id;
+        $secciones=$request->_secciones;
+        $tipo=$request->_tipo;
+        $parcial=$request->_parcial;
+        $titulo=$request->_titulo;
+        $descripcion=$request->_descripcion;
+        $valor=$request->_valor;
+        $fecha_entrega1=$request->_fecha_entrega;
+        $teacher=$request->_user;
+
+        //variables utilizadas para volver al curso seccion y clase donde esta actualmente el docente
+        $curso_actual=$request->_curso_actual;
+        $section_actual=$request->_section_actual;
+        $clase_actual=$request->_clase_actual;
+
+        //cambiamos el formato de fecha
+        $fecha_entrega = date("Y-m-d",strtotime($fecha_entrega1));
+
+        //para cada una de las secciones que se ha seleccionado
+        foreach ($secciones as  $seccion) {
+
+            //convertimos en minuscula la letra de la seccion
+            $seccion=strtolower($seccion);
+            //nombre de la tabla task a almacenar
+            $tbl_task='task_'.$course_id.'_'.$seccion;
+            $msj= DB::table($tbl_task)->insert([
+
+                'teacher'=>$teacher,
+                'clase'=>$clase_id,
+                'parcial'=>$parcial,
+                'titulo'=>$titulo,
+                'descripcion'=>$descripcion,
+                'evaluada'=>0,
+                'fecha_entrega'=>$fecha_entrega,
+                'fecha_publicada'=>Carbon::now(),
+                'valor'=>$valor,
+                'tipo'=>$tipo
+                
+            ]);
+        }
+
+        //buscamos las tareas del curso seccion y clase donde esta actualmente el docente
+        $tbl_task_actual='task_'.$curso_actual.'_'.$section_actual;//nombre de la tabla a buscar
+        $tasks = DB::table($tbl_task_actual)
+        ->where([
+                ['clase', '=', $clase_actual],
+                ['teacher', '=', $teacher],
+                ])
+        ->orderBy('id','ASC')
+        ->get();
+
+        return view('ajax/send_task',compact('tasks'));
+
+    }
+
+    function  documentos(){
+
+    }
+
+    function  examen(){
+
+    }
+
+    function  descargas(){
+
+    }
 
     }

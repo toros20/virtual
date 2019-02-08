@@ -3,7 +3,8 @@ var CRUMINA={};!function(e){"use strict";var n=e(window),t=e(document),o=e("body
 /*$(document).ready(function(){
     alert("HOLAAA");
    });*/
-   
+
+
 function loadcourses(){
 
     //obtenemos  el id de la modalidad seleccionada
@@ -448,6 +449,8 @@ function publicarComentario(key_msj){
 
     }
 }
+
+
 
 //funcion (docente) que se activa al cambiar de grado y seccion en el panel izquierdo
 /*function cambio_de_seccion(curso_id, seccion, short_name){
