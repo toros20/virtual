@@ -6,6 +6,7 @@
     <td>{{$task->fecha_entrega}}</td>
     
     <td>{{$task->valor}}%</td>
+    
     @if ( $task->evaluada == 0)
         <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
         <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0">Editar</button></td>
