@@ -49,5 +49,149 @@ class StudentController extends Controller
         //se envian los datos a la vista panel
         return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes'));
         
-     }
+    }
+
+    //funcino para mostrar el panel academico del estudiante, se muestan las tarjetas de clases 
+     function academia($user_id){
+
+         //obtenemos los datos del estudiante
+         $user = User::findOrFail($user_id);
+         //obtenemos los datos de su matricula
+         $enroll = Enrollment::where('user_id',$user_id)->get();
+         //obtenemos las asignaciones de este docentes
+         $asignaciones = DB::table('clasecourses')
+                        ->join('courses', 'clasecourses.course_id', '=', 'courses.id')
+                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                        ->Select('courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase')
+                        ->where('clasecourses.course_id', '=', $enroll[0]->course_id)
+                        ->get();
+                       // dd($asignaciones);
+
+        return view('students/academia',compact('user','asignaciones'));
+    }
+
+    //funcion para la seccion de cada clase, mostraremos acumulativos y documentos por parcial
+     function acumulativos($user_id,$clase,$parcial){
+
+         //obtenemos los datos del student
+         $user = User::findOrFail($user_id);
+
+         //obtenemos los datos de su matricula
+         $enroll = Enrollment::where('user_id',$user_id)->get();
+         $course=$enroll[0]->course_id;
+         $section=strtolower($enroll[0]->section);
+
+         //clases para mostrar en el panel de navegacion del lado derecho
+         $clases = DB::table('clasecourses')
+                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                        ->Select('clases.id as clase_id','clases.short_name as clase')
+                        ->where('clasecourses.course_id', '=', $enroll[0]->course_id)
+                        ->get();
+
+        //tabla individual de tareas para evaluar
+        $tbl_taskstudent='taskstudent_'.$course.'_'.$section;//nombre de la tabla a buscar
+        //tabla global de tareas
+        $tbl_task='task_'.$course.'_'.$section;//nombre de la tabla a buscar
+
+        //buscamos las tares de este esudiante por el parcial y clase del url
+        $tasks = DB::table($tbl_taskstudent)
+                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                    ->where([
+                        ['student', '=', $user_id],
+                        ['parcial', '=', $parcial],
+                        ['clase', '=', $clase]
+                    ])
+                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                    ->get();
+        //obtenemos los documentos subidos por este docente a este cursos secion y clase
+        $files = DB::table('files')
+                ->where([
+                        ['clase_id', '=', $clase],
+                        ['course_id', '=', $course],
+                        ['section', '=', $section],
+                        ['parcial', '=', $parcial]
+                        ])
+                ->orderBy('id','ASC')
+                ->get();
+        //obtenemos los videos subidos por este docente a este cursos secion y clase
+        $videos = DB::table('videos')
+                    ->where([
+                            ['clase_id', '=', $clase],
+                            ['course_id', '=', $course],
+                            ['section', '=', $section],
+                            ['parcial', '=', $parcial]
+                            
+                            ])
+                    ->orderBy('id','ASC')
+                    ->get();
+
+        //dd($tasks);
+
+        return view('students/acumulativos',compact('user','tasks','clases','parcial','files','videos'));
+
+    }
+
+    //funcion para mostrar acumulativos y documentos por parcial despues de seleccionar (filtrar) una clase 
+    function acumulativosbyclass(Request $request){
+
+        $user_id=$request->_student;
+        $clase=$request->_clase_id;
+        $parcial=$request->_parcial;
+        //obtenemos los datos del student
+        $user = User::findOrFail($user_id);
+
+        //obtenemos los datos de su matricula
+        $enroll = Enrollment::where('user_id',$user_id)->get();
+        $course=$enroll[0]->course_id;
+        $section=strtolower($enroll[0]->section);
+
+        //buscamos el nombre de la clase seleccionada
+        $clases = DB::table('clases')
+                    ->Select('clases.short_name as clase')
+                    ->where('id', '=',$clase)
+                    ->get();
+
+        //tabla individual de tareas para evaluar
+        $tbl_taskstudent='taskstudent_'.$course.'_'.$section;//nombre de la tabla a buscar
+        //tabla global de tareas
+        $tbl_task='task_'.$course.'_'.$section;//nombre de la tabla a buscar
+
+        //buscamos las tares de este esudiante por el parcial y clase seleccionada
+        $tasks = DB::table($tbl_taskstudent)
+                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                    ->where([
+                        ['student', '=', $user_id],
+                        ['parcial', '=', $parcial],
+                        ['clase','=',$clase]
+                    ])
+                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                    ->get();
+
+          //obtenemos los documentos subidos por este docente a este cursos secion y clase
+          $files = DB::table('files')
+                    ->where([
+                            ['clase_id', '=', $clase],
+                            ['course_id', '=', $course],
+                            ['section', '=', $section],
+                            ['parcial', '=', $parcial],
+                            ])
+                    ->orderBy('id','ASC')
+                    ->get();
+            //dd($files);
+            //obtenemos los videos subidos por este docente a este cursos secion y clase
+            $videos = DB::table('videos')
+                        ->where([
+                                ['clase_id', '=', $clase],
+                                ['course_id', '=', $course],
+                                ['section', '=', $section],
+                                ['parcial', '=', $parcial],
+                                ])
+                        ->orderBy('id','ASC')
+                        ->get();
+
+        
+        return view('ajax/acumulativosbyclass',compact('user','tasks','clases','parcial','files','videos'));
+
+    }
+
 }

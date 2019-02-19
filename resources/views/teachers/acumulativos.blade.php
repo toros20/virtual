@@ -32,116 +32,64 @@
 
     <!--Double navigation-->
     <header>
-      <!-- Sidebar navigation -->
-      <div id="slide-out" class="side-nav sn-bg-4">
-        <ul class="custom-scrollbar">
-          <!-- Logo -->
-          <li>
-            <div class="logo-wrapper waves-light">
-              <a href="#"><img style="height: 100px;" src="{{ URL::asset('img/logo-sanjose.PNG')}}" class="img-fluid flex-center"></a>
-            </div>
-          </li>
-          <!--/. Logo -->
-          <!--Social-->
-          
-          <!--/Social-->
-          <!--Search Form-->
-         {{--  <li>
-            <form class="search-form" role="search">
-              <div class="form-group md-form mt-0 pt-1 waves-light">
-                <input type="text" class="form-control" placeholder="Search">
+        <!-- Sidebar navigation -->
+        <div id="slide-out" class="side-nav sn-bg-4">
+          <ul class="custom-scrollbar">
+            <!-- Logo -->
+            <li>
+              <div class="logo-wrapper waves-light">
+                <a href="#"><img style="height: 100px;" src="{{ URL::asset('img/logo-sanjose.PNG')}}" class="img-fluid flex-center"></a>
               </div>
-            </form>
-          </li> --}}
-          <!--/.Search Form-->
-          <!-- Side navigation links -->
-          <li>
-            <ul class="collapsible collapsible-accordion">
-              <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-chevron-right"></i> Submit
-                  blog<i class="fas fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
+            </li>
+            
+            <li>
+              <ul class="collapsible collapsible-accordion">
                   <ul>
-                    <li><a href="#" class="waves-effect">Submit listing</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Registration form</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-hand-pointer-o"></i>
-                  Instruction<i class="fas fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li><a href="#" class="waves-effect">For bloggers</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">For authors</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-eye"></i> About<i class="fas fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li><a href="#" class="waves-effect">Introduction</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Monthly meetings</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              <li><a class="collapsible-header waves-effect arrow-r"><i class="fas fa-envelope-o"></i> Contact me<i
-                    class="fas fa-angle-down rotate-icon"></i></a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li><a href="#" class="waves-effect">FAQ</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">FAQ</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">FAQ</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">FAQ</a>
-                    </li>
-                    <li><a href="#" class="waves-effect">Write a message</a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
-            </ul>
-          </li>
-          <!--/. Side navigation links -->
-        </ul>
-        <div class="sidenav-bg mask-strong"></div>
-      </div>
-      <!--/. Sidebar navigation -->
-      <!-- Navbar -->
-      <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
-        <!-- SideNav slide-out button -->
-        <div class="float-left">
-          <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a>
+                      <li>
+                       <p align=center> Acumulativos</p>
+                      </li>
+                      <hr>
+                      @foreach ($asignaciones as $asignacion)
+                        <li><a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} ">
+                         
+                             {{$asignacion->course}} - {{$asignacion->section }} - {{$asignacion->clase}}
+                          
+                        </a>
+                      </li>
+                      @endforeach
+                     
+                    </ul>
+              </ul>
+            </li>
+            <!--/. Side navigation links -->
+          </ul>
+          <div class="sidenav-bg mask-strong"></div>
         </div>
-        <!-- Breadcrumb-->
-        <div class="breadcrumb-dn mr-auto">
-          <p>Menú de Navegación</p>
-        </div>
-        <ul class="nav navbar-nav nav-flex-icons ml-auto">
-          
-           
-          <li class="nav-item">
-            <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido Lic. {{ $user->name }}</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a>
-          </li>
-          
-        </ul>
-      </nav>
-      <!-- /.Navbar -->
+        <!--/. Sidebar navigation -->
+        <!-- Navbar -->
+        <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
+          <!-- SideNav slide-out button -->
+          <div class="float-left">
+             <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a> 
+          </div>
+          <!-- Breadcrumb-->
+          <div class="breadcrumb-dn mr-auto">
+             <p>Menú de Navegación</p> 
+          </div>
+          <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            
+             
+            <li class="nav-item">
+              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido {{ $user->name }}</span></a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a>
+            </li>
+            
+          </ul>
+        </nav>
+        <!-- /.Navbar -->
     </header>
     <!--/.Double navigation-->
   
@@ -151,94 +99,302 @@
        
             <div class="row">
 
-                    <div  class="col-12 col-sm-12 col-md-3">
-                            <div class="card">
+                <div  class="col-12 col-sm-12 col-md-3">   
+                    <!--Accordion wrapper-->
+                    <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
 
-                                    <h5 class="card-header info-color white-text text-center py-4">
-                                        <strong>Crear Acumulativo</strong>
-                                    </h5>
-                                
-                                    <div class="card-body px-lg-5 pt-0">
-                                
-                                        <form class="md-form" style="color: #757575;">
-                                                {{-- @csrf --}}
-                                                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                                                <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
-                                                <input type="hidden" name="curso_actual" id="curso_actual" value="{{$curso_actual[0]->id}}">
-                                                <input type="hidden" name="section_actual" id="section_actual" value="{{$section_actual}}">
-                                                <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
+                         <!-- Accordion card -->
+                         <div class="card carta" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);">
+                      
+                            <!-- Card header -->
+                            <div class="card-header text-center" role="tab" id="headingOne1">
+                              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="false"
+                                aria-controls="collapseOne1">
+                                <h5 class="mb-0">
+                                  {{$parcial_actual}} Parcial <i class="fas fa-angle-down"></i>
+                                </h5>
+                              </a>
+                            </div>
                         
-                                            <div>
-                                                <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
-                                                    <option value="-1" disabled selected>Seleccione Curso</option>
-                                                    @foreach ($cursos as $curso)
-                                                        <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
-                                            <div>
-                                                <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
-                                                    <option value="-1" disabled selected>Seleccione Clase</option>
-                                                </select>
-                                            </div>
-                                
-                                            <div required id="checks_sections" class="form-check mb-4">
-                                               
-                                            </div>
-                                
-                                            <div>
-                                                <select required class="mdb-select md-form mb-4 initialized" id="select_tipo">
-                                                    <option value="-1" disabled selected>Tipo de Acumulativo</option>
-                                                    <option value="1">Trabajo en Clase</option>
-                                                    <option value="2">Trabajo Extra-Clase</option>
-                                                    
-                                                </select>
-                                            </div>
-
-                                            <div>
-                                                <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
-                                                    <option value="-1" disabled selected>Seleccione Parcial</option>
-                                                    <option value="1">I Parcial</option>
-                                                    <option value="2">II Parcial</option>
-                                                    <option value="3">III Parcial</option>
-                                                    <option value="4">IV Parcial</option>
-                                                </select>
-                                            </div>
-                                            
-                                            <div class="md-form">
-                                                <input required type="text" id="titulo" class="form-control">
-                                                <label for="titulo">Nombre del Acumulativo</label>
-                                            </div>
-
-                                            <!--Material textarea-->
-                                            <div class="md-form">
-                                                <textarea required type="text" id="descripcion" class="md-textarea form-control" rows="3"></textarea>
-                                                <label for="descripcion">Descripción del Acumulativo</label>
-                                            </div>
-
-
-                                            <div class="input-group mb-3">
-                                                <label for="valor">Valor del Acumulativo</label>
-                                                <input id="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                                                <div class="input-group-append">
-                                                    <span class="input-group-text">%</span>
-                                                </div>
-                                            </div>
-
-
-                                            <div class="md-form">
-                                                <input required placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
-                                            </div>
-                                            
-                                            <button id="btn_send_task" onclick="send_task()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Crear</button>
-                                            <div align="center" id="circle"></div>
-                                        </form>
+                            <!-- Card body -->
+                            <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                              <div class="card-body">
+                                  <div class="list-group">
+                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,1])}}"  class="list-group-item list-group-item-action">I PARCIAL</a>
+                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,2])}}"  class="list-group-item list-group-item-action">II PARCIAL</a>
+                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,3])}}"  class="list-group-item list-group-item-action">III PARCIAL</a>
+                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,4])}}"  class="list-group-item list-group-item-action disabled">IV PARCIAL</a>
                                     </div>
+                                <div>
+           
+                                    <input type="hidden" name="txt_parcial_actual" id="txt_parcial_actual" value="1">
                                 </div>
-                    </div><!--fin de la columna izquierda-->
+                          
+                              </div>
+                            </div>
+                        
+                          </div>
+                          <!-- Accordion card -->
+
+                        <!-- Accordion card -->
+                        <div class="card carta" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);">
+                      
+                          <!-- Card header -->
+                          <div class="card-header info-color white-text text-center" role="tab" id="headingOne1">
+                            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="false"
+                              aria-controls="collapseOne1">
+                              <h5 class="white-text mb-0">
+                                Crear Acumulativo <i class="fas fa-angle-down"></i>
+                              </h5>
+                            </a>
+                          </div>
+                      
+                          <!-- Card body -->
+                          <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                            <div class="card-body">
+                                  <form class="md-form" style="color: #757575;">
+                                      {{-- @csrf --}}
+                                      <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                      <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                      <input type="hidden" name="curso_actual" id="curso_actual" value="{{$curso_actual[0]->id}}">
+                                      <input type="hidden" name="section_actual" id="section_actual" value="{{$section_actual}}">
+                                      <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
+              
+                                  <div>
+                                      <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
+                                          <option value="-1" disabled selected>Seleccione Curso</option>
+                                          @foreach ($cursos as $curso)
+                                              <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                                  <div>
+                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                          <option value="-1" disabled selected>Seleccione Clase</option>
+                                      </select>
+                                  </div>
+                      
+                                  <div required id="checks_sections" class="form-check mb-4">
+                                    
+                                  </div>
+                      
+                                  <div>
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_tipo">
+                                          <option value="-1" disabled selected>Tipo de Acumulativo</option>
+                                          <option value="1">Trabajo en Clase</option>
+                                          <option value="2">Trabajo Extra-Clase</option>
+                                          
+                                      </select>
+                                  </div>
+
+                                  <div>
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                          <option value="-1" disabled selected>Seleccione Parcial</option>
+                                          <option value="1">I Parcial</option>
+                                          <option value="2">II Parcial</option>
+                                          <option value="3">III Parcial</option>
+                                          <option value="4">IV Parcial</option>
+                                      </select>
+                                  </div>
+                                  
+                                  <div class="md-form">
+                                      <input required type="text" id="titulo" class="form-control">
+                                      <label for="titulo">Nombre del Acumulativo</label>
+                                  </div>
+
+                                  <!--Material textarea-->
+                                  <div class="md-form">
+                                      <textarea required type="text" id="descripcion" class="md-textarea form-control" rows="3"></textarea>
+                                      <label for="descripcion">Descripción del Acumulativo</label>
+                                  </div>
+
+
+                                  <div class="input-group mb-3">
+                                      <label for="valor">Valor del Acumulativo</label>
+                                      <input id="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                      <div class="input-group-append">
+                                          <span class="input-group-text">%</span>
+                                      </div>
+                                  </div>
+
+
+                                  <div class="md-form">
+                                      <input required placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
+                                  </div>
+                                  
+                                  <button id="btn_send_task" onclick="send_task()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Crear</button>
+                                  <div align="center" id="circle"></div>
+                              </form>
+                            </div>
+                          </div>
+                      
+                        </div>
+                        <!-- Accordion card -->
+                      
+                        <!-- Accordion card -->
+                        <div class="card" style="padding-bottom: 2px;">
+                      
+                          <!-- Card header -->
+                          <div class="card-header card-header warning-color white-text text-center" role="tab" id="headingTwo2">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseTwo2"
+                              aria-expanded="false" aria-controls="collapseTwo2">
+                              <h5 class="white-text mb-0">
+                                Subir Documento <i class="fas fa-angle-down rotate-icon"></i>
+                              </h5>
+                            </a>
+                          </div>
+                      
+                          <!-- Card body -->
+                          <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
+                            <div class="card-body">
+                                  <form class="md-form" style="color: #757575;">
+                                      {{-- @csrf --}}
+                                      <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                      <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                      <input type="hidden" name="curso_actual" id="curso_actual" value="{{$curso_actual[0]->id}}">
+                                      <input type="hidden" name="section_actual" id="section_actual" value="{{$section_actual}}">
+                                      <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
+              
+                                  <div>
+                                      <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
+                                          <option value="-1" disabled selected>Seleccione Curso</option>
+                                          @foreach ($cursos as $curso)
+                                              <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
+                                          @endforeach
+                                      </select>
+                                  </div>
+
+                                  <div>
+                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                          <option value="-1" disabled selected>Seleccione Clase</option>
+                                      </select>
+                                  </div>
+                      
+                                  <div required id="checks_sections" class="form-check mb-4">
+                                    
+                                  </div>
+                      
+                                  <div>
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                          <option value="-1" disabled selected>Seleccione Parcial</option>
+                                          <option value="1">I Parcial</option>
+                                          <option value="2">II Parcial</option>
+                                          <option value="3">III Parcial</option>
+                                          <option value="4">IV Parcial</option>
+                                      </select>
+                                  </div>
+                                  
+                                  <div class="file-field">
+                                      <div class="btn btn-primary btn-sm float-left">
+                                        <span>Seleccione Documento</span>
+                                        <p><input id="file" type="file"></p>
+                                      </div>
+                                      <div class="file-path">
+                                        <input class="file-path validate" type="text" placeholder="Subir Archivo">
+                                      </div>
+                                    </div>
+
+                                  <!--Material textarea-->
+                                  <div class="md-form">
+                                      <textarea required type="text" id="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
+                                      <label for="descripcion">Instrucciones para el documento</label>
+                                  </div>
+                                  
+                                  <button id="btn_send_task" onclick="send_file()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Subir</button>
+                                  <div align="center" id="circle"></div>
+                              </form>
+                            </div>
+                          </div>
+                      
+                        </div>
+                        <!-- Accordion card -->
+                      
+                        <!-- Accordion card -->
+                        <div class="card" style="padding-bottom: 2px;">
+                      
+                          <!-- Card header -->
+                          <div class="card-header card-header danger-color white-text text-center" role="tab" id="headingThree3">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                              aria-expanded="false" aria-controls="collapseThree3">
+                              <h5 class="white-text mb-0">
+                                Subir Video Youtube <i class="fas fa-angle-down rotate-icon"></i>
+                              </h5>
+                            </a>
+                          </div>
+                      
+                          <!-- Card body -->
+                          <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                            <div class="card-body">
+                                <form class="md-form" style="color: #757575;">
+                                    {{-- @csrf --}}
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                    <input type="hidden" name="curso_actual" id="curso_actual" value="{{$curso_actual[0]->id}}">
+                                    <input type="hidden" name="section_actual" id="section_actual" value="{{$section_actual}}">
+                                    <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
+            
+                                <div>
+                                    <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
+                                        <option value="-1" disabled selected>Seleccione Curso</option>
+                                        @foreach ($cursos as $curso)
+                                            <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                        <option value="-1" disabled selected>Seleccione Clase</option>
+                                    </select>
+                                </div>
                     
-                    <div  class="col-12 col-sm-12 col-md-9 ">
+                                <div required id="checks_sections" class="form-check mb-4">
+                                  
+                                </div>
+                    
+                                <div>
+                                    <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                        <option value="-1" disabled selected>Seleccione Parcial</option>
+                                        <option value="1">I Parcial</option>
+                                        <option value="2">II Parcial</option>
+                                        <option value="3">III Parcial</option>
+                                        <option value="4">IV Parcial</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="md-form">
+                                    <input required type="text" id="video_name" class="form-control">
+                                    <label for="video_name">Titulo del video</label>
+                                </div>
+
+                                <div class="md-form">
+                                    <input required type="text" id="url" class="form-control">
+                                    <label for="url">URL del video</label>
+                                </div>
+
+                                <!--Material textarea-->
+                                <div class="md-form">
+                                    <textarea required type="text" id="descripcion_video" class="md-textarea form-control" rows="3"></textarea>
+                                    <label for="descripcion_video">Instrucciones para el Video</label>
+                                </div>
+                                
+                                <button id="btn_send_task" onclick="send_video()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Subir</button>
+                                <div align="center" id="circle"></div>
+                            </form>
+                            </div>
+                          </div>
+                      
+                        </div>
+                        <!-- Accordion card -->
+                      
+                    </div>
+                      <!-- Accordion wrapper -->
+                </div>
+
+                    
+                    
+                    <div style="padding-top: 10px"  class="col-12 col-sm-12 col-md-9 ">
                       
                         <!-- Table with panel -->
                         <div class="card card-cascade narrower">
@@ -246,7 +402,7 @@
                             <!--Card image-->
                             <div align="center" class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                         
-                            <h4 class="white-text mx-3">Acumulativos - {{$curso_actual[0]->short_name}} {{$section_actual}} ({{$clase_actual[0]->short_name}})</h4>
+                            <h4 class="white-text mx-3">Acumulativos del {{$parcial_actual}} Parcial - {{$curso_actual[0]->short_name}} {{$section_actual}} ({{$clase_actual[0]->short_name}})</h4>
                         
                             </div>
                             <!--/Card image-->
@@ -255,7 +411,7 @@
                         
                             <div class="table-wrapper">
                                 <!--Table-->
-                                <table class="table table-hover mb-0 table-responsive-md">
+                                <table class="table table-hover mb-0 table-responsive-md ">
                         
                                 <!--Table head-->
                                 <thead>
@@ -263,34 +419,40 @@
                                     
                                     <th class="th-lg">
                                         <a>Acumulativo
-                                        <i class="fas fa-sort ml-1"></i>
+                                       
+                                        </a>
+                                    </th>
+
+                                    <th class="th-lg">
+                                        <a>Lugar
+                                       
                                         </a>
                                     </th>
                                     
                                     <th class="th-md">
                                         <a href="">Fecha
-                                        <i class="fas fa-sort ml-1"></i>
+                                       
                                         </a>
                                     </th>
                                     <th class="th-sm">
                                             <a href="">Valor
-                                            <i class="fas fa-sort ml-1"></i>
+                                          
                                             </a>
                                         </th>
                                     <th class="th-sm">
                                         <a href="">Evaluar
-                                        <i class="fas fa-sort ml-1"></i>
+                                       
                                         </a>
                                     </th>
 
                                     <th class="th-sm">
                                         <a href="">Editar
-                                            <i class="fas fa-sort ml-1"></i>
+                                            
                                         </a>
                                     </th>
                                         <th class="th-sm">
                                             <a href="">Eliminar
-                                                <i class="fas fa-sort ml-1"></i>
+                                               
                                             </a>
                                         </th>
                                     
@@ -298,13 +460,19 @@
                                 </thead>
                                 <!--Table head--> 
                                 <!--Table body-->
-                                <tbody id="tbody1">
+                                <tbody id="tbody1" >
                                     @php $total_publicado=0; $total_evaluado=0 @endphp
                                     @foreach ($tasks as $task)
                                     @php $total_publicado+=$task->valor; @endphp
                                     <tr>
                                                              
                                         <td>{{$task->titulo}} </td>
+                                        @if ($task->tipo==2)
+                                            <td><i class="fas fa-home mr-5"></i> </td>
+                                        @else                                                 
+                                            <td><i class="fas fa-school mr-5"></i> </td>   
+                                        @endif
+                                      
                                         <td>{{$task->fecha_entrega}}</td>
                                         
                                         <td>{{$task->valor}}%</td>
@@ -335,11 +503,8 @@
                                 
                             </div>
 
-                            
-                        
+                          
                             </div>
-
-                            
                 
                         </div>
                         
@@ -349,7 +514,166 @@
                         <div align="center" class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                         
                                 <h4 class="white-text mx-3">@php echo( $total_evaluado ."% Evaluado de ". $total_publicado."% Publicado ") @endphp</h4>
-                            </div>
+                        </div>
+
+                        <br>
+
+                          {{-- tabla de recursos --}}
+                          <div  class="card card-cascade narrower">
+
+                              <!--Card image-->
+                                <div align="center" class="view view-cascade gradient-card-header peach-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                                
+                                    <h4 class="white-text mx-3">Recursos del {{$parcial_actual}} Parcial</h4>
+                                
+                                </div>
+                              <!--/Card image-->
+                  
+                                <div class="px-4">
+                                
+                                    <div class="table-wrapper">
+                                        <!--Table-->
+                                        <table class="table table-hover mb-0 table-responsive-md ">
+                                
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr>
+                                                
+                                                <th class="th-lg">
+                                                    <a>Tipo de Recursos
+                                                    </a>
+                                                </th>
+            
+                                                <th class="th-lg">
+                                                    <a>Nombre de Recurso
+                                                    </a>
+                                                </th>
+                                                
+                                                <th class="th-md">
+                                                    <a href="">Fecha publicación
+                                                    </a>
+                                                </th>
+
+                                                <th class="th-sm">
+                                                    <a href="">Detalles
+                                                    </a>
+                                                </th>
+                                                
+                                                <th class="th-sm">
+                                                    <a href="">Descargar
+                                                    </a>
+                                                </th>
+                                                <th class="th-sm">
+                                                    <a href="">Eliminar
+                                                    </a>
+                                                </th>
+            
+                                                </tr>
+                                            </thead>
+                                            <!--Table head--> 
+                                            <!--Table body-->
+                                            <tbody id="tbody_recursos" >
+                                                @foreach ($files as $file)
+                                                <tr>     
+                                                    @if ($file->typefile== 'pdf') 
+                                                        <td><span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></td>
+                                                    @endif  
+                                                    @if ($file->typefile== 'pptx') 
+                                                       <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
+                                                    @endif            
+                                                   
+                                                    <td><a href="">{{$file->filename}} </a></td>
+                                                    <td>{{$file->fecha}} </td>
+                                                    <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
+                                                    <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                                    <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                              
+                                                </tr>
+                                                @endforeach
+                                                
+                                            </tbody>
+                                        
+                                            <!--Table body-->
+                                        </table>
+                                        <!--Table-->
+                                    </div> <!--fin de table-wrapper-->
+        
+                                </div><!--fin de px-4-->
+        
+                          </div><!--fin de DIV RECURSOS--> 
+                            <br>
+                           {{-- tabla de videos --}}
+                           <div  class="card card-cascade narrower">
+
+                              <!--Card image-->
+                                <div align="center" class="view view-cascade gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                                
+                                    <h4 class="white-text mx-3">Videos del {{$parcial_actual}} Parcial</h4>
+                                
+                                </div>
+                              <!--/Card image-->
+                  
+                                <div class="px-4">
+                                
+                                    <div class="table-wrapper">
+                                        <!--Table-->
+                                        <table class="table table-hover mb-0 table-responsive-md ">
+                                
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr>
+                                                
+                                                           
+                                                <th class="th-lg">
+                                                    <a>Nombre del Video
+                                                    </a>
+                                                </th>
+                                                
+                                                <th class="th-md">
+                                                    <a href="">Fecha publicación
+                                                    </a>
+                                                </th>
+
+                                                <th class="th-sm">
+                                                    <a href="">Detalles
+                                                    </a>
+                                                </th>
+                                                
+                                                <th class="th-sm">
+                                                    <a href="">Visualizar
+                                                    </a>
+                                                </th>
+                                                <th class="th-sm">
+                                                    <a href="">Eliminar
+                                                    </a>
+                                                </th>
+            
+                                                </tr>
+                                            </thead>
+                                            <!--Table head--> 
+                                            <!--Table body-->
+                                            <tbody id="tbody_recursos" >
+                                                @foreach ($videos as $video)
+                                                <tr>  
+                                                    <td><a href="">{{$video->titulo}} </a></td>
+                                                    <td>{{$video->fecha}} </td>
+                                                    <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</button></td>
+                                                    <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0">Visualizar</button></td>
+                                                    <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                              
+                                                </tr>
+                                                @endforeach
+                                                
+                                            </tbody>
+                                        
+                                            <!--Table body-->
+                                        </table>
+                                        <!--Table-->
+                                    </div> <!--fin de table-wrapper-->
+        
+                                </div><!--fin de px-4-->
+        
+                          </div><!--fin de DIV videos--> 
 
                     </div><!--fon de la colummna derecha-->
                     

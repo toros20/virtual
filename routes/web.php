@@ -112,7 +112,7 @@ Route::get('teachers/academia/{user_id}','TeacherController@academia')->name('ac
 
 /*************** Rutas para los botones del panel academico del docente*/
 Route::get('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}','TeacherController@estudiantes')->name('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}');
-Route::get('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}','TeacherController@acumulativos')->name('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}','TeacherController@acumulativos')->name('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}');
 Route::get('teachers/documentos/{user_id}/{course_id}/{section}/{clase}','TeacherController@documentos')->name('teachers/documentos/{user_id}/{course_id}/{section}/{clase}');
 Route::get('teachers/examen/{user_id}/{course_id}/{section}/{clase}','TeacherController@examen')->name('teachers/examen/{user_id}/{course_id}/{section}/{clase}');
 Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','TeacherController@descargas')->name('teachers/descargas/{user_id}/{course_id}/{section}/{clase}');
@@ -127,3 +127,12 @@ Route::post('ajax/loadclassesfordocente', 'TeacherController@loadclassesfordocen
 //crear ruta para enviar una task nueva desde el formulario del docente
 Route::post('ajax/send_task', 'TeacherController@send_task');
 
+
+
+//ruta para el panel inicial de estudiante en la seccion academica
+Route::get('students/academia/{user_id}','StudentController@academia')->name('students/academia/{user_id}');
+//ruta para la seccion de acumulativos y documentos por parcial del student
+Route::get('students/acumulativos/{user_id}/{clase}/{parcial}','StudentController@acumulativos')->name('students/acumulativos/{user_id}/{clase}/{parcial}');
+
+//ruta para la seccion de acumulativos y documentos por parcial del student despues de filtrar una clase del panel derecho
+Route::post('ajax/acumulativosbyclass', 'StudentController@acumulativosbyclass');

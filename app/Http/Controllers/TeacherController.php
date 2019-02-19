@@ -93,10 +93,13 @@ class TeacherController extends Controller
 
      }
      //funcion para enviar datos a la seccion de acumulativos de los docentes
-     function  acumulativos($user_id,$course,$section,$clase){
+     function  acumulativos($user_id,$course,$section,$clase,$parcial){
 
          //obtenemos los datos del docente
          $user = User::findOrFail($user_id);
+
+         //se asigna el parcial eleccionado
+         $parcial_actual = $parcial;
 
          //obtenemos los cursos a los cuales les da clase este docente
          //se usan en el select
@@ -114,19 +117,52 @@ class TeacherController extends Controller
                         ->get();
         $section_actual=$section;
 
+        //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
+        $asignaciones = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
+                        ->where('assignments.user_id','=',$user_id)
+                        ->get();
+
         //obtener las tareas creadas para este curso seccion y clase
         //para mostrar en la tabla
         $tbl_task='task_'.$course.'_'.$section;//nombre de la tabla a buscar
+        
         $tasks = DB::table($tbl_task)
-        ->where([
-                ['clase', '=', $clase],
-                ['teacher', '=', $user_id],
-                ])
-        ->orderBy('id','ASC')
-        ->get();
+                    ->where([
+                            ['clase', '=', $clase],
+                            ['teacher', '=', $user_id],
+                            ['parcial', '=', $parcial]
+                            ])
+                    ->orderBy('id','ASC')
+                    ->get();
+        //obtenemos los documentos subidos por este docente a este cursos secion y clase
+        $files = DB::table('files')
+                    ->where([
+                            ['clase_id', '=', $clase],
+                            ['course_id', '=', $course],
+                            ['section', '=', $section],
+                            ['user_id', '=', $user_id],
+                            ['parcial', '=', $parcial]
+                            ])
+                    ->orderBy('id','ASC')
+                    ->get();
+          //obtenemos los videos subidos por este docente a este cursos secion y clase
+          $videos = DB::table('videos')
+          ->where([
+                  ['clase_id', '=', $clase],
+                  ['course_id', '=', $course],
+                  ['section', '=', $section],
+                  ['user_id', '=', $user_id],
+                  ['parcial', '=', $parcial]
+                  ])
+          ->orderBy('id','ASC')
+          ->get();
+
 
         return view('teachers/acumulativos',compact(
-            'user','cursos','tasks','clase_actual','curso_actual','section_actual'));
+            'user','cursos','tasks','clase_actual','curso_actual','section_actual','parcial_actual','asignaciones','files','videos'));
 
     }
 

@@ -3,6 +3,11 @@
 <tr>
                                     
     <td>{{$task->titulo}} </td>
+    @if ($task->tipo==2)
+        <td><i class="fas fa-home mr-5"></i> </td>
+    @else                                                 
+        <td><i class="fas fa-school mr-5"></i> </td>   
+    @endif
     <td>{{$task->fecha_entrega}}</td>
     
     <td>{{$task->valor}}%</td>
