@@ -320,22 +320,60 @@
                                             <!--Table head--> 
                                             <!--Table body-->
                                             <tbody id="tbody_recursos" >
+
                                                 @foreach ($files as $file)
+
                                                 <tr>     
                                                     @if ($file->typefile== 'pdf') 
-                                                        <td><span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></td>
+                                                        <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}"> <span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></a></td>
                                                     @endif  
                                                     @if ($file->typefile== 'pptx') 
-                                                       <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
+                                                       <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}"> <span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></a></span></td>
                                                     @endif            
                                                    
-                                                    <td><a href="">{{$file->filename}} </a></td>
+                                                    <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}">{{$file->filename}} </a></td>
                                                     <td>{{$file->fecha}} </td>
-                                                    <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</button></td>
+                                                    <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}">Detalles</button></td>
+                                                    
                                                     <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
                                                     
-                                                   
+                                                      <!-- Central Modal Medium Info {{$file->id}}-->
+                                                      <div class="modal fade modal-notify info" id="centralModalfile_{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                          aria-hidden="true">
+                                                          <div class="modal-dialog modal-notify modal-info" role="document">
+                                                            <!--Content-->
+                                                            <div class="modal-content">
+                                                              <!--Header-->
+                                                              <div class="modal-header">
+                                                                
+                                                                <p class="heading lead">{{$task->titulo}} - ({{$task->valor_obtenido}}/{{$task->valor}})</p>
+                      
+                                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                  <span aria-hidden="true" class="white-text">&times;</span>
+                                                                </button>
+                                                              </div>
+                      
+                                                              <!--Body-->
+                                                              <div class="modal-body">
+                                                                <div class="text-center">
+                                                                  <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
+                                                                  <p>{{$task->descripcion}}</p>
+                                                                  <p>{{$task->fecha_entrega}}</p>
+                                                                  <p>Obs:{{$task->observacion}}</p>
+                                                                </div>
+                                                              </div>
+                      
+                                                              <!--Footer-->
+                                                              <div class="modal-footer justify-content-center">
+                                                                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                                              </div>
+                                                            </div>
+                                                            <!--/.Content-->
+                                                          </div>
+                                                      </div>
+                                                        <!-- Central Modal Medium Info-->
                                                 </tr>
+
                                                 @endforeach
                                                 
                                             </tbody>

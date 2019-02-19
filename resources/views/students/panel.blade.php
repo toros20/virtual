@@ -187,7 +187,7 @@
 	</div>
 
 	<div class="header-content-wrapper">
-		<form class="search-bar w-search notification-list friend-requests">
+		{{-- <form class="search-bar w-search notification-list friend-requests">
 			<div class="form-group with-button">
 				<input class="form-control js-user-search" placeholder="Buscar Mensaje por asigaturas" type="text">
 				<button>
@@ -195,13 +195,13 @@
 				</button>
 			</div>
 		</form>
-
+ --}}
 		{{-- <a href="#" class="link-find-friend">Find Friends</a> --}}
 
 		<div class="control-block">
 			
 			{{-- Area de los mensajes --}}
-			<div class="control-icon more has-items">
+			{{-- <div class="control-icon more has-items">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 				<div class="label-avatar bg-purple">1</div>
 
@@ -234,11 +234,11 @@
 
 					<a href="#" class="view-all bg-purple">Ver Todos los Mensajes</a>
 				</div>
-			</div>
+			</div> --}}
 			{{-- fin del area de los mensajes --}}
 
 			{{-- Area de las notificaciones --}}
-			<div class="control-icon more has-items">
+			{{-- <div class="control-icon more has-items">
 				<svg class="olymp-thunder-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 
 				<div class="label-avatar bg-primary">1</div>
@@ -274,7 +274,7 @@
 					<a href="#" class="view-all bg-primary">Ver Todas las notificaciones</a>
 				</div>
 
-			</div>
+			</div> --}}
 			{{-- fin del area de las notificaciones --}}
 
 			{{-- Area de imagen de perfil --}}
@@ -341,7 +341,7 @@
 <header class="header header-responsive" id="site-header-responsive">
 
 	<div class="header-content-wrapper">
-		<ul class="nav nav-tabs mobile-app-tabs" role="tablist">
+		{{-- <ul class="nav nav-tabs mobile-app-tabs" role="tablist">
 			
 
 			<li class="nav-item">
@@ -363,13 +363,13 @@
 			</li>
 
 			
-		</ul>
+		</ul> --}}
 	</div>
 
 	<!-- Tab panes -->
 	<div class="tab-content tab-content-responsive">
 
-		<div class="tab-pane " id="chat" role="tabpanel">
+		{{-- <div class="tab-pane " id="chat" role="tabpanel">
 
 			<div class="mCustomScrollbar" data-mcs-theme="dark">
 				<div class="ui-block-title ui-block-title-small">
@@ -433,7 +433,7 @@
 				<a href="#" class="view-all bg-primary">Ver todas las notificaciones</a>
 			</div>
 
-		</div>
+		</div> --}}
 
 	</div>
 	<!-- ... end  Tab panes -->
@@ -471,9 +471,8 @@
 						
 						<div class="control-block-button">
 
-							 <a href="#" class="btn btn-control bg-primary">
-								<svg class="olymp-star-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-							 </a>
+							 <a target="_blanck" style="font-size:1.5rem" type="button"  href="{{$url =route('students/academia/{user_id}',$user->id)}} " class="btn btn-danger">Academia
+							</a>
 
 						</div>
 
