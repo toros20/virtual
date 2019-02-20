@@ -472,8 +472,8 @@
                                         @else                                                 
                                             <td><i class="fas fa-school mr-5"></i> </td>   
                                         @endif
-                                      
-                                        <td>{{$task->fecha_entrega}}</td>
+
+                                        <td>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</td>
                                         
                                         <td>{{$task->valor}}%</td>
                                         
@@ -583,7 +583,8 @@
                                                     @endif            
                                                    
                                                     <td><a href="">{{$file->filename}} </a></td>
-                                                    <td>{{$file->fecha}} </td>
+                                                    <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
+                                                    
                                                     <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
                                                     <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
@@ -656,7 +657,8 @@
                                                 @foreach ($videos as $video)
                                                 <tr>  
                                                     <td><a href="">{{$video->titulo}} </a></td>
-                                                    <td>{{$video->fecha}} </td>
+                                                    <td>{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</td>
+                                                    
                                                     <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</button></td>
                                                     <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0">Visualizar</button></td>
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>

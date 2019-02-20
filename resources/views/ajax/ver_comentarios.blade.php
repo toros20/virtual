@@ -10,7 +10,7 @@
                     <a class="h6 post__author-name fn" href="#">Estudiante:| {{$comentario->name}}</a>
                     <div class="post__date">
                         <time class="published">
-                            {{$comentario->fecha}}
+                            <td>{{ \Carbon\Carbon::parse($comentario->fecha)->format('d/m/Y')}}</td>
                         </time>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                     <a class="h6 post__author-name fn" href="#">Lic:|{{$comentario->name}}</a>
                     <div class="post__date">
                         <time class="published">
-                            {{$comentario->fecha}}
+                            <td>{{ \Carbon\Carbon::parse($comentario->fecha)->format('d/m/Y')}}</td>
                         </time>
                     </div>
                 </div>

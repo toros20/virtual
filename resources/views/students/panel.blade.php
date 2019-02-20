@@ -138,14 +138,14 @@
 			</div>
 
 			<ul class="account-settings">
-				<li>
+				{{-- <li>
 					<a href="#">
 
 						<svg class="olymp-menu-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 						<span>Opciones de Cuenta</span>
 					</a>
-				</li>
+				</li> --}}
 				
 				<li>
 					<form action="{{ route('logout') }}" method="POST">
@@ -289,19 +289,19 @@
 					
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
-							<div class="ui-block-title ui-block-title-small">
+							{{-- <div class="ui-block-title ui-block-title-small">
 								<h6 class="title">Tu Cuenta</h6>
-							</div>
+							</div> --}}
 
 							<ul class="account-settings">
-								<li>
+								{{-- <li>
 									<a href="29-YourAccount-AccountSettings.html">
 
 										<svg class="olymp-menu-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
 										<span>Opciones de Perfil</span>
 									</a>
-								</li>
+								</li> --}}
 
 								<li>
 									<form action="{{ route('logout') }}" method="POST">
@@ -319,7 +319,7 @@
 					</div>
 				</div>
 
-				<a href="02-ProfilePage.html" class="author-name fn">
+				<a href="#" class="author-name fn">
 					<div class="author-title">
 						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
@@ -543,8 +543,8 @@
 											@endif
 										
 										<div class="post__date">
-											<time class="published" datetime="2017-03-24T18:18">
-													{{$mensaje->fecha}}
+											<time class="published" >
+													<td>{{ \Carbon\Carbon::parse($mensaje->fecha)->format('d/m/Y')}}</td>
 											</time>
 										</div>
 									</div>

@@ -547,7 +547,7 @@
 										@endif
 									<div class="post__date">
 										<time class="published" >
-												{{$mensaje->fecha}}
+												<td>{{ \Carbon\Carbon::parse($mensaje->fecha)->format('d/m/Y')}}</td>
 										</time>
 									</div>
 								</div>

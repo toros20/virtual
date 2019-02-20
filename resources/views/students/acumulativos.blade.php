@@ -144,23 +144,23 @@
 
                                     <th class="th-lg">
                                         <a>Lugar
-                                          <i class="fas fa-sort ml-1"></i>
+                                         
                                         </a>
                                     </th>
                                     
                                     <th class="th-md">
                                         <a href="">Fecha
-                                         <i class="fas fa-sort ml-1"></i>
+                                        
                                         </a>
                                     </th>
                                     <th class="th-sm">
                                             <a href="">Valor
-                                              <i class="fas fa-sort ml-1"></i>
+                                             
                                             </a>
                                         </th>
                                     <th class="th-sm">
                                         <a href="">Estado
-                                          <i class="fas fa-sort ml-1"></i>
+                                         
                                         </a>
                                     </th>
 
@@ -187,9 +187,8 @@
                                         @else                                                 
                                             <td><i class="fas fa-school mr-5"></i> </td>   
                                         @endif
-                                      
-                                        <td>{{$task->fecha_entrega}}</td>
-                                        
+                                        <td>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</td>
+                                                                               
                                         <td>{{$task->valor_obtenido}}/{{$task->valor}}%</td>
                                         
                                         @if ( $task->evaluada == 0)
@@ -223,7 +222,7 @@
                                                 <div class="text-center">
                                                   <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
                                                   <p>{{$task->descripcion}}</p>
-                                                  <p>{{$task->fecha_entrega}}</p>
+                                                  <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
                                                   <p>Obs:{{$task->observacion}}</p>
                                                 </div>
                                               </div>
@@ -332,7 +331,7 @@
                                                     @endif            
                                                    
                                                     <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}">{{$file->filename}} </a></td>
-                                                    <td>{{$file->fecha}} </td>
+                                                    <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
                                                     <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}">Detalles</button></td>
                                                     
                                                     <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
@@ -346,7 +345,7 @@
                                                               <!--Header-->
                                                               <div class="modal-header">
                                                                 
-                                                                <p class="heading lead">{{$task->titulo}} - ({{$task->valor_obtenido}}/{{$task->valor}})</p>
+                                                                <p class="heading lead">{{$file->filename}}</p>
                       
                                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                   <span aria-hidden="true" class="white-text">&times;</span>
@@ -357,9 +356,8 @@
                                                               <div class="modal-body">
                                                                 <div class="text-center">
                                                                   <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
-                                                                  <p>{{$task->descripcion}}</p>
-                                                                  <p>{{$task->fecha_entrega}}</p>
-                                                                  <p>Obs:{{$task->observacion}}</p>
+                                                                  <p>{{$file->detalles}}</p>
+                                                                
                                                                 </div>
                                                               </div>
                       
@@ -435,8 +433,8 @@
                                                 <tr>  
                                                     <td><span style="color: red;"><i class="fab fa-youtube fa-3x"></i></span></td>
                                                     <td><a href="">{{$video->titulo}} </a></td>
-                                                    <td>{{$video->fecha}} </td>
-                                                    
+                                                    <td>{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</td>
+                                                                                                      
                                                     <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalvideo_{{$video->id}}">Visualizar</button></td>
 
                                                         <!-- Central Modal Medium Video {{$video->id}}-->
@@ -464,9 +462,9 @@
                                                                         @endphp   
                                                                         <iframe width="95%" height="315" src="https://www.youtube.com/embed/{{$url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                                                     </p>
-                                                                    <p>{{$video->detalles}}</p>
-                                                                    <p>{{$video->fecha}}</p>
-                                                                   
+                                                                    <p>Observaci&oacute;n: {{$video->detalles}}</p>
+                                                                    <p>Publicado el:{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</p>
+                                                                                                                                       
                                                                   </div>
                                                                 </div>
                         

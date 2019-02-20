@@ -12,7 +12,7 @@
                 <a class="h6 post__author-name fn" href="#">{{$comentario[0]->name}}</a>
                 <div class="post__date">
                     <time class="published">
-                        {{$comentario[0]->fecha}}
+                        <td>{{ \Carbon\Carbon::parse($comentario[0]->fecha)->format('d/m/Y')}}</td>
                     </time>
                 </div>
             </div>

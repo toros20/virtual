@@ -23,8 +23,8 @@
                                     @endif
                                 
                                 <div class="post__date">
-                                    <time class="published" datetime="2017-03-24T18:18">
-                                            {{$mensaje->fecha}}
+                                    <time class="published" >
+                                            <td>{{ \Carbon\Carbon::parse($mensaje->fecha)->format('d/m/Y')}}</td>
                                     </time>
                                 </div>
                             </div>

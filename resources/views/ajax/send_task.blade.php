@@ -8,7 +8,7 @@
     @else                                                 
         <td><i class="fas fa-school mr-5"></i> </td>   
     @endif
-    <td>{{$task->fecha_entrega}}</td>
+    <td>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</td>
     
     <td>{{$task->valor}}%</td>
     
