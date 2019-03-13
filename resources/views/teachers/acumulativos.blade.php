@@ -107,9 +107,9 @@
                          <div class="card carta" style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);">
                       
                             <!-- Card header -->
-                            <div class="card-header text-center" role="tab" id="headingOne1">
-                              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="false"
-                                aria-controls="collapseOne1">
+                            <div class="card-header text-center" role="tab" id="headingOne0">
+                              <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne0" aria-expanded="false"
+                                aria-controls="collapseOne0">
                                 <h5 class="mb-0">
                                   {{$parcial_actual}} Parcial <i class="fas fa-angle-down"></i>
                                 </h5>
@@ -117,18 +117,18 @@
                             </div>
                         
                             <!-- Card body -->
-                            <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
+                            <div id="collapseOne0" class="collapse" role="tabpanel" aria-labelledby="headingOne0" data-parent="#accordionEx">
                               <div class="card-body">
                                   <div class="list-group">
                                       <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,1])}}"  class="list-group-item list-group-item-action">I PARCIAL</a>
                                       <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,2])}}"  class="list-group-item list-group-item-action">II PARCIAL</a>
                                       <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,3])}}"  class="list-group-item list-group-item-action">III PARCIAL</a>
                                       <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,4])}}"  class="list-group-item list-group-item-action disabled">IV PARCIAL</a>
-                                    </div>
-                                <div>
+                                  </div>
+                              <div>
            
                                     <input type="hidden" name="txt_parcial_actual" id="txt_parcial_actual" value="1">
-                                </div>
+                            </div>
                           
                               </div>
                             </div>
@@ -257,7 +257,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
+                                      <select required onchange="loadclassesfordocente_file()" class="mdb-select md-form mb-4 initialized" id="select_course_file">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -266,7 +266,7 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases_files">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>

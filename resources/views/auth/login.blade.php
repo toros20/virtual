@@ -94,7 +94,7 @@
 	<div class="row display-flex" Style="padding-top: 8rem;">
 		<div class="col col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
 			<div class="landing-content">
-				<h1>Bienvenido a nuestra Plataforma Virtual </h1>
+				<h1>Bienvenidos a nuestra Plataforma Virtual </h1>
 				<p>Alabado sea Jesucristo. Te invitamos a aprovechar de nuestro portal educativo al m&aacute;ximo,
 				 si tienes alguna dificultad para ingresar o alguna duda sobre el portal puedes solicitarla.  
 				</p>

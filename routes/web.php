@@ -13,7 +13,7 @@ git push -u origin master
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('auth/login');
 });
 
 

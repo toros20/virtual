@@ -212,7 +212,7 @@
                                  
                                   <td><a href="">{{$file->filename}} </a></td>
                                   <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
-                                  <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</button></td>
+                                  <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}">Detalles</button></td>
                                   <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
                                   
                                     <!-- Central Modal Medium Info {{$file->id}}-->
