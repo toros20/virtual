@@ -98,7 +98,7 @@
 				<p>Alabado sea Jesucristo. Te invitamos a aprovechar de nuestro portal educativo al m&aacute;ximo,
 				 si tienes alguna dificultad para ingresar o alguna duda sobre el portal puedes solicitarla.  
 				</p>
-				<a href="#" class="btn btn-md btn-border c-white">Socilitar Ayuda</a>
+				{{-- <a href="#" class="btn btn-md btn-border c-white">Socilitar Ayuda</a> --}}
 			</div>
 		</div>
 
