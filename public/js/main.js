@@ -94,7 +94,7 @@ function loadclasesbymodality(){
     
     $.ajax({
 
-        url:'../../ajax/clasesbymodalityid',
+        url:'../../../ajax/clasesbymodalityid',
         headers: token ,
         data: {modality_id:modalidad,_token:token},
         type:'POST',
