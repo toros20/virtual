@@ -63,7 +63,7 @@
             }
         </style>
 
-        <script type="text/javascript" language="javascript" src="../../js/main.js"></script>
+        <script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>
 
     </head>
     <body>
