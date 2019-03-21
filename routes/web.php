@@ -108,7 +108,7 @@ Route::get('students/panel/{id}', 'StudentController@students_panel')->name('stu
 Route::get('teachers/panel/{user_id}/{course_id}/{section}',['uses' => 'TeacherController@teachers_panel'])->name('teachers_panel/{user_id}/{course_id}/{section}');
 
 //ruta para el panel inicial de la seccion academica
-Route::get('teachers/academia/{user_id}','TeacherController@academia')->name('academia/{user_id}');
+Route::get('teachers/academia/{user_id}','TeacherController@academia')->name('teachers/academia/{user_id}');
 
 /*************** Rutas para los botones del panel academico del docente*/
 Route::get('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}','TeacherController@estudiantes')->name('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}');
