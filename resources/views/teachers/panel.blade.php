@@ -636,7 +636,7 @@
 							</div>
 							<div class="notification-event">
 								{{-- <a href="#" onclick="cambio_de_seccion('{{$asignacion->course->id}}','{{$asignacion->section}}','{{$asignacion->course->short_name}}')" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a> --}}
-								<a href="/virtual/teachers/panel/{{$user->id}}/{{$asignacion->course->id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a>
+								<a href="/virtual/public/teachers/panel/{{$user->id}}/{{$asignacion->course->id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a>
 								<span class="chat-message-item">{{$asignacion->clase->short_name}}  </span>
 							</div>
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
