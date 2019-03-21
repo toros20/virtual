@@ -469,11 +469,10 @@
 						
 						<div class="control-block-button">
 
-							 <a href="#" class="btn btn-control bg-primary">
-								<svg class="olymp-star-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-							 </a>
+							<a target="_blanck" style="font-size:1.5rem" type="button"  href="{{$url =route('teachers/academia/{user_id}',$user->id)}} " class="btn btn-danger">Academia
+						   </a>
 
-						</div>
+					   </div>
 
 					</div>
 				</div>
