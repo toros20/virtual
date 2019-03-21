@@ -344,7 +344,7 @@
                                 </div>
 
                                 <div>
-                                    <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                    <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases_video">
                                         <option value="-1" disabled selected>Seleccione Clase</option>
                                     </select>
                                 </div>
