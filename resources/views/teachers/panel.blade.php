@@ -102,7 +102,7 @@
 						<div class="author-title">
 							{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 						</div>
-						<span class="author-subtitle">Licenciado </span>
+						<span class="author-subtitle">Docente </span>
 					</a>
 				</div>
 			</div>
@@ -198,7 +198,7 @@
 		<div class="control-block">
 			
 			{{-- Area de los mensajes --}}
-			<div class="control-icon more has-items">
+			{{-- <div class="control-icon more has-items">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 				<div class="label-avatar bg-purple">1</div>
 
@@ -234,7 +234,7 @@
 			</div>
 			{{-- fin del area de los mensajes --}}
 
-			{{-- Area de las notificaciones --}}
+			{{-- Area de las notificaciones 
 			<div class="control-icon more has-items">
 				<svg class="olymp-thunder-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-thunder-icon"></use></svg>
 
@@ -271,7 +271,7 @@
 					<a href="#" class="view-all bg-primary">Ver Todas las notificaciones</a>
 				</div>
 
-			</div>
+			</div> --}}
 			{{-- fin del area de las notificaciones --}}
 
 			{{-- Area de imagen de perfil --}}
@@ -321,7 +321,7 @@
 					<div class="author-title">
 						{{$user->name}} <svg class="olymp-dropdown-arrow-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-dropdown-arrow-icon"></use></svg>
 					</div>
-					<span class="author-subtitle">Lic....</span>
+					<span class="author-subtitle">Docente</span>
 				</a>
 			</div>
 			{{-- fin del Area de imagen de perfil --}}
@@ -365,7 +365,7 @@
 	</div>
 
 	<!-- Tab panes -->
-	<div class="tab-content tab-content-responsive">
+	{{-- <div class="tab-content tab-content-responsive">
 
 		<div class="tab-pane " id="chat" role="tabpanel">
 
@@ -433,7 +433,7 @@
 
 		</div>
 
-	</div>
+	</div> --}}
 	<!-- ... end  Tab panes -->
 
 </header>
@@ -461,7 +461,7 @@
 							</div>
 							<div class="author-content">
 								<a href="#" class="h3 author-name">{{$user->name}} </a>
-								<div class="country">LICENCIADO </div>
+								<div class="country">DOCENTE </div>
 							</div>
 						</div>
 					</div>
@@ -665,7 +665,7 @@
 
 				<!-- W-Twitter -->
 				
-				<ul class="widget w-twitter">
+				{{-- <ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
@@ -700,7 +700,7 @@
 						</span>
 					</li>
 
-				</ul>				
+				</ul>		 --}}		
 				
 				<!-- .. end W-Twitter -->
 			</div>
@@ -712,7 +712,7 @@
 
 				<!-- W-Twitter -->
 				
-				<ul class="widget w-twitter">
+				{{-- <ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
@@ -747,7 +747,7 @@
 						</span>
 					</li>
 
-				</ul>				
+				</ul>	 --}}			
 				
 				<!-- .. end W-Twitter -->
 			</div>
@@ -759,7 +759,7 @@
 
 				<!-- W-Twitter -->
 				
-				<ul class="widget w-twitter">
+				{{-- <ul class="widget w-twitter">
 					<li class="twitter-item">
 						<div class="author-folder">
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
@@ -794,7 +794,7 @@
 						</span>
 					</li>
 
-				</ul>				
+				</ul>	 --}}			
 				
 				<!-- .. end W-Twitter -->
 			</div>
@@ -809,7 +809,7 @@
 
 <!-- Window-popup Update Header Photo -->
 
-<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+{{-- <div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
@@ -838,7 +838,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
 
 <div class="modal fade" id="modal_clase_actual" tabindex="-1" role="dialog" aria-labelledby="modal_clase_actual" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
