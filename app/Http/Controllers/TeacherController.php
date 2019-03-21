@@ -101,6 +101,9 @@ class TeacherController extends Controller
          //se asigna el parcial eleccionado
          $parcial_actual = $parcial;
 
+         //convertimos en minuscula la seccion
+         $section=strtolower($section);
+
          //obtenemos los cursos a los cuales les da clase este docente
          //se usan en el select
          $cursos = DB::table('assignments')
@@ -115,6 +118,7 @@ class TeacherController extends Controller
         $curso_actual=DB::table('courses')
                         ->where('id','=',$course)
                         ->get();
+
         $section_actual=$section;
 
         //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
