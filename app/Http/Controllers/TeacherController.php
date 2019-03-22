@@ -204,6 +204,7 @@ class TeacherController extends Controller
             ['clase_id', '=', $clase_id],
             ['user_id', '=', $user_id],
         ])->Select('section')->distinct()->get();
+
         //enviamos las seccinoes a la vista ajax
         return view('ajax/loadsectionsfordocentes',compact('sections'));
     }
