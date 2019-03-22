@@ -136,3 +136,6 @@ Route::get('students/acumulativos/{user_id}/{clase}/{parcial}','StudentControlle
 
 //ruta para la seccion de acumulativos y documentos por parcial del student despues de filtrar una clase del panel derecho
 Route::post('ajax/acumulativosbyclass', 'StudentController@acumulativosbyclass');
+
+//crear ruta para enviar un documento nuevo desde el formulario del docente
+Route::post('ajax/send_file', 'TeacherController@send_file');

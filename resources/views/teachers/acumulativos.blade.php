@@ -266,17 +266,17 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases_files">
+                                      <select required onchange="loadsectionsfordocentes_file()" class="mdb-select md-form mb-4 initialized" id="select_clases_files">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
                       
-                                  <div required id="checks_sections" class="form-check mb-4">
+                                  <div required id="checks_sections_file" class="form-check mb-4">
                                     
                                   </div>
                       
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_file">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>

@@ -268,8 +268,10 @@ class TeacherController extends Controller
 
     }
 
-    function  documentos(){
+    //funcion para recibir los datos del formulario para subir un archivo
+    function  send_file(Request $request){
 
+        return $request;
     }
 
     function  examen(){
