@@ -586,7 +586,7 @@
                                                     <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
                                                     
                                                     <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
-                                                    <td><a target="_blank"  href="{{ URL::asset('storage/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                                    <td><a target="_blank"  href="{{ URL::asset('../storage/app/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
