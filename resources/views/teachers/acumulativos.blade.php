@@ -326,7 +326,7 @@
                           <!-- Card body -->
                           <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
                             <div class="card-body">
-                                <form class="md-form" style="color: #757575;">
+                                <form class="md-form" style="color: #757575;" method="POST" action="{{ route('teachers/send_video') }}">
                                     {{-- @csrf --}}
                                     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
@@ -335,7 +335,7 @@
                                     <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
             
                                 <div>
-                                    <select required onchange="loadclassesfordocente()" class="mdb-select md-form mb-4 initialized" id="select_course">
+                                    <select required onchange="loadclassesfordocente_video()" class="mdb-select md-form mb-4 initialized" id="select_course_video" name="select_course_video">
                                         <option value="-1" disabled selected>Seleccione Curso</option>
                                         @foreach ($cursos as $curso)
                                             <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -344,17 +344,17 @@
                                 </div>
 
                                 <div>
-                                    <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases_video">
+                                    <select required onchange="loadsectionsfordocentes_video()" class="mdb-select md-form mb-4 initialized" id="select_clases_video" name="select_clases_video">
                                         <option value="-1" disabled selected>Seleccione Clase</option>
                                     </select>
                                 </div>
                     
-                                <div required id="checks_sections" class="form-check mb-4">
+                                <div required id="checks_sections_video" class="form-check mb-4">
                                   
                                 </div>
                     
                                 <div>
-                                    <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                    <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_video" name="select_parcial_video">
                                         <option value="-1" disabled selected>Seleccione Parcial</option>
                                         <option value="1">I Parcial</option>
                                         <option value="2">II Parcial</option>
@@ -364,22 +364,22 @@
                                 </div>
                                 
                                 <div class="md-form">
-                                    <input required type="text" id="video_name" class="form-control">
+                                    <input required type="text" id="titulo" name="titulo" class="form-control">
                                     <label for="video_name">Titulo del video</label>
                                 </div>
 
                                 <div class="md-form">
-                                    <input required type="text" id="url" class="form-control">
+                                    <input required type="text" id="url" name="url" class="form-control">
                                     <label for="url">URL del video</label>
                                 </div>
 
                                 <!--Material textarea-->
                                 <div class="md-form">
-                                    <textarea required type="text" id="descripcion_video" class="md-textarea form-control" rows="3"></textarea>
+                                    <textarea required type="text" id="descripcion_video" name="descripcion_video" class="md-textarea form-control" rows="3"></textarea>
                                     <label for="descripcion_video">Instrucciones para el Video</label>
                                 </div>
                                 
-                                <button id="btn_send_task" onclick="send_video()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Subir</button>
+                                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir</button>
                                 <div align="center" id="circle"></div>
                             </form>
                             </div>
@@ -519,7 +519,7 @@
                         <br>
 
                           {{-- tabla de recursos --}}
-                          <div  class="card card-cascade narrower">
+                        <div  class="card card-cascade narrower">
 
                               <!--Card image-->
                                 <div align="center" class="view view-cascade gradient-card-header peach-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
@@ -580,13 +580,47 @@
                                                     @endif  
                                                     @if ($file->typefile== 'pptx') 
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
-                                                    @endif            
+                                                    @endif              
                                                    
-                                                    <td><a href="">{{$file->name_original}} </a></td>
+                                                    <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}">{{$file->name_original}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
                                                     
                                                     <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
                                                     <td><a target="_blank"  href="{{ URL::asset('../storage/app/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                                          <!-- Central Modal Medium Info {{$file->id}}-->
+                                                      <div class="modal fade modal-notify info" id="centralModalfile_{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-notify modal-info" role="document">
+                                                          <!--Content-->
+                                                          <div class="modal-content">
+                                                            <!--Header-->
+                                                            <div class="modal-header">
+                                                              
+                                                              <p class="heading lead">{{$file->filename}}</p>
+                    
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true" class="white-text">&times;</span>
+                                                              </button>
+                                                            </div>
+                    
+                                                            <!--Body-->
+                                                            <div class="modal-body">
+                                                              <div class="text-center">
+                                                                <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
+                                                                <p>{{$file->detalles}}</p>
+                                                              
+                                                              </div>
+                                                            </div>
+                    
+                                                            <!--Footer-->
+                                                            <div class="modal-footer justify-content-center">
+                                                              <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                                            </div>
+                                                          </div>
+                                                          <!--/.Content-->
+                                                        </div>
+                                                    </div>
+                                                      <!-- Central Modal Medium Info-->
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
@@ -636,11 +670,6 @@
                                                 </th>
 
                                                 <th class="th-sm">
-                                                    <a href="">Detalles
-                                                    </a>
-                                                </th>
-                                                
-                                                <th class="th-sm">
                                                     <a href="">Visualizar
                                                     </a>
                                                 </th>
@@ -659,8 +688,47 @@
                                                     <td><a href="">{{$video->titulo}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</td>
                                                     
-                                                    <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</button></td>
-                                                    <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0">Visualizar</button></td>
+                                                    <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalvideo_{{$video->id}}">Visualizar</button></td>
+                                                     <!-- Central Modal Medium Video {{$video->id}}-->
+                                                     <div class="modal fade modal-notify info" id="centralModalvideo_{{$video->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-notify modal-danger" role="document">
+                                                          <!--Content-->
+                                                          <div class="modal-content">
+                                                            <!--Header-->
+                                                            <div class="modal-header">
+                                                              
+                                                              <p class="heading lead">{{$video->titulo}}</p>
+                    
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true" class="white-text">&times;</span>
+                                                              </button>
+                                                            </div>
+                    
+                                                            <!--Body-->
+                                                            <div class="modal-body">
+                                                              <div class="text-center">
+                                                                <p> @php
+                                                                      //tomamos solo los  ultimo 11 caracteres de la url del video
+                                                                      $url = substr($video->url, -11);    
+                                                                    @endphp   
+                                                                    <iframe width="95%" height="315" src="https://www.youtube.com/embed/{{$url}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                                                </p>
+                                                                <p>Observaci&oacute;n: {{$video->detalles}}</p>
+                                                                <p>Publicado el:{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</p>
+                                                                                                                                   
+                                                              </div>
+                                                            </div>
+                    
+                                                            <!--Footer-->
+                                                            <div class="modal-footer justify-content-center">
+                                                              <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                                            </div>
+                                                          </div>
+                                                          <!--/.Content-->
+                                                        </div>
+                                                    </div>
+                                                    <!-- Central Modal Medium Info-->
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
