@@ -270,9 +270,52 @@ class TeacherController extends Controller
     }
 
     //funcion para recibir los datos del formulario para subir un archivo
-    function  send_file(Request $request){
+    function send_file(Request $request){
 
-        return $request;
+        //obtenemos las secciones seleccionadas
+        $secciones=$request->input('sections');
+        $parcial = $request->select_parcial_file;
+       
+        //obtenemos el nombre original del archivo
+        $name_original = $request->file('document')->getClientOriginalName();
+
+        //obtenemos la extension original del archivo
+        $extension = $request->file('document')->getClientOriginalExtension();
+
+        //almacenamos el documento en la carpeta documentos de la carpeta store y obtenemos su nuevo nombre
+        $file = $request->file('document')->store('documents');
+
+        //datos actuales para volver al mismo sitio
+        $CursoA= $request->curso_actual;
+        $ClaseA= $request->clase_actual;
+        $UsuarioA= $request->user_id;
+        $SectionA= $request->section_actual;
+        $ParcialA= $parcial;
+        
+        //proceso para cada una de la secciones seleccionadas
+        foreach ($secciones as  $seccion) {
+            //insertamos los datos en la base de datos en la tabla files
+            $msj= DB::table('files')->insert([
+
+                'user_id'=>$request->user_id,
+                'course_id'=>$request->select_course_file,
+                'section'=>$seccion,
+                'clase_id'=>$request->select_clases_file,
+                'parcial'=>$parcial,
+                'filename'=>$file,
+                'name_original'=>$name_original,
+                'typefile'=>$extension,
+                'detalles'=>$request->descripcion_file,
+                'fecha'=>Carbon::now(),
+                
+            ]);
+        }
+        
+        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
+
+        //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
+       
+         
     }
 
     function  examen(){

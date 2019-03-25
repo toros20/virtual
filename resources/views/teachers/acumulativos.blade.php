@@ -248,7 +248,7 @@
                           <!-- Card body -->
                           <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
                             <div class="card-body">
-                                  <form class="md-form" style="color: #757575;">
+                                  <form class="md-form" style="color: #757575;" enctype="multipart/form-data" method = 'POST' action="{{ route('teachers/send_file') }}">
                                       {{-- @csrf --}}
                                       <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                       <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
@@ -257,7 +257,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente_file()" class="mdb-select md-form mb-4 initialized" id="select_course_file">
+                                      <select required onchange="loadclassesfordocente_file()" class="mdb-select md-form mb-4 initialized" id="select_course_file" name="select_course_file">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -266,17 +266,17 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes_file()" class="mdb-select md-form mb-4 initialized" id="select_clases_file">
+                                      <select required onchange="loadsectionsfordocentes_file()" class="mdb-select md-form mb-4 initialized" id="select_clases_file" name="select_clases_file">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
                       
-                                  <div required id="checks_sections_file" class="form-check mb-4">
+                                  <div required id="checks_sections_file" name="checks_sections_file" class="form-check mb-4">
                                     
                                   </div>
                       
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_file">
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_file" name="select_parcial_file">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>
@@ -288,20 +288,20 @@
                                   <div class="file-field">
                                       <div class="btn btn-primary btn-sm float-left">
                                         <span>Seleccione Documento</span>
-                                        <p><input id="file" type="file"></p>
+                                        <p><input name ="document" id="document" type="file"></p>
                                       </div>
                                       <div class="file-path">
                                         <input class="file-path validate" type="text" placeholder="Subir Archivo">
                                       </div>
-                                    </div>
+                                  </div>
 
                                   <!--Material textarea-->
                                   <div class="md-form">
-                                      <textarea required type="text" id="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
+                                      <textarea required type="text" id="descripcion_file" name="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
                                       <label for="descripcion">Instrucciones para el documento</label>
                                   </div>
                                   
-                                  <button id="btn_send_task" onclick="send_file()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Subir</button>
+                                  <button id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir</button>
                                   <div align="center" id="circle"></div>
                               </form>
                             </div>
@@ -582,11 +582,11 @@
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
                                                     @endif            
                                                    
-                                                    <td><a href="">{{$file->filename}} </a></td>
+                                                    <td><a href="">{{$file->name_original}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
                                                     
                                                     <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
-                                                    <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                                    <td><a target="_blank"  href="{{ URL::asset('storage/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
                                                     <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
