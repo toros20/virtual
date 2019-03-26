@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Assignment;
+use App\Enrollment;
 use DB;
 use Carbon\Carbon;
 
@@ -237,9 +238,12 @@ class TeacherController extends Controller
 
             //convertimos en minuscula la letra de la seccion
             $seccion=strtolower($seccion);
-            //nombre de la tabla task a almacenar
+            //nombre de la tabla task principal del curso y seccion a almacenar
             $tbl_task='task_'.$course_id.'_'.$seccion;
-            $msj= DB::table($tbl_task)->insert([
+            //nombre de la tabla taskstudent del curso y seccion a  por alumno
+            $tbl_taskstudent='taskstudent_'.$course_id.'_'.$seccion;
+            
+            if ($id_task= DB::table($tbl_task)->insertGetId([//confirmamos que la tarea si se inserte , y obtenemos is id recien asignado
 
                 'teacher'=>$teacher,
                 'clase'=>$clase_id,
@@ -252,8 +256,30 @@ class TeacherController extends Controller
                 'valor'=>$valor,
                 'tipo'=>$tipo
                 
-            ]);
-        }
+            ])){//en caso de que la tarea se si inserte en la tabla asignada , ahora se envia a los estudiantes de este curso y seccion
+
+                //obtenemos los id de los alumnos matriculados en este curso y seccion
+                $Enrollments = Enrollment::where([
+                    ['course_id', '=', $course_id],
+                    ['section', '=', $seccion],
+                ])->get();
+
+                foreach ($Enrollments as $enroll) {
+                    //insertamos la tarea en la task_student que corresponde al curso y seccion
+                    $msj2= DB::table($tbl_taskstudent)->insert([
+
+                        'student'=>$enroll->user_id,
+                        'task_'.$course_id.'_'.$seccion.'_id'=>$id_task,
+                        'valor_obtenido'=>0   
+                    ]);
+                }//fin del ciclo para cada alumno de este curso
+                
+            }//fin del if -> si se inserta la tarea en la tabla task del curso y seccion
+            else{
+                echo "Error Al Almacenar la Tarea, intentelo nuevamente";
+            }
+        }//fin del for each -> fin del ciclo por cada seccion seleccionada
+        
 
         //buscamos las tareas del curso seccion y clase donde esta actualmente el docente
         $tbl_task_actual='task_'.$curso_actual.'_'.$section_actual;//nombre de la tabla a buscar
@@ -357,12 +383,24 @@ class TeacherController extends Controller
          
     }
 
-    function  examen(){
+   function eliminar_task(Request $request){
 
-    }
+        //otenemos el id de todo los alumnos registrados en este curso y seccion
+        
+        //eliminamos la tarea a eliminar de las tablas task_student
 
-    function  descargas(){
+        $seccion=strtolower($request->section);
+        //eliminamos el acumulativo de la tabla principal de tareas de este curso y seccion
+        $tbl_task='task_'.$request->course_id.'_'.$request->section; //nombre de la tabla a buscar
+        $res = DB::table($tbl_task)->where('id', '=', $reques->task_id)->delete();
 
-    }
+   }
+   
+  /* function eliminar_file(task_id){
+        
+        }
+    function eliminar_video(task_id){
+        
+    }*/
 
-    }
+}

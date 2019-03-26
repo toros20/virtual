@@ -481,7 +481,7 @@
                                             
                                             <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
                                             <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0">Editar</button></td>
-                                            <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                            <td><button onclick="eliminar_task({{$task->id}})" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                         @else 
                                             @php $total_evaluado+=$task->valor;@endphp
                                             <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0">Evaluada</button></td>
@@ -621,7 +621,7 @@
                                                         </div>
                                                     </div>
                                                       <!-- Central Modal Medium Info-->
-                                                    <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                                    <td><button onclick="eliminar_file({{$file->id}})" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
                                                 @endforeach
@@ -729,7 +729,7 @@
                                                         </div>
                                                     </div>
                                                     <!-- Central Modal Medium Info-->
-                                                    <td><button type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                                    <td><button onclick="eliminar_video({{$video->id}})" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
                                                 @endforeach
