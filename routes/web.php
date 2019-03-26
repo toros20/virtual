@@ -141,3 +141,6 @@ Route::post('ajax/acumulativosbyclass', 'StudentController@acumulativosbyclass')
 Route::post('ajax/send_file', 'TeacherController@send_file')->name('teachers/send_file');
 //crear ruta para enviar un video nuevo desde el formulario del docente
 Route::post('ajax/send_video', 'TeacherController@send_video')->name('teachers/send_video');
+
+//crear ruta para eliminar una task desde el formulario del docente
+Route::post('ajax/delete_task', 'TeacherController@delete_task');

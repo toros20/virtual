@@ -291,7 +291,7 @@ class TeacherController extends Controller
         ->orderBy('id','ASC')
         ->get();
 
-        return view('ajax/send_task',compact('tasks'));
+        return view('ajax/send_task',compact('tasks','curso_actual','section_actual'));
 
     }
 
@@ -383,16 +383,26 @@ class TeacherController extends Controller
          
     }
 
-   function eliminar_task(Request $request){
+   function delete_task(Request $request){
 
-        //otenemos el id de todo los alumnos registrados en este curso y seccion
-        
-        //eliminamos la tarea a eliminar de las tablas task_student
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->section_id);
+        //obtenemos el curso
+        $course_id=$request->course_id;
+        //nombramos la tabla de tareas de este curso y seccion
+        $tbl_task='task_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+        //nombramos la tabla de tareassudent de este curso y seccion
+        $tbl_taskstdent='taskstudent_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
 
-        $seccion=strtolower($request->section);
         //eliminamos el acumulativo de la tabla principal de tareas de este curso y seccion
-        $tbl_task='task_'.$request->course_id.'_'.$request->section; //nombre de la tabla a buscar
-        $res = DB::table($tbl_task)->where('id', '=', $reques->task_id)->delete();
+        if ($res = DB::table($tbl_task)->where('id', '=', $request->task_id)->delete()){
+            //en caso de que si la halla eliminado
+
+            //eliminamos la tarea de las tabla task_student
+            $res = DB::table($tbl_taskstdent)->where($tbl_task.'_id', '=', $request->task_id)->delete();
+            
+        }
+
 
    }
    
