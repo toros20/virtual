@@ -151,3 +151,11 @@ Route::post('ajax/delete_file', 'TeacherController@delete_file');
 //crear ruta para eliminar un video desde el formulario del docente
 Route::post('ajax/delete_video', 'TeacherController@delete_video');
 
+//crear ruta para evaluar tareas desde el formulario del docente
+Route::post('ajax/evaluar_task', 'TeacherController@evaluar_task');
+
+//crear ruta para evaluar tareas desde el formulario del docente
+Route::post('teachers/save_notas', 'TeacherController@save_notas')->name('teachers/save_notas');
+
+
+

@@ -376,10 +376,7 @@ class TeacherController extends Controller
             ]);
         }
         
-        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
-
-        //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
-       
+        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);       
          
     }
 
@@ -415,6 +412,97 @@ class TeacherController extends Controller
     function delete_video(Request $request){
          //eliminamos el archivo de las tabla files
          $res = DB::table('videos')->where('id', '=', $request->video_id)->delete();
+    }
+
+    //funcion para evaluar los acumulativos
+    function evaluar_task(Request $request){
+       
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->section_id);
+        //obtenemos el curso
+        $course_id=$request->course_id;
+        //nombramos la tabla de tareas de este curso y seccion
+        $tbl_task='task_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+        //nombramos la tabla de tareassudent de este curso y seccion
+        $tbl_taskstudent='taskstudent_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+
+        //obtenemos los datos de esta tarea, titulo y valor
+        $tasks= DB::table($tbl_task)->where('id','=',$request->task_id)->get();
+
+        //obtenemos el listados de esrudiantes de este curso y seccion 
+        //com colegios catolicos tenemos una charla, invitamos a los padres de familia que puedan asistir a la conferencia
+        $students = DB::table($tbl_taskstudent)
+        ->join('users', $tbl_taskstudent.'.student', '=', 'users.id')
+        ->Select(
+            'users.id as user',
+            'users.sexo',
+            'users.name',
+            'users.lastname',
+            $tbl_taskstudent.'.id as ts_id',
+            $tbl_taskstudent.'.valor_obtenido',
+            $tbl_taskstudent.'.observacion')
+        ->where($tbl_task.'_id','=',$request->task_id)
+        ->orderBy('users.sexo', 'asc')
+        ->orderBy('users.name', 'asc')
+        ->get();
+        
+        $id_task=$request->task_id;
+        return view('ajax/evaluartask',compact('students','tasks','course_id','seccion','id_task'));
+    }
+
+    //funcion para almacenar las notas enviadas desde el panel de docente
+    function save_notas(Request $request){
+        
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->seccion);
+        //obtenemos el curso
+        $course=$request->course_id;
+
+        $tbl_task='task_'.$course.'_'.$seccion;
+
+        $tbl_taskstudent='taskstudent_'.$course.'_'.$seccion; //nombre de la tabla principal de tareas
+        
+        //obtenemos los datos de la tarea , parcial, docente, y clase
+        $tarea = DB::table($tbl_task)->where('id','=',$request->task_id)->get();
+       
+        //datos actuales para volver al mismo sitio
+        $CursoA= $course;
+        $SectionA= $seccion;
+        $ClaseA= $tarea[0]->clase;
+        $UsuarioA= $tarea[0]->teacher;
+        $ParcialA= $tarea[0]->parcial;
+       
+        //obtenemos los id de los alumnos matriculados en este curso y seccion y que tiene tarea asignada
+        $Enrollments = DB::table($tbl_taskstudent)
+                ->join('enrollments', $tbl_taskstudent.'.student', '=', 'enrollments.user_id')
+                ->where([
+                    ['enrollments.course_id', '=', $course],
+                    ['enrollments.section', '=', $seccion],
+                    [$tbl_taskstudent.'.'.$tbl_task.'_id', '=', $request->task_id],
+                ])
+                ->get();
+              // dd( $Enrollments);
+        //ciclo de inserccion de notas, para cada estudiante
+       
+        foreach ($Enrollments as $enroll) {
+
+            $id = 'txt_'.$enroll->student;
+            $obs = 'obs_'.$enroll->student;
+            //insertamos la tarea en la task_student que corresponde al curso y seccion
+            $resp =DB::table($tbl_taskstudent)
+                ->where([
+                    ['student', '=', $enroll->user_id],
+                    [$tbl_task.'_id', '=', $request->task_id ],
+                ])
+                ->update(array(
+                    'observacion'=>$request->$obs,
+                    'valor_obtenido' =>$request->$id
+                    ) );
+                
+        }//fin del ciclo para cada alumno de este curso
+
+        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
+
     }
 
 }
