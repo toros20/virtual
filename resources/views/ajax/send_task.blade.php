@@ -2,12 +2,13 @@
 @foreach ($tasks as $task)
 <tr>
                                     
-    <td>{{$task->titulo}} </td>
+    
     @if ($task->tipo==2)
-        <td><i class="fas fa-home mr-5"></i> </td>
+        <td><i class="fas fa-home mr-5 fa-2x"></i> </td>
     @else                                                 
-        <td><i class="fas fa-school mr-5"></i> </td>   
+        <td><i class="fas fa-school mr-5 fa-2x"></i> </td>   
     @endif
+    <td>{{$task->titulo}} </td>
     <td>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</td>
     
     <td>{{$task->valor}}%</td>
@@ -25,3 +26,6 @@
     
 </tr>
 @endforeach
+  <!--Este div recibira el resultado de el modal para evaluar alumnos-->
+  <div id="div_modal_evaluar"></div>                    
+  <!--Este div recibira el resultado de el modal para evaluar alumnos-->

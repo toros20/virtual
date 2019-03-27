@@ -416,6 +416,12 @@
                                 <!--Table head-->
                                 <thead>
                                     <tr>
+
+                                    <th class="th-lg">
+                                        <a>Lugar
+                                        
+                                        </a>
+                                    </th>
                                     
                                     <th class="th-lg">
                                         <a>Acumulativo
@@ -423,12 +429,6 @@
                                         </a>
                                     </th>
 
-                                    <th class="th-lg">
-                                        <a>Lugar
-                                       
-                                        </a>
-                                    </th>
-                                    
                                     <th class="th-md">
                                         <a href="">Fecha
                                        
@@ -466,12 +466,13 @@
                                     @php $total_publicado+=$task->valor; @endphp
                                     <tr>
                                                              
-                                        <td>{{$task->titulo}} </td>
+                                        
                                         @if ($task->tipo==2)
-                                            <td><i class="fas fa-home mr-5"></i> </td>
+                                            <td><i class="fas fa-home mr-5 fa-2x"></i> </td>
                                         @else                                                 
-                                            <td><i class="fas fa-school mr-5"></i> </td>   
+                                            <td><i class="fas fa-school mr-5 fa-2x"></i> </td>   
                                         @endif
+                                        <td>{{$task->titulo}} </td>
 
                                         <td>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</td>
                                         
@@ -479,7 +480,7 @@
                                         
                                         @if ( $task->evaluada == 0)
                                             
-                                            <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
+                                            <td><button onclick="evaluar_task({{$task->id}},{{$curso_actual[0]->id}},'{{$section_actual}}')" type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
                                             <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0">Editar</button></td>
                                             <td><button onclick="eliminar_task({{$task->id}},{{$curso_actual[0]->id}},'{{$section_actual}}')" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                         @else 
@@ -492,8 +493,9 @@
                                         
                                     </tr>
                                     @endforeach
-                                                                           
-                                    
+                                     <!--Este div recibira el resultado de el modal para evaluar alumnos-->
+                                    <div id="div_modal_evaluar"></div>                    
+                                     <!--Este div recibira el resultado de el modal para evaluar alumnos-->
                                 </tbody>
                                 
                                 <!--Table body-->
@@ -577,18 +579,27 @@
                                                 <tr>     
                                                     @if ($file->typefile== 'pdf') 
                                                         <td><span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></td>
+                                                    @endif 
+                                                    @if ($file->typefile == 'docx' || $file->typefile == 'doc') 
+                                                    <td><span style="color: blue;"><i class="far fa-file-word fa-3x"></i></span></td>
                                                     @endif  
-                                                    @if ($file->typefile== 'pptx') 
+                                                    @if ($file->typefile == 'xlsx' || $file->typefile == 'xls' || $file->typefile == 'cvs') 
+                                                    <td><span style="color: green;"><i class="far fa-file-excel fa-3x"></i></span></td>
+                                                    @endif
+                                                    @if ($file->typefile == 'rar' || $file->typefile == 'zip') 
+                                                    <td><span style="color: purple;"><i class="fas fa-archive fa-3x"></i></span></td>
+                                                    @endif
+                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
                                                     @endif              
                                                    
                                                     <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}">{{$file->name_original}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
                                                     
-                                                    <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0">Detalles</a></td>
+                                                    <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}" >Detalles</a></td>
                                                     <td><a target="_blank"  href="{{ URL::asset('../storage/app/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
-                                                          <!-- Central Modal Medium Info {{$file->id}}-->
-                                                      <div class="modal fade modal-notify info" id="centralModalfile_{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                    <!-- Central Modal Medium Info {{$file->id}}-->
+                                                    <div class="modal fade modal-notify info" id="centralModalfile_{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-notify modal-info" role="document">
                                                           <!--Content-->
@@ -620,7 +631,7 @@
                                                           <!--/.Content-->
                                                         </div>
                                                     </div>
-                                                      <!-- Central Modal Medium Info-->
+                                                    <!-- Central Modal Medium Info-->
                                                     <td><button onclick="eliminar_file({{$file->id}})" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                               
                                                 </tr>
@@ -657,7 +668,9 @@
                                             <!--Table head-->
                                             <thead>
                                                 <tr>
-                                                
+                                                <th>
+                                                  Tipo
+                                                </th>
                                                            
                                                 <th class="th-lg">
                                                     <a>Nombre del Video
@@ -685,6 +698,7 @@
                                             <tbody id="tbody_recursos" >
                                                 @foreach ($videos as $video)
                                                 <tr>  
+                                                    <td><span style="color: red;"><i class="fab fa-youtube fa-3x"></i></span></td>
                                                     <td><a href="">{{$video->titulo}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($video->fecha)->format('d/m/Y')}}</td>
                                                     

@@ -403,14 +403,18 @@ class TeacherController extends Controller
             
         }
 
-
    }
-   
-  /* function eliminar_file(task_id){
-        
-        }
-    function eliminar_video(task_id){
-        
-    }*/
+
+   //funcion para eliminar documentos desde el panel acumulativos de docentes
+   function delete_file(Request $request){
+         //eliminamos el archivo de las tabla files
+         $res = DB::table('files')->where('id', '=', $request->file_id)->delete();
+    }
+    
+    //funcion para eliminar videos desde el panel acumulativos de docentes
+    function delete_video(Request $request){
+         //eliminamos el archivo de las tabla files
+         $res = DB::table('videos')->where('id', '=', $request->video_id)->delete();
+    }
 
 }
