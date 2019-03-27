@@ -120,7 +120,6 @@ Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','Teacher
 
 //crear ruta para generar las secciones asignadas a este curso de este docente
 Route::post('ajax/loadsectionsfordocentes', 'TeacherController@loadsectionsfordocentes');
-
 //crear ruta para generar las clases asignadas a este curso de este docente
 Route::post('ajax/loadclassesfordocente', 'TeacherController@loadclassesfordocente');
 
