@@ -20,7 +20,11 @@ class SectioncourseController extends Controller
      */
     public function index()
     {
-        $sectioncourses = Sectioncourse::all();
+        $sectioncourses = DB::table('sectioncourses')
+                ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                ->get();
+
+        //$sectioncourses = Sectioncourse::all();
         return view('sectioncourses.index',compact('sectioncourses'));
     }
 
@@ -55,7 +59,7 @@ class SectioncourseController extends Controller
         //nombramos las tablas que vamos a crear
         $tbl_task='task_'.$curso.'_'.$seccion;
         $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;
-        $tbl_comentarios='comentarios'.$curso.'_'.$seccion;
+        $tbl_comentarios='comentarios_'.$curso.'_'.$seccion;
 
         //creamos la tabla task principal de este curso y seccion (ejemplo task_1_a)
         Schema::connection('mysql')->create($tbl_task, function($table)
