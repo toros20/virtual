@@ -111,7 +111,7 @@ function loadclasesbymodality(){
    
 
 }
-
+//funcion para enviar un mensaje desde la bandeja de comentarios del docente, la inicial que aparece al ingresar al panel
 function publicar(){
    
      var usuario = $("#user").val();

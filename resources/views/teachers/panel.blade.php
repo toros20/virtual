@@ -504,7 +504,6 @@
 							<input id="section" type="hidden" value="{{$firstcourse->section}} "> 
 						</div>
 						
-
 						<div class="form-group with-icon-right ">
 							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 							<div class="add-options-message">
@@ -516,7 +515,10 @@
 							</div>
 						</div>
 					</div>
+					<label><input style="display: inline-block; width: auto; margin: 20px 5px 0px 40px; " value="Enviar por Correo" type="checkbox" id="cbox-email" > Enviar por Correo</label>
+					
 					<button id="btn_publicar" onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+					
 				</div>
 				
 				<!-- ... end Comment Form  -->

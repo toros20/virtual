@@ -16,6 +16,10 @@ use App\Clasecourse;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+use Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
 class UserController extends Controller
 {
     /**
@@ -73,7 +77,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {   
-        
+        $tbl_mensajes='';//nombre de la tabla en la cual se guardaran sus msj, solo la inicializamos
         //Codigo para insertar student
         if ($request->input('role')=='student') {
             
@@ -83,6 +87,8 @@ class UserController extends Controller
 
                 //id del usuario recien creado
                 $new_id= $user->id;
+                //nombre de la tabla donde se almacenaran sus mensajes
+                $tbl_mensajes='msj_'. $new_id;
 
                 //obtenemos año actual
                 $now = new \DateTime();
@@ -102,6 +108,25 @@ class UserController extends Controller
                     'updated_at'=> Carbon::now()
                 ]);
 
+                //creamos la tabla msj de este usuario (ejemplo msj_1 (id) )
+                Schema::connection('mysql')->create( $tbl_mensajes, function($table) 
+                {
+                    $table->increments('id');
+                    $table->integer('remitente');
+                    $table->text( 'mensaje');
+                    $table->dateTime('fecha');
+                    $table->string('tipo');
+                    $table->string('key',20);
+                    $table->integer('curso_id');
+                    $table->char('section',1);
+                    $table->tinyInteger('visto')->nullable($value = true)->default(0);
+                    $table->integer('megusta')->nullable($value = true)->default(0);
+                    $table->tinyInteger('tegusta')->nullable($value = true)->default(0);
+                    $table->integer('comentarios')->nullable($value = true)->default(0);
+
+                    $table->timestamps();
+                });
+
                 return redirect()->route('users.students');
 
             }
@@ -110,7 +135,35 @@ class UserController extends Controller
         //Codigo para insertar employees
         if ($request->input('role')=='teacher') {
             
-            $user=User::create($request->all()) ;
+            if ($user=User::create($request->all()) ){// en caso de insertar el docente
+
+                //id del usuario recien creado
+                $new_id= $user->id;
+
+                //nombre de la tabla donde se almacenaran sus mensajes
+                $tbl_mensajes='msj_'. $new_id;
+
+                //creamos la tabla msj de este usuario (ejemplo msj_1 (id) )
+                Schema::connection('mysql')->create( $tbl_mensajes, function($table) 
+                {
+                    $table->increments('id');
+                    $table->integer('remitente');
+                    $table->text( 'mensaje');
+                    $table->dateTime('fecha');
+                    $table->string('tipo');
+                    $table->string('key',20);
+                    $table->integer('curso_id');
+                    $table->char('section',1);
+                    $table->tinyInteger('visto')->nullable($value = true)->default(0);
+                    $table->integer('megusta')->nullable($value = true)->default(0);
+                    $table->tinyInteger('tegusta')->nullable($value = true)->default(0);
+                    $table->integer('comentarios')->nullable($value = true)->default(0);
+
+                    $table->timestamps();
+                });
+            }// din del if de insertar nuevo docente
+            
+
             return redirect()->route('users.teachers');
         }
         
@@ -212,7 +265,7 @@ class UserController extends Controller
         
      }
     
-     // realizar una publicacion del tipo section (solo para los miembros de una seccion)
+     // realizar una publicacion del tipo section (solo para los miembros de una seccion) desde el panel de docente, en la caja de comentarios inicial
      public function post_in_section(Request $request){
 
         //generamos un codigo identificador (tamaño 10) aleatorio para el mensaje
@@ -241,6 +294,10 @@ class UserController extends Controller
                 'key'=>$key
                 
             ]);
+
+            //obtener el email asignado a este usuario
+
+            //enviar el mensaje por correo electronico
         }
 
         //obtenemos los id de los usuarios maestros asignados en este curso y seccion

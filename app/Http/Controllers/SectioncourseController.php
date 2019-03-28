@@ -55,6 +55,7 @@ class SectioncourseController extends Controller
         //nombramos las tablas que vamos a crear
         $tbl_task='task_'.$curso.'_'.$seccion;
         $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;
+        $tbl_comentarios='comentarios'.$curso.'_'.$seccion;
 
         //creamos la tabla task principal de este curso y seccion (ejemplo task_1_a)
         Schema::connection('mysql')->create($tbl_task, function($table)
@@ -83,6 +84,18 @@ class SectioncourseController extends Controller
             $table->integer( 'task_'.$curso.'_'.$seccion.'_id');
             $table->integer('valor_obtenido');
             $table->string('observacion')->nullable($value = true);
+
+            $table->timestamps();
+        });
+
+        //creamos la tabla cometaeios de este curso y seccion (ejemplo comentarios_1_a)
+        Schema::connection('mysql')->create( $tbl_comentarios, function($table) use ($curso,$seccion)
+        {
+            $table->increments('id');
+            $table->char('msj_key',12);
+            $table->text( 'comentario');
+            $table->integer('user_id');
+            $table->dateTime('fecha');
 
             $table->timestamps();
         });
