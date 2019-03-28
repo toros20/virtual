@@ -26,7 +26,7 @@
                      <tr>
                         <td> <a href=" {{route('sectioncourses.show',$sectionescourse->id)}} ">
                         {{$sectionescourse->year}} </a></td>
-                        <td> {{$sectionescourse->course_id}}</td>
+                        <td> {{$sectionescourse->name}}</td>
                         <td> {{$sectionescourse->section}}</td>                     
                        
                         <td> <a href=" {{route('sectioncourses.edit',$sectionescourse->id)}} ">
