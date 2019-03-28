@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use DB;
 use App\Modality;
 use App\Course;
 use App\Sectioncourse;
