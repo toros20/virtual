@@ -23,6 +23,7 @@ class SectioncourseController extends Controller
         $sectioncourses = DB::table('sectioncourses')
                 ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
                 ->orderBy('courses.id', 'asc')
+                ->orderBy('sectioncourses.id', 'asc')
                 ->get();
 
         //$sectioncourses = Sectioncourse::all();
