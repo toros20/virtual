@@ -17,7 +17,7 @@ class ClasecourseController extends Controller
      */
     public function index()
     {
-        $clasecourses = Clasecourse::all()->orderBy('id','DES');
+        $clasecourses = Clasecourse::orderBy('id','DES')->all();
         return view('clasecourses.index',compact('clasecourses'));
     }
 
