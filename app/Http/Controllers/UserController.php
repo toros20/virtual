@@ -36,7 +36,7 @@ class UserController extends Controller
 
     public function tablas(){
 
-        for ($i=45; $i < 1437  ; $i++) { 
+        for ($i=64; $i < 1437  ; $i++) { 
           
             Schema::connection('mysql')->create( 'msj_'.$i, function($table) 
             {
