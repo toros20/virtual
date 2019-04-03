@@ -100,7 +100,7 @@ class AssignmentController extends Controller
      * @param  \App\Assignment  $assignment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Assignment $assignment)
+    public function destroy($id)
     {
         $assignment = Assignment::findOrFail($id)->delete();
         return redirect()->route('assignments.index');
