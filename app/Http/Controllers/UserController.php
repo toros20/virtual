@@ -34,6 +34,33 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
+    public function tablas(){
+        return "holaaaa";
+        for ($i=45; $i < 1437  ; $i++) { 
+          
+            Schema::connection('mysql')->create( 'msj_'.$i, function($table) 
+            {
+                $table->increments('id');
+                $table->integer('remitente');
+                $table->text( 'mensaje');
+                $table->dateTime('fecha');
+                $table->string('tipo');
+                $table->string('key',20);
+                $table->integer('curso_id');
+                $table->char('section',1);
+                $table->tinyInteger('visto')->nullable($value = true)->default(0);
+                $table->integer('megusta')->nullable($value = true)->default(0);
+                $table->tinyInteger('tegusta')->nullable($value = true)->default(0);
+                $table->integer('comentarios')->nullable($value = true)->default(0);
+    
+                $table->timestamps();
+            }); 
+        }
+
+        return "LISTO";
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      *
