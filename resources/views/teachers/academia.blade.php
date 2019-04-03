@@ -80,7 +80,12 @@
             </li>
             
             <li class="nav-item">
-              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a>
+                
+                  <form action="{{ route('logout') }}" method="POST">
+                      <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                      <button class="btn btn-danger" type="submit">SALIR</button>
+                  </form>
+              {{-- <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a> --}}
             </li>
             
           </ul>
