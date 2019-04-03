@@ -18,7 +18,7 @@ class AssignmentController extends Controller
      */
     public function index()
     {
-        $assignments = Assignment::all();
+        $assignments = Assignment::orderBy('id','DES')->get();
         return view('assignments.index',compact('assignments'));
     }
 
