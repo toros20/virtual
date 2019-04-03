@@ -86,7 +86,7 @@
             <li class="nav-item">
                 <form action="{{ route('logout') }}" method="POST">
                     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                    <button class="btn btn-danger" type="submit">SALIR</button>
+                    <button class="btn btn-sm btn-danger" type="submit">SALIR</button>
                 </form>
             </li>
             
