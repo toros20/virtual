@@ -133,7 +133,7 @@
 										@endif
 									</div>
 			
-									<div class="remember">
+									{{-- <div class="remember">
 			
 										<div class="checkbox">
 											<label>
@@ -142,17 +142,17 @@
 											</label>
 										</div>
 										
-									</div>
+									</div> --}}
 										
 									<button type="submit" class="btn btn-lg btn-primary full-width">
 										{{ __('Ingresar') }}
 									</button>
 
-									@if (Route::has('password.request'))
+									{{-- @if (Route::has('password.request'))
 										<a Style="color:#888da8;" class="btn btn-link" href="{{ route('password.request') }}">
 											{{ __('¿Olvidaste tu Contraseña?') }}
 										</a>
-									@endif
+									@endif --}}
 			
 								</div>
 							</div>
