@@ -35,8 +35,8 @@ class UserController extends Controller
     }
 
     public function tablas(){
-
-        for ($i=64; $i < 1437  ; $i++) { 
+        //codigo para crear la table msj_ por cada user
+        /*for ($i=64; $i < 1437  ; $i++) { 
           
             Schema::connection('mysql')->create( 'msj_'.$i, function($table) 
             {
@@ -57,7 +57,7 @@ class UserController extends Controller
             }); 
         }
 
-        return "LISTO";
+        return "LISTO";*/
         
     }
 

@@ -10,14 +10,27 @@ use Carbon\Carbon;
 
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+
 class TeacherController extends Controller
 {
+
     //funcion inicial al panel docente, 
 
      //funcion del panel docente, al momento de 
      //seleccionar un curso y seccion del panel izquierdo
      //los parametros vienen por la url, si no los trae le inserta los siguientes
      function teachers_panel($user_id=-1,$course_id=-1,$section='x'){
+
+        // Get the currently authenticated user...
+        $user = Auth::user();
+
+        // Get the currently authenticated user's ID...
+        $id = Auth::id();
+
+        if( $id != $user_id){
+            return "ACCESO NO PERMITIDO"; 
+        }
        
         if ($course_id==0||$section=='x') {
         
