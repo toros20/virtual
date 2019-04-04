@@ -14,7 +14,7 @@
     <td>{{$task->valor}}%</td>
     
     @if ( $task->evaluada == 0)
-        <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
+        <td><button onclick="evaluar_task({{$task->id}},{{$curso_actual}},'{{$section_actual}}')" type="button" class="btn btn-info btn-rounded btn-sm m-0">Evaluar</button></td>
         <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0">Editar</button></td>
         <td><button onclick="eliminar_task({{$task->id}},{{$curso_actual}},'{{$section_actual}}')" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
     @else 

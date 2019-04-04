@@ -156,11 +156,11 @@
                                             <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
                                         </li>
                                     </a>
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/documentos/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                   {{--  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/documentos/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
                                         <li class="list-group-item">
                                             <div class="md-v-line"></div><i class="far fa-file-pdf mr-5"></i>Documentos
                                         </li>
-                                    </a>
+                                    </a> --}}
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
                                         <li class="list-group-item">
                                             <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen
