@@ -8,8 +8,9 @@ use App\Course;
 use App\Clasecourse;
 use App\Assignment;
 use DB;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
 
 class StudentController extends Controller
 {
@@ -129,7 +130,7 @@ class StudentController extends Controller
             }else{// en caso de estar logeado
               return view('/login');
         }
-        
+
          //obtenemos los datos del student
          $user = User::findOrFail($user_id);
 
