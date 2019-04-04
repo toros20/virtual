@@ -15,6 +15,25 @@ class StudentController extends Controller
 {
     public function students_panel($id){
        
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='student'){
+                return response("ÁREA EXCLUSIVA DEL ESTUDIANTE.",404);
+            }
+
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
+
+            }else{// en caso de estar logeado
+              return view('/login');
+        }
+
         //obtenemos el id del usuario student
         $user = User::findOrFail($id);
         
@@ -53,6 +72,25 @@ class StudentController extends Controller
 
     //funcino para mostrar el panel academico del estudiante, se muestan las tarjetas de clases 
      function academia($user_id){
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='student'){
+                return response("ÁREA EXCLUSIVA DEL ESTUDIANTE.",404);
+            }
+
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
+
+            }else{// en caso de estar logeado
+              return view('/login');
+        }
+
 
          //obtenemos los datos del estudiante
          $user = User::findOrFail($user_id);
@@ -73,6 +111,25 @@ class StudentController extends Controller
     //funcion para la seccion de cada clase, mostraremos acumulativos y documentos por parcial
      function acumulativos($user_id,$clase,$parcial){
 
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='student'){
+                return response("ÁREA EXCLUSIVA DEL ESTUDIANTE.",404);
+            }
+
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
+
+            }else{// en caso de estar logeado
+              return view('/login');
+        }
+        
          //obtenemos los datos del student
          $user = User::findOrFail($user_id);
 

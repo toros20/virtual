@@ -22,14 +22,23 @@ class TeacherController extends Controller
      //los parametros vienen por la url, si no los trae le inserta los siguientes
      function teachers_panel($user_id=-1,$course_id=-1,$section='x'){
 
-        // Get the currently authenticated user...
-        $user = Auth::user();
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='teacher'){
+                return response("ÁREA EXCLUSIVA DEL PERSONAL DOCENTE.",404);
+            }
 
-        // Get the currently authenticated user's ID...
-        $id = Auth::id();
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
 
-        if( $id != $user_id){
-            return "ACCESO NO PERMITIDO"; 
+            }else{// en caso de estar logeado
+              return view('/login');
         }
        
         if ($course_id==0||$section=='x') {
@@ -88,6 +97,25 @@ class TeacherController extends Controller
      //seccion que controla el panel inicial de la seccion academica
      function academia($user_id){
 
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='teacher'){
+                return response("ÁREA EXCLUSIVA DEL PERSONAL DOCENTE.",404);
+            }
+
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
+
+            }else{// en caso de estar logeado
+              return view('/login');
+        }
+
         //obtenemos los datos del docente
         $user = User::findOrFail($user_id);
 
@@ -108,6 +136,25 @@ class TeacherController extends Controller
      }
      //funcion para enviar datos a la seccion de acumulativos de los docentes
      function  acumulativos($user_id,$course,$section,$clase,$parcial){
+
+        //control de seguridad
+        if (Auth::check()) {//verificamos si el usuario esta autneticado
+            
+            // Get the currently authenticated user...
+            $user = Auth::user();
+           
+            if( $user->role!='teacher'){
+                return response("ÁREA EXCLUSIVA DEL PERSONAL DOCENTE.",404);
+            }
+
+            $id = Auth::id();
+            if( $id != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            } 
+
+            }else{// en caso de estar logeado
+              return view('/login');
+        }
 
          //obtenemos los datos del docente
          $user = User::findOrFail($user_id);
