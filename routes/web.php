@@ -26,10 +26,6 @@ Route::get('/users/students/create', 'UserController@create_estudiante')->name('
 //crear ruta para el formulario de crear teachers nuevos
 Route::get('/users/teachers/create', 'UserController@create_teacher')->name('users.teachers.create');
 
-//crear ruta para evaluar tareas desde el formulario del docente
-Route::get('users/tablas', 'UserController@tablas');
-
-
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
@@ -157,6 +153,8 @@ Route::post('ajax/delete_video', 'TeacherController@delete_video');
 //crear ruta para evaluar tareas desde el formulario del docente
 Route::post('ajax/evaluar_task', 'TeacherController@evaluar_task');
 
+//crear ruta para evaluar tareas desde el formulario del docente
+Route::post('teachers/save_notas', 'TeacherController@save_notas')->name('teachers/save_notas');
 
 
 
