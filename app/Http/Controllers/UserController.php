@@ -15,6 +15,7 @@ use App\Clasecourse;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -22,6 +23,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class UserController extends Controller
 {
+     
     /**
      * Display a listing of the resource.
      *
@@ -29,6 +31,18 @@ class UserController extends Controller
      */
     public function index()
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         //$users = DB::table('users')->get();
         $users = User::all();
         return view('users.index',compact('users'));
@@ -68,6 +82,19 @@ class UserController extends Controller
      */
     public function create_estudiante()
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
         $modalities = Modality::all();
         $courses = Course::all();
         return view('users.create_estudiante',compact('modalities','courses'));
@@ -75,11 +102,35 @@ class UserController extends Controller
 
     public function create_teacher()
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         return view('users.create_teacher');
     }
 
     public function students()
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         //selecciomos todos los usuarios del tipo student
         //$students = DB::table('users')->where('role','student')->get();
         $students = User::where('role','student')->get();
@@ -89,6 +140,18 @@ class UserController extends Controller
 
     public function teachers()
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         //selecciomos todos los usuarios del tipo student
         //$students = DB::table('users')->where('role','student')->get();
         $teachers = User::where('role','teacher')->get();
@@ -204,6 +267,18 @@ class UserController extends Controller
      */
     public function show($id)
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         //$user=DB::table('users')->where('id',$id)->first();
        // return view('users.show',compact('user'));
 
@@ -219,6 +294,18 @@ class UserController extends Controller
      */
     public function edit($id)
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
         $user = User::findOrFail($id);
        return view('users.edit',compact('user'));
     }
@@ -232,7 +319,18 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
 
+        /*************************SEGURIDAD*******************/
         $user = User::findOrFail($id)->update($request->all());
         return redirect()->route('users.index');
     }
