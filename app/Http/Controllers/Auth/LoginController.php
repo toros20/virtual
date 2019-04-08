@@ -34,7 +34,7 @@ class LoginController extends Controller
             ['user_id' => $user->id,'course_id' => 0,'section' => 'x']);
         }
 
-        return redirect('login');
+        return redirect('/login');
     }
 
     /**
