@@ -397,7 +397,7 @@ class UserController extends Controller
         $nueva_clave = $request->password;
         $update=DB::table('users')
                     ->where('id', $user_id)
-                    ->update(['password' =>  encrypt($nueva_clave)]);
+                    ->update(['password' =>  bcrypt($nueva_clave)]);
      
         $teachers = User::where('role','teacher')->get();
         return view('users.teachers',compact('teachers'));
