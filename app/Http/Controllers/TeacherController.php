@@ -556,7 +556,7 @@ class TeacherController extends Controller
         }//fin del ciclo para cada alumno de este curso
 
         /**ACTUALIZAR el estatus de LA TABLA Task, EVALUADA =1 */
-        $update=DB::table($tbl_tasks)
+        $update=DB::table($tbl_task)
                     ->where('id',  $request->task_id)
                     ->update(['evaluada' => 1]);
 
