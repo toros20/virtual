@@ -556,9 +556,9 @@ class TeacherController extends Controller
         }//fin del ciclo para cada alumno de este curso
 
         /**ACTUALIZAR el estatus de LA TABLA Task, EVALUADA =1 */
-        /*$task_update::DB::table($tbl_tasks)
-                        ->where($tbl_task.'_id', $request->task_id)
-                        ->update(['evaluada' => 1]);*/
+        $update=DB::table($tbl_tasks)
+                    ->where('id',  $request->task_id)
+                    ->update(['evaluada' => 1]);
 
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
 
