@@ -25,7 +25,8 @@ class RedirectIfAuthenticated
       
         if (Auth::guard($guard)->check()) {
            // return redirect('/home');
-           return view('auth/login');
+           return $next($request);
+          // return view('auth/login');
            
         }
 
