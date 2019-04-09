@@ -34,6 +34,10 @@ class LoginController extends Controller
             ['user_id' => $user->id,'course_id' => 0,'section' => 'x']);
         }
 
+        if ( $user->role == 'admin' ) {
+            return redirect()->route('users');
+        }
+
         return redirect('login');
     }
 
