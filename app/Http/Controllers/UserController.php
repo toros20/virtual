@@ -399,7 +399,8 @@ class UserController extends Controller
                     ->where('id', $user_id)
                     ->update(['password' =>  encrypt($nueva_clave)]);
      
-       return view('users.teachers');
+        $teachers = User::where('role','teacher')->get();
+        return view('users.teachers',compact('teachers'));
     }
 
     /********************FUNCIONES AJAX****************** */
