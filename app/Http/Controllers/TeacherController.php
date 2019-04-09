@@ -485,7 +485,6 @@ class TeacherController extends Controller
         $tasks= DB::table($tbl_task)->where('id','=',$request->task_id)->get();
 
         //obtenemos el listados de esrudiantes de este curso y seccion 
-        //com colegios catolicos tenemos una charla, invitamos a los padres de familia que puedan asistir a la conferencia
         $students = DB::table($tbl_taskstudent)
         ->join('users', $tbl_taskstudent.'.student', '=', 'users.id')
         ->Select(
@@ -555,6 +554,11 @@ class TeacherController extends Controller
                     ) );
                 
         }//fin del ciclo para cada alumno de este curso
+
+        /**ACTUALIZAR el estatus de LA TABLA Task, EVALUADA =1 */
+        /*$task_update::DB::table($tbl_tasks)
+                        ->where($tbl_task.'_id', $request->task_id)
+                        ->update(['evaluada' => 1]);*/
 
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
 

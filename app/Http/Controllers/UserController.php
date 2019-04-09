@@ -147,9 +147,9 @@ class UserController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role!='admin'){
+            /*if( $user->role!='admin'){
                 return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
-            }
+            }*/
 
         /*************************SEGURIDAD*******************/
         //selecciomos todos los usuarios del tipo student
@@ -274,9 +274,9 @@ class UserController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role!='admin'){
+           /* if( $user->role!='admin'){
                 return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
-            }
+            }*/
 
         /*************************SEGURIDAD*******************/
         //$user=DB::table('users')->where('id',$id)->first();
@@ -301,9 +301,9 @@ class UserController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role!='admin'){
+           /* if( $user->role!='admin'){
                 return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
-            }
+            }*/
 
         /*************************SEGURIDAD*******************/
         $user = User::findOrFail($id);
@@ -326,9 +326,9 @@ class UserController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role!='admin'){
+           /* if( $user->role!='admin'){
                 return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
-            }
+            }*/
 
         /*************************SEGURIDAD*******************/
         $user = User::findOrFail($id)->update($request->all());
