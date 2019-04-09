@@ -25,7 +25,10 @@ Route::get('/users/teachers', 'UserController@teachers')->name('users.teachers')
 Route::get('/users/students/create', 'UserController@create_estudiante')->name('users.students.create');
 //crear ruta para el formulario de crear teachers nuevos
 Route::get('/users/teachers/create', 'UserController@create_teacher')->name('users.teachers.create');
-
+//crear ruta para la seccion de cambiar password, muestra el form
+Route::get('/users/password/{user_id}/edit', 'UserController@password_edit')->name('users.password_edit');
+//Crear ruta para la seccion de actualizar el password, metodo update
+Route::put('/users/password/{user_id}', 'UserController@password_update')->name('users.password_update');
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 

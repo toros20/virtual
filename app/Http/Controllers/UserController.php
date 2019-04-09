@@ -331,6 +331,7 @@ class UserController extends Controller
             }
 
         /*************************SEGURIDAD*******************/
+
         $user = User::findOrFail($id)->update($request->all());
         return redirect()->route('users.index');
     }
@@ -348,6 +349,58 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
+       /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function password_edit($user_id)
+    {
+        /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+        $user = User::findOrFail($user_id);
+       return view('users.password_edit',compact('user'));
+    }
+
+       /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function password_update(Request $request, $user_id)
+    {
+        /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        $nueva_clave = $request->password;
+        $update=DB::table('users')
+                    ->where('id', $user_id)
+                    ->update(['password' =>  encrypt($nueva_clave)]);
+     
+       return view('users.teachers');
+    }
 
     /********************FUNCIONES AJAX****************** */
 

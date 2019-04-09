@@ -37,7 +37,9 @@
                         <td> {{$teacher->email}}</td>
                         <td> {{$teacher->fecha_nacimiento}}</td>
                         <td> {{$teacher->activo}}</td>
-                        <td> <a href=" {{route('users.edit',$teacher->id)}} ">
+                        <td> 
+                            <a href=" {{route('users.password_edit',$teacher->id)}}">Password</a>
+                            <a href=" {{route('users.edit',$teacher->id)}} ">
                         Editar </a>
                             <form style="display:inline" method="POST" action=" {{route('users.destroy',$teacher->id)}} ">
                                     @csrf
