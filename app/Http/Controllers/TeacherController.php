@@ -617,7 +617,9 @@ class TeacherController extends Controller
                                 'users.id as user_id',
                                 'users.sexo',
                                 'users.name',
-                                'users.lastname'
+                                'users.lastname',
+                                'enrollments.course_id',
+                                'enrollments.section'
                               )
                             ->where([
                                     ['enrollments.course_id','=',$curso_actual],
@@ -625,8 +627,8 @@ class TeacherController extends Controller
                                     ])
                             ->orderBy('users.sexo', 'asc')
                             ->orderBy('users.name', 'asc')
-                            ->ToSql();
-        dd($students);
+                            ->get();
+        //dd($students);
        
 
         return view('teachers/examen',compact(
