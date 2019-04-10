@@ -606,7 +606,7 @@ class TeacherController extends Controller
         $section_actual=$section;
 
         $students = DB::table('enrollments')
-                        ->join('users', 'enrollments.student', '=', 'users.id')
+                        ->join('users', 'enrollments.user_id', '=', 'users.id')
                             ->Select(
                                 'users.id as user',
                                 'users.sexo',
@@ -621,8 +621,8 @@ class TeacherController extends Controller
                             ->orderBy('users.name', 'asc')
                             ->get();
 
-        dd($students);
-        
+       // dd($students);
+
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
 
