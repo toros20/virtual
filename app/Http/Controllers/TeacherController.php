@@ -609,7 +609,7 @@ class TeacherController extends Controller
        
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        
+                        ->where('enrollments.course_id','=',$curso_actual)
                         ->where('enrollments.section','=',$section_actual)
                         ->Select(
                             'users.id as user_id',
