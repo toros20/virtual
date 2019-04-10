@@ -599,16 +599,22 @@ class TeacherController extends Controller
         $curso_actual=DB::table('courses')
                         ->where('id','=',$course)
                         ->get();
+                       
         $clase_actual=DB::table('clases')
                         ->where('id','=',$clase)
                         ->get();
-
+                       
         $section_actual=$section;
 
+
+     /*    $mensaje = DB::table('msj_'.$request->user_id)
+                        ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
+                        ->where('msj_'.$request->user_id.'.id',$id)->get(); */
+       
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
                             ->Select(
-                                'users.id as user',
+                                'users.id as user_id',
                                 'users.sexo',
                                 'users.name',
                                 'users.lastname'
@@ -619,9 +625,9 @@ class TeacherController extends Controller
                                     ])
                             ->orderBy('users.sexo', 'asc')
                             ->orderBy('users.name', 'asc')
-                            ->get();
-
-       // dd($students);
+                            ->ToSql();
+        dd($students);
+       
 
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
