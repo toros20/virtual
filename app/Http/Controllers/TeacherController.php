@@ -30,7 +30,7 @@ class TeacherController extends Controller
             }
             
             if( $user->role!='teacher'){
-                return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+                return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
             $id_user_log = Auth::id();
@@ -104,7 +104,7 @@ class TeacherController extends Controller
             }
             
             if( $user->role!='teacher'){
-                return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+                return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
             $id_user_log = Auth::id();
@@ -142,7 +142,7 @@ class TeacherController extends Controller
             }
             
             if( $user->role!='teacher'){
-                return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+                return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
             $id_user_log = Auth::id();
@@ -575,7 +575,7 @@ class TeacherController extends Controller
             }
             
             if( $user->role!='teacher'){
-                return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+                return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
             $id_user_log = Auth::id();
@@ -595,7 +595,6 @@ class TeacherController extends Controller
                                 ->where('assignments.user_id','=',$user_id)
                                 ->get();
         
-
         $curso_actual=DB::table('courses')
                         ->where('id','=',$course)
                         ->get();
@@ -608,8 +607,10 @@ class TeacherController extends Controller
        
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        ->where('enrollments.section','=','A')
-                        ->where('enrollments.course_id','=',16)
+                        ->where([
+                            ['enrollments.section','=',$section],
+                            ['enrollments.course_id','=',$course]
+                        ] )
                         ->Select(
                             'users.id as user_id',
                             'users.sexo',
@@ -623,7 +624,6 @@ class TeacherController extends Controller
                         ->get();
         //dd($students);
        
-
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
 
