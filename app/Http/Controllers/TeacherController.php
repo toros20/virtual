@@ -589,11 +589,11 @@ class TeacherController extends Controller
 
         //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
         $asignaciones = DB::table('assignments')
-                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
-                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
-                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
-                        ->where('assignments.user_id','=',$user_id)
-                        ->get();
+                                ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                                ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                                ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
+                                ->where('assignments.user_id','=',$user_id)
+                                ->get();
         
 
         $curso_actual=DB::table('courses')
@@ -606,28 +606,22 @@ class TeacherController extends Controller
                        
         $section_actual=$section;
 
-
-     /*    $mensaje = DB::table('msj_'.$request->user_id)
-                        ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
-                        ->where('msj_'.$request->user_id.'.id',$id)->get(); */
        
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                            ->Select(
-                                'users.id as user_id',
-                                'users.sexo',
-                                'users.name',
-                                'users.lastname',
-                                'enrollments.course_id',
-                                'enrollments.section'
-                              )
-                            ->where([
-                                    ['enrollments.course_id','=',$curso_actual],
-                                    ['enrollments.section','=',$section_actual],
-                                    ])
-                            ->orderBy('users.sexo', 'asc')
-                            ->orderBy('users.name', 'asc')
-                            ->get();
+                        
+                        ->where('enrollments.section','=',$section_actual)
+                        ->Select(
+                            'users.id as user_id',
+                            'users.sexo',
+                            'users.name',
+                            'users.lastname',
+                            'enrollments.course_id',
+                            'enrollments.section'
+                            )
+                        ->orderBy('users.sexo', 'asc')
+                        ->orderBy('users.name', 'asc')
+                        ->get();
         //dd($students);
        
 

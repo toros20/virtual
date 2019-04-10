@@ -214,9 +214,8 @@
                             <!--Table head--> 
                             <!--Table body-->
                             <tbody id="tbody1" >
-
-                                <tr>
-                                    @foreach ($students as $student)
+                                 @foreach ($students as $student)
+                                    <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
                                         <td><input type="text" name='' id='' class="form-control"></td>
                                         <td><input type="text" name='' id='' class="form-control"></td>
@@ -232,10 +231,9 @@
                                         <td><input disabled type="text" name='' id='' class="form-control"></td>
                                         <td><input disabled type="text" name='' id='' class="form-control"></td>
                                         <td><input disabled type="text" name='' id='' class="form-control"></td>
-                                    @endforeach
                                     
-                                </tr>
-                               
+                                    </tr>
+                                @endforeach
                             </tbody>
                             
                             <!--Table body-->
