@@ -488,7 +488,7 @@
                                             <td><button onclick="eliminar_task({{$task->id}},{{$curso_actual[0]->id}},'{{$section_actual}}')" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
                                         @else 
                                             @php $total_evaluado+=$task->valor;@endphp
-                                            <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0">Evaluada</button></td>
+                                            <td><button onclick="evaluar_task({{$task->id}},{{$curso_actual[0]->id}},'{{$section_actual}}')" type="button" class="btn btn-success btn-rounded btn-sm m-0">Evaluada</button></td>
                                             <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0">Editar</button></td>
                                             <td><button disabled type="button" class="btn btn-default btn-rounded btn-sm m-0">Eliminar</button></td>
                                         @endif
