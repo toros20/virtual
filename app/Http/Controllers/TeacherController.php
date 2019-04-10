@@ -486,19 +486,19 @@ class TeacherController extends Controller
 
         //obtenemos el listados de esrudiantes de este curso y seccion 
         $students = DB::table($tbl_taskstudent)
-        ->join('users', $tbl_taskstudent.'.student', '=', 'users.id')
-        ->Select(
-            'users.id as user',
-            'users.sexo',
-            'users.name',
-            'users.lastname',
-            $tbl_taskstudent.'.id as ts_id',
-            $tbl_taskstudent.'.valor_obtenido',
-            $tbl_taskstudent.'.observacion')
-        ->where($tbl_task.'_id','=',$request->task_id)
-        ->orderBy('users.sexo', 'asc')
-        ->orderBy('users.name', 'asc')
-        ->get();
+                    ->join('users', $tbl_taskstudent.'.student', '=', 'users.id')
+                    ->Select(
+                        'users.id as user',
+                        'users.sexo',
+                        'users.name',
+                        'users.lastname',
+                        $tbl_taskstudent.'.id as ts_id',
+                        $tbl_taskstudent.'.valor_obtenido',
+                        $tbl_taskstudent.'.observacion')
+                    ->where($tbl_task.'_id','=',$request->task_id)
+                    ->orderBy('users.sexo', 'asc')
+                    ->orderBy('users.name', 'asc')
+                    ->get();
         
         $id_task=$request->task_id;
         return view('ajax/evaluartask',compact('students','tasks','course_id','seccion','id_task'));
@@ -561,6 +561,67 @@ class TeacherController extends Controller
                     ->update(['evaluada' => 1]);
 
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
+
+    }
+
+    //zona 
+    public function examen($user_id,$course,$section,$clase){
+
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='teacher'){
+                return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+            }
+
+            $id_user_log = Auth::id();
+            if( $id_user_log != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            }
+        /*************************SEGURIDAD*******************/
+
+         //obtenemos los datos del docente
+         $user = User::findOrFail($user_id);
+
+        //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
+        $asignaciones = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
+                        ->where('assignments.user_id','=',$user_id)
+                        ->get();
+        
+        $curso_actual=DB::table('courses')
+                        ->where('id','=',$course)
+                        ->get();
+        $clase_actual=DB::table('clases')
+                        ->where('id','=',$clase)
+                        ->get();
+
+        $section_actual=$section;
+
+        $students = DB::table('enrollments')
+                        ->join('users', 'enrollments.student', '=', 'users.id')
+                            ->Select(
+                                'users.id as user',
+                                'users.sexo',
+                                'users.name',
+                                'users.lastname'
+                              )
+                            ->where([
+                                    ['enrollments.course_id','=',$curso_actual],
+                                    ['enrollments.section','=',$section_actual],
+                                    ])
+                            ->orderBy('users.sexo', 'asc')
+                            ->orderBy('users.name', 'asc')
+                            ->get();
+
+        return view('teachers/examen',compact(
+            'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
 
     }
 
