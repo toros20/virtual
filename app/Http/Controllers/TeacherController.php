@@ -594,7 +594,7 @@ class TeacherController extends Controller
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
                         ->where('assignments.user_id','=',$user_id)
                         ->get();
-        dd($asignaciones);
+        
 
         $curso_actual=DB::table('courses')
                         ->where('id','=',$course)
@@ -620,6 +620,8 @@ class TeacherController extends Controller
                             ->orderBy('users.sexo', 'asc')
                             ->orderBy('users.name', 'asc')
                             ->get();
+
+        dd($students);
         
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
