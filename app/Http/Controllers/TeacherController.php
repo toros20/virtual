@@ -605,12 +605,11 @@ class TeacherController extends Controller
                         ->get();
                        
         $section_actual=$section;
-
        
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        ->where('enrollments.course_id','=',$curso_actual)
-                        ->where('enrollments.section','=',$section_actual)
+                        ->where('enrollments.section','=','A')
+                        ->where('enrollments.course_id','=',16)
                         ->Select(
                             'users.id as user_id',
                             'users.sexo',
