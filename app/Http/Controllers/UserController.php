@@ -50,8 +50,8 @@ class UserController extends Controller
 
     public function tablas( $course, $section){
 
-    
-        $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
+        //codigo para insertar filas en la tabla historial, por cada curso y section, se requiere como para metros course, section
+        /*$clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
 
         $users = Enrollment::where([
             ['course_id', '=', $course],
@@ -67,7 +67,8 @@ class UserController extends Controller
            }
         }
         
-        return "LISTO";
+        return "LISTO";*/
+
         //codigo para crear la table msj_ por cada user
         /*for ($i=64; $i < 1437  ; $i++) { 
           
