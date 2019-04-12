@@ -53,7 +53,7 @@ class UserController extends Controller
     
         $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
 
-        $users = Assignment::where([
+        $users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
