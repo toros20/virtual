@@ -58,6 +58,8 @@ class UserController extends Controller
             ['section', '=', $section],
         ])->Select('user_id')->get();
 
+        dd($users);
+
         foreach ($users as $user) {
            foreach ($clases as $clase) {
                 DB::table('historial_'.$course.'_'.strtolower($section))->insert([
