@@ -30,6 +30,7 @@ Route::get('/users/password/{user_id}/edit', 'UserController@password_edit')->na
 //Crear ruta para la seccion de actualizar el password, metodo update
 Route::put('/users/password/{user_id}', 'UserController@password_update')->name('users.password_update');
 
+Route::get('/users/tablas/{course_id}/{section} ', 'UserController@tablas')->name('users.tablas');
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
 Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');

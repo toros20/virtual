@@ -48,7 +48,26 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
-    public function tablas(){
+    public function tablas( $course, $section){
+
+    
+        $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
+
+        $users = Assignment::where([
+            ['course_id', '=', $course],
+            ['section', '=', $section],
+        ])->Select('user_id')->get();
+
+        foreach ($users as $user) {
+           foreach ($clases as $clase) {
+                DB::table('historial_'.$course.'_'.strtolower($section))->insert([
+                    'student_id'=>$users->user_id,
+                    'clase_id'=>$clase->clase_id,
+                ]);
+           }
+        }
+        
+        return "LISTO";
         //codigo para crear la table msj_ por cada user
         /*for ($i=64; $i < 1437  ; $i++) { 
           
