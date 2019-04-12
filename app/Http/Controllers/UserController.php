@@ -58,7 +58,7 @@ class UserController extends Controller
             ['section', '=', $section],
         ])->Select('user_id')->get();
 
-        dd($users);
+        dd($clases);
 
         foreach ($users as $user) {
            foreach ($clases as $clase) {
