@@ -665,7 +665,7 @@ class TeacherController extends Controller
             $resp =DB::table($tabla)
                         ->where([
                             ['student_id', '=', $student->user_id],
-                            [$tbl_task.'.clase_id', '=', $clase ],
+                            [$tabla.'.clase_id', '=', $clase ],
                             ])
                         ->update(array(
                             'Acum1'=>$request->acum1_.$student->user_id,
