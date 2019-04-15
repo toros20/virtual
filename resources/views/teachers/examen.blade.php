@@ -237,7 +237,7 @@
                                         {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
                                 @endforeach
-                                <tr><td><button class="btn btl-lg btn-success" type="submit" value="SALVAR NOTAS"></button></td></tr>
+                                <tr><td><button class="btn btn-lg btn-success" type="submit" value="SALVAR NOTAS"></button></td></tr>
                             </tbody>
                             
                             <!--Table body-->
