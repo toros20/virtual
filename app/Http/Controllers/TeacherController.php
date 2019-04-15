@@ -660,7 +660,8 @@ class TeacherController extends Controller
                     ->get();
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
-           dd($request->acum1_.(int)$student->user_id);
+           $txtacum= 'acum1_'. $student->user_id;
+           dd($request-> $txtacum);
           //actualizamos cada valor
             $resp =DB::table($tabla)
                         ->where([
