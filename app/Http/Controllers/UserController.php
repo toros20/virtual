@@ -76,7 +76,7 @@ class UserController extends Controller
                 $tareas = DB::table($tabla_student_tareas)
                             ->join($tabla_tareas, $tabla_tareas.'.id', '=', $tabla_student_tareas.'.'.$tabla_tareas.'_id')
                             ->where([
-                                [$tabla_tareas.'.clase_id', '=', $clase],
+                                [$tabla_tareas.'.clase', '=', $clase],
                                 [$tabla_tareas.'.parcial', '=', $parcial],
                                 [$tabla_student_tareas.'.student', '=', $user->user_id],
                             ])
