@@ -85,16 +85,16 @@ class UserController extends Controller
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
                    $total=+ $tarea->valor_obtenido;
-
+                    echo $tarea->valor_obtenido."-";
                     //actualizamos la tabla historial con los datos sumados
                     $resp =DB::table($tabla_historial)
-                    ->where([
-                        ['student', '=', $user->user_id],
-                        [$tabla_historial.'clase_id', '=',$clase->clase_id ],
-                    ])
-                    ->update(array(
-                        'acum1_'.$user->user_id=>$total
-                        ) );
+                                ->where([
+                                    ['student', '=', $user->user_id],
+                                    [$tabla_historial.'clase_id', '=',$clase->clase_id ],
+                                ])
+                                ->update(array(
+                                    'acum1_'.$user->user_id=>$total
+                                    ) );
 
                 }
                 
