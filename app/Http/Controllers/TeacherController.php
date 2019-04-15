@@ -660,8 +660,19 @@ class TeacherController extends Controller
                     ->get();
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
-           $txtacum= 'acum1_'. $student->user_id;
-           dd($request-> $txtacum);
+
+           $txtacum1= 'acum1_'. $student->user_id;
+           $txtacum2= 'acum2_'. $student->user_id;
+           $txtacum3= 'acum3_'. $student->user_id;
+           $txtacum4= 'acum4_'. $student->user_id;
+           $txtexa1= 'exa1_'. $student->user_id;
+           $txtexa2= 'exa2_'. $student->user_id;
+           $txtexa3= 'exa3_'. $student->user_id;
+           $txtexa4= 'exa4_'. $student->user_id;
+           $promedio= 'promedio_'. $student->user_id;
+           $recu= 'recu_'. $student->user_id;
+           $recu2= 'recu2_'. $student->user_id;
+          
           //actualizamos cada valor
             $resp =DB::table($tabla)
                         ->where([
@@ -669,17 +680,17 @@ class TeacherController extends Controller
                             [$tabla.'.clase_id', '=', $clase ],
                             ])
                         ->update(array(
-                            'Acum1'=>$request->acum1_.$student->user_id,
-                            'Exa1' =>$request->exa1_.$student->user_id,
-                            'Acum2'=>$request->acum2_.$student->user_id,
-                            'Exa2' =>$request->exa2__.$student->user_id,
-                            'Acum3'=>$request->acum3_.$student->user_id,
-                            'Exa3' =>$request->exa3_.$student->user_id,
-                            'Acum4'=>$request->acum4_.$student->user_id,
-                            'Exa4' =>$request->exa4_.$student->user_id,
-                            'Promedio'=>$request->promedio_.$student->user_id,
-                            'Recu1' =>$request->recu_.$student->user_id
-                            //'Recu2'=>$request->recu2_.$student->user_id,
+                            'Acum1'=>$request->$txtacum1,
+                            'Exa1' =>$request->$txtexa1,
+                            'Acum2'=>$request->$txtacum2,
+                            'Exa2' =>$request->$txtexa2,
+                            'Acum3'=>$request->$txtacum3,
+                            'Exa3' =>$request->$txtexa3,
+                            'Acum4'=>$request->$txtacum4,
+                            'Exa4' =>$request->$txtexa4,
+                            'Promedio'=>$request->promedio,
+                            'Recu1' =>$request->recu
+                            //'Recu2'=>$request->recu2,
                             
                         ) );
        }
