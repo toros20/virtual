@@ -609,24 +609,6 @@ class TeacherController extends Controller
         //reducimos el nombre de la tabla 
         $tabla= 'historial_'.$course.'_'.$section;
        
-        /*$students = DB::table('enrollments')
-                        ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        ->where([
-                            ['enrollments.section','=',$section],
-                            ['enrollments.course_id','=',$course]
-                        ] )
-                        ->Select(
-                            'users.id as user_id',
-                            'users.sexo',
-                            'users.name',
-                            'users.lastname',
-                            'enrollments.course_id',
-                            'enrollments.section'
-                            )
-                        ->orderBy('users.sexo', 'asc')
-                        ->orderBy('users.name', 'asc')
-                        ->get();*/
-
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
                         ->join($tabla, $tabla.'.student_id', '=', 'enrollments.user_id')
