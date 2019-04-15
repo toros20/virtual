@@ -642,7 +642,8 @@ class TeacherController extends Controller
         //obtenemos el curso
         $course=$request->course_id;
         //obtemos la seccion del curso y la pasamos a minuscula
-        $seccion=strtolower($request->seccion);
+        $section=$request->seccion;
+        $seccion=strtolower($section);
         //obtenemos la clase
         $clase=$request->clase_id;
         //nombramos la tabla a utilizar
