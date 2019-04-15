@@ -709,7 +709,7 @@ class TeacherController extends Controller
                         ) );
        }
         
-       return view('teachers/academia',compact('user','asignaciones'));
+       return redirect('teachers/academia',compact('user','asignaciones'));
 
     }
 
