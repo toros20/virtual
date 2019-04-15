@@ -94,7 +94,7 @@ class UserController extends Controller
                                     [$tabla_historial.'.clase_id', '=',$clase->clase_id ]
                                 ])
                                 ->update(array(
-                                    'acum1_'.$user->user_id=>$total
+                                    'acum1'=>$total
                                     ) );
 
                 }
