@@ -672,7 +672,7 @@ class TeacherController extends Controller
            $promedio= 'promedio_'. $student->user_id;
            $recu= 'recu_'. $student->user_id;
            $recu2= 'recu2_'. $student->user_id;
-          dd($promedio);
+         
           //actualizamos cada valor
             $resp =DB::table($tabla)
                         ->where([
