@@ -48,9 +48,65 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
-    public function tablas( $course, $section){
+    public function tablas( $course,$section){
+       
+        //funion para sumar los aumulativos a la tabla de historial, se requiere como parametro, curso ,section y clase
+        //obtenemos lo estudiantes de este curso y seccion
 
-        //codigo para insertar filas en la tabla historial, por cada curso y section, se requiere como para metros course, section
+        //solo para el primer parcial
+        $parcial=1;
+        //obtenemos los id de los estudiantes de este curso y seccion
+        $users = Enrollment::where([
+            ['course_id', '=', $course],
+            ['section', '=', $section],
+        ])->Select('user_id')->get();
+
+        //obtenemos las clases que tiene asignado este curso
+        $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
+
+        //nombramos las tablas que utiliizaremos
+        $tabla_historial='historial_'.$course.'_'.strtolower($section);
+        $tabla_tareas='task_'.$course.'_'.strtolower($section);
+        $tabla_student_tareas='taskstudent_'.$course.'_'.strtolower($section);
+
+        foreach ($users as $user) {//comienza el ciclo para cada estudiante
+            foreach ($clases as $clase) {// comienza el ciclo para cada clase de esste estudiante
+
+                //obtener la suma de las tareas del parcial
+                $tareas = DB::table($tabla_student_tareas)
+                            ->join($tabla_tareas, $tabla_tareas.'.id', '=', $tabla_student_tareas.'.'.$tabla_tareas.'_id')
+                            ->where([
+                                [$tabla_tareas.'.clase_id', '=', $clase],
+                                [$tabla_tareas.'.parcial', '=', $parcial],
+                                [$tabla_student_tareas.'.student', '=', $user->user_id],
+                            ])
+                            ->get();
+                //ahora sumaremos todas las tareas
+                foreach ($tareas as $tarea) {
+                    //obtenemos la suma de las tareas de esta clase parcial y estudiante
+                   $total=+ $tarea->valor_obtenido;
+
+                    //actualizamos la tabla historial con los datos sumados
+                    $resp =DB::table($tabla_historial)
+                    ->where([
+                        ['student', '=', $user->user_id],
+                        [$tabla_historial.'clase_id', '=',$clase->clase_id ],
+                    ])
+                    ->update(array(
+                        'acum1_'.$user->user_id=>$total
+                        ) );
+
+                }
+                
+            }
+         }
+
+         return "LISTO LAS SUMAS";
+        
+        
+        
+        
+         //codigo para insertar filas en la tabla historial, por cada curso y section, se requiere como para metros course, section
         /*$clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
 
         $users = Enrollment::where([
