@@ -658,7 +658,7 @@ class TeacherController extends Controller
                     ] )
                     ->Select('enrollments.user_id')
                     ->get();
-
+        dd($students);
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
           //actualizamos cada valor
