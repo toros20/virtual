@@ -675,13 +675,23 @@ class TeacherController extends Controller
         //obtenemos los id de los estudiantes de este curso y seccion
         $students = DB::table('enrollments')
                     ->join('users', 'enrollments.user_id', '=', 'users.id')
+                    ->join($tabla, $tabla.'.student_id', '=', 'enrollments.user_id')
                     ->where([
                         ['enrollments.section','=',$section],
                         ['enrollments.course_id','=',$course],
+                        [$tabla.'.clase_id','=',$clase]
                     ] )
-                    ->Select('enrollments.user_id',
-                              'users.name',
-                              'users.lastname')
+                    ->Select(
+                        'users.id as user_id',
+                        'users.sexo',
+                        'users.name',
+                        'users.lastname',
+                        'enrollments.course_id',
+                        'enrollments.section',
+                        $tabla.'.*'
+                        )
+                    ->orderBy('users.sexo', 'asc')
+                    ->orderBy('users.name', 'asc')
                     ->get();
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
