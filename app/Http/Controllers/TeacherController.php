@@ -638,7 +638,7 @@ class TeacherController extends Controller
 
     //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
     public function save_parcial(Request $request){
-        dd($request->all());
+       
         //obtenemos el curso
         $course=$request->course_id;
         //obtemos la seccion del curso y la pasamos a minuscula
@@ -660,6 +660,7 @@ class TeacherController extends Controller
                     ->get();
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
+           dd($request->acum1_.$student->user_id);
           //actualizamos cada valor
             $resp =DB::table($tabla)
                         ->where([
