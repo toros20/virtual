@@ -644,11 +644,14 @@ class TeacherController extends Controller
 
         //obtenemos el curso
         $course=$request->course_id;
+        $curso_actual=$course;
         //obtemos la seccion del curso y la pasamos a minuscula
         $section=$request->seccion;
+        $section_actual=$section;
         $seccion=strtolower($section);
         //obtenemos la clase
         $clase=$request->clase_id;
+        $clase_actual=$clase;
         //nombramos la tabla a utilizar
         $tabla='historial_'.$course.'_'.$seccion;
 
@@ -707,7 +710,7 @@ class TeacherController extends Controller
        }
         
        return view('teachers/examen',compact(
-        'user','clase','course','section','asignaciones','students'));
+        'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
 
     }
 
