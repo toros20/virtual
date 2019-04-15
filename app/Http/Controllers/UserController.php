@@ -60,10 +60,10 @@ class UserController extends Controller
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
-        dd( $users);
+        
         //obtenemos las clases que tiene asignado este curso
         $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
-
+        dd( $clases);
         //nombramos las tablas que utiliizaremos
         $tabla_historial='historial_'.$course.'_'.strtolower($section);
         $tabla_tareas='task_'.$course.'_'.strtolower($section);
