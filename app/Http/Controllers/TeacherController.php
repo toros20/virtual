@@ -629,7 +629,8 @@ class TeacherController extends Controller
                         ->join('historial_'.$course.'_'.$section, 'historial_'.$course.'_'.$section.'.student_id', '=', 'enrollments.user_id')
                         ->where([
                             ['enrollments.section','=',$section],
-                            ['enrollments.course_id','=',$course]
+                            ['enrollments.course_id','=',$course],
+                            ['historial_'.$course.'_'.$section.'clase_id','=',$clase_actual]
                         ] )
                         ->Select(
                             'users.id as user_id',
