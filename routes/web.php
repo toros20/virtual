@@ -160,5 +160,8 @@ Route::post('ajax/evaluar_task', 'TeacherController@evaluar_task');
 //crear ruta para evaluar tareas desde el formulario del docente
 Route::post('teachers/save_notas', 'TeacherController@save_notas')->name('teachers/save_notas');
 
+//crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
+Route::post('teachers/save_parcial', 'TeacherController@save_parcial')->name('teachers/save_parcial');
+
 
 

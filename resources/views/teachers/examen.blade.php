@@ -118,6 +118,12 @@
                         <div class="px-4">
                     
                         <div class="table-wrapper">
+
+                          <form action="{{ route('teachers/save_parcial') }}" method="POST">
+                            <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="course_id" value="{{$curso_actual[0]->id}}">
+                            <input type="hidden" name="seccion" value="{{$section_actual}}">
+                            <input type="hidden" name="clase_id" value="{{$clase_actual[0]->id}}">
                             <!--Table-->
                             <table class="table table-hover mb-0 table-responsive-md ">
                     
@@ -231,12 +237,13 @@
                                         {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
                                 @endforeach
+                                <tr><td><button class="btn btl-lg btn-success" type="submit" value="SALVAR NOTAS"></button></td></tr>
                             </tbody>
                             
                             <!--Table body-->
                             </table>
                             <!--Table-->
-
+                          </form>
                         </div>
 
                         </div>

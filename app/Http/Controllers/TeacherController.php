@@ -564,7 +564,7 @@ class TeacherController extends Controller
 
     }
 
-    //zona 
+    //zona para mostart el listado de alumnos y notas del historial 
     public function examen($user_id,$course,$section,$clase){
 
          /*************************SEGURIDAD*******************/
@@ -633,6 +633,55 @@ class TeacherController extends Controller
        
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
+
+    }
+
+    //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
+    public function save_parcial(Request $request){
+
+        //obtenemos el curso
+        $course=$request->course_id;
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->seccion);
+        //obtenemos la clase
+        $clase=$request->clase_id;
+        //nombramos la tabla a utilizar
+        $tabla='historial_'.$course.'_'.$seccion;
+
+
+        //obtenemos los id de los estudiantes de este curso y seccion
+        $students = DB::table('enrollments')
+                    ->where([
+                        ['enrollments.section','=',$section],
+                        ['enrollments.course_id','=',$course],
+                    ] )
+                    ->Select('enrollments.user_id')
+                    ->get();
+
+        //proceso para cada uno de los estudiantes
+       foreach ($students as $student) {
+          //actualizamos cada valor
+            $resp =DB::table($tabla)
+                        ->where([
+                            ['student_id', '=', $student->user_id],
+                            [$tbl_task.'.clase_id', '=', $clase ],
+                            ])
+                        ->update(array(
+                            'Acum1'=>$request->acum1_.$student->user_id,
+                            'Exa1' =>$request->exa1_.$student->user_id,
+                            'Acum2'=>$request->acum2_.$student->user_id,
+                            'Exa2' =>$request->exa2__.$student->user_id,
+                            'Acum3'=>$request->acum3_.$student->user_id,
+                            'Exa3' =>$request->exa3_.$student->user_id,
+                            'Acum4'=>$request->acum4_.$student->user_id,
+                            'Exa4' =>$request->exa4_.$student->user_id,
+                            'Promedio'=>$request->promedio_.$student->user_id,
+                            'Recu1' =>$request->recu_.$student->user_id
+                            //'Recu2'=>$request->recu2_.$student->user_id,
+                            
+                        ) );
+       }
+        
 
     }
 
