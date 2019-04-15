@@ -683,6 +683,10 @@ class TeacherController extends Controller
                         ) );
        }
         
+       /*return view('teachers/examen',compact(
+        'user','clase_actual','curso_actual','section_actual','asignaciones','students'));*/
+
+        return "LISTOOOO";
 
     }
 
