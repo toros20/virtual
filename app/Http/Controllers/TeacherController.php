@@ -605,7 +605,7 @@ class TeacherController extends Controller
                        
         $section_actual=$section;
        
-        $students = DB::table('enrollments')
+        /*$students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
                         ->where([
                             ['enrollments.section','=',$section],
@@ -618,6 +618,26 @@ class TeacherController extends Controller
                             'users.lastname',
                             'enrollments.course_id',
                             'enrollments.section'
+                            )
+                        ->orderBy('users.sexo', 'asc')
+                        ->orderBy('users.name', 'asc')
+                        ->get();*/
+
+        $students = DB::table('enrollments')
+                        ->join('users', 'enrollments.user_id', '=', 'users.id')
+                        ->join('historial_'.$course.'_'.$section, 'historial_'.$course.'_'.$section.'.student_id', '=', 'enrollments.user_id')
+                        ->where([
+                            ['enrollments.section','=',$section],
+                            ['enrollments.course_id','=',$course]
+                        ] )
+                        ->Select(
+                            'users.id as user_id',
+                            'users.sexo',
+                            'users.name',
+                            'users.lastname',
+                            'enrollments.course_id',
+                            'enrollments.section',
+                            'historial_'.$course.'_'.$section.'.*'
                             )
                         ->orderBy('users.sexo', 'asc')
                         ->orderBy('users.name', 'asc')
