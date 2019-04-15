@@ -639,7 +639,7 @@ class TeacherController extends Controller
     //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
     public function save_parcial(Request $request){
         
-        $user = User::findOrFail($user_id);
+        $user_id = $request->user_id;
         //obtenemos el curso
         $course=$request->course_id;
         //obtemos la seccion del curso y la pasamos a minuscula

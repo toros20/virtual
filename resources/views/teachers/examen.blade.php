@@ -121,7 +121,7 @@
 
                           <form action="{{ route('teachers/save_parcial') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-                            <input type="hidden" name="user_id" value="{{$$user->id}}">
+                            <input type="hidden" name="user_id" value="{{$user->id}}">
                             <input type="hidden" name="course_id" value="{{$curso_actual[0]->id}}">
                             <input type="hidden" name="seccion" value="{{$section_actual}}">
                             <input type="hidden" name="clase_id" value="{{$clase_actual[0]->id}}">
