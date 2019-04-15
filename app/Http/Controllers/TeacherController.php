@@ -640,14 +640,14 @@ class TeacherController extends Controller
     public function save_parcial(Request $request){
 
           //obtenemos los datos del docente
-          $user = User::findOrFail($request->$user_id);
+          $user = User::findOrFail($request->user_id);
 
           //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
           $asignaciones = DB::table('assignments')
                                   ->join('courses', 'assignments.course_id', '=', 'courses.id')
                                   ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                                   ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
-                                  ->where('assignments.user_id','=',$request->$user_id)
+                                  ->where('assignments.user_id','=',$request->user_id)
                                   ->get();
         
         //obtenemos el curso
