@@ -80,7 +80,7 @@ class UserController extends Controller
                                 [$tabla_tareas.'.parcial', '=', $parcial],
                                 [$tabla_student_tareas.'.student', '=', $user->user_id],
                             ])
-                            ->get();
+                            ->ToSql();
                             dd( $tareas);
                 //ahora sumaremos todas las tareas
                 foreach ($tareas as $tarea) {
