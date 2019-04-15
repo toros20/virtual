@@ -71,12 +71,12 @@ class UserController extends Controller
         
         foreach ($users as $user) {//comienza el ciclo para cada estudiante
             foreach ($clases as $clase) {// comienza el ciclo para cada clase de esste estudiante
-                dd( 'clase='.$tareas.' parical='.$parcial. ' usuario='.$user->user_id);
+               // dd( 'clase='.$clase.' parical='.$parcial. ' usuario='.$user->user_id);
                 //obtener la suma de las tareas del parcial
                 $tareas = DB::table($tabla_student_tareas)
                             ->join($tabla_tareas, $tabla_tareas.'.id', '=', $tabla_student_tareas.'.'.$tabla_tareas.'_id')
                             ->where([
-                                [$tabla_tareas.'.clase', '=', $clase],
+                                [$tabla_tareas.'.clase', '=', $clase->clase_id],
                                 [$tabla_tareas.'.parcial', '=', $parcial],
                                 [$tabla_student_tareas.'.student', '=', $user->user_id],
                             ])
