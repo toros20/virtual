@@ -605,6 +605,9 @@ class TeacherController extends Controller
                        
         $section_actual=$section;
         $section = strtolower($section);
+        
+        //reducimos el nombre de la tabla 
+        $tabla= 'historial_'.$course.'_'.$section;
        
         /*$students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
@@ -626,11 +629,11 @@ class TeacherController extends Controller
 
         $students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        ->join('historial_'.$course.'_'.$section, 'historial_'.$course.'_'.$section.'.student_id', '=', 'enrollments.user_id')
+                        ->join($tabla, $tabla.'.student_id', '=', 'enrollments.user_id')
                         ->where([
                             ['enrollments.section','=',$section],
                             ['enrollments.course_id','=',$course],
-                            ['historial_'.$course.'_'.$section.'.clase_id','=',$clase_actual]
+                            [$tabla.'.clase_id','=',$clase_actual]
                         ] )
                         ->Select(
                             'users.id as user_id',
@@ -639,7 +642,7 @@ class TeacherController extends Controller
                             'users.lastname',
                             'enrollments.course_id',
                             'enrollments.section',
-                            'historial_'.$course.'_'.$section.'.*'
+                            $tabla.'.*'
                             )
                         ->orderBy('users.sexo', 'asc')
                         ->orderBy('users.name', 'asc')
