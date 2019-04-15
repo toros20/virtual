@@ -121,6 +121,7 @@
 
                           <form action="{{ route('teachers/save_parcial') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="user_id" value="{{$$user->id}}">
                             <input type="hidden" name="course_id" value="{{$curso_actual[0]->id}}">
                             <input type="hidden" name="seccion" value="{{$section_actual}}">
                             <input type="hidden" name="clase_id" value="{{$clase_actual[0]->id}}">
@@ -237,7 +238,7 @@
                                         {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
                                 @endforeach
-                                <tr><td><button class="btn btn-lg btn-success" type="submit" value="SALVAR NOTAS"></button></td></tr>
+                                <tr><td><button class="btn btn-lg btn-block btn-success" type="submit" >SALVAR NOTAS</button></td></tr>
                             </tbody>
                             
                             <!--Table body-->
