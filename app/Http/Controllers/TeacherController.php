@@ -639,17 +639,6 @@ class TeacherController extends Controller
     //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
     public function save_parcial(Request $request){
 
-          //obtenemos los datos del docente
-          $user = User::findOrFail($request->user_id);
-
-          //obtenemos las asignaciones de este docentes para el menu del lado quierdo togle
-          $asignaciones = DB::table('assignments')
-                                  ->join('courses', 'assignments.course_id', '=', 'courses.id')
-                                  ->join('clases', 'assignments.clase_id', '=', 'clases.id')
-                                  ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section')
-                                  ->where('assignments.user_id','=',$request->user_id)
-                                  ->get();
-        
         //obtenemos el curso
         $course=$request->course_id;
         
@@ -662,7 +651,6 @@ class TeacherController extends Controller
         
         //nombramos la tabla a utilizar
         $tabla='historial_'.$course.'_'.$seccion;
-
 
         //obtenemos los id de los estudiantes de este curso y seccion
         $students = DB::table('enrollments')
@@ -709,7 +697,7 @@ class TeacherController extends Controller
                         ) );
        }
         
-       return redirect('teachers/academia',compact('user','asignaciones'));
+       return redirect('teachers/academia/'.$request->user_id);
 
     }
 
