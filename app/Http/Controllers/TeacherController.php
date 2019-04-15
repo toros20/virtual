@@ -642,16 +642,24 @@ class TeacherController extends Controller
         $user_id = $request->user_id;
         $user = User::findOrFail($user_id);
 
+        $curso_actual=DB::table('courses')
+                        ->where('id','=',$request->course_id)
+                        ->get();
+       
+        $clase_actual=DB::table('clases')
+                        ->where('id','=',$request->clase_id)
+                        ->get();
+
         //obtenemos el curso
         $course=$request->course_id;
-        $curso_actual=$course;
+        
         //obtemos la seccion del curso y la pasamos a minuscula
         $section=$request->seccion;
         $section_actual=$section;
         $seccion=strtolower($section);
         //obtenemos la clase
         $clase=$request->clase_id;
-        $clase_actual=$clase;
+        
         //nombramos la tabla a utilizar
         $tabla='historial_'.$course.'_'.$seccion;
 
