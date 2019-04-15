@@ -63,12 +63,12 @@ class UserController extends Controller
         
         //obtenemos las clases que tiene asignado este curso
         $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
-        dd( $clases);
+       
         //nombramos las tablas que utiliizaremos
         $tabla_historial='historial_'.$course.'_'.strtolower($section);
         $tabla_tareas='task_'.$course.'_'.strtolower($section);
         $tabla_student_tareas='taskstudent_'.$course.'_'.strtolower($section);
-
+        
         foreach ($users as $user) {//comienza el ciclo para cada estudiante
             foreach ($clases as $clase) {// comienza el ciclo para cada clase de esste estudiante
 
@@ -80,7 +80,8 @@ class UserController extends Controller
                                 [$tabla_tareas.'.parcial', '=', $parcial],
                                 [$tabla_student_tareas.'.student', '=', $user->user_id],
                             ])
-                            ->get();
+                            ->ToSql();
+                            dd( $tareas);
                 //ahora sumaremos todas las tareas
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
