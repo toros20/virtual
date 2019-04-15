@@ -85,7 +85,7 @@ class UserController extends Controller
                 //ahora sumaremos todas las tareas
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
-                   $total=+ $tarea->valor_obtenido;
+                   $total += $tarea->valor_obtenido;
             
                     //actualizamos la tabla historial con los datos sumados
                     $resp =DB::table($tabla_historial)
