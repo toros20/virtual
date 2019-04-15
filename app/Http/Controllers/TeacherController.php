@@ -633,7 +633,7 @@ class TeacherController extends Controller
                         ->where([
                             ['enrollments.section','=',$section],
                             ['enrollments.course_id','=',$course],
-                            [$tabla.'.clase_id','=',$clase_actual]
+                            [$tabla.'.clase_id','=',$clase]
                         ] )
                         ->Select(
                             'users.id as user_id',
@@ -646,8 +646,8 @@ class TeacherController extends Controller
                             )
                         ->orderBy('users.sexo', 'asc')
                         ->orderBy('users.name', 'asc')
-                        ->ToSql();
-        dd($clase_actual);
+                        ->get();
+        //dd($students);
        
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
