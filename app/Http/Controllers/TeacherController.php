@@ -640,6 +640,8 @@ class TeacherController extends Controller
     public function save_parcial(Request $request){
         
         $user_id = $request->user_id;
+        $user = User::findOrFail($user_id);
+
         //obtenemos el curso
         $course=$request->course_id;
         //obtemos la seccion del curso y la pasamos a minuscula
