@@ -679,7 +679,9 @@ class TeacherController extends Controller
                         ['enrollments.section','=',$section],
                         ['enrollments.course_id','=',$course],
                     ] )
-                    ->Select('enrollments.user_id')
+                    ->Select('enrollments.user_id',
+                              'users.name',
+                              'users.lastname')
                     ->get();
         //proceso para cada uno de los estudiantes
        foreach ($students as $student) {
