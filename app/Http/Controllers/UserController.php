@@ -81,7 +81,7 @@ class UserController extends Controller
                                 [$tabla_student_tareas.'.student', '=', $user->user_id],
                             ])
                             ->get();
-                           
+                $total=0;
                 //ahora sumaremos todas las tareas
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
