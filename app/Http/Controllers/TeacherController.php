@@ -604,6 +604,7 @@ class TeacherController extends Controller
                         ->get();
                        
         $section_actual=$section;
+        $section = strtolower($section);
        
         /*$students = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
