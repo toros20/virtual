@@ -688,8 +688,8 @@ class TeacherController extends Controller
                             'Exa3' =>$request->$txtexa3,
                             'Acum4'=>$request->$txtacum4,
                             'Exa4' =>$request->$txtexa4,
-                            'Promedio'=>$request->promedio,
-                            'Recu1' =>$request->recu
+                            'Promedio'=>$request->$promedio,
+                            'Recu1' =>$request->$recu
                             //'Recu2'=>$request->recu2,
                             
                         ) );
