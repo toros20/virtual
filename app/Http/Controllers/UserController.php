@@ -779,12 +779,15 @@ class UserController extends Controller
 
         /*************************SEGURIDAD*******************/
 
+         //obtenemos los datos del docente
+         $user = User::findOrFail($user_id);
+
         $asignaciones = DB::table('sectioncourses')
                         ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
                         ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
                         ->get();
 
-        return view('users/panel',compact('asignaciones'));
+        return view('users/panel',compact('asignaciones','user'));
        
     }
 
