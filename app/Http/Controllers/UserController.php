@@ -779,9 +779,9 @@ class UserController extends Controller
 
         /*************************SEGURIDAD*******************/
 
-        $asignaciones = DB::table('sectioncourse')
-                        ->join('courses', 'sectioncourse.course_id', '=', 'courses.id')
-                        ->Select('courses.id as course_id','courses.short_name as course','sectioncourse.section')
+        $asignaciones = DB::table('sectioncourses')
+                        ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                        ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
                         ->get();
 
         return view('users/panel',compact('asignaciones'));
