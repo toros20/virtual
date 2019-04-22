@@ -63,10 +63,10 @@
                             <td>{{($resultado->Acum4) + ($resultado->Exa4)}}</td>
                             <td>{{
                                 (
-                                (($resultado->Acum1) + ($resultado->exa1))+
-                                (($resultado->Acum2) + ($resultado->exa2))+
-                                (($resultado->Acum3) + ($resultado->exa3))+
-                                (($resultado->Acum4) + ($resultado->exa4))
+                                (($resultado->Acum1) + ($resultado->Exa1))+
+                                (($resultado->Acum2) + ($resultado->Exa2))+
+                                (($resultado->Acum3) + ($resultado->Exa3))+
+                                (($resultado->Acum4) + ($resultado->Exa4))
                                 )/4
                                 
                                 }}</td>
