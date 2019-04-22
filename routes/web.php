@@ -34,7 +34,7 @@ Route::put('/users/password/{user_id}', 'UserController@password_update')->name(
 
 
 //ruta para mostrar la seccion de boletas de calificaciones
-Route::get('/users/boletas ', 'UserController@boletas')->name('users_boletas');
+Route::get('/users/boletas ', 'UserController@boletas')->name('users_boletas/{course_id}/{section}');
 
 //ruta para mostrar la seccion de boletas de calificaciones
 Route::get('/users/panel/{user_id} ', 'UserController@panel')->name('users_panel/{user_id}');
