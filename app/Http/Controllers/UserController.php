@@ -831,7 +831,7 @@ class UserController extends Controller
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.course_id', '=', $section],
                                 ])
-                        ->Select('users.name as nombre','users.lastaname as apellido','clases.name as clase',$historial.'.*')
+                        ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
                         ->get();
 
 
