@@ -51,6 +51,8 @@
                                 ])
                         ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
                         ->get(); 
+
+                        dd($resultados);
                     @endphp
 
                         <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
