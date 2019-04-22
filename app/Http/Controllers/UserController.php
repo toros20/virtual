@@ -764,7 +764,7 @@ class UserController extends Controller
         
     }
 
-    public function panel(){
+    public function panel($user_id){
 
          /*************************SEGURIDAD*******************/
             //control de seguridad
