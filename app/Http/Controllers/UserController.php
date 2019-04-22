@@ -819,9 +819,9 @@ class UserController extends Controller
         
         //obtenemos las notas de este curso y secion
         //$notas = DB::table('historial_'.$course_id.'_'.$section)->get();
-        $section=strtolower($section);
+        $seccion=strtolower($section);
 
-        $historial = 'historial_'.$course_id.'_'.$section;
+        $historial = 'historial_'.$course_id.'_'.$seccion;
 
         $resultados = DB::table('enrollments')
                         ->join('users', 'enrollments.user_id', '=', 'users.id')
@@ -829,7 +829,7 @@ class UserController extends Controller
                         ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                         ->where ([
                                     ['enrollments.course_id', '=', $course_id],
-                                    ['enrollments.course_id', '=', $section],
+                                    ['enrollments.section', '=', $section],
                                 ])
                         ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
                         ->ToSql();
