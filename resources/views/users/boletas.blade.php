@@ -38,7 +38,7 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
-
+            <h1>BOLETA DE CALIFICACIONES</h1>
             @foreach ($resultados as $resultado)
 
                 <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
