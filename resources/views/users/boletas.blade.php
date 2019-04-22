@@ -43,7 +43,7 @@
                 @foreach ($resultados as $resultado)
 
                 <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
-                
+
                     <table width="800">
                         <tr>
                             <th>Asignatura</th>
@@ -57,10 +57,10 @@
                 
                         <tr>
                             <td>{{$resultado->clase}}</td>
-                            <td>{{($resultado->Acum1) + ($resultado->exa1)}}</td>
-                            <td>{{($resultado->Acum2) + ($resultado->exa2)}}</td>
-                            <td>{{($resultado->Acum3) + ($resultado->exa3)}}</td>
-                            <td>{{($resultado->Acum4) + ($resultado->exa4)}}</td>
+                            <td>{{($resultado->Acum1) + ($resultado->Exa1)}}</td>
+                            <td>{{($resultado->Acum2) + ($resultado->Exa2)}}</td>
+                            <td>{{($resultado->Acum3) + ($resultado->Exa3)}}</td>
+                            <td>{{($resultado->Acum4) + ($resultado->Exa4)}}</td>
                             <td>{{
                                 (
                                 (($resultado->Acum1) + ($resultado->exa1))+
