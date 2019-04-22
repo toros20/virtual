@@ -32,6 +32,15 @@ Route::put('/users/password/{user_id}', 'UserController@password_update')->name(
 
 //Route::get('/users/tablas/{course_id}/{section} ', 'UserController@tablas')->name('users.tablas');
 
+
+//ruta para mostrar la seccion de boletas de calificaciones
+Route::get('/users/boletas ', 'UserController@boletas')->name('users.boletas');
+
+//ruta para mostrar la seccion de boletas de calificaciones
+Route::get('/users/panel ', 'UserController@panel')->name('users.panel');
+
+
+
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
 Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
 
@@ -162,9 +171,6 @@ Route::post('teachers/save_notas', 'TeacherController@save_notas')->name('teache
 
 //crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
 Route::post('teachers/save_parcial', 'TeacherController@save_parcial')->name('teachers/save_parcial');
-
-//ruta para mostrar la seccion de boletas de calificaciones
-Route::get('/users/boletas ', 'UserController@boletas')->name('users.boletas');
 
 
 

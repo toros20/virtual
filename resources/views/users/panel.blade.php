@@ -97,6 +97,12 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
+
+            {{-- variables para controlar el cambio de color en las tarjetas --}}
+            @php ($course = $asignaciones[0]->course_id)
+            @php ($con = 1)
+
+            @foreach ($asignaciones as $asignacion)
            
             <!--Card column-->
             <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
@@ -108,7 +114,7 @@
                 
                             <!-- Content -->
                                 {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
-                               {{--  @if ($course != $asignacion->course_id)
+                                 @if ($course != $asignacion->course_id)
                                     @php ($con += 1 ) 
                                       @if ($con>4)
                                        @php ($con = 1)                   
@@ -122,7 +128,7 @@
                                 @if ($con == 3)<div class="text-white d-flex h-100 mask aqua-gradient-rgba">                             
                                 @endif
                                 @if ($con == 4)<div class="text-white d-flex h-100 mask purple-gradient-rgba">                             
-                                @endif --}}
+                                @endif 
                             
                                 <div class="first-content align-self-center p-3">
                                 <h3 class="card-title">Estudiantes </h3>
@@ -172,7 +178,7 @@
     
             </div>
             <!-- Card -->
-                
+            @endforeach
         </div><!--row-->
 
      </main>

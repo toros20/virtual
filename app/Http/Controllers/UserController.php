@@ -764,7 +764,7 @@ class UserController extends Controller
         
     }
 
-    public function boletas(){
+    public function panel(){
 
          /*************************SEGURIDAD*******************/
             //control de seguridad
@@ -779,9 +779,13 @@ class UserController extends Controller
 
         /*************************SEGURIDAD*******************/
 
-        $asignaciones = Assignment::all();
+        $asignaciones = DB::table('sectioncourse')
+                        ->join('courses', 'sectioncourse.course_id', '=', 'courses.id')
+                        ->Select('courses.id as course_id','courses.short_name as course','sectioncourse.section')
+                        ->get();
 
-        return view('users/boletas',compact('asignaciones'));
+        return view('users/panel',compact('asignaciones'));
+       
     }
 
 }
