@@ -819,6 +819,7 @@ class UserController extends Controller
         
         //obtenemos las notas de este curso y secion
         //$notas = DB::table('historial_'.$course_id.'_'.$section)->get();
+        $section=strtolower($section);
 
         $historial = 'historial_'.$course_id.'_'.$section;
 
