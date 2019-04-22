@@ -97,7 +97,8 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
-    
+            <form action="">
+
                 <p><label for="modality_id">
                         Seleccione Modalidad 
                          <select name="modality_id" id="modalities" onchange="loadcourses()">
@@ -117,12 +118,11 @@
 
                     <p><label for="sections" >
                         Seleccione Secci&oacute;n 
-                         <select name="section" id="sections">
+                         <select name="section" id="sections" >
                             <option>Seleccione Secci&oacute;n</option>
                         </select>
                     </label></p>
-
-                
+            </form>                
         </div><!--row-->
 
      </main>

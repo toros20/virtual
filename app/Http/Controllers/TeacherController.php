@@ -124,8 +124,10 @@ class TeacherController extends Controller
                         ->where('assignments.user_id','=',$user_id)
                         ->get();
                        // dd($asignaciones);
+        //obtenemos la modalidad del primer grado asignado, para determinar a que modalidad pertenece el docente
+        $modalidad=$asignaciones[0]->modality_id;
 
-        return view('teachers/academia',compact('user','asignaciones'));
+        return view('teachers/academia',compact('user','asignaciones','modalidad'));
      }
 
      function  estudiantes(){
