@@ -42,7 +42,7 @@
 
             @foreach ($estudiantes as $estudiante)
                 
-                    {{
+                    @php
                      $resultados = DB::table('users')
                         ->join( $historial, 'users.id', '=',  $historial.'.student_id')
                         ->join('clases', $historial.'.clase_id', '=', 'clases.id')
@@ -50,7 +50,8 @@
                                     ['users.id', '=', $estudiante->user_id],
                                 ])
                         ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
-                        ->get(); }}
+                        ->get(); 
+                    @endphp
 
                         <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
 
