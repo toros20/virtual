@@ -832,7 +832,7 @@ class UserController extends Controller
                                     ['enrollments.section', '=', $section],
                                 ])
                         ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
-                        ->ToSql();
+                        ->get();
 
         dd($resultados)      ;              
         return view('users/boletas',compact('resultados'));
