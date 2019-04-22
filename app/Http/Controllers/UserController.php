@@ -835,7 +835,7 @@ class UserController extends Controller
                         ->get();
 
 
-        return view('ajax/clasesbycoursesid',compact('resultados'));
+        return view('users/boletas',compact('resultados'));
     }
 
 
