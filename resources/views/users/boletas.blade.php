@@ -39,10 +39,24 @@
         <!--row-->
         <div class="row"> 
             <h1>BOLETA DE CALIFICACIONES</h1>
-            @foreach ($resultados as $resultado)
 
-                <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
-                <table width="800">
+            @foreach ($estudiantes as $estudiante)
+                
+                    {{
+                     $resultados = DB::table('users')
+                        ->join( $historial, 'users.id', '=',  $historial.'.student_id')
+                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                        ->where ([
+                                    ['users.id', '=', $estudiante->user_id],
+                                ])
+                        ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
+                        ->get(); }}
+
+                        <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
+
+                @foreach ($resultados as $resultado)
+
+                    <table width="800">
                         <tr>
                             <th>Asignatura</th>
                             <th>I P</th>
@@ -71,8 +85,15 @@
                             <td>{{$resultado->Recu1}}</td>
                         </tr>
 
-                </table>
+                    </table>
+                @endforeach
+
+                <hr><hr>
+
             @endforeach
+
+           
+
         </div><!--row-->
 
      </main>
