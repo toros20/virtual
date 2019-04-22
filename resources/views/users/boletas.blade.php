@@ -39,22 +39,19 @@
         <!--row-->
         <div class="row"> 
             <h1>BOLETA DE CALIFICACIONES</h1>
-
+                <table width="800">
+                    <tr>
+                        <th>Asignatura</th>
+                        <th>I P</th>
+                        <th>II P</th>
+                        <th>III P</th>
+                        <th>IV P</th>
+                        <th>PROM.</th>
+                        <th>RECU.</th>
+                    </tr>
                 @foreach ($resultados as $resultado)
 
-                <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
-
-                    <table width="800">
-                        <tr>
-                            <th>Asignatura</th>
-                            <th>I P</th>
-                            <th>II P</th>
-                            <th>III P</th>
-                            <th>IV P</th>
-                            <th>PROM.</th>
-                            <th>RECU.</th>
-                        </tr>
-                
+            
                         <tr>
                             <td>{{$resultado->clase}}</td>
                             <td>{{($resultado->Acum1) + ($resultado->Exa1)}}</td>
@@ -73,9 +70,9 @@
                             <td>{{$resultado->Recu1}}</td>
                         </tr>
 
-                    </table>
+                    
                 @endforeach
-
+            </table>
                 <hr><hr>
 
 
