@@ -38,7 +38,41 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
-           Bienvenido a la seccion de boletas           
+
+            @foreach ($resultados as $resultado)
+
+                <h3>{{$resultado->nombre}} {{$resultado->apellido}} </h3>
+                <table width="800">
+                        <tr>
+                            <th>Asignatura</th>
+                            <th>I P</th>
+                            <th>II P</th>
+                            <th>III P</th>
+                            <th>IV P</th>
+                            <th>PROM.</th>
+                            <th>RECU.</th>
+                        </tr>
+                
+                        <tr>
+                            <td>{{$resultado->clase}}</td>
+                            <td>{{($resultado->Acum1) + ($resultado->exa1)}}</td>
+                            <td>{{($resultado->Acum2) + ($resultado->exa2)}}</td>
+                            <td>{{($resultado->Acum3) + ($resultado->exa3)}}</td>
+                            <td>{{($resultado->Acum4) + ($resultado->exa4)}}</td>
+                            <td>{{
+                                (
+                                (($resultado->Acum1) + ($resultado->exa1))+
+                                (($resultado->Acum2) + ($resultado->exa2))+
+                                (($resultado->Acum3) + ($resultado->exa3))+
+                                (($resultado->Acum4) + ($resultado->exa4))
+                                )/4
+                                
+                                }}</td>
+                            <td>{{$resultado->Recu1}}</td>
+                        </tr>
+
+                </table>
+            @endforeach
         </div><!--row-->
 
      </main>

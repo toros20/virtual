@@ -583,7 +583,8 @@ class UserController extends Controller
        //obtenemos el mensaje recien almacenado
         $mensaje = DB::table('msj_'.$request->user_id)
                         ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
-                        ->where('msj_'.$request->user_id.'.id',$id)->get();
+                        ->where('msj_'.$request->user_id.'.id',$id)
+                        ->get();
         //enviamos el mensaje recien almacenado,para que aparezca
         return view('ajax/post_in_section',compact('mensaje'));
         
@@ -636,9 +637,9 @@ class UserController extends Controller
         
         //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
         $id_users = Enrollment::where([
-            ['course_id', '=', $curso],
-            ['section', '=', $seccion],
-        ])->Select('user_id')->get();
+                                ['course_id', '=', $curso],
+                                ['section', '=', $seccion],
+                            ])->Select('user_id')->get();
         
         //recorremos todos los usuarios encontrados y sumamos en 
         //1 el comentario de ese mensaje por su iidentificador key
@@ -647,8 +648,8 @@ class UserController extends Controller
             //DB::table('msj_'.$id_user->user_id)->increment('comentarios')->where('key' , $key);
             //DB::table('msj_'.$id_user->user_id)->increment('comentarios')->where('key', $key) ;
             DB::table('msj_'.$id_user->user_id)
-            ->where('key', $key) 
-            ->increment('comentarios');
+                    ->where('key', $key) 
+                    ->increment('comentarios');
         }
 
         //obtenemos los id de los usuarios maestros asignados en este curso y seccion
@@ -673,7 +674,8 @@ class UserController extends Controller
         //obtenemos el comentario recien almacenado
          $comentario = DB::table($tbl_comentarios)
                          ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
-                         ->where($tbl_comentarios.'.id',$id)->get();
+                         ->where($tbl_comentarios.'.id',$id)
+                         ->get();
          //enviamos el mensaje recien almacenado,para que aparezca
          return view('ajax/enviar_comentario',compact('comentario'));
 
@@ -691,7 +693,8 @@ class UserController extends Controller
         //mostramos los ultimos 20 comentario creados 
         $comentarios = DB::table($tbl_comentarios)
                         ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
-                        ->where($tbl_comentarios.'.msj_key',$key)->get();
+                        ->where($tbl_comentarios.'.msj_key',$key)
+                        ->get();
             
         
         return view('ajax/ver_comentarios',compact('comentarios'));
@@ -758,7 +761,8 @@ class UserController extends Controller
         //obtenemos el comentario recien almacenado
          $comentario = DB::table($tbl_comentarios)
                          ->join('users', $tbl_comentarios.'.user_id', '=', 'users.id')
-                         ->where($tbl_comentarios.'.id',$id)->get();
+                         ->where($tbl_comentarios.'.id',$id)
+                         ->get();
          //enviamos el mensaje recien almacenado,para que aparezca
          return view('ajax/publicarComentario',compact('comentario'));
         
@@ -785,11 +789,55 @@ class UserController extends Controller
         $asignaciones = DB::table('sectioncourses')
                         ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
                         ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
+                        ->orderBy('course_id','ASC')
                         ->get();
 
         return view('users/panel',compact('asignaciones','user'));
        
     }
+
+    public function boletas($course_id,$section){
+
+        //obtenemos los id de los estudiantes matriculados en este curso y seccion
+        /* $estudiantes = DB::table('enrollments')
+                        ->join('users', 'enrollments.user_id', '=', 'users.id')
+                        ->where ([
+                                    ['enrollments.course_id', '=', $course_id],
+                                    ['enrollments.course_id', '=', $section],
+                                ])
+                        ->Select('users.name','users.lastaname')
+                        ->get();
+        
+        //obtenemos las clase que estan asignadas a este curso
+     
+
+        $clases = DB::table('clasecourses')
+                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                        ->where('clasecourses.course_id','=',$course_id)
+                        ->Select('clases.name')
+                        ->get(); */
+        
+        //obtenemos las notas de este curso y secion
+        //$notas = DB::table('historial_'.$course_id.'_'.$section)->get();
+
+        $historial = 'historial_'.$course_id.'_'.$section;
+
+        $resultados = DB::table('enrollments')
+                        ->join('users', 'enrollments.user_id', '=', 'users.id')
+                        ->join( $historial, 'users.id', '=',  $historial.'.student_id')
+                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                        ->where ([
+                                    ['enrollments.course_id', '=', $course_id],
+                                    ['enrollments.course_id', '=', $section],
+                                ])
+                        ->Select('users.name as nombre','users.lastaname as apellido','clases.name as clase',$historial.'.*')
+                        ->get();
+
+
+        return view('ajax/clasesbycoursesid',compact('resultados'));
+    }
+
+
 
 }
 
