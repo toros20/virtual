@@ -131,7 +131,7 @@
                                 @endif 
                             
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title">Estudiantes </h3>
+                                <h3 class="card-title"> {{$asignacion->course}} - {{$asignacion->section }} </h3>
                                 <p class="lead mb-0">Opciones</p>
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
