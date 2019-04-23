@@ -160,12 +160,12 @@
                                     ?>
                                     <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
-                                        <td><select name='clase1_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase1}}"></td>
-                                        <td><select name='clase2_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase2}}"></td>
-                                        <td><select name='clase3_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase3}}"></td>
-                                        <td><select name='clase4_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase4}}"></td>
-                                        <td><select name='clase5_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase5}}"></td>
-                                        <td><select name='clase6_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase6}}"></td>
+                                        <td><select name='clase1_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase1}}"></select></td>
+                                        <td><select name='clase2_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase2}}"></select></td>
+                                        <td><select name='clase3_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase3}}"></select></td>
+                                        <td><select name='clase4_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase4}}"></select></td>
+                                        <td><select name='clase5_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase5}}"></select></td>
+                                        <td><select name='clase6_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->clase6}}"></select></td>
                                         <td><input name='reporte_{{$student->user_id}}' required class="form-control" value="{{$resultado[0]->reportes}}" type="text"></td>
                                          {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
