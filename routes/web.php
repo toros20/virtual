@@ -39,6 +39,12 @@ Route::get('/users/boletas/{course_id}/{section}', 'UserController@boletas')->na
 //ruta para mostrar la seccion de boletas de calificaciones
 Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/{user_id}');
 
+//crear ruta para el panel de consejeria
+Route::get('/users/panel_consejeria/{user_id}', 'UsersController@panel_consejeria')->name('panel_consejeria');
+
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/personalidad/{course_id}/{section}', 'UserController@personalidad')->name('personalidad/{course_id}/{section}');
+
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
@@ -171,6 +177,5 @@ Route::post('teachers/save_notas', 'TeacherController@save_notas')->name('teache
 
 //crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
 Route::post('teachers/save_parcial', 'TeacherController@save_parcial')->name('teachers/save_parcial');
-
 
 

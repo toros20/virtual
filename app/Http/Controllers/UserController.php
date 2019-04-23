@@ -798,6 +798,19 @@ class UserController extends Controller
 
     public function boletas($course_id,$section){
 
+          /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
         //obtenemos los id de los estudiantes matriculados en este curso y seccion
           $estudiantes = DB::table('enrollments')
                          ->join('users', 'enrollments.user_id', '=', 'users.id')
@@ -820,28 +833,85 @@ class UserController extends Controller
                         ->where('clasecourses.course_id','=',$course_id)
                         ->Select('clase_id')
                         ->get(); 
-        
-        //obtenemos las notas de este curso y secion
-        //$notas = DB::table('historial_'.$course_id.'_'.$section)->get();
-       /* $seccion=strtolower($section);
-
-        $historial = 'historial_'.$course_id.'_'.$seccion;
-
-        $resultados = DB::table('enrollments')
-                        ->join('users', 'enrollments.user_id', '=', 'users.id')
-                        ->join( $historial, 'users.id', '=',  $historial.'.student_id')
-                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
-                        ->where ([
-                                    ['enrollments.course_id', '=', $course_id],
-                                    ['enrollments.section', '=', $section],
-                                ])
-                        ->Orderby('users.id')
-                        ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
-                        ->get(); */
 
         //dd($resultados)      ;              
         return view('users/boletas',compact('estudiantes','curso','seccion','clases'));
     }
+
+    public function panel_consejeria($user_id){
+
+        /*************************SEGURIDAD*******************/
+           //control de seguridad
+           // Get the currently authenticated user...
+           if ( !($user = Auth::user()) ){
+               return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+           }
+           
+           if( ($user->role!='admin') OR  ($user->role!='consejero') ){
+               return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR Y CONSEJERIA.");
+           }
+
+       /*************************SEGURIDAD*******************/
+
+        //obtenemos los datos del docente
+        $user = User::findOrFail($user_id);
+
+       $asignaciones = DB::table('sectioncourses')
+                       ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                       ->where('clasecourses.course_id','>',8)
+                       ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
+                       ->orderBy('course_id','ASC')
+                       ->get();
+
+       return view('users/panel_consejeria',compact('asignaciones','user'));
+      
+   }
+
+   public function personalidad($course_id,$section){
+
+    /*************************SEGURIDAD*******************/
+           //control de seguridad
+           // Get the currently authenticated user...
+           if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( ($user->role!='admin') OR  ($user->role!='consejero') ){
+            return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR Y CONSEJERIA.");
+        }
+
+    /*************************SEGURIDAD*******************/
+
+      //obtenemos los datos del docente
+      $user = User::findOrFail($user_id);
+
+  //obtenemos los id de los estudiantes matriculados en este curso y seccion
+    $students = DB::table('enrollments')
+                   ->join('users', 'enrollments.user_id', '=', 'users.id')
+                   ->where ([
+                              ['enrollments.course_id', '=', $course_id],
+                              ['enrollments.section', '=', $section],
+                          ])
+                  ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
+                  ->orderBy('users.sexo','asc')
+                  ->orderBy('users.name','asc')
+                  ->get(); 
+                  //dd($estudiantes);
+
+      $curso =  Course::findOrFail($course_id);
+      $seccion = strtolower($section);
+  
+  //obtenemos las clase que estan asignadas a este curso
+
+ $clases = DB::table('clasecourses')/*******clases depersonalidad  */
+                  ->where('clasecourses.course_id','=',$course_id)
+                  ->Select('clase_id')
+                  ->get(); 
+
+  //dd($resultados)      ;              
+  return view('users/personalidad',compact('students','curso','seccion','clases','user'));
+}
+
 
 
 
