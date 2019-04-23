@@ -100,7 +100,7 @@
                     <table style="margin-bottom: 10px" border='1' align="center" width="800">
                             <tr>
                                 <th>Promedio de Parcial</th>
-                                <th> <?php echo ($total1/$cont); ?> </th>
+                                <th> <?php //echo ($total1/$cont); ?> </th>
                                 <th><?php// echo Round($total2/$cont) ?></th>
                                 <th><?php// echo Round($total3/$cont) ?></th>
                                 <th><?php// echo Round($total4/$cont) ?></th>
