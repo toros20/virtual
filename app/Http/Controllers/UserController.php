@@ -806,9 +806,10 @@ class UserController extends Controller
                                     ['enrollments.section', '=', $section],
                                 ])
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
-                        
+                        ->orderBy('users.sexo','asc')
+                        ->orderBy('users.name','asc')
                         ->get(); 
-                       // dd($estudiantes);
+                        dd($estudiantes);
 
             $curso = $course_id;
             $seccion = strtolower($section);
