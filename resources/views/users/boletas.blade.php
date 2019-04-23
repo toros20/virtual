@@ -42,9 +42,10 @@
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
-
-                        <div><h3>BOLETA DE CALIFICACIONES</h3></div>
-                        <div><h4>{{$estudiante->name}} {{$estudiante->lastname}} </h4></div>
+                        <table border='1' align="center" width="800">
+                            <tr><td>BOLETA DE CALIFICACIONES</td></tr>
+                            <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
+                        </table>
 
                         <table border='1' align="center" width="800">
                                 <tr>
