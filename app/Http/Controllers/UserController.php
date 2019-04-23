@@ -808,7 +808,8 @@ class UserController extends Controller
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
                         ->orderBy('users.sexo','DESC')
                         ->orderBy('users.name','ASC')
-                        ->get(); 
+                        ->ToSQL(); 
+                        dd($estudiantes);
 
             $curso = $course_id;
             $seccion = strtolower($section);
