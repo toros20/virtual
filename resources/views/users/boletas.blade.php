@@ -47,7 +47,7 @@
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
-                        <table border='1' align="center" width="800">
+                        <table style="margin-bottom: 10px" border='1' align="center" width="800">
                                 <tr>
                                     <th>Asignatura</th>
                                     <th>I P</th>
@@ -91,7 +91,6 @@
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
                   
-                    <?php echo "<br/>"; echo "<br/>"; ?>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
