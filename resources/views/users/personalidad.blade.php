@@ -93,7 +93,7 @@
                             <input type="hidden" name="user_id" value="{{$user->id}}">
             
                             <!--Table-->
-                            <table class="table table-hover mb-0 table-responsive-md ">
+                            <table class="table">
                     
                             <!--Table head-->
                             <thead>
