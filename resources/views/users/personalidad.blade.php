@@ -74,7 +74,7 @@
                 <div style="padding-top: 10px"  class="col-12 col-sm-12 col-md-12 ">
                     
                     <!-- Table with panel -->
-                    <div >
+                    <div class="card card-cascade narrower">
 
                         <!--Card image-->
                         <div align="center" >
@@ -93,7 +93,7 @@
                             <input type="hidden" name="user_id" value="{{$user->id}}">
             
                             <!--Table-->
-                            <table class="table table-hover mb-0 table-responsive-md ">
+                            <table >
                     
                             <!--Table head-->
                             <thead>
