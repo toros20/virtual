@@ -161,37 +161,160 @@
                                     <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase1}}"></option>
+                                            <select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required>
+
+                                                @if ($resultado[0]->clase1 == 1)
+                                                    <option value="{{$resultado[0]->clase1}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase1 == 2)
+                                                    <option value="{{$resultado[0]->clase1}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase1 == 3)
+                                                    <option value="{{$resultado[0]->clase1}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase1 == 4)
+                                                    <option value="{{$resultado[0]->clase1}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase1 == 5)
+                                                    <option value="{{$resultado[0]->clase1}}">Avanzado</option>
+                                                @endif
+                                               
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase2_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase2}}"></option>
+                                                
+                                                @if ($resultado[0]->clase2 == 1)
+                                                    <option value="{{$resultado[0]->clase2}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase2 == 2)
+                                                    <option value="{{$resultado[0]->clase2}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase2 == 3)
+                                                    <option value="{{$resultado[0]->clase2}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase2 == 4)
+                                                    <option value="{{$resultado[0]->clase2}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase2 == 5)
+                                                    <option value="{{$resultado[0]->clase2}}">Avanzado</option>
+                                                @endif
+
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase3_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase3}}"></option>
+                                                @if ($resultado[0]->clase3 == 1)
+                                                    <option value="{{$resultado[0]->clase3}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase3 == 2)
+                                                    <option value="{{$resultado[0]->clase3}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase3 == 3)
+                                                    <option value="{{$resultado[0]->clase3}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase3 == 4)
+                                                    <option value="{{$resultado[0]->clase3}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase3 == 5)
+                                                    <option value="{{$resultado[0]->clase3}}">Avanzado</option>
+                                                @endif
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase4_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase4}}"></option>
+                                                
+                                                @if ($resultado[0]->clase4 == 1)
+                                                    <option value="{{$resultado[0]->clase4}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase4 == 2)
+                                                    <option value="{{$resultado[0]->clase4}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase4 == 3)
+                                                    <option value="{{$resultado[0]->clase4}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase4 == 4)
+                                                    <option value="{{$resultado[0]->clase4}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase4 == 5)
+                                                    <option value="{{$resultado[0]->clase4}}">Avanzado</option>
+                                                @endif
+
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase5_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase5}}"></option>
+                                                
+                                                @if ($resultado[0]->clase5 == 1)
+                                                    <option value="{{$resultado[0]->clase5}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase5 == 2)
+                                                    <option value="{{$resultado[0]->clase5}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase5 == 3)
+                                                    <option value="{{$resultado[0]->clase5}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase5 == 4)
+                                                    <option value="{{$resultado[0]->clase5}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase5 == 5)
+                                                    <option value="{{$resultado[0]->clase5}}">Avanzado</option>
+                                                @endif
+
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase6_{{$student->user_id}}' required> 
-                                                <option value="{{$resultado[0]->clase6}}"></option>
+                                                @if ($resultado[0]->clase6 == 1)
+                                                    <option value="{{$resultado[0]->clase6}}">Insuficiente</option>
+                                                @endif
+                                                @if ($resultado[0]->clase6 == 2)
+                                                    <option value="{{$resultado[0]->clase6}}">Necesita Mejorar</option>
+                                                @endif
+                                                @if ($resultado[0]->clase6 == 3)
+                                                    <option value="{{$resultado[0]->clase6}}">Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase6 == 4)
+                                                    <option value="{{$resultado[0]->clase6}}">Muy Satisfactorio</option>
+                                                @endif
+                                                @if ($resultado[0]->clase6 == 5)
+                                                    <option value="{{$resultado[0]->clase6}}">Avanzado</option>
+                                                @endif
+
+                                                <option value="1">Insuficiente</option>
+                                                <option value="2">Necesita Mejorar</option>
+                                                <option value="3">Satisfactorio</option>
+                                                <option value="4">Muy Satisfactorio</option>
+                                                <option value="5">Avanzado</option>
                                             </select>
                                         </td>
                                         <td><input name='reporte_{{$student->user_id}}' required value="{{$resultado[0]->reportes}}" type="text"></td>
-                                         {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
+                                       
                                     </tr>
                                 @endforeach
                                 <tr><td><button class="btn btn-lg btn-block btn-success" type="submit" >SALVAR NOTAS</button></td></tr>
