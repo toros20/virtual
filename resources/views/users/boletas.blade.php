@@ -71,10 +71,10 @@
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
 
-                               $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                             /*   $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                               $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                               $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4); */
                         ?>
 
                             <tr>
