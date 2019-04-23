@@ -46,7 +46,7 @@ Route::get('/users/panel_consejeria/{user_id}', 'UserController@panel_consejeria
 Route::get('/users/personalidad/{course_id}/{section}', 'UserController@personalidad')->name('personalidad/{course_id}/{section}');
 
 //crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
-Route::post('users/save_personalidad', 'User@save_personalidad')->name('users/save_personalidad');
+Route::post('users/save_personalidad', 'UserController@save_personalidad')->name('users/save_personalidad');
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
