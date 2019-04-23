@@ -838,6 +838,7 @@ class UserController extends Controller
         return view('users/boletas',compact('estudiantes','curso','seccion','clases'));
     }
 
+    //funcion para mostar el panel del consejero
     public function panel_consejeria($user_id){
 
         /*************************SEGURIDAD*******************/
@@ -866,6 +867,7 @@ class UserController extends Controller
       
    }
 
+   //funcion para mostrar la seccion de personalidd al consejero
    public function personalidad($course_id,$section){
 
     /*************************SEGURIDAD*******************/
@@ -903,6 +905,59 @@ class UserController extends Controller
 
     return view('users/personalidad',compact('students','user','curso','seccion'));
 }
+
+//funcion para guardar las notas de personalidad ingresadas desde el usuario consejero
+public function save_personalidad(Request $request){
+
+    //obtenemos los id de los estudiantes matriculados en este curso y seccion
+    $students = DB::table('enrollments')
+                   ->where ([
+                              ['enrollments.course_id', '=', $request->curso],
+                              ['enrollments.section', '=',$request->seccion],
+                          ])
+                   ->Select('enrollments.user_id')
+                   ->get(); 
+
+    foreach ($students as $student) {
+
+        $select1= 'clase1_'.$student->user_id;
+        $select2= 'clase2_'.$student->user_id;
+        $select3= 'clase3_'.$student->user_id;
+        $select4= 'clase4_'.$student->user_id;
+        $select5= 'clase5_'.$student->user_id;
+        $select6= 'clase6_'.$student->user_id;
+        $reportes= 'reporte'.$student->user_id;
+        
+        $resp =DB::table('personalidad')
+                ->where([
+                    ['personalidad.student_id', '=', $student->user_id],
+                    ['personalidad.parcial', '=', 1 ],
+                ])
+                ->update(array(
+                    'clase1' =>$request->$select1,
+                    'clase2' =>$request->$select2,
+                    'clase3' =>$request->$select3,
+                    'clase4' =>$request->$select4,
+                    'clase5' =>$request->$select5,
+                    'clase6' =>$request->$select6,
+                    'reportes' =>$request->$reportes,
+                    ) );
+    }
+    
+    $user = Auth::user();
+     //obtenemos los datos del docente
+     $user = User::findOrFail($user->id);
+
+    $asignaciones = DB::table('sectioncourses')
+                    ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                    ->where('sectioncourses.course_id','>',8)
+                    ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
+                    ->orderBy('course_id','ASC')
+                    ->get();
+
+    return view('users/panel_consejeria',compact('asignaciones','user'));
+}
+
 
 
 

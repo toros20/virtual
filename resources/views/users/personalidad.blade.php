@@ -79,7 +79,7 @@
                         <!--Card image-->
                         <div align="center" class="view view-cascade gradient-card-header peach-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                     
-                        <h4 class="white-text mx-3">Notas de - {{$curso->name}} - {{$seccion}} -  </h4>
+                        <h4 class="white-text mx-3">Notas de  {{$curso->name}} - {{$seccion}}   </h4>
                     
                         </div>
                         <!--/Card image-->
@@ -88,9 +88,11 @@
                     
                         <div class="table-wrapper">
 
-                          <form action="{{ route('teachers/save_parcial') }}" method="POST">
+                          <form action="{{ route('users/save_personalidad') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <input type="hidden" name="user_id" value="{{$user->id}}">
+                            <input type="hidden" name="curso" value="{{$curso->id}}">
+                            <input type="hidden" name="seccion" value="{{$seccion}}">
             
                             <!--Table-->
                             <table class="table table-hover mb-0 table-responsive-md ">
