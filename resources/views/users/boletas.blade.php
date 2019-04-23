@@ -52,12 +52,12 @@
                         <table border='1' align="center" width="800">
                                 <tr>
                                     <th>Asignatura</th>
-                                    <th>I P</th>
-                                    <th>II P</th>
-                                    <th>III P</th>
-                                    <th>IV P</th>
-                                    <th>PROM.</th>
-                                    <th>RECU.</th>
+                                    <th style="text-align:center">I P</th>
+                                    <th style="text-align:center">II P</th>
+                                    <th style="text-align:center">III P</th>
+                                    <th style="text-align:center">IV P</th>
+                                    <th style="text-align:center">PROM.</th>
+                                    <th style="text-align:center">RECU.</th>
                                 </tr>
                         @foreach ($clases as $clase)
 
@@ -78,7 +78,7 @@
                         ?>
 
                             <tr>
-                                <td style="text-align:center">{{$resultado[0]->clase}}</td>
+                                <td>{{$resultado[0]->clase}}</td>
                                 <td style="text-align:center">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 <td style="text-align:center">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
                                 <td style="text-align:center">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
@@ -100,7 +100,7 @@
                     <table style="padding-bottom:10px; " border='1' align="center" width="800">
                             <tr>
                                     <th>PROMEDIO DE PARCIAL</th>
-                                    <th><?php echo Round(($total1/$cont),2)?></th>
+                                    <th style="text-align:center"><?php echo round(($total1/$cont),2)?></th>
                                     <th><?php //echo Round(($total2/$cont),2)?></th>
                                     <th><?php //echo Round(($total3/$cont),2)?></th>
                                     <th><?php //echo Round(($total4/$cont),2)?></th>
