@@ -847,7 +847,7 @@ class UserController extends Controller
                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
            }
            
-           if( ($user->role!='admin') OR  ($user->role!='consejero') ){
+           if( ($user->role!='admin') or  ($user->role!='consejero') ){
                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR Y CONSEJERIA.");
            }
 
@@ -876,7 +876,7 @@ class UserController extends Controller
             return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
         }
         
-        if( ($user->role!='admin') OR  ($user->role!='consejero') ){
+        if( ($user->role!='admin') or  ($user->role!='consejero') ){
             return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR Y CONSEJERIA.");
         }
 
