@@ -103,9 +103,10 @@
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
                     <table style="margin-bottom:30px; " border='1' align="center" width="700">
+                        <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td>PROMEDIO DE PARCIAL</td>
-                                    <td style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px"><?php echo round($promedio1,2)?></td>
                                     <td style="text-align:center; width:50px"><?php //echo Round(($total2/$cont),2)?></td>
                                     <td style="text-align:center; width:50px"><?php //echo Round(($total3/$cont),2)?></td>
                                     <td style="text-align:center; width:50px"><?php //echo Round(($total4/$cont),2)?></td>
