@@ -91,7 +91,8 @@
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
                   
-                    <table><tr><td></td></tr><tr><td></td></tr></table>
+                    <table> <tr><td>&nbsp;</td></tr></table>
+                    <table> <tr><td>&nbsp;</td></tr></table>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
