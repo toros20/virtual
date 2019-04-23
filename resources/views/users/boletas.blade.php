@@ -65,7 +65,6 @@
                                                     [$historial.'.clase_id', '=', $clase->clase_id],
                                                     [$historial.'.student_id', '=', $estudiante->user_id],
                                                 ])
-                                        ->Orderby('users.id')
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
                                

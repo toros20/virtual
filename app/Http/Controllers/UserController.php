@@ -805,7 +805,8 @@ class UserController extends Controller
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.section', '=', $section],
                                 ])
-                        ->Select('users.name','users.lastname','users.id as user_id')
+                        ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
+                        ->Orderby('users.sexo','users.name')
                         ->get(); 
 
             $curso = $course_id;
