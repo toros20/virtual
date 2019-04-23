@@ -39,15 +39,17 @@
         <!--row-->
         <div class="row"> 
                 {{-- tabla historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                <?php $historial = 'historial_'.$curso.'_'.$seccion; $cont=0; $total=0; ?>
                 
                 @foreach ($estudiantes as $estudiante)
+                        <?php  $cont=0; $total=0; ?>
+
                         <table border='1' align="center" width="800">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
-                        <table style="margin-bottom: 10px" border='1' align="center" width="800">
+                        <table border='1' align="center" width="800">
                                 <tr>
                                     <th>Asignatura</th>
                                     <th>I P</th>
@@ -68,29 +70,44 @@
                                                 ])
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
-                               
+
+                               $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                               $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                               $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                               $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                         ?>
 
                             <tr>
                                 <td>{{$resultado[0]->clase}}</td>
                                 <td>{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                <td>{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                <td>{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                <td>{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                <td>{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td>{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td>{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
                                 <td>{{
-                                    (
+                                   /*  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
                                     (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
                                     (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                    )/4
+                                    )/4 */
                                     
                                     }}</td>
-                                <td>{{$resultado[0]->Recu1}}</td>
+                                <td>{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
+                            <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
-                  
+                    <table style="margin-bottom: 10px" border='1' align="center" width="800">
+                            <tr>
+                                <th>Promedio de Parcial</th>
+                                <th> <?php echo Round($total1/$cont) ?> </th>
+                                <th><?php// echo Round($total2/$cont) ?></th>
+                                <th><?php// echo Round($total3/$cont) ?></th>
+                                <th><?php// echo Round($total4/$cont) ?></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                    </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
