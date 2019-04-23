@@ -43,10 +43,10 @@
                 
                 @foreach ($estudiantes as $estudiante)
 
-                        <h3>BOLETA DE CALIFICACIONES</h3>
+                        <h3>BOLETA DE CALIFICACIONES</h3><p></p>
                         <h4>{{$estudiante->name}} {{$estudiante->lastname}} </h4>
 
-                        <table width="800">
+                        <table align="center" width="800">
                                 <tr>
                                     <th>Asignatura</th>
                                     <th>I P</th>
@@ -88,13 +88,11 @@
                                 <td>{{$resultado[0]->Recu1}}</td>
                             </tr>
                         @endforeach {{-- fin del foreach de estudiante --}}
-                        
+                    </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
-            </table>
+          
                 <hr><hr>
 
-
-           
 
         </div><!--row-->
 
