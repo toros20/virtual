@@ -74,7 +74,7 @@
                 <div style="padding-top: 10px"  class="col-12 col-sm-12 col-md-12 ">
                     
                     <!-- Table with panel -->
-                    <div class="card card-cascade narrower">
+                    <div >
 
                         <!--Card image-->
                         <div align="center" >
