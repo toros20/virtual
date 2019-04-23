@@ -79,11 +79,11 @@
 
                             <tr>
                                 <td>{{$resultado[0]->clase}}</td>
-                                <td style="text-align:center">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                <td style="text-align:center">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
-                                <td style="text-align:center">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                <td style="text-align:center">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td style="text-align:center">
+                                <td style="text-align:center; width:50px">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                <td style="text-align:center; width:50px">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td style="text-align:center; width:50px">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td style="text-align:center; width:50px">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                <td style="text-align:center; width:50px">
                                    {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
@@ -92,7 +92,7 @@
                                     )/4  --}}
                                     
                                     </td>
-                                <td style="text-align:center">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                <td style="text-align:center"; width:50px>{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
@@ -100,12 +100,12 @@
                     <table style="padding-bottom:10px; " border='1' align="center" width="800">
                             <tr>
                                     <th>PROMEDIO DE PARCIAL</th>
-                                    <th style="text-align:center"><?php echo round(($total1/$cont),2)?></th>
-                                    <th><?php //echo Round(($total2/$cont),2)?></th>
-                                    <th><?php //echo Round(($total3/$cont),2)?></th>
-                                    <th><?php //echo Round(($total4/$cont),2)?></th>
-                                    <th></th>
-                                    <th></th>
+                                    <th style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></th>
+                                    <th style="text-align:center; width:50px"><?php //echo Round(($total2/$cont),2)?></th>
+                                    <th style="text-align:center; width:50px"><?php //echo Round(($total3/$cont),2)?></th>
+                                    <th style="text-align:center; width:50px"><?php //echo Round(($total4/$cont),2)?></th>
+                                    <th style="text-align:center; width:50px"></th>
+                                    <th style="text-align:center; width:50px"></th>
                                 </tr>
                         </table>
                    
