@@ -160,12 +160,12 @@
                                     ?>
                                     <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
-                                        <td><select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required value="{{$resultado[0]->clase1}}"></select></td>
-                                        <td><select style="display:inline-block !important" name='clase2_{{$student->user_id}}' required value="{{$resultado[0]->clase2}}"></select></td>
-                                        <td><select style="display:inline-block !important" name='clase3_{{$student->user_id}}' required value="{{$resultado[0]->clase3}}"></select></td>
-                                        <td><select style="display:inline-block !important" name='clase4_{{$student->user_id}}' required value="{{$resultado[0]->clase4}}"></select></td>
-                                        <td><select style="display:inline-block !important" name='clase5_{{$student->user_id}}' required value="{{$resultado[0]->clase5}}"></select></td>
-                                        <td><select style="display:inline-block !important" name='clase6_{{$student->user_id}}' required value="{{$resultado[0]->clase6}}"></select></td>
+                                        <td><select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase1}}"></option></select></td>
+                                        <td><select style="display:inline-block !important" name='clase2_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase2}}"></option></select></td>
+                                        <td><select style="display:inline-block !important" name='clase3_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase3}}"></option></select></td>
+                                        <td><select style="display:inline-block !important" name='clase4_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase4}}"></option></select></td>
+                                        <td><select style="display:inline-block !important" name='clase5_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase5}}"></option></select></td>
+                                        <td><select style="display:inline-block !important" name='clase6_{{$student->user_id}}' required> <option value="{{$resultado[0]->clase6}}"></option></select></td>
                                         <td><input name='reporte_{{$student->user_id}}' required value="{{$resultado[0]->reportes}}" type="text"></td>
                                          {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
