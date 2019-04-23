@@ -162,7 +162,9 @@
                                         <td>{{$student->name}} {{$student->lastname}}</td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required>
-
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase1 == 1)
                                                     <option value="{{$resultado[0]->clase1}}">Insuficiente</option>
                                                 @endif
@@ -188,7 +190,9 @@
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase2_{{$student->user_id}}' required> 
-                                                
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase2 == 1)
                                                     <option value="{{$resultado[0]->clase2}}">Insuficiente</option>
                                                 @endif
@@ -214,6 +218,9 @@
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase3_{{$student->user_id}}' required> 
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase3 == 1)
                                                     <option value="{{$resultado[0]->clase3}}">Insuficiente</option>
                                                 @endif
@@ -238,7 +245,9 @@
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase4_{{$student->user_id}}' required> 
-                                                
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase4 == 1)
                                                     <option value="{{$resultado[0]->clase4}}">Insuficiente</option>
                                                 @endif
@@ -264,7 +273,9 @@
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase5_{{$student->user_id}}' required> 
-                                                
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase5 == 1)
                                                     <option value="{{$resultado[0]->clase5}}">Insuficiente</option>
                                                 @endif
@@ -290,6 +301,9 @@
                                         </td>
                                         <td>
                                             <select style="display:inline-block !important" name='clase6_{{$student->user_id}}' required> 
+                                                @if ($resultado[0]->clase1 == 0)
+                                                    <option value="0">-------</option>
+                                                @endif
                                                 @if ($resultado[0]->clase6 == 1)
                                                     <option value="{{$resultado[0]->clase6}}">Insuficiente</option>
                                                 @endif
