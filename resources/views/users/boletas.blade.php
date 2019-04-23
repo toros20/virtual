@@ -42,7 +42,7 @@
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
-                    
+                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
                         <table border='1' align="center" width="800">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
@@ -70,17 +70,20 @@
                                                 ])
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
-                                //dd($resultado);
+                                $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                               
                         ?>
 
                             <tr>
-                                <td>{{$resultado[0]->clase}}</td>
-                                <td>{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                <td>{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
-                                <td>{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                <td>{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td>
+                                <td style="text-align:center">{{$resultado[0]->clase}}</td>
+                                <td style="text-align:center">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                <td style="text-align:center">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td style="text-align:center">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td style="text-align:center">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                <td style="text-align:center">
                                    {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
@@ -89,11 +92,22 @@
                                     )/4  --}}
                                     
                                     </td>
-                                <td>{{--{{$resultado[0]->Recu1}}--}}</td>
+                                <td style="text-align:center">{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
-                          
+                          <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
+                    <table style="padding-bottom:10px; " border='1' align="center" width="800">
+                            <tr>
+                                    <th>PROMEDIO DE PARCIAL</th>
+                                    <th><?php echo Round(($total1/$cont),2)?></th>
+                                    <th><?php //echo Round(($total2/$cont),2)?></th>
+                                    <th><?php //echo Round(($total3/$cont),2)?></th>
+                                    <th><?php //echo Round(($total4/$cont),2)?></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                        </table>
                    
                @endforeach  {{-- fin del foreach de estudiante --}}
 
