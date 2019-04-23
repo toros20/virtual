@@ -44,12 +44,12 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
-                        <table border='1' align="center" width="800">
+                        <table border='1' align="center" width="600">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
-                        <table border='1' align="center" width="800">
+                        <table border='1' align="center" width="600">
                                 <tr>
                                     <th>Asignatura</th>
                                     <th style="text-align:center">I P</th>
@@ -97,7 +97,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
-                    <table style="margin-bottom:10px; " border='1' align="center" width="800">
+                    <table style="margin-bottom:10px; " border='1' align="center" width="600">
                             <tr>
                                     <td>PROMEDIO DE PARCIAL</td>
                                     <td style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></td>
