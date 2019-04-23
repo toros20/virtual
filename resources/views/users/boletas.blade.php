@@ -42,7 +42,7 @@
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; $cont=0; $total=0; ?>
                 
                 @foreach ($estudiantes as $estudiante)
-                        <?php  $cont=0; $total=0; ?>
+                        <?php  $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
                         <table border='1' align="center" width="800">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
