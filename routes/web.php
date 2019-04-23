@@ -40,7 +40,7 @@ Route::get('/users/boletas/{course_id}/{section}', 'UserController@boletas')->na
 Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/{user_id}');
 
 //crear ruta para el panel de consejeria
-Route::get('/users/panel_consejeria/{user_id}', 'UsersController@panel_consejeria')->name('panel_consejeria');
+Route::get('/users/panel_consejeria/{user_id}', 'UsersController@panel_consejeria')->name('panel_consejeria/{user_id}');
 
 //ruta para mostrar la seccion de personalidad de los consejeros
 Route::get('/users/personalidad/{course_id}/{section}', 'UserController@personalidad')->name('personalidad/{course_id}/{section}');
