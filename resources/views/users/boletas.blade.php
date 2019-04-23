@@ -91,8 +91,7 @@
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
                   
-                    <table> <tr><td>&nbsp;</td></tr></table>
-                    <table> <tr><td>&nbsp;</td></tr></table>
+                    <?php echo "<br/>"; echo "<br/>"; ?>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
