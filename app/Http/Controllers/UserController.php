@@ -909,6 +909,19 @@ class UserController extends Controller
 //funcion para guardar las notas de personalidad ingresadas desde el usuario consejero
 public function save_personalidad(Request $request){
 
+      /*************************SEGURIDAD*******************/
+        //control de seguridad
+        // Get the currently authenticated user...
+        if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role != 'consejero'){
+            return ("ÁREA EXCLUSIVA DE CONSEJERIA.");
+        }
+
+    /*************************SEGURIDAD*******************/
+
     //obtenemos los id de los estudiantes matriculados en este curso y seccion
     $students = DB::table('enrollments')
                    ->where ([
