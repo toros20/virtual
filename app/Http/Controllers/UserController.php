@@ -897,10 +897,10 @@ class UserController extends Controller
                    ->get(); 
                   //dd($estudiantes);
 
-      /*$curso =  Course::findOrFail($course_id);
-      $seccion = strtolower($section);  */  
+      $curso =  Course::findOrFail($course_id);
+      $seccion = $section;   
 
-  return view('users/personalidad',compact('students','user'));
+    return view('users/personalidad',compact('students','user','curso','seccion'));
 }
 
 
