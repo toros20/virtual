@@ -65,7 +65,7 @@
     </header>
     <!--/.Double navigation-->
   
-    <!--Main Layout-->
+    <!--Main Layout -->
     <main>
       <div class="container-fluid">
        
