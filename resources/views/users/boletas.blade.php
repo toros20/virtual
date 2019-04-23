@@ -79,7 +79,12 @@
 
                             <tr>
                                 <td>{{$resultado[0]->clase}}</td>
-                                <td style="text-align:center; width:50px">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                    <td style="text-align:center; width:50px; color:red;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                @else 
+                                    <td style="text-align:center; width:50px">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                @endif
+                                
                                 <td style="text-align:center; width:50px">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
                                 <td style="text-align:center; width:50px">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
                                 <td style="text-align:center; width:50px">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
@@ -97,7 +102,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
-                    <table style="margin-bottom:10px; " border='1' align="center" width="700">
+                    <table style="margin-bottom:30px; " border='1' align="center" width="700">
                             <tr>
                                     <td>PROMEDIO DE PARCIAL</td>
                                     <td style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></td>
