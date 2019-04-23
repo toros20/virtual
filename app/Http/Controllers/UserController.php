@@ -866,7 +866,7 @@ class UserController extends Controller
       
    }
 
-   public function personalidad($course_id,$section,$clase){
+   public function personalidad($course_id,$section){
 
     /*************************SEGURIDAD*******************/
         //control de seguridad
@@ -898,7 +898,8 @@ class UserController extends Controller
                   //dd($estudiantes);
 
       $curso =  Course::findOrFail($course_id);
-      $seccion = $section;   
+
+      $seccion = $section;
 
     return view('users/personalidad',compact('students','user','curso','seccion'));
 }
