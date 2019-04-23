@@ -94,17 +94,7 @@
                           
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
-                    <table style="margin-bottom: 10px" border='1' align="center" width="800">
-                            <tr>
-                                <th>Promedio de Parcial</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
-                            </tr>
-                </table>
+                   
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
