@@ -86,14 +86,14 @@
             
                         <div class="px-4">
                     
-                        <div class="table-wrapper">
+                        <div>
 
                           <form action="{{ route('teachers/save_parcial') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <input type="hidden" name="user_id" value="{{$user->id}}">
             
                             <!--Table-->
-                            <table class="table">
+                            <table class="table table-hover mb-0 table-responsive-md ">
                     
                             <!--Table head-->
                             <thead>
