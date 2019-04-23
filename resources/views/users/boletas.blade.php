@@ -70,7 +70,7 @@
                                                 ])
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
-                                dd($resultado);
+                                //dd($resultado);
                               
                         ?>
 
@@ -80,15 +80,15 @@
                                 <td>{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
                                 <td>{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
                                 <td>{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td>{{
-                                   /*  (
+                                <td>
+                                   {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
                                     (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
                                     (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                    )/4 */
+                                    )/4  --}}
                                     
-                                    }}</td>
+                                    </td>
                                 <td>{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
                           
