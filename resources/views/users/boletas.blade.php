@@ -39,10 +39,10 @@
         <!--row-->
         <div class="row"> 
                 {{-- tabla historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                <?php $historial = 'historial_'.$curso.'_'.$seccion; $cont=0; $total=0; ?>
                 
                 @foreach ($estudiantes as $estudiante)
-                       
+                        <?php  $cont=0; $total1=0; ?>
 
                         <table border='1' align="center" width="800">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
@@ -71,8 +71,8 @@
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
 
-                             /*   $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                               $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                               $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                              /*  $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4); */
                         ?>
@@ -100,14 +100,14 @@
                     <table style="margin-bottom: 10px" border='1' align="center" width="800">
                             <tr>
                                 <th>Promedio de Parcial</th>
-                                <th> <?php //echo ($total1/$cont); ?> </th>
-                                <th><?php// echo Round($total2/$cont) ?></th>
-                                <th><?php// echo Round($total3/$cont) ?></th>
-                                <th><?php// echo Round($total4/$cont) ?></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
                                 <th></th>
                                 <th></th>
                             </tr>
-                    </table>
+                </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
