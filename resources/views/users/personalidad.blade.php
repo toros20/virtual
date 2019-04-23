@@ -84,9 +84,9 @@
                         </div>
                         <!--/Card image-->
             
-                        <div class="px-4">
+                        <div >
                     
-                        <div>
+                        <div class="table-wrapper">
 
                           <form action="{{ route('teachers/save_parcial') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
