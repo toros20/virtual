@@ -939,7 +939,7 @@ public function save_personalidad(Request $request){
         $select4= 'clase4_'.$student->user_id;
         $select5= 'clase5_'.$student->user_id;
         $select6= 'clase6_'.$student->user_id;
-        $reportes= 'reporte'.$student->user_id;
+        $reportes= 'reporte_'.$student->user_id;
         
         $resp =DB::table('personalidad')
                 ->where([
