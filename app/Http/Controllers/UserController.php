@@ -815,7 +815,7 @@ class UserController extends Controller
      
        $clases = DB::table('clasecourses')
                         ->where('clasecourses.course_id','=',$course_id)
-                        ->Select('clases.id as clase_id')
+                        ->Select('clase_id')
                         ->get(); 
         
         //obtenemos las notas de este curso y secion
