@@ -803,7 +803,7 @@ class UserController extends Controller
                          ->join('users', 'enrollments.user_id', '=', 'users.id')
                          ->where ([
                                     ['enrollments.course_id', '=', $course_id],
-                                    ['enrollments.course_id', '=', $section],
+                                    ['enrollments.section', '=', $section],
                                 ])
                         ->Select('users.name','users.lastname','users.id as user_id')
                         ->get(); 
