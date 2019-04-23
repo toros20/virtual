@@ -39,7 +39,7 @@
         <!--row-->
         <div class="row"> 
                 {{-- tabla historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$curso.'_'.$seccion; $cont=0; $total=0; ?>
+                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
                         <?php  $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
@@ -100,7 +100,7 @@
                     <table style="margin-bottom: 10px" border='1' align="center" width="800">
                             <tr>
                                 <th>Promedio de Parcial</th>
-                                <th> <?php echo  ($total1/$cont) ?> </th>
+                                <th> <?php echo ($total1/$cont); ?> </th>
                                 <th><?php// echo Round($total2/$cont) ?></th>
                                 <th><?php// echo Round($total3/$cont) ?></th>
                                 <th><?php// echo Round($total4/$cont) ?></th>
