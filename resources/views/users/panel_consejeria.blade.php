@@ -115,9 +115,34 @@
                         <div class="card-body card-body-cascade ">
                                         
                             <ul class="list-group">
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,1])}} ">
                                         <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Personalidad
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Puntualidad
+                                        </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,2])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Esp. de Trabajo
+                                        </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,3])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Order y Pres.
+                                        </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,4])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Sociabilidad
+                                        </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,5])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Moralidad
+                                        </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('personalidad/{course_id}/{section}/{clase}', [$asignacion->course_id,$asignacion->section,6])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Act. Civica y Rel.
                                         </li>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">

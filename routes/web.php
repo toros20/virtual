@@ -43,7 +43,7 @@ Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/
 Route::get('/users/panel_consejeria/{user_id}', 'UserController@panel_consejeria')->name('panel_consejeria/{user_id}');
 
 //ruta para mostrar la seccion de personalidad de los consejeros
-Route::get('/users/personalidad/{course_id}/{section}', 'UserController@personalidad')->name('personalidad/{course_id}/{section}');
+Route::get('/users/personalidad/{course_id}/{section}/{clase}', 'UserController@personalidad')->name('personalidad/{course_id}/{section}/{clase}');
 
 
 

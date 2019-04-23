@@ -91,8 +91,6 @@
                           <form action="{{ route('teachers/save_parcial') }}" method="POST">
                             <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                             <input type="hidden" name="user_id" value="{{$user->id}}">
-                            <input type="hidden" name="course_id" value="{{$curso->id}}">
-                            <input type="hidden" name="seccion" value="{{$seccion}}">
             
                             <!--Table-->
                             <table class="table table-hover mb-0 table-responsive-md ">
@@ -151,27 +149,24 @@
                             <tbody id="tbody1" >
                                  @foreach ($students as $student)
 
-                                 <?php 
-                                    $resultado = DB::table('personalidad')
-                                                    ->join('clasespersonalidad', 'personalidad.clase_id', '=', 'clasespersonalidad.id')
-                                                    ->where ([
-                                                                [$historial.'.clase_id', '=', $clase->clase_id],
-                                                                [$historial.'.student_id', '=', $estudiante->user_id],
-                                                            ])
-                                                    ->Select('clases.name as clase',$historial.'.*')
-                                                    ->get();
-                                  
-                                 
-                                 ?>
+                                    <?php 
+                                        $resultado = DB::table('personalidad')
+                                            ->where ([
+                                                        ['personalidad.parcial', '=', 1],
+                                                        ['personalidad.student_id', '=', $student->user_id],
+                                                    ])
+                                            ->get();
+                                    
+                                    ?>
                                     <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
-                                        <td><select name='clase1_{{$student->user_id}}' required class="form-control" value="{{$student->Acum1}}"></td>
-                                        <td><select name='clase2_{{$student->user_id}}' required class="form-control" value="{{$student->Exa1}}"></td>
-                                        <td><select name='clase3_{{$student->user_id}}' required class="form-control" value="{{ ($student->Acum1) + ($student->Exa1)}}"></td>
-                                        <td><select name='clase4_{{$student->user_id}}' required class="form-control" value="{{$student->Acum2}}"></td>
-                                        <td><select name='clase5_{{$student->user_id}}' required class="form-control" value="{{$student->Exa2}}"></td>
-                                        <td><select name='clase6_{{$student->user_id}}' required class="form-control" value="{{ ($student->Acum2) + ($student->Exa2)}}"></td>
-                                        <td><input  name='reporte_{{$student->user_id}}' required class="form-control" value="{{$student->Acum3}}" type="text"></td>
+                                        <td><select name='clase1_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase1}}"></td>
+                                        <td><select name='clase2_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase2}}"></td>
+                                        <td><select name='clase3_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase3}}"></td>
+                                        <td><select name='clase4_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase4}}"></td>
+                                        <td><select name='clase5_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase5}}"></td>
+                                        <td><select name='clase6_{{$student->user_id}}' required class="form-control" value="{{$resultado->clase6}}"></td>
+                                        <td><input name='reporte_{{$student->user_id}}' required class="form-control" value="{{$resultado->reportes}}" type="text"></td>
                                          {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
                                     </tr>
                                 @endforeach
