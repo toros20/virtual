@@ -39,7 +39,7 @@
         <!--row-->
         <div class="row"> 
                 {{-- tabla historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                <?php $historial = 'historial_'.$curso.'_'.$seccion; dd($estudiantes) ; ?>
                 
                 @foreach ($estudiantes as $estudiante)
 
@@ -67,8 +67,8 @@
                                                 ])
                                         ->Orderby('users.id')
                                         ->Select('clases.name as clase',$historial.'.*')
-                                        ->ToSql();
-                                dd($resultado) ;
+                                        ->get();
+                               
                         ?>
 
                             <tr>
