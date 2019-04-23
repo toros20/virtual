@@ -67,7 +67,8 @@
                                                 ])
                                         ->Orderby('users.id')
                                         ->Select('clases.name as clase',$historial.'.*')
-                                        ->get(); 
+                                        ->ToSql();
+                                dd($resultado) ;
                         ?>
 
                             <tr>
