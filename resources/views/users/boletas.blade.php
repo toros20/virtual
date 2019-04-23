@@ -39,7 +39,7 @@
         <!--row-->
         <div class="row"> 
                 {{-- tabla historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$course_id.'_'.$seccion; ?>
+                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
 
