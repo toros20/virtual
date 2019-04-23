@@ -90,10 +90,8 @@
                             </tr>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
+                    <br><br>
                @endforeach  {{-- fin del foreach de estudiante --}}
-          
-                <hr><hr>
-
 
         </div><!--row-->
 
