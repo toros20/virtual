@@ -70,7 +70,7 @@
                                                 ])
                                         ->Select('clases.name as clase',$historial.'.*')
                                         ->get();
-
+                                dd($resultado);
                               
                         ?>
 
