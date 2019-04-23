@@ -43,10 +43,10 @@
                 
                 @foreach ($estudiantes as $estudiante)
 
-                        <h3>BOLETA DE CALIFICACIONES</h3><p></p>
-                        <h4>{{$estudiante->name}} {{$estudiante->lastname}} </h4>
+                        <h3>BOLETA DE CALIFICACIONES</h3>
+                        <p><h4>{{$estudiante->name}} {{$estudiante->lastname}} </h4></p>
 
-                        <table align="center" width="800">
+                        <table border='1' align="center" width="800">
                                 <tr>
                                     <th>Asignatura</th>
                                     <th>I P</th>
