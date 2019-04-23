@@ -38,40 +38,58 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
-            <h1>BOLETA DE CALIFICACIONES</h1>
-                <table width="800">
-                    <tr>
-                        <th>Asignatura</th>
-                        <th>I P</th>
-                        <th>II P</th>
-                        <th>III P</th>
-                        <th>IV P</th>
-                        <th>PROM.</th>
-                        <th>RECU.</th>
-                    </tr>
-                @foreach ($resultados as $resultado)
+                {{-- tabla historial de este curso y seccion --}}
+                <?php $historial = 'historial_'.$course_id.'_'.$seccion; ?>
+                
+                @foreach ($estudiantes as $estudiante)
 
-            
-                        <tr>
-                            <td>{{$resultado->clase}}</td>
-                            <td>{{($resultado->Acum1) + ($resultado->Exa1)}}</td>
-                            <td>{{($resultado->Acum2) + ($resultado->Exa2)}}</td>
-                            <td>{{($resultado->Acum3) + ($resultado->Exa3)}}</td>
-                            <td>{{($resultado->Acum4) + ($resultado->Exa4)}}</td>
-                            <td>{{
-                                (
-                                (($resultado->Acum1) + ($resultado->Exa1))+
-                                (($resultado->Acum2) + ($resultado->Exa2))+
-                                (($resultado->Acum3) + ($resultado->Exa3))+
-                                (($resultado->Acum4) + ($resultado->Exa4))
-                                )/4
-                                
-                                }}</td>
-                            <td>{{$resultado->Recu1}}</td>
-                        </tr>
+                        <h3>BOLETA DE CALIFICACIONES</h3>
+                        <h4>{{$estudiante->name}} {{$estudiante->lastname}} </h4>
 
-                    
-                @endforeach
+                        <table width="800">
+                                <tr>
+                                    <th>Asignatura</th>
+                                    <th>I P</th>
+                                    <th>II P</th>
+                                    <th>III P</th>
+                                    <th>IV P</th>
+                                    <th>PROM.</th>
+                                    <th>RECU.</th>
+                                </tr>
+                        @foreach ($clases as $clase)
+
+                        <?php 
+                              $resultado = DB::table($historial)
+                                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                        ->where ([
+                                                    [$historial.'.clase_id', '=', $clase->clase_id],
+                                                    [$historial.'.student_id', '=', $estudiante->user_id],
+                                                ])
+                                        ->Orderby('users.id')
+                                        ->Select('clases.name as clase',$historial.'.*')
+                                        ->get(); 
+                        ?>
+
+                            <tr>
+                                <td>{{$resultado[0]->clase}}</td>
+                                <td>{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                <td>{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                <td>{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                <td>{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                <td>{{
+                                    (
+                                    (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
+                                    (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                    (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
+                                    (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
+                                    )/4
+                                    
+                                    }}</td>
+                                <td>{{$resultado[0]->Recu1}}</td>
+                            </tr>
+                        @endforeach {{-- fin del foreach de estudiante --}}
+                        
+               @endforeach  {{-- fin del foreach de estudiante --}}
             </table>
                 <hr><hr>
 

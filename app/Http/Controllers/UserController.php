@@ -799,25 +799,28 @@ class UserController extends Controller
     public function boletas($course_id,$section){
 
         //obtenemos los id de los estudiantes matriculados en este curso y seccion
-         /* $estudiantes = DB::table('enrollments')
-                        ->where ([
+          $estudiantes = DB::table('enrollments')
+                         ->join('users', 'enrollments.user_id', '=', 'users.id')
+                         ->where ([
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.course_id', '=', $section],
                                 ])
-                        ->Select('user_id')
-                        ->get(); */
+                        ->Select('users.name','users.lastname','user.id as user_id')
+                        ->get(); 
+
+            $curso = $course_id;
+            $seccion = strtolower($section);
         
         //obtenemos las clase que estan asignadas a este curso
      
-       /* $clases = DB::table('clasecourses')
-                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+       $clases = DB::table('clasecourses')
                         ->where('clasecourses.course_id','=',$course_id)
-                        ->Select('clases.name')
-                        ->get(); */
+                        ->Select('clases.id as clase_id')
+                        ->get(); 
         
         //obtenemos las notas de este curso y secion
         //$notas = DB::table('historial_'.$course_id.'_'.$section)->get();
-        $seccion=strtolower($section);
+       /* $seccion=strtolower($section);
 
         $historial = 'historial_'.$course_id.'_'.$seccion;
 
@@ -831,10 +834,10 @@ class UserController extends Controller
                                 ])
                         ->Orderby('users.id')
                         ->Select('users.name as nombre','users.lastname as apellido','clases.name as clase',$historial.'.*')
-                        ->get(); 
+                        ->get(); */
 
         //dd($resultados)      ;              
-        return view('users/boletas',compact('resultados'));
+        return view('users/boletas',compact('estudiantes','curso','seccion','clases'));
     }
 
 
