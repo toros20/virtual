@@ -77,9 +77,9 @@
                     <div class="card card-cascade narrower">
 
                         <!--Card image-->
-                        <div align="center" >
+                        <div align="center" class="view view-cascade gradient-card-header peach-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                     
-                        <h4 class="white-text mx-3">Notas de - {{$curso->short_name}} - {{$seccion}} </h4>
+                        <h4 class="white-text mx-3">Notas de - {{$curso[0]->short_name}} - {{$seccion}} </h4>
                     
                         </div>
                         <!--/Card image-->
