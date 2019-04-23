@@ -806,7 +806,7 @@ class UserController extends Controller
                                     ['enrollments.section', '=', $section],
                                 ])
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
-                        ->orderBy('users.sexo','ASC')
+                        ->orderBy('users.sexo','DESC')
                         ->orderBy('users.name','ASC')
                         ->get(); 
 
