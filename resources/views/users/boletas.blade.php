@@ -92,20 +92,20 @@
                                     )/4  --}}
                                     
                                     </td>
-                                <td style="text-align:center"; width:50px>{{--{{$resultado[0]->Recu1}}--}}</td>
+                                <td style="text-align:center; width:50px">{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de estudiante --}}
                     </table>
-                    <table style="padding-bottom:10px; " border='1' align="center" width="800">
+                    <table style="margin-bottom:10px; " border='1' align="center" width="800">
                             <tr>
-                                    <th>PROMEDIO DE PARCIAL</th>
-                                    <th style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></th>
-                                    <th style="text-align:center; width:50px"><?php //echo Round(($total2/$cont),2)?></th>
-                                    <th style="text-align:center; width:50px"><?php //echo Round(($total3/$cont),2)?></th>
-                                    <th style="text-align:center; width:50px"><?php //echo Round(($total4/$cont),2)?></th>
-                                    <th style="text-align:center; width:50px"></th>
-                                    <th style="text-align:center; width:50px"></th>
+                                    <td>PROMEDIO DE PARCIAL</td>
+                                    <td style="text-align:center; width:50px"><?php echo round(($total1/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px"><?php //echo Round(($total2/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px"><?php //echo Round(($total3/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px"><?php //echo Round(($total4/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px"></td>
+                                    <td style="text-align:center; width:50px"></td>
                                 </tr>
                         </table>
                    
