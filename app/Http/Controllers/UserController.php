@@ -838,7 +838,7 @@ class UserController extends Controller
         
        $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
        $pdf->setPaper('a4','landscape');
-       return $pdf->dowmload('calificaciones.pdf');
+       return $pdf->download('calificaciones.pdf');
              
        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
