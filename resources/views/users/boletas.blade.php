@@ -22,6 +22,13 @@
   <!-- Your custom styles (optional) -->
   <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
 
+  <style>
+        .page-break {
+            page-break-after: always;
+        }
+        </style>
+       
+     
   <!-- MDBootstrap Cards Extended Pro  -->
  
 </head>
@@ -275,7 +282,7 @@
                                 </tr>
                           
                         </table>
-
+                        <div class="page-break"></div>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
