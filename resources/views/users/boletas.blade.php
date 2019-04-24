@@ -100,7 +100,7 @@
                                 <td style="text-align:center; width:50px">{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
                           <?php $cont+=1;?>
-                        @endforeach {{-- fin del foreach de estudiante --}}
+                        @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
                     <table style="margin-bottom:30px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
@@ -114,7 +114,66 @@
                                     <td style="text-align:center; width:50px"></td>
                                 </tr>
                         </table>
-                   
+
+                        <?php //obtenemos los datos de personalidad de este alumno en este parcial
+                        $personalidad = DB::table('personalidad')
+                                  ->where ([
+                                            ['personalidad.student_id', '=', $estudiante->user_id],
+                                            ['personalidad.parcial', '=', 1],
+                                          ])
+                                  ->get();                        
+                        ?>
+                      <table style="margin-top:30px; " border='1' align="center" width="700">
+                            <tr>
+                                <th style="text-align:center; width:300px">Personalidad</th>
+                                <th style="text-align:center; width:100px">I P</th>
+                                <th style="text-align:center; width:100px">II P</th>
+                                <th style="text-align:center; width:100px">III P</th>
+                                <th style="text-align:center; width:100px">IV P</th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Puntualidad</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase1; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Espíritu de Trabajo</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase2; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Orden y Presentación</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase3; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Sociabilidad</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase4; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Moralidad y Ética</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase5; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                            <tr>
+                                <th style="text-align:center; width:300px">Actitud Cívica y Religiosa</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase6; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                            </tr>
+                        </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
