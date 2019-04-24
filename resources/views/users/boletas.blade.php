@@ -309,6 +309,8 @@
 //==============================================================
 include("mpdf/mpdf.php");
 
+require_once 'controllers/include/forum_sso_functions.php';
+
 $html = ob_get_clean();
 
 //$html = utf8_encode($html);
