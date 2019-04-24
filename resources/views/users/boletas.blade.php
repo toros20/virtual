@@ -216,11 +216,11 @@
 
                         <table  style="margin-top:10px; " border='1' align="center" width="700"> 
                             <tr>
-                                <th style="text-align:center; width:30px">Número de Reportes</th>
-                                <th style="text-align:center; width:50px"><?php echo $personalidad[0]->reportes; ?></th>
-                                <th style="text-align:center; width:50px"></th>
-                                <th style="text-align:center; width:50px"></th>
-                                <th style="text-align:center; width:50px"></th>
+                                <th style="text-align:center; width:300px">Número de Reportes</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->reportes; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
                             </tr>
                         </table>
 
