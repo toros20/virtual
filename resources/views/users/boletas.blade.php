@@ -191,11 +191,11 @@
                         ?>
                       <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                             <tr>
-                                <th style="text-align:center; width:100px">Personalidad</th>
-                                <th style="text-align:center; width:150px">I P</th>
-                                <th style="text-align:center; width:150px">II P</th>
-                                <th style="text-align:center; width:150px">III P</th>
-                                <th style="text-align:center; width:150px">IV P</th>
+                                <th style="text-align:center; width:100px ;font-weight: bold;">Personalidad</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold;">I P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold;">II P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold;">III P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold;">IV P</th>
                             </tr>
                             <tr>
                                 <th style="width:300px">Puntualidad</th>
