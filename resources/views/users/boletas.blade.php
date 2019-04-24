@@ -74,7 +74,7 @@
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
-                            <tr><td ><h6 style="font-weight: bold;"> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
+                            <tr><td ><h6 style="font-weight: bold;">  {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
