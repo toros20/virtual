@@ -107,7 +107,7 @@
                         ?>
 
                             <tr>
-                                <td><?php echo $cont+1; ?></td>
+                                <td style="font-weight: bold;"><?php echo $cont+1; ?></td>
                                 <td>{{$resultado[0]->clase}}</td>
                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
                                     <td style="text-align:center; width:50px; color:red;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
