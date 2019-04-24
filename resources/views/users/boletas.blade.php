@@ -49,7 +49,7 @@
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
-                        <table style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
                                     <th>ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px">I P</th>
@@ -223,11 +223,11 @@
                                         <th style="text-align:center; width:150px"></th>
                                     </tr>
                             <tr>
-                                <th style="width:300px">Número de Reportes</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->reportes; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <td style="width:300px">Número de Reportes</td>
+                                <td style="text-align:center; width:100px"><?php echo $personalidad[0]->reportes; ?></td>
+                                <td style="text-align:center; width:100px"></td>
+                                <td style="text-align:center; width:100px"></td>
+                                <td style="text-align:center; width:100px"></td>
                             </tr>
                         </table>
 
