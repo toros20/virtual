@@ -44,12 +44,14 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td><h5> C.E.M.N.G SAN JOSÉ DEL CARMEN </h5></td></tr>
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                            <tr><td>
+                                <h5>C.E.M.N.G SAN JOSÉ DEL CARMEN </h5>
+                                <h5>BOLETA DE CALIFICACIONES </h5>
+                            </td></tr>
                         </table>
 
-                        <table style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td>BOLETA DE CALIFICACIONES</td></tr>
+                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
