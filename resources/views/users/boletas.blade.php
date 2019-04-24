@@ -102,7 +102,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table style="margin-bottom:30px; " border='1' align="center" width="700">
+                    <table style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td>PROMEDIO DE PARCIAL</td>
@@ -230,7 +230,7 @@
                                 </tr>
                           
                         </table>
-                        
+
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
