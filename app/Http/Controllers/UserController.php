@@ -818,7 +818,6 @@ class UserController extends Controller
                          ->where ([
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.section', '=', $section],
-                                    ['users.sexo', '=', 'F'],
                                 ])
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
                         ->orderBy('users.sexo','asc')
@@ -838,7 +837,7 @@ class UserController extends Controller
                         ->get(); 
         
        $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
-    
+       $pdf->setPaper('a4','landscape');
        return $pdf->stream();
              
        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
