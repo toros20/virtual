@@ -50,8 +50,9 @@
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
                                 <p style="margin-bottom:0px; ">Tel: 2221-4474 /75</p>
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
-                                <h6>BOLETA DE CALIFICACIONES</h6>
+                                
                             </td></tr>
+                            <tr><td><h6>BOLETA DE CALIFICACIONES</h6></td></tr>
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
