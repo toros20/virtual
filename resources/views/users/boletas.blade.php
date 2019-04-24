@@ -215,12 +215,19 @@
                         </table>
 
                         <table  style="margin-top:10px; " border='1' align="center" width="700"> 
+                                <tr>
+                                        <th style="text-align:center; width:100px"></th>
+                                        <th style="text-align:center; width:150px"></th>
+                                        <th style="text-align:center; width:150px"></th>
+                                        <th style="text-align:center; width:150px"></th>
+                                        <th style="text-align:center; width:150px"></th>
+                                    </tr>
                             <tr>
-                                <th style="width:241px">Número de Reportes</th>
-                                <th style="text-align:center; width:125px"><?php echo $personalidad[0]->reportes; ?></th>
-                                <th style="text-align:center; width:105px"></th>
-                                <th style="text-align:center; width:105px"></th>
-                                <th style="text-align:center; width:105px"></th>
+                                <th style="width:300px">Número de Reportes</th>
+                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->reportes; ?></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
+                                <th style="text-align:center; width:100px"></th>
                             </tr>
                         </table>
 
