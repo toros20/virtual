@@ -34,7 +34,7 @@
     <!--/.Double navigation-->
   
     <!--Main Layout-->
-    <main>
+   
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
@@ -213,34 +213,28 @@
                         </table>
 
                         <table style="margin-top:20px; " border='0' align="center" width="700">
-   
-     
+
                                 <tr>
                                   <td>&nbsp;</td>
-                          
                                   <td>&nbsp;</td>
                                   <td>&nbsp;</td>
                                 </tr>
                                
-                                 
                                 <tr>
                                   <td align="center">__________________________</td>
                                   <td align="center">__________________________</td>
-                                 
                                 </tr>
                                 <tr>
                                   <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Secretaría</strong></td>
                                   <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
-                                  
                                 </tr>
                           
-                                
-                                </table>
+                        </table>
+                        
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
 
-     </main>
  <!--Main Layout-->
 <br><br>
    
