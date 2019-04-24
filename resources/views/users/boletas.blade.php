@@ -55,7 +55,7 @@
                             <tr><td>
                                 <h6 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h6>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
-                                <p style="margin-bottom:0px; ">Tel: 2221-4474 /75</p>
+                                <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 
                             </td></tr>
@@ -74,7 +74,7 @@
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td style="font-weight: bold;"><h6> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
+                            <tr><td ><h6 style="font-weight: bold;"> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
