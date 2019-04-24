@@ -43,11 +43,11 @@
                 
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
-                        <blockquote>
+                        <blockquote class="text-info">
                                 <p>C.EM.N.G. SAN JOSÉ DEL CARMEN</p>
                                 <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
                         </blockquote>
-                        
+
                         <table style="margin-top:10px; " border='1' align="center" width="700">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
