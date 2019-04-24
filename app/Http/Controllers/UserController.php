@@ -12,6 +12,7 @@ use App\Enrollment;
 use App\Assignment;
 use App\Sectioncourse;
 use App\Clasecourse;
+use PDF;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
