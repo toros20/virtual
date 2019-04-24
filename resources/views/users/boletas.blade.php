@@ -44,7 +44,7 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
-                        <table border='1' align="center" width="700">
+                        <table style="margin-top:20px; " border='1' align="center" width="700">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
@@ -123,7 +123,7 @@
                                           ])
                                   ->get();                        
                         ?>
-                      <table style="margin-top:30px; " border='1' align="center" width="700">
+                      <table style="margin-top:20px; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:300px">Personalidad</th>
                                 <th style="text-align:center; width:100px">I P</th>
