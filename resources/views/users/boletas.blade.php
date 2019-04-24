@@ -44,8 +44,8 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <div style="background-color: bg-info" align="center">
-                            <h3>C.E.M.N.G SAN JOSÉ DEL CARMEN</h3>
+                        <div style="background: bg-info" align="center">
+                            <h5>C.E.M.N.G SAN JOSÉ DEL CARMEN</h5>
                         </div>
 
                         <table style="margin-top:10px; " border='1' align="center" width="700">
