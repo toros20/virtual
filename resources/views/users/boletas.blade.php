@@ -134,11 +134,11 @@
                             if ($personalidad[0]->clase2 == 4) {$c2_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase2 == 5) {$c2_parcial1="Avanzado";} 
 
-                            if ($personalidad[0]->clase3 == 1) {$c3_$parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase3 == 2) {$c3_$parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase3 == 3) {$c3_$parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase3 == 4) {$c3_$parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase3 == 5) {$c3_$parcial1="Avanzado";} 
+                            if ($personalidad[0]->clase3 == 1) {$c3_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase3 == 2) {$c3_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase3 == 3) {$c3_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase3 == 4) {$c3_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase3 == 5) {$c3_parcial1="Avanzado";} 
 
                             if ($personalidad[0]->clase4 == 1) {$c4_parcial1="Insuficiente";}
                             if ($personalidad[0]->clase4 == 2) {$c4_parcial1="Necesita Mejorar";}
