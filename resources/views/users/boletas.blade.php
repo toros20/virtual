@@ -47,6 +47,15 @@
                         <table style="text-align:center " class="bg-info" align="center"  width="700">
                             <tr><td><h5> C.E.M.N.G SAN JOSÉ DEL CARMEN </h5></td></tr>
                         </table>
+                        <table style="text-align:center " class="bg-success" align="center"  width="700">
+                                <tr><td><h5> C.E.M.N.G SAN JOSÉ DEL CARMEN </h5></td></tr>
+                            </table>
+                            <table style="text-align:center " class="bg-danger" align="center"  width="700">
+                                    <tr><td><h5> C.E.M.N.G SAN JOSÉ DEL CARMEN </h5></td></tr>
+                                </table>
+                                <table style="text-align:center " class="bg-warning" align="center"  width="700">
+                                        <tr><td><h5> C.E.M.N.G SAN JOSÉ DEL CARMEN </h5></td></tr>
+                                    </table>
 
                         <table style="margin-top:10px; " border='1' align="center" width="700">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
