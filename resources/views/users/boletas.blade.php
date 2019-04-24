@@ -49,15 +49,15 @@
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
-                        <table border='1' align="center" width="700">
+                        <table style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
                                     <th>ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center">I P</th>
-                                    <th style="text-align:center">II P</th>
-                                    <th style="text-align:center">III P</th>
-                                    <th style="text-align:center">IV P</th>
-                                    <th style="text-align:center">PROM.</th>
-                                    <th style="text-align:center">RECU.</th>
+                                    <th style="text-align:center; width:50px">I P</th>
+                                    <th style="text-align:center; width:50px">II P</th>
+                                    <th style="text-align:center; width:50px">III P</th>
+                                    <th style="text-align:center; width:50px">IV P</th>
+                                    <th style="text-align:center; width:50px">PROM.</th>
+                                    <th style="text-align:center; width:50px">RECU.</th>
                                 </tr>
                         </table>
                         <table style="margin-top:10px; " border='1' align="center" width="700"> 
