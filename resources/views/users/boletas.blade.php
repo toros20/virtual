@@ -134,13 +134,13 @@
                     <table class="table-bordered table-striped" style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
-                                    <td>PROMEDIO DE PARCIAL</td>
-                                    <td style="text-align:center; width:50px"><?php echo round($promedio1,2)?></td>
-                                    <td style="text-align:center; width:50px"><?php //echo Round(($total2/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px"><?php //echo Round(($total3/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px"><?php //echo Round(($total4/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px"></td>
-                                    <td style="text-align:center; width:50px"></td>
+                                    <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"><?php echo round($promedio1,2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"><?php //echo Round(($total2/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"><?php //echo Round(($total3/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"><?php //echo Round(($total4/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold;"></td>
                                 </tr>
                         </table>
 
