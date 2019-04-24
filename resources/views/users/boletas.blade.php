@@ -59,6 +59,8 @@
                                     <th style="text-align:center">PROM.</th>
                                     <th style="text-align:center">RECU.</th>
                                 </tr>
+                        </table>
+                        <table style="margin-top:10px; "> 
                         @foreach ($clases as $clase)
 
                         <?php 
