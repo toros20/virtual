@@ -47,9 +47,9 @@
                         <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr><td>
                                 <h6>C.E.M.N.G SAN JOSÉ DEL CARMEN </h6>
-                                <p>Colonia La Camapaña, Tegucigalpa</p>
-                                <p>Tel: 2221-4474 /75</p>
-                                <p>Web: sanjosedelcarmen.edu.hn</p>
+                                <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
+                                <p style="margin-bottom:0px; ">Tel: 2221-4474 /75</p>
+                                <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 <h6>BOLETA DE CALIFICACIONES</h6>
                             </td></tr>
                         </table>
