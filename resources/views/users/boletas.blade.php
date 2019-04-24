@@ -66,9 +66,8 @@
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td><h6><b> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}} </b></h6></td></tr>
+                            <tr><td style="font-weight: bold;"><h6> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}></h6></td></tr>
                         </table>
-
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
                                     <th>ESPACIOS PEDAGOGICOS</th>
