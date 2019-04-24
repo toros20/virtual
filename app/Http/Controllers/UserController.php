@@ -825,6 +825,7 @@ class UserController extends Controller
                         //dd($estudiantes);
 
             $curso = $course_id;
+            $course =  Course::findOrFail($course_id);
             $seccion = strtolower($section);
         
         //obtenemos las clase que estan asignadas a este curso
@@ -835,7 +836,7 @@ class UserController extends Controller
                         ->get(); 
 
         //dd($resultados)      ;              
-        return view('users/boletas',compact('estudiantes','curso','seccion','clases'));
+        return view('users/boletas',compact('estudiantes','curso','seccion','clases','course'));
     }
 
     //funcion para mostar el panel del consejero

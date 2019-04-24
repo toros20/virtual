@@ -52,11 +52,13 @@
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 
                             </td></tr>
-                            <tr><td><h6>BOLETA DE CALIFICACIONES</h6></td></tr>
+                            <tr><td style="padding-top:5px;">
+                                <h6>BOLETA DE CALIFICACIONES</h6>
+                            </td></tr>
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
+                            <tr><td >{{$course->name}} Sección: {{$seccion}} Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
