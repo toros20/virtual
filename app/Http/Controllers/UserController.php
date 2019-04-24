@@ -836,10 +836,10 @@ class UserController extends Controller
                         ->Select('clase_id')
                         ->get(); 
         
-        //$pdf = PDF::loadView('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
-        $pdf = PDF::loadView('users/boletas');
+        $pdf = PDF::loadView('users/boletas',$estudiantes,$curso,$seccion,$clases,$course,$section);
+    
         return $pdf->stream();
-        //dd($resultados);              
+             
         //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
