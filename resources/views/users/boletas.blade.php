@@ -121,7 +121,42 @@
                                             ['personalidad.student_id', '=', $estudiante->user_id],
                                             ['personalidad.parcial', '=', 1],
                                           ])
-                                  ->get();                        
+                                  ->get();    
+                            if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase1 == 5) {$c1_parcial1="Avanzado";} 
+                            
+                            if ($personalidad[0]->clase2 == 1) {$c2_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase2 == 2) {$c2_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase2 == 3) {$c2_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase2 == 4) {$c2_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase2 == 5) {$c2_parcial1="Avanzado";} 
+
+                            if ($personalidad[0]->clase3 == 1) {$c3_$parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase3 == 2) {$c3_$parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase3 == 3) {$c3_$parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase3 == 4) {$c3_$parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase3 == 5) {$c3_$parcial1="Avanzado";} 
+
+                            if ($personalidad[0]->clase4 == 1) {$c4_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase4 == 2) {$c4_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase4 == 3) {$c4_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase4 == 4) {$c4_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase4 == 5) {$c4_parcial1="Avanzado";} 
+
+                            if ($personalidad[0]->clase5 == 1) {$c5_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase5 == 2) {$c5_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase5 == 3) {$c5_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase5 == 4) {$c5_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase5 == 5) {$c5_parcial1="Avanzado";} 
+
+                            if ($personalidad[0]->clase6 == 1) {$c6_parcial1="Insuficiente";}
+                            if ($personalidad[0]->clase6 == 2) {$c6_parcial1="Necesita Mejorar";}
+                            if ($personalidad[0]->clase6 == 3) {$c6_parcial1="Satisfactorio";}
+                            if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
+                            if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
                       <table style="margin-top:20px; " border='1' align="center" width="700">
                             <tr>
@@ -132,46 +167,46 @@
                                 <th style="text-align:center; width:100px">IV P</th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Puntualidad</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase1; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Puntualidad</th>
+                                <th style="width:100px"><?php echo $c1_parcial1; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Espíritu de Trabajo</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase2; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Espíritu de Trabajo</th>
+                                <th style="width:100px"><?php echo $c2_parcial1; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Orden y Presentación</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase3; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Orden y Presentación</th>
+                                <th style="width:100px"><?php echo $personalidad[0]->clase3; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Sociabilidad</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase4; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Sociabilidad</th>
+                                <th style="width:100px"><?php echo $personalidad[0]->clase4; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Moralidad y Ética</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase5; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Moralidad y Ética</th>
+                                <th style="width:100px"><?php echo $personalidad[0]->clase5; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                             <tr>
-                                <th style="text-align:center; width:300px">Actitud Cívica y Religiosa</th>
-                                <th style="text-align:center; width:100px"><?php echo $personalidad[0]->clase6; ?></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
-                                <th style="text-align:center; width:100px"></th>
+                                <th style="width:300px">Actitud Cívica y Religiosa</th>
+                                <th style="width:100px"><?php echo $personalidad[0]->clase6; ?></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
+                                <th style="width:100px"></th>
                             </tr>
                         </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
