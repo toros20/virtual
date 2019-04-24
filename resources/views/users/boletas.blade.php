@@ -218,9 +218,9 @@
                             <tr>
                                 <th style="width:241px">Número de Reportes</th>
                                 <th style="text-align:center; width:125px"><?php echo $personalidad[0]->reportes; ?></th>
-                                <th style="text-align:center; width:110px"></th>
-                                <th style="text-align:center; width:110px"></th>
-                                <th style="text-align:center; width:110px"></th>
+                                <th style="text-align:center; width:105px"></th>
+                                <th style="text-align:center; width:105px"></th>
+                                <th style="text-align:center; width:105px"></th>
                             </tr>
                         </table>
 
