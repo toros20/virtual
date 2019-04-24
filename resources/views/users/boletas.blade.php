@@ -123,7 +123,7 @@
                                           ])
                                   ->get();   
                             $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
-                             
+
                             if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
                             if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
                             if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
@@ -162,11 +162,11 @@
                         ?>
                       <table style="margin-top:20px; " border='1' align="center" width="700">
                             <tr>
-                                <th style="text-align:center; width:300px">Personalidad</th>
-                                <th style="text-align:center; width:100px">I P</th>
-                                <th style="text-align:center; width:100px">II P</th>
-                                <th style="text-align:center; width:100px">III P</th>
-                                <th style="text-align:center; width:100px">IV P</th>
+                                <th style="text-align:center; width:100px">Personalidad</th>
+                                <th style="text-align:center; width:150px">I P</th>
+                                <th style="text-align:center; width:150px">II P</th>
+                                <th style="text-align:center; width:150px">III P</th>
+                                <th style="text-align:center; width:150px">IV P</th>
                             </tr>
                             <tr>
                                 <th style="width:300px">Puntualidad</th>
