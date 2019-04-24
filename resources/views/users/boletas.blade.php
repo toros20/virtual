@@ -60,7 +60,7 @@
                                     <th style="text-align:center; width:50px">RECU.</th>
                                 </tr>
                         </table>
-                        <table style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -104,7 +104,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table style="margin-bottom:20px; " border='1' align="center" width="700">
+                    <table class="table-bordered table-striped" style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td>PROMEDIO DE PARCIAL</td>
@@ -162,7 +162,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table style="margin-top:10px; " border='1' align="center" width="700">
+                      <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px">Personalidad</th>
                                 <th style="text-align:center; width:150px">I P</th>
@@ -214,7 +214,7 @@
                             </tr>
                         </table>
 
-                        <table  style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="table-bordered table-striped"  style="margin-top:10px; " border='1' align="center" width="700"> 
                                 <tr>
                                         <th style="text-align:center; width:100px"></th>
                                         <th style="text-align:center; width:150px"></th>
