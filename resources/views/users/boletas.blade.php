@@ -54,9 +54,9 @@
                             </td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                            <tr> <td><h6>BOLETA DE CALIFICACIONES</h6></td></tr>
                             <tr>
                                 <td style="padding-top:5px;">
-                                    <h6>BOLETA DE CALIFICACIONES</h6>
                                     <h6>Curso: {{$course->name}} </h6>
                                 </td>
                                 <td>
