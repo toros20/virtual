@@ -73,18 +73,18 @@
                             </tr>
                         </table>
 
-                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
                             <tr><td ><h6 style="font-weight: bold;"> Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr>
-                                    <th>ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center; width:50px">I P</th>
-                                    <th style="text-align:center; width:50px">II P</th>
-                                    <th style="text-align:center; width:50px">III P</th>
-                                    <th style="text-align:center; width:50px">IV P</th>
-                                    <th style="text-align:center; width:50px">PROM.</th>
-                                    <th style="text-align:center; width:50px">RECU.</th>
+                                    <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">II P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">III P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">IV P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">PROM.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700"> 
