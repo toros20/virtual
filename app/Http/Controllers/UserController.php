@@ -822,7 +822,7 @@ class UserController extends Controller
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
                         ->orderBy('users.sexo','asc')
                         ->orderBy('users.name','asc')
-                        ->get(); 
+                        ->toArray(); 
                         //dd($estudiantes);
 
             $curso = $course_id;
@@ -834,7 +834,7 @@ class UserController extends Controller
        $clases = DB::table('clasecourses')
                         ->where('clasecourses.course_id','=',$course_id)
                         ->Select('clase_id')
-                        ->get(); 
+                        ->toArray(); 
         
         $pdf = PDF::loadView('users/boletas',$estudiantes,$curso,$seccion,$clases,$course,$section);
     
