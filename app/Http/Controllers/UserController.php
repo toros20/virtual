@@ -818,6 +818,7 @@ class UserController extends Controller
                          ->where ([
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.section', '=', $section],
+                                    ['users.sexo', '=', 'F'],
                                 ])
                         ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
                         ->orderBy('users.sexo','asc')
