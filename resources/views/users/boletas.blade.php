@@ -44,14 +44,14 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
-                        <table style="margin-top:20px; " border='1' align="center" width="700">
+                        <table style="margin-top:10px; " border='1' align="center" width="700">
                             <tr><td>BOLETA DE CALIFICACIONES</td></tr>
                             <tr><td>{{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
                         </table>
 
                         <table border='1' align="center" width="700">
                                 <tr>
-                                    <th>Asignatura</th>
+                                    <th>ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center">I P</th>
                                     <th style="text-align:center">II P</th>
                                     <th style="text-align:center">III P</th>
@@ -211,6 +211,31 @@
                                 <th style="width:100px"></th>
                             </tr>
                         </table>
+
+                        <table style="margin-top:20px; " border='0' align="center" width="700">
+   
+     
+                                <tr>
+                                  <td>&nbsp;</td>
+                          
+                                  <td>&nbsp;</td>
+                                  <td>&nbsp;</td>
+                                </tr>
+                               
+                                 
+                                <tr>
+                                  <td align="center">__________________________</td>
+                                  <td align="center">__________________________</td>
+                                 
+                                </tr>
+                                <tr>
+                                  <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Secretaría</strong></td>
+                                  <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
+                                  
+                                </tr>
+                          
+                                
+                                </table>
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
