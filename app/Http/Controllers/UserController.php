@@ -836,7 +836,7 @@ class UserController extends Controller
                         ->Select('clase_id')
                         ->get(); 
         
-       $pdf = PDF::loadView('users/boletas',['estudiantes' => $estudiantes,'curso' => $curso,'seccion' => $seccion,'clases' => $clases,'course' => $course,'section' => $section]);
+       $pdf = PDF::loadView('users/boletas',['curso' => $curso]);
     
        return $pdf->stream();
              
