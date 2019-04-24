@@ -836,11 +836,11 @@ class UserController extends Controller
                         ->Select('clase_id')
                         ->get(); 
         
-        $pdf = PDF::loadView('users/boletas',$data=[$estudiantes,$curso,$seccion,$clases,$course,$section]);
+        //$pdf = PDF::loadView('users/boletas',$data=[$estudiantes,$curso,$seccion,$clases,$course,$section]);
     
-        return $pdf->stream();
+       // return $pdf->stream();
              
-        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+        return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
     //funcion para mostar el panel del consejero
