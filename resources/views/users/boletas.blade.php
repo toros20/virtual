@@ -77,7 +77,7 @@
                             <tr><td ><h6 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                                <tr>
+                                <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">II P</th>
@@ -107,6 +107,7 @@
                         ?>
 
                             <tr>
+                                <td><?php echo $cont+1; ?></td>
                                 <td>{{$resultado[0]->clase}}</td>
                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
                                     <td style="text-align:center; width:50px; color:red;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
