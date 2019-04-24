@@ -52,10 +52,12 @@
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 
                             </td></tr>
+                        </table>
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr>
                                 <td style="padding-top:5px;">
                                     <h6>BOLETA DE CALIFICACIONES</h6>
-                                    <h6>Curso: {{$course->name}}</h6>
+                                    <h6>Curso: {{$course->name}} </h6>
                                 </td>
                                 <td>
                                     <h6>Sección: {{$section}}</h6>
