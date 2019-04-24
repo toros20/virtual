@@ -836,7 +836,7 @@ class UserController extends Controller
                         ->get(); 
 
         //dd($resultados)      ;              
-        return view('users/boletas',compact('estudiantes','curso','seccion','clases','course'));
+        return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
     //funcion para mostar el panel del consejero

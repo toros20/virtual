@@ -58,7 +58,7 @@
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
-                            <tr><td >{{$course->name}} Sección: {{$seccion}} Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</td></tr>
+                            <tr><td ><h6> {{$course->name}} Sección: {{$section}}      Estudiante: {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
 
                         <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
