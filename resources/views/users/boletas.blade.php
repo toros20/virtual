@@ -121,7 +121,9 @@
                                             ['personalidad.student_id', '=', $estudiante->user_id],
                                             ['personalidad.parcial', '=', 1],
                                           ])
-                                  ->get();    
+                                  ->get();   
+                            $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
+                             
                             if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
                             if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
                             if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
