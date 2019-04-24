@@ -1,3 +1,10 @@
+@php
+    $arrayMeses = array('Ene', 'Febr', 'Mar', 'Abr', 'Mayo', 'Jun',
+   'Jul', 'Agos', 'Sept', 'Oct', 'Nov', 'Dic');
+ 
+   $arrayDias = array( 'Domingo', 'Lunes', 'Martes',
+       'Miércoles', 'Jueves', 'Viernes', 'Sábado');
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -54,7 +61,8 @@
                             </td></tr>
                         </table>
                         <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
-                            <tr> <td><h6>BOLETA DE CALIFICACIONES</h6></td><td><?php echo date("d-m-Y");?></td></tr>
+                            <tr> <td><h6>BOLETA DE CALIFICACIONES</h6></td>
+                                <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
                                 <td style="padding-top:5px;">
                                     <h6>Curso: {{$course->name}} </h6>
