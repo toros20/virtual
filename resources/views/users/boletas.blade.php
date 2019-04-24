@@ -4,6 +4,8 @@
  
    $arrayDias = array( 'Domingo', 'Lunes', 'Martes',
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
+    
+    ob_start();
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -21,14 +23,7 @@
   <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
-
-  <style>
-        .page-break {
-            page-break-after: always;
-        }
-        </style>
-       
-     
+ 
   <!-- MDBootstrap Cards Extended Pro  -->
  
 </head>
@@ -58,7 +53,7 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <table  style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr><td>
                                 <h6 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h6>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
@@ -67,7 +62,7 @@
                                 
                             </td></tr>
                         </table>
-                        <table  style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr> <td><h6>BOLETA DE CALIFICACIONES</h6></td>
                                 <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
@@ -80,10 +75,10 @@
                             </tr>
                         </table>
 
-                        <table  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
                             <tr><td ><h6 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
                         </table>
-                        <table  style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
@@ -94,7 +89,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table  style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -139,7 +134,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table  style="margin-bottom:20px; " border='1' align="center" width="700">
+                    <table class="table-bordered table-striped" style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
@@ -197,7 +192,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table  style="margin-top:10px; " border='1' align="center" width="700">
+                      <table class="table-bordered table-striped" style="margin-top:10px; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px ;font-weight: bold;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold;">I P</th>
@@ -249,7 +244,7 @@
                             </tr>
                         </table>
 
-                        <table   style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="table-bordered table-striped"  style="margin-top:10px; " border='1' align="center" width="700"> 
                                 <tr>
                                         <th style="text-align:center; width:100px"></th>
                                         <th style="text-align:center; width:150px"></th>
@@ -282,7 +277,7 @@
                                 </tr>
                           
                         </table>
-                        <div class="page-break"></div>
+                       
                @endforeach  {{-- fin del foreach de estudiante --}}
 
         </div><!--row-->
@@ -306,3 +301,36 @@
 </body>
 
 </html>
+
+<?php 
+
+//==============================================================
+//==============================================================
+//==============================================================
+include("mpdf/mpdf.php");
+
+$html = ob_get_clean();
+
+//$html = utf8_encode($html);
+
+$mpdf=new mPDF('c','Letter','',''); 
+
+$mpdf->allow_charset_conversion= true;
+
+$mpdf->charset_in='UTF-8';
+
+$mpdf->SetDisplayMode('fullpage');
+
+$mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first level of a list
+
+$mpdf->WriteHTML($html);
+
+$mpdf->Output('Boleta de Calificaciones.pdf','I');
+
+exit();
+//==============================================================
+//==============================================================
+//==============================================================
+
+
+?>
