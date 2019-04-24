@@ -233,11 +233,11 @@
                                 </tr>
                                
                                 <tr>
-                                  <td align="center">__________________________</td>
+                                  
                                   <td align="center">__________________________</td>
                                 </tr>
                                 <tr>
-                                  <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Secretaría</strong></td>
+                                  
                                   <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
                                 </tr>
                           
