@@ -182,28 +182,28 @@
                             </tr>
                             <tr>
                                 <th style="width:300px">Orden y Presentación</th>
-                                <th style="width:100px"><?php echo $personalidad[0]->clase3; ?></th>
+                                <th style="width:100px"><?php echo $c3_parcial1; ?></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                             </tr>
                             <tr>
                                 <th style="width:300px">Sociabilidad</th>
-                                <th style="width:100px"><?php echo $personalidad[0]->clase4; ?></th>
+                                <th style="width:100px"><?php echo $c4_parcial1; ?></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                             </tr>
                             <tr>
                                 <th style="width:300px">Moralidad y Ética</th>
-                                <th style="width:100px"><?php echo $personalidad[0]->clase5; ?></th>
+                                <th style="width:100px"><?php echo $c5_parcial1; ?></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                             </tr>
                             <tr>
                                 <th style="width:300px">Actitud Cívica y Religiosa</th>
-                                <th style="width:100px"><?php echo $personalidad[0]->clase6; ?></th>
+                                <th style="width:100px"><?php echo $c6_parcial1; ?></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
                                 <th style="width:100px"></th>
