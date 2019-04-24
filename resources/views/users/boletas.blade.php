@@ -60,7 +60,7 @@
                                     <th style="text-align:center">RECU.</th>
                                 </tr>
                         </table>
-                        <table style="margin-top:10px; "> 
+                        <table style="margin-top:10px; " border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
