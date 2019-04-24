@@ -834,9 +834,11 @@ class UserController extends Controller
                         ->where('clasecourses.course_id','=',$course_id)
                         ->Select('clase_id')
                         ->get(); 
-
-        //dd($resultados)      ;              
-        return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+        
+        $pdf = PDF::loadView('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+        return $pdf->stream();
+        //dd($resultados);              
+        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
     //funcion para mostar el panel del consejero
