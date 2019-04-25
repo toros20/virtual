@@ -159,7 +159,8 @@
                                     <?php $cont+=1;?>
                                 @endforeach {{--fin del ciclo para cada estudiante --}}
 
-                                <tr>
+                                <tr> <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">00</td>
+                                     <td  style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">Reprobados por Clase</td>
                                     @foreach ($clases as $clase)
                                        
                                         <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"></td>
