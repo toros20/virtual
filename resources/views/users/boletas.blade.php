@@ -69,7 +69,7 @@
                                 
                             </td></tr>
                         </table>
-                        <table  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
+                        <table  style="tabla-striped text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                             <tr style="border: 1px solid #dee2e6; "> <td style=" border: 1px solid #dee2e6;"><h5>BOLETA DE CALIFICACIONES</h5></td>
                                 <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr style="border: 1px solid #dee2e6; ">
