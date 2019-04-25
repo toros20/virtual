@@ -48,16 +48,16 @@
   
     <!--Main Layout-->
    
-      <div class="container-fluid">
+      <div class="container-fluid" align="center">
         <!--row-->
-        <div class="row"> 
+        <div class="row" align="center"> 
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
+                        <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="800">
                             <tr><td>
                                 <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
@@ -66,7 +66,7 @@
                                 
                             </td></tr>
                         </table>
-                        <table  style=" text-align:center; border: 1px solid #ddd; "  align="center" width="700">
+                        <table  style=" text-align:center; border: 1px solid #ddd; "  align="center" width="800">
                             <tr style="border: 1px solid #ddd; "> <td style=" border: 1px solid #ddd;"><h5>BOLETA DE CALIFICACIONES</h5></td>
                                 <td style=" border: 1px solid #ddd;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr style="border: 1px solid #ddd; ">
@@ -79,10 +79,10 @@
                             </tr>
                         </table>
 
-                        <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #ddd; "  align="center" width="700">
+                        <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #ddd; "  align="center" width="800">
                             <tr style="border: 1px solid #ddd; "><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
-                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #ddd; "  align="center" width="700">
+                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #ddd; "  align="center" width="800">
                                 <tr style="border: 1px solid #ddd; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
@@ -93,7 +93,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table style="border: 1px solid #ddd;" class="tabla tabla-striped tabla-bordered"  align="center" width="700"> 
+                        <table style="border: 1px solid #ddd;" class="tabla tabla-striped tabla-bordered"  align="center" width="800"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -138,7 +138,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #ddd;"  align="center" width="700">
+                    <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #ddd;"  align="center" width="800">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr style="border: 1px solid #ddd; ">
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
@@ -196,7 +196,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #ddd;"  align="center" width="700">
+                      <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #ddd;"  align="center" width="800">
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="text-align:center; width:100px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">I P</th>
@@ -248,7 +248,7 @@
                             </tr>
                         </table>
 
-                        <table   style="margin-top:10px; border: 1px solid #ddd;"  align="center" width="700"> 
+                        <table   style="margin-top:10px; border: 1px solid #ddd;"  align="center" width="800"> 
                                 <tr style="border: 1px solid #ddd; ">
                                         <th style="text-align:center; width:100px;border: 1px solid #ddd; "></th>
                                         <th style="text-align:center; width:150px;border: 1px solid #ddd;"></th>
@@ -265,7 +265,7 @@
                             </tr>
                         </table>
                         @if ($curso > 18)
-                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+                            <table  style="margin-top:20px; " border='0' align="center" width="800">
 
                                     {{-- <tr>
                                     <td>&nbsp;</td>
