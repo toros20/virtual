@@ -307,9 +307,8 @@
 //==============================================================
 //==============================================================
 //==============================================================
-include("mpdf/mpdf.php");
 
-require_once 'controllers/include/forum_sso_functions.php';
+require_once "{{ URL::asset('../storage/include/mpdf/mpdf.php)}}";
 
 $html = ob_get_clean();
 
