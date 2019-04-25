@@ -976,7 +976,52 @@ public function save_personalidad(Request $request){
     return view('users/panel_consejeria',compact('asignaciones','user'));
 }
 
+public function actas($course_id,$section,$parcial){
 
+    /*************************SEGURIDAD*******************/
+      //control de seguridad
+      // Get the currently authenticated user...
+      if ( !($user = Auth::user()) ){
+          return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+      }
+      
+      if( $user->role!='admin'){
+          return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+      }
+
+  /*************************SEGURIDAD*******************/
+
+  //obtenemos los id de los estudiantes matriculados en este curso y seccion
+    $estudiantes = DB::table('enrollments')
+                   ->join('users', 'enrollments.user_id', '=', 'users.id')
+                   ->where ([
+                              ['enrollments.course_id', '=', $course_id],
+                              ['enrollments.section', '=', $section],
+                          ])
+                  ->Select('users.name','users.lastname','users.id as user_id','users.sexo')
+                  ->orderBy('users.sexo','asc')
+                  ->orderBy('users.name','asc')
+                  ->get(); 
+                  //dd($estudiantes);
+
+      $curso = $course_id;
+      $course =  Course::findOrFail($course_id);
+      $seccion = strtolower($section);
+  
+  //obtenemos las clase que estan asignadas a este curso
+
+ $clases = DB::table('clasecourses')
+                  ->where('clasecourses.course_id','=',$course_id)
+                  ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                  ->Select('clasecourses.clase_id,clases.short_name')
+                  ->get(); 
+  
+ $pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
+ $pdf->setPaper('legal','landscape');
+ return $pdf->download('Actas de I Parcial.pdf');
+       
+ //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+}
 
 
 

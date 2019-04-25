@@ -48,6 +48,9 @@ Route::get('/users/personalidad/{course_id}/{section}', 'UserController@personal
 //crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
 Route::post('users/save_personalidad', 'UserController@save_personalidad')->name('users/save_personalidad');
 
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas')->name('actas/{course_id}/{section}/{parcial}');
+
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
 Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
