@@ -395,10 +395,14 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
                                     <tr align="center">
+                                        <td>&nbsp;</td>
                                         <td align="center">__________________________</td>
+                                        <td>&nbsp;</td>
                                     </tr>
                                     <tr align="center">
+                                            <td>&nbsp;</td>
                                         <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                        <td>&nbsp;</td>
                                     </tr>
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
