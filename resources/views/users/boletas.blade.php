@@ -93,7 +93,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table class="tabla tabla-striped tabla-bordered" style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="tabla tabla-striped tabla-bordered" border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
