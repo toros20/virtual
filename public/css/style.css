@@ -12,17 +12,7 @@
         background-color:rgba(0,0,0,.05)}
 
  */
-.tabla-striped  tr:nth-child(odd) {
-	
-            background-color:#f2f2f2;
-            
-        }
-            
-.tabla-striped  tr:nth-child(even) {
-            
-            background-color:#fbfbfb;
-            
-        }
+.tabla-striped  tr:nth-child(odd) {background-color:#f2f2f2;} tr:nth-child(even) {background-color:#fbfbfb;}
 
 .table-bordered{border:1px solid #dee2e6}
 
