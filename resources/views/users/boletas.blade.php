@@ -196,7 +196,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table style="margin-top:10px; font-size:1.5rem; " border='1' align="center" width="700">
+                      <table style="margin-top:10px; font-size:0.75rem; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px ;font-weight: bold; padding:0.5rem;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold; padding:0.5rem;">I P</th>
