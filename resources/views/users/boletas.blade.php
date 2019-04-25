@@ -142,7 +142,7 @@
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php echo round($promedio1,2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php echo round($promedio1)?></td>
                                     <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total2/$cont),2)?></td>
                                     <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total3/$cont),2)?></td>
                                     <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total4/$cont),2)?></td>
