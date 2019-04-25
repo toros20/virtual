@@ -108,7 +108,7 @@
                                     <td ><p style="font-weight: bold;">Nombre de Estudiante</p></td>
                                     
                                     @foreach ($clases as $clase)
-                                         <td style="transform: rotate(90deg); text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</td>
+                                         <td style="transform: rotate(-90deg); text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</td>
                                     @endforeach
                                 </tr>
 
