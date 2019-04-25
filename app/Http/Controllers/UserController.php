@@ -1016,11 +1016,11 @@ public function actas($course_id,$section,$parcial){
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
   
- $pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
+ /*$pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
  $pdf->setPaper('legal','landscape');
- return $pdf->download('Actas de I Parcial.pdf');
+ return $pdf->download('Actas de I Parcial.pdf');*/
        
- //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+ return view('users/actas',compact('estudiantes','curso','seccion','clases','course','section','parcial'));
 }
 
 
