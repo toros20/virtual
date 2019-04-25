@@ -59,7 +59,7 @@
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                             <tr> <td width="12%" rowspan="2" align="center">
-                                    <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="80" height="80" alt=""/>
+                                    <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
                                 </td>
                                 <td>
                                 <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
