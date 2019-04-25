@@ -60,7 +60,7 @@
                                 <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
                             </td>
                             <td>
-                                @if ( $course->id == 11)
+                                @if ( $curso > 15)
                                     <h4 style="font-weight: bold;">C.E.M.N.G.B. SAN JOSÉ DEL CARMEN </h4>
                                 @else 
                                     <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
