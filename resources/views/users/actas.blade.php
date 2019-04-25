@@ -100,8 +100,6 @@
                             </tr>
                         </table>
 
-                       
-
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="95%">
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="border: 1px solid #dee2e6;">No.</th>
@@ -110,6 +108,7 @@
                                     @foreach ($clases as $clase)
                                          <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
                                     @endforeach
+                                    <th style="border: 1px solid #dee2e6;">Repro.</th>
                                 </tr>
 
                                 @foreach ($estudiantes as $estudiante)
@@ -120,6 +119,7 @@
                                     
                                     @foreach ($clases as $clase)
                                         <?php 
+                                            $reprobadas=0;
                                             $resultado = DB::table($historial)
                                                         ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                         ->where ([
@@ -130,6 +130,10 @@
                                                         ->get();
 
                                                         $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+
+                                                        if ($total1 < 70) {
+                                                            $reprobadas+=$total1;
+                                                        }
                                                         /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                                         $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                                         $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
@@ -141,6 +145,7 @@
                                             <td style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
                                         @endif
                                         
+                                        <td style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
 
                                      @endforeach {{--fin del ciclo para cada clase --}}
                                     
