@@ -114,12 +114,12 @@
                                 @foreach ($estudiantes as $estudiante)
 
                                 <tr>
-                                    <td><?php echo $cont+1; ?></td>
+                                    <td><?php echo $cont+1;$reprobadas=0; ?></td>
                                     <td style="font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                                     
                                     @foreach ($clases as $clase)
                                         <?php 
-                                            $reprobadas=0;
+                                            
                                             $resultado = DB::table($historial)
                                                         ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                         ->where ([
