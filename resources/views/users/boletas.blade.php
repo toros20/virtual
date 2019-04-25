@@ -312,7 +312,11 @@ $html = ob_get_clean();
 //$html = utf8_encode($html);
 
 //$mpdf=new mPDF('c','Letter','',''); 
-$mpdf=new \Mpdf\Mpdf(); 
+$mpdf=new \Mpdf\Mpdf([
+    'mode' => 'utf-8',
+    'format' => [190, 236],
+    'orientation' => 'V'
+]); 
 
 $mpdf->allow_charset_conversion= true;
 
