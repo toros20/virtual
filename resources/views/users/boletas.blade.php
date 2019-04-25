@@ -96,7 +96,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
                                 </tr>
                         </table>
-                        <table style="border: 1px solid #dee2e6; tr:nth-child(odd) :background-color:#f2f2f2;  tr:nth-child(even) :background-color:#fbfbfb;" class="tabla tabla-striped tabla-bordered"  align="center" width="700"> 
+                        <table style="border: 1px solid #dee2e6; .intercalado tr:nth-child(odd) {background-color:#f2f2f2;} .intercalado tr:nth-child(even) {background-color:#fbfbfb;}" class="tabla intercalado tabla-bordered"  align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
