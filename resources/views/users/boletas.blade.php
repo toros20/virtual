@@ -18,10 +18,10 @@
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <!-- Bootstrap core CSS -->
-  <link href="{{ URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Material Design Bootstrap -->
   <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
-  <!-- Your custom styles (optional) css-->
+  <!-- Your custom styles (optional) css
   <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
  
   <!-- MDBootstrap Cards Extended Pro  -->
