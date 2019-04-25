@@ -308,13 +308,14 @@
 //==============================================================
 //==============================================================
 
-include($_SERVER['DOCUMENT_ROOT']."/virtual/storage/include/mpdf/mpdf.php");
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
 $html = ob_get_clean();
 
 //$html = utf8_encode($html);
 
-$mpdf=new mPDF('c','Letter','',''); 
+//$mpdf=new mPDF('c','Letter','',''); 
+$mpdf=new \Mpdf\Mpdf('c','Letter','',''); 
 
 $mpdf->allow_charset_conversion= true;
 
