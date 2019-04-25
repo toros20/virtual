@@ -434,9 +434,6 @@
         </div><!--row-->
 
  <!--Main Layout-->
-<br><br>
-   
-
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
