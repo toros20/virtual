@@ -316,17 +316,15 @@
                         @if ($curso > 18)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
-                                    {{-- <tr>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    </tr> --}}
-                                
-                                    <tr>
-                                    <td align="center">__________________________</td>
+                                <tr align="center">
+                                        <td >&nbsp;</td>
+                                        <td align="center">__________________________</td>
+                                        <td>&nbsp;</td>
                                     </tr>
-                                    <tr>
-                                    <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                    <tr align="center">
+                                            <td>&nbsp;</td>
+                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                        <td>&nbsp;</td>
                                     </tr>
                             
                             </table>
@@ -337,12 +335,16 @@
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
-                                    <tr>
-                                        <td align="center">__________________________</td>
-                                    </tr>
-                                    <tr>
-                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
-                                    </tr>
+                                    <tr align="center">
+                                            <td >&nbsp;</td>
+                                            <td align="center">__________________________</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr align="center">
+                                                <td>&nbsp;</td>
+                                            <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                            <td>&nbsp;</td>
+                                        </tr>
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
@@ -356,11 +358,15 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
                                     <tr align="center">
-                                        <td align="center">__________________________</td>
-                                    </tr>
-                                    <tr align="center">
-                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
-                                    </tr>
+                                            <td >&nbsp;</td>
+                                            <td align="center">__________________________</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr align="center">
+                                                <td>&nbsp;</td>
+                                            <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                            <td>&nbsp;</td>
+                                        </tr>
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
@@ -399,15 +405,15 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
                                     <tr align="center">
-                                        <td >&nbsp;</td>
-                                        <td align="center">__________________________</td>
-                                        <td>&nbsp;</td>
-                                    </tr>
-                                    <tr align="center">
+                                            <td >&nbsp;</td>
+                                            <td align="center">__________________________</td>
                                             <td>&nbsp;</td>
-                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
-                                        <td>&nbsp;</td>
-                                    </tr>
+                                        </tr>
+                                        <tr align="center">
+                                                <td>&nbsp;</td>
+                                            <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                            <td>&nbsp;</td>
+                                        </tr>
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr>
