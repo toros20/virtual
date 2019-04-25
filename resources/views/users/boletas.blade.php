@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   <!-- Bootstrap core CSS -->
 
+  <!-- Material Design Bootstrap -->
+  <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
   <!-- Your custom styles (optional) css-->
   <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
  
