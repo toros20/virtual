@@ -57,7 +57,7 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <table class=" tabla tabla-striped tabla-bordered" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                        <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " border='1' align="center" width="700">
                             <tr><td>
                                 <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
@@ -66,7 +66,7 @@
                                 
                             </td></tr>
                         </table>
-                        <table  style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                        <table  style=" text-align:center " border='1' align="center" width="700">
                             <tr> <td><h5>BOLETA DE CALIFICACIONES</h5></td>
                                 <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
@@ -79,7 +79,7 @@
                             </tr>
                         </table>
 
-                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
+                        <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; " border='1' align="center" width="700">
                             <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; " border='1' align="center" width="700">
