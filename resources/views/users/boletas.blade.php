@@ -267,11 +267,11 @@
 
                         <table  style="margin-top:20px; " border='0' align="center" width="700">
 
-                                <tr>
+                                {{-- <tr>
                                   <td>&nbsp;</td>
                                   <td>&nbsp;</td>
                                   <td>&nbsp;</td>
-                                </tr>
+                                </tr> --}}
                                
                                 <tr>
                                   <td align="center">__________________________</td>
