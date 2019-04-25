@@ -190,7 +190,7 @@
 //==============================================================
 //==============================================================
 
-/include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
 $html = ob_get_clean();
 
@@ -200,7 +200,7 @@ $html = ob_get_clean();
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
     'format' => [190, 236],
-    'orientation' => 'P'
+    'orientation' => 'L'
 ]); 
 
 $mpdf->allow_charset_conversion= true;
