@@ -21,8 +21,8 @@
   <link href="{{ URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
   <!-- Material Design Bootstrap -->
   <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
+  <!-- Your custom styles (optional) 
+  <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">-->
  
   <!-- MDBootstrap Cards Extended Pro  -->
  
@@ -289,15 +289,8 @@
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
-  <script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.min.js')}}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{{ URL::asset('js/popper4.min.js')}}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{{ URL::asset('js/bootstrap4.min.js')}}"></script>
   <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{{ URL::asset('js/mdb.min.js')}}"></script>
 
-  <script type="text/javascript" src="{{ URL::asset('js/main.js')}}"></script>
 </body>
 
 </html>
