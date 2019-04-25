@@ -318,7 +318,24 @@
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                             </tr>
                         </table>
-                        @if ($curso > 18)
+                        @if ($curso == 20)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+                                   
+                                <tr align="center">
+                                        <td >&nbsp;</td>
+                                        <td align="center">__________________________</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr align="center">
+                                            <td>&nbsp;</td>
+                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                            
+                            </table>
+                        @endif
+
+                        @if ($curso == 19)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
