@@ -113,18 +113,18 @@
                         ?>
 
                             <tr>
-                                <td style="font-weight: bold; width:5px; padding:0.5rem;"><?php echo $cont+1; ?></td>
-                                <td style="text-align:left;padding:0.5rem;">{{$resultado[0]->clase}}</td>
+                                <td style="font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                <td style="text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                    <td style="text-align:center; width:50px; color:red; padding:0.5rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @else 
-                                    <td style="text-align:center; width:50px; padding:0.5rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @endif
                                 
-                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
-                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:0.5rem;">
+                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem;">
                                    {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
