@@ -301,7 +301,7 @@
                             </table>
                         @endif
 
-                        @if ($curso > 11 and $curso < 14)
+                        @if ($curso == 13)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
@@ -313,6 +313,26 @@
                                         <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
                                     </tr>
 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                            
+                            </table>
+                        @endif
+
+                        @if ($curso == 12)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                
+                                    <tr>
+                                        <td align="center">__________________________</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                    </tr>
+
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr>
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                             
