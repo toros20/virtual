@@ -319,7 +319,7 @@
                             </table>
                         @endif
 
-                        @if ($curso == 12)
+                        @if ($curso > 8)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
