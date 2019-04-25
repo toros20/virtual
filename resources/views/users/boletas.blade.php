@@ -82,7 +82,7 @@
                         <table  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
                             <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
-                        <table  style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="table">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
