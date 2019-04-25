@@ -58,7 +58,10 @@
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
-                            <tr><td>
+                            <tr> <td width="12%" rowspan="2" align="center">
+                                    <img src="{{ URL::asset('img/logo-sanjose.png')}}" width="100" height="100" alt=""/>
+                                </td>
+                                <td>
                                 <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
                                 <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
