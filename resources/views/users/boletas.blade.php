@@ -306,10 +306,10 @@
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
-                                    <tr>
+                                    <tr align="center">
                                         <td align="center">__________________________</td>
                                     </tr>
-                                    <tr>
+                                    <tr align="center">
                                         <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
                                     </tr>
 
@@ -344,10 +344,10 @@
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
-                                    <tr>
+                                    <tr align="center">
                                         <td align="center">__________________________</td>
                                     </tr>
-                                    <tr>
+                                    <tr align="center">
                                         <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
                                     </tr>
 
