@@ -144,10 +144,10 @@
                                         @else 
                                             <td style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
                                         @endif
-                                        
-                                        <td style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
 
                                      @endforeach {{--fin del ciclo para cada clase --}}
+
+                                     <td style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
                                     
                                 </tr>
                                     <?php $cont+=1;?>
