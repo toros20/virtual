@@ -57,7 +57,7 @@
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
-                        <table class=" table" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                        <table class=" tabla" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr><td>
                                 <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
@@ -79,10 +79,10 @@
                             </tr>
                         </table>
 
-                        <table  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
+                        <table class="tabla"  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
                             <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
-                        <table class="table"  style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="tabla"  style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
@@ -93,7 +93,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table class="table" style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table class="tabla" style="margin-top:10px; " border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -138,7 +138,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table  style="margin-bottom:20px; " border='1' align="center" width="700">
+                    <table class="tabla"  style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
