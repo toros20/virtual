@@ -16,7 +16,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Plataforma ISJC</title>
   <!-- Font Awesome -->
-  
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="{{ URL::asset('css/bootstrap.min.css')}}" rel="stylesheet">
+ 
+
  
   <!-- MDBootstrap Cards Extended Pro  -->
  
