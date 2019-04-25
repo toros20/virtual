@@ -54,7 +54,7 @@
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
-                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; $conta=0;?>
+                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="95%">
                             @if ($course->is_bilingue == 1)
@@ -107,11 +107,6 @@
                                     
                                     @foreach ($clases as $clase)
                                         <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
-                                        @php
-                                            $clase_repro = array();
-                                            $clase_repro[$conta] = 0;
-                                            $conta+=1;
-                                        @endphp
                                     @endforeach
                                     <th style="border: 1px solid #dee2e6;">Repro.</th>
                                 </tr>
@@ -121,9 +116,7 @@
                                 <tr>
                                     <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1;$reprobadas=0; ?></td>
                                     <td style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                                    @php
-                                          $conta=0;
-                                    @endphp
+                                  
                                     @foreach ($clases as $clase)
                                         <?php 
                                           
@@ -140,7 +133,6 @@
 
                                                         if ($total1 < 70) {
                                                             $reprobadas+=1;
-                                                            $clase_repro[$conta] +=1;
                                                         }
                                                         /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                                         $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
@@ -153,9 +145,7 @@
                                         @else 
                                             <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
                                         @endif
-                                                   @php
-                                                        $conta+=1;
-                                                   @endphp     
+                                                     
                                      @endforeach {{--fin del ciclo para cada clase --}}
                                         
                                      @if ( $reprobadas > 0)
@@ -171,13 +161,9 @@
 
                                 <tr>
                                     @foreach ($clases as $clase)
-                                        @php
-                                            $conta=0;
-                                        @endphp
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo   $clase_repro[$conta] ?> </td>
-                                        @php
-                                             $conta+=1;
-                                        @endphp
+                                       
+                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"></td>
+                                       
                                     @endforeach
                                 </tr>
 
