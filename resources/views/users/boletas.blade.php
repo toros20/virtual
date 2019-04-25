@@ -113,18 +113,18 @@
                         ?>
 
                             <tr>
-                                <td style="font-weight: bold; width:5px; padding:1rem;"><?php echo $cont+1; ?></td>
+                                <td style="font-weight: bold; width:5px; padding:0.5rem;"><?php echo $cont+1; ?></td>
                                 <td>{{$resultado[0]->clase}}</td>
                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                    <td style="text-align:center; width:50px; color:red; padding:1rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="text-align:center; width:50px; color:red; padding:0.5rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @else 
-                                    <td style="text-align:center; padding:1rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="text-align:center; padding:0.5rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @endif
                                 
-                                <td style="text-align:center; width:50px ;padding:1rem;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
-                                <td style="text-align:center; width:50px ;padding:1rem;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:1rem;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:1rem;">
+                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.5rem;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.5rem;">
                                    {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
@@ -142,12 +142,12 @@
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"><?php echo round($promedio1,2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"><?php //echo Round(($total2/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"><?php //echo Round(($total3/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"><?php //echo Round(($total4/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:1rem;"></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php echo round($promedio1,2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total2/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total3/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total4/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"></td>
                                 </tr>
                         </table>
 
