@@ -5,7 +5,7 @@
    $arrayDias = array( 'Domingo', 'Lunes', 'Martes',
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
     
-    //ob_start();
+    ob_start();
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -190,7 +190,7 @@
 //==============================================================
 //==============================================================
 
-/* include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
+/include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
 $html = ob_get_clean();
 
@@ -215,7 +215,7 @@ $mpdf->WriteHTML($html);
 
 $mpdf->Output('Boleta de Calificaciones.pdf','I');
 
-exit(); */
+exit(); 
 //==============================================================
 //==============================================================
 //==============================================================
