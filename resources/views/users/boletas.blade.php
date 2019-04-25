@@ -85,12 +85,12 @@
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">II P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">III P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">IV P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">PROM.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">III P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">IV P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
                                 </tr>
                         </table>
                         <table style="border: 1px solid #dee2e6;" class="tabla tabla-striped tabla-bordered"  align="center" width="700"> 
@@ -284,7 +284,7 @@
                         @endif
 
                         @if ($curso > 15 and $curso < 19)
-                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+                            <div align="center"><table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
@@ -298,11 +298,11 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                             
-                            </table>
+                            </table></div>
                         @endif
 
                         @if ($curso == 13)
-                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+                           <div align="center"> <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 
@@ -316,7 +316,8 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                             
-                            </table>
+                                </table>
+                            </div>
                         @endif
 
                         @if ($curso == 12)
