@@ -66,7 +66,7 @@
                                 
                             </td></tr>
                         </table>
-                        <table  style=" text-align:center " border='1' align="center" width="700">
+                        <table  style=" text-align:center; border: 1px solid #ddd; " border='1' align="center" width="700">
                             <tr> <td><h5>BOLETA DE CALIFICACIONES</h5></td>
                                 <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
@@ -79,10 +79,10 @@
                             </tr>
                         </table>
 
-                        <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; " border='1' align="center" width="700">
+                        <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #ddd; " border='1' align="center" width="700">
                             <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
-                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; " border='1' align="center" width="700">
+                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #ddd; " border='1' align="center" width="700">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
@@ -93,7 +93,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table class="tabla tabla-striped tabla-bordered" border='1' align="center" width="700"> 
+                        <table style="border: 1px solid #ddd;" class="tabla tabla-striped tabla-bordered" border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -138,7 +138,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; " border='1' align="center" width="700">
+                    <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #ddd;" border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
@@ -196,7 +196,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table style="margin-top:10px; font-size:1.25rem; " border='1' align="center" width="700">
+                      <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #ddd;" border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px ;font-weight: bold; padding:0.25rem;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem;">I P</th>
@@ -248,7 +248,7 @@
                             </tr>
                         </table>
 
-                        <table   style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table   style="margin-top:10px; border: 1px solid #ddd;" border='1' align="center" width="700"> 
                                 <tr>
                                         <th style="text-align:center; width:100px"></th>
                                         <th style="text-align:center; width:150px"></th>
