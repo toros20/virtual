@@ -5,11 +5,24 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
 }
 
-.tabla-striped  tr:nth-of-type(odd){
+/* .tabla-striped  tr:nth-of-type(odd){
     background-color:rgba(255,255,255,.05)}
 
 .tabla-striped  tr:nth-of-type(odd){
         background-color:rgba(0,0,0,.05)}
+
+ */
+.tabla-striped  tr:nth-child(odd) {
+	
+            background-color:#f2f2f2;
+            
+        }
+            
+.tabla-striped  tr:nth-child(even) {
+            
+            background-color:#fbfbfb;
+            
+        }
 
 .table-bordered{border:1px solid #dee2e6}
 
