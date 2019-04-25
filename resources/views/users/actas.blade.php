@@ -108,7 +108,8 @@
                                     @foreach ($clases as $clase)
                                         <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
                                         @php
-                                            $clase_repro.'_'.$clase->clase_id=0;//declaracion de variableS utilizada para contar los reprobadasos por clase
+                                            $clase_repro = array();
+                                            $clase_repro[$clase->clase_id] = 0;
                                         @endphp
                                     @endforeach
                                     <th style="border: 1px solid #dee2e6;">Repro.</th>
@@ -136,7 +137,7 @@
 
                                                         if ($total1 < 70) {
                                                             $reprobadas+=1;
-                                                            $clase_repro.'_'.$clase->clase_id+=1;
+                                                            $clase_repro[$clase->clase_id]+=1;
                                                         }
                                                         /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                                         $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
@@ -166,7 +167,7 @@
                                 <tr>
                                     @foreach ($clases as $clase)
 
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_repro.'_'.$clase->clase_id ?> </td>
+                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo  $clase_repro[$clase->clase_id] ?> </td>
                                     
                                     @endforeach
                                 </tr>
