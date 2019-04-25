@@ -308,7 +308,7 @@
 //==============================================================
 //==============================================================
 
-include("/storage/include/mpdf/mpdf.php");
+include("https://sanjosedelcarmen.edu.hn/virtual/storage/include/mpdf/mpdf.php");
 
 $html = ob_get_clean();
 
