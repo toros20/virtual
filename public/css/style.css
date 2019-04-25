@@ -5,16 +5,17 @@
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
 }
 
-.tabla-striped tbody tr:nth-of-type(odd){
+.tabla-striped  tr:nth-of-type(odd){
     background-color:rgba(255,255,255,.05)}
 
-.tabla-striped tbody tr:nth-of-type(odd){
+.tabla-striped  tr:nth-of-type(odd){
         background-color:rgba(0,0,0,.05)}
 
 .table-bordered{border:1px solid #dee2e6}
 
 .tabla-bordered td,.table-bordered th{
     border:1px solid #dee2e6}
+
 .tabla-bordered thead td,.table-bordered thead th{
         border-bottom-width:2px}
 .tabla-bordered{border:0}
