@@ -196,7 +196,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table style="margin-top:10px; font-size:1rem; " border='1' align="center" width="700">
+                      <table style="margin-top:10px; font-size:1.25rem; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px ;font-weight: bold; padding:0.5rem;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold; padding:0.5rem;">I P</th>
@@ -205,46 +205,46 @@
                                 <th style="text-align:center; width:150px ;font-weight: bold; padding:0.5rem;">IV P</th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Puntualidad</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c1_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Puntualidad</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c1_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Espíritu de Trabajo</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c2_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Espíritu de Trabajo</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c2_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Orden y Presentación</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c3_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Orden y Presentación</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c3_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Sociabilidad</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c4_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Sociabilidad</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c4_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Moralidad y Ética</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c5_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Moralidad y Ética</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c5_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                             <tr>
-                                <th style="width:300px; padding:0.5rem;">Actitud Cívica y Religiosa</th>
-                                <th style="width:100px; padding:0.5rem;"><?php echo $c6_parcial1; ?></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
-                                <th style="width:100px; padding:0.5rem;"></th>
+                                <th style="width:300px; padding:0.5rem; text-align:center;">Actitud Cívica y Religiosa</th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"><?php echo $c6_parcial1; ?></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.5rem; text-align:center;"></th>
                             </tr>
                         </table>
 
