@@ -315,7 +315,7 @@ $html = ob_get_clean();
 //$html = utf8_encode($html);
 
 //$mpdf=new mPDF('c','Letter','',''); 
-$mpdf=new \Mpdf\Mpdf('c','Letter','',''); 
+$mpdf=new \Mpdf\Mpdf(); 
 
 $mpdf->allow_charset_conversion= true;
 
