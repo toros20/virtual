@@ -59,30 +59,30 @@
                       
                         <table class=" table" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
                             <tr><td>
-                                <h6 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h6>
+                                <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
                                 <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 
                             </td></tr>
                         </table>
-                        <table class="table" style="margin-top:10px; text-align:center " border='1' align="center" width="700">
-                            <tr> <td><h6>BOLETA DE CALIFICACIONES</h6></td>
+                        <table  style="margin-top:10px; text-align:center " border='1' align="center" width="700">
+                            <tr> <td><h4>BOLETA DE CALIFICACIONES</h4></td>
                                 <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
                                 <td style="padding-top:5px;">
-                                    <h6>Curso: {{$course->name}} </h6>
+                                    <h4>Curso: {{$course->name}} </h4>
                                 </td>
                                 <td>
-                                    <h6>Sección: {{$section}}</h6>
+                                    <h4>Sección: {{$section}}</h4>
                                 </td>
                             </tr>
                         </table>
 
-                        <table class="table" style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
-                            <tr><td ><h6 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h6></td></tr>
+                        <table  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
+                            <tr><td ><h3 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h3></td></tr>
                         </table>
-                        <table class="table" style="margin-top:10px; " border='1' align="center" width="700">
+                        <table  style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
@@ -93,7 +93,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold;">RECU.</th>
                                 </tr>
                         </table>
-                        <table class="table" style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table  style="margin-top:10px; " border='1' align="center" width="700"> 
                         @foreach ($clases as $clase)
 
                         <?php 
@@ -138,7 +138,7 @@
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
-                    <table class="table" style="margin-bottom:20px; " border='1' align="center" width="700">
+                    <table  style="margin-bottom:20px; " border='1' align="center" width="700">
                         <?php $promedio1=$total1/$cont; ?>
                             <tr>
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
@@ -196,7 +196,7 @@
                             if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
                             if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
                         ?>
-                      <table class="table" style="margin-top:10px; " border='1' align="center" width="700">
+                      <table  style="margin-top:10px; " border='1' align="center" width="700">
                             <tr>
                                 <th style="text-align:center; width:100px ;font-weight: bold;">Personalidad</th>
                                 <th style="text-align:center; width:150px ;font-weight: bold;">I P</th>
@@ -248,7 +248,7 @@
                             </tr>
                         </table>
 
-                        <table class="table"  style="margin-top:10px; " border='1' align="center" width="700"> 
+                        <table   style="margin-top:10px; " border='1' align="center" width="700"> 
                                 <tr>
                                         <th style="text-align:center; width:100px"></th>
                                         <th style="text-align:center; width:150px"></th>
