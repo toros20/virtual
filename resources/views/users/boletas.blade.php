@@ -283,7 +283,7 @@
                             </table>
                         @endif
 
-                        @if ($curso == 18)
+                        @if ($curso > 15 and $curso < 18)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
