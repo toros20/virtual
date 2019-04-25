@@ -58,8 +58,23 @@
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
-                            
-                            <tr> <td width="12%" rowspan="2" align="center">
+                            @if ($course->isbilingue == 1)
+                                <tr> 
+                                    <td width="12%" rowspan="2" align="center">
+                                        <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
+                                    </td>
+                                    <td>
+                                    <h4 style="font-weight: bold;">C.E.M.N.G.B SAN JOSÉ DEL CARMEN </h4>
+                                    <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
+                                    <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
+                                    <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
+                                    
+                                    </td>
+                                </tr>
+                            @endif
+                            @if ($course->isbilingue == 0)
+                            <tr> 
+                                <td width="12%" rowspan="2" align="center">
                                     <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
                                 </td>
                                 <td>
@@ -68,7 +83,10 @@
                                 <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                 
-                            </td></tr>
+                                </td>
+                            </tr>
+                        @endif
+                           
                         </table>
                         <table  style="tabla-striped text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                             <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>BOLETA DE CALIFICACIONES</h5></td>
