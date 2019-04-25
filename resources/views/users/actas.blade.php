@@ -104,11 +104,11 @@
 
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="95%">
                                 <tr style="border: 1px solid #dee2e6; ">
-                                    <th>No.</th>
-                                    <th ><p style="font-weight: bold;">Nombre de Estudiante</p></th>
+                                    <th style="border: 1px solid #dee2e6;">No.</th>
+                                    <th ><p style="font-weight: bold;border: 1px solid #dee2e6;">Nombre de Estudiante</p></th>
                                     
                                     @foreach ($clases as $clase)
-                                         <th  style="text-rotate: 90" style=" text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
+                                         <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
                                     @endforeach
                                 </tr>
 
