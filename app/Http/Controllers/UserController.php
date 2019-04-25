@@ -1013,7 +1013,7 @@ public function actas($course_id,$section,$parcial){
  $clases = DB::table('clasecourses')
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where('clasecourses.course_id','=',$course_id)
-                  ->Select('clasecourses.clase_id,clases.short_name')
+                  ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
   
  $pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
