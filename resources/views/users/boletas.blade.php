@@ -113,18 +113,18 @@
                         ?>
 
                             <tr style="border: 1px solid #ddd; ">
-                                <td style="font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                <td style="text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                <td style="border: 1px solid #ddd; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                <td style="border: 1px solid #ddd; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                    <td style="text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="border: 1px solid #ddd; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @else 
-                                    <td style="text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    <td style="border: 1px solid #ddd; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                 @endif
                                 
-                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
-                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem;">
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #ddd;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #ddd;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #ddd;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #ddd;">
                                    {{--  (
                                     (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
                                     (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
@@ -133,7 +133,7 @@
                                     )/4  --}}
                                     
                                     </td>
-                                <td style="text-align:center; width:50px">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                <td style="text-align:center; width:50px; border: 1px solid #ddd;">{{--{{$resultado[0]->Recu1}}--}}</td>
                             </tr>
                           <?php $cont+=1;?>
                         @endforeach {{-- fin del foreach de cada clase --}}
@@ -142,12 +142,12 @@
                         <?php $promedio1=$total1/$cont; ?>
                             <tr style="border: 1px solid #ddd; ">
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php echo round($promedio1)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total2/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total3/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"><?php //echo Round(($total4/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem;"></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"><?php echo round($promedio1)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"><?php //echo Round(($total2/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"><?php //echo Round(($total3/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"><?php //echo Round(($total4/$cont),2)?></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"></td>
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #ddd;"></td>
                                 </tr>
                         </table>
 
@@ -198,70 +198,70 @@
                         ?>
                       <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #ddd;"  align="center" width="700">
                             <tr style="border: 1px solid #ddd; ">
-                                <th style="text-align:center; width:100px ;font-weight: bold; padding:0.25rem;">Personalidad</th>
-                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem;">I P</th>
-                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem;">II P</th>
-                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem;">III P</th>
-                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem;">IV P</th>
+                                <th style="text-align:center; width:100px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">Personalidad</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">I P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">II P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">III P</th>
+                                <th style="text-align:center; width:150px ;font-weight: bold; padding:0.25rem; border: 1px solid #ddd;">IV P</th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c1_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c1_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c2_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c2_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c3_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c3_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c4_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c4_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c5_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c5_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                             <tr style="border: 1px solid #ddd; ">
                                 <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"><?php echo $c6_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"><?php echo $c6_parcial1; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #ddd;"></th>
                             </tr>
                         </table>
 
                         <table   style="margin-top:10px; border: 1px solid #ddd;"  align="center" width="700"> 
                                 <tr style="border: 1px solid #ddd; ">
-                                        <th style="text-align:center; width:100px"></th>
-                                        <th style="text-align:center; width:150px"></th>
-                                        <th style="text-align:center; width:150px"></th>
-                                        <th style="text-align:center; width:150px"></th>
-                                        <th style="text-align:center; width:150px"></th>
+                                        <th style="text-align:center; width:100px;border: 1px solid #ddd; "></th>
+                                        <th style="text-align:center; width:150px;border: 1px solid #ddd;"></th>
+                                        <th style="text-align:center; width:150px;border: 1px solid #ddd;"></th>
+                                        <th style="text-align:center; width:150px;border: 1px solid #ddd;"></th>
+                                        <th style="text-align:center; width:150px;border: 1px solid #ddd;"></th>
                                     </tr>
                             <tr style="border: 1px solid #ddd; ">
-                                <td style="width:300px">Número de Reportes</td>
-                                <td style="text-align:center; width:100px"><?php echo $personalidad[0]->reportes; ?></td>
-                                <td style="text-align:center; width:100px"></td>
-                                <td style="text-align:center; width:100px"></td>
-                                <td style="text-align:center; width:100px"></td>
+                                <td style="width:300px;border: 1px solid #ddd;">Número de Reportes</td>
+                                <td style="text-align:center; width:100px;border: 1px solid #ddd;"><?php echo $personalidad[0]->reportes; ?></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #ddd;"></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #ddd;"></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #ddd;"></td>
                             </tr>
                         </table>
                         @if ($curso > 18)
