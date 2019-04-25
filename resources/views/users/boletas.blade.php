@@ -67,20 +67,20 @@
                             </td></tr>
                         </table>
                         <table  style="margin-top:10px; text-align:center " border='1' align="center" width="700">
-                            <tr> <td><h4>BOLETA DE CALIFICACIONES</h4></td>
+                            <tr> <td><h5>BOLETA DE CALIFICACIONES</h5></td>
                                 <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr>
                                 <td style="padding-top:5px;">
-                                    <h4>Curso: {{$course->name}} </h4>
+                                    <h5>Curso: {{$course->name}} </h5>
                                 </td>
                                 <td>
-                                    <h4>Sección: {{$section}}</h4>
+                                    <h5>Sección: {{$section}}</h5>
                                 </td>
                             </tr>
                         </table>
 
                         <table  style="margin-top:10px; text-align:center; " border='1' align="center" width="700">
-                            <tr><td ><h3 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h3></td></tr>
+                            <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
                         <table  style="margin-top:10px; " border='1' align="center" width="700">
                                 <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
