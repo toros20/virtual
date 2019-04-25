@@ -58,7 +58,7 @@
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
-                            @if ($course->isbilingue == 1)
+                            @if ($course->is_bilingue == 1)
                                 <tr> 
                                     <td width="12%" rowspan="2" align="center">
                                         <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
@@ -72,7 +72,7 @@
                                     </td>
                                 </tr>
                             @endif
-                            @if ($course->isbilingue == 0)
+                            @if ($course->is_bilingue == 0)
                             <tr> 
                                 <td width="12%" rowspan="2" align="center">
                                     <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
