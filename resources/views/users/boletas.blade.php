@@ -83,7 +83,7 @@
                             <tr><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; " border='1' align="center" width="700">
-                                <tr><th style="text-align:center; width:5px;font-weight: bold;">No.</th>
+                                <tr><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">I P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold;">II P</th>
@@ -264,23 +264,42 @@
                                 <td style="text-align:center; width:100px"></td>
                             </tr>
                         </table>
+                        @if ($curso > 18)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
 
-                        <table  style="margin-top:20px; " border='0' align="center" width="700">
+                                    {{-- <tr>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    </tr> --}}
+                                
+                                    <tr>
+                                    <td align="center">__________________________</td>
+                                    </tr>
+                                    <tr>
+                                    <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
+                                    </tr>
+                            
+                            </table>
+                        @endif
 
-                                {{-- <tr>
-                                  <td>&nbsp;</td>
-                                  <td>&nbsp;</td>
-                                  <td>&nbsp;</td>
-                                </tr> --}}
-                               
-                                <tr>
-                                  <td align="center">__________________________</td>
-                                </tr>
-                                <tr>
-                                  <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
-                                </tr>
-                          
-                        </table>
+                        @if ($curso == 18)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                
+                                    <tr>
+                                        <td align="center">__________________________</td>
+                                    </tr>
+                                    <tr>
+                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>Directora</strong></td>
+                                    </tr>
+
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                            
+                            </table>
+                        @endif
                        
                @endforeach  {{-- fin del foreach de estudiante --}}
 
