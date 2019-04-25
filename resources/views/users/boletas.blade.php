@@ -67,13 +67,13 @@
                             </td></tr>
                         </table>
                         <table  style=" text-align:center; border: 1px solid #ddd; "  align="center" width="700">
-                            <tr style="border: 1px solid #ddd; "> <td><h5>BOLETA DE CALIFICACIONES</h5></td>
-                                <td><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
+                            <tr style="border: 1px solid #ddd; "> <td style=" border: 1px solid #ddd;"><h5>BOLETA DE CALIFICACIONES</h5></td>
+                                <td style=" border: 1px solid #ddd;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr style="border: 1px solid #ddd; ">
-                                <td style="padding-top:5px;">
+                                <td style="padding-top:5px;  border: 1px solid #ddd;">
                                     <h5>Curso: {{$course->name}} </h5>
                                 </td>
-                                <td>
+                                <td style=" border: 1px solid #ddd;">
                                     <h5>Sección: {{$section}}</h5>
                                 </td>
                             </tr>
