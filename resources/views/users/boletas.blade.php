@@ -376,6 +376,35 @@
                             </table></div>
                         @endif
 
+                        @if ($curso > 13 and $curso < 16)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                <tr align="center">
+                                        <td >&nbsp;</td>
+                                        <td align="center">__________________________</td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr align="center">
+                                            <td>&nbsp;</td>
+                                        <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                        <td>&nbsp;</td>
+                                    </tr>
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                            </table>
+                        @endif
+
                         @if ($curso == 13)
                            <div align="center"> <table  style="margin-top:20px; " border='0' align="center" width="700">
 
