@@ -162,8 +162,31 @@
                                 <tr> <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">00</td>
                                      <td  style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">Reprobados por Clase</td>
                                     @foreach ($clases as $clase)
-                                       
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"></td>
+                                        <?php 
+
+                                        $total_en_clase=0;
+
+                                        $resultados = DB::table($historial)
+                                                    ->where ([
+                                                                [$historial.'.clase_id', '=', $clase->clase_id],
+                                                            ])
+                                                    ->Select($historial.'.*')
+                                                    ->get();
+
+                                                    foreach ($resultados as $resultado) {
+                                                        $total_en_clase=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+
+                                                        if ($total_en_clase < 70) {
+                                                            $clase_reprobada+=1;
+                                                        }
+                                                    } // fin del for each resultados
+                                                   
+                                                    /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                                    $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                                    $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+
+                                        ?>
+                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
                                        
                                     @endforeach
                                 </tr>
