@@ -164,7 +164,7 @@
                                     @foreach ($clases as $clase)
                                         <?php 
 
-                                        $total_en_clase=0;
+                                        $total_en_clase=0;$clase_reprobada=0;
 
                                         $resultados = DB::table($historial)
                                                     ->where ([
