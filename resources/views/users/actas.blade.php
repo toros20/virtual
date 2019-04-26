@@ -174,7 +174,7 @@
                                                     ->get();
 
                                                     foreach ($resultados as $resultado) {
-                                                        $total_en_clase=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                                        $total_en_clase=($resultado->Acum1) + ($resultado->Exa1);
 
                                                         if ($total_en_clase < 70) {
                                                             $clase_reprobada+=1;
