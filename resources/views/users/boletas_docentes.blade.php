@@ -116,7 +116,6 @@
                                         ->orderBy('courses.id','asc')
                                         ->orderBy('assignments.section','asc')
                                         ->get(); 
-                            dd($asignaciones);
                                        
                         ?>
 
