@@ -152,7 +152,7 @@
                             @endforeach {{-- fin del ciclo para cada asignacion --}}
 
                         </table>
-                        
+                        <pagebreak/>
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
                    
