@@ -71,9 +71,9 @@
                                 
                                 </td>
                             </tr>
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            <tr><td>&nbsp;</td><td>&nbsp;</td></tr> 
                            
                         </table>
 
@@ -93,9 +93,9 @@
     
                         <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                             <tr style="border: 1px solid #dee2e6; "><td ><h4 style="font-weight: bold;"> {{$docente->name}} {{$docente->lastname}}</h4></td></tr>
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                           <tr><td>&nbsp;</td></tr>
+                           <tr><td>&nbsp;</td></tr>
+                           <tr><td>&nbsp;</td></tr>
                         </table>
 
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
