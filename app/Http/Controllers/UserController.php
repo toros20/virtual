@@ -862,7 +862,7 @@ class UserController extends Controller
                                 ['users.role', '=', 'teacher'],
                                 ['users.cuenta', '>', '20193000']
                             ])
-                            ->Select('users.name','users.lastname','users.id')
+                            ->Select('users.name','users.lastname','users.id','users.cuenta')
                             ->get();
       
      $pdf = PDF::loadView('users/boletas_docentes',['docentes' => $docentes] );

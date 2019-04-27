@@ -80,10 +80,10 @@
                                     <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="padding-top:5px;  border: 1px solid #dee2e6;">
-                                        <h5>Curso:  </h5>
+                                        <h5>I PARCIAL  </h5>
                                     </td>
                                     <td style=" border: 1px solid #dee2e6;">
-                                        <h5>Sección: </h5>
+                                        <h5>Cuenta: {{$docente->cuenta}} </h5>
                                     </td>
                                 </tr>
                         </table>
@@ -140,7 +140,7 @@
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
                                     </tr>
