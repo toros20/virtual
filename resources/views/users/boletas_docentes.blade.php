@@ -6,17 +6,6 @@
 
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
     
-include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
-
-$html = ob_get_clean();
-
-//$mpdf=new mPDF('c','Letter','',''); 
-$mpdf=new \Mpdf\Mpdf([
-    'mode' => 'utf-8',
-    'format' => [190, 236],
-    'orientation' => 'P'
-]); 
-
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -163,36 +152,6 @@ $mpdf=new \Mpdf\Mpdf([
                             @endforeach {{-- fin del ciclo para cada asignacion --}}
 
                         </table>
-
-                      <table>
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                            <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                                   
-                      </table>
                         
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
@@ -214,6 +173,16 @@ $mpdf=new \Mpdf\Mpdf([
 //==============================================================
 //==============================================================
 //==============================================================
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
+
+$html = ob_get_clean();
+
+//$mpdf=new mPDF('c','Letter','',''); 
+$mpdf=new \Mpdf\Mpdf([
+    'mode' => 'utf-8',
+    'format' => [190, 236],
+    'orientation' => 'P'
+]); 
 
 
 $mpdf->allow_charset_conversion= true;
