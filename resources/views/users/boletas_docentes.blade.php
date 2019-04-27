@@ -105,15 +105,15 @@
 
                         @php
                              $asignaciones = DB::table('assignments')
-                                        ->join('courses', 'assignmets.course_id', '=', 'courses.id')
-                                        ->join('clases', 'assignmets.clase_id', '=', 'clases.id')
+                                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                                         ->where ([
-                                            ['assignmets.users_id', '=', $docente->id],
+                                            ['assignments.users_id', '=', $docente->id],
                                             ['courses.id', '>', '8'],
                                         ])
-                                        ->Select('assignmets.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
+                                        ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
                                         ->orderBy('courses.course_id','asc')
-                                        ->orderBy('assignmets.section','asc')
+                                        ->orderBy('assignments.section','asc')
                                         ->get(); 
                         @endphp
 
