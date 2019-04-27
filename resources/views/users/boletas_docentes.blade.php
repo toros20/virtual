@@ -56,7 +56,7 @@
 
                 @foreach ($docentes as $docente)
                     
-                    <?php $cont=0; $total1=0;  ?>
+                    <?php dd($docentes); $cont=0; $total1=0;  ?>
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                            
                             <tr> 
@@ -104,6 +104,7 @@
                         </table>
 
                         @php
+                         
                              $asignaciones = DB::table('assignments')
                                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
@@ -115,7 +116,7 @@
                                         ->orderBy('courses.id','asc')
                                         ->orderBy('assignments.section','asc')
                                         ->ToSql(); 
-                                        dd($asignaciones);
+                                       
                         @endphp
 
                         @foreach ($asignaciones as $asignacion)
