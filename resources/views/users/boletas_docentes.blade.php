@@ -166,24 +166,24 @@
                                     <th style="font-weight: bold;">OBSERVACIONES</th>
                                 </tr>
                                 <tr>
-                                    <td style="text-align:center; width:5px;font-weight: bold;"></td>
-                                    <td style="font-weight: bold;"></td>
+                                    <td style="text-align:center; width:5px;font-weight: bold; border:1px solid #dee2e6;"></td>
+                                    <td style="font-weight: bold; border:1px solid #dee2e6;"></td>
                                 </tr>
                                 <tr>
-                                        <td style="text-align:center; width:5px;font-weight: bold;"></td>
-                                        <td style="font-weight: bold;"></td>
+                                        <td style="text-align:center; width:5px;font-weight: bold; border:1px solid #dee2e6;"></td>
+                                        <td style="font-weight: bold; border:1px solid #dee2e6;"></td>
                                     </tr>
                                     <tr>
-                                            <td style="text-align:center; width:5px;font-weight: bold;"></td>
-                                            <td style="font-weight: bold;"></td>
+                                            <td style="text-align:center; width:5px;font-weight: bold; border:1px solid #dee2e6;"></td>
+                                            <td style="font-weight: bold; border:1px solid #dee2e6;"></td>
                                         </tr>
                                         <tr>
-                                                <td style="text-align:center; width:5px;font-weight: bold;"></td>
-                                                <td style="font-weight: bold;"></td>
+                                                <td style="text-align:center; width:5px;font-weight: bold; border:1px solid #dee2e6;"></td>
+                                                <td style="font-weight: bold; border:1px solid #dee2e6;"></td>
                                             </tr>
                                             <tr>
-                                                    <td style="text-align:center; width:5px;font-weight: bold;"></td>
-                                                    <td style="font-weight: bold;"></td>
+                                                    <td style="text-align:center; width:5px;font-weight: bold; border:1px solid #dee2e6;"></td>
+                                                    <td style="font-weight: bold; border:1px solid #dee2e6;"></td>
                                                 </tr>
                         </table>
                         <pagebreak/>
