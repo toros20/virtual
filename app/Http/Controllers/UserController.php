@@ -843,7 +843,7 @@ class UserController extends Controller
        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
-    public function boletas_docetes(){
+    public function boletas_docentes(){
 
         /*************************SEGURIDAD*******************/
           //control de seguridad
