@@ -114,7 +114,8 @@
                                         ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
                                         ->orderBy('courses.id','asc')
                                         ->orderBy('assignments.section','asc')
-                                        ->get(); 
+                                        ->ToSql(); 
+                                        dd($asignaciones);
                         @endphp
 
                         @foreach ($asignaciones as $asignacion)
