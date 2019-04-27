@@ -3,7 +3,7 @@
    'Jul', 'Agos', 'Sept', 'Oct', 'Nov', 'Dic');
  
    $arrayDias = array( 'Domingo', 'Lunes', 'Martes',
-   
+
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
     
     ob_start();
@@ -168,7 +168,7 @@
 
                         </table>
 
-                        <?php $mpdf->AddPage(); ?>
+                        <?php $mpdf->WriteHTML('<pagebreak/>'); ?>
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
                    
