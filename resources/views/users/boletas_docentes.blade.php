@@ -3,6 +3,7 @@
    'Jul', 'Agos', 'Sept', 'Oct', 'Nov', 'Dic');
  
    $arrayDias = array( 'Domingo', 'Lunes', 'Martes',
+   
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
     
     ob_start();
