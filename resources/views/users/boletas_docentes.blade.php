@@ -134,7 +134,7 @@
                                                                 [$historial.'.clase_id', '=', $asignacion->clase_id]
                                                             ])
                                                     ->Select($historial.'.Acum1', $historial.'.Exa1')
-                                                    ->get()
+                                                    ->get();
 
                                     foreach ($resultados as $resultado) {
                                         $total_alumnos+=1;$total_evaluados+=1;
