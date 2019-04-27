@@ -168,7 +168,8 @@
 
                         </table>
 
-                        <?php $mpdf->WriteHTML('<pagebreak/>'); ?>
+                      
+                        
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
                    
