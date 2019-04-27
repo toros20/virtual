@@ -121,15 +121,15 @@
 
                         @foreach ($asignaciones as $asignacion)
 
-                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
-                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; "><?php echo $cont+1; ?></td>
-                                <td style="border: 1px solid #dee2e6; text-align:left;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
+                            <tr style="border: 1px solid #dee2e6; ">
+                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                
-                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; ">0</td>
-                                <td style="text-align:center; width:50px ; border: 1px solid #dee2e6;">0</td> 
-                                <td style="text-align:center; width:50px ; border: 1px solid #dee2e6;">0</td>
-                                <td style="text-align:center; width:50px ; border: 1px solid #dee2e6;">0</td>
-                                <td style="text-align:center; width:50px ; border: 1px solid #dee2e6;">0</td>
+                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
                             </tr>
 
 
