@@ -102,41 +102,44 @@
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% REPRO.</th>
                                 </tr>
                         </table>
+                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
 
-                        <?php
-                         
-                             $asignaciones = DB::table('assignments')
-                                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
-                                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
-                                        ->where ([
-                                            ['assignments.user_id', '=', $docente->id],
-                                            ['courses.id', '>', '8'],
-                                        ])
-                                        ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
-                                        ->orderBy('courses.id','asc')
-                                        ->orderBy('assignments.section','asc')
-                                        ->get(); 
-                                       
-                        ?>
+                            <?php
+                            
+                                $asignaciones = DB::table('assignments')
+                                            ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                                            ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                                            ->where ([
+                                                ['assignments.user_id', '=', $docente->id],
+                                                ['courses.id', '>', '8'],
+                                            ])
+                                            ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
+                                            ->orderBy('courses.id','asc')
+                                            ->orderBy('assignments.section','asc')
+                                            ->get(); 
+                                        
+                            ?>
 
-                        @foreach ($asignaciones as $asignacion)
+                            @foreach ($asignaciones as $asignacion)
 
-                            <tr style="border: 1px solid #dee2e6; ">
-                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
-                               
-                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                            </tr>
+                                <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                    <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                    <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
+                                
+                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                </tr>
 
 
 
-                                <?php $cont+=1; ?>
+                                    <?php $cont+=1; ?>
 
-                        @endforeach {{-- fin del ciclo para cada asignacion --}}
+                            @endforeach {{-- fin del ciclo para cada asignacion --}}
+
+                        </table>
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
 
