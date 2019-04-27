@@ -112,7 +112,7 @@
                                             ['courses.id', '>', '8'],
                                         ])
                                         ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
-                                        ->orderBy('courses.course_id','asc')
+                                        ->orderBy('courses.id','asc')
                                         ->orderBy('assignments.section','asc')
                                         ->get(); 
                         @endphp
