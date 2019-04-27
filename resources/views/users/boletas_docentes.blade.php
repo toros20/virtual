@@ -122,17 +122,31 @@
 
                             @foreach ($asignaciones as $asignacion)
 
-                                <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
-                                    <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                    <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
-                                
-                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                </tr>
+                                @if ($cont%2==0)
+                                     <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                        <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                        <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
+                                    
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                    </tr>
+                                @else
+                                    <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
+                                        <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                        <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
+                                    
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                    </tr>
+                                @endif
 
+                               
                                     <?php $cont+=1; ?>
 
                             @endforeach {{-- fin del ciclo para cada asignacion --}}
