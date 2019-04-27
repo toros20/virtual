@@ -51,12 +51,10 @@
       <div class="container-fluid" align="center">
         <!--row-->
         <div class="row" align="center"> 
-                {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
-                <?php //$historial = 'historial_'.$curso.'_'.$seccion; ?>
-
+                               
                 @foreach ($docentes as $docente)
                     
-                    <?php  $cont=0; $total1=0;  ?>
+                    <?php  $cont=0; $total_evaluados=0; $tea=0; $ter=0;  ?>
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                            
                             <tr> 
@@ -119,7 +117,7 @@
                                                 ['assignments.user_id', '=', $docente->id],
                                                 ['courses.id', '>', '8'],
                                             ])
-                                            ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase')
+                                            ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase','clases.id as clase_id')
                                             ->orderBy('courses.id','asc')
                                             ->orderBy('assignments.section','asc')
                                             ->get(); 
@@ -128,27 +126,47 @@
 
                             @foreach ($asignaciones as $asignacion)
 
+                                <?php 
+                                    $total_alumnos=0; $aprobados=0;$reprobados=0;
+                                    $historial = 'historial_'.$asignacion->course_id.'_'.strtolower($asignacion->section); 
+                                    $resultados= DB::table($historial)
+                                                    ->where ([
+                                                                [$historial.'.clase_id', '=', $asignacion->clase_id]
+                                                            ])
+                                                    ->Select($historial.'.Acum1', $historial.'.Exa1')
+                                                    ->get()
+
+                                    foreach ($resultados as $resultado) {
+                                        $total_alumnos+=1;$total_evaluados+=1;
+                                        if ( ($resultado->Acum1 + $resultado->Exa1) < 70 ) {
+                                            $reprobados+=1; $ter+=1;
+                                        }else{
+                                            $aprobados+=1;$tea+=1;
+                                        }
+                                    }// fin del ciclo resultados
+                                ?>
+
                                 @if ($cont%2==0)
                                      <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
                                     </tr>
                                 @endif
 
@@ -168,11 +186,11 @@
                                     <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;">*</td>
                                     <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">Total de Evaluaaciones Realizadas</td>
                                 
-                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">0</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td> 
+                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $tea;?></td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($tea*100)/$total_evaluados);?> %</td> 
                                     <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">0</td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo $ter;?></td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo round(($ter*100)/$total_evaluados);?> %</td>
                             </tr>
                         </table>
 
