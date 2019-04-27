@@ -104,7 +104,7 @@
                         </table>
 
                         @php
-                             $asignaciones = DB::table('assignmets')
+                             $asignaciones = DB::table('assignments')
                                         ->join('courses', 'assignmets.course_id', '=', 'courses.id')
                                         ->join('clases', 'assignmets.clase_id', '=', 'clases.id')
                                         ->where ([
@@ -133,7 +133,7 @@
 
 
                                 @php $cont+=1;@endphp
-                                
+
                         @endforeach {{-- fin del ciclo para cada asignacion --}}
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
