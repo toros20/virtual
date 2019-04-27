@@ -6,7 +6,16 @@
 
        'Miércoles', 'Jueves', 'Viernes', 'Sábado');
     
-    ob_start();
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
+
+$html = ob_get_clean();
+
+//$mpdf=new mPDF('c','Letter','',''); 
+$mpdf=new \Mpdf\Mpdf([
+    'mode' => 'utf-8',
+    'format' => [190, 236],
+    'orientation' => 'P'
+]); 
 
 @endphp
 <!DOCTYPE html>
@@ -205,18 +214,7 @@
 //==============================================================
 //==============================================================
 //==============================================================
-include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
-$html = ob_get_clean();
-
-//$html = utf8_encode($html);
-
-//$mpdf=new mPDF('c','Letter','',''); 
-$mpdf=new \Mpdf\Mpdf([
-    'mode' => 'utf-8',
-    'format' => [190, 236],
-    'orientation' => 'P'
-]); 
 
 $mpdf->allow_charset_conversion= true;
 
