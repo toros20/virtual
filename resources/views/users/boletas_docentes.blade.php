@@ -159,6 +159,33 @@
                             @endforeach {{-- fin del ciclo para cada asignacion --}}
 
                         </table>
+
+                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                    <th style="font-weight: bold;">OBSERVACIONES</th>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center; width:5px;font-weight: bold;"></td>
+                                    <td style="font-weight: bold;"></td>
+                                </tr>
+                                <tr>
+                                        <td style="text-align:center; width:5px;font-weight: bold;"></td>
+                                        <td style="font-weight: bold;"></td>
+                                    </tr>
+                                    <tr>
+                                            <td style="text-align:center; width:5px;font-weight: bold;"></td>
+                                            <td style="font-weight: bold;"></td>
+                                        </tr>
+                                        <tr>
+                                                <td style="text-align:center; width:5px;font-weight: bold;"></td>
+                                                <td style="font-weight: bold;"></td>
+                                            </tr>
+                                            <tr>
+                                                    <td style="text-align:center; width:5px;font-weight: bold;"></td>
+                                                    <td style="font-weight: bold;"></td>
+                                                </tr>
+                        </table>
                         <pagebreak/>
 
                 @endforeach  {{-- fin del ciclo para cada docente --}}
