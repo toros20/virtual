@@ -96,7 +96,6 @@
                         </table>
                         <table>
                             <tr><td>&nbsp;</td></tr>
-                           <tr><td>&nbsp;</td></tr>
                         </table>
 
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
@@ -161,7 +160,6 @@
                         </table>
 
                         <table>
-                            <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
                             <tr><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>                            
                         </table>
 
