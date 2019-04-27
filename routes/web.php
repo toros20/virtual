@@ -52,6 +52,11 @@ Route::post('users/save_personalidad', 'UserController@save_personalidad')->name
 Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas')->name('actas/{course_id}/{section}/{parcial}');
 
 
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('boletas_docentes');
+
+
+
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
 Route::post('ajax/coursesbymodalityid', 'UserController@coursesbymodalityid');
 
