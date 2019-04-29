@@ -145,7 +145,7 @@ function publicar(){
 
         $.ajax({
 
-            url:'../../../../ajax/post_in_section',
+            url:'../../ajax/post_in_section',
             headers: token ,
             data: {
                 curso_id:curso,
