@@ -383,7 +383,7 @@ function publicarComentario(key_msj){
 
        $.ajax({
 
-           url:'../../../../ajax/publicarComentario',
+           url:'../../ajax/publicarComentario',
            headers: token ,
            data: {
                curso_id:curso,
