@@ -660,7 +660,7 @@
 
 			<div class="ui-block" >
 				<div style="background-color:lightcoral;" class="ui-block-title">
-					<h6 style="color:white"  class="title">Tareas Para Hoy</h6>
+					<h6 style="color:white"  class="title"><!--Tareas Para Hoy--></h6>
 				</div>
 
 				<!-- W-Twitter -->
@@ -670,42 +670,25 @@
 						<div class="author-folder">
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
-								<a href="#" class="author-name">Español</a>
-								<a href="#" class="group">Hoy</a>
+								<a href="#" class="author-name"><!--Español--></a>
+								<a href="#" class="group"><!--Hoy--></a>
 							</div>
 						</div>
-						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
-							<a href="#" class="link-post">Ver Tarea.</a></p>
+						<p><!--Presentar el Album de los poetas. con todos los nombre y obras mas famosas.-->
+							<a href="#" class="link-post"><!--Ver Tarea.--></a></p>
 						<span class="post__date">
 							<time class="published" datetime="2017-03-24T18:18">
-								Hace una semana
+								<!--Hace una semana-->
 							</time>
 						</span>
 					</li>
 					
-					<li class="twitter-item">
-						<div class="author-folder">
-							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
-							<div class="author">
-								<a href="#" class="author-name">Tecnología</a>
-								<a href="#" class="group">Hoy</a>
-							</div>
-						</div>
-						<p>Presentar el Album de los poetas. con todos los nombre y obras mas famosas.
-							<a href="#" class="link-post">Ver Tarea.</a></p>
-						<span class="post__date">
-							<time class="published" datetime="2017-03-24T18:18">
-								Hace 4 dias
-							</time>
-						</span>
-					</li>
-
 				</ul>				
 				
 				<!-- .. end W-Twitter -->
 			</div>
 
-			<div class="ui-block">
+			{{-- <div class="ui-block">
 				<div style="background-color:gold;" class="ui-block-title">
 					<h6 class="title">Tareas Para Mañana</h6>
 				</div>
@@ -750,9 +733,9 @@
 				</ul>				
 				
 				<!-- .. end W-Twitter -->
-			</div>
+			</div> --}}
 
-			<div class="ui-block">
+			{{-- <div class="ui-block">
 				<div style="background-color:lightgreen;" class="ui-block-title">
 					<h6 class="title">Tareas Para Pasado Mañana</h6>
 				</div>
@@ -797,7 +780,7 @@
 				</ul>				
 				
 				<!-- .. end W-Twitter -->
-			</div>
+			</div> --}}
 
 		</div>
 		{{-- FIN DEL PANEL DERECHO --}}
