@@ -278,7 +278,7 @@ function enviar_comentario(key_msj){
     
     $.ajax({
 
-        url:'../../../../ajax/enviar_comentario',
+        url:'../../ajax/enviar_comentario',
         headers: token ,
         data: {
             _token:token, 
