@@ -622,8 +622,10 @@ class UserController extends Controller
         $user=$request->usuario;
         $texto=$request->comentario;
 
+        $section = strtolower($seccion);
+
         //usamos una variable para reducir el nombre de la tabla
-        $tbl_comentarios = 'comentarios_'.$curso.'_'. $seccion;
+        $tbl_comentarios = 'comentarios_'.$curso.'_'. $section;
 
         //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
         $msj= DB::table($tbl_comentarios)->insert([
