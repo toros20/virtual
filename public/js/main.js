@@ -244,7 +244,7 @@ function comentar(key_msj){
 
    $.ajax({
 
-       url:'../../../../ajax/div_comentar',
+       url:'../../../ajax/div_comentar',
        headers: token ,
        data: {_token:token, key:key_msj, curso:curso_id, seccion:section, usuario:user_id},
        type:'POST',
