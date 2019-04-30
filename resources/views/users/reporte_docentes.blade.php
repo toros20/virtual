@@ -131,7 +131,7 @@
                                     $tareas = 'task_'.$asignacion->course_id.'_'.strtolower($asignacion->section); 
                                     $resultados= DB::table($tareas)
                                                     ->where ([
-                                                                [$tareas.'.clase_id', '=', $asignacion->clase_id],
+                                                                [$tareas.'.clase', '=', $asignacion->clase_id],
                                                                 [$tareas.'.parcial', '=', $parcial]
                                                             ])
                                                     ->Select($tareas.'.valor')
