@@ -55,6 +55,11 @@ Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas
 //ruta para mostrar la seccion de personalidad de los consejeros
 Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('boletas_docentes');
 
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes')->name('reporte_docentes/{parcial}');
+
+
+
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 

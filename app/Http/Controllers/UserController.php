@@ -874,6 +874,33 @@ class UserController extends Controller
      //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
   }
 
+  public function reporte_docentes($parcial){
+
+      /*************************SEGURIDAD*******************/
+          //control de seguridad
+          // Get the currently authenticated user...
+          if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role!='admin'){
+            return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+        }
+
+        /*************************SEGURIDAD*******************/
+
+      $docentes = DB::table('users')->where ([
+                              ['users.role', '=', 'teacher'],
+                              ['users.cuenta', '>', '20193000']
+                          ])
+                          ->Select('users.name','users.lastname','users.id','users.cuenta')
+                          ->get();
+    
+        $pdf = PDF::loadView('users/reporte_docentes',['docentes' => $docentes,'parcial' => $parcial] );
+        //$pdf->setPaper('a4','portraint');
+        return $pdf->download('reporte_docentes.pdf');
+  }
+
     //funcion para mostar el panel del consejero
     public function panel_consejeria($user_id){
 
