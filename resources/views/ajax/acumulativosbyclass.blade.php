@@ -203,18 +203,40 @@
                           <tbody id="tbody_recursos" >
                               @foreach ($files as $file)
                               <tr>     
-                                  @if ($file->typefile== 'pdf') 
-                                      <td><span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></td>
+                                  {{-- @if ($file->typefile== 'pdf') 
+                                      <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}"> <span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></a></td>
                                   @endif  
                                   @if ($file->typefile== 'pptx') 
-                                     <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
-                                  @endif            
-                                 
-                                  <td><a href="">{{$file->filename}} </a></td>
-                                  <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
-                                  <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}">Detalles</button></td>
-                                  <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                    <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}"> <span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></a></span></td>
+                                  @endif   --}}   
                                   
+                                  @if ($file->typefile== 'pdf') 
+                                      <td><span style="color: red;"><i class="far fa-file-pdf fa-3x"></i></span></td>
+                                  @endif 
+                                  @if ($file->typefile == 'docx' || $file->typefile == 'doc') 
+                                  <td><span style="color: blue;"><i class="far fa-file-word fa-3x"></i></span></td>
+                                  @endif  
+                                  @if ($file->typefile == 'xlsx' || $file->typefile == 'xls' || $file->typefile == 'cvs') 
+                                  <td><span style="color: green;"><i class="far fa-file-excel fa-3x"></i></span></td>
+                                  @endif
+                                  @if ($file->typefile == 'rar' || $file->typefile == 'zip') 
+                                  <td><span style="color: purple;"><i class="fas fa-archive fa-3x"></i></span></td>
+                                  @endif
+                                  @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
+                                    <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
+                                  @endif              
+
+                                  <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}">{{$file->name_original}} </a></td>
+                                  <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
+                                
+                                {{--  <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename.'.'.$file->typefile)}}">{{$file->filename}} </a></td>
+                                  <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td> --}}
+
+                                  <td><a  type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}" >Detalles</a></td>
+                                  <td><a target="_blank"  href="{{ URL::asset('../storage/app/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                {{-- <td><button type="button" class="btn btn-info btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalfile_{{$file->id}}">Detalles</button></td>
+                                  <td><a target="_blank"  href="{{ URL::asset('files/'.$file->filename)}}" class="btn btn-success btn-rounded btn-sm m-0">Descargar</a></td>
+                                  --}}
                                     <!-- Central Modal Medium Info {{$file->id}}-->
                                     <div class="modal fade modal-notify info" id="centralModalfile_{{$file->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                         aria-hidden="true">
