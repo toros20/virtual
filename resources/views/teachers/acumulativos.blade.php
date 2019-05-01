@@ -594,7 +594,7 @@
                                                     @endif
                                                     @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
-                                                    @endif              
+                                                    @endif               
                                                    
                                                     <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}">{{$file->name_original}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($file->fecha)->format('d/m/Y')}}</td>
