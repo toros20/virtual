@@ -13,7 +13,7 @@ function loadcourses(){
 
     $.ajax({
 
-        url:'../../ajax/coursesbymodalityid',
+        url:'../../../../ajax/coursesbymodalityid',
         headers: token ,
         data: {modality_id:modality,_token:token},
         type:'POST',
@@ -40,7 +40,7 @@ function loadsections(){
     
     $.ajax({
 
-        url:'../../ajax/sectionsbycoursesid',
+        url:'../../../../ajax/sectionsbycoursesid',
         headers: token ,
         data: {course_id:course,_token:token},
         type:'POST',
@@ -67,7 +67,7 @@ function loadclases(){
     
     $.ajax({
 
-        url:'../../ajax/clasesbycoursesid',
+        url:'../../../../ajax/clasesbycoursesid',
         headers: token ,
         data: {course_id:course,_token:token},
         type:'POST',
@@ -94,7 +94,7 @@ function loadclasesbymodality(){
     
     $.ajax({
 
-        url:'../../ajax/clasesbymodalityid',
+        url:'../../../../ajax/clasesbymodalityid',
         headers: token ,
         data: {modality_id:modalidad,_token:token},
         type:'POST',
