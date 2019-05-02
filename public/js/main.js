@@ -501,7 +501,8 @@ function ver_comentarios_student(key_msj){
         data: {
             _token:token, 
             curso:curso_id, 
-            seccion:section, 
+            seccion:section,
+            usuario:usuariox,  
             key_msj:key 
         },
         type:'POST',
