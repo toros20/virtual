@@ -1,4 +1,4 @@
-@if ($role == 'teacher')
+@if ($role[0]->role == 'teacher')
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
     <p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
     <div class="post__author author vcard inline-items">
@@ -30,7 +30,7 @@
 </div>
 @endif
 
-@if ($role == 'student')
+@if ($role[0]->role == 'student')
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
     <p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
     <div class="post__author author vcard inline-items">
