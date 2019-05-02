@@ -610,7 +610,7 @@ class UserController extends Controller
         $user=$request->usuario;
 
         $role = DB::table('users')->where('id',$user)->Select('role')->get();
-        
+
         return view('ajax/div_comentar',compact('key_msj','curso','seccion','user','role'));
         
      }
@@ -691,7 +691,11 @@ class UserController extends Controller
         //obtener el identificador unico del post que estan viendo
         $key=$request->key_msj;
         $curso=$request->curso;
+        $user=$request->usuario;
         $seccion=strtolower($request->seccion);
+
+        //obtenemos el rol del usuario actual
+        $role = DB::table('users')->where('id',$user)->Select('role')->get();
 
         //usamos una variable para reducir el nombre de la tabla
         $tbl_comentarios = 'comentarios_'.$curso.'_'. $seccion;
@@ -703,7 +707,7 @@ class UserController extends Controller
                         ->get();
             
         
-        return view('ajax/ver_comentarios',compact('comentarios'));
+        return view('ajax/ver_comentarios',compact('comentarios','role'));
     }
 
     public function publicarComentario(Request $request){

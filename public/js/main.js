@@ -530,6 +530,8 @@ function ver_comentarios_teacher(key_msj){
     var curso_id = $("#course").val();
     var section = $("#section").val();
 
+    var usuariox = $("#user").val();
+
     $.ajax({
 
         url:'../../../../ajax/ver_comentarios',
@@ -537,7 +539,8 @@ function ver_comentarios_teacher(key_msj){
         data: {
             _token:token, 
             curso:curso_id, 
-            seccion:section, 
+            seccion:section,
+            usuario:usuariox, 
             key_msj:key 
         },
         type:'POST',

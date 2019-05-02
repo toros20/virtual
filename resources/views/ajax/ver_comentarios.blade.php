@@ -36,7 +36,7 @@
 </ul>
 <div align="center" id="circle{{$comentario->msj_key}}"></div>
 
-@if ($comentario->role == 'student')
+@if ($role[0]->role == 'student')
 
 <div align="center"><h5>Comentar este Post</h5> </div>
 <div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
