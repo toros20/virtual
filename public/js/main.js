@@ -317,7 +317,7 @@ function ver_comentarios(key_msj){
 
     $.ajax({
 
-        url:'../../../ajax/ver_comentarios',
+        url:'../../../../ajax/ver_comentarios',
         headers: token ,
         data: {
             _token:token, 
