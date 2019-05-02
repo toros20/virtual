@@ -492,6 +492,8 @@ function ver_comentarios_student(key_msj){
     var curso_id = $("#course").val();
     var section = $("#section").val();
 
+    var usuariox = $("#user").val();
+
     $.ajax({
 
         url:'../../ajax/ver_comentarios',
