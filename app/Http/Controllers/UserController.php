@@ -608,7 +608,10 @@ class UserController extends Controller
         $curso=$request->curso;
         $seccion=$request->seccion;
         $user=$request->usuario;
-        return view('ajax/div_comentar',compact('key_msj','curso','seccion','user'));
+
+        $role = DB::table('users')->where('id',$user)->Select('role')->get();
+        
+        return view('ajax/div_comentar',compact('key_msj','curso','seccion','user','role'));
         
      }
 

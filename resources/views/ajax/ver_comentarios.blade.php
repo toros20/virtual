@@ -56,7 +56,7 @@
                 </div>
             </div>
         </div>
-        <button id="btn_publicar" onclick="publicarComentario('{{$comentarios[0]->msj_key}}')" class="btn btn-md-2 btn-primary">Enviar</button>
+        <button id="btn_publicar" onclick="publicarComentario_student('{{$comentarios[0]->msj_key}}')" class="btn btn-md-2 btn-primary">Enviar</button>
     </div>
 @else
 
@@ -79,7 +79,7 @@
             </div>
         </div>
     </div>
-    <button id="btn_publicar" onclick="publicarComentario('{{$comentarios[0]->msj_key}}')" class="btn btn-md-2 btn-primary">Enviar</button>
+    <button id="btn_publicar" onclick="publicarComentario_teacher('{{$comentarios[0]->msj_key}}')" class="btn btn-md-2 btn-primary">Enviar</button>
 </div>
 @endif
 

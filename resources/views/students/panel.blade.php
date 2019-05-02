@@ -513,7 +513,7 @@
 								</div>
 							</div>
 						</div>
-						<button id="btn_publicar" onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+						<button id="btn_publicar" onclick="publicar_student()" class="btn btn-md-2 btn-primary">Enviar</button>
 					</div>
 					
 					<!-- ... end Comment Form  -->
@@ -579,14 +579,14 @@
 							
 									@if( $mensaje->comentarios == 0)
 									<div class="comments-shared">
-										<a onclick="comentar('{{$mensaje->key}}')"  class="post-add-icon inline-items">
+										<a onclick="comentar_student('{{$mensaje->key}}')"  class="post-add-icon inline-items">
 											<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 											<span>Comentar</span>
 										</a>
 									</div>
 									@else 
 									<div class="comments-shared">
-										<a onclick="ver_comentarios('{{$mensaje->key}}')"  class="post-add-icon inline-items">
+										<a onclick="ver_comentarios_student('{{$mensaje->key}}')"  class="post-add-icon inline-items">
 											<svg class="olymp-speech-balloon-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 											<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
 										</a>

@@ -517,7 +517,7 @@
 					</div>
 					<label><input style="display: inline-block; width: auto; margin: 20px 5px 0px 40px; " value="Enviar por Correo" type="checkbox" id="cbox-email" > Enviar por Correo</label>
 					
-					<button id="btn_publicar" onclick="publicar()" class="btn btn-md-2 btn-primary">Enviar</button>
+					<button id="btn_publicar" onclick="publicar_teacher()" class="btn btn-md-2 btn-primary">Enviar</button>
 					
 				</div>
 				
@@ -583,14 +583,14 @@
 									
 								@if( $mensaje->comentarios == 0)
 								<div class="comments-shared">
-									<a onclick="comentar('{{$mensaje->key}}')"  class="post-add-icon inline-items">
+									<a onclick="comentar_teacher('{{$mensaje->key}}')"  class="post-add-icon inline-items">
 										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 										<span>Comentar</span>
 									</a>
 								</div>
 								@else 
 								<div class="comments-shared">
-									<a onclick="ver_comentarios('{{$mensaje->key}}')"  class="post-add-icon inline-items">
+									<a onclick="ver_comentarios_teacher('{{$mensaje->key}}')"  class="post-add-icon inline-items">
 										<svg class="olymp-speech-balloon-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use></svg>
 										<span>Ver ({{ $mensaje->comentarios}}) Comentarios</span>
 									</a>

@@ -111,8 +111,8 @@ function loadclasesbymodality(){
    
 
 }
-//funcion para enviar un mensaje desde la bandeja de comentarios del docente, la inicial que aparece al ingresar al panel
-function publicar(){
+//funcion para enviar un mensaje desde la bandeja de comentarios del student, la inicial que aparece al ingresar al panel
+function publicar_student(){
    
      var usuario = $("#user").val();
      var curso = $("#course").val();
@@ -120,7 +120,7 @@ function publicar(){
      var msj = $("#mensaje").val();
      var token = $("#token").val();
 
-     if (msj=='') {
+     if (msj=='') { 
 
         toastr.options = {
             "closeButton": false,
@@ -212,6 +212,107 @@ function publicar(){
 
 }
 
+//funcion para enviar un mensaje desde la bandeja de comentarios del docente, la inicial que aparece al ingresar al panel
+function publicar_teacher(){
+   
+    var usuario = $("#user").val();
+    var curso = $("#course").val();
+    var seccion = $("#section").val();
+    var msj = $("#mensaje").val();
+    var token = $("#token").val();
+
+    if (msj=='') { 
+
+       toastr.options = {
+           "closeButton": false,
+           "debug": false,
+           "newestOnTop": false,
+           "progressBar": false,
+           "positionClass": "toast-top-center",
+           "preventDuplicates": false,
+           "onclick": null,
+           "showDuration": "500",
+           "hideDuration": "1000",
+           "timeOut": "5000",
+           "extendedTimeOut": "1000",
+           "showEasing": "swing",
+           "hideEasing": "linear",
+           "showMethod": "fadeIn",
+           "hideMethod": "fadeOut"
+         };
+         toastr.error('debes ingresar un mensaje');
+        
+    }else{
+
+       $.ajax({
+
+           url:'../../../../ajax/post_in_section',
+           headers: token ,
+           data: {
+               curso_id:curso,
+               seccion_id:seccion,
+               user_id:usuario,
+               mensaje:msj,
+               _token:token
+           },
+           type:'POST',
+           datatype:'json',
+   
+           beforeSend: function(){
+               $('#btn_publicar').attr("disabled", true);
+               $('#circle').circleProgress({
+                   value: 0.75,
+                   size: 80,
+                   fill: {
+                     gradient: ["red", "orange"]
+                   }
+                 });
+           },
+           complete: function(){
+               $('#circle').hide();
+              
+           },
+   
+           success:function(data)
+           {
+               //console.log(response);
+               $("#mensaje").val('');
+             
+               $('#nuevo_post').prepend(data)
+               .fadeIn( 1000, function() {
+                   $('#nuevo_post').css({"border": "4px solid lightcoral", "border-radius": "5px"});
+                 });
+                 
+                 toastr.options = {
+                   "closeButton": false,
+                   "debug": false,
+                   "newestOnTop": false,
+                   "progressBar": false,
+                   "positionClass": "toast-top-center",
+                   "preventDuplicates": false,
+                   "onclick": null,
+                   "showDuration": "500",
+                   "hideDuration": "1000",
+                   "timeOut": "5000",
+                   "extendedTimeOut": "1000",
+                   "showEasing": "swing",
+                   "hideEasing": "linear",
+                   "showMethod": "fadeIn",
+                   "hideMethod": "fadeOut"
+                 }
+                 toastr.success('Mensaje publicado exitósamente');
+                 $('#btn_publicar').attr("disabled", false);
+               
+           },
+           error: function (response) {
+               console.log(response);
+             }
+       });
+
+    }
+
+}
+
 function filtrar_msj(teacher_id, student_id){
 
     var token = $("#token").val();
@@ -235,7 +336,41 @@ function filtrar_msj(teacher_id, student_id){
 
 }
 
-function comentar(key_msj){
+//funcion para la seccion de comentario del teacher
+function comentar_teacher(key_msj){
+    
+    var token = $("#token").val();
+    var curso_id = $("#course").val();
+    var section = $("#section").val();
+    var user_id = $("#user").val();
+
+   $.ajax({
+
+       url:'../../../../ajax/div_comentar',
+       headers: token ,
+       data: {_token:token, key:key_msj, curso:curso_id, seccion:section, usuario:user_id},
+       type:'POST',
+       datatype:'json',
+       success:function(data)
+       {
+           //console.log(response);
+           $('#comentar_msj_'+key_msj).prepend(data)
+           .fadeIn( 1000, function() {
+               $('#comentar_msj_'+key_msj).css({"border": "2px solid lightcoral", "border-radius": "5px"});
+             });
+             $('#comentar_'+key_msj).hide();
+             $('#comentario_'+key_msj).focus();
+             
+       },
+       error: function (response) {
+           console.log(response);
+         }
+   });
+   
+}
+
+//funcion para la seccion de comentario del student
+function comentar_student(key_msj){
     
     var token = $("#token").val();
     var curso_id = $("#course").val();
@@ -267,7 +402,49 @@ function comentar(key_msj){
    
 }
 
-function enviar_comentario(key_msj){
+
+function enviar_comentario_teacher(key_msj){
+   
+    var token = $("#tokenC").val();
+    var curso_id = $("#courseC").val();
+    var section = $("#sectionC").val();
+    var user_id = $("#userC").val();
+    var comentarioC = $('#comentario_'+key_msj).val();
+    var key = key_msj;
+    
+    $.ajax({
+
+        url:'../../../../ajax/enviar_comentario',
+        headers: token ,
+        data: {
+            _token:token, 
+            curso:curso_id, 
+            seccion:section, 
+            usuario:user_id,
+            comentario:comentarioC,
+            key_msj:key
+        },
+        type:'POST',
+        datatype:'json',
+        success:function(data)
+        {
+            //console.log(response);
+            $('#comentar_msj_'+key_msj).prepend(data)
+            .fadeIn( 1000, function() {
+                //$('#comentar_msj_'+key_msj).css({"border": "4px solid lightcoral", "border-radius": "5px"});
+              });
+              $('#comentario_'+key_msj).val('');
+              $('#comentario_'+key_msj).focus();
+              
+        },
+        error: function (response) {
+            console.log(response);
+          }
+        });
+   
+}
+
+function enviar_comentario_student(key_msj){
    
     var token = $("#tokenC").val();
     var curso_id = $("#courseC").val();
@@ -308,7 +485,45 @@ function enviar_comentario(key_msj){
    
 }
 
-function ver_comentarios(key_msj){
+function ver_comentarios_student(key_msj){
+   
+    var token = $("#token").val();
+    var key = key_msj;
+    var curso_id = $("#course").val();
+    var section = $("#section").val();
+
+    $.ajax({
+
+        url:'../../ajax/ver_comentarios',
+        headers: token ,
+        data: {
+            _token:token, 
+            curso:curso_id, 
+            seccion:section, 
+            key_msj:key 
+        },
+        type:'POST',
+        datatype:'json',
+        success:function(data)
+        {
+            //console.log(response);
+            $('#cometar').hide();
+            $('#ver_comentarios_'+key_msj).html(data)
+            .fadeIn( 1000, function() {
+                $('#ver_comentarios_'+key_msj).css({"border": "1px solid lightblue", "border-radius": "5px"});
+                $('#mensaje_'+key_msj).focus();
+              });
+            
+              
+        },
+        error: function (response) {
+            console.log(response);
+          }
+        });
+
+}
+
+function ver_comentarios_teacher(key_msj){
    
     var token = $("#token").val();
     var key = key_msj;
@@ -348,7 +563,109 @@ function ver_comentarios(key_msj){
 
 //funcion para poder guardar en BD los comentarios 
 //despues de ver los primeros comentario comentarios
-function publicarComentario(key_msj){
+function publicarComentario_teacher(key_msj){
+   
+    var usuario = $("#user").val();
+    var curso = $("#course").val();
+    var seccion = $("#section").val();
+    var msj = $("#mensaje_"+key_msj).val();
+    var key = key_msj;
+    var token = $("#token").val();
+
+
+    if (msj=='') {
+
+       toastr.options = {
+           "closeButton": false,
+           "debug": false,
+           "newestOnTop": false,
+           "progressBar": false,
+           "positionClass": "toast-top-center",
+           "preventDuplicates": false,
+           "onclick": null,
+           "showDuration": "500",
+           "hideDuration": "1000",
+           "timeOut": "5000",
+           "extendedTimeOut": "1000",
+           "showEasing": "swing",
+           "hideEasing": "linear",
+           "showMethod": "fadeIn",
+           "hideMethod": "fadeOut"
+         };
+         toastr.error('debes ingresar un mensaje');
+        
+    }else{
+
+       $.ajax({
+
+           url:'../../../../ajax/publicarComentario',
+           headers: token ,
+           data: {
+               curso_id:curso,
+               seccion_id:seccion,
+               user_id:usuario,
+               mensaje:msj,
+               key_msj:key,
+               _token:token
+           },
+           type:'POST',
+           datatype:'json',
+   
+           beforeSend: function(){
+               $('#btn_publicar').attr("disabled", true);
+               $('#circle'+key_msj).circleProgress({
+                   value: 0.75,
+                   size: 80,
+                   fill: {
+                     gradient: ["red", "orange"]
+                   }
+                 });
+           },
+           complete: function(){
+               $('#circle'+key_msj).hide();
+              
+           },
+   
+           success:function(data)
+           {
+               //console.log(response);
+               $("#mensaje_"+key_msj).val('');
+             
+               $('#lista_'+key_msj).append(data)
+               .fadeIn( 1000, function() {
+                   $('#ver_comentarios_'+key_msj).css({"border": "2px solid lightblue", "border-radius": "5px"});
+                 });
+                 
+                 toastr.options = {
+                   "closeButton": false,
+                   "debug": false,
+                   "newestOnTop": false,
+                   "progressBar": false,
+                   "positionClass": "toast-top-center",
+                   "preventDuplicates": false,
+                   "onclick": null,
+                   "showDuration": "500",
+                   "hideDuration": "1000",
+                   "timeOut": "5000",
+                   "extendedTimeOut": "1000",
+                   "showEasing": "swing",
+                   "hideEasing": "linear",
+                   "showMethod": "fadeIn",
+                   "hideMethod": "fadeOut"
+                 }
+                 toastr.success('Mensaje publicado exitósamente');
+                 $('#btn_publicar').attr("disabled", false);
+               
+           },
+           error: function (response) {
+               console.log(response);
+             }
+       });
+
+    }
+}
+
+function publicarComentario_student(key_msj){
    
     var usuario = $("#user").val();
     var curso = $("#course").val();
