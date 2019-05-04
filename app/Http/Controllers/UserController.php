@@ -49,9 +49,9 @@ class UserController extends Controller
         return view('users.index',compact('users'));
     }
 
-    public function tablas( $course,$section,$clase){
+    public function tablas( $course,$section){
        
-        //funcion para sumar los aumulativos a la tabla de historial, se requiere como parametro, curso ,section y clase
+        //funcion para sumar los aumulativos a la tabla de historial, se requiere como parametro, curso ,section 
         //obtenemos lo estudiantes de este curso y seccion
 
         //solo para el primer parcial
