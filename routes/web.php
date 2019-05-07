@@ -32,14 +32,21 @@ Route::put('/users/password/{user_id}', 'UserController@password_update')->name(
 
 
 
-Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
+//Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
 
 
 //ruta para mostrar la seccion de boletas de calificaciones
 Route::get('/users/boletas/{course_id}/{section}', 'UserController@boletas')->name('users_boletas/{course_id}/{section}');
 
-//ruta para mostrar la seccion de boletas de calificaciones
+
+//ruta para mostrar la seccion del panel del administrador
 Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/{user_id}');
+
+//ruta para mostrar la seccion del panel de administracion, seretaria, coordinacion , sistemas
+Route::get('/users/panel_admin/{user_id}', 'UserController@panel_admin')->name('users_panel_admin/{user_id}');
+
+
+
 
 //crear ruta para el panel de consejeria
 Route::get('/users/panel_consejeria/{user_id}', 'UserController@panel_consejeria')->name('panel_consejeria/{user_id}');
@@ -59,6 +66,8 @@ Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('
 
 //ruta para mostrar la seccion de personalidad de los consejeros
 Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes')->name('reporte_docentes/{parcial}');
+
+
 
 
 

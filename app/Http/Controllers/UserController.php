@@ -806,6 +806,25 @@ class UserController extends Controller
        
     }
 
+    public function panel_admin($user_id){
+
+        /*************************SEGURIDAD*******************/
+           //control de seguridad
+           // Get the currently authenticated user...
+           if ( !($user = Auth::user()) ){
+               return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+           }
+           
+           if( $user->role!='admin'){
+               return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+           }
+
+       /*************************SEGURIDAD*******************/
+
+       return view('users/panel_admin');
+      
+   }
+
     public function boletas($course_id,$section){
 
           /*************************SEGURIDAD*******************/
