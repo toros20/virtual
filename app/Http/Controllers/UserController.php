@@ -829,6 +829,7 @@ class UserController extends Controller
                        ->Where('courses.modality_id','=',2)
                        ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
                        ->orderBy('course_id','ASC')
+                       ->orderBy('section','ASC')
                        ->get();
 
        return view('users/panel_admin',compact('asignaciones','user'));
