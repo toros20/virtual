@@ -831,7 +831,7 @@ class UserController extends Controller
                        ->orderBy('course_id','ASC')
                        ->get();
 
-       return view('users/panel',compact('asignaciones','user'));
+       return view('users/panel_admin',compact('asignaciones','user'));
       
    }
 
