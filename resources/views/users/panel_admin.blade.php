@@ -103,7 +103,11 @@
             @php ($con = 1)
 
             @foreach ($asignaciones as $asignacion)
-           
+            
+            <?php
+              //obtenemos el id de la primera clase asignada a este curso
+              $clase = DB::table('clasecourses')->where('course_id', $asignacion->course_id)->first();
+            ?>
             <!--Card column-->
             <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
         
@@ -155,10 +159,10 @@
                                                 <div class="md-v-line"></div>
                                                  <i class="fas fa-user mr-5"></i>Acumulativos
                                                  <a href=""><div class="list-group-item">
-                                                   <button style="width:70px;" class="btn btn-sm btn-primary" href=""> I P </button >
-                                                   <button style="width:70px;" class="btn btn-sm btn-primary" href=""> II P</button >
-                                                   <button style="width:70px;" class="btn btn-sm btn-primary" href="">III P</button >
-                                                   <button style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button >
+                                                   <button onclick="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}}" style="width:70px;" class="btn btn-sm btn-primary"> I P </button >
+                                                   <button onclick="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> II P</button >
+                                                   <button onclick="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">III P</button >
+                                                   <button onclick="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button >
                                                   </div>
                                                 </a>
                                             </li>
