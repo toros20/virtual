@@ -156,12 +156,13 @@
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                             <li class="list-group-item">
-                                                <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Acumulativos
+                                                <div class="md-v-line">
+                                                <i class="fas fa-edit mr-5"></i>Acumulativos
                                                   <button><a href="">IP</a></button>
                                                   <button><a href="">IIP</a></button>
                                                   <button><a href="">IIIP</a></button>
                                                   <button><a href="">IVP</a></button>
-                                            </li>
+                                            </li></div>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
                                         <li class="list-group-item">
