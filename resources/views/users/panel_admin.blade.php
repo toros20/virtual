@@ -157,6 +157,7 @@ aqui estamos<!DOCTYPE html>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                             <li class="list-group-item">
                                                 <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Acumulativos
+                                                <a href="">IP</a> <a href="">IIP</a> <a href="">IIIP</a> <a href="">IVP</a>
                                             </li>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
