@@ -157,12 +157,12 @@
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                             <li class="list-group-item">
                                                 <div class="md-v-line"></div>
-                                                 <i class="fas fa-user mr-5"></i>
+                                                 <i class="fas fa-user mr-5"></i>Acumulativos
                                                  <a href=""><div class="list-group-item">
-                                                   <a href="">IP</a>
-                                                   <a href="">IIP</a>
-                                                   <a href="">IIIP</a>
-                                                   <a href="">IVP</a>
+                                                   <button class="btn btn-sm" href="">IP</button >
+                                                   <button class="btn btn-sm" href="">IIP</button >
+                                                   <button class="btn btn-sm" href="">IIIP</button >
+                                                   <button class="btn btn-sm" href="">IVP</button >
                                                   </div>
                                                 </a>
                                             </li>
