@@ -1,4 +1,4 @@
-aqui estamos<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -156,8 +156,13 @@ aqui estamos<!DOCTYPE html>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                             <li class="list-group-item">
-                                                <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Acumulativos
-                                                <a href="">IP</a> <a href="">IIP</a> <a href="">IIIP</a> <a href="">IVP</a>
+                                                <div class="md-v-line"></div><i class="fas fa-user mr-5"> 
+                                                  <a href="">IP</a> 
+                                                  <a href="">IIP</a> 
+                                                  <a href="">IIIP</a> 
+                                                  <a href="">IVP</a>
+                                                </i>Acumulativos
+                                               
                                             </li>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
