@@ -67,6 +67,9 @@ Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('
 //ruta para mostrar la seccion de personalidad de los consejeros
 Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes')->name('reporte_docentes/{parcial}');
 
+//ruta para mostrar la seccion de acumulativos de las coordinaciones
+Route::get('/users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', 'UserController@acumulativos')->name('acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}');
+
 
 
 

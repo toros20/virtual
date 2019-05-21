@@ -836,6 +836,12 @@ class UserController extends Controller
       
    }
 
+   public function acumulativos($user_id,$curso,$section,$clase,$parcial){
+
+
+
+   }
+
     public function boletas($course_id,$section){
 
           /*************************SEGURIDAD*******************/
