@@ -159,10 +159,10 @@
                                                 <div class="md-v-line"></div>
                                                  <i class="fas fa-user mr-5"></i>Acumulativos
                                                  <a href=""><div class="list-group-item">
-                                                   <button style="width:20px" class="btn btn-sm" href="">I</button >
-                                                   <button style="width:20px" class="btn btn-sm" href="">II</button >
-                                                   <button style="width:20px" class="btn btn-sm" href="">III</button >
-                                                   <button style="width:20px" class="btn btn-sm" href="">IV</button >
+                                                   <button style="width:40px; color:black" class="btn btn-sm" href="">I P</button >
+                                                   <button style="width:40px; color:black" class="btn btn-sm" href="">II P</button >
+                                                   <button style="width:40px; color:black" class="btn btn-sm" href="">III P</button >
+                                                   <button style="width:40px; color:black" class="btn btn-sm" href="">IV P</button >
                                                   </div>
                                                 </a>
                                             </li>
