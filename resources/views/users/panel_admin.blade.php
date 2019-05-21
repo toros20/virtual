@@ -158,14 +158,13 @@
                                             <li class="list-group-item">
                                                 <div class="md-v-line"></div>
                                                 Acumulativos
-                                                  
-                                            </li>
-                                            <li>
-                                                <button><a href="">IP</a></button>
+                                                  <div>
+                                                 <button><a href="">IP</a></button>
                                                   <button><a href="">IIP</a></button>
                                                   <button><a href="">IIIP</a></button>
                                                   <button><a href="">IVP</a></button>
-                                            </li>
+                                                </div>
+                                           </li>
                                     </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
                                         <li class="list-group-item">
