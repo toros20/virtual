@@ -51,26 +51,102 @@
       <div class="container-fluid" align="center">
         <!--row-->
         <div class="row" align="center"> 
-                {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
-                      
-                        <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="95%">
-                           
-                         
-                            <tr> 
-                                <td width="12%" rowspan="2" align="center">
-                                    <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
-                                </td>
-                                <td>
-                                <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
-                                <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
-                                <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
-                                <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
-                                
-                                </td>
+               
+        
+            <table width="100%" border="0">
+                <tr>
+                  <td align="center"><strong style="font-family: Arial">REPUBLICA DE HONDURAS<BR>
+              SECRETARIA DE EDUCACIÓN<BR>
+              DIRECCIÓN DEPARTAMENTAL DE EDUCACIÓN DE FRANCISCO MORAZÁN<BR>
+              </strong></td>
+                </tr>
+              </table>
+              
+              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              
+                    <?php //if ($curso==4 || $curso==5 || $curso==6 ) { // ACTA BILINGUE ?>  
+                 <tr style="font-family: Arial">
+                  <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
+                  <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA N°: </strong></td>
+                  <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
+                </tr>
+              
+                <tr>
+                  <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
+                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSE DEL CARMEN</strong></td>
+                  <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
+                  <td width="3%" ><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td><strong>X</strong></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              
+                    <?php //} ?>
+              
+                    {{--  <?php //if ($curso!=4 and $curso!=5 and $curso!=6 ) { // ACTA EN ESPAÑOL ?>
+                        <tr style="font-family: Arial">
+                        <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
+                        <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA N°: </strong></td>
+                        <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
+                        </tr>
+                    
+                        <tr>
+                        <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO:</strong></td>
+                        <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>SAN JOSÉ DEL CARMEN</strong></td>
+                        <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
+                        <td width="3%" ><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellspacing="0" cellpadding="0">
+                            <tr>
+                            <td><strong>X</strong></td>
                             </tr>
-                      
-                           
-                        </table>
+                        </table></td>
+                        </tr>
+                    <?php //} ?> --}}
+              
+                
+                <tr>
+                  <td style="font-family: Arial;font-size: 12px"><strong>CURSO: <?php // ?></strong></td>
+                  <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
+                  <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
+                  <td><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td><strong>X</strong></td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: <?php // ?></strong></td>
+                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
+                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>.</td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td style="font-family: Arial;font-size: 12px"><strong>PARCIAL: <?php // ?></strong></td>
+                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
+                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>.</td>
+                    </tr>
+                  </table></td>
+                </tr>
+                <tr>
+                  <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA: <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
+                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td>.</td>
+                    </tr>
+                  </table></td>
+                </tr>
+               
+              </table>
+            
 
         </div><!--row-->
 
@@ -100,7 +176,7 @@ $html = ob_get_clean();
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
     'format' => [190, 236],
-    'orientation' => 'P'
+    'orientation' => 'L'
 ]); 
 
 $mpdf->allow_charset_conversion= true;
