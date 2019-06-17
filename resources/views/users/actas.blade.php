@@ -17,7 +17,7 @@
   <title>Plataforma ISJC</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  <!-- Bootstrap core CSS -->
+  <!-- Bootstrap core CSS --> 
   <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -87,31 +87,7 @@
                         @endif
                            
                         </table>
-                        <table  style="tabla-striped text-align:center; border: 1px solid #dee2e6; "  align="center" width="95%">
-                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>ACTAS DE <?php echo $parcial . " PARCIAL";?></h5></td>
-                                <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
-                            <tr style="border: 1px solid #dee2e6; ">
-                                <td style="padding-top:5px;  border: 1px solid #dee2e6;">
-                                    <h5>Curso: {{$course->name}} </h5>
-                                </td>
-                                <td style=" border: 1px solid #dee2e6;">
-                                    <h5>Sección: {{$section}}</h5>
-                                </td>
-                            </tr>
-                        </table>
-
-                            <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="95%">
-                                <tr style="border: 1px solid #dee2e6; ">
-                                    <th style="border: 1px solid #dee2e6;">No.</th>
-                                    <th style="border: 1px solid #dee2e6;">Nombre de Estudiante</th>
-                                    
-                                    @foreach ($clases as $clase)
-                                        <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
-                                    @endforeach
-                                    <th style="border: 1px solid #dee2e6;">Repro.</th>
-                                </tr>
-
-                            </table>
+                      
                             
                     </table>
 
