@@ -117,50 +117,44 @@
                                     <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1;$reprobadas=0; ?></td>
                                     <td style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                                   
-                                    @foreach ($clases as $clase)
-                                        <?php 
-                                          
-                                           /* $resultado = DB::table($historial)
-                                                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
-                                                        ->where ([
-                                                                    [$historial.'.clase_id', '=', $clase->clase_id],
-                                                                    [$historial.'.student_id', '=', $estudiante->user_id],
-                                                                ])
-                                                        ->Select($historial.'.*')
-                                                        ->get();
-
-                                                        $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-
-                                                        if ($total1 < 70) {
-                                                            $reprobadas+=1;
-                                                        }*
-
-
-                                                        /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                                        $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                                        $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
-
-                                            $total = 75;
-                                        ?>
-                                        @if ( $total1 < 70)
-                                            <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $total1 ?> </td>
-                                        @else 
-                                            <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
-                                        @endif
-                                                     
-                                     @endforeach {{--fin del ciclo para cada clase --}}
-                                        
-                                     @if ( $reprobadas > 0)
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas ?> </td>
-                                     @else 
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
-                                     @endif
+                                   
                                             
                                     
                                 </tr>
                                     <?php $cont+=1;?>
                                 @endforeach {{--fin del ciclo para cada estudiante --}}
-                               
+                                {{-- 
+                                <tr> <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">00</td>
+                                     <td  style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">Reprobados por Clase</td>
+                                 --}}  {{--   @foreach ($clases as $clase)
+                                        <?php 
+                                        /* 
+                                        $total_en_clase=0;$clase_reprobada=0;
+
+                                        $resultados = DB::table($historial)
+                                                    ->where ([
+                                                                [$historial.'.clase_id', '=', $clase->clase_id],
+                                                            ])
+                                                    ->Select($historial.'.*')
+                                                    ->get();
+
+                                                    foreach ($resultados as $resultado) {
+                                                        $total_en_clase=($resultado->Acum1) + ($resultado->Exa1);
+
+                                                        if ($total_en_clase < 70) {
+                                                            $clase_reprobada+=1;
+                                                        }
+                                                    } // fin del for each resultados
+                                                    */
+                                                    /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                                    $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                                    $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+
+                                        ?>
+                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php //echo $clase_reprobada;?></td>
+                                       
+                                    @endforeach --}}
+                                {{-- </tr> --}}
 
                             </table>
                             
