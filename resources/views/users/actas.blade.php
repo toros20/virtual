@@ -160,38 +160,7 @@
                                 </tr>
                                     <?php $cont+=1;?>
                                 @endforeach {{--fin del ciclo para cada estudiante --}}
-                                {{-- 
-                                <tr> <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">00</td>
-                                     <td  style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">Reprobados por Clase</td>
-                                 --}}  {{--   @foreach ($clases as $clase)
-                                        <?php 
-                                        /* 
-                                        $total_en_clase=0;$clase_reprobada=0;
-
-                                        $resultados = DB::table($historial)
-                                                    ->where ([
-                                                                [$historial.'.clase_id', '=', $clase->clase_id],
-                                                            ])
-                                                    ->Select($historial.'.*')
-                                                    ->get();
-
-                                                    foreach ($resultados as $resultado) {
-                                                        $total_en_clase=($resultado->Acum1) + ($resultado->Exa1);
-
-                                                        if ($total_en_clase < 70) {
-                                                            $clase_reprobada+=1;
-                                                        }
-                                                    } // fin del for each resultados
-                                                    */
-                                                    /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                                    $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                                    $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
-
-                                        ?>
-                                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php //echo $clase_reprobada;?></td>
-                                       
-                                    @endforeach --}}
-                                {{-- </tr> --}}
+                               
 
                             </table>
                             
@@ -215,7 +184,7 @@
 //==============================================================
 //==============================================================
 
- include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
 $html = ob_get_clean();
 
@@ -238,7 +207,7 @@ $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first leve
 
 $mpdf->WriteHTML($html);
 
-$mpdf->Output('Boleta de Calificaciones.pdf','I');
+$mpdf->Output('Acta de Calificaciones.pdf','I');
 
 exit(); 
 //==============================================================
