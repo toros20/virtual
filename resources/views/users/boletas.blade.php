@@ -25,8 +25,8 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Material Design Bootstrap -->
   <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
-  <!-- Your custom styles (optional) css
-  <link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">
+  <!-- Your custom styles (optional) css-->
+  <!--<link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">-->
  
   <!-- MDBootstrap Cards Extended Pro  -->
  
