@@ -52,26 +52,10 @@
         <!--row-->
         <div class="row" align="center"> 
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
-                <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
-                
-                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="95%">
-                            @if ($course->is_bilingue == 1)
-                                <tr> 
-                                    <td width="12%" rowspan="2" align="center">
-                                        <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
-                                    </td>
-                                    <td>
-                                    <h4 style="font-weight: bold;">C.E.M.N.G.B SAN JOSÉ DEL CARMEN </h4>
-                                    <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
-                                    <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
-                                    <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
-                                    
-                                    </td>
-                                </tr>
-                            @endif
-                            @if ($course->is_bilingue == 0)
+                           
+                         
                             <tr> 
                                 <td width="12%" rowspan="2" align="center">
                                     <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
@@ -84,7 +68,7 @@
                                 
                                 </td>
                             </tr>
-                        @endif
+                      
                            
                         </table>
                       
