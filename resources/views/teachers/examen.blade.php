@@ -211,8 +211,6 @@
                                                     
                                                     </a>
                                                 </th>
-
-                              
                                 </tr>
                             </thead>
                             <!--Table head--> 
