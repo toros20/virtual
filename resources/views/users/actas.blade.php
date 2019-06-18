@@ -64,10 +64,6 @@
               
             <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
 
-                    <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
-                
-                    <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
-
                     {{-- Codigo para cursos bilingues --}}
                    @if ($course->is_bilingue == 1)
 
@@ -158,12 +154,20 @@
             </table>
             
             <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6;">
+
+                    <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                
+                    <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
+
                         <tr style="border: 1px solid #dee2e6; ">
                         <th style="border: 1px solid #dee2e6;">No.</th>
                         <th style="border: 1px solid #dee2e6;">Nombre de Estudiante</th>
                         
                         @foreach ($clases as $clase)
-                            <th style="text-rotate: 90 text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
+                            <th valign="bottom" style="text-rotate: 90 text-align:center;  width:50px;font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                        @php
+                            $cont_clase+=1;
+                        @endphp
                         @endforeach
                         <th style="ext-rotate: 90 text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
