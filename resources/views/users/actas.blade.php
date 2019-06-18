@@ -60,9 +60,13 @@
               DIRECCIÓN DEPARTAMENTAL DE EDUCACIÓN DE FRANCISCO MORAZÁN<BR>
               </strong></td>
                 </tr>
-              </table>
+            </table>
               
-              <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
+            <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
+
+                    <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                
+                    <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
 
                     {{-- Codigo para cursos bilingues --}}
                    @if ($course->is_bilingue == 1)
@@ -77,7 +81,7 @@
                             <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                             <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
                             <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                            <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                            <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
                             <tr>
                                 <td><strong>X</strong></td>
                             </tr>
@@ -99,7 +103,7 @@
                                 <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                                 <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G SAN JOSÉ DEL CARMEN</strong></td>
                                 <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                                <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                                <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
                                 <tr>
                                     <td><strong>X</strong></td>
                                 </tr>
@@ -115,7 +119,7 @@
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                  <td><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td><strong>X</strong></td>
                     </tr>
@@ -151,8 +155,100 @@
                   </table></td>
                 </tr>
                
-              </table>
+            </table>
             
+            <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="95%">
+                    <tr style="border: 1px solid #dee2e6; ">
+                        <th style="border: 1px solid #dee2e6;">No.</th>
+                        <th style="border: 1px solid #dee2e6;">Nombre de Estudiante</th>
+                        
+                        @foreach ($clases as $clase)
+                            <th style="text-rotate: 90 text-align:left; width:50px;font-weight: bold; border: 1px solid #dee2e6;">{{$clase->short_name}}</th>
+                        @endforeach
+                        <th style="border: 1px solid #dee2e6;">Repro.</th>
+                    </tr>
+
+                    @foreach ($estudiantes as $estudiante)
+
+                    <tr>
+                        <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1;$reprobadas=0; ?></td>
+                        <td style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
+                      
+                        @foreach ($clases as $clase)
+                            <?php 
+                              
+                                $resultado = DB::table($historial)
+                                            ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                            ->where ([
+                                                        [$historial.'.clase_id', '=', $clase->clase_id],
+                                                        [$historial.'.student_id', '=', $estudiante->user_id],
+                                                    ])
+                                            ->Select($historial.'.*')
+                                            ->get();
+
+                                            $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+
+                                            if ($total1 < 70) {
+                                                $reprobadas+=1;
+                                            }
+                                            /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                            $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                            $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+
+                                
+                            ?>
+                            @if ( $total1 < 70)
+                                <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $total1 ?> </td>
+                            @else 
+                                <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
+                            @endif
+                                         
+                         @endforeach {{--fin del ciclo para cada clase --}}
+                            
+                         @if ( $reprobadas > 0)
+                            <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas ?> </td>
+                         @else 
+                            <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
+                         @endif
+                                
+                        
+                    </tr>
+                        <?php $cont+=1;?>
+                    @endforeach {{--fin del ciclo para cada estudiante --}}
+
+                    <tr> <td style="font-size:1rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">00</td>
+                         <td  style="font-size:1.25rem ;font-weight: bold; border: 1px solid #dee2e6; text-align:left;">Reprobados por Clase</td>
+                        @foreach ($clases as $clase)
+                            <?php 
+
+                            $total_en_clase=0;$clase_reprobada=0;
+
+                            $resultados = DB::table($historial)
+                                        ->where ([
+                                                    [$historial.'.clase_id', '=', $clase->clase_id],
+                                                ])
+                                        ->Select($historial.'.*')
+                                        ->get();
+
+                                        foreach ($resultados as $resultado) {
+                                            $total_en_clase=($resultado->Acum1) + ($resultado->Exa1);
+
+                                            if ($total_en_clase < 70) {
+                                                $clase_reprobada+=1;
+                                            }
+                                        } // fin del for each resultados
+                                       
+                                        /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                        $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+
+                            ?>
+                            <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
+                           
+                        @endforeach
+                    </tr>
+
+                </table>
 
         </div><!--row-->
 
