@@ -148,7 +148,7 @@
                         
                         @foreach ($clases as $clase)
                             <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                            <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">RECUPERACION</th>
+                            <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
                             @php  $cont_clase+=1;   @endphp
                         @endforeach
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
@@ -193,16 +193,16 @@
                                 
                             ?>
                             @if ( $total < 70)
-                                <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
+                                <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
                             @else 
-                                <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
+                                <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
                             @endif
 
                             @if ( $recuperacion < 70)
-                            <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
-                        @else 
-                            <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>
-                        @endif
+                            <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
+                            @else 
+                                <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>
+                            @endif
                                 
                          @endforeach {{--fin del ciclo para cada clase --}}
                         
