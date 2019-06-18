@@ -83,7 +83,7 @@
                 </tr>              
                 
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>CURSO: <?php $course->name ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>CURSO: {{$course->name}}</strong></td>
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
@@ -94,7 +94,7 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: <?php $section ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: {{$section}}</strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
