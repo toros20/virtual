@@ -15,7 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Plataforma ISJC</title>
- 
+</head> 
   <!-- Start your project here-->
   <body class="hidden-sn mdb-skin">
   
@@ -144,7 +144,7 @@
                         @endforeach
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
-     </head> {{--esta etiqueta es importante par que aparezaca el encabezado en cada pagina --}}
+     {{--esta etiqueta es importante par que aparezaca el encabezado en cada pagina --}}
                     @foreach ($estudiantes as $estudiante)
 
                     <tr>
