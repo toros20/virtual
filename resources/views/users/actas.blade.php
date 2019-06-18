@@ -245,7 +245,7 @@ $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first leve
 
 $mpdf->WriteHTML($html);
 
-$mpdf->Output('Acta de Calificaciones.pdf','I');
+$mpdf->Output('Acta Final I Semestre '. utf8_encode($fila_curso['descripcion']) . "-". $fila_seccion['descripcion'],'I');
 
 exit(); 
 //==============================================================
