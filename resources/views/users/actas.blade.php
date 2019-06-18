@@ -67,7 +67,7 @@
                     <?php //if ($curso==4 || $curso==5 || $curso==6 ) { // ACTA BILINGUE ?>  
                  <tr style="font-family: Arial">
                   <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
-                  <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA N°: </strong></td>
+                
                   <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
                 </tr>
               
@@ -80,29 +80,7 @@
                       <td><strong>X</strong></td>
                     </tr>
                   </table></td>
-                </tr>
-              
-                    <?php //} ?>
-              
-                    {{--  <?php //if ($curso!=4 and $curso!=5 and $curso!=6 ) { // ACTA EN ESPAÑOL ?>
-                        <tr style="font-family: Arial">
-                        <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
-                        <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA N°: </strong></td>
-                        <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
-                        </tr>
-                    
-                        <tr>
-                        <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO:</strong></td>
-                        <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>SAN JOSÉ DEL CARMEN</strong></td>
-                        <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                        <td width="3%" ><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellspacing="0" cellpadding="0">
-                            <tr>
-                            <td><strong>X</strong></td>
-                            </tr>
-                        </table></td>
-                        </tr>
-                    <?php //} ?> --}}
-              
+                </tr>              
                 
                 <tr>
                   <td style="font-family: Arial;font-size: 12px"><strong>CURSO: <?php // ?></strong></td>
