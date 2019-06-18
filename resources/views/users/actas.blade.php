@@ -28,8 +28,6 @@
   <!-- Your custom styles (optional) css-->
   <!--<link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">-->
  
-
-
   <!-- Start your project here-->
   <body class="hidden-sn mdb-skin">
   
@@ -39,7 +37,6 @@
         <!--row-->
         <div class="row" align="center"> 
                
-        
             <table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
                 <tr>
                   <td align="center"><strong style="font-family: Arial">REPÚBLICA DE HONDURAS<BR>
@@ -95,7 +92,6 @@
                        
                    @endif
                     {{-- FIN de Codigo para cursos bilingues --}}
-        
                 
                 <tr>
                   <td style="font-family: Arial;font-size: 12px"><strong>CURSO: {{$course->name}}</strong></td>
@@ -152,9 +148,8 @@
                         
                         @foreach ($clases as $clase)
                             <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                        @php
-                            $cont_clase+=1;
-                        @endphp
+                            <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">RECUPERACION</th>
+                            @php  $cont_clase+=1;   @endphp
                         @endforeach
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
@@ -189,11 +184,12 @@
 
                                             //se suman todos los promedios para obtener el promedio global
                                             $promedio += $total;
+
+                                            $recuperacion =$clase->Recu1;
                             
                                             /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
-
                                 
                             ?>
                             @if ( $total < 70)
@@ -201,6 +197,12 @@
                             @else 
                                 <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
                             @endif
+
+                            @if ( $recuperacion < 70)
+                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
+                        @else 
+                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>
+                        @endif
                                 
                          @endforeach {{--fin del ciclo para cada clase --}}
                         
@@ -332,12 +334,6 @@
 
         </div><!--row-->
 
- <!--Main Layout-->
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <!-- MDB core JavaScript -->
-
 </body>
 
 </html>
@@ -377,6 +373,5 @@ exit();
 //==============================================================
 //==============================================================
 //==============================================================
-
 
 ?>
