@@ -65,7 +65,7 @@
               <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
 
                     {{-- Codigo para cursos bilingues --}}
-                   @if ({{$course->is_bilingue == 1}})
+                   @if ($course->is_bilingue == 1)
 
                         <tr style="font-family: Arial">
                             <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
@@ -87,7 +87,7 @@
                     {{-- FIN de Codigo para cursos bilingues --}}
 
                      {{-- Codigo para cursos NO bilingues --}}
-                   @if ({{$course->is_bilingue == 0}})
+                   @if ($course->is_bilingue == 0)
 
                         <tr style="font-family: Arial">
                                 <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
