@@ -193,15 +193,15 @@
                                 
                             ?>
                             @if ( $total < 70)
-                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
+                                <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
                             @else 
-                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
+                                <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
                             @endif
 
                             @if ( $recuperacion < 70)
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
+                            <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
                         @else 
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>
+                            <td style="font-size:14px ;text-align:center; width:25px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>
                         @endif
                                 
                          @endforeach {{--fin del ciclo para cada clase --}}
