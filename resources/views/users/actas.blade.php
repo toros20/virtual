@@ -208,8 +208,13 @@
                               $promedio_final =  ($promedio /  $cont_clase );
                               $promedio_final =  round($promedio_final);
                          @endphp
-                         <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio_final ?></td>
-                        
+
+                        @if ( $total < 70)
+                        <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $promedio_final ?> </td>
+                        @else 
+                        <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio_final ?> </td>
+                        @endif
+                         
                     </tr>
                         <?php $cont+=1;?>
                     @endforeach {{--fin del ciclo para cada estudiante --}}
