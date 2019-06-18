@@ -141,7 +141,7 @@
             </table>
             
             <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6;">
-
+                <thead>
                     <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                     <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
@@ -159,7 +159,7 @@
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
 
-                </head>
+                </thead>
 
                     @foreach ($estudiantes as $estudiante)
 
