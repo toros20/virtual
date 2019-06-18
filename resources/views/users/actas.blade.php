@@ -55,8 +55,8 @@
         
             <table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
                 <tr>
-                  <td align="center"><strong style="font-family: Arial">REPUBLICA DE HONDURAS<BR>
-              SECRETARIA DE EDUCACIÓN<BR>
+                  <td align="center"><strong style="font-family: Arial">REPÚBLICA DE HONDURAS<BR>
+              SECRETARÍA DE EDUCACIÓN<BR>
               DIRECCIÓN DEPARTAMENTAL DE EDUCACIÓN DE FRANCISCO MORAZÁN<BR>
               </strong></td>
                 </tr>
@@ -64,7 +64,7 @@
               
               <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
               
-                    <?php //if ($curso==4 || $curso==5 || $curso==6 ) { // ACTA BILINGUE ?>  
+                   
                  <tr style="font-family: Arial">
                   <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
                 
@@ -73,7 +73,7 @@
               
                 <tr>
                   <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
-                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSE DEL CARMEN</strong></td>
+                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
                   <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
                   <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
                     <tr>
@@ -83,7 +83,7 @@
                 </tr>              
                 
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>CURSO: <?php // ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>CURSO: <?php $course->name ?></strong></td>
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
@@ -94,7 +94,7 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: <?php // ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: <?php $section ?></strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
@@ -104,7 +104,7 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>PARCIAL: <?php // ?></strong></td>
+                  <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
