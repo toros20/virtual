@@ -164,7 +164,7 @@
                         <th style="border: 1px solid #dee2e6;">Nombre de Estudiante</th>
                         
                         @foreach ($clases as $clase)
-                            <th valign="bottom" style="text-rotate: 90 text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                            <th width = "4px" valign="bottom" style="text-rotate: 90 text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
                         @php
                             $cont_clase+=1;
                         @endphp
@@ -204,10 +204,10 @@
                             @else 
                                 <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
                             @endif
-                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;">70</td>
+                                
                          @endforeach {{--fin del ciclo para cada clase --}}
                 
-                                
+                         <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;">70</td>
                         
                     </tr>
                         <?php $cont+=1;?>
