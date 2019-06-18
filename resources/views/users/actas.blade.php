@@ -15,36 +15,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>Plataforma ISJC</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-  <!-- Bootstrap core CSS --> 
-  <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- Material Design Bootstrap -->
-  <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
-  <!-- Your custom styles (optional) css-->
-  <!--<link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">-->
  
-  <!-- MDBootstrap Cards Extended Pro  -->
- 
-</head>
-
-  {{-- <div id="mdb-preloader" class="flex-center">
-    <div id="preloader-markup"></div>
-  </div> --}}
-
   <!-- Start your project here-->
   <body class="hidden-sn mdb-skin">
-
-    <!--Double navigation-->
-    <header>
-      
-       
-    </header>
-    <!--/.Double navigation-->
   
     <!--Main Layout-->
    
@@ -171,7 +144,7 @@
                         @endforeach
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
-
+     </head> {{--esta etiqueta es importante par que aparezaca el encabezado en cada pagina --}}
                     @foreach ($estudiantes as $estudiante)
 
                     <tr>
