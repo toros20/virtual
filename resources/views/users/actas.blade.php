@@ -53,7 +53,7 @@
         <div class="row" align="center"> 
                
         
-            <table width="100%" border="0">
+            <table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                 <tr>
                   <td align="center"><strong style="font-family: Arial">REPUBLICA DE HONDURAS<BR>
               SECRETARIA DE EDUCACIÓN<BR>
@@ -62,7 +62,7 @@
                 </tr>
               </table>
               
-              <table width="100%" border="0" cellpadding="0" cellspacing="0">
+              <table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
               
                     <?php //if ($curso==4 || $curso==5 || $curso==6 ) { // ACTA BILINGUE ?>  
                  <tr style="font-family: Arial">
@@ -75,7 +75,7 @@
                   <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSE DEL CARMEN</strong></td>
                   <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                  <td width="3%" ><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellspacing="0" cellpadding="0">
+                  <td width="3%" ><table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td><strong>X</strong></td>
                     </tr>
@@ -109,7 +109,7 @@
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
-                  <td><table width="100%" border="1" style="border-collapse: collapse; text-align: center;" cellpadding="0" cellspacing="0">
+                  <td><table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td><strong>X</strong></td>
                     </tr>
@@ -119,7 +119,7 @@
                   <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: <?php // ?></strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
-                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                  <td><table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -129,7 +129,7 @@
                   <td style="font-family: Arial;font-size: 12px"><strong>PARCIAL: <?php // ?></strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
-                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                  <td><table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -138,7 +138,7 @@
                 <tr>
                   <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA: <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
-                  <td><table width="100%" border="1" style="border-collapse: collapse" cellpadding="0" cellspacing="0">
+                  <td><table width="100%" style="tabla-striped text-align:center; border: 1px solid #dee2e6; ">
                     <tr>
                       <td>.</td>
                     </tr>
