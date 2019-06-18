@@ -653,6 +653,11 @@ class TeacherController extends Controller
         
         //nombramos la tabla a utilizar
         $tabla='historial_'.$course.'_'.$seccion;
+        
+        //buscamos el curso para er si es semestral
+        $curso=DB::table('courses')
+                    ->where('id','=',$course)
+                    ->get();
 
         //obtenemos los id de los estudiantes de este curso y seccion
         $students = DB::table('enrollments')
@@ -662,42 +667,86 @@ class TeacherController extends Controller
                     ] )
                     ->Select('enrollments.user_id')
                     ->get();
-        //proceso para cada uno de los estudiantes
-       foreach ($students as $student) {
+        //proceso para los cursos NO semestrales
+        if($curso[0]->is_semestral==0){
 
-           $txtacum1= 'acum1_'. $student->user_id;
-           $txtacum2= 'acum2_'. $student->user_id;
-           $txtacum3= 'acum3_'. $student->user_id;
-           $txtacum4= 'acum4_'. $student->user_id;
-           $txtexa1= 'exa1_'. $student->user_id;
-           $txtexa2= 'exa2_'. $student->user_id;
-           $txtexa3= 'exa3_'. $student->user_id;
-           $txtexa4= 'exa4_'. $student->user_id;
-           $promedio= 'promedio_'. $student->user_id;
-           $recu= 'recu_'. $student->user_id;
-           $recu2= 'recu2_'. $student->user_id;
-         
-          //actualizamos cada valor
-            $resp =DB::table($tabla)
-                        ->where([
-                            ['student_id', '=', $student->user_id],
-                            [$tabla.'.clase_id', '=', $clase ],
-                            ])
-                        ->update(array(
-                            'Acum1'=>$request->$txtacum1,
-                            'Exa1' =>$request->$txtexa1,
-                            'Acum2'=>$request->$txtacum2,
-                            'Exa2' =>$request->$txtexa2,
-                            'Acum3'=>$request->$txtacum3,
-                            'Exa3' =>$request->$txtexa3,
-                            'Acum4'=>$request->$txtacum4,
-                            'Exa4' =>$request->$txtexa4,
-                            'Promedio'=>$request->$promedio,
-                            'Recu1' =>$request->$recu
-                            //'Recu2'=>$request->recu2,
-                            
-                        ) );
-       }
+            //proceso para cada uno de los estudiantes
+            foreach ($students as $student) {
+
+                $txtacum1= 'acum1_'. $student->user_id;
+                $txtacum2= 'acum2_'. $student->user_id;
+                $txtacum3= 'acum3_'. $student->user_id;
+                $txtacum4= 'acum4_'. $student->user_id;
+                $txtexa1= 'exa1_'. $student->user_id;
+                $txtexa2= 'exa2_'. $student->user_id;
+                $txtexa3= 'exa3_'. $student->user_id;
+                $txtexa4= 'exa4_'. $student->user_id;
+                $promedio= 'promedio_'. $student->user_id;
+                $recu= 'recu_'. $student->user_id;
+                //$recu2= 'recu2_'. $student->user_id;
+            
+            //actualizamos cada valor
+                $resp =DB::table($tabla)
+                            ->where([
+                                ['student_id', '=', $student->user_id],
+                                [$tabla.'.clase_id', '=', $clase ],
+                                ])
+                            ->update(array(
+                                'Acum1'=>$request->$txtacum1,
+                                'Exa1' =>$request->$txtexa1,
+                                'Acum2'=>$request->$txtacum2,
+                                'Exa2' =>$request->$txtexa2,
+                                'Acum3'=>$request->$txtacum3,
+                                'Exa3' =>$request->$txtexa3,
+                                'Acum4'=>$request->$txtacum4,
+                                'Exa4' =>$request->$txtexa4,
+                                'Promedio'=>$request->$promedio,
+                                'Recu1' =>$request->$recu
+                                //'Recu2'=>$request->recu2,
+                                
+                            ) );
+            }// fin del foreach 
+
+        }// findel if para los NO semestrales
+
+        //proceso para los cursos SI semestrales
+        if($curso[0]->is_semestral==1){
+
+            //proceso para cada uno de los estudiantes
+            foreach ($students as $student) {
+
+                $txtacum1= 'acum1_'. $student->user_id;
+                $txtacum2= 'acum2_'. $student->user_id;
+              
+                $txtexa1= 'exa1_'. $student->user_id;
+                $txtexa2= 'exa2_'. $student->user_id;
+              
+                $promedio= 'promedio_'. $student->user_id;
+                $recu= 'recu_'. $student->user_id;
+                //$recu2= 'recu2_'. $student->user_id;
+            
+            //actualizamos cada valor
+                $resp =DB::table($tabla)
+                            ->where([
+                                ['student_id', '=', $student->user_id],
+                                [$tabla.'.clase_id', '=', $clase ],
+                                ])
+                            ->update(array(
+                                'Acum1'=>$request->$txtacum1,
+                                'Exa1' =>$request->$txtexa1,
+                                'Acum2'=>$request->$txtacum2,
+                                'Exa2' =>$request->$txtexa2,
+                               
+                                'Promedio'=>$request->$promedio,
+                                'Recu1' =>$request->$recu
+                                //'Recu2'=>$request->recu2,
+                                
+                            ) );
+            }// fin del foreach 
+        }// findel if para los SI semestrales
+
+
+        
         
        return redirect('teachers/academia/'.$request->user_id);
 

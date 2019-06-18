@@ -55,9 +55,9 @@ class UserController extends Controller
         //obtenemos lo estudiantes de este curso y seccion
 
         //solo para el segundo parcial
-       $parcial=2;
+      // $parcial=2;
          /* obtenemos los id de los estudiantes de este curso y seccion*/
-        $users = Enrollment::where([
+       /* $users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
@@ -103,7 +103,7 @@ class UserController extends Controller
             }
          }
 
-         return "LISTO LAS SUMAS";
+         return "LISTO LAS SUMAS";*/
         
         
         
