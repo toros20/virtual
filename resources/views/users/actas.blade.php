@@ -171,7 +171,7 @@
                     @foreach ($estudiantes as $estudiante)
 
                     <tr>
-                        <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1;$reprobadas=0; ?></td>
+                        <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                       
                         @foreach ($clases as $clase)
@@ -188,9 +188,9 @@
 
                                             $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
 
-                                            if ($total1 < 70) {
+                                          /*   if ($total1 < 70) {
                                                 $reprobadas+=1;
-                                            }
+                                            } */
                                             /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
@@ -205,11 +205,11 @@
                                          
                          @endforeach {{--fin del ciclo para cada clase --}}
                             
-                         @if ( $reprobadas > 0)
+                       {{--   @if ( $reprobadas > 0)
                             <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas ?> </td>
                          @else 
                             <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
-                         @endif
+                         @endif --}}
                                 
                         
                     </tr>
