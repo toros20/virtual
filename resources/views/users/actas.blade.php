@@ -188,9 +188,7 @@
 
                                             $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
 
-                                          /*   if ($total1 < 70) {
-                                                $reprobadas+=1;
-                                            } */
+                            
                                             /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
@@ -204,12 +202,7 @@
                             @endif
                                          
                          @endforeach {{--fin del ciclo para cada clase --}}
-                            
-                       {{--   @if ( $reprobadas > 0)
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php //echo $reprobadas ?> </td>
-                         @else 
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php //echo $reprobadas ?> </td>
-                         @endif --}}
+                
                                 
                         
                     </tr>
