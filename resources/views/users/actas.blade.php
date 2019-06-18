@@ -164,7 +164,7 @@
                         <th style="border: 1px solid #dee2e6;">Nombre de Estudiante</th>
                         
                         @foreach ($clases as $clase)
-                            <th valign="bottom" style="text-rotate: 90 text-align:center;  width:50px;font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                            <th  style="text-rotate: 90 text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
                         @php
                             $cont_clase+=1;
                         @endphp
