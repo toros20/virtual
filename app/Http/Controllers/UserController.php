@@ -54,9 +54,9 @@ class UserController extends Controller
         //funcion para sumar los aumulativos a la tabla de historial, se requiere como parametro, curso ,section 
         //obtenemos lo estudiantes de este curso y seccion
 
-        //solo para el primer parcial
-        /* $parcial=1;
-        //obtenemos los id de los estudiantes de este curso y seccion
+        //solo para el segundo parcial
+       $parcial=2;
+         /* obtenemos los id de los estudiantes de este curso y seccion*/
         $users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
@@ -95,7 +95,7 @@ class UserController extends Controller
                                     [$tabla_historial.'.clase_id', '=',$clase->clase_id ]
                                 ])
                                 ->update(array(
-                                    'acum1'=>$total
+                                    'Acum2'=>$total
                                     ) );
 
                 }
@@ -103,7 +103,7 @@ class UserController extends Controller
             }
          }
 
-         return "LISTO LAS SUMAS";*/ 
+         return "LISTO LAS SUMAS";
         
         
         
