@@ -185,7 +185,7 @@
                                             $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total = ($total1 + $total2)/2;
                                             //se redondea el promedio de clase
-                                            $total = Round($total,2);
+                                            $total = round($total,2);
 
                                             //se suman todos los promedios para obtener el promedio global
                                             $promedio += $total;
@@ -206,7 +206,7 @@
                         
                          @php
                               $promedio_final =  ($promedio /  $cont_clase );
-                              $promedio_final =  Round($promedio_final,2);
+                              $promedio_final =  round($promedio_final,2);
                          @endphp
                          <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio_final ?></td>
                         
