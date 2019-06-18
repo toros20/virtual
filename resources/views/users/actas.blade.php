@@ -206,9 +206,9 @@
                          @endforeach {{--fin del ciclo para cada clase --}}
                             
                        {{--   @if ( $reprobadas > 0)
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas ?> </td>
+                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php //echo $reprobadas ?> </td>
                          @else 
-                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $reprobadas ?> </td>
+                            <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php //echo $reprobadas ?> </td>
                          @endif --}}
                                 
                         
