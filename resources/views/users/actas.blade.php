@@ -185,7 +185,7 @@
                                             //se suman todos los promedios para obtener el promedio global
                                             $promedio += $total;
 
-                                            $recuperacion =$clase->Recu1;
+                                            $recuperacion =$resultado[0]->Recu1;
                             
                                             /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
