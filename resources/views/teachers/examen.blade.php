@@ -323,7 +323,7 @@
                                             <td><input maxlength="2"  onchange="calcular_semestre2({{$student->user_id}})"type="text" name='acum2_{{$student->user_id}}' id='acum2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Acum2}}"></td>
                                             <td><input maxlength="2"  onchange="calcular_semestre2({{$student->user_id}})"type="text" name='exa2_{{$student->user_id}}' id='exa2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Exa2}}"></td>
                                             <td><input maxlength="2" readonly type="text" name='total2_{{$student->user_id}}' id='total2_{{$student->user_id}}' min="0" required class="form-control" value="{{ ($student->Acum2) + ($student->Exa2)}}"></td>
-                                            
+                                             
                                             <td><input maxlength="2" readonly type="text" name='promedio_{{$student->user_id}}' id='promedio_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Promedio}}" ></td>
                                             <td><input maxlength="2" readonly type="text" name='recu_{{$student->user_id}}' id='recu_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu1}}" ></td>
                                             {{-- <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> --}}
