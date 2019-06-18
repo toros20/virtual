@@ -160,7 +160,7 @@
                     </tr>
 
                 </head>
-                
+
                     @foreach ($estudiantes as $estudiante)
 
                     <tr>
@@ -239,7 +239,7 @@ $mpdf->allow_charset_conversion= true;
 
 $mpdf->charset_in='UTF-8';
 
-//$mpdf->SetDisplayMode('fullpage');
+$mpdf->SetDisplayMode('fullpage');
 
 $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first level of a list
 
