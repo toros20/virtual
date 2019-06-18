@@ -63,24 +63,52 @@
               </table>
               
               <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
-              
-                   
-                 <tr style="font-family: Arial">
-                  <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
-                
-                  <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
-                </tr>
-              
-                <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
-                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
-                  <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                  <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
-                    <tr>
-                      <td><strong>X</strong></td>
-                    </tr>
-                  </table></td>
-                </tr>              
+
+                    {{-- Codigo para cursos bilingues --}}
+                   @if ({{$course->is_bilingue == 1}})
+
+                        <tr style="font-family: Arial">
+                            <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
+                            <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
+                            <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
+                        </tr>
+                        
+                        <tr>
+                            <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
+                            <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
+                            <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
+                            <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                            <tr>
+                                <td><strong>X</strong></td>
+                            </tr>
+                            </table></td>
+                       </tr>    
+                   @endif
+                    {{-- FIN de Codigo para cursos bilingues --}}
+
+                     {{-- Codigo para cursos NO bilingues --}}
+                   @if ({{$course->is_bilingue == 0}})
+
+                        <tr style="font-family: Arial">
+                                <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
+                                <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
+                                <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
+                                <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.B.N.G SAN JOSÉ DEL CARMEN</strong></td>
+                                <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
+                                <td width="3%" ><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                                <tr>
+                                    <td><strong>X</strong></td>
+                                </tr>
+                                </table></td>
+                        </tr>    
+                       
+                   @endif
+                    {{-- FIN de Codigo para cursos bilingues --}}
+        
                 
                 <tr>
                   <td style="font-family: Arial;font-size: 12px"><strong>CURSO: {{$course->name}}</strong></td>
