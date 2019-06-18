@@ -180,23 +180,25 @@
                                             ->get();
 
                                             $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-
+                                            $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                            $total = ($total1 + $total2)/2;
+                                            $promedio = Round($total,2); 
                             
-                                            /*$total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                            $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+                                            /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                            $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                            $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
 
                                 
                             ?>
-                            @if ( $total1 < 70)
-                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $total1 ?> </td>
+                            @if ( $total < 70)
+                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
                             @else 
-                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
+                                <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
                             @endif
                                 
                          @endforeach {{--fin del ciclo para cada clase --}}
                 
-                         <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;">70</td>
+                         <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio ?></td>
                         
                     </tr>
                         <?php $cont+=1;?>
