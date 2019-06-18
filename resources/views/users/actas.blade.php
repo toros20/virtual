@@ -205,7 +205,7 @@
                          @endforeach {{--fin del ciclo para cada clase --}}
                         
                          @php
-                              $promedio_final =  ($promedio /  $cont_clase );
+                              $promedio_final =  ($promedio /  ($cont_clase-1) );
                               $promedio_final =  round($promedio_final);
                          @endphp
 
