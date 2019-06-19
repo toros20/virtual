@@ -131,7 +131,7 @@ $html = ob_get_clean();
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
     'format' => 'Letter',
-    'orientation' => 'P'
+    'orientation' => 'L'
 ]); 
 
 $mpdf->allow_charset_conversion= true;
