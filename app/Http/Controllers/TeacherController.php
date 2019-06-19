@@ -647,7 +647,7 @@ class TeacherController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role!='admin'){
+            if( $user->role!='teacher'){
                 return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
             }
 
