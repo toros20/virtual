@@ -653,6 +653,7 @@ class TeacherController extends Controller
 
         /*************************SEGURIDAD*******************/
 
+        $seccion = strtolower($section);
         //nombramos la tabla a utilizar
         $tabla='historial_'.$course.'_'.$seccion;
 
