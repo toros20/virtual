@@ -638,7 +638,7 @@ class TeacherController extends Controller
 
     }
 
-    public function cuadrouno($user_id,$course,$section,$clase){
+    public function cuadrouno($user_id,$course_id,$section,$clase){
 
             /*************************SEGURIDAD*******************/
             //control de seguridad
@@ -670,7 +670,6 @@ class TeacherController extends Controller
                             ->get(); 
                             //dd($estudiantes);
 
-            $curso = $course_id;
             $course =  Course::findOrFail($course_id);
             $seccion = strtolower($section);
             
