@@ -674,7 +674,7 @@ class TeacherController extends Controller
             $course =  Course::findOrFail($course_id);
             $seccion = strtolower($section);
             
-        return view('users/cuadrouno',compact('estudiantes','curso','seccion','clases','course','section'));
+        return view('teachers/cuadrouno',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
     //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
