@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Assignment;
 use App\Enrollment;
+use App\Course;
 use DB;
 use Carbon\Carbon;
 
