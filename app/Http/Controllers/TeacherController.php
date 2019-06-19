@@ -655,7 +655,7 @@ class TeacherController extends Controller
 
         $seccion = strtolower($section);
         //nombramos la tabla a utilizar
-        $tabla='historial_'.$course.'_'.$seccion;
+        $tabla='historial_'.$course_id.'_'.$seccion;
 
         //obtenemos los id de los estudiantes matriculados en este curso y seccion
         $estudiantes = DB::table($tabla)
