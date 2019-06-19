@@ -638,6 +638,44 @@ class TeacherController extends Controller
 
     }
 
+    public function cuadrouno($user_id,$course,$section,$clase){
+
+            /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        //nombramos la tabla a utilizar
+        $tabla='historial_'.$course.'_'.$seccion;
+
+        //obtenemos los id de los estudiantes matriculados en este curso y seccion
+        $estudiantes = DB::table($tabla)
+                            ->join('users', $tabla.'student_id', '=', 'users.id')
+                            ->join('clases', $tabla.'.clase_id', '=', 'clase.id')
+                            ->where ([
+                                        [$tabla.'.clase_id', '=', $clase],
+                                    ])
+                            ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'*','clases.name')
+                            ->orderBy('users.sexo','asc')
+                            ->orderBy('users.name','asc')
+                            ->get(); 
+                            //dd($estudiantes);
+
+            $curso = $course_id;
+            $course =  Course::findOrFail($course_id);
+            $seccion = strtolower($section);
+            
+        return view('users/cuadrouno',compact('estudiantes','curso','seccion','clases','course','section'));
+    }
+
     //funcion para almacenar/actualizat las notas ingresadas en la seccion de examen del docente, para cerrar nota final de parcial
     public function save_parcial(Request $request){
 
@@ -686,25 +724,25 @@ class TeacherController extends Controller
                 //$recu2= 'recu2_'. $student->user_id;
             
             //actualizamos cada valor
-                $resp =DB::table($tabla)
-                            ->where([
-                                ['student_id', '=', $student->user_id],
-                                [$tabla.'.clase_id', '=', $clase ],
-                                ])
-                            ->update(array(
-                                'Acum1'=>$request->$txtacum1,
-                                'Exa1' =>$request->$txtexa1,
-                                'Acum2'=>$request->$txtacum2,
-                                'Exa2' =>$request->$txtexa2,
-                                'Acum3'=>$request->$txtacum3,
-                                'Exa3' =>$request->$txtexa3,
-                                'Acum4'=>$request->$txtacum4,
-                                'Exa4' =>$request->$txtexa4,
-                                'Promedio'=>$request->$promedio,
-                                'Recu1' =>$request->$recu
-                                //'Recu2'=>$request->recu2,
-                                
-                            ) );
+            $resp =DB::table($tabla)
+                        ->where([
+                            ['student_id', '=', $student->user_id],
+                            [$tabla.'.clase_id', '=', $clase ],
+                            ])
+                        ->update(array(
+                            'Acum1'=>$request->$txtacum1,
+                            'Exa1' =>$request->$txtexa1,
+                            'Acum2'=>$request->$txtacum2,
+                            'Exa2' =>$request->$txtexa2,
+                            'Acum3'=>$request->$txtacum3,
+                            'Exa3' =>$request->$txtexa3,
+                            'Acum4'=>$request->$txtacum4,
+                            'Exa4' =>$request->$txtexa4,
+                            'Promedio'=>$request->$promedio,
+                            'Recu1' =>$request->$recu
+                            //'Recu2'=>$request->recu2,
+                            
+                        ) );
             }// fin del foreach 
 
         }// findel if para los NO semestrales

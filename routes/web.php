@@ -163,7 +163,8 @@ Route::get('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}','Teach
 Route::get('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}','TeacherController@acumulativos')->name('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}');
 Route::get('teachers/documentos/{user_id}/{course_id}/{section}/{clase}','TeacherController@documentos')->name('teachers/documentos/{user_id}/{course_id}/{section}/{clase}');
 Route::get('teachers/examen/{user_id}/{course_id}/{section}/{clase}','TeacherController@examen')->name('teachers/examen/{user_id}/{course_id}/{section}/{clase}');
-Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','TeacherController@descargas')->name('teachers/descargas/{user_id}/{course_id}/{section}/{clase}');
+//Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','TeacherController@descargas')->name('teachers/descargas/{user_id}/{course_id}/{section}/{clase}');
+Route::get('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}','TeacherController@cuadrouno')->name('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}');
 /***************FIN de las Rutas para los botones del panel academico del docente*/
 
 //crear ruta para generar las secciones asignadas a este curso de este docente

@@ -189,7 +189,11 @@
                             
                                             /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);*/
+                                            $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                            mañana miercoles se suspenden las clases
+                                            debido a la perdida de la Madre Natividd
+                                            Quien partio con el señor este día martes 18 de Junio
+                                            */
                                 
                             ?>
                             @if ( $total < 70)
@@ -229,7 +233,7 @@
 
                 </table>
 
-                <table width="90%" border="0">
+                <table width="90%" border="0" align="center">
                         <tr>
                           <td align="center">&nbsp;</td>
                           <td>&nbsp;</td>
