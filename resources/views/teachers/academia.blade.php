@@ -223,10 +223,10 @@
                                         <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Notas
                                     </li>
                                 </a>
-                               {{--  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">--}}
-                                <a class="list-group-item list-group-item-action" style="color:black" href="#">    
+                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                {{-- <a class="list-group-item list-group-item-action" style="color:black" href="#">     --}}
                                   <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Descargas
+                                        <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Cuadro Uno
                                     </li>
                                 </a>
                             </ul> 
