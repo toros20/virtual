@@ -659,7 +659,7 @@ class TeacherController extends Controller
 
         //obtenemos los id de los estudiantes matriculados en este curso y seccion
         $estudiantes = DB::table($tabla)
-                            ->join('users', $tabla.'student_id', '=', 'users.id')
+                            ->join('users', $tabla.'.student_id', '=', 'users.id')
                             ->join('clases', $tabla.'.clase_id', '=', 'clase.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
