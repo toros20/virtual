@@ -151,6 +151,7 @@
                             <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
                             @php  $cont_clase+=1;   @endphp
                         @endforeach
+                        
                         <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
                     </tr>
 

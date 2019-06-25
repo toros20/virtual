@@ -68,9 +68,9 @@
                        <td width="19%" style="font-family: Arial"><strong>AÑO:2019</strong></td>
                      </tr>
                     </table>
-                   
-                   
+                    
                     <table width="100%" border="1" style="border-collapse: collapse; font-family: Arial;">
+                    <thead>
                      <tr>
                        <td text-rotate="180" rowspan="2" align="center" valign="middle" style="font-size:14px;" >N°de Orden</td>
                        <td rowspan="2" align="center" valign="middle" style="font-size:14px;">Nombre del Alumno</td>
@@ -94,6 +94,7 @@
                        <td valign="bottom" align="center" style="font-size:14px;"></td>
                        
                      </tr>
+                    </thead>
 
                      @php     $cont=0;      @endphp
                      @foreach ($estudiantes as $estudiante)
@@ -142,7 +143,6 @@
                         @php     $cont+=1;      @endphp
                      @endforeach
                 </table>
-
 
 
                 <?php echo "<br />"; ?>
