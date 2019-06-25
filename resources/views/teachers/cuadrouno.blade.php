@@ -54,11 +54,11 @@
                      </tr>
                      <tr>
                        <td colspan="2" style="font-family: Arial"><strong>MUNICIPIO:DISTRITO CENTRAL</strong></td>
-                     <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE&nbsp;&nbsp;&nbsp;ASIGNATURA:<?php //echo utf8_encode($fila_clase['descripcion']);?></strong></td>
+                     <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiante->clase}}</strong></td>
                    
                      </tr>
                      <tr>
-                       <td colspan="5" style="font-family: Arial"><strong>NOMBRE DEL PROFESOR:<?php //echo utf8_encode($fila_empleado['nombres']." ".$fila_empleado['apellidos']);?></strong></td>
+                       <td colspan="5" style="font-family: Arial"><strong>NOMBRE DEL PROFESOR:</strong></td>
                      </tr>
                      <tr>
                        <td width="25%" style="font-family: Arial"><strong>CURSO:{{$course->name}}</strong></td>
