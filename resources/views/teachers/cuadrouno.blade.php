@@ -76,26 +76,42 @@
                        <td rowspan="2" align="center" valign="middle">Nombre del Alumno</td>
                        <td colspan="5" align="center" bgcolor="#CCCCCC">1er Semestre</td>
                        <td colspan="4" align="center" bgcolor="#CCCCCC">2do Semestre</td>
-                       <td rowspan="2" align="center" valign="bottom" text-rotate="180">Nota de Promoción</td>
-                       <td rowspan="2" valign="bottom" text-rotate="180">Nota de 1ra Recuperación</td>
-                       <td rowspan="2" valign="bottom" text-rotate="180">Nota de 2da Recupreación</td>
+                       <td rowspan="2" align="center" valign="bottom"  style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Nota de Promoción</td>
+                       <td rowspan="2"  style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Nota de 1ra Recuperación</td>
+                       <td rowspan="2"  style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Nota de 2da Recupreación</td>
                        <td align="center" rowspan="2">Observaciones</td>
                      </tr>
                      <tr text-rotate="180">
                        
-                       <td valign="bottom"> T. En Clase</td>
-                       <td valign="bottom"> T. Extra Clase</td>
-                       <td valign="bottom"> Examen</td>
-                       <td valign="bottom"><strong>Total</strong></td>
-                       <td valign="bottom"></td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"> Acumulativo</td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"> Examen</td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"><strong>Total</strong></td>                       
                        
-                       
-                       <td valign="bottom"> T. En Clase</td>
-                       <td valign="bottom"> T. Extra Clase</td>
-                       <td valign="bottom"> Examen</td>
-                       <td valign="bottom"><strong>Total</strong></td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"> Acumulativo</td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"> Examen</td>
+                       <td valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;"><strong>Total</strong></td>
                      </tr>
+
+                     @php     $cont=0;      @endphp
+                     @foreach ($estudiantes as $estudiante)
+
+                        <tr>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"></td>
+                        </tr>
+                         
+                     @endforeach
                 </table>
+
+
+
 
                 <table>
                     <tr>
