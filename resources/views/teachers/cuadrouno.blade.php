@@ -54,7 +54,7 @@
                      </tr>
                      <tr>
                        <td colspan="2" style="font-family: Arial"><strong>MUNICIPIO:DISTRITO CENTRAL</strong></td>
-                     <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
+                     <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
                    
                      </tr>
                      <tr>
@@ -103,15 +103,30 @@
                             <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1}}</td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa1}}</td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            @if (($estudiante->Acum1 + $estudiante->Exa1) < 70)
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            @else
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            @endif
+                           
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
+                            @if (($estudiante->Acum2 + $estudiante->Exa2) < 70)
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
+                            @else
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
+                            @endif
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+
+                            @if ((round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)) < 70)
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+                            @else
+                                <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+                            @endif
+                            
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu1}}</td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu2}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                             <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
                             
                         </tr>
