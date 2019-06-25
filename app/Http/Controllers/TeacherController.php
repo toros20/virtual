@@ -665,7 +665,7 @@ class TeacherController extends Controller
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
                                     ])
-                            ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name')
+                            ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
                             ->orderBy('users.sexo','asc')
                             ->orderBy('users.name','asc')
                             ->get(); 

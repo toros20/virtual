@@ -99,16 +99,16 @@
                         <tr>
                             <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                             <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         </tr>
                      @endforeach
                 </table>
