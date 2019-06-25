@@ -144,7 +144,7 @@
                 
                         </div>
                         <div class="card-body card-body-cascade ">
-                           {{-- modalidad de primaria y Prescolar --}}
+                           {{-- modalidad  Prescolar --}}
                            @if ($modalidad ==1 )
                            <ul class="list-group">
                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
@@ -174,7 +174,7 @@
                          @endif 
 
 
-                          {{-- modalidad de primaria y Prescolar --}}
+                          {{-- modalidad de primaria  --}}
                           @if ($modalidad ==2 )
                             <ul class="list-group">
                                 <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
@@ -195,11 +195,12 @@
                                         </li>
                                     </a>
                                 {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                <a class="list-group-item list-group-item-action" style="color:black" href="#">   
-                                  <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Descargas
-                                    </li>
-                                </a>
+                                  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="#">     --}}
+                                      <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Cuadro Uno
+                                        </li>
+                                    </a>
                            </ul> 
                           @endif 
                           
