@@ -83,15 +83,15 @@
                      </tr>
                      <tr text-rotate="180">
                        
-                       <td valign="bottom"> Acumulativo</td>
-                       <td valign="bottom"> Examen</td>
-                       <td valign="bottom"><strong>Total</strong></td>
-                       <td valign="bottom"></td>
+                       <td valign="bottom" align="center"> Acumulativo</td>
+                       <td valign="bottom" align="center"> Examen</td>
+                       <td valign="bottom" align="center"><strong>Total</strong></td>
+                       <td valign="bottom" align="center"></td>
                        
-                       <td valign="bottom"> Acumulativo</td>
-                       <td valign="bottom"> Examen</td>
-                       <td valign="bottom"><strong>Total</strong></td>
-                       <td valign="bottom"></td>
+                       <td valign="bottom" align="center"> Acumulativo</td>
+                       <td valign="bottom" align="center"> Examen</td>
+                       <td valign="bottom" align="center"><strong>Total</strong></td>
+                       <td valign="bottom" align="center"></td>
                        
                      </tr>
 
@@ -112,8 +112,8 @@
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
+                            
                         </tr>
                         @php     $cont+=1;      @endphp
                      @endforeach
