@@ -130,7 +130,7 @@ $html = ob_get_clean();
 //$mpdf=new mPDF('c','Letter','',''); 
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
-    'format' => 'Letter',
+    'format' => [216, 330],
     'orientation' => 'L'
 ]); 
 
