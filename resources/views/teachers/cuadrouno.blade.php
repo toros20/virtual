@@ -101,18 +101,18 @@
                         <tr>
                             <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                             <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
-                            <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"><?php echo $cont+1; ?></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu2}}</td>
+                            <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
                             
                         </tr>
                         @php     $cont+=1;      @endphp
@@ -121,7 +121,7 @@
 
 
 
-
+                <?php echo "<br />"; ?>
                 <table>
                     <tr>
                         <td>
