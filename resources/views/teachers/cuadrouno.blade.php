@@ -74,11 +74,11 @@
                      <tr>
                        <td text-rotate="180" rowspan="2" align="center" valign="middle">N°de Orden</td>
                        <td rowspan="2" align="center" valign="middle">Nombre del Alumno</td>
-                       <td colspan="5" align="center" bgcolor="#CCCCCC">1er Semestre</td>
+                       <td colspan="4" align="center" bgcolor="#CCCCCC">1er Semestre</td>
                        <td colspan="4" align="center" bgcolor="#CCCCCC">2do Semestre</td>
                        <td rowspan="2" align="center" valign="bottom" text-rotate="180">Nota de Promoción</td>
-                       <td rowspan="2" valign="bottom" text-rotate="180">Nota de 1ra Recuperación</td>
-                       <td rowspan="2" valign="bottom" text-rotate="180">Nota de 2da Recupreación</td>
+                       <td rowspan="2" align="center" valign="bottom" text-rotate="180">Nota de 1ra Recuperación</td>
+                       <td rowspan="2" align="center" valign="bottom" text-rotate="180">Nota de 2da Recupreación</td>
                        <td align="center" rowspan="2">Observaciones</td>
                      </tr>
                      <tr text-rotate="180">
@@ -91,6 +91,8 @@
                        <td valign="bottom"> Acumulativo</td>
                        <td valign="bottom"> Examen</td>
                        <td valign="bottom"><strong>Total</strong></td>
+                       <td valign="bottom"></td>
+                       
                      </tr>
 
                      @php     $cont=0;      @endphp
