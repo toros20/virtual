@@ -174,7 +174,7 @@
                                                         [$historial.'.clase_id', '=', $clase->clase_id],
                                                         [$historial.'.student_id', '=', $estudiante->user_id],
                                                         [$historial.'.clase_id', '<>',50],
-                                                        [$historial.'.clase_id', '<>',57],
+                                                       
                                                     ])
                                             ->Select($historial.'.*')
                                             ->get();
