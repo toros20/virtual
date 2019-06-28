@@ -173,7 +173,7 @@
                                             ->where ([
                                                         [$historial.'.clase_id', '=', $clase->clase_id],
                                                         [$historial.'.student_id', '=', $estudiante->user_id],
-                                                        [$historial.'.clase_id', '<>',50],
+                                                        
                                                        
                                                     ])
                                             ->Select($historial.'.*')
