@@ -974,7 +974,7 @@ class UserController extends Controller
    }
 
    //funcion para mostrar la seccion de personalidd al consejero
-   public function personalidad($user,$course_id,$section,$parcial){
+   public function personalidad($user_id,$course_id,$section,$parcial){
 
     /*************************SEGURIDAD*******************/
         //control de seguridad
@@ -991,7 +991,7 @@ class UserController extends Controller
 
 
     //obtenemos los datos del docente
-    $user = User::findOrFail($user);
+    $user = User::findOrFail($user_id);
 
     //obtenemos los id de los estudiantes matriculados en este curso y seccion
     $students = DB::table('enrollments')
