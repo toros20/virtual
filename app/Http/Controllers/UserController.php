@@ -1007,7 +1007,7 @@ class UserController extends Controller
                  // dd($user);
 
       $curso =  Course::findOrFail($course_id);
-                    dd($curso);
+                    
       $seccion = $section;
       $partial = $parcial;
 
