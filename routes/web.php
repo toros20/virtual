@@ -16,10 +16,6 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/users/personalidad/{user_id}/{course_id}/{section}/{parcial}', function () {
-    return "BIENVENIDO ING ". $user_id. "-".$course_id."-".$section."-".$parcial;
-});
-
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
