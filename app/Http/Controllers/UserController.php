@@ -983,7 +983,7 @@ class UserController extends Controller
             return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
         }
         
-        if( $user->role != 'consejero'){
+        if( $user->role != 'admin'){
             return ("ÁREA EXCLUSIVA DE CONSEJERIA.");
         }
 
