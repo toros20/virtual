@@ -93,6 +93,7 @@
                             <input type="hidden" name="user_id" value="{{$user->id}}">
                             <input type="hidden" name="curso" value="{{$curso->id}}">
                             <input type="hidden" name="seccion" value="{{$seccion}}">
+                            <input type="hidden" name="parcial" value="{{$partial}}">
             
                             <!--Table-->
                             <table class="table table-hover mb-0 table-responsive-md ">
@@ -101,7 +102,7 @@
                             <thead>
                                 <tr>
                                 <th>
-                                        <a>Estudiante
+                                    <a>Estudiante
                                         
                                         </a>
                                     </th>
@@ -154,7 +155,7 @@
                                     <?php 
                                         $resultado = DB::table('personalidad')
                                             ->where ([
-                                                        ['personalidad.parcial', '=', 1],
+                                                        ['personalidad.parcial', '=', $partial],
                                                         ['personalidad.student_id', '=', $student->user_id],
                                                     ])
                                             ->get();

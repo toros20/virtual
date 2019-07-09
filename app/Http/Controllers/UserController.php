@@ -974,7 +974,7 @@ class UserController extends Controller
    }
 
    //funcion para mostrar la seccion de personalidd al consejero
-   public function personalidad($course_id,$section){
+   public function personalidad($course_id,$section,$parcial){
 
     /*************************SEGURIDAD*******************/
         //control de seguridad
@@ -1008,8 +1008,9 @@ class UserController extends Controller
       $curso =  Course::findOrFail($course_id);
 
       $seccion = $section;
+      $partial = $parcial;
 
-    return view('users/personalidad',compact('students','user','curso','seccion'));
+    return view('users/personalidad',compact('students','user','curso','seccion','partial'));
 }
 
 //funcion para guardar las notas de personalidad ingresadas desde el usuario consejero
@@ -1037,6 +1038,8 @@ public function save_personalidad(Request $request){
                    ->Select('enrollments.user_id')
                    ->get(); 
 
+    $partial = $request->parcial;
+
     foreach ($students as $student) {
 
         $select1= 'clase1_'.$student->user_id;
@@ -1050,7 +1053,7 @@ public function save_personalidad(Request $request){
         $resp =DB::table('personalidad')
                 ->where([
                     ['personalidad.student_id', '=', $student->user_id],
-                    ['personalidad.parcial', '=', 1 ],
+                    ['personalidad.parcial', '=', $partial ],
                 ])
                 ->update(array(
                     'clase1' =>$request->$select1,
