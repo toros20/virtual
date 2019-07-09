@@ -990,7 +990,7 @@ class UserController extends Controller
     /*************************SEGURIDAD*******************/
 
     //obtenemos los datos del docente
-    $user = User::findOrFail($user->id);
+    $user = User::findOrFail($user);
 
     //obtenemos los id de los estudiantes matriculados en este curso y seccion
     $students = DB::table('enrollments')
