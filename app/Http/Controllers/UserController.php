@@ -983,11 +983,12 @@ class UserController extends Controller
             return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
         }
         
-        if( $user->role != 'admin'){
+        if( $user->role != 'consejero'){
             return ("ÁREA EXCLUSIVA DE CONSEJERIA.");
         }
 
     /*************************SEGURIDAD*******************/
+
 
     //obtenemos los datos del docente
     $user = User::findOrFail($user);
@@ -1003,7 +1004,7 @@ class UserController extends Controller
                    ->orderBy('users.sexo','asc')
                    ->orderBy('users.name','asc')
                    ->get(); 
-                  //dd($estudiantes);
+                  dd($estudiantes);
 
       $curso =  Course::findOrFail($course_id);
 
