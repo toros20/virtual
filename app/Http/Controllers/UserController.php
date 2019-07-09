@@ -974,7 +974,7 @@ class UserController extends Controller
    }
 
    //funcion para mostrar la seccion de personalidd al consejero
-   public function personalidad($course_id,$section,$parcial){
+   public function personalidad($user,$course_id,$section,$parcial){
 
     /*************************SEGURIDAD*******************/
         //control de seguridad
