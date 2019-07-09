@@ -16,8 +16,8 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/users/personalidad', function () {
-    return "BIENVENIDO ING";
+Route::get('/users/personalidad/{user_id}/{course_id}/{section}/{parcial}', function () {
+    return "BIENVENIDO ING ". $user_id. "-".$course_id."-".$section."-".$parcial;
 });
 
 
