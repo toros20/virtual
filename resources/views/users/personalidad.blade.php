@@ -49,7 +49,7 @@
             
              
             <li class="nav-item">
-              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido</span></a>
+              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido {{ $user->name }}</span></a>
             </li>
             
             <li class="nav-item">
