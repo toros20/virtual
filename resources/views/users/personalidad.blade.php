@@ -49,7 +49,7 @@
             
              
             <li class="nav-item">
-              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido {{ $user->name }}</span></a>
+              <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido</span></a>
             </li>
             
             <li class="nav-item">
@@ -79,7 +79,7 @@
                         <!--Card image-->
                         <div align="center" class="view view-cascade gradient-card-header peach-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                     
-                        <h4 class="white-text mx-3">Notas de  {{$curso->name}} - {{$seccion}}   </h4>
+                        <h4 class="white-text mx-3">Notas de  - {{$seccion}}   </h4>
                     
                         </div>
                         <!--/Card image-->
