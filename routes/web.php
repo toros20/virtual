@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+Route::get('/users/personalidad', function () {
+    return "BIENVENIDO ING";
+});
+
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
@@ -69,8 +73,6 @@ Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes
 
 //ruta para mostrar la seccion de acumulativos de las coordinaciones
 Route::get('/users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', 'UserController@acumulativos')->name('acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}');
-
-
 
 
 
