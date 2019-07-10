@@ -129,8 +129,8 @@
                                         ->get();
                                 $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                 $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                //$total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                               
                         ?>
                             {{-- Codigo para intercalar por colores las filas --}}
@@ -174,8 +174,14 @@
                                     @else 
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
                                     @endif
+
+                                      {{-- II PARCIAL --}}
+                                      @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                        @endif
                                     
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{-- {{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}--}}</td> 
                                     <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
                                     <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
                                     <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
@@ -195,13 +201,23 @@
                         @endforeach {{-- fin del foreach de cada clase --}}
                     </table>
                     <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
-                        <?php $promedio1=$total1/$cont; ?>
+                        <?php 
+                            $promedio1=$total1/$cont;
+                            $promedio2=$total2/$cont; 
+                        
+                        ?>
                             <tr style="border: 1px solid #dee2e6; ">
                                     <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
                                     @if ( round($promedio1) < 70)
                                     <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
                                     @else 
                                     <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                    @endif
+
+                                    @if ( round($promedio2) < 70)
+                                    <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                    @else 
+                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
                                     @endif
                                     
                                     <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total2/$cont),2)?></td>
