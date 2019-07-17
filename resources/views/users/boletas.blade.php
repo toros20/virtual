@@ -55,7 +55,7 @@
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                 
                 @foreach ($estudiantes as $estudiante)
-                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; ?>
+                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0;  $suma_promedio=0;?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                             @if ($course->is_bilingue == 1)
@@ -394,7 +394,7 @@
                                        @else 
                                           <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
                                        @endif
-                                       
+
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
                                     </tr>
                             </table>
