@@ -102,10 +102,18 @@
                         </table>
 
                         <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
-                            <tr style="border: 1px solid #dee2e6; "><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
+                            <tr style="border: 1px solid #dee2e6; ">
+                                <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4> </td>
+                                <td ><h4 style="font-weight: bold;"> I SEMESTRE</h4> </td>
+                            </tr>
                         </table>
 
                         @if ($course->is_semestral == 0)
+                            <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4> </td>
+                                </tr>
+                            </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
@@ -241,6 +249,12 @@
 
 
                         @if ($course->is_semestral == 1)
+                            <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> I SEMESTRE</h4> </td>
+                                </tr>
+                            </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
@@ -314,7 +328,7 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo "0";  ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
                                         @endif
 
                                     </tr>
@@ -353,7 +367,7 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo "0";  ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
                                         @endif
                                                                                   
                                     </tr>
