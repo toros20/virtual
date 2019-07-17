@@ -274,6 +274,7 @@
                                         $t2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
                                         $promedio = round(($t1 +  $t2) / 2);
+                                        $suma_promedio += $promedio;
                                         //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     
                                 ?>
@@ -306,9 +307,20 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
                                         @endif
                                                                                     
-                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{$resultado[0]->Recu1}}</td>
+                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $resultado[0]->Recu1 ?></td>
+                                        @endif 
+                                        @if ($resultado[0]->Recu1 > 69 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
+                                        @endif
+                                        @if ($resultado[0]->Recu1 == 0 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
+                                        @endif
+
                                     </tr>
+
                                 @else
+
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
@@ -333,10 +345,19 @@
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
                                         @endif
-                                                                                 
-                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{$resultado[0]->Recu1}}</td>
-                                            
+
+                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $resultado[0]->Recu1 ?></td>
+                                        @endif 
+                                        @if ($resultado[0]->Recu1 > 69 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
+                                        @endif
+                                        @if ($resultado[0]->Recu1 == 0 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
+                                        @endif
+                                                                                  
                                     </tr>
+
                                 @endif
     
                               <?php $cont+=1;?>
@@ -347,25 +368,33 @@
                                 <?php 
                                     $promedio1=$total1/$cont;
                                     $promedio2=$total2/$cont; 
+                                    $promedio_final = $suma_promedio/$cont;
                                 
                                 ?>
                                 <tr style="border: 1px solid #dee2e6; ">
                                         <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
                                         @if ( round($promedio1) < 70)
-                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
                                         @else 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
                                         @endif
 
-                                        @if ( round($promedio2) < 70)
-                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                        @else 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                        @endif
-                                        
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total3/$cont),2)?></td>
+                                       
+                                        @if ( round($promedio2) < 70)
+                                         <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @else 
+                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @endif
+                                       
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                       
+                                        @if ( round($promedio2) < 70)
+                                          <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                       @else 
+                                          <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                       @endif
+                                       
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
                                     </tr>
                             </table>
