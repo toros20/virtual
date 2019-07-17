@@ -104,9 +104,11 @@
                         <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                             <tr style="border: 1px solid #dee2e6; "><td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4></td></tr>
                         </table>
-                        <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
+
+                        @if ($course->is_semestral == 0)
+                            <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
-                                    <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
+                                    <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">III P</th>
@@ -114,118 +116,259 @@
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
                                 </tr>
-                        </table>
-                        <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                        @foreach ($clases as $clase)
+                            </table>
 
-                        <?php 
-                              $resultado = DB::table($historial)
-                                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
-                                        ->where ([
-                                                    [$historial.'.clase_id', '=', $clase->clase_id],
-                                                    [$historial.'.student_id', '=', $estudiante->user_id],
-                                                ])
-                                        ->Select('clases.name as clase',$historial.'.*')
-                                        ->get();
-                                $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                //$total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                              
-                        ?>
-                            {{-- Codigo para intercalar por colores las filas --}}
-                            @if ($cont%2==0 ) 
-                                <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
-                                    <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                    <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                     {{-- I PARCIAL --}}
-                                    @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                    @else 
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                    @endif
-                                    
-                                    {{-- II PARCIAL --}}
-                                    @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                    @else 
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                    @endif
-                                    
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                       {{--  (
-                                        (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                        (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                        (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                        (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                        )/4  --}}
+                            <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
+                                    @foreach ($clases as $clase)
+        
+                                    <?php 
+                                        $resultado = DB::table($historial)
+                                                    ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                                    ->where ([
+                                                                [$historial.'.clase_id', '=', $clase->clase_id],
+                                                                [$historial.'.student_id', '=', $estudiante->user_id],
+                                                            ])
+                                                    ->Select('clases.name as clase',$historial.'.*')
+                                                    ->get();
+                                            $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                            $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                            //$total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                            //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                         
-                                        </td>
-                                    <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
-                                </tr>
-                            @else
-                                <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
-                                    <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                    <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                    @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                    @else 
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                    ?>
+                                    {{-- Codigo para intercalar por colores las filas --}}
+                                    @if ($cont%2==0 ) 
+                                        <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                            <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                            {{-- I PARCIAL --}}
+                                            @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            @endif
+                                            
+                                            {{-- II PARCIAL --}}
+                                            @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                            @endif
+                                            
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
+                                            {{--  (
+                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
+                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
+                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
+                                                )/4  --}}
+                                                
+                                                </td>
+                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                        </tr>
+                                    @else
+                                        <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
+                                            <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                            @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            @endif
+        
+                                            {{-- II PARCIAL --}}
+                                            @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @endif
+                                            
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
+                                            {{--  (
+                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
+                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
+                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
+                                                )/4  --}}
+                                                
+                                                </td>
+                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                        </tr>
                                     @endif
+        
+                                <?php $cont+=1;?>
+                                @endforeach {{-- fin del foreach de cada clase --}}
+                             </table>
+                        
+                             <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
+                                <?php 
+                                    $promedio1=$total1/$cont;
+                                    $promedio2=$total2/$cont; 
+                                
+                                ?>
+                                <tr style="border: 1px solid #dee2e6; ">
+                                        <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
+                                        @if ( round($promedio1) < 70)
+                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                        @else 
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                        @endif
+    
+                                        @if ( round($promedio2) < 70)
+                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @else 
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @endif
+                                        
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total3/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                    </tr>
+                            </table>
 
-                                      {{-- II PARCIAL --}}
-                                      @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                         @endif {{--// fin de cursos NO semestrales --}}
+
+
+
+
+                            {{--CURSOS SEMESTRALES--}}
+
+
+
+                        @if ($course->is_semestral == 1)
+                            <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
+                                <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                    <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
+                                </tr>
+                            </table>
+
+                            <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
+                                @foreach ($clases as $clase)
+    
+                                <?php 
+                                    $resultado = DB::table($historial)
+                                                ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                                ->where ([
+                                                            [$historial.'.clase_id', '=', $clase->clase_id],
+                                                            [$historial.'.student_id', '=', $estudiante->user_id],
+                                                        ])
+                                                ->Select('clases.name as clase',$historial.'.*')
+                                                ->get();
+
+                                        $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $promedio =round(($total1 +  $total2) / 2);
+                                        //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                    
+                                ?>
+                                {{-- Codigo para intercalar por colores las filas --}}
+                                @if ($cont%2==0 ) 
+                                    <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                        <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                        <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                        {{-- I PARCIAL --}}
+                                        @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @endif
+
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
+                                        {{-- II PARCIAL --}}
+                                        @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @endif
-                                    
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                       {{--  (
-                                        (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                        (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                        (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                        (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                        )/4  --}}
                                         
-                                        </td>
-                                    <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
-                                </tr>
-                            @endif
+                                       {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                        
+                                        @if ($promedio) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio  ?></td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
+                                        @endif
+                                                                                    
+                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{$resultado[0]->Recu1}}</td>
+                                    </tr>
+                                @else
+                                    <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
+                                        <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                        <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                        @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @endif
+                                        
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
+                                        {{-- II PARCIAL --}}
+                                        @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                            @endif
+                                        
+                                        {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
+                                        {{--  (
+                                            (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
+                                            (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                            (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
+                                            (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
+                                            )/4  --}}
+                                            
+                                            </td>
+                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                    </tr>
+                                @endif
+    
+                              <?php $cont+=1;?>
+                              @endforeach {{-- fin del foreach de cada clase --}}
+                             </table>
+                    
+                            <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
+                                <?php 
+                                    $promedio1=$total1/$cont;
+                                    $promedio2=$total2/$cont; 
+                                
+                                ?>
+                                <tr style="border: 1px solid #dee2e6; ">
+                                        <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
+                                        @if ( round($promedio1) < 70)
+                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                        @else 
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                        @endif
 
-                          <?php $cont+=1;?>
-                        @endforeach {{-- fin del foreach de cada clase --}}
-                    </table>
-                    <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
-                        <?php 
-                            $promedio1=$total1/$cont;
-                            $promedio2=$total2/$cont; 
+                                        @if ( round($promedio2) < 70)
+                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @else 
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                        @endif
+                                        
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total3/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                    </tr>
+                            </table>
+                        @endif {{--FIN DE CURSOS SEMESTRALES--}}
+                      
                         
-                        ?>
-                            <tr style="border: 1px solid #dee2e6; ">
-                                    <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                    @if ( round($promedio1) < 70)
-                                    <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                    @else 
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                    @endif
-
-                                    @if ( round($promedio2) < 70)
-                                    <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                    @else 
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                    @endif
-                                    
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total3/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
-                                    <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
-                                </tr>
-                        </table>
 
                         <?php //obtenemos los datos de personalidad de este alumno en este parcial
                         $personalidad = DB::table('personalidad')
