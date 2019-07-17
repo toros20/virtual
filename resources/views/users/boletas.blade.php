@@ -417,7 +417,7 @@
                                           ])
                                   ->get(); 
 
-                        $personalidad_2P = DB::table('personalidad')
+                        $personalidad_2p = DB::table('personalidad')
                                   ->where ([
                                             ['personalidad.student_id', '=', $estudiante->user_id],
                                             ['personalidad.parcial', '=', 2],
