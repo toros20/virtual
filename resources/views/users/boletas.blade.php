@@ -269,7 +269,11 @@
 
                                         $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                         $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                        $promedio = round(($total1 +  $total2) / 2);
+
+                                        $t1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $t2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+
+                                        $promedio = round(($t1 +  $t2) / 2);
                                         //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     
                                 ?>
