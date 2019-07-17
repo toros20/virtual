@@ -216,7 +216,7 @@
                  <!-- fin de Card -->
 
             </div>
-
+            {{-- 
             <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
                 <!-- Card -->
                 <div class="card gradient-card">
@@ -226,7 +226,7 @@
                               <!-- Content -->
                                {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
                                
-                               <div class="text-white d-flex h-100 mask aqua-gradient-rgba">        
+                           {{--     <div class="text-white d-flex h-100 mask aqua-gradient-rgba">        
                            
                                   <div class="first-content align-self-center p-3">
                                       <h3 class="card-title"> Descargar Planes  </h3>
@@ -235,9 +235,9 @@
                                   <div class="second-content align-self-center mx-auto text-center">
                                     <i class="fa fa-money fa-3x"></i>
                                   </div>
-                              </div>
+                              </div> --}}
                        
-                       </div>
+                      {{--  </div>
                        <div class="card-body card-body-cascade ">
                                        
                           <ul class="list-group">
@@ -269,10 +269,10 @@
                           </ul> 
                        </div>
                 </div>
-               <!-- fin de Card -->
-              </div>
+               <!-- fin de Card --> --}}
+              {{--  </div> --}}
 
-            <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
+            {{-- <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
                  <!-- Card -->
                  <div class="card gradient-card">
             
@@ -280,7 +280,7 @@
                 
                             <!-- Content -->
                                 {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
-                                
+                          {{--       
                                 <div class="text-white d-flex h-100 mask peach-gradient-rgba">        
                             
                                 <div class="first-content align-self-center p-3">
@@ -316,10 +316,10 @@
                         </div>
                 </div>
                 <!-- fin de Card -->
-            </div>
+            </div> --}}
            
 
-            <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
+           {{--  <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
                     <!-- Card -->
                     <div class="card gradient-card">
                
@@ -328,7 +328,7 @@
                                <!-- Content -->
                                    {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
                                    
-                                   <div class="text-white d-flex h-100 mask purple-gradient-rgba">        
+                               {{--     <div class="text-white d-flex h-100 mask purple-gradient-rgba">        
                                
                                    <div class="first-content align-self-center p-3">
                                        <h3 class="card-title"> Datos  </h3>
@@ -356,15 +356,13 @@
                                            <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Encuestas
                                        </li>
                                    </a>
-       
-                                  
                                
                                </ul> 
                            </div>
                    </div>
                    <!-- fin de Card -->
-            </div>
-
+           --}} 
+          </div> 
 
           </div><!--row-->
 
