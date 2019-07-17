@@ -255,8 +255,9 @@
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
                                 @foreach ($clases as $clase)
-    
+                                
                                 <?php 
+
                                     $resultado = DB::table($historial)
                                                 ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                 ->where ([
@@ -268,7 +269,7 @@
 
                                         $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                         $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                        $promedio =round(($total1 +  $total2) / 2);
+                                        $promedio = round(($total1 +  $total2) / 2);
                                         //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     
                                 ?>
@@ -295,7 +296,7 @@
                                        {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
                                         
-                                        @if ($promedio) < 70)
+                                        @if ($promedio < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio  ?></td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
@@ -323,16 +324,14 @@
                                         
                                         {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                        {{--  (
-                                            (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                            (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                            (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                            (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                            )/4  --}}
+                                        @if ($promedio < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio  ?></td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
+                                        @endif
+                                                                                 
+                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{$resultado[0]->Recu1}}</td>
                                             
-                                            </td>
-                                        <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
                                     </tr>
                                 @endif
     
