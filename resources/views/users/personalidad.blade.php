@@ -135,15 +135,20 @@
                                         </a>
                                     </th>
                                     <th>
-                                            <a>Act. Civica y Religiosa
+                                        <a>Act. Civica y Religiosa
+                                        
+                                        </a>
+                                    </th>
+                                    <th>
+                                            <a>No. Reportes
                                             
                                             </a>
                                         </th>
                                         <th>
-                                                <a>No. Reportes
-                                                
-                                                </a>
-                                            </th>
+                                            <a>Inasistencias
+                                            
+                                            </a>
+                                        </th>
     
                                 </tr>
                             </thead>
@@ -331,6 +336,7 @@
                                             </select>
                                         </td>
                                         <td><input name='reporte_{{$student->user_id}}' required value="{{$resultado[0]->reportes}}" type="text"></td>
+                                        <td><input name='inasistencias_{{$student->user_id}}' required value="{{$resultado[0]->inasistencias}}" type="text"></td>
                                        
                                     </tr>
                                 @endforeach
