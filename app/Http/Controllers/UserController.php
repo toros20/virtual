@@ -1050,6 +1050,7 @@ public function save_personalidad(Request $request){
         $select5= 'clase5_'.$student->user_id;
         $select6= 'clase6_'.$student->user_id;
         $reportes= 'reporte_'.$student->user_id;
+        $inasistencias= 'inasistencias_'.$student->user_id;
         
         $resp =DB::table('personalidad')
                 ->where([
@@ -1064,6 +1065,7 @@ public function save_personalidad(Request $request){
                     'clase5' =>$request->$select5,
                     'clase6' =>$request->$select6,
                     'reportes' =>$request->$reportes,
+                    'inasistencias' =>$request->$inasistencias,
                     ) );
     }
     
