@@ -169,7 +169,7 @@
                                     <tr>
                                         <td>{{$student->name}} {{$student->lastname}}</td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase1_{{$student->user_id}}' required>
+                                            <select style="width:100px; display:inline-block !important" name='clase1_{{$student->user_id}}' required>
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
@@ -197,7 +197,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase2_{{$student->user_id}}' required> 
+                                            <select style="width:100px;display:inline-block !important" name='clase2_{{$student->user_id}}' required> 
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
@@ -225,7 +225,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase3_{{$student->user_id}}' required> 
+                                            <select style="width:100px;display:inline-block !important" name='clase3_{{$student->user_id}}' required> 
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
@@ -252,7 +252,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase4_{{$student->user_id}}' required> 
+                                            <select style="width:100px;display:inline-block !important" name='clase4_{{$student->user_id}}' required> 
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
@@ -280,7 +280,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase5_{{$student->user_id}}' required> 
+                                            <select style="width:100px;display:inline-block !important" name='clase5_{{$student->user_id}}' required> 
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
@@ -308,7 +308,7 @@
                                             </select>
                                         </td>
                                         <td>
-                                            <select style="display:inline-block !important" name='clase6_{{$student->user_id}}' required> 
+                                            <select style="width:100px;display:inline-block !important" name='clase6_{{$student->user_id}}' required> 
                                                 @if ($resultado[0]->clase1 == 0)
                                                     <option value="0">-------</option>
                                                 @endif
