@@ -568,6 +568,13 @@
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                             </tr>
+                            <tr style="border: 1px solid #dee2e6; ">
+                                <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
+                            </tr>
                         </table>
                         @if ($curso == 20)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
