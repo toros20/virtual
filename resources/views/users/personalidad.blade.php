@@ -335,8 +335,8 @@
                                                 <option value="5">Avanzado</option>
                                             </select>
                                         </td>
-                                        <td><input name='reporte_{{$student->user_id}}' required value="{{$resultado[0]->reportes}}" type="text"></td>
-                                        <td><input name='inasistencias_{{$student->user_id}}' required value="{{$resultado[0]->inasistencias}}" type="text"></td>
+                                        <td><input width="50px" name='reporte_{{$student->user_id}}' required value="{{$resultado[0]->reportes}}" type="text"></td>
+                                        <td><input width="50px" name='inasistencias_{{$student->user_id}}' required value="{{$resultado[0]->inasistencias}}" type="text"></td>
                                        
                                     </tr>
                                 @endforeach
