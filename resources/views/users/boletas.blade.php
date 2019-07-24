@@ -799,7 +799,7 @@ $html = ob_get_clean();
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
     //'format' => [190, 236],
-    'format' => [1216, 279],
+    'format' => [216, 279],
     'orientation' => 'P'
 ]); 
 
