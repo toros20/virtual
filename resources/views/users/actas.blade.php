@@ -255,11 +255,11 @@
                           
                           @foreach ($clases as $clase)
                               <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;"></th>
                               @php  $cont_clase+=1;   @endphp
                           @endforeach
 
-                          <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
+                          <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Reprobadas</th>
                       </tr>
 
                   </thead>
@@ -328,16 +328,7 @@
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
                           
-                         {{--  @php
-                                $promedio_final =  ($promedio /  ($cont_clase-1) );
-                                $promedio_final =  round($promedio_final);
-                          @endphp
-
-                          @if ( $promedio_final < 70)
-                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php //echo $promedio_final ?> </td>
-                          @else 
-                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php //echo $promedio_final ?> </td>
-                          @endif --}}
+                         
 
                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
                           
