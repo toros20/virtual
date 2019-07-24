@@ -135,107 +135,223 @@
                 </tr>
                
             </table>
-            
-            <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6;">
-                <thead>
-                    <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
-                
-                    <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
+            {{-- INICIO PARA CURSOS SEMESTRALES --}}
+            @if ($course->is_semestral == 1)
 
-                        <tr style="border: 1px solid #dee2e6; ">
-                        <th style="border: 1px solid #dee2e6;">No.</th>
-                        <th  style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6;">
+                  <thead>
+                      <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                  
+                      <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
+
+                          <tr style="border: 1px solid #dee2e6; ">
+                          <th style="border: 1px solid #dee2e6;">No.</th>
+                          <th  style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                          
+                          @foreach ($clases as $clase)
+                              <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
+                              @php  $cont_clase+=1;   @endphp
+                          @endforeach
+
+                          <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
+                      </tr>
+
+                  </thead>
+
+                      @foreach ($estudiantes as $estudiante)
+                      @php
+                          $promedio=0;
+                      @endphp
+                      <tr>
+                          <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                          <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                         
-                        @foreach ($clases as $clase)
-                            <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                            <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
-                            @php  $cont_clase+=1;   @endphp
-                        @endforeach
+                          @foreach ($clases as $clase)
+                              <?php 
+                                
+                                  $resultado = DB::table($historial)
+                                              ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                              ->where ([
+                                                          [$historial.'.clase_id', '=', $clase->clase_id],
+                                                          [$historial.'.student_id', '=', $estudiante->user_id],                                                       
+                                                        
+                                                      ])
+                                              ->Select($historial.'.*')
+                                              ->get();
 
-                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
-                    </tr>
+                                              $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                              $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              $total = ($total1 + $total2)/2;
+                                              //se redondea el promedio de clase
+                                              $total = round($total);
 
-                </thead>
+                                              //se suman todos los promedios para obtener el promedio global
+                                              $promedio += $total;
 
-                    @foreach ($estudiantes as $estudiante)
-                    @php
-                         $promedio=0;
-                    @endphp
-                    <tr>
-                        <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
-                        <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                      
-                        @foreach ($clases as $clase)
-                            <?php 
+                                              $recuperacion =$resultado[0]->Recu1;
                               
-                                $resultado = DB::table($historial)
-                                            ->join('clases', $historial.'.clase_id', '=', 'clases.id')
-                                            ->where ([
-                                                        [$historial.'.clase_id', '=', $clase->clase_id],
-                                                        [$historial.'.student_id', '=', $estudiante->user_id],                                                       
-                                                       
-                                                    ])
-                                            ->Select($historial.'.*')
-                                            ->get();
+                                              /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                              $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                              mañana miercoles se suspenden las clases
+                                              debido a la perdida de la Madre Natividd
+                                              Quien partio con el señor este día martes 18 de Junio
+                                              */
+                                  
+                              ?>
+                              @if ( $total < 70)
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
+                              @else 
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
+                              @endif
 
-                                            $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                            $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                            $total = ($total1 + $total2)/2;
-                                            //se redondea el promedio de clase
-                                            $total = round($total);
+                              @if ( $recuperacion < 70 and $recuperacion  > 0)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
+                              @endif
 
-                                            //se suman todos los promedios para obtener el promedio global
-                                            $promedio += $total;
+                              @if ($recuperacion > 69)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>                                
+                              @endif
 
-                                            $recuperacion =$resultado[0]->Recu1;
-                            
-                                            /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                            $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                            mañana miercoles se suspenden las clases
-                                            debido a la perdida de la Madre Natividd
-                                            Quien partio con el señor este día martes 18 de Junio
-                                            */
-                                
-                            ?>
-                            @if ( $total < 70)
-                                <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
-                            @else 
-                                <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
-                            @endif
+                              @if ($recuperacion ==0)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>                                
+                              @endif
+                                  
+                          @endforeach {{--fin del ciclo para cada clase --}}
+                          
+                          @php
+                                $promedio_final =  ($promedio /  ($cont_clase-1) );
+                                $promedio_final =  round($promedio_final);
+                          @endphp
 
-                            @if ( $recuperacion < 70 and $recuperacion  > 0)
-                            <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
-                            @endif
+                          @if ( $promedio_final < 70)
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $promedio_final ?> </td>
+                          @else 
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio_final ?> </td>
+                          @endif
+                          
+                      </tr>
+                          <?php $cont+=1;?>
+                      @endforeach {{--fin del ciclo para cada estudiante --}}
 
-                            @if ($recuperacion > 69)
-                            <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>                                
-                            @endif
+               </table>
 
-                            @if ($recuperacion ==0)
-                            <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>                                
-                            @endif
-                                
-                         @endforeach {{--fin del ciclo para cada clase --}}
+            @endif
+             {{-- FIN PARA CURSOS SEMESTRALES --}}
+
+             {{-- INICIO PARA CURSOS NO SEMESTRALES --}}
+            @if ($course->is_semestral == 0)
+                
+                <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6;">
+                  <thead>
+                      <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
+                  
+                      <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
+
+                          <tr style="border: 1px solid #dee2e6; ">
+                          <th style="border: 1px solid #dee2e6;">No.</th>
+                          <th  style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                          
+                          @foreach ($clases as $clase)
+                              <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">RECUPERACION</th>
+                              @php  $cont_clase+=1;   @endphp
+                          @endforeach
+
+                          <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">Promedio</th>
+                      </tr>
+
+                  </thead>
+
+                      @foreach ($estudiantes as $estudiante)
+                      @php
+                          $promedio=0; $clase_reprobada=0;
+                      @endphp
+                      <tr>
+                          <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
+                          <td style="font-size:14px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                         
-                         @php
-                              $promedio_final =  ($promedio /  ($cont_clase-1) );
-                              $promedio_final =  round($promedio_final);
-                         @endphp
+                          @foreach ($clases as $clase)
+                              <?php 
+                                
+                                  $resultado = DB::table($historial)
+                                              ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                              ->where ([
+                                                          [$historial.'.clase_id', '=', $clase->clase_id],
+                                                          [$historial.'.student_id', '=', $estudiante->user_id],     
+                                                          [$historial.'.parcial', '=', $parcial],                                                       
+                                                        
+                                                      ])
+                                              ->Select($historial.'.*')
+                                              ->get();
 
-                        @if ( $promedio_final < 70)
-                             <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php echo $promedio_final ?> </td>
-                        @else 
-                             <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php echo $promedio_final ?> </td>
-                        @endif
-                         
-                    </tr>
-                        <?php $cont+=1;?>
-                    @endforeach {{--fin del ciclo para cada estudiante --}}
+                                              //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                              $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              if ($total < 70) {
+                                                  $clase_reprobada+=1;
+                                              }
+                                              //$total = ($total1 + $total2)/2;
+                                              //se redondea el promedio de clase
+                                              //$total = round($total);
+
+                                              //se suman todos los promedios para obtener el promedio global
+                                              //$promedio += $total;
+
+                                              $recuperacion = 0;
+                              
+                                              /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                              $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                              mañana miercoles se suspenden las clases
+                                              debido a la perdida de la Madre Natividd
+                                              Quien partio con el señor este día martes 18 de Junio
+                                              */
+                                  
+                              ?>
+                              @if ( $total < 70)
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
+                              @else 
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
+                              @endif
+
+                              @if ( $recuperacion < 70 and $recuperacion  > 0)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $recuperacion ?> </td>
+                              @endif
+
+                              @if ($recuperacion > 69)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $recuperacion ?> </td>                                
+                              @endif
+
+                              @if ($recuperacion ==0)
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>                                
+                              @endif
+                                  
+                          @endforeach {{--fin del ciclo para cada clase --}}
+                          
+                         {{--  @php
+                                $promedio_final =  ($promedio /  ($cont_clase-1) );
+                                $promedio_final =  round($promedio_final);
+                          @endphp
+
+                          @if ( $promedio_final < 70)
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6; color:red"><?php //echo $promedio_final ?> </td>
+                          @else 
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #dee2e6;"><?php //echo $promedio_final ?> </td>
+                          @endif --}}
+
+                          <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
+                          
+                      </tr>
+                          <?php $cont+=1;?>
+                      @endforeach {{--fin del ciclo para cada estudiante --}}
 
                 </table>
 
-                <table width="90%" border="0" align="center">
+            @endif
+            {{-- FIN PARA CURSOS SEMESTRALES --}}
+            
+                    <table width="90%" border="0" align="center">
                         <tr>
                           <td align="center">&nbsp;</td>
                           <td>&nbsp;</td>
