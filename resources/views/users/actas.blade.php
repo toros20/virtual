@@ -274,7 +274,7 @@
                         
                           @foreach ($clases as $clase)
                               <?php 
-                                
+                                  
                                   $resultado = DB::table($historial)
                                               ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                               ->where ([
@@ -290,6 +290,8 @@
                                               if ($total < 70) {
                                                   $clase_reprobada+=1;
                                               }
+
+                                              $
                                               //$total = ($total1 + $total2)/2;
                                               //se redondea el promedio de clase
                                               //$total = round($total);
