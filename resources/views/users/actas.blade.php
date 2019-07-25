@@ -268,7 +268,7 @@
 
                         @endforeach {{--fin del ciclo para cada estudiante --}}
 
-                        <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
+                        <td style="font-size:1rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
                         <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>  
                         @endforeach {{--fin del ciclo para cada clase --}}
 
@@ -409,7 +409,7 @@
 
                           @endforeach {{--fin del ciclo para cada estudiante --}}
 
-                          <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
+                          <td style="font-size:1rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
                           <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>  
                         @endforeach {{--fin del ciclo para cada clase --}}
 
