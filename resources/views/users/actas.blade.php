@@ -235,6 +235,44 @@
                           <?php $cont+=1;?>
                       @endforeach {{--fin del ciclo para cada estudiante --}}
 
+                       {{-- CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
+                       <tr>
+                           
+                        @foreach ($clases as $clase)
+
+                        <?php $reprobadas_por_clase = 0; ?>
+
+                        @foreach ($estudiantes as $estudiante)
+
+                          <?php 
+                                          
+                            $resultado = DB::table($historial)
+                                        ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                        ->where ([
+                                                    [$historial.'.clase_id', '=', $clase->clase_id],
+                                                    [$historial.'.student_id', '=', $estudiante->user_id],                                                     
+                                                  
+                                                ])
+                                        ->Select($historial.'.*')
+                                        ->get();
+
+                                        //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        if ($total < 70) {
+                                            $reprobadas_por_clase+=1;
+                                        }
+
+                          ?>
+
+                        @endforeach {{--fin del ciclo para cada estudiante --}}
+
+                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
+
+                        @endforeach {{--fin del ciclo para cada clase --}}
+
+                       </tr>
+                       {{-- FIN DE CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
+
                </table>
 
             @endif
@@ -291,7 +329,7 @@
                                                   $clase_reprobada+=1;
                                               }
 
-                                              $
+                                    
                                               //$total = ($total1 + $total2)/2;
                                               //se redondea el promedio de clase
                                               //$total = round($total);
@@ -329,17 +367,57 @@
                               @endif
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
-                          
-                         
+                                
 
                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
                           
                       </tr>
                           <?php $cont+=1;?>
                       @endforeach {{--fin del ciclo para cada estudiante --}}
+                      
+                       {{-- CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
+                      <tr>
+                           
+                          @foreach ($clases as $clase)
+
+                          <?php $reprobadas_por_clase = 0; ?>
+
+                          @foreach ($estudiantes as $estudiante)
+
+                            <?php 
+                                            
+                              $resultado = DB::table($historial)
+                                          ->join('clases', $historial.'.clase_id', '=', 'clases.id')
+                                          ->where ([
+                                                      [$historial.'.clase_id', '=', $clase->clase_id],
+                                                      [$historial.'.student_id', '=', $estudiante->user_id],                                                     
+                                                    
+                                                  ])
+                                          ->Select($historial.'.*')
+                                          ->get();
+
+                                          //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                          $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                          if ($total < 70) {
+                                              $reprobadas_por_clase+=1;
+                                          }
+
+                            ?>
+
+                          @endforeach {{--fin del ciclo para cada estudiante --}}
+
+                          <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
+
+                        @endforeach {{--fin del ciclo para cada clase --}}
+
+                      </tr>
+                       {{-- FIN DE CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
 
                 </table>
 
+
+
+              
             @endif
             {{-- FIN PARA CURSOS SEMESTRALES --}}
             
