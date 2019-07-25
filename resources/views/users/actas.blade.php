@@ -267,7 +267,7 @@
                         @endforeach {{--fin del ciclo para cada estudiante --}}
 
                         <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
-
+                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>  
                         @endforeach {{--fin del ciclo para cada clase --}}
 
                        </tr>
@@ -407,7 +407,7 @@
                           @endforeach {{--fin del ciclo para cada estudiante --}}
 
                           <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
-
+                          <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"></td>  
                         @endforeach {{--fin del ciclo para cada clase --}}
 
                       </tr>
