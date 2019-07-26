@@ -14,7 +14,7 @@ function loadcourses(){
     $.ajax({
 
         //url:'../ajax/coursesbymodalityid', 
-        url:'../../../../ajax/coursesbymodalityid',
+        url:'../ajax/coursesbymodalityid',
         headers: token ,
         data: {modality_id:modality,_token:token},
         type:'POST',
