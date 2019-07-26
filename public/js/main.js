@@ -41,8 +41,8 @@ function loadsections(){
     
     $.ajax({
 
-        //url:'../ajax/sectionsbycoursesid',
-        url:'../../ajax/sectionsbycoursesid',
+        url:'../ajax/sectionsbycoursesid',
+        //url:'../../ajax/sectionsbycoursesid',
         headers: token ,
         data: {course_id:course,_token:token},
         type:'POST',
