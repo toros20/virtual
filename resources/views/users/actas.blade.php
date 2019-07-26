@@ -115,7 +115,12 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
+                  @if ($course->is_semestral == 1)
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
+                  @else
+                    <td style="font-family: Arial;font-size: 12px"><strong>{{$parcial}} PARCIAL</strong></td>
+                  @endif
+                 
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
