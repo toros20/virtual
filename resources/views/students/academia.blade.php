@@ -183,34 +183,69 @@
             
                     </div>
                     <div class="card-body card-body-cascade ">
+
+                      @if ($asignaciones[0]->clase_id == 1)
+                      <ul class="list-group">
+
+                        {{--       <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>I Parcial
+                              </li>
+                          </a>
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,2])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>II Parcial
+                              </li>
+                          </a> --}}
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,3])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>III Parcial
+                              </li>
+                          </a>
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,4])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>IV Parcial
+                              </li>
+                          </a> 
+                      
+                      </ul> 
+
+                      @endif
+
+                      @if ($asignaciones[0]->clase_id == 0)
+                      <ul class="list-group">
+
+                              <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>I Parcial
+                              </li>
+                          </a>
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,2])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>II Parcial
+                              </li>
+                          </a>
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,3])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>III Parcial
+                              </li>
+                          </a>
+
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,4])}}">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>IV Parcial
+                              </li>
+                          </a> 
+                      
+                      </ul> 
+
+                      @endif
                                     
-                        <ul class="list-group">
-
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
-                                <li class="list-group-item">
-                                    <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>I Parcial
-                                </li>
-                            </a>
-
-                            <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,2])}}">
-                                <li class="list-group-item">
-                                    <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>II Parcial
-                                </li>
-                            </a>
-
-                            <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,3])}}">
-                                <li class="list-group-item">
-                                    <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>III Parcial
-                                </li>
-                            </a>
-
-                            <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,4])}}">
-                                <li class="list-group-item">
-                                    <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>IV Parcial
-                                </li>
-                            </a> 
-                        
-                        </ul> 
                     </div>
                 </div>
                  <!-- fin de Card -->

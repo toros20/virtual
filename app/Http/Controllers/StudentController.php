@@ -98,7 +98,7 @@ class StudentController extends Controller
          $asignaciones = DB::table('clasecourses')
                         ->join('courses', 'clasecourses.course_id', '=', 'courses.id')
                         ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
-                        ->Select('courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase')
+                        ->Select('courses.id as course_id','courses.is_semestral','clases.id as clase_id','courses.short_name as course','clases.short_name as clase')
                         ->where('clasecourses.course_id', '=', $enroll[0]->course_id)
                         ->get();
                        // dd($asignaciones);
