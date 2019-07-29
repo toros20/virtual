@@ -877,7 +877,12 @@ class UserController extends Controller
         //obtenemos las clase que estan asignadas a este curso
      
        $clases = DB::table('clasecourses')
-                        ->where('clasecourses.course_id','=',$course_id)
+                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                        //->where('clasecourses.course_id','=',$course_id)
+                        ->where ([
+                            ['clasecourses.course_id', '=', $course_id],
+                            ['clases.semester', '=', 1],
+                        ])
                         ->Select('clase_id')
                         ->get(); 
         
