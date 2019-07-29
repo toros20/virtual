@@ -184,7 +184,7 @@
                     </div>
                     <div class="card-body card-body-cascade ">
 
-                      @if ($asignaciones[0]->clase_id == 1)
+                      @if ($asignaciones[0]->is_semestral == 1)
                       <ul class="list-group">
 
                         {{--       <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
@@ -215,7 +215,7 @@
 
                       @endif
 
-                      @if ($asignaciones[0]->clase_id == 0)
+                      @if ($asignaciones[0]->is_semestral == 0)
                       <ul class="list-group">
 
                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
