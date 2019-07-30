@@ -37,7 +37,7 @@
         <!--row-->
         <div class="row" align="center"> 
                
-            <table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
+            <table width="100%" style="tabla-striped; border: 1px solid #000; ">
                 <tr>
                   <td align="center"><strong style="font-family: Arial">REPÚBLICA DE HONDURAS<BR>
               SECRETARÍA DE EDUCACIÓN<BR>
@@ -46,7 +46,7 @@
                 </tr>
             </table>
               
-            <table width="100%" style="tabla-striped;  border: 1px solid #ccc; ">
+            <table width="100%" style="tabla-striped;  border: 1px solid #000; ">
 
                     {{-- Codigo para cursos bilingues --}}
                    @if ($course->is_bilingue == 1)
@@ -61,7 +61,7 @@
                             <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                             <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.M.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
                             <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                            <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
+                            <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #000; ">
                             <tr>
                                 <td><strong>X</strong></td>
                             </tr>
@@ -83,7 +83,7 @@
                                 <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                                 <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.M.N.G SAN JOSÉ DEL CARMEN</strong></td>
                                 <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                                <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
+                                <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #000; ">
                                 <tr>
                                     <td><strong>X</strong></td>
                                 </tr>
@@ -98,7 +98,7 @@
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
-                  <td><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
+                  <td><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #000; ">
                     <tr>
                       <td><strong>X</strong></td>
                     </tr>
@@ -108,7 +108,7 @@
                   <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: {{$section}}</strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -123,7 +123,7 @@
                  
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -132,7 +132,7 @@
                 <tr>
                   <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -143,23 +143,23 @@
             {{-- INICIO PARA CURSOS SEMESTRALES --}}
             @if ($course->is_semestral == 1)
 
-                <table width="100%" style="tabla-striped;  border: 1px solid #ccc;">
+                <table width="100%" style="tabla-striped;  border: 1px solid #000;">
                   <thead>
                       <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                   
                       <?php $cont=0; $cont_clase=1;$total1=0; $total2=0; $total3=0; $total4=0; ?>
 
-                          <tr style="border: 1px solid #ccc; ">
-                          <th style="border: 1px solid #ccc;">No.</th>
-                          <th  style="border: 1px solid #ccc; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                          <tr style="border: 1px solid #000; ">
+                          <th style="border: 1px solid #000;">No.</th>
+                          <th  style="border: 1px solid #000; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
                           
                           @foreach ($clases as $clase)
-                              <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #ccc;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #ccc;">RECUPERACION</th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #000;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #000;">RECUPERACION</th>
                               @php  $cont_clase+=1;   @endphp
                           @endforeach
 
-                          <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #ccc;">Promedio</th>
+                          <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #000;">Promedio</th>
                       </tr>
 
                   </thead>
@@ -169,8 +169,8 @@
                           $promedio=0;
                       @endphp
                       <tr>
-                          <td style="font-size:14px; width:20px; border: 1px solid #ccc; text-align:left;"><?php echo $cont+1; ?></td>
-                          <td style="font-size:14px; border: 1px solid #ccc; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
+                          <td style="font-size:14px; width:20px; border: 1px solid #000; text-align:left;"><?php echo $cont+1; ?></td>
+                          <td style="font-size:14px; border: 1px solid #000; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
                         
                           @foreach ($clases as $clase)
                               <?php 
@@ -206,21 +206,21 @@
                                   
                               ?>
                               @if ( $total < 70)
-                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #ccc; color:red"><?php echo $total ?> </td>
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #000; color:red"><?php echo $total ?> </td>
                               @else 
-                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #ccc;"><?php echo $total ?> </td>
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #000;"><?php echo $total ?> </td>
                               @endif
 
                               @if ( $recuperacion < 70 and $recuperacion  > 0)
-                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #ccc; color:red"><?php echo $recuperacion ?> </td>
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #000; color:red"><?php echo $recuperacion ?> </td>
                               @endif
 
                               @if ($recuperacion > 69)
-                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #ccc;"><?php echo $recuperacion ?> </td>                                
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #000;"><?php echo $recuperacion ?> </td>                                
                               @endif
 
                               @if ($recuperacion ==0)
-                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #ccc;"></td>                                
+                              <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #000;"></td>                                
                               @endif
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
@@ -231,9 +231,9 @@
                           @endphp
 
                           @if ( $promedio_final < 70)
-                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #ccc; color:red"><?php echo $promedio_final ?> </td>
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #000; color:red"><?php echo $promedio_final ?> </td>
                           @else 
-                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #ccc;"><?php echo $promedio_final ?> </td>
+                              <td style="font-size:14px ;text-align:center; width:50px; border: 1px solid #000;"><?php echo $promedio_final ?> </td>
                           @endif
                           
                       </tr>
