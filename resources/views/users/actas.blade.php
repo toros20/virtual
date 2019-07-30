@@ -37,7 +37,7 @@
         <!--row-->
         <div class="row" align="center"> 
                
-            <table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+            <table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
                 <tr>
                   <td align="center"><strong style="font-family: Arial">REPÚBLICA DE HONDURAS<BR>
               SECRETARÍA DE EDUCACIÓN<BR>
@@ -46,7 +46,7 @@
                 </tr>
             </table>
               
-            <table width="100%" style="tabla-striped;  border: 1px solid #dee2e6; ">
+            <table width="100%" style="tabla-striped;  border: 1px solid #ccc; ">
 
                     {{-- Codigo para cursos bilingues --}}
                    @if ($course->is_bilingue == 1)
@@ -61,7 +61,7 @@
                             <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                             <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.M.N.G.B SAN JOSÉ DEL CARMEN</strong></td>
                             <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                            <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
+                            <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
                             <tr>
                                 <td><strong>X</strong></td>
                             </tr>
@@ -83,7 +83,7 @@
                                 <td style="font-family: Arial;font-size: 12px"><strong>NOMBRE DEL CENTRO EDUCATIVO:</strong></td>
                                 <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>C.E.M.N.G SAN JOSÉ DEL CARMEN</strong></td>
                                 <td width="34%" style="font-family: Arial;font-size: 12px"><strong>ORDINARIOS</strong></td>
-                                <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
+                                <td width="3%" ><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
                                 <tr>
                                     <td><strong>X</strong></td>
                                 </tr>
@@ -98,7 +98,7 @@
                   <td width="13%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td width="25%" style="font-family: Arial;font-size: 12px">&nbsp;</td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RECUPERACIÓN</strong></td>
-                  <td><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #dee2e6; ">
+                  <td><table width="100%" style="tabla-striped; text-align:center; border: 1px solid #ccc; ">
                     <tr>
                       <td><strong>X</strong></td>
                     </tr>
@@ -108,7 +108,7 @@
                   <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: {{$section}}</strong></td>
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -123,7 +123,7 @@
                  
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>EQUIVALENCIA</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
                     <tr>
                       <td>.</td>
                     </tr>
@@ -132,7 +132,7 @@
                 <tr>
                   <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
-                  <td><table width="100%" style="tabla-striped; border: 1px solid #dee2e6; ">
+                  <td><table width="100%" style="tabla-striped; border: 1px solid #ccc; ">
                     <tr>
                       <td>.</td>
                     </tr>
