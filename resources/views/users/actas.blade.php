@@ -38,7 +38,7 @@
         <div class="row" align="center"> 
                
             <table width="100%" style="tabla-striped; border: 1px solid #000; ">
-              <tr><td><img width="100px" src="img/logo.png" alt=""></td></tr>  
+              <tr><td align="center"><img width="80px" src="img/logo.png" alt=""></td></tr>  
               <tr>
                   <td align="center"><strong style="font-family: Arial">REPÚBLICA DE HONDURAS<BR>
               SECRETARÍA DE EDUCACIÓN<BR>
