@@ -1122,9 +1122,18 @@ public function actas($course_id,$section,$parcial){
   
   //obtenemos las clase que estan asignadas a este curso
 
- $clases = DB::table('clasecourses')
+ /*$clases = DB::table('clasecourses')
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where('clasecourses.course_id','=',$course_id)
+                  ->Select('clasecourses.clase_id','clases.short_name')
+                  ->get(); */
+
+    $clases = DB::table('clasecourses')
+                  ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                  ->where ([
+                    ['clasecourses.course_id', '=', $course_id],
+                    ['clases.semester', '=', 1],
+                  ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
   
