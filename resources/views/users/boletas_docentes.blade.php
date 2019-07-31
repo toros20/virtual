@@ -164,10 +164,10 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2p; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2p; ?> %</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados2p; ?></td>
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
@@ -175,10 +175,10 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2p; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2p; ?> %</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados2p; ?></td>
                                     </tr>
                                 @endif
 
