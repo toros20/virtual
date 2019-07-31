@@ -840,6 +840,8 @@ class UserController extends Controller
                        ->orderBy('section','ASC')
                        ->get();
 
+                       dd($asignaciones);
+
        return view('users/panel_admin',compact('asignaciones','user'));
       
    }
