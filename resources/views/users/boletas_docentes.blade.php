@@ -132,7 +132,7 @@
                             @foreach ($asignaciones as $asignacion)
 
                                 <?php 
-                                    $total_alumnos=0; $aprobados=0;$reprobados=0;
+                                    $total_alumnos=0; $aprobados=0;$reprobados=0;$aprobados2=0;$reprobados2=0;
                                     $historial = 'historial_'.$asignacion->course_id.'_'.strtolower($asignacion->section); 
                                     $resultados= DB::table($historial)
                                                     ->where ([
