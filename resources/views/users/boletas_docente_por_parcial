@@ -1,3 +1,4 @@
+
 @php
     $arrayMeses = array('Ene', 'Febr', 'Mar', 'Abr', 'Mayo', 'Jun',
    'Jul', 'Agos', 'Sept', 'Oct', 'Nov', 'Dic');
@@ -101,14 +102,7 @@
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">APRO.</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% </th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">REPRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% .</th>
-
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
-
-                                    <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">APRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% </th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">REPRO.</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% .</th>
                                 </tr>
@@ -142,7 +136,7 @@
                                                     ->where ([
                                                                 [$historial.'.clase_id', '=', $asignacion->clase_id]
                                                             ])
-                                                    ->Select($historial.'.Acum1', $historial.'.Exa1',$historial.'.Acum2', $historial.'.Exa2',)
+                                                    ->Select($historial.'.Acum2', $historial.'.Exa2')
                                                     ->get();
 
                         
@@ -163,14 +157,9 @@
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
-
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
@@ -179,11 +168,7 @@
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
                                     </tr>
