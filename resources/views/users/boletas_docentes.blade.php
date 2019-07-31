@@ -142,7 +142,7 @@
                                                     ->where ([
                                                                 [$historial.'.clase_id', '=', $asignacion->clase_id]
                                                             ])
-                                                    ->Select($historial.'.Acum1', $historial.'.Exa1',$historial.'.Acum2', $historial.'.Exa2',)
+                                                    ->Select($historial.'.Acum1', $historial.'.Exa1',$historial.'.Acum2', $historial.'.Exa2')
                                                     ->get();
 
                         
