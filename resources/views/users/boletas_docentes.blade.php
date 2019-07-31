@@ -116,6 +116,8 @@
                                             ->where ([
                                                 ['assignments.user_id', '=', $docente->id],
                                                 ['courses.id', '>', '8'],
+                                                ['clases.semester', '<', '2'],
+
                                             ])
                                             ->Select('assignments.section','courses.id as course_id','courses.name as curso','clases.short_name as clase','clases.id as clase_id')
                                             ->orderBy('courses.id','asc')
@@ -133,7 +135,7 @@
                                                     ->where ([
                                                                 [$historial.'.clase_id', '=', $asignacion->clase_id]
                                                             ])
-                                                    ->Select($historial.'.Acum1', $historial.'.Exa1')
+                                                    ->Select($historial.'.Acum2', $historial.'.Exa2')
                                                     ->get();
 
                                     foreach ($resultados as $resultado) {
