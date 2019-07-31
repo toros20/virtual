@@ -261,7 +261,7 @@ $html = ob_get_clean();
 //$mpdf=new mPDF('c','Letter','',''); 
 $mpdf=new \Mpdf\Mpdf([
     'mode' => 'utf-8',
-    'format' => [190, 236],
+    'format' => [216, 279],
     'orientation' => 'P'
 ]); 
 
