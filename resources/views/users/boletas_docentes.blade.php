@@ -132,7 +132,7 @@
                             @foreach ($asignaciones as $asignacion)
 
                                 <?php 
-                                    $total_alumnos=0; $aprobados=0;$reprobados=0;$aprobados2=0;$reprobados2=0;
+                                    $total_alumnos=0; $aprobados=0;$reprobados=0;$aprobados2p=0;$reprobados2p=0;
                                     $historial = 'historial_'.$asignacion->course_id.'_'.strtolower($asignacion->section); 
                                     $resultados= DB::table($historial)
                                                     ->where ([
@@ -166,8 +166,8 @@
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2; ?> %</td>
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2p; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2p; ?> %</td>
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
@@ -177,8 +177,8 @@
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2; ?> %</td>
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2p; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2p; ?> %</td>
                                     </tr>
                                 @endif
 
