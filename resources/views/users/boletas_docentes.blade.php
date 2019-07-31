@@ -145,9 +145,9 @@
                                     foreach ($resultados as $resultado) {
                                         $total_alumnos+=1;$total_evaluados+=1;
                                         if ( ($resultado->Acum1 + $resultado->Exa1) < 70 ) {
-                                            $reprobados1p+=1; $ter+=1;
+                                            $reprobados+=1; $ter+=1;
                                         }else{
-                                            $aprobados1p+=1;$tea+=1;
+                                            $aprobados+=1;$tea+=1;
                                         }
 
                                         if ( ($resultado->Acum2 + $resultado->Exa2) < 70 ) {
