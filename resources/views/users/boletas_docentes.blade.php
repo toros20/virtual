@@ -54,7 +54,7 @@
                                
                 @foreach ($docentes as $docente)
                     
-                    <?php  $cont=0; $total_evaluados=0; $tea=0; $ter=0;  ?>
+                    <?php  $cont=0; $total_evaluados=0; $tea=0; $ter=0;$tea2=0; $ter2=0;  ?>
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                            
                             <tr> 
@@ -99,18 +99,14 @@
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">APRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% </th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">REPRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% .</th>
-
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">#APRO 1P.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">#REPRO 1P.</th>
+                                    
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
 
-                                    <th style="font-weight: bold;">ESPACIOS PEDAGOGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">APRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% </th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">REPRO.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">% .</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">#APRO 2P.</th>
+                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">#REPRO 2P.</th>
+                                    
                                 </tr>
                         </table>
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
@@ -148,10 +144,16 @@
                         
                                     foreach ($resultados as $resultado) {
                                         $total_alumnos+=1;$total_evaluados+=1;
-                                        if ( ($resultado->Acum2 + $resultado->Exa2) < 70 ) {
-                                            $reprobados+=1; $ter+=1;
+                                        if ( ($resultado->Acum1 + $resultado->Exa1) < 70 ) {
+                                            $reprobados1p+=1; $ter+=1;
                                         }else{
-                                            $aprobados+=1;$tea+=1;
+                                            $aprobados1p+=1;$tea+=1;
+                                        }
+
+                                        if ( ($resultado->Acum2 + $resultado->Exa2) < 70 ) {
+                                            $reprobados2p+=1; $ter2+=1;
+                                        }else{
+                                            $aprobados2p+=1;$tea2+=1;
                                         }
                                     }// fin del ciclo resultados
                                 ?>
@@ -162,15 +164,10 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
-
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2; ?> %</td>
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
@@ -178,14 +175,10 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$asignacion->curso}} {{$asignacion->section}} {{$asignacion->clase}}</td>
                                     
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($aprobados*100)/$total_alumnos); ?> %</td> 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo $reprobados; ?></td>
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red"><?php echo round(($reprobados*100)/$total_alumnos); ?> %</td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados; ?> %</td> 
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> 
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $aprobados2; ?></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo $reprobados2; ?> %</td>
                                     </tr>
                                 @endif
 
