@@ -54,7 +54,7 @@
                                
                 @foreach ($docentes as $docente)
                     
-                    <?php  $cont=0; $total_evaluados=31; $tea=0; $ter=0;  ?>
+                    <?php  $cont=0; $total_evaluados=0; $tea=0; $ter=0;  ?>
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                            
                             <tr> 
@@ -140,9 +140,7 @@
 
                         
                                     foreach ($resultados as $resultado) {
-                                       // $total_alumnos+=1;$total_evaluados+=1;
-                                       $total_alumnos+=1;
-
+                                        $total_alumnos+=1;$total_evaluados+=1;
                                         if ( ($resultado->Acum2 + $resultado->Exa2) < 70 ) {
                                             $reprobados+=1; $ter+=1;
                                         }else{

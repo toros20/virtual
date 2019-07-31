@@ -910,7 +910,8 @@ class UserController extends Controller
 
         $docentes = DB::table('users')->where ([
                                 ['users.role', '=', 'teacher'],
-                                ['users.cuenta', '>', '20193000']
+                                ['users.cuenta', '>', '20193000'],
+                                ['users.cuenta', '<', '20194702']
                             ])
                             ->Select('users.name','users.lastname','users.id','users.cuenta')
                             ->get();
