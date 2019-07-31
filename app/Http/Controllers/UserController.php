@@ -796,10 +796,19 @@ class UserController extends Controller
          //obtenemos los datos del docente
          $user = User::findOrFail($user_id);
 
-        $asignaciones = DB::table('sectioncourses')
+        /*$asignaciones = DB::table('sectioncourses')
                         ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
                         ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
                         ->orderBy('course_id','ASC')
+                        ->get();*/
+
+        $asignaciones = DB::table('sectioncourses')
+                        ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                        ->join('clasecourses', 'sectioncourses.course_id', '=', 'clasecourses.course_id')
+                        ->Where('courses.modality_id','=',2)
+                        ->Select('clasecourses.clase_id','courses.id as course_id','courses.short_name as course','sectioncourses.section')
+                        ->orderBy('course_id','ASC')
+                        ->orderBy('section','ASC')
                         ->get();
 
         return view('users/panel',compact('asignaciones','user'));
@@ -824,23 +833,14 @@ class UserController extends Controller
        //obtenemos los datos del docente
        $user = User::findOrFail($user_id);
 
-      /* $asignaciones = DB::table('sectioncourses')
+       $asignaciones = DB::table('sectioncourses')
                        ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
                        ->Where('courses.modality_id','=',2)
                        ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
                        ->orderBy('course_id','ASC')
                        ->orderBy('section','ASC')
-                       ->get();*/
-        $asignaciones = DB::table('sectioncourses')
-                       ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
-                       ->join('clasecourses', 'sectioncourses.course_id', '=', 'clasecourses.course_id')
-                       ->Where('courses.modality_id','=',2)
-                       ->Select('clasecourses.clase_id','courses.id as course_id','courses.short_name as course','sectioncourses.section')
-                       ->orderBy('course_id','ASC')
-                       ->orderBy('section','ASC')
                        ->get();
-
-                       dd($asignaciones);
+    
 
        return view('users/panel_admin',compact('asignaciones','user'));
       
