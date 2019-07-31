@@ -123,10 +123,10 @@
                             <div id="collapseOne0" class="collapse" role="tabpanel" aria-labelledby="headingOne0" data-parent="#accordionEx">
                               <div class="card-body">
                                   <div class="list-group">
-                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,1])}}"  class="list-group-item list-group-item-action">I PARCIAL</a>
-                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,2])}}"  class="list-group-item list-group-item-action">II PARCIAL</a>
-                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,3])}}"  class="list-group-item list-group-item-action">III PARCIAL</a>
-                                      <a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,4])}}"  class="list-group-item list-group-item-action disabled">IV PARCIAL</a>
+                                      <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,1])}}"  class="list-group-item list-group-item-action">I PARCIAL</a>
+                                      <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,2])}}"  class="list-group-item list-group-item-action">II PARCIAL</a>
+                                      <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,3])}}"  class="list-group-item list-group-item-action">III PARCIAL</a>
+                                      <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$curso_actual[0]->id,$section_actual,$clase_actual[0]->id,4])}}"  class="list-group-item list-group-item-action disabled">IV PARCIAL</a>
                                   </div>
                               <div>
            
