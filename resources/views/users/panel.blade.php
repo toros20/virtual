@@ -156,10 +156,10 @@
                                                <i class="fas fa-user mr-5"></i>Acumulativos
                                                <a href=""><div class="list-group-item">
                                                                              
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}}" style="width:70px;" class="btn btn-sm btn-primary">1 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">2 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">3 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">4 P</a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}}" style="width:70px;" class="btn btn-sm btn-primary">1 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">2 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">3 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">4 P</a >
                                                 </div>
                                               </a>
                                           </li>
