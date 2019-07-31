@@ -123,7 +123,7 @@
                                             ->orderBy('courses.id','asc')
                                             ->orderBy('assignments.section','asc')
                                             ->get(); 
-                                        
+                                            dd($asignaciones);
                             ?>
 
                             @foreach ($asignaciones as $asignacion)
@@ -138,8 +138,7 @@
                                                     ->Select($historial.'.Acum2', $historial.'.Exa2')
                                                     ->get();
 
-                                                    dd($resultados);
-
+                        
                                     foreach ($resultados as $resultado) {
                                         $total_alumnos+=1;$total_evaluados+=1;
                                         if ( ($resultado->Acum2 + $resultado->Exa2) < 70 ) {
