@@ -119,15 +119,15 @@ class TeacherController extends Controller
 
         // Codigo para ver clases del primer Semestre
          //obtenemos las asignaciones de este docentes
-         $asignaciones = DB::table('assignments')
+         /*$asignaciones = DB::table('assignments')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
                         ->where('assignments.user_id','=',$user_id)
-                        ->get(); 
+                        ->get(); */
         
         // Codigo para ver clases del segundo Semestre
-         /*$asignaciones = DB::table('assignments')
+         $asignaciones = DB::table('assignments')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
@@ -135,7 +135,7 @@ class TeacherController extends Controller
                             ['assignments.user_id', '=', $user_id],
                             ['clases.semester', '!=', 1],
                         ])
-                        ->get(); */
+                        ->get(); 
 
 
                         //dd($asignaciones);
