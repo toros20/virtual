@@ -82,7 +82,7 @@
                                     <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="padding-top:5px;  border: 1px solid #dee2e6;">
-                                        <h5>I PARCIAL  </h5>
+                                        <h5>II PARCIAL  </h5>
                                     </td>
                                     <td style=" border: 1px solid #dee2e6;">
                                         <h5>Cuenta: {{$docente->cuenta}} </h5>
