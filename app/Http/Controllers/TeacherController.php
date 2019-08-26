@@ -768,11 +768,11 @@ class TeacherController extends Controller
             //proceso para cada uno de los estudiantes
             foreach ($students as $student) {
 
-                $txtacum1= 'acum1_'. $student->user_id;
-                $txtacum2= 'acum2_'. $student->user_id;
+                $txtacum1= 'acum3_'. $student->user_id;
+                $txtacum2= 'acum4_'. $student->user_id;
               
-                $txtexa1= 'exa1_'. $student->user_id;
-                $txtexa2= 'exa2_'. $student->user_id;
+                $txtexa1= 'exa3_'. $student->user_id;
+                $txtexa2= 'exa4_'. $student->user_id;
               
                 $promedio= 'promedio_'. $student->user_id;
                 $recu= 'recu_'. $student->user_id;
@@ -785,10 +785,10 @@ class TeacherController extends Controller
                                 [$tabla.'.clase_id', '=', $clase ],
                                 ])
                             ->update(array(
-                                'Acum1'=>$request->$txtacum1,
-                                'Exa1' =>$request->$txtexa1,
-                                'Acum2'=>$request->$txtacum2,
-                                'Exa2' =>$request->$txtexa2,
+                                'Acum3'=>$request->$txtacum1,
+                                'Exa3' =>$request->$txtexa1,
+                                'Acum4'=>$request->$txtacum2,
+                                'Exa4' =>$request->$txtexa2,
                                
                                 'Promedio'=>$request->$promedio,
                                 'Recu1' =>$request->$recu
