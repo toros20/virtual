@@ -63,7 +63,12 @@ class UserController extends Controller
         ])->Select('user_id')->get();
         
         //obtenemos las clases que tiene asignado este curso
-        $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
+        //VERSION1.   $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
+
+        $clases = Clasecourse::where([
+            ['course_id', '=', $course],
+            ['clase_id', '>', 100],
+        ])->Select('clase_id')->get();
        
         //nombramos las tablas que utiliizaremos
         $tabla_historial='historial_'.$course.'_'.strtolower($section);
