@@ -768,11 +768,11 @@ class TeacherController extends Controller
             //proceso para cada uno de los estudiantes
             foreach ($students as $student) {
 
-                $txtacum1= 'acum3_'. $student->user_id;
-                $txtacum2= 'acum4_'. $student->user_id;
+                $txtacum1= 'acum1_'. $student->user_id;
+                $txtacum2= 'acum2_'. $student->user_id;
               
-                $txtexa1= 'exa3_'. $student->user_id;
-                $txtexa2= 'exa4_'. $student->user_id;
+                $txtexa1= 'exa1_'. $student->user_id;
+                $txtexa2= 'exa2_'. $student->user_id;
               
                 $promedio= 'promedio_'. $student->user_id;
                 $recu= 'recu_'. $student->user_id;
