@@ -55,9 +55,9 @@ class UserController extends Controller
         //obtenemos lo estudiantes de este curso y seccion
 
         //solo para el segundo parcial
-       $parcial=3;
+       //$parcial=3;
          /* obtenemos los id de los estudiantes de este curso y seccion*/
-        $users = Enrollment::where([
+        /*$users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
@@ -108,7 +108,7 @@ class UserController extends Controller
             }
          }
 
-         return "LISTO LAS SUMAS";
+         return "LISTO LAS SUMAS";*/
         
         
         
@@ -1146,7 +1146,7 @@ public function actas($course_id,$section,$parcial){
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where ([
                     ['clasecourses.course_id', '=', $course_id],
-                    ['clases.semester', '!=', 2],
+                    ['clases.semester', '=', 2],
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
