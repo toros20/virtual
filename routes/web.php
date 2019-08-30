@@ -16,6 +16,14 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
+//ruta para mostrar la encuesta del personal docente
+Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
+
+//ruta para mostrar la encuesta del personal docente
+Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
+
+
+
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
@@ -69,12 +77,6 @@ Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes
 
 //ruta para mostrar la seccion de acumulativos de las coordinaciones
 Route::get('/users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}', 'UserController@acumulativos')->name('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}');
-
-//ruta para mostrar la encuesta del personal docente
-Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
-
-//ruta para mostrar la encuesta del personal docente
-Route::get('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
 
 
 
