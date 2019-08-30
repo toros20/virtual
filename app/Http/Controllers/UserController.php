@@ -1168,10 +1168,14 @@ public function encuesta(){
 
 public function verificar_cuenta(Request $request){
     
-    $cuenta = $request->cuenta;
-    $dato= 1212;
-
-    return view('users/realizar_encuesta', compact('cuenta','dato'));
+    $usuario = User::where('cuenta',$request->cuenta)->get();
+    if ($usuario->cuenta == $request->cuenta) {
+        return view('users/realizar_encuesta');
+    }
+    else{
+        return "REGISTRO NO ENCONTRADO EN LA BASE DE DATOS";
+    }
+    
 }
 
 }
