@@ -74,7 +74,7 @@ Route::get('/users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',
 Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 
 //ruta para mostrar la encuesta del personal docente
-Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('users.verificar_cuenta');
+Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
 
 
 
