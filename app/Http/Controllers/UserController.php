@@ -1161,6 +1161,8 @@ public function actas($course_id,$section,$parcial){
 //metodo para gestionar las encuestas del personal docente realizada por los estudiantes
 public function encuesta(){
 
+    
+
     return view('users/encuesta');
 
 }
