@@ -129,6 +129,7 @@
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
                                             <form action={{route('verificar_cuenta')}}  method="post">
+                                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                 <label for="cuenta">Ingrese su n&uacute;mero de cuenta</label>
                                                 <input placeholder="Ejemplo de cuenta: 20190000" class="form-control" type="text" name="cuenta" id="cuenta" maxlength="8" required>
                                             
