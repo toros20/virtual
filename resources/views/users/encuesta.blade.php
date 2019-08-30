@@ -101,7 +101,7 @@
             {{-- variables para controlar el cambio de color en las tarjetas --}}
            
             <!--Card column-->
-            <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
+            <div class="col-md-6 col-sm-6 col-lg-6 mb-4">
         
                     <!-- Card -->
                     <div class="card gradient-card">
@@ -129,9 +129,9 @@
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                         <li class="list-group-item">
                                             <form action="">
-                                                <input type="text" name="cuenta" id="cuenta" maxlength="8" required>
+                                                <input class="form-control" type="text" name="cuenta" id="cuenta" maxlength="8" required>
                                             </form>
-                                            <button onclick="evaluar_cuenta()" >Ingresar</button>
+                                            <button class="btn btn-lg btn-primary" onclick="evaluar_cuenta()" >Ingresar</button>
                                             {{-- <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas --}}
                                         </li>
                                     </a>
