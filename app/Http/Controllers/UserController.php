@@ -1166,7 +1166,7 @@ public function encuesta(){
 
 }
 
-public function verificar_encuesta(){
+public function verificar_cuenta(){
 
     return  "EXITO";
    /*  $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
