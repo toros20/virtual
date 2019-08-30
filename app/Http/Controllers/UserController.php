@@ -1166,7 +1166,7 @@ public function encuesta(){
 
 }
 
-public function verificar_cuenta(Request $request){
+public function verificar_cuenta(){
 
     return redirect()->route('users.realizar_encuesta');
    /*   $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
