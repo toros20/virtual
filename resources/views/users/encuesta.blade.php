@@ -141,7 +141,7 @@
     
             </div>
             <!-- Card -->
-            @endforeach
+          
         </div><!--row-->
 
      </main>
