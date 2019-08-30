@@ -23,8 +23,6 @@ Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
 
 
-
-
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
 //crear ruta para la seccion de listar teachers 
