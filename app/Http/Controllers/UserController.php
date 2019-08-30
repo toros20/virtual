@@ -1169,6 +1169,7 @@ public function encuesta(){
 public function verificar_cuenta(Request $request){
     
     $usuario = User::where('cuenta',$request->cuenta)->get();
+    dd($usuario);
     if ($usuario->cuenta == $request->cuenta) {
         return view('users/realizar_encuesta');
     }
