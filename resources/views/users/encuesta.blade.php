@@ -110,7 +110,7 @@
                 
                             <!-- Content -->
                             
-                            <div class="text-white d-flex h-100 mask blue-gradient-rgba">        
+                            <div class="text-white h-100 mask blue-gradient-rgba">        
     
                                 <div class="first-content align-self-center p-3">
                                 <h3 class="card-title"> Solo Estudiantes Registrados </h3>
@@ -126,7 +126,7 @@
                         <div class="card-body card-body-cascade ">
                                         
                             <ul class="list-group">
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                    <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
                                             <form action="">
                                                 <input placeholder="Numero de cuenta:20190000" class="form-control" type="text" name="cuenta" id="cuenta" maxlength="8" required>
