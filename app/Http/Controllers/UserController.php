@@ -1166,9 +1166,11 @@ public function encuesta(){
 
 }
 
-public function verificar_cuenta(){
+public function verificar_cuenta(Request $request){
+    
+    $cuenta = $request->cuenta;
 
-    return view('users/encuesta');
+    return view('users/realizar_encuesta', compact($cuenta));
 }
 
 }
