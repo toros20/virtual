@@ -128,7 +128,7 @@
                             <ul class="list-group">
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
-                                            <form action={{route('verificar_cuenta')}}  method="POST">
+                                            <form action={{route('verificar_cuenta')}}  method="get">
                                                 <label for="cuenta">Ingrese su n&uacute;mero de cuenta</label>
                                                 <input placeholder="Ejemplo de cuenta: 20190000" class="form-control" type="text" name="cuenta" id="cuenta" maxlength="8" required>
                                             
