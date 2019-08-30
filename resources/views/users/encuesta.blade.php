@@ -63,9 +63,9 @@
         <!-- Navbar -->
         <nav class="navbar fixed-top navbar-toggleable-md navbar-expand-lg scrolling-navbar double-nav">
           <!-- SideNav slide-out button -->
-          <div class="float-left">
+         {{--  <div class="float-left">
              <a href="#" data-activates="slide-out" class="button-collapse"><i class="fas fa-bars"></i></a> 
-          </div>
+          </div> --}}
           <!-- Breadcrumb-->
         {{--   <div class="breadcrumb-dn mr-auto">
              <p>Menú de Navegación</p> 
