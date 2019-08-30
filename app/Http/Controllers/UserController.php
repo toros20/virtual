@@ -1166,7 +1166,7 @@ public function encuesta(){
 
 }
 
-public function verificar_cuenta(Request $request){
+public function verificar_cuenta(){
 
   return "EXITO";
     //  return redirect()->route('users.realizar_encuesta');
