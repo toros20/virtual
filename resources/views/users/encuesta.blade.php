@@ -99,7 +99,7 @@
         <div class="row"> 
 
             {{-- variables para controlar el cambio de color en las tarjetas --}}
-           
+           <div class="col-md-1 col-sm-1 col-lg-3 mb-4" style="text-align: center"></div>
             <!--Card column-->
             <div class="col-md-6 col-sm-6 col-lg-5 mb-4" style="text-align: center">
         
@@ -141,7 +141,7 @@
     
             </div>
             <!-- Card -->
-          
+            <div class="col-md-1 col-sm-1 col-lg-3 mb-4" style="text-align: center"></div>
         </div><!--row-->
 
      </main>
