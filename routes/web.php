@@ -32,7 +32,7 @@ Route::put('/users/password/{user_id}', 'UserController@password_update')->name(
 
 
 //PARA ACTIVAR EL METODO LLAMADO TABLAS, EL CUAL SUMA LOS ACUMULATIVOS DE CADA PARCIAL
-Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
+//Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
 
 
 //ruta para mostrar la seccion de boletas de calificaciones
@@ -70,7 +70,8 @@ Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes
 //ruta para mostrar la seccion de acumulativos de las coordinaciones
 Route::get('/users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}', 'UserController@acumulativos')->name('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}');
 
-
+//ruta para mostrar la encuesta del personal docente
+Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 
 
 

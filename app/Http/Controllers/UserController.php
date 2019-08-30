@@ -92,7 +92,7 @@ class UserController extends Controller
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
                    $total += $tarea->valor_obtenido;
-            
+             b
                     //actualizamos la tabla historial con los datos sumados
                     $resp =DB::table($tabla_historial)
                                 ->where([
@@ -1158,7 +1158,12 @@ public function actas($course_id,$section,$parcial){
  return view('users/actas',compact('estudiantes','curso','seccion','clases','course','section','parcial'));
 }
 
+//metodo para gestionar las encuestas del personal docente realizada por los estudiantes
+public function encuesta(){
 
+    return view('users/encuesta');
+
+}
 
 }
 
