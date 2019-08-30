@@ -1168,7 +1168,7 @@ public function encuesta(){
 
 public function verificar_cuenta(){
 
- 
+    return view('users/encuesta');
 }
 
 }
