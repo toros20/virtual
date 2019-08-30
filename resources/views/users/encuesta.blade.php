@@ -101,10 +101,10 @@
             {{-- variables para controlar el cambio de color en las tarjetas --}}
            
             <!--Card column-->
-            <div class="col-md-6 col-sm-6 col-lg-5 mb-4" align="center">
+            <div class="col-md-6 col-sm-6 col-lg-5 mb-4" style="text-align: center">
         
                     <!-- Card -->
-                    <div class="card gradient-card">
+                    <div class="card gradient-card" style="text-align: center">
                 
                         <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
                 
