@@ -1170,7 +1170,7 @@ public function verificar_cuenta(Request $request){
     
     $usuario = User::where('cuenta',$request->cuenta)->get();
 
-   if(!$usuario){
+   if($usuario){
      return "REGISTRO NO ENCONTRADO EN LA BASE DE DATOS";
    }else{
     return view('users/realizar_encuesta');
