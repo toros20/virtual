@@ -1170,12 +1170,12 @@ public function verificar_encuesta(Request $request){
 
     $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
 
-    if (!$user) {
-        return "USUARIO NO REGISTRADO";
+    if ($user->cuenta == $request->cuenta) {
+        return "FELICIDADES";
     }
     else{
 
-        return "FELICIDADES";
+        return "USUARIO NO REGISTRADO";
     }
 
 }
