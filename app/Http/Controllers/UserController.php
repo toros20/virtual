@@ -1169,8 +1169,9 @@ public function encuesta(){
 public function verificar_cuenta(Request $request){
     
     $cuenta = $request->cuenta;
+    $dato= 1212;
 
-    return view('users/realizar_encuesta', compact($cuenta));
+    return view('users/realizar_encuesta', compact('cuenta','dato'));
 }
 
 }
