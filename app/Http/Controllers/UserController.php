@@ -1168,8 +1168,8 @@ public function encuesta(){
 
 public function verificar_cuenta(Request $request){
 
-
-     $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
+    return redirect()->route('users.realizar_encuesta');
+   /*   $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
 
     if ($user->cuenta == $request->cuenta) {
         return "FELICIDADES";
@@ -1177,7 +1177,7 @@ public function verificar_cuenta(Request $request){
     else{
 
         return "USUARIO NO REGISTRADO";
-    } 
+    }  */
 
 }
 
