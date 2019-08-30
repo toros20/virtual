@@ -128,11 +128,12 @@
                             <ul class="list-group">
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
-                                            <form action="">
+                                            <form action="verificar_cuenta" method="POST">
                                                 <label for="cuenta">Ingrese su n&uacute;mero de cuenta</label>
                                                 <input placeholder="Ejemplo de cuenta: 20190000" class="form-control" type="text" name="cuenta" id="cuenta" maxlength="8" required>
+                                            
+                                                <button type="submit" class="btn btn-lg btn-primary" >Ingresar</button>
                                             </form>
-                                            <button class="btn btn-lg btn-primary" onclick="evaluar_cuenta()" >Ingresar</button>
                                             {{-- <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas --}}
                                         </li>
                                     </a>

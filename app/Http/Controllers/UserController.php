@@ -1161,9 +1161,22 @@ public function actas($course_id,$section,$parcial){
 //metodo para gestionar las encuestas del personal docente realizada por los estudiantes
 public function encuesta(){
 
-    
 
     return view('users/encuesta');
+
+}
+
+public function verificar_encuesta(Request $request){
+
+    $user = DB::table('users')->where('cuenta',$request->cuenta)->get();
+
+    if (!$user) {
+        return "USUARIO NO REGISTRADO";
+    }
+    else{
+
+        return "FELICIDADES";
+    }
 
 }
 

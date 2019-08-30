@@ -73,6 +73,11 @@ Route::get('/users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',
 //ruta para mostrar la encuesta del personal docente
 Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 
+//ruta para mostrar la encuesta del personal docente
+Route::post('/users/verificar_encuesta', 'UserController@verificar_encuesta')->name('verificar_encuesta');
+
+
+
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
