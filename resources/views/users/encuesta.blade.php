@@ -126,7 +126,7 @@
                         <div class="card-body card-body-cascade ">
                                         
                             <ul class="list-group">
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                         <li class="list-group-item">
                                             <form action="">
                                                 <input type="text" name="cuenta" id="cuenta" maxlength="8" required>
