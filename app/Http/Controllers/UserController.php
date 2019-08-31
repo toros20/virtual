@@ -154,28 +154,24 @@ class UserController extends Controller
         ])
         ->Select('users.id as docente','name','lastname')->distinct()->get();
 
-        dd($docentes);
 
-        /*$clases = Clasecourse::where([
-            ['course_id', '=', $course],
-            ['clase_id', '>', 100],
-        ])->Select('clase_id')->get();
-
-        $users = Enrollment::where([
+        $estudiantes = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
-        ])->Select('user_id')->get();
+        ])->Select('user_id as estudiante')->get();
 
-        foreach ($users as $user) {
-           foreach ($clases as $clase) {
-                DB::table('historial_'.$course.'_'.strtolower($section))->insert([
-                    'student_id'=>$user->user_id,
-                    'clase_id'=>$clase->clase_id,
+        foreach ($estudiantes as $estudiante) {
+           foreach ($docentes as $docente) {
+                DB::table('encuestas')->insert([
+                    'estudiante'=>$estudiante->estudiante,
+                    'docente'=>$docente->docente,
+                    'p1'=>0,'p2'=>0,'p3'=>0,'p4'=>0,'p5'=>0,'p6'=>0,'p7'=>0,'p8'=>0,'p9'=>0,'p10'=>0,
+                    'fecha'=>''                 
                 ]);
            }
         }
         
-        return "LISTO---Filas para encuestas Insertadas";*/
+        return "LISTO---Filas para encuestas Insertadas";
 
 
 
