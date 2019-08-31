@@ -92,7 +92,7 @@ class UserController extends Controller
                 foreach ($tareas as $tarea) {
                     //obtenemos la suma de las tareas de esta clase parcial y estudiante
                    $total += $tarea->valor_obtenido;
-             b
+             
                     //actualizamos la tabla historial con los datos sumados
                     $resp =DB::table($tabla_historial)
                                 ->where([
@@ -142,11 +142,8 @@ class UserController extends Controller
         
          //codigo para insertar filas en la tabla encuestas, por cada curso y section, 
          //se requiere como para metros course, section
-        /*$clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();*/
-         
        
-
-        $docentes = DB::table('assignments')
+        /*$docentes = DB::table('assignments')
         ->join('users', 'assignments.user_id', '=', 'users.id')
         ->where([
             ['assignments.course_id', '=', $course],
@@ -161,19 +158,17 @@ class UserController extends Controller
         ])->Select('user_id as estudiante')->get();
 
         foreach ($estudiantes as $estudiante) {
-           foreach ($docentes as $docente) {
+            foreach ($docentes as $docente) {
                 DB::table('encuestas')->insert([
                     'estudiante'=>$estudiante->estudiante,
                     'docente'=>$docente->docente,
                     'p1'=>0,'p2'=>0,'p3'=>0,'p4'=>0,'p5'=>0,'p6'=>0,'p7'=>0,'p8'=>0,'p9'=>0,'p10'=>0
-                                   
+                                    
                 ]);
-           }
+            }
         }
         
-        return "LISTO---Filas para encuestas Insertadas";
-
-
+        return "LISTO---Filas para encuestas Insertadas";*/
 
 
 
