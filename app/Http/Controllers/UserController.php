@@ -138,6 +138,50 @@ class UserController extends Controller
         
         return "LISTO---Filas Insertadas";*/
 
+
+        
+         //codigo para insertar filas en la tabla encuestas, por cada curso y section, 
+         //se requiere como para metros course, section
+        /*$clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();*/
+         
+       
+
+        $docentes = DB::table('assignments')
+        ->join('users', 'assignments.user_id', '=', 'users.id')
+        ->where([
+            ['assignments.course_id', '=', $course],
+            ['assignments.section', '=', $section]
+        ])
+        ->Select('name','lastname')->distinct()->get();
+
+        dd($docentes);
+
+        /*$clases = Clasecourse::where([
+            ['course_id', '=', $course],
+            ['clase_id', '>', 100],
+        ])->Select('clase_id')->get();
+
+        $users = Enrollment::where([
+            ['course_id', '=', $course],
+            ['section', '=', $section],
+        ])->Select('user_id')->get();
+
+        foreach ($users as $user) {
+           foreach ($clases as $clase) {
+                DB::table('historial_'.$course.'_'.strtolower($section))->insert([
+                    'student_id'=>$user->user_id,
+                    'clase_id'=>$clase->clase_id,
+                ]);
+           }
+        }
+        
+        return "LISTO---Filas para encuestas Insertadas";*/
+
+
+
+
+
+
         //codigo para crear la table msj_ por cada user
         /*for ($i=64; $i < 1437  ; $i++) { 
           

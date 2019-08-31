@@ -38,7 +38,7 @@ Route::put('/users/password/{user_id}', 'UserController@password_update')->name(
 
 
 //PARA ACTIVAR EL METODO LLAMADO TABLAS, EL CUAL SUMA LOS ACUMULATIVOS DE CADA PARCIAL
-//Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
+Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name('users.tablas');
 
 
 //ruta para mostrar la seccion de boletas de calificaciones
