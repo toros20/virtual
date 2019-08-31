@@ -1196,6 +1196,18 @@ public function actas($course_id,$section,$parcial){
 //metodo para gestionar las encuestas del personal docente realizada por los estudiantes
 public function encuesta(){
 
+      /*************************SEGURIDAD*******************/
+        //control de seguridad
+        // Get the currently authenticated user...
+        if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role != 'admin'){
+            return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+        }
+
+    /*************************SEGURIDAD*******************/
 
     return view('users/encuesta');
 
