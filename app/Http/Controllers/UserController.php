@@ -152,7 +152,7 @@ class UserController extends Controller
             ['assignments.course_id', '=', $course],
             ['assignments.section', '=', $section]
         ])
-        ->Select('users.id','name','lastname')->distinct()->get();
+        ->Select('users.id as docente','name','lastname')->distinct()->get();
 
         dd($docentes);
 
