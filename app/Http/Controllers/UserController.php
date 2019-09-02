@@ -1242,7 +1242,7 @@ public function verificar_cuenta(Request $request){
 
        // obtenemos el dato de la tabla control de encuesta para ver enque pregunta va este estudiante
        $control = DB::table('control_encuesta')
-                        ->where('estudiante','=',$usuario[0]->cuenta)
+                        ->where('estudiante','=',$usuario[0]->id)
                         ->get();
         dd($control);
 
