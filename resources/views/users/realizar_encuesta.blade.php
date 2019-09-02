@@ -118,10 +118,9 @@
                             </div>
                         
                         </div>
-                        @foreach ($docentes as $docente)
                             
                         <div class="card-body card-body-cascade ">
-                                        
+                            @foreach ($docentes as $docente)
                             <ul class="list-group">
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
@@ -138,13 +137,13 @@
                                                     </tr>
                                                 </table>                                                
                                             </form>
-                                            {{-- <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas --}}
                                         </li>
                                     </a>
                              </ul> 
+                             @endforeach 
                         </div>
                     </div>
-                    @endforeach 
+                   
             </div>
 
             <!-- Card -->
