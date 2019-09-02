@@ -1214,12 +1214,36 @@ public function encuesta(){
 }
 
 public function verificar_cuenta(Request $request){
-    
-    $usuario = User::where('cuenta',$request->cuenta)->get();
 
-    if(isset($usuario[0]->cuenta )){
-        return view('users/realizar_encuesta');
+    if( $user->role != 'admin'){
+        return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
     }
+    
+    //determinamos el numero de cuenta para comprobar que este registrado
+    $usuario = User::where('cuenta',$request->cuenta)->get();
+    //confirmamos que SI este registraso
+    if(isset($usuario[0]->cuenta )){
+
+        //determinamos el grado y seccion de este usuario
+        $matricula = Enrrollment::where('user_id',$usuario[0]->id)->get();
+
+        //determinados los docente que le brindan clases a este estudiante
+        $docentes = DB::table('assignments')
+        ->join('users', 'assignments.user_id', '=', 'users.id')
+        ->where([
+            ['assignments.course_id', '=', $matricula[0]->course_id],
+            ['assignments.section', '=', $matricula[0]->section]
+        ])
+        ->Select('users.id as docente','name','lastname')->distinct()->get();
+
+        //obtenemos las preguntas de la base de datos
+        $preguntas = DB::table('preguntas')->get();
+        
+        return redirect()->route('users/realizar_encuesta',compact('docentes','preguntas'));
+
+        //return view('users/realizar_encuesta',compact('docentes','preguntas'));
+    }
+    //en caso de no estar regstrado
     else{
         return "REGISTRO NO ENCONTRADO EN LA BASE DE DATOS";
     } 
