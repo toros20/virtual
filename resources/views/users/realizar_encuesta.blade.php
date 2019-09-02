@@ -120,6 +120,7 @@
                         </div>
                             
                         <div class="card-body card-body-cascade ">
+                            <input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
                             @foreach ($docentes as $docente)
                             <div id="div_{{$docente->docente}}">
                             <ul class="list-group">
