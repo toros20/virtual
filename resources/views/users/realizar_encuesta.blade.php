@@ -128,7 +128,7 @@
                                                 <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                 <table>
                                                     <tr>
-                                                        <td width="150px"> <img src="img/logo.png" width="150px" alt=""></td>
+                                                        <td width="150px"> <img src="img/docentes2019/{{$docente->id}}.jpeg" width="150px" alt=""></td>
                                                         <td width="100px">{{$docente->name}} {{$docente->lastname}} </td>
                                                         <td width="130px"><button type="submit" class="btn  btn-danger"  >Debe.Mejorar</button></td>
                                                         <td width="130px"><button type="submit" class="btn  btn-warning" >Bueno</button></td>
