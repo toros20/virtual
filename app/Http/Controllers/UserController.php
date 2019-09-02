@@ -1244,7 +1244,6 @@ public function verificar_cuenta(Request $request){
        $control = DB::table('control_encuesta')
                         ->where('estudiante','=',$usuario[0]->id)
                         ->get();
-        dd($control);
 
        switch ($control->pregunta) {
             case '0':
