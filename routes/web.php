@@ -22,6 +22,9 @@ Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 //ruta para mostrar la encuesta del personal docente
 Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
 
+//crear ruta para guardar los comentarios despues de leer los primeros comentarios
+Route::post('/users/votar_encueta', 'UserController@votar_encueta');
+
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
@@ -110,9 +113,6 @@ Route::post('ajax/ver_comentarios', 'UserController@ver_comentarios');
 //crear ruta para guardar los comentarios despues de leer los primeros comentarios
 Route::post('ajax/publicarComentario', 'UserController@publicarComentario');
 
-
-//crear ruta para guardar los comentarios despues de leer los primeros comentarios
-Route::post('ajax/votar_encueta', 'UserController@votar_encueta');
 
 
 
