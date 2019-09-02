@@ -1248,43 +1248,43 @@ public function verificar_cuenta(Request $request){
        switch ($control->pregunta) {
             case '0':
                    //obtenemos la pregunta numero 1 de la base de datos
-                   $preguntas = DB::table('preguntas') ->where('id','=',1)->get();
+                   $preguntas = DB::table('preguntas')->where('id','=',1)->get();
                break;
             case '1':
                      //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',2)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',2)->get();
                break;
             case '2':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',3)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',3)->get();
                break;
             case '3':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',4)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',4)->get();
                break;
             case '4':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',5)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',5)->get();
                break;
             case '5':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',6)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',6)->get();
                break;
             case '6':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',7)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',7)->get();
                break;
             case '7':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',8)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',8)->get();
                break;
             case '8':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',9)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',9)->get();
                break;
             case '9':
                       //obtenemos la pregunta numero 1 de la base de datos
-                     $preguntas = DB::table('preguntas') ->where('id','=',10)->get();
+                     $preguntas = DB::table('preguntas')->where('id','=',10)->get();
                break;
            
            default:
