@@ -132,7 +132,7 @@
                                                         <td width="100px">{{$docente->name}} {{$docente->lastname}} </td>
                                                         <td width="130px"><button type="submit" class="btn  btn-danger"  >Debe Mejorar</button></td>
                                                         <td width="130px"><button type="submit" class="btn  btn-warning" >Bueno</button></td>
-                                                        <td width="130px"><button type="submit" class="btn  btn-primary" >Muy Bueno</button></td>
+                                                        <td width="130px"><button type="submit" class="btn  btn-primary" >MuyBueno</button></td>
                                                         <td width="130px"><button type="submit" class="btn  btn-success" >Excelente</button></td>
                                                     </tr>
                                                 </table>                                                
