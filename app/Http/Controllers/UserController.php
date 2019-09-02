@@ -1257,7 +1257,7 @@ public function realizar_encuesta(){
        //obtenemos las preguntas de la base de datos
        $preguntas = DB::table('preguntas')->get();
 
-       return "ESTAS EN REALIZAR ENCUESTA !!!"
+       return "ESTAS EN REALIZAR ENCUESTA !!!";
 }
 
 }
