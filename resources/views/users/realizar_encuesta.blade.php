@@ -121,6 +121,7 @@
                             
                         <div class="card-body card-body-cascade ">
                             @foreach ($docentes as $docente)
+                            <div id="div_{{$docente->docente}}">
                             <ul class="list-group">
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
@@ -139,7 +140,8 @@
                                             </form>
                                         </li>
                                     </a>
-                             </ul> 
+                             </ul>
+                            </div> 
                              @endforeach 
                         </div>
                     </div>
