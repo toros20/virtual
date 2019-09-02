@@ -1215,6 +1215,10 @@ public function encuesta(){
 
 public function verificar_cuenta(Request $request){
 
+    if ( !($user = Auth::user()) ){
+        return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+    }
+
     if( $user->role != 'admin'){
         return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
     }
