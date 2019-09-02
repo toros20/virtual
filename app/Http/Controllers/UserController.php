@@ -1244,8 +1244,8 @@ public function verificar_cuenta(Request $request){
        $control = DB::table('control_encuesta')
                         ->where('estudiante','=',$usuario[0]->id)
                         ->get();
-        dd($control);
-       switch ($control->pregunta) {
+       
+       switch ($control[0]->pregunta) {
             case '0':
                    //obtenemos la pregunta numero 1 de la base de datos
                    $preguntas = DB::table('preguntas')->where('id','=',1)->get();
@@ -1291,8 +1291,6 @@ public function verificar_cuenta(Request $request){
                     return "Terminaste las 10 preguntas";
                break;
        }
-
-       dd($preguntas);
         
         //return redirect()->route('realizar_encuesta',compact('usuario'));
         return view('users/realizar_encuesta',compact('docentes','preguntas'));
