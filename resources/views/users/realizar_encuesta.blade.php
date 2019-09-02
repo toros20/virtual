@@ -133,7 +133,7 @@
                                                         <td width="130px"><button onclick="votar({{$preguntas[0]->id}},{{$docente->docente}},{{$usuario[0]->id}},1)" type="button" class="btn  btn-danger"  >Debe.Mejorar</button></td>
                                                         <td width="130px"><button onclick="votar({{$preguntas[0]->id}},{{$docente->docente}},{{$usuario[0]->id}},2)" type="button" class="btn  btn-warning" >Bueno</button></td>
                                                         <td width="130px"><button onclick="votar({{$preguntas[0]->id}},{{$docente->docente}},{{$usuario[0]->id}},3)" type="button" class="btn  btn-primary" >Muy.Bueno</button></td>
-                                                        <td width="130px"><button onclick="votar({{$preguntas[0]->id}},{{$docente->docente}},{{$usuario[0]->id}},4) "type="button" class="btn  btn-success" >Excelente</button></td>
+                                                        <td width="130px"><button onclick="votar({{$preguntas[0]->id}},{{$docente->docente}},{{$usuario[0]->id}},4)" type="button" class="btn  btn-success" >Excelente</button></td>
                                                     </tr>
                                                 </table>                                                
                                         </li>
