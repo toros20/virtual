@@ -1228,23 +1228,8 @@ public function verificar_cuenta(Request $request){
     //confirmamos que SI este registraso
     if(isset($usuario[0]->cuenta )){
 
-        //determinamos el grado y seccion de este usuario
-        $matricula = Enrrollment::where('user_id',$usuario[0]->id)->get();
-
-        //determinados los docente que le brindan clases a este estudiante
-        $docentes = DB::table('assignments')
-        ->join('users', 'assignments.user_id', '=', 'users.id')
-        ->where([
-            ['assignments.course_id', '=', $matricula[0]->course_id],
-            ['assignments.section', '=', $matricula[0]->section]
-        ])
-        ->Select('users.id as docente','name','lastname')->distinct()->get();
-
-        //obtenemos las preguntas de la base de datos
-        $preguntas = DB::table('preguntas')->get();
         
-        return redirect()->route('users/realizar_encuesta',compact('docentes','preguntas'));
-
+        return redirect()->route('users/realizar_encuesta');
         //return view('users/realizar_encuesta',compact('docentes','preguntas'));
     }
     //en caso de no estar regstrado
@@ -1253,6 +1238,26 @@ public function verificar_cuenta(Request $request){
     } 
 
     
+}
+
+public function realizar_encuesta(){
+
+       //determinamos el grado y seccion de este usuario
+       $matricula = Enrollment::where('user_id',$usuario[0]->id)->get();
+
+       //determinados los docente que le brindan clases a este estudiante
+       $docentes = DB::table('assignments')
+       ->join('users', 'assignments.user_id', '=', 'users.id')
+       ->where([
+           ['assignments.course_id', '=', $matricula[0]->course_id],
+           ['assignments.section', '=', $matricula[0]->section]
+       ])
+       ->Select('users.id as docente','name','lastname')->distinct()->get();
+
+       //obtenemos las preguntas de la base de datos
+       $preguntas = DB::table('preguntas')->get();
+
+       return "ESTAS EN REALIZAR ENCUESTA !!!"
 }
 
 }
