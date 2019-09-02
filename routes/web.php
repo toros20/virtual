@@ -22,9 +22,6 @@ Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');
 //ruta para mostrar la encuesta del personal docente
 Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name('verificar_cuenta');
 
-//ruta para mostrar la encuesta del personal docente
-Route::get('/users/realizar_encuesta', 'UserController@realizar_encuesta')->name('realizar_encuesta');
-
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');

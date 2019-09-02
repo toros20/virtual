@@ -1228,21 +1228,7 @@ public function verificar_cuenta(Request $request){
     //confirmamos que SI este registraso
     if(isset($usuario[0]->cuenta )){
 
-        
-        return redirect()->route('realizar_encuesta',compact('usuario'));
-        //return view('users/realizar_encuesta',compact('docentes','preguntas'));
-    }
-    //en caso de no estar regstrado
-    else{
-        return "REGISTRO NO ENCONTRADO EN LA BASE DE DATOS";
-    } 
-
-    
-}
-
-public function realizar_encuesta(){
-
-       //determinamos el grado y seccion de este usuario
+        //determinamos el grado y seccion de este usuario
        $matricula = Enrollment::where('user_id',$usuario[0]->id)->get();
 
        //determinados los docente que le brindan clases a este estudiante
@@ -1254,11 +1240,68 @@ public function realizar_encuesta(){
        ])
        ->Select('users.id as docente','name','lastname')->distinct()->get();
 
-       //obtenemos las preguntas de la base de datos
-       $preguntas = DB::table('preguntas')->get();
+       // obtenemos el dato de la tabla control de encuesta para ver enque pregunta va este estudiante
+       $control = DB::table('control_encuesta')
+                        ->where('estudiante','=',$usuario[0]->cuenta)
+                        ->get();
 
-       return "ESTAS EN REALIZAR ENCUESTA !!!";
+       switch ($control->pregunta) {
+            case '0':
+                   //obtenemos la pregunta numero 1 de la base de datos
+                   $preguntas = DB::table('preguntas') ->where('id','=',1)->get();
+               break;
+            case '1':
+                     //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',2)->get();
+               break;
+            case '2':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',3)->get();
+               break;
+            case '3':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',4)->get();
+               break;
+            case '4':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',5)->get();
+               break;
+            case '5':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',6)->get();
+               break;
+            case '6':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',7)->get();
+               break;
+            case '7':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',8)->get();
+               break;
+            case '8':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',9)->get();
+               break;
+            case '9':
+                      //obtenemos la pregunta numero 1 de la base de datos
+                     $preguntas = DB::table('preguntas') ->where('id','=',10)->get();
+               break;
+           
+           default:
+                    return "Terminaste las 10 preguntas";
+               break;
+       }
+        
+        //return redirect()->route('realizar_encuesta',compact('usuario'));
+        return view('users/realizar_encuesta',compact('docentes','preguntas'));
+    }
+    //en caso de no estar regstrado
+    else{
+        return "REGISTRO NO ENCONTRADO EN LA BASE DE DATOS";
+    } 
+
 }
+
 
 }
 
