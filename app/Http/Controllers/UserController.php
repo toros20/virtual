@@ -1229,7 +1229,7 @@ public function verificar_cuenta(Request $request){
     if(isset($usuario[0]->cuenta )){
 
         
-        return redirect()->route('realizar_encuesta');
+        return redirect()->route('realizar_encuesta',compact($usuario));
         //return view('users/realizar_encuesta',compact('docentes','preguntas'));
     }
     //en caso de no estar regstrado
