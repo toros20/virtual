@@ -130,10 +130,10 @@
                                                     <tr>
                                                         <td> <img src="img/logo.png" width="150px" alt=""></td>
                                                         <td>{{$docente->name}} {{$docente->lastname}} </td>
-                                                        <td><button type="submit" class="btn btn-lg btn-danger" >Necesita Mejorar</button></td>
-                                                        <td><button type="submit" class="btn btn-lg btn-warning" >Bueno</button></td>
-                                                        <td><button type="submit" class="btn btn-lg btn-success" >Muy Bueno</button></td>
-                                                        <td><button type="submit" class="btn btn-lg btn-primary" >Excelente</button></td>
+                                                        <td><button type="submit" class="btn btn-md btn-danger" >Debe Mejorar</button></td>
+                                                        <td><button type="submit" class="btn btn-md btn-warning" >Bueno</button></td>
+                                                        <td><button type="submit" class="btn btn-md btn-success" >Muy Bueno</button></td>
+                                                        <td><button type="submit" class="btn btn-md btn-primary" >Excelente</button></td>
                                                     </tr>
                                                 </table>                                                
                                             </form>
