@@ -1291,6 +1291,8 @@ public function verificar_cuenta(Request $request){
                     return "Terminaste las 10 preguntas";
                break;
        }
+
+       dd($preguntas);
         
         //return redirect()->route('realizar_encuesta',compact('usuario'));
         return view('users/realizar_encuesta',compact('docentes','preguntas'));
