@@ -109,7 +109,7 @@
                             <div class="text-white h-100 mask blue-gradient-rgba">        
     
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title">{{$pregunta[0]->id}}.{{$pregunta[0]->pregunta}} </h3>
+                                <h3 class="card-title">{{$preguntas[0]->id}}.{{$preguntas[0]->pregunta}} </h3>
                               
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
