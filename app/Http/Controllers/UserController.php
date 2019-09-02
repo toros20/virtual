@@ -1293,7 +1293,7 @@ public function verificar_cuenta(Request $request){
        }
         
         //return redirect()->route('realizar_encuesta',compact('usuario'));
-        return view('users/realizar_encuesta',compact('docentes','preguntas'));
+        return view('users/realizar_encuesta',compact('docentes','preguntas','usuario'));
     }
     //en caso de no estar regstrado
     else{
