@@ -1302,6 +1302,38 @@ public function verificar_cuenta(Request $request){
 
 }
 
+public function votar_encuesta(Request $request){
+        
+    $pregunta=$request->_pregunta;
+    $docente=$request->_docente;
+    $estudiante=$request->_estudiante;
+    $valor=$request->_valor;
+
+    if ($pregunta == 1){$preg='p1';}
+    if ($pregunta == 2){$preg='p2';}
+    if ($pregunta == 3){$preg='p3';}
+    if ($pregunta == 4){$preg='p4';}
+    if ($pregunta == 5){$preg='p5';}
+    if ($pregunta == 6){$preg='p6';}
+    if ($pregunta == 7){$preg='p7';}
+    if ($pregunta == 8){$preg='p8';}
+    if ($pregunta == 9){$preg='p9';}
+    if ($pregunta == 10){$preg='p10';}
+   
+
+    $resp =DB::table('encuestas')
+                ->where([
+                    ['encuestas.estudiante', '=', $estudiante],
+                    ['encuestas.docente', '=',$docente]
+                ])
+                ->update(array(
+                   $preg=>$valor
+                    ) );
+
+    //return view('ajax/coursesbymodalityid',compact('courses'));
+    
+}
+
 
 }
 

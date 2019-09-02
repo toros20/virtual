@@ -111,6 +111,10 @@ Route::post('ajax/ver_comentarios', 'UserController@ver_comentarios');
 Route::post('ajax/publicarComentario', 'UserController@publicarComentario');
 
 
+//crear ruta para guardar los comentarios despues de leer los primeros comentarios
+Route::post('ajax/votar_encueta', 'UserController@votar_encueta');
+
+
 
 //rutas CRUD para los users
 Route::resource('users', 'UserController');
