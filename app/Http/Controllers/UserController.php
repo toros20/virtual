@@ -1344,13 +1344,14 @@ public function votar_encuesta(Request $request){
                    'fecha'=>date("Y-m-d H:i:s")
                    ) );
 
+    //al llegar al ultimo docente se actualiza la tabla control encuesta
     if ($contador ==1){
         $resp =DB::table('control_encuesta')
                 ->where([
-                    ['encuestas.estudiante', '=', $estudiante],
+                    ['estudiante', '=', $estudiante],
                 ])
                 ->update(array(
-                   'pregunta'=>$preg,
+                   'pregunta'=>$pregunta,
                    'fecha'=>date("Y-m-d H:i:s")
                     ) );
     }
