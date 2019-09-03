@@ -25,6 +25,10 @@ Route::post('/users/verificar_cuenta', 'UserController@verificar_cuenta')->name(
 //crear ruta para guardar los comentarios despues de leer los primeros comentarios
 Route::post('/users/votar_encuesta', 'UserController@votar_encuesta');
 
+//crear ruta para ya ha terminado la encuesta
+Route::get('/users/final_encuesta', 'UserController@final_encuesta');
+
+
 
 //crear ruta para la seccion de listar students 
 Route::get('/users/students', 'UserController@students')->name('users.students');
