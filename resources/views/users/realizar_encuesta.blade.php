@@ -145,16 +145,19 @@
                              @endforeach 
                              <div id="div_boton" style="display:none">
                                     <ul class="list-group" style="align-items:center;">
+                                        <form  action={{route('verificar_cuenta')}}  method="post">                                       
                                             <a class="list-group-item" style="color:black; border:none;" href="#">
                                                 <li class="list-group-item" style="text-align:center;">
                                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                                        <input type="hidden" name="cuenta" value=" {{$usuario->cuenta}} ">
                                                         <table>
                                                             <tr>
-                                                                <td width="90%"><button class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
+                                                                <td width="90%"><button type="submit" class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
                                                             </tr>
                                                         </table>                                                
                                                 </li>
                                             </a>
+                                        </form>
                                      </ul>
                                     </div> 
                         </div>

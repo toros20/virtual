@@ -1339,8 +1339,9 @@ public function votar_encuesta(Request $request){
                     ['encuestas.docente', '=',$docente]
                 ])
                 ->update(array(
-                   $preg=>$valor
-                    ) );
+                   $preg=>$valor,
+                   'fecha'=>date("Y-m-d H:i:s")
+                   ) );
 
     if ($contador ==1){
         $resp =DB::table('control_encuesta')
@@ -1348,7 +1349,8 @@ public function votar_encuesta(Request $request){
                     ['encuestas.estudiante', '=', $estudiante],
                 ])
                 ->update(array(
-                   'pregunta'=>$preg
+                   'pregunta'=>$preg,
+                   'fecha'=>date("Y-m-d H:i:s")
                     ) );
     }
     
