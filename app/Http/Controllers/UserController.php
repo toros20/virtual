@@ -119,7 +119,7 @@ class UserController extends Controller
          
         $clases = Clasecourse::where([
             ['course_id', '=', $course],
-            ['clase_id', '>', 193],
+            ['clase_id', '>', 188],
         ])->Select('clase_id')->get();
 
         $users = Enrollment::where([
