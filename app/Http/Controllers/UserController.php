@@ -1318,6 +1318,7 @@ public function votar_encuesta(Request $request){
     $docente=$request->_docente;//docente que se esta evaluanddo
     $estudiante=$request->_estudiante;//estudiante que esta evaluando
     $valor=$request->_valor;//valor de la calificacion dada por el estudiante 1-4
+    $contador=$request->_contador;//valor de la calificacion dada por el estudiante 1-4
 
     //nos ubicamos en el numero de la pregunta que estamos evaluando
     if ($pregunta == 1){$preg='p1';}
@@ -1340,14 +1341,17 @@ public function votar_encuesta(Request $request){
                 ->update(array(
                    $preg=>$valor
                     ) );
-    
-       /* $resp =DB::table('control_encuesta')
+                    
+    if ($contador ==1){
+        $resp =DB::table('control_encuesta')
                 ->where([
                     ['encuestas.estudiante', '=', $estudiante],
                 ])
                 ->update(array(
                    'pregunta'=>$preg
-                    ) );*/
+                    ) );
+    }
+    
     
 
 
