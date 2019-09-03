@@ -150,7 +150,7 @@
                                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                         <table>
                                                             <tr>
-                                                                <td width="150px"><button class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
+                                                                <td width="90%"><button class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
                                                             </tr>
                                                         </table>                                                
                                                 </li>
