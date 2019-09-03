@@ -188,6 +188,7 @@
   <script type='text/javascript'>
     $(function(){
         $(document).bind("contextmenu",function(e){
+            alert('Acción No Permitida');
             return false;
         });
     });
