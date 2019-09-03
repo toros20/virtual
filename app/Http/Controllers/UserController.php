@@ -1241,8 +1241,8 @@ public function verificar_cuenta(Request $request){
                     ])
                     ->Select('users.id as docente','name','lastname')->distinct()->get();
 
-    //obtenemos la cantidad de docentes que le dan clases a este estudiante
-    $cont_docentes = DB::table('assignments')
+      //obtenemos la cantidad de docentes que le dan clases a este estudiante
+      $cont_docentes = DB::table('assignments')
                 ->join('users', 'assignments.user_id', '=', 'users.id')
                 ->where([
                     ['assignments.course_id', '=', $matricula[0]->course_id],
