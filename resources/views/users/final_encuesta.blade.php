@@ -105,7 +105,7 @@
                             <div class="text-white h-100 mask blue-gradient-rgba">        
     
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title"> Solo Estudiantes Registrados </h3>
+                                <h3 class="card-title"> Gracias , Hemos Terminamos!!  </h3>
                               
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
@@ -121,7 +121,6 @@
                                     <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
                                         <li class="list-group-item" style="text-align:center;">
                                             <form action={{route('encuesta')}}  method="get">
-                                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                 <label for="cuenta">Gracias Por Completar la Encuesta</label>
                                                 <button type="submit" class="btn btn-lg btn-primary" >REGRESAR</button>
                                             </form>
