@@ -54,7 +54,7 @@ class UserController extends Controller
         //funcion para sumar los aumulativos a la tabla de historial, se requiere como parametro, curso ,section 
         //obtenemos lo estudiantes de este curso y seccion
 
-        //solo para el segundo parcial
+        //solo para el tercer parcial
        //$parcial=3;
          /* obtenemos los id de los estudiantes de este curso y seccion*/
         /*$users = Enrollment::where([
@@ -117,9 +117,9 @@ class UserController extends Controller
          //se requiere como para metros course, section
         /*$clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();*/
          
-        /*$clases = Clasecourse::where([
+        $clases = Clasecourse::where([
             ['course_id', '=', $course],
-            ['clase_id', '>', 100],
+            ['clase_id', '>', 193],
         ])->Select('clase_id')->get();
 
         $users = Enrollment::where([
@@ -136,7 +136,7 @@ class UserController extends Controller
            }
         }
         
-        return "LISTO---Filas Insertadas";*/
+        return "LISTO---Filas Insertadas";
 
 
         
@@ -1299,7 +1299,7 @@ public function verificar_cuenta(Request $request){
                break;
            
            default:
-                    return "Terminaste las 10 preguntas";
+                    return view('users/final_encuesta');
                break;
        }
         
@@ -1355,11 +1355,6 @@ public function votar_encuesta(Request $request){
                    'fecha'=>date("Y-m-d H:i:s")
                     ) );
     }
-    
-    
-
-
-    //return view('ajax/coursesbymodalityid',compact('courses'));
     
 }
 
