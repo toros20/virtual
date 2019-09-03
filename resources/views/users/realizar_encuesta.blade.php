@@ -143,7 +143,7 @@
                              </ul>
                             </div> 
                              @endforeach 
-                             <div id="div_boton">
+                             <div id="div_boton" style="display:none">
                                     <ul class="list-group" style="align-items:center;">
                                             <a class="list-group-item" style="color:black; border:none;" href="#">
                                                 <li class="list-group-item" style="text-align:center;">
