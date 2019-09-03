@@ -1329,6 +1329,16 @@ public function votar_encuesta(Request $request){
                 ->update(array(
                    $preg=>$valor
                     ) );
+    
+       /* $resp =DB::table('control_encuesta')
+                ->where([
+                    ['encuestas.estudiante', '=', $estudiante],
+                ])
+                ->update(array(
+                   'pregunta'=>$preg
+                    ) );*/
+    
+
 
     //return view('ajax/coursesbymodalityid',compact('courses'));
     
