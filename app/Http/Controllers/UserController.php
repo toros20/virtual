@@ -1233,13 +1233,23 @@ public function verificar_cuenta(Request $request){
 
        //determinados los docente que le brindan clases a este estudiante
        $docentes = DB::table('assignments')
-       ->join('users', 'assignments.user_id', '=', 'users.id')
-       ->where([
-           ['assignments.course_id', '=', $matricula[0]->course_id],
-           ['assignments.section', '=', $matricula[0]->section]
-       ])
-       ->Select('users.id as docente','name','lastname')->distinct()->get();
+                    ->join('users', 'assignments.user_id', '=', 'users.id')
+                    ->where([
+                        ['assignments.course_id', '=', $matricula[0]->course_id],
+                        ['assignments.section', '=', $matricula[0]->section]
+                    ])
+                    ->Select('users.id as docente','name','lastname')->distinct()->get();
 
+    //obtenemos la cantidad de docentes que le dan clases a este estudiante
+    $cont_docentes = DB::table('assignments')
+                ->join('users', 'assignments.user_id', '=', 'users.id')
+                ->where([
+                    ['assignments.course_id', '=', $matricula[0]->course_id],
+                    ['assignments.section', '=', $matricula[0]->section]
+                ])
+                ->Select('users.id as docente','name','lastname')->distinct()->count();
+
+    dd($cont_docentes);
        // obtenemos el dato de la tabla control de encuesta para ver enque pregunta va este estudiante
        $control = DB::table('control_encuesta')
                         ->where('estudiante','=',$usuario[0]->id)
@@ -1304,11 +1314,12 @@ public function verificar_cuenta(Request $request){
 
 public function votar_encuesta(Request $request){
         
-    $pregunta=$request->_pregunta;
-    $docente=$request->_docente;
-    $estudiante=$request->_estudiante;
-    $valor=$request->_valor;
+    $pregunta=$request->_pregunta;//obtenemos el numero de la pregunta en la que estamos
+    $docente=$request->_docente;//docente que se esta evaluanddo
+    $estudiante=$request->_estudiante;//estudiante que esta evaluando
+    $valor=$request->_valor;//valor de la calificacion dada por el estudiante 1-4
 
+    //nos ubicamos en el numero de la pregunta que estamos evaluando
     if ($pregunta == 1){$preg='p1';}
     if ($pregunta == 2){$preg='p2';}
     if ($pregunta == 3){$preg='p3';}
@@ -1320,7 +1331,7 @@ public function votar_encuesta(Request $request){
     if ($pregunta == 9){$preg='p9';}
     if ($pregunta == 10){$preg='p10';}
    
-
+    //ingresamos el valor dado por el alumno a la tabla encuestas
     $resp =DB::table('encuestas')
                 ->where([
                     ['encuestas.estudiante', '=', $estudiante],
