@@ -1249,7 +1249,7 @@ public function verificar_cuenta(Request $request){
                 ])
                 ->Select('users.id as docente','name','lastname')->distinct()->count();
 
-    dd($cont_docentes);
+
        // obtenemos el dato de la tabla control de encuesta para ver enque pregunta va este estudiante
        $control = DB::table('control_encuesta')
                         ->where('estudiante','=',$usuario[0]->id)
@@ -1303,7 +1303,7 @@ public function verificar_cuenta(Request $request){
        }
         
         //return redirect()->route('realizar_encuesta',compact('usuario'));
-        return view('users/realizar_encuesta',compact('docentes','preguntas','usuario'));
+        return view('users/realizar_encuesta',compact('docentes','preguntas','usuario','cont_docentes'));
     }
     //en caso de no estar regstrado
     else{

@@ -121,6 +121,7 @@
                             
                         <div class="card-body card-body-cascade ">
                             <input id="token" type="hidden" name="_token"  value="{{ csrf_token() }}">
+                            <input id="contador" type="hidden" name="contador"  value="{{ $cont_docentes }}">
                             @foreach ($docentes as $docente)
                             <div id="div_{{$docente->docente}}">
                             <ul class="list-group">
@@ -142,6 +143,20 @@
                              </ul>
                             </div> 
                              @endforeach 
+                             <div id="div_boton">
+                                    <ul class="list-group">
+                                            <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
+                                                <li class="list-group-item" style="text-align:center;">
+                                                        <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                                        <table>
+                                                            <tr>
+                                                                <td width="150px"><button class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
+                                                            </tr>
+                                                        </table>                                                
+                                                </li>
+                                            </a>
+                                     </ul>
+                                    </div> 
                         </div>
                     </div>
                    
