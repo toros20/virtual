@@ -439,14 +439,14 @@
                         $personalidad = DB::table('personalidad')
                                   ->where ([
                                             ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 1],
+                                            ['personalidad.parcial', '=', 3],
                                           ])
                                   ->get(); 
 
                         $personalidad_2p = DB::table('personalidad')
                                   ->where ([
                                             ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 2],
+                                            ['personalidad.parcial', '=', 4],
                                           ])
                                   ->get();   
                             $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
