@@ -144,8 +144,8 @@
                             </div> 
                              @endforeach 
                              <div id="div_boton">
-                                    <ul class="list-group">
-                                            <a class="list-group-item list-group-item-action" style="color:black; border:none;" href="#">
+                                    <ul class="list-group" style="align-items:center;">
+                                            <a class="list-group-item" style="color:black; border:none;" href="#">
                                                 <li class="list-group-item" style="text-align:center;">
                                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
                                                         <table>
