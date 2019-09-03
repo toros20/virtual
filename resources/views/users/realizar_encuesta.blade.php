@@ -184,6 +184,14 @@
   <script type="text/javascript" src="{{ URL::asset('js/bootstrap4.min.js')}}"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{ URL::asset('js/mdb.min.js')}}"></script>
+
+  <script type='text/javascript'>
+    $(function(){
+        $(document).bind("contextmenu",function(e){
+            return false;
+        });
+    });
+    </script>
 </body>
 
 </html>
