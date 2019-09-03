@@ -929,7 +929,7 @@ class UserController extends Controller
                         //->where('clasecourses.course_id','=',$course_id)
                         ->where ([
                             ['clasecourses.course_id', '=', $course_id],
-                            ['clases.semester', '!=', 2],
+                            ['clases.semester', '!=', 1],
                         ])
                         ->Select('clase_id')
                         ->get(); 
@@ -1341,7 +1341,7 @@ public function votar_encuesta(Request $request){
                 ->update(array(
                    $preg=>$valor
                     ) );
-                    
+
     if ($contador ==1){
         $resp =DB::table('control_encuesta')
                 ->where([
