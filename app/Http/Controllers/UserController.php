@@ -1265,7 +1265,7 @@ public function verificar_cuenta(Request $request){
                      //obtenemos la pregunta numero 1 de la base de datos
                      $preguntas = DB::table('preguntas')->where('id','=',2)->get();
                break;
-           /*  case '2':
+            case '2':
                       //obtenemos la pregunta numero 1 de la base de datos
                      $preguntas = DB::table('preguntas')->where('id','=',3)->get();
                break;
@@ -1296,7 +1296,7 @@ public function verificar_cuenta(Request $request){
             case '9':
                       //obtenemos la pregunta numero 1 de la base de datos
                      $preguntas = DB::table('preguntas')->where('id','=',10)->get();
-               break; */
+               break; 
            
            default:
                     return view('users/final_encuesta');
