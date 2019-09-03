@@ -149,7 +149,7 @@
                                             <a class="list-group-item" style="color:black; border:none;" href="#">
                                                 <li class="list-group-item" style="text-align:center;">
                                                         <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                                                        <input type="hidden" name="cuenta" value=" {{$usuario[0]->cuenta}} ">
+                                                        <input type="hidden" name="cuenta" value="{{$usuario[0]->cuenta}}">
                                                         <table>
                                                             <tr>
                                                                 <td width="90%"><button type="submit" class="btn btn-lg btn-primary">Siguiente Pregunta</button></td>
