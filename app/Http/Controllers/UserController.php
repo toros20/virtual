@@ -1255,9 +1255,6 @@ public function verificar_cuenta(Request $request){
                 ])
                 ->Select(DB::raw('count(*) as cantidad'))->distinct()->get();*/
 
-                dd($docentes);
-
-
 
        // obtenemos el dato de la tabla control de encuesta para ver enque pregunta va este estudiante
        $control = DB::table('control_encuesta')
