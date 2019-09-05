@@ -705,7 +705,7 @@
                                     </table>
 
                         @endif
-                       // Personalidad para cursos NO Semestrales 
+                        {{-- Personalidad para cursos NO Semestrales  --}}
                         @if ($course->is_semestral == 0)
 
                                  //obtenemos los datos de personalidad de este alumno en este parcial
