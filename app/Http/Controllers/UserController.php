@@ -1248,9 +1248,9 @@ public function verificar_cuenta(Request $request){
                     ['assignments.course_id', '=', $matricula[0]->course_id],
                     ['assignments.section', '=', $matricula[0]->section]
                 ])
-                ->Select(DB::raw('count(*) as cantidad'))->get();
+                ->Select(DB::raw('count(*) as cantidad'))->distinct()->get();
 
-                dd($cont_docentes[0]->cantidad);
+                dd($docentes);
 
 
 
