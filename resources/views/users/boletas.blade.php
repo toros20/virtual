@@ -438,6 +438,8 @@
                          {{-- Personalidad para cursos Semestrales --}}
                         @if ($course->is_semestral == 1)
                             
+
+
                         @endif
                         {{-- Personalidad para cursos NO Semestrales --}}
                         @if ($course->is_semestral == 0)
@@ -445,190 +447,190 @@
                             <?php 
                             
                                  //obtenemos los datos de personalidad de este alumno en este parcial
-                       
-                       $personalidad = DB::table('personalidad')
-                                  ->where ([
-                                            ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 1],
-                                          ])
-                                  ->get(); 
-
-                        $personalidad_2p = DB::table('personalidad')
-                                  ->where ([
-                                            ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 2],
-                                          ])
-                                  ->get();  
-
-                        $personalidad_3p = DB::table('personalidad')
-                                  ->where ([
-                                            ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 3],
-                                          ])
-                                  ->get();
-                        
-                        $personalidad_4p = DB::table('personalidad')
-                                  ->where ([
-                                            ['personalidad.student_id', '=', $estudiante->user_id],
-                                            ['personalidad.parcial', '=', 4],
-                                          ])
-                                  ->get();
-
-                            $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
-                            $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
-                            $c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
-                            $c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
-
-                             //**************************PRIMER PARCIAL****************************//
-                            if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase1 == 5) {$c1_parcial1="Avanzado";} 
                             
-                            if ($personalidad[0]->clase2 == 1) {$c2_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase2 == 2) {$c2_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase2 == 3) {$c2_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase2 == 4) {$c2_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase2 == 5) {$c2_parcial1="Avanzado";} 
+                            $personalidad = DB::table('personalidad')
+                                        ->where ([
+                                                    ['personalidad.student_id', '=', $estudiante->user_id],
+                                                    ['personalidad.parcial', '=', 1],
+                                                ])
+                                        ->get(); 
 
-                            if ($personalidad[0]->clase3 == 1) {$c3_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase3 == 2) {$c3_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase3 == 3) {$c3_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase3 == 4) {$c3_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase3 == 5) {$c3_parcial1="Avanzado";} 
+                                $personalidad_2p = DB::table('personalidad')
+                                        ->where ([
+                                                    ['personalidad.student_id', '=', $estudiante->user_id],
+                                                    ['personalidad.parcial', '=', 2],
+                                                ])
+                                        ->get();  
 
-                            if ($personalidad[0]->clase4 == 1) {$c4_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase4 == 2) {$c4_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase4 == 3) {$c4_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase4 == 4) {$c4_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase4 == 5) {$c4_parcial1="Avanzado";} 
+                                $personalidad_3p = DB::table('personalidad')
+                                        ->where ([
+                                                    ['personalidad.student_id', '=', $estudiante->user_id],
+                                                    ['personalidad.parcial', '=', 3],
+                                                ])
+                                        ->get();
+                                
+                                $personalidad_4p = DB::table('personalidad')
+                                        ->where ([
+                                                    ['personalidad.student_id', '=', $estudiante->user_id],
+                                                    ['personalidad.parcial', '=', 4],
+                                                ])
+                                        ->get();
 
-                            if ($personalidad[0]->clase5 == 1) {$c5_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase5 == 2) {$c5_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase5 == 3) {$c5_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase5 == 4) {$c5_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase5 == 5) {$c5_parcial1="Avanzado";} 
+                                    $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
+                                    $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
+                                    $c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
+                                    $c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
 
-                            if ($personalidad[0]->clase6 == 1) {$c6_parcial1="Insuficiente";}
-                            if ($personalidad[0]->clase6 == 2) {$c6_parcial1="Necesita Mejorar";}
-                            if ($personalidad[0]->clase6 == 3) {$c6_parcial1="Satisfactorio";}
-                            if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
-                            if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
+                                    //**************************PRIMER PARCIAL****************************//
+                                    if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase1 == 5) {$c1_parcial1="Avanzado";} 
+                                    
+                                    if ($personalidad[0]->clase2 == 1) {$c2_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase2 == 2) {$c2_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase2 == 3) {$c2_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase2 == 4) {$c2_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase2 == 5) {$c2_parcial1="Avanzado";} 
 
-                            //**************************SEGUNDO PARCIAL****************************//
+                                    if ($personalidad[0]->clase3 == 1) {$c3_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase3 == 2) {$c3_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase3 == 3) {$c3_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase3 == 4) {$c3_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase3 == 5) {$c3_parcial1="Avanzado";} 
 
-                            if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase1 == 2) {$c1_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase1 == 3) {$c1_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase1 == 4) {$c1_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase1 == 5) {$c1_parcial2="Avanzado";} 
-                            
-                            if ($personalidad_2p[0]->clase2 == 1) {$c2_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase2 == 2) {$c2_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase2 == 3) {$c2_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase2 == 4) {$c2_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase2 == 5) {$c2_parcial2="Avanzado";} 
+                                    if ($personalidad[0]->clase4 == 1) {$c4_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase4 == 2) {$c4_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase4 == 3) {$c4_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase4 == 4) {$c4_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase4 == 5) {$c4_parcial1="Avanzado";} 
 
-                            if ($personalidad_2p[0]->clase3 == 1) {$c3_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase3 == 2) {$c3_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase3 == 3) {$c3_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase3 == 4) {$c3_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase3 == 5) {$c3_parcial2="Avanzado";} 
+                                    if ($personalidad[0]->clase5 == 1) {$c5_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase5 == 2) {$c5_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase5 == 3) {$c5_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase5 == 4) {$c5_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase5 == 5) {$c5_parcial1="Avanzado";} 
 
-                            if ($personalidad_2p[0]->clase4 == 1) {$c4_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase4 == 2) {$c4_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase4 == 3) {$c4_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase4 == 4) {$c4_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase4 == 5) {$c4_parcial2="Avanzado";} 
+                                    if ($personalidad[0]->clase6 == 1) {$c6_parcial1="Insuficiente";}
+                                    if ($personalidad[0]->clase6 == 2) {$c6_parcial1="Necesita Mejorar";}
+                                    if ($personalidad[0]->clase6 == 3) {$c6_parcial1="Satisfactorio";}
+                                    if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
+                                    if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
 
-                            if ($personalidad_2p[0]->clase5 == 1) {$c5_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase5 == 2) {$c5_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase5 == 3) {$c5_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase5 == 4) {$c5_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase5 == 5) {$c5_parcial2="Avanzado";} 
+                                    //**************************SEGUNDO PARCIAL****************************//
 
-                            if ($personalidad_2p[0]->clase6 == 1) {$c6_parcial2="Insuficiente";}
-                            if ($personalidad_2p[0]->clase6 == 2) {$c6_parcial2="Necesita Mejorar";}
-                            if ($personalidad_2p[0]->clase6 == 3) {$c6_parcial2="Satisfactorio";}
-                            if ($personalidad_2p[0]->clase6 == 4) {$c6_parcial2="Muy Satisfactorio";}
-                            if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase1 == 2) {$c1_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase1 == 3) {$c1_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase1 == 4) {$c1_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase1 == 5) {$c1_parcial2="Avanzado";} 
+                                    
+                                    if ($personalidad_2p[0]->clase2 == 1) {$c2_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase2 == 2) {$c2_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase2 == 3) {$c2_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase2 == 4) {$c2_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase2 == 5) {$c2_parcial2="Avanzado";} 
 
-                            //**************************TERCER PARCIAL****************************//
+                                    if ($personalidad_2p[0]->clase3 == 1) {$c3_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase3 == 2) {$c3_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase3 == 3) {$c3_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase3 == 4) {$c3_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase3 == 5) {$c3_parcial2="Avanzado";} 
 
-                            if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase1 == 2) {$c1_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase1 == 3) {$c1_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase1 == 4) {$c1_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase1 == 5) {$c1_parcial3="Avanzado";} 
-                            
-                            if ($personalidad_3p[0]->clase2 == 1) {$c2_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase2 == 2) {$c2_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase2 == 3) {$c2_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase2 == 4) {$c2_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase2 == 5) {$c2_parcial3="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase4 == 1) {$c4_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase4 == 2) {$c4_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase4 == 3) {$c4_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase4 == 4) {$c4_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase4 == 5) {$c4_parcial2="Avanzado";} 
 
-                            if ($personalidad_3p[0]->clase3 == 1) {$c3_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase3 == 2) {$c3_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase3 == 3) {$c3_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase3 == 4) {$c3_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase3 == 5) {$c3_parcial3="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase5 == 1) {$c5_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase5 == 2) {$c5_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase5 == 3) {$c5_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase5 == 4) {$c5_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase5 == 5) {$c5_parcial2="Avanzado";} 
 
-                            if ($personalidad_3p[0]->clase4 == 1) {$c4_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase4 == 2) {$c4_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase4 == 3) {$c4_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase4 == 4) {$c4_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase4 == 5) {$c4_parcial3="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase6 == 1) {$c6_parcial2="Insuficiente";}
+                                    if ($personalidad_2p[0]->clase6 == 2) {$c6_parcial2="Necesita Mejorar";}
+                                    if ($personalidad_2p[0]->clase6 == 3) {$c6_parcial2="Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase6 == 4) {$c6_parcial2="Muy Satisfactorio";}
+                                    if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} 
 
-                            if ($personalidad_3p[0]->clase5 == 1) {$c5_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase5 == 2) {$c5_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase5 == 3) {$c5_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase5 == 4) {$c5_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase5 == 5) {$c5_parcial3="Avanzado";} 
+                                    //**************************TERCER PARCIAL****************************//
 
-                            if ($personalidad_3p[0]->clase6 == 1) {$c6_parcial3="Insuficiente";}
-                            if ($personalidad_3p[0]->clase6 == 2) {$c6_parcial3="Necesita Mejorar";}
-                            if ($personalidad_3p[0]->clase6 == 3) {$c6_parcial3="Satisfactorio";}
-                            if ($personalidad_3p[0]->clase6 == 4) {$c6_parcial3="Muy Satisfactorio";}
-                            if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase1 == 2) {$c1_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase1 == 3) {$c1_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase1 == 4) {$c1_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase1 == 5) {$c1_parcial3="Avanzado";} 
+                                    
+                                    if ($personalidad_3p[0]->clase2 == 1) {$c2_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase2 == 2) {$c2_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase2 == 3) {$c2_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase2 == 4) {$c2_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase2 == 5) {$c2_parcial3="Avanzado";} 
 
-                            //**************************CUARTO PARCIAL****************************//
+                                    if ($personalidad_3p[0]->clase3 == 1) {$c3_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase3 == 2) {$c3_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase3 == 3) {$c3_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase3 == 4) {$c3_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase3 == 5) {$c3_parcial3="Avanzado";} 
 
-                            if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase1 == 2) {$c1_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase1 == 3) {$c1_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase1 == 4) {$c1_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase1 == 5) {$c1_parcial4="Avanzado";} 
-                            
-                            if ($personalidad_4p[0]->clase2 == 1) {$c2_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase2 == 2) {$c2_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase2 == 3) {$c2_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase2 == 4) {$c2_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase2 == 5) {$c2_parcial4="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase4 == 1) {$c4_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase4 == 2) {$c4_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase4 == 3) {$c4_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase4 == 4) {$c4_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase4 == 5) {$c4_parcial3="Avanzado";} 
 
-                            if ($personalidad_4p[0]->clase3 == 1) {$c3_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase3 == 2) {$c3_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase3 == 3) {$c3_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase3 == 4) {$c3_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase3 == 5) {$c3_parcial4="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase5 == 1) {$c5_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase5 == 2) {$c5_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase5 == 3) {$c5_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase5 == 4) {$c5_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase5 == 5) {$c5_parcial3="Avanzado";} 
 
-                            if ($personalidad_4p[0]->clase4 == 1) {$c4_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase4 == 2) {$c4_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase4 == 3) {$c4_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase4 == 4) {$c4_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase4 == 5) {$c4_parcial4="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase6 == 1) {$c6_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase6 == 2) {$c6_parcial3="Necesita Mejorar";}
+                                    if ($personalidad_3p[0]->clase6 == 3) {$c6_parcial3="Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase6 == 4) {$c6_parcial3="Muy Satisfactorio";}
+                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} 
 
-                            if ($personalidad_4p[0]->clase5 == 1) {$c5_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase5 == 2) {$c5_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase5 == 3) {$c5_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase5 == 4) {$c5_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase5 == 5) {$c5_parcial4="Avanzado";} 
+                                    //**************************CUARTO PARCIAL****************************//
 
-                            if ($personalidad_4p[0]->clase6 == 1) {$c6_parcial4="Insuficiente";}
-                            if ($personalidad_4p[0]->clase6 == 2) {$c6_parcial4="Necesita Mejorar";}
-                            if ($personalidad_4p[0]->clase6 == 3) {$c6_parcial4="Satisfactorio";}
-                            if ($personalidad_4p[0]->clase6 == 4) {$c6_parcial4="Muy Satisfactorio";}
-                            if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} 
+                                    if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase1 == 2) {$c1_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase1 == 3) {$c1_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase1 == 4) {$c1_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase1 == 5) {$c1_parcial4="Avanzado";} 
+                                    
+                                    if ($personalidad_4p[0]->clase2 == 1) {$c2_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase2 == 2) {$c2_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase2 == 3) {$c2_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase2 == 4) {$c2_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase2 == 5) {$c2_parcial4="Avanzado";} 
+
+                                    if ($personalidad_4p[0]->clase3 == 1) {$c3_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase3 == 2) {$c3_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase3 == 3) {$c3_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase3 == 4) {$c3_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase3 == 5) {$c3_parcial4="Avanzado";} 
+
+                                    if ($personalidad_4p[0]->clase4 == 1) {$c4_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase4 == 2) {$c4_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase4 == 3) {$c4_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase4 == 4) {$c4_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase4 == 5) {$c4_parcial4="Avanzado";} 
+
+                                    if ($personalidad_4p[0]->clase5 == 1) {$c5_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase5 == 2) {$c5_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase5 == 3) {$c5_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase5 == 4) {$c5_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase5 == 5) {$c5_parcial4="Avanzado";} 
+
+                                    if ($personalidad_4p[0]->clase6 == 1) {$c6_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase6 == 2) {$c6_parcial4="Necesita Mejorar";}
+                                    if ($personalidad_4p[0]->clase6 == 3) {$c6_parcial4="Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase6 == 4) {$c6_parcial4="Muy Satisfactorio";}
+                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} 
                             ?>
 
                             <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #dee2e6;"  align="center" width="700">
@@ -643,42 +645,42 @@
                                     <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial3; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 </tr>
                             </table>
@@ -694,16 +696,16 @@
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="width:300px;border: 1px solid #dee2e6;">Número de Reportes</td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
                                 </tr>
                             </table>
                         @endif
