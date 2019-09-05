@@ -185,7 +185,7 @@
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="{{ URL::asset('js/mdb.min.js')}}"></script>
 
-  <script type='text/javascript'>
+ {{--  <script type='text/javascript'>
     $(function(){
         $(document).bind("contextmenu",function(e){
             alert('Acción No Permitida');
@@ -215,7 +215,7 @@
         copyToClipboard();
     }
     }); 
-    </script>
+    </script> --}}
 </body>
 
 </html>
