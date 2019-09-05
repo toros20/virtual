@@ -538,42 +538,42 @@
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial1; ?></th>
-                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                 <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                             </tr>
@@ -590,14 +590,14 @@
                             <tr style="border: 1px solid #dee2e6; ">
                                 <td style="width:300px;border: 1px solid #dee2e6;">Número de Reportes</td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->reportes; ?></td>
-                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->reportes; ?></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->reportes; ?></td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                             </tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
-                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
+                                <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->inasistencias; ?></td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                                 <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"></td>
                             </tr>
