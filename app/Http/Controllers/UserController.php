@@ -1250,7 +1250,7 @@ public function verificar_cuenta(Request $request){
                 ])
                 ->Select(DB::raw('count(*) as cantidad'))->get();
 
-                dd($docentes[0]->cantidad);
+                dd($cont_docentes[0]->cantidad);
 
 
 
