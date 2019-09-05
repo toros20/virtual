@@ -707,7 +707,7 @@
                         @endif
                         {{-- Personalidad para cursos NO Semestrales  --}}
                         @if ($course->is_semestral == 0)
-
+                                    <?php 
                                  //obtenemos los datos de personalidad de este alumno en este parcial
                             
                             $personalidad = DB::table('personalidad')
