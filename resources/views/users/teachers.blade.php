@@ -42,9 +42,9 @@
                             <a href=" {{route('users.edit',$teacher->id)}} ">
                         Editar </a>
                             <form style="display:inline" method="POST" action=" {{route('users.destroy',$teacher->id)}} ">
-                                    @csrf
+                                 {{--    @csrf
                                      {{ method_field('DELETE') }}
-                                     <button type="submit">ELIMINAR </button>
+                                     <button type="submit">ELIMINAR </button> --}}
                             </form>
                         </td>
                     </tr>
