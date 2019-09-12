@@ -125,7 +125,7 @@
                             @else
                                 <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/2)}}</td>
                             @endif
-
+                          <img src="" alt="">
                             @if (($estudiante->Recu1)<70 and ($estudiante->Recu1)>0)
                                  <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">{{$estudiante->Recu1}}</td>
                             @endif
@@ -139,7 +139,7 @@
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                             <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
                             
-                        </tr>
+                        </tr> 
                         @php     $cont+=1;      @endphp
                      @endforeach
                 </table>
