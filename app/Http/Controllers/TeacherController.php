@@ -61,7 +61,7 @@ class TeacherController extends Controller
                          ->join('courses', 'assignments.course_id', '=', 'courses.id')
                          ->where([
                             ['assignments.user_id','=',$user_id],
-                            ['course_id', '=', $course_id],
+                            ['course_id', '<', $course_id],
                             ['section', '=', $section],
                             ])
                          ->first(); 
