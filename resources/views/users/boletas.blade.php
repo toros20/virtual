@@ -476,7 +476,7 @@
                                     //$c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
 
                                     //**************************PRIMER PARCIAL****************************//
-                                   /if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
+                                   if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
                                     if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
                                     if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
                                     if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
