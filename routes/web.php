@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 
 Route::get('/excelencia',function(){
-    return view('students/exleencia');
+    return view('students/excelencia');
 });
 
 //ruta para mostrar la encuesta del personal docente
