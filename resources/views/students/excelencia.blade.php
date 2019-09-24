@@ -101,12 +101,12 @@
         </div>
 
             <div class="row p-4">
-               
-                <div class="col-md-3">
+               @foreach ($excelencias as $excelencia)
+                    <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
                                 <img src="img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
                                 <div class="card-body">
-                                  <h5 class="card-title text-center">Andrea Lamelas Ponce</h5>
+                                  <h5 class="card-title text-center">{{$excelencia->name}} {{$excelencia->lastname}}</h5>
                                   <table class="table">
                                         <thead>
                                           <tr>
@@ -118,12 +118,60 @@
                                         </thead>
                                         <tbody>
                                           <tr>
-                                            <th scope="row">95%</th>
-                                            <th scope="row">96%</th>
-                                            <th scope="row">97%</th>
-                                            <th scope="row">97%</th>
-                                            <td></td>
+                                            
+                                            @if ($excelencia->IP == 0)
+                                                <th scope="row"></th>
+                                            @else 
+                                                <th scope="row">{{$excelencia->IP}}%</th>
+                                            @endif
+
+                                            @if ($excelencia->IIP == 0)
+                                                <th scope="row"></th>
+                                            @else 
+                                                <th scope="row">{{$excelencia->IIP}}%</th>
+                                            @endif
+
+                                            @if ($excelencia->IIIP == 0)
+                                                <th scope="row"></th>
+                                            @else 
+                                                <th scope="row">{{$excelencia->IIIP}}%</th>
+                                            @endif
+
+                                            @if ($excelencia->IVP == 0)
+                                                <th scope="row"></th>
+                                            @else 
+                                                <th scope="row">{{$excelencia->IVP}}%</th>
+                                            @endif
+                                           
                                           </tr>
+
+                                          <tr>
+                                            
+                                                @if ($excelencia->IP == 0)
+                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                @else 
+                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                @endif
+    
+                                                @if ($excelencia->IIP == 0)
+                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                @else 
+                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                @endif
+    
+                                                @if ($excelencia->IIIP == 0)
+                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                @else 
+                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                @endif
+    
+                                                @if ($excelencia->IVP == 0)
+                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                @else 
+                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                @endif
+                                               
+                                              </tr>
                                          
                                         </tbody>
                                       </table>
@@ -132,6 +180,8 @@
                                 </div>
                         </div>
                 </div>
+               @endforeach
+               
                  
             </div>
        

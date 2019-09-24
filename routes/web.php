@@ -16,9 +16,12 @@ Route::get('/', function () {
     return view('auth/login');
 });
 
-Route::get('/excelencia',function(){
+/*Route::get('/excelencia',function(){
     return view('students/excelencia');
-});
+});*/
+
+//ruta para mostrar la encuesta del personal docente
+Route::get('/excelencia', 'StudentController@excelencia')->name('excelencia');
 
 //ruta para mostrar la encuesta del personal docente
 Route::get('/users/encuesta', 'UserController@encuesta')->name('encuesta');

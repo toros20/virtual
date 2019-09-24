@@ -259,4 +259,17 @@ class StudentController extends Controller
 
     }
 
+    //funcion para mostar el area de excelencia academica
+    function excelencia(){
+
+        $excelencias = DB::table('excelencias')
+                ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
+                ->Select('excelencias.* ','users.name','users.lastname')
+                ->where([
+                    ['users.role', '=', 'student']
+                ])
+                ->get();
+        return view('students/excelencia',compact('excelencias'));
+    }
+
 }
