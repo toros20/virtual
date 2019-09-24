@@ -104,7 +104,7 @@
                
                 <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
-                                <img src="img/excelencia/boy.PNG" class="card-img-top" alt="Andrea Lamelas Ponce">
+                                <img src="img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
                                 <div class="card-body">
                                   <h5 class="card-title text-center">Andrea Lamelas Ponce</h5>
                                   <table class="table">
