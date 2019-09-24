@@ -264,7 +264,7 @@ class StudentController extends Controller
 
         $excelencias = DB::table('excelencias')
                 ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
-                ->Select('excelencias.* ','users.name','users.lastname')
+                ->Select('excelencias.*','users.name','users.lastname')
                 ->where([
                     ['users.role', '=', 'student']
                 ])
