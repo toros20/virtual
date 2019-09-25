@@ -17,11 +17,22 @@ Route::get('/', function () {
 });
 
 
-//ruta para mostrar la excelencia academica
+//ruta para mostrar la pagina inicial de excelencia academica
 Route::get('/excelencia', 'StudentController@excelencia')->name('excelencia');
 
 //ruta para mostrar la excelencia academica por curso y seccion
 Route::get('/excelencias_by_id/{course_id}/{section}', 'StudentController@excelencias_by_id')->name('excelencias_by_id/{course_id}/{section}');
+
+//Modulo para agregar un nuevo alumnos de excelencia Academica
+Route::get('/excelencia/add','UserController@addExcelencia')->name('addExcelencia');
+
+//ruta para almacenar un nuevo estudiante de excelencia academica
+Route::POST('/excelencia/store','UserController@storeExcelencia')->name('excelencia.store');
+
+//Modulo para mostar la administracion de la excelencia academica
+Route::get('/indexExcelencia','UserController@indexExcelencia')->name('indexExcelencia');
+
+
 
 
 //ruta para mostrar la encuesta del personal docente

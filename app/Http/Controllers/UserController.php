@@ -1363,6 +1363,84 @@ public function votar_encuesta(Request $request){
     
 }
 
+//funcion para agregar un nuevo estudiante de excelencia
+public function addExcelencia(){
+
+    /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        $modalities = Modality::all();
+        $courses = Course::all();
+        return view('users.addExcelencia',compact('modalities','courses'));
+}
+
+//funcion para almacenar un nuevo student de excelencia academica
+public function storeExcelencia(Request $request){
+
+     /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        DB::table('excelencias')->insert([
+
+            'cuenta'=>$request->input('cuenta'),
+            'IP'=>$request->input('IP'),
+            'IIP'=>$request->input('IIP'),
+            'IIIP'=>$request->input('IIIP'),
+            'IVP'=>$request->input('IV')
+        ]);
+
+        return redirect()->route('users.indexExcelencia');
+}
+
+//funccion para mostrar el lsitado de la excelencia academica para el admin
+public function indexExcelencia(){
+
+      /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+    $excelencias = DB::table('excelencias')
+        ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
+        ->Select('excelencias.*','users.name','users.lastname')
+        ->where([
+            ['users.role', '=', 'student']
+        ])
+        ->orderBy('excelencias.id','DESC')
+        ->get();
+
+    return view('students.indexExcelencia',compact('excelencias'));
+
+}
+
 
 }
 
