@@ -196,7 +196,6 @@
                 </div>
                @endforeach
                 
-                 <div align="center" class="col-sm-10 col-md-6 p-4"><button class="btn btn-success btn-block">Ver Mas Estuiantes</button></div>
             </div>
        
 
