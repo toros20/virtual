@@ -1429,13 +1429,13 @@ public function indexExcelencia(){
         /*************************SEGURIDAD*******************/
 
     $excelencias = DB::table('excelencias')
-        ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
-        ->Select('excelencias.*','users.name','users.lastname')
-        ->where([
-            ['users.role', '=', 'student']
-        ])
-        ->orderBy('excelencias.id','DESC')
-        ->get();
+                    ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
+                    ->Select('excelencias.*','users.name','users.lastname')
+                    ->where([
+                        ['users.role', '=', 'student']
+                    ])
+                    ->orderBy('excelencias.id','DESC')
+                    ->get();
 
     return view('users.indexExcelencia',compact('excelencias'));
 
