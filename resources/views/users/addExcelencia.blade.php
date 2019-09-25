@@ -62,7 +62,7 @@
                              
 
                                 <p>                          
-                                    <input class="btn btn-success btn-block" type="submit"  value="Enviar">
+                                    <input class="btn btn-success btn-block p-2" type="submit"  value="Enviar">
                                 </p>
 
                             </form>
