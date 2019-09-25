@@ -33,27 +33,27 @@
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                   
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [3,'A'])}} ">Primer Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [3,'B'])}} ">Primer Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [3,'C'])}} ">Primer Grado C</a> 
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [4,'A'])}} ">Segundo Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [4,'B'])}} ">Segundo Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [4,'C'])}} ">Segundo Grado C</a>  
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [5,'A'])}} ">Tercer Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [5,'B'])}} ">Tercer Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [5,'C'])}} ">Tercer Grado C</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [5,'D'])}} ">Tercer Grado D</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [6,'A'])}} ">Cuarto Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [6,'B'])}} ">Cuarto Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [6,'C'])}} ">Cuarto Grado C</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [6,'D'])}} ">Cuarto Grado D</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [7,'A'])}} ">Quinto Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [7,'B'])}} ">Quinto Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [7,'C'])}} ">Quinto Grado C</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [8,'A'])}} ">Sexto Grado D</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [8,'B'])}} ">Sexto Grado A</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [8,'C'])}} ">Sexto Grado B</a>
-                                      <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [8,'D'])}} ">Sexto Grado C</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [3,'A'])}} ">Primer Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [3,'B'])}} ">Primer Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [3,'C'])}} ">Primer Grado C</a> 
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [4,'A'])}} ">Segundo Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [4,'B'])}} ">Segundo Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [4,'C'])}} ">Segundo Grado C</a>  
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [5,'A'])}} ">Tercer Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [5,'B'])}} ">Tercer Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [5,'C'])}} ">Tercer Grado C</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [5,'D'])}} ">Tercer Grado D</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [6,'A'])}} ">Cuarto Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [6,'B'])}} ">Cuarto Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [6,'C'])}} ">Cuarto Grado C</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [6,'D'])}} ">Cuarto Grado D</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [7,'A'])}} ">Quinto Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [7,'B'])}} ">Quinto Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [7,'C'])}} ">Quinto Grado C</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [8,'A'])}} ">Sexto Grado D</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [8,'B'])}} ">Sexto Grado A</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [8,'C'])}} ">Sexto Grado B</a>
+                                      <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [8,'D'])}} ">Sexto Grado C</a>
                                   </div>
                                 </li>
       
@@ -62,15 +62,15 @@
                                       Secundaria Español
                                   </a>
                                   <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [9,'U'])}} ">Séptimo U</a>
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [10,'U'])}} ">Octavo U</a>
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [11,'U'])}} ">Noveno U</a>  
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [12,'A'])}} ">Décimo A</a>  
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [12,'B'])}} ">Décimo B</a>  
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [13,'A'])}} ">Undécimo A</a>  
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [13,'B'])}} ">Undécimo B</a>   
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [14,'U'])}} ">II BTP-I U</a>  
-                                          <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [15,'U'])}} ">III BTP-U</a> 
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [9,'U'])}} ">Séptimo U</a>
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [10,'U'])}} ">Octavo U</a>
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [11,'U'])}} ">Noveno U</a>  
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [12,'A'])}} ">Décimo A</a>  
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [12,'B'])}} ">Décimo B</a>  
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [13,'A'])}} ">Undécimo A</a>  
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [13,'B'])}} ">Undécimo B</a>   
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [14,'U'])}} ">II BTP-I U</a>  
+                                          <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [15,'U'])}} ">III BTP-U</a> 
                                   </div>
                                   </li>
       
@@ -79,21 +79,21 @@
                                           Secundaria Bilingue
                                       </a>
                                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [16,'A'])}} ">Septimo Bilingue A</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [16,'B'])}} ">Septimo Bilingue B</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [16,'C'])}} ">Septimo Bilingue C</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [17,'A'])}} ">Octavo Bilingue A</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [17,'B'])}} ">Octavo Bilingue B</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [17,'C'])}} ">Octavo Bilingue C</a>   
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [18,'A'])}} ">Noveno Bilingue A</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [18,'B'])}} ">Noveno Bilingue B</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [18,'C'])}} ">Noveno Bilingue C</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [19,'A'])}} ">Décimo Bilingue A</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [19,'B'])}} ">Décimo Bilingue B</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [19,'C'])}} ">Décimo Bilingue C</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [20,'A'])}} ">Undécimo Bilingue A</a>
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [20,'B'])}} ">Undécimo Bilingue B</a>  
-                                              <a class="dropdown-item" href="{{ $url = route('students/excelencias_by_id/{course_id}/{section}', [20,'C'])}} ">Undécimo Bilingue C</a> 
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [16,'A'])}} ">Septimo Bilingue A</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [16,'B'])}} ">Septimo Bilingue B</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [16,'C'])}} ">Septimo Bilingue C</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [17,'A'])}} ">Octavo Bilingue A</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [17,'B'])}} ">Octavo Bilingue B</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [17,'C'])}} ">Octavo Bilingue C</a>   
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [18,'A'])}} ">Noveno Bilingue A</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [18,'B'])}} ">Noveno Bilingue B</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [18,'C'])}} ">Noveno Bilingue C</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [19,'A'])}} ">Décimo Bilingue A</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [19,'B'])}} ">Décimo Bilingue B</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [19,'C'])}} ">Décimo Bilingue C</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [20,'A'])}} ">Undécimo Bilingue A</a>
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [20,'B'])}} ">Undécimo Bilingue B</a>  
+                                              <a class="dropdown-item" href="{{ $url = route('excelencias_by_id/{course_id}/{section}', [20,'C'])}} ">Undécimo Bilingue C</a> 
                                       </div>
                                   </li>
                               </ul>
