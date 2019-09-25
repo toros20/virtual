@@ -134,8 +134,8 @@
                     <tbody>
                             @foreach ($excelencias as $excelencia)
                                 <tr>
-                                    @if ($excelencia->foto == 'user')
-                                        @if ($excelencia->sexo == 'M')
+                                    @if ($excelencia->foto === 'user')
+                                        @if ($excelencia->sexo === 'M')
                                             <td scope="col"><img width="70px" src="img/excelencia/boy.png " alt=""></td>
                                         @else
                                             <td scope="col"><img width="70px" src="img/excelencia/girl.png " alt=""></td>
