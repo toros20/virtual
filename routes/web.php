@@ -33,7 +33,7 @@ Route::POST('/excelencia/store','UserController@storeExcelencia')->name('excelen
 Route::get('/indexExcelencia','UserController@indexExcelencia')->name('indexExcelencia');
 
 //Modulo para agregar un nuevo alumnos de excelencia Academica
-Route::get('/excelencia/edit','UserController@editExcelencia')->name('editExcelencia');
+Route::get('/excelencia/edit/{id}','UserController@editExcelencia')->name('editExcelencia');
 
 
 
