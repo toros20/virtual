@@ -273,7 +273,7 @@ class StudentController extends Controller
         return view('students/excelencia',compact('excelencias'));
     }
 
-    function excelencia_by_id($course_id,$section){
+    function excelencias_by_id($course_id,$section){
 
 
         $course = Course::where('id',$course_id)->get();
