@@ -276,8 +276,7 @@ class StudentController extends Controller
     //funcion para mostar el area de excelencia academica por curso y seccion
     function excelencias_by_id($course_id,$section){
 
-
-        $course = Course::where('id',$course_id)->get();
+       /* $course = Course::where('id',$course_id)->get();
 
         $excelencias = DB::table('excelencias')
                 ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
@@ -290,7 +289,8 @@ class StudentController extends Controller
                 ])
                 ->get();
         return view('students/excelencias_by_id',compact('excelencias','course','section'));
-
+*/
+return "BIENVENIDO";
     }
 
 }
