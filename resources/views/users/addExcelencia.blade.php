@@ -52,7 +52,7 @@
                                     <input max="100" min="0" required class="form-control" type="number" name ="IVP" value=" {{old('IVP')}} ">
                                 </label></p>
 
-                                <div class="file-field p-2">
+                                
                                     <div class="btn btn-primary btn-sm">
                                         <span>Seleccione Imagen</span>
                                         <p><input name ="foto" id="foto" type="file"></p>
@@ -60,7 +60,7 @@
                                     <div class="file-path ">
                                         <input class="file-path validate" type="text" placeholder="Subir Imagen">
                                     </div>
-                                </div>
+                             
 
                                 <p>                          
                                     <input class="btn btn-success btn-block" type="submit"  value="Enviar">
