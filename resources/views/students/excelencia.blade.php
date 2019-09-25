@@ -97,7 +97,7 @@
             <p class="lead">A nuestros estudiantes de Excelencia Académica <b>(Con Promedio Mayor a 90%)</b> </p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
-            
+            <img src="img/logo_sanjose.png" alt="">
         </div>
 
             <div class="row p-4">
