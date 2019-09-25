@@ -1437,7 +1437,7 @@ public function indexExcelencia(){
         ->orderBy('excelencias.id','DESC')
         ->get();
 
-    return view('students.indexExcelencia',compact('excelencias'));
+    return view('users.indexExcelencia',compact('excelencias'));
 
 }
 
