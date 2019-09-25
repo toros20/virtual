@@ -112,6 +112,7 @@
 
         <div class="container" style="margin-top: 100px ">
             <h1>Estudiantes de Excelencia Académica</h1>
+            <button class="btn btn-success btn-lg">Nuevo Estudiante</button>
             <div class="row">
                 <table class="table table-striped table-hover">
                     <thead class="thead-dark">
