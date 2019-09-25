@@ -1409,7 +1409,7 @@ public function storeExcelencia(Request $request){
             'IVP'=>$request->input('IVP')
         ]);
 
-        return redirect()->route('users.indexExcelencia');
+        return redirect()->route('indexExcelencia');
 }
 
 //funccion para mostrar el lsitado de la excelencia academica para el admin
