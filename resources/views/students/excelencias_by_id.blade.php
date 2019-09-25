@@ -114,7 +114,7 @@
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
-                            @if ($excelencia->sexo == 'M'})
+                            @if ($excelencia->sexo == 'M')
                             <img src="../../img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
                             @else 
                             <img src="../../img/excelencia/girl.png" class="card-img-top" alt="Andrea Lamelas Ponce">
