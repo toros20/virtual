@@ -104,13 +104,13 @@
             <h1 class="p-2">Alabado Sea Jesucristo!</h1>
             <p class="lead">Nos complace presentar en nuestro sitio web a los estudiantes mas destacados de nuestra Institución</p>
             <p class="lead">A nuestros estudiantes de Excelencia Académica <b>(Con Promedio Mayor a 90%)</b> </p>
-            <p class="lead"><h3>¡¡¡ Felicitalos !!!</h3></p>
+            <p class="lead"><h3>¡¡¡ Felicítalos !!!</h3></p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="img/logo_sanjose.png" alt="">
         </div>
 
-            <div class="row p-4">
+            <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
@@ -184,15 +184,15 @@
                                               </tr>
                                          
                                         </tbody>
-                                      </table>
+                                    </table>
 
-                                  <a href="#" class="btn btn-primary btn-block">Felicitaciones (45)</a>
+                                     <a href="#" class="btn btn-primary btn-block">Felicitaciones (45)</a>
                                 </div>
                         </div>
                 </div>
                @endforeach
                
-                 
+                 <div align="center" class="col-md-6"><button class="btn btn-success btn-block">Ver Mas Estuiantes</button></div>
             </div>
        
 
