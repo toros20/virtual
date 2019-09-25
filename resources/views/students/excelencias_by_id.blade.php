@@ -107,14 +107,18 @@
             <p class="lead"><h3>¡¡¡ Felicítalos !!!</h3></p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
-            <img width="300px" src="img/logo_sanjose.png" alt="">
+            <img width="300px" src="../../img/logo_sanjose.png" alt="">
         </div>
 
             <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
-                                <img src="../../img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                            @if ($excelencia->sexo == 'M'})
+                            <img src="../../img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                            @else 
+                            <img src="../../img/excelencia/girl.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                            @endif
                                 <div class="card-body">
                                   <h5 class="card-title text-center">{{$excelencia->name}} {{$excelencia->lastname}}</h5>
                                   <table class="table">
