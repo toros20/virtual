@@ -273,4 +273,23 @@ class StudentController extends Controller
         return view('students/excelencia',compact('excelencias'));
     }
 
+    function excelencia_by_id($course_id,$section){
+
+
+        $course = Course::where('id',$course_id)->get();
+
+        $excelencias = DB::table('excelencias')
+                ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
+                ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
+                ->Select('excelencias.*','users.name','users.lastname')
+                ->where([
+                    ['users.role', '=', 'student'],
+                    ['enrollments.course_id', '=', $course_id ],
+                    ['enrollments.section', '=', $section]
+                ])
+                ->get();
+        return view('students/excelencias_by_id',compact('excelencias','course','section'));
+
+    }
+
 }
