@@ -1443,8 +1443,6 @@ public function indexExcelencia(){
                     ->orderBy('excelencias.id','DESC')
                     ->get();
 
-                    dd($excelencias);
-
     return view('users.indexExcelencia',compact('excelencias'));
 
 }
