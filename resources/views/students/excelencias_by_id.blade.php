@@ -115,10 +115,14 @@
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
-                            @if ($excelencia->sexo == 'M')
-                            <img src="../../img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                            @if ($excelencia->foto === 'user')
+                                @if ($excelencia->sexo === 'M')
+                                <img src="img/excelencia/boy.png" class="card-img-top">
+                                @else
+                                <img src="img/excelencia/girl.png" class="card-img-top">
+                                @endif
                             @else 
-                            <img src="../../img/excelencia/girl.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                                <img src="{{ URL::asset('../storage/app/'.$excelencia->foto)}}" class="card-img-top">
                             @endif
                                 <div class="card-body">
                                   <h5 class="card-title text-center">{{$excelencia->name}} {{$excelencia->lastname}}</h5>
