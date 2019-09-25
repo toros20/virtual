@@ -141,7 +141,7 @@
                                             <td scope="col"><img width="70px" src="img/excelencia/girl.png " alt=""></td>
                                         @endif
                                     @else 
-                                        <td scope="col"><img width="70px" src="{{ URL::asset('../storage/app/'.$file->filename)}}"></td>
+                                        <td scope="col"><img width="70px" src="{{ URL::asset('../storage/app/'.$file->foto)}}"></td>
                                     @endif
                                    
                                     
