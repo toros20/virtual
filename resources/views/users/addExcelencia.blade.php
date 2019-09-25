@@ -55,11 +55,11 @@
                            
                                 <div class="file-field">
                                       <div class="btn btn-primary btn-sm float-left">
-                                        <span>Seleccione Documento</span>
-                                        <p><input name ="document" id="document" type="file"></p>
+                                        <span>Seleccione Imagen</span>
+                                        <p><input name ="foto" id="foto" type="file"></p>
                                       </div>
                                       <div class="file-path">
-                                        <input class="file-path validate" type="text" placeholder="Subir Archivo">
+                                        <input class="file-path validate" type="text" placeholder="Subir Imagen">
                                       </div>
                                   </div>
                              
