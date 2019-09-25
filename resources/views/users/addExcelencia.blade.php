@@ -34,22 +34,22 @@
 
                                 <p><label for="IP">
                                     IP
-                                    <input max="100" maxlength="3" required class="form-control" type="text" name ="IP" value=" {{old('IP')}} ">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IP" value=" {{old('IP')}} ">
                                 </label></p>
 
                                 <p><label  for="IIP">
                                     IIP
-                                    <input max="100" maxlength="3" required class="form-control" type="text" name ="IIP" value=" {{old('IIP')}} ">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IIP" value=" {{old('IIP')}} ">
                                 </label></p>
 
                                 <p><label for="IIIP">
                                     IIIP
-                                    <input max="100" maxlength="3" required class="form-control" type="text" name ="IIIP" value=" {{old('IIIP')}} ">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IIIP" value=" {{old('IIIP')}} ">
                                 </label></p>
 
                                 <p><label for="IVP">
                                     IVP
-                                    <input max="100" maxlength="3" required class="form-control" type="text" name ="IVP" value=" {{old('IVP')}} ">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IVP" value=" {{old('IVP')}} ">
                                 </label></p>
 
                                 <p>                          
