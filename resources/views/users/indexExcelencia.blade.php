@@ -134,11 +134,16 @@
                     <tbody>
                             @foreach ($excelencias as $excelencia)
                                 <tr>
-                                    @if ($excelencia->sexo == 'M')
-                                        <td scope="col"><img width="70px" src="img/excelencia/boy.png " alt=""></td>
-                                    @else
-                                        <td scope="col"><img width="70px" src="img/excelencia/girl.png " alt=""></td>
+                                    @if ($excelencia->foto == 'user')
+                                        @if ($excelencia->sexo == 'M')
+                                            <td scope="col"><img width="70px" src="img/excelencia/boy.png " alt=""></td>
+                                        @else
+                                            <td scope="col"><img width="70px" src="img/excelencia/girl.png " alt=""></td>
+                                        @endif
+                                    @else 
+                                        <td scope="col"><img width="70px" src="{{ URL::asset('../storage/app/'.$file->filename)}}"></td>
                                     @endif
+                                   
                                     
                                     <td scope="col">{{$excelencia->short_name}}</td>
                                     <td scope="col">{{$excelencia->section}}</td>
