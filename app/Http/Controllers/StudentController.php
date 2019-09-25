@@ -273,6 +273,7 @@ class StudentController extends Controller
         return view('students/excelencia',compact('excelencias'));
     }
 
+    //funcion para mostar el area de excelencia academica por curso y seccion
     function excelencias_by_id($course_id,$section){
 
 
