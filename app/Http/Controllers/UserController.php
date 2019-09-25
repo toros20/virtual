@@ -1402,7 +1402,7 @@ public function storeExcelencia(Request $request){
 
         //almacenamos la en la carpeta excelencia de la carpeta store y obtenemos su nuevo nombre
         $file = $request->file('foto')->store('excelencia');
-        
+
         DB::table('excelencias')->insert([
 
             'cuenta'=>$request->input('cuenta'),
@@ -1442,6 +1442,8 @@ public function indexExcelencia(){
                     ])
                     ->orderBy('excelencias.id','DESC')
                     ->get();
+
+                    dd($excelencias);
 
     return view('users.indexExcelencia',compact('excelencias'));
 
