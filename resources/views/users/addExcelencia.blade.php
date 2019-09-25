@@ -15,7 +15,7 @@
     
         <div class="container">
 
-            <div class="row">
+            <div class="row p-4">
                 <div class="col-md-3 mx-auto">
                     <div class="card">
                         <div class="card-header">
@@ -29,7 +29,7 @@
 
                                 <p><label for="cuenta">
                                     Cuenta 
-                                    <input maxlength="8" required class="form-control" type="text" name ="cuenta" value=" {{old('cuenta')}} " >
+                                    <input maxlength="8" required class="form-control" type="text" name ="cuenta" value=" {{old('cuenta')}} " autofocus placeholder="20190000">
                                 </label></p>
 
                                 <p><label for="IP">
