@@ -53,11 +53,14 @@
                                 </label></p>
 
                            
-                                <span>Seleccione Imagen</span>
-                                <p><input name ="foto" id="foto" type="file"></p>
-                               
-                                <div class="file-path p-2">
-                                    <input class="file-path validate" type="text" placeholder="Seleccione Imagen">
+                                <div class="file-field">
+                                       
+                                    <span>Seleccione Documento</span>
+                                    <p><input name ="foto" id="foto" type="file"></p>
+                                
+                                    <div class="file-path">
+                                        <input class="file-path validate" type="text" placeholder="Subir Imagen">
+                                    </div>
                                 </div>
                              
 
