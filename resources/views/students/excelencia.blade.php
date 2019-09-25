@@ -148,7 +148,7 @@
                                             @endif
 
                                             @if ($excelencia->IVP == 0)
-                                                <th scope="row">--</th>
+                                                <th scope="row"></th>
                                             @else 
                                                 <th scope="row">{{$excelencia->IVP}}%</th>
                                             @endif
