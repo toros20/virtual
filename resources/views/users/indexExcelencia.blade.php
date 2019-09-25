@@ -131,16 +131,16 @@
                     <tbody>
                             @foreach ($excelencias as $excelencia)
                                 <tr>
-                                    <th scope="col">Foto</th>
-                                    <th scope="col">Curso</th>
-                                    <th scope="col">Section</th>
-                                    <th scope="col">{{$excelencia->name}} {{$excelencia->lastname}} </th>
-                                    <th scope="col">{{$excelencia->cuenta}}</th>
-                                    <th scope="col">{{$excelencia->IP}} </th>
-                                    <th scope="col">{{$excelencia->IIP}} </th>
-                                    <th scope="col">{{$excelencia->IIIP}} </th>
-                                    <th scope="col">{{$excelencia->IVP}} </th>
-                                    <th scope="col">{{$excelencia->felicitaciones}} </th>
+                                    <td scope="col">Foto</td>
+                                    <td scope="col">{{$excelencia->short_name}}</td>
+                                    <td scope="col">{{$excelencia->section}}</td>
+                                    <td scope="col">{{$excelencia->name}} {{$excelencia->lastname}} </td>
+                                    <td scope="col">{{$excelencia->cuenta}}</td>
+                                    <td scope="col">{{$excelencia->IP}} </td>
+                                    <td scope="col">{{$excelencia->IIP}} </td>
+                                    <td scope="col">{{$excelencia->IIIP}} </td>
+                                    <td scope="col">{{$excelencia->IVP}} </td>
+                                    <td scope="col">{{$excelencia->felicitaciones}} </th>
                                 </tr>
                             @endforeach
                     </tbody>

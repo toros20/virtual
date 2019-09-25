@@ -1430,7 +1430,9 @@ public function indexExcelencia(){
 
     $excelencias = DB::table('excelencias')
                     ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
-                    ->Select('excelencias.*','users.name','users.lastname')
+                    ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
+                    ->join('courses', 'enrollments.course_id', '=', 'courses.id')
+                    ->Select('enrollments.section','excelencias.*','users.name','users.lastname','users.cuenta','courses.short_name')
                     ->where([
                         ['users.role', '=', 'student']
                     ])
