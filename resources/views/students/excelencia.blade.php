@@ -21,7 +21,7 @@
 <body style="background-color:#f5f6f5">
 
         <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-                <a class="navbar-brand" href="#">Excelencia Académica 2019</a>
+                <a class="navbar-brand" href="{{ $url = route('excelencia')}}">Excelencia Académica 2019</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
