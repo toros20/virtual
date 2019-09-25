@@ -134,13 +134,13 @@
                                     <th scope="col">Foto</th>
                                     <th scope="col">Curso</th>
                                     <th scope="col">Section</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Cuenta</th>
-                                    <th scope="col">IP</th>
-                                    <th scope="col">IIP</th>
-                                    <th scope="col">IIIP</th>
-                                    <th scope="col">IVP</th>
-                                    <th scope="col">Felic...</th>
+                                    <th scope="col">{{$excelencia->name}} {{$excelencia->lastname}} </th>
+                                    <th scope="col">{{$excelencia->cuenta}}</th>
+                                    <th scope="col">{{$excelencia->IP}} </th>
+                                    <th scope="col">{{$excelencia->IIP}} </th>
+                                    <th scope="col">{{$excelencia->IIIP}} </th>
+                                    <th scope="col">{{$excelencia->IVP}} </th>
+                                    <th scope="col">{{$excelencia->felicitaciones}} </th>
                                 </tr>
                             @endforeach
                     </tbody>
