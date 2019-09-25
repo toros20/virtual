@@ -104,7 +104,7 @@
             <h1 class="p-2">Alabado Sea Jesucristo!</h1>
             <p class="lead">Nos complace presentar en nuestro sitio web a los estudiantes mas destacados de nuestra Institución</p>
             <p class="lead">A nuestros estudiantes de Excelencia Académica <b>(Con Promedio Mayor a 90%)</b> </p>
-            <p class="lead"><b> Felicitalos </b>x</p>
+            <p class="lead"><h3>¡¡¡ Felicitalos !!!</h3></p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="img/logo_sanjose.png" alt="">
