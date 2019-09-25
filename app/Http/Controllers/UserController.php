@@ -1401,7 +1401,7 @@ public function storeExcelencia(Request $request){
         /*************************SEGURIDAD*******************/
 
         //obtenemos la extension original del archivo
-        $extension = $request->file('document')->getClientOriginalExtension();
+        $extension = $request->file('foto')->getClientOriginalExtension();
 
         //almacenamos la en la carpeta excelencia de la carpeta store y obtenemos su nuevo nombre
         $file = $request->file('foto')->store('excelencia');
