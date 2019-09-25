@@ -288,7 +288,7 @@ class StudentController extends Controller
                     ['enrollments.section', '=', $section]
                 ])
                 ->get();
-                dd($course);
+               // dd($course);
         return view('students/excelencias_by_id',compact('excelencias','course','section'));
 
 

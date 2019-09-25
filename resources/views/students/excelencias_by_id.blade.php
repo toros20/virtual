@@ -102,7 +102,7 @@
         <div align="center" class="jumbotron" style="background-color:#fff; margin-top: 5% ">
             <img width="50%" src="img/fivestart.jpeg" alt="">
             <h1 class="p-2">Excelencia Académica</h1>
-            <h1>{{$course->short_name}} Sección {{$section}} </h1>
+            <h1>{{$course[0]->short_name}} Sección {{$section}} </h1>
             <p class="lead">Nos complace presentar en nuestro sitio web a los estudiantes mas destacados de nuestra Institución</p>
             <p class="lead">A nuestros estudiantes de Excelencia Académica <b>(Con Promedio Mayor a 90%)</b> </p>
             <p class="lead"><h3>¡¡¡ Felicítalos !!!</h3></p>
