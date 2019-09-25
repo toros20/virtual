@@ -1432,7 +1432,7 @@ public function indexExcelencia(){
                     ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
                     ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
                     ->join('courses', 'enrollments.course_id', '=', 'courses.id')
-                    ->Select('enrollments.section','excelencias.*','users.name','users.lastname','users.cuenta','courses.short_name')
+                    ->Select('enrollments.section','excelencias.*','users.name','users.lastname','users.cuenta','users.sexo','courses.short_name')
                     ->where([
                         ['users.role', '=', 'student']
                     ])

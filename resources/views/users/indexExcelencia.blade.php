@@ -113,7 +113,7 @@
         <div class="container" style="margin-top: 100px ">
             <h1>Estudiantes de Excelencia Académica</h1>
             <div class="row">
-                <table class="table">
+                <table class="table table-striped table-hover">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Foto</th>
@@ -132,7 +132,12 @@
                     <tbody>
                             @foreach ($excelencias as $excelencia)
                                 <tr>
-                                    <td scope="col">Foto</td>
+                                    @if ($excelencia->sexo == 'M')
+                                        <td scope="col"><img width="100px" src="img/excelencia/boy.png " alt=""></td>
+                                    @else
+                                        <td scope="col"><img width="100px" src="img/excelencia/girl.png " alt=""></td>
+                                    @endif
+                                    
                                     <td scope="col">{{$excelencia->short_name}}</td>
                                     <td scope="col">{{$excelencia->section}}</td>
                                     <td scope="col">{{$excelencia->name}} {{$excelencia->lastname}} </td>
