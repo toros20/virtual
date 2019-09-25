@@ -1379,9 +1379,7 @@ public function addExcelencia(){
 
         /*************************SEGURIDAD*******************/
 
-        $modalities = Modality::all();
-        $courses = Course::all();
-        return view('users.addExcelencia',compact('modalities','courses'));
+        return view('users.addExcelencia');
 }
 
 //funcion para almacenar un nuevo student de excelencia academica
@@ -1444,6 +1442,31 @@ public function indexExcelencia(){
                     ->get();
 
     return view('users.indexExcelencia',compact('excelencias'));
+
+}
+
+public function editExcelencia($id){
+
+    /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+        
+        $excelencia = DB::table('excelencias')
+                ->where([
+                    ['id', '=', $id]
+                ])
+                ->get();
+
+        return view('users.editExcelencia',compact('excelencia'));
 
 }
 

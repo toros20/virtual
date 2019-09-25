@@ -32,6 +32,9 @@ Route::POST('/excelencia/store','UserController@storeExcelencia')->name('excelen
 //Modulo para mostar la administracion de la excelencia academica
 Route::get('/indexExcelencia','UserController@indexExcelencia')->name('indexExcelencia');
 
+//Modulo para agregar un nuevo alumnos de excelencia Academica
+Route::get('/excelencia/edit','UserController@editExcelencia')->name('editExcelencia');
+
 
 
 
