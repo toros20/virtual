@@ -15,45 +15,54 @@
     
         <div class="container">
 
-            <div class="title m-b-md">
-                    Crear un nuevo estudiante de Excelencia Académica
+            <div class="row">
+                <div class="col-md-4 mx-auto">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Crear un nuevo estudiante de Excelencia Académica</h2>
+                        </div>
+                        <div class="card-body">
+                            <form method = "POST" action ={{route('excelencia.store')}} >
+
+                                {{-- @csrf --}}
+                                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+
+                                <p><label for="cuenta">
+                                    Cuenta 
+                                    <input class="form-control" type="text" name ="cuenta" value=" {{old('cuenta')}} " >
+                                </label></p>
+
+                                <p><label for="IP">
+                                    IP
+                                    <input class="form-control" type="text" name ="IP" value=" {{old('IP')}} ">
+                                </label></p>
+
+                                <p><label for="IIP">
+                                    IIP
+                                    <input class="form-control" type="text" name ="IIP" value=" {{old('IIP')}} ">
+                                </label></p>
+
+                                <p><label for="IIIP">
+                                    IIIP
+                                    <input class="form-control" type="text" name ="IIIP" value=" {{old('IIIP')}} ">
+                                </label></p>
+
+                                <p><label for="IVP">
+                                    IVP
+                                    <input class="form-control" type="text" name ="IVP" value=" {{old('IVP')}} ">
+                                </label></p>
+
+                                <p>                          
+                                    <input class="btn btn-success" type="submit"  value="Enviar">
+                                </p>
+
+                            </form>
+                        </div>
+                    </div>
+                   
                 </div>
-                
-                <form method = "POST" action ={{route('excelencia.store')}} >
-
-                        {{-- @csrf --}}
-                        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-
-                        <p><label for="cuenta">
-                            Cuenta 
-                            <input class="form-control" type="text" name ="cuenta" value=" {{old('cuenta')}} " >
-                        </label></p>
-
-                        <p><label for="IP">
-                             IP
-                            <input class="form-control" type="text" name ="IP" value=" {{old('IP')}} ">
-                        </label></p>
-
-                        <p><label for="IIP">
-                            IIP
-                            <input class="form-control" type="text" name ="IIP" value=" {{old('IIP')}} ">
-                        </label></p>
-
-                        <p><label for="IIIP">
-                            IIIP
-                            <input class="form-control" type="text" name ="IIIP" value=" {{old('IIIP')}} ">
-                        </label></p>
-
-                        <p><label for="IVP">
-                            IVP
-                            <input class="form-control" type="text" name ="IVP" value=" {{old('IVP')}} ">
-                        </label></p>
-
-                        <p>                          
-                            <input class="btn btn-success" type="submit"  value="Enviar">
-                        </p>
-
-                </form>
+            </div>              
+               
                 
             </div>
         </div>
