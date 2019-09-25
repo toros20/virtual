@@ -21,7 +21,10 @@ Route::get('/', function () {
 Route::get('/excelencia', 'StudentController@excelencia')->name('excelencia');
 
 //ruta para mostrar la encuesta del personal docente
-Route::get('/excelencias_by_id/{course_id}/section', 'StudentController@excelencias_by_id');
+//Route::get('/excelencias_by_id/{course_id}/section', 'StudentController@excelencias_by_id');
+Route::get('/excelencias_by_id/{course_id}/section', function(){
+    return "HELOOO";
+});
 
 
 //ruta para mostrar la encuesta del personal docente
