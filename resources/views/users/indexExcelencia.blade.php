@@ -142,7 +142,7 @@
                                     <td scope="col">{{$excelencia->IIIP}} </td>
                                     <td scope="col">{{$excelencia->IVP}} </td>
                                     <td scope="col">{{$excelencia->felicitaciones}} </th>
-                                    <td scope="col"><button class="btn btn-warning">Editar</button> </th>
+                                    <td scope="col"><button class="btn btn-sm btn-warning">Editar</button> </th>
                                 </tr>
                             @endforeach
                     </tbody>
