@@ -117,9 +117,9 @@
                         <div class="card" style="width: 100%; ">
                             @if ($excelencia->foto === 'user')
                                 @if ($excelencia->sexo === 'M')
-                                <img src="img/excelencia/boy.png" class="card-img-top">
+                                <img src="../../img/excelencia/boy.png" class="card-img-top">
                                 @else
-                                <img src="img/excelencia/girl.png" class="card-img-top">
+                                <img src="../../img/excelencia/girl.png" class="card-img-top">
                                 @endif
                             @else 
                                 <img src="{{ URL::asset('../storage/app/'.$excelencia->foto)}}" class="card-img-top">
