@@ -133,9 +133,9 @@
                             @foreach ($excelencias as $excelencia)
                                 <tr>
                                     @if ($excelencia->sexo == 'M')
-                                        <td scope="col"><img width="100px" src="img/excelencia/boy.png " alt=""></td>
+                                        <td scope="col"><img width="70px" src="img/excelencia/boy.png " alt=""></td>
                                     @else
-                                        <td scope="col"><img width="100px" src="img/excelencia/girl.png " alt=""></td>
+                                        <td scope="col"><img width="70px" src="img/excelencia/girl.png " alt=""></td>
                                     @endif
                                     
                                     <td scope="col">{{$excelencia->short_name}}</td>
