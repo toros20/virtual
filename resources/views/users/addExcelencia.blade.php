@@ -22,7 +22,7 @@
                             Crear un nuevo estudiante de Excelencia Académica
                         </div>
                         <div class="card-body">
-                            <form method = "POST" action ={{route('excelencia.store')}} >
+                            <form method = "POST" action ={{route('excelencia.store')}} enctype="multipart/form-data" >
 
                                 {{-- @csrf --}}
                                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
@@ -51,6 +51,16 @@
                                     IVP
                                     <input max="100" min="0" required class="form-control" type="number" name ="IVP" value=" {{old('IVP')}} ">
                                 </label></p>
+
+                                <div class="file-field">
+                                    <div class="btn btn-primary btn-sm float-left">
+                                        <span>Seleccione Imagen</span>
+                                        <p><input name ="foto" id="foto" type="file"></p>
+                                    </div>
+                                    <div class="file-path">
+                                        <input class="file-path validate" type="text" placeholder="Subir Imagen">
+                                    </div>
+                                </div>
 
                                 <p>                          
                                     <input class="btn btn-success btn-block" type="submit"  value="Enviar">
