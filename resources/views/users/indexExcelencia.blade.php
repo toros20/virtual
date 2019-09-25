@@ -154,7 +154,7 @@
                                     <td scope="col">{{$excelencia->IIIP}} </td>
                                     <td scope="col">{{$excelencia->IVP}} </td>
                                     <td scope="col">{{$excelencia->felicitaciones}} </th>
-                                    <td scope="col"><a href="{{ $url = route('aditExcelencia')}}" class="btn btn-sm btn-warning">Editar</a> </th>
+                                    <td scope="col"><a href="{{ $url = route('editExcelencia',$excelencia->id)}}" class="btn btn-sm btn-warning">Editar</a> </th>
                                     <td scope="col"><a class="btn btn-sm btn-danger">Eliminar</a> </th>
                                 </tr>
                             @endforeach
