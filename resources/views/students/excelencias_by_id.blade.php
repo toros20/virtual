@@ -100,11 +100,10 @@
         </nav> 
 
         <div align="center" class="jumbotron" style="background-color:#fff; margin-top: 5% ">
-            <img width="50%" src="img/fivestart.jpeg" alt="">
+            <img width="50%" src="../../img/fivestart.jpeg" alt="">
             <h1 class="p-2">Excelencia Académica</h1>
             <h1>{{$course[0]->short_name}} Sección {{$section}} </h1>
-            <p class="lead">Nos complace presentar en nuestro sitio web a los estudiantes mas destacados de nuestra Institución</p>
-            <p class="lead">A nuestros estudiantes de Excelencia Académica <b>(Con Promedio Mayor a 90%)</b> </p>
+            <p class="lead"><b>(Con Promedio Mayor a 90%)</b> </p>
             <p class="lead"><h3>¡¡¡ Felicítalos !!!</h3></p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
@@ -115,7 +114,7 @@
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
                         <div class="card" style="width: 100%; ">
-                                <img src="img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
+                                <img src="../../img/excelencia/boy.png" class="card-img-top" alt="Andrea Lamelas Ponce">
                                 <div class="card-body">
                                   <h5 class="card-title text-center">{{$excelencia->name}} {{$excelencia->lastname}}</h5>
                                   <table class="table">
