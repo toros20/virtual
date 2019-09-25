@@ -8,7 +8,14 @@
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/3762dfca53.js" crossorigin="anonymous"></script>
-    
+    <style>
+        .gold {
+            color: gold;
+        }
+        .silver{
+            color:silver;
+        }
+    </style>
     <title>Excelencia Académica 2019</title>
 </head>
 <body style="background-color:#f5f6f5">
@@ -150,27 +157,27 @@
                                           <tr>
                                             
                                                 @if ($excelencia->IP == 0)
-                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas silver fa-star fa-2x"></i></th>
                                                 @else 
-                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas gold fa-star fa-2x"></i></th>
                                                 @endif
     
                                                 @if ($excelencia->IIP == 0)
-                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas silver fa-star fa-2x"></i></th>
                                                 @else 
-                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas gold fa-star fa-2x"></i></th>
                                                 @endif
     
                                                 @if ($excelencia->IIIP == 0)
-                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas silver fa-star fa-2x"></i></th>
                                                 @else 
-                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas gold fa-star fa-2x"></i></th>
                                                 @endif
     
                                                 @if ($excelencia->IVP == 0)
-                                                    <th scope="row"><i class="fas color:silver fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas silver fa-star fa-2x"></i></th>
                                                 @else 
-                                                    <th scope="row"><i class="fas color:gold fa-star fa-2x"></i></th>
+                                                    <th scope="row"><i class="fas gold fa-star fa-2x"></i></th>
                                                 @endif
                                                
                                               </tr>
