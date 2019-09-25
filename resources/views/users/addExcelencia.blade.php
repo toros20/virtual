@@ -13,7 +13,7 @@
 </head>
 <body style="background-color:#f5f6f5">
     
-        <div class="content">
+        <div class="container">
 
             <div class="title m-b-md">
                     Crear un nuevo estudiante de Excelencia Académica
@@ -26,31 +26,31 @@
 
                         <p><label for="cuenta">
                             Cuenta 
-                            <input type="text" name ="cuenta" value=" {{old('cuenta')}} " >
+                            <input class="form-control" type="text" name ="cuenta" value=" {{old('cuenta')}} " >
                         </label></p>
 
                         <p><label for="IP">
                              IP
-                            <input type="text" name ="IP" value=" {{old('IP')}} ">
+                            <input class="form-control" type="text" name ="IP" value=" {{old('IP')}} ">
                         </label></p>
 
                         <p><label for="IIP">
                             IIP
-                            <input type="text" name ="IIP" value=" {{old('IIP')}} ">
+                            <input class="form-control" type="text" name ="IIP" value=" {{old('IIP')}} ">
                         </label></p>
 
                         <p><label for="IIIP">
                             IIIP
-                            <input type="text" name ="IIIP" value=" {{old('IIIP')}} ">
+                            <input class="form-control" type="text" name ="IIIP" value=" {{old('IIIP')}} ">
                         </label></p>
 
                         <p><label for="IVP">
                             IVP
-                            <input type="text" name ="IVP" value=" {{old('IVP')}} ">
+                            <input class="form-control" type="text" name ="IVP" value=" {{old('IVP')}} ">
                         </label></p>
 
                         <p>                          
-                            <input type="submit"  value="Enviar">
+                            <input class="btn btn-success" type="submit"  value="Enviar">
                         </p>
 
                 </form>
