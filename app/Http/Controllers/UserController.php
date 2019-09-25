@@ -1400,11 +1400,9 @@ public function storeExcelencia(Request $request){
 
         /*************************SEGURIDAD*******************/
 
-        //obtenemos la extension original del archivo
-        $extension = $request->file('foto')->getClientOriginalExtension();
-
         //almacenamos la en la carpeta excelencia de la carpeta store y obtenemos su nuevo nombre
         $file = $request->file('foto')->store('excelencia');
+        
         DB::table('excelencias')->insert([
 
             'cuenta'=>$request->input('cuenta'),
@@ -1413,7 +1411,6 @@ public function storeExcelencia(Request $request){
             'IIIP'=>$request->input('IIIP'),
             'IVP'=>$request->input('IVP'),
             'foto'=>$file,
-            'typefile'=> $extension
         ]);
 
         return redirect()->route('indexExcelencia');
