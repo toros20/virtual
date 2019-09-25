@@ -1406,7 +1406,7 @@ public function storeExcelencia(Request $request){
             'IP'=>$request->input('IP'),
             'IIP'=>$request->input('IIP'),
             'IIIP'=>$request->input('IIIP'),
-            'IVP'=>$request->input('IV')
+            'IVP'=>$request->input('IVP')
         ]);
 
         return redirect()->route('users.indexExcelencia');
