@@ -1499,7 +1499,7 @@ public function updateExcelencia(Request $request){
                     'foto'=>$file,
                     ) );
 
-                    return view('users.indexExcelencia');
+        return redirect()->route('indexExcelencia');
 }
 
 
