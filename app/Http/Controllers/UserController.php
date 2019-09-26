@@ -1496,7 +1496,7 @@ public function updateExcelencia(Request $request){
                     'IIP'=>$request->IIP,
                     'IIIP'=>$request->IIIP,
                     'IVP'=>$request->IVP,
-                    'foto'=>$request->foto
+                    'foto'=>$file,
                     ) );
 
         return redirect()->route('users.indexExcelencia');
