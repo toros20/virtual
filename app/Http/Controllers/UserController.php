@@ -1484,7 +1484,7 @@ public function updateExcelencia(Request $request){
         /*************************SEGURIDAD*******************/
         
         //almacenamos la fotografia
-
+            dd( $request->file('foto'));
         //comprobamos que desea cambiar la foto
         $file = $request->file('foto')->store('excelencia');
         if($file[0]->name != ""){
