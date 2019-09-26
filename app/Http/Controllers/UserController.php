@@ -1487,7 +1487,7 @@ public function updateExcelencia(Request $request){
 
         //comprobamos que desea cambiar la foto
         $file = $request->file('foto')->store('excelencia');
-        if($file != NULL){
+        if($file->name != ""){
               $resp =DB::table('excelencias')
                 ->where([
                     ['id', '=', $request->user_id]
