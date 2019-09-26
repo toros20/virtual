@@ -144,7 +144,6 @@
                                         <td scope="col"><img width="70px" src="{{ URL::asset('../storage/app/'.$excelencia->foto)}}"></td>
                                     @endif
                                    
-                                    
                                     <td scope="col">{{$excelencia->short_name}}</td>
                                     <td scope="col">{{$excelencia->section}}</td>
                                     <td scope="col">{{$excelencia->name}} {{$excelencia->lastname}} </td>
@@ -154,7 +153,7 @@
                                     <td scope="col">{{$excelencia->IIIP}} </td>
                                     <td scope="col">{{$excelencia->IVP}} </td>
                                     <td scope="col">{{$excelencia->felicitaciones}} </th>
-                                    <td scope="col"><a href="{{ $url = route('editExcelencia',$excelencia->id)}}" class="btn btn-sm btn-warning">Editar</a> </th>
+                                    <td scope="col"><a href="{{ $url = route('editExcelencia', [$excelencia->id])}}" class="btn btn-sm btn-warning">Editar</a> </th>
                                     <td scope="col"><a class="btn btn-sm btn-danger">Eliminar</a> </th>
                                 </tr>
                             @endforeach
