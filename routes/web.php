@@ -36,7 +36,7 @@ Route::get('/indexExcelencia','UserController@indexExcelencia')->name('indexExce
 Route::get('/excelencia/edit/{id}','UserController@editExcelencia')->name('editExcelencia/edit/{id}');
 
 //ruta para actualizar el estudiante de excelencia
-Route:POST('updateExcelencia','UserController@updateExcelencia')->name('updateExcelencia');
+Route::POST('updateExcelencia','UserController@updateExcelencia')->name('updateExcelencia');
 
 
 
