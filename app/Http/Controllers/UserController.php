@@ -1484,9 +1484,10 @@ public function updateExcelencia(Request $request){
         /*************************SEGURIDAD*******************/
         
         //almacenamos la fotografia
-        $file = $request->file('foto')->store('excelencia');
 
-        $resp =DB::table('excelencias')
+        //comprobamos que desea cambiar la foto
+        if($file = $request->file('foto')->store('excelencia')){
+              $resp =DB::table('excelencias')
                 ->where([
                     ['id', '=', $request->user_id]
                 ])
@@ -1498,6 +1499,23 @@ public function updateExcelencia(Request $request){
                     'IVP'=>$request->IVP,
                     'foto'=>$file,
                     ) );
+        }
+        //en caso de cambiar la foto
+        else{
+            $resp =DB::table('excelencias')
+            ->where([
+                ['id', '=', $request->user_id]
+            ])
+            ->update(array(
+                'cuenta'=>$request->cuenta,
+                'IP'=>$request->IP,
+                'IIP'=>$request->IIP,
+                'IIIP'=>$request->IIIP,
+                'IVP'=>$request->IVP,
+                ) );
+        }
+
+      
 
         return redirect()->route('indexExcelencia');
 }
