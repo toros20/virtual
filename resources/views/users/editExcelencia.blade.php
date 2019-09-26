@@ -30,30 +30,30 @@
 
                                 <p><label for="cuenta">
                                     Cuenta 
-                                    <input maxlength="8" required class="form-control" type="text" name ="cuenta" value="{{$excelencia->cuenta}}" autofocus placeholder="20190000">
+                                    <input maxlength="8" required class="form-control" type="text" name ="cuenta" value="{{$excelencia[0]->cuenta}}" autofocus placeholder="20190000">
                                 </label></p>
 
                                 <p><label for="IP">
                                     IP
-                                    <input max="100" min="0" required class="form-control" type="number" name ="IP" value="{{$excelencia->IP}}">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IP" value="{{$excelencia[0]->IP}}">
                                 </label></p>
 
                                 <p><label  for="IIP">
                                     IIP
-                                    <input max="100" min="0" required class="form-control" type="number" name ="IIP" value="{{$excelencia->IIP}}">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IIP" value="{{$excelencia[0]->IIP}}">
                                 </label></p>
 
                                 <p><label for="IIIP">
                                     IIIP
-                                    <input max="100" min="0" required class="form-control" type="number" name ="IIIP" value="{{$excelencia->IIIP}}">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IIIP" value="{{$excelencia[0]->IIIP}}">
                                 </label></p>
 
                                 <p><label for="IVP">
                                     IVP
-                                    <input max="100" min="0" required class="form-control" type="number" name ="IVP" value="{{$excelencia->IVP}}">
+                                    <input max="100" min="0" required class="form-control" type="number" name ="IVP" value="{{$excelencia[0]->IVP}}">
                                 </label></p>
 
-                                <img width="70px" src="{{ URL::asset('../storage/app/'.$excelencia->foto)}}" alt="">
+                                <img width="70px" src="{{ URL::asset('../storage/app/'.$excelencia[0]->foto)}}" alt="">
                            
                                 <div class="file-field">
                                       <div class="btn btn-primary btn-sm float-left">
@@ -61,7 +61,7 @@
                                         <p><input name ="foto" id="foto" type="file"></p>
                                       </div>
                                       <div class="file-path">
-                                        <input value="{{$excelencia->foto}}" class="file-path validate" type="text" placeholder="Subir Imagen">
+                                        <input value="{{$excelencia[0]->foto}}" class="file-path validate" type="text" placeholder="Subir Imagen">
                                       </div>
                                   </div>
                              
