@@ -886,8 +886,6 @@ class UserController extends Controller
 
    public function acumulativos($user_id,$curso,$section,$clase,$parcial){
 
-     
-
    }
 
     public function boletas($course_id,$section){
@@ -1468,6 +1466,33 @@ public function editExcelencia($id){
 
         return view('users.editExcelencia',compact('excelencia'));
 
+}
+
+public function updateExcelencia(Request $request){
+
+    /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        $resp =DB::table('excelencias')
+                ->where([
+                    ['id', '=', $request->user_id]
+                ])
+                ->update(array(
+                    'Acum3'=>$total
+                    ) );
+
+
+        return redirect()->route('users.index');
 }
 
 

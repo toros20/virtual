@@ -22,7 +22,7 @@
                             Crear un nuevo estudiante de Excelencia Académica
                         </div>
                         <div class="card-body">
-                            <form method = "POST" action ={{route('editExcelencia')}} enctype="multipart/form-data" >
+                            <form method = "POST" action ={{route('updateExcelencia')}} enctype="multipart/form-data" >
 
                                 {{-- @csrf --}}
                                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
