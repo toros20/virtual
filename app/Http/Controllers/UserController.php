@@ -1482,17 +1482,24 @@ public function updateExcelencia(Request $request){
             }
 
         /*************************SEGURIDAD*******************/
+        
+        //almacenamos la fotografia
+        $file = $request->file('foto')->store('excelencia');
 
         $resp =DB::table('excelencias')
                 ->where([
                     ['id', '=', $request->user_id]
                 ])
                 ->update(array(
-                    'Acum3'=>$total
+                    'cuenta'=>$request->cuenta,
+                    'IP'=>$request->IP,
+                    'IIP'=>$request->IIP,
+                    'IIIP'=>$request->IIIP,
+                    'IVP'=>$request->IVP,
+                    'foto'=>$request->foto
                     ) );
 
-
-        return redirect()->route('users.index');
+        return redirect()->route('users.indexExcelencia');
 }
 
 
