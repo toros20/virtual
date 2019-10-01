@@ -11,6 +11,7 @@ function felicitar(id) {
 
     //var token = $("#token").val();
     var token = document.getElementById('token').value
+    alert(token);
     $.ajax({
 
         url: '../../ajax/felicitaciones',
