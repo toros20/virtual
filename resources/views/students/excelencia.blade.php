@@ -112,7 +112,7 @@
         </div>
 
         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
-        
+
             <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
@@ -209,9 +209,10 @@
                 </div>
                @endforeach
                 
-                 <div align="center" class="col-sm-10 col-md-6 p-4">
+                 <div id="div_ver_mas_<?php echo $ultimo_id; ?>" align="center" class="col-sm-10 col-md-6 p-4">
                      <button onclick="ver_mas(<?php echo $ultimo_id; ?>)" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
                 </div>
+
             </div>
        
 
