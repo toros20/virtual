@@ -195,7 +195,9 @@
                                         </tbody>
                                     </table>
 
-                                     <a  class="btn btn-primary btn-block">Felicitaciones (45)</a>
+                                    <div id="button_{{$excelencia->id}}">
+                                        <a  onclick="felicitar({{$excelencia->id}})" class="btn btn-primary btn-block" style="color:white">Felicitaciones ({{$excelencia->felicitaciones}})</a>
+                                    </div>
                                 </div>
                         </div>
                 </div>
