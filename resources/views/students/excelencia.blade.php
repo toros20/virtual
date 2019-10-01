@@ -195,7 +195,7 @@
                                          
                                         </tbody>
                                     </table>
-                                    <input type="hidden" id="felictaciones_{{$excelencia->id}}" value="{{$excelencia->felicitaciones}}">
+                                    <input type="hidden" id="felicitaciones_{{$excelencia->id}}" value="{{$excelencia->felicitaciones}}">
                                     <div id="button_{{$excelencia->id}}">
                                         <a onclick="felicitar({{$excelencia->id}})" href="#" class="btn btn-primary btn-block">Felicitaciones ({{$excelencia->felicitaciones}} )</a>
                                     </div>
