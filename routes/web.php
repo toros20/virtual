@@ -141,6 +141,8 @@ Route::post('ajax/ver_comentarios', 'UserController@ver_comentarios');
 //crear ruta para guardar los comentarios despues de leer los primeros comentarios
 Route::post('ajax/publicarComentario', 'UserController@publicarComentario');
 
+//crear ruta para registrar una feliictacion en el area de excelencia academica
+Route::post('ajax/felicitaciones', 'UserController@felicitaciones');
 
 
 

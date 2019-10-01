@@ -1522,6 +1522,22 @@ public function updateExcelencia(Request $request){
         return redirect()->route('indexExcelencia');
 }
 
+public function felicitaciones(Request $request){
+
+    $id=$request->_id;
+    DB::table('excelencias')
+            ->where([
+                ['id', '=',  $id]
+            ])->increment('felicitaciones',1);
+    
+    $excelencia = DB::table('excelencias')
+                ->where([
+                    ['id','=',$id]
+                ])->get();
+
+    return view('ajax/felicitaciones',compact('excelencia'));
+}
+
 
 }
 

@@ -110,7 +110,7 @@
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="img/logo_sanjose.png" alt="">
         </div>
-
+        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
             <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
@@ -195,7 +195,7 @@
                                          
                                         </tbody>
                                     </table>
-                                    <input type="hidden" id="felicitaciones_{{$excelencia->id}}" value="{{$excelencia->felicitaciones}}">
+                                  
                                     <div id="button_{{$excelencia->id}}">
                                         <a onclick="felicitar({{$excelencia->id}})" href="#" class="btn btn-primary btn-block">Felicitaciones ({{$excelencia->felicitaciones}})</a>
                                     </div>

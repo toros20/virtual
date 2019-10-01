@@ -1,30 +1,31 @@
 //funcion para felicitar a los estudiantes de excelencia academica
-function felicitar(id){
-    
+function felicitar(id) {
+
     //obtenemos el valor actual de felicitaciones
-    var valor_actual = document.getElementById('felicitaciones_'+id).value
+    /*var valor_actual = document.getElementById('felicitaciones_'+id).value
     var nuevo_valor = eval(valor_actual) + 1;
-    //document.getElementById("#felicitaciones_".id).value =  valor_actual +1;
+    document.getElementById("#felicitaciones_".id).value =  valor_actual +1;
 
     alert("valor inicial="+valor_actual);
-    alert("nuevo valor="+nuevo_valor);
+    alert("nuevo valor="+nuevo_valor);*/
 
-   /* $.ajax({
+    var token = $("#token").val();
 
-        url:'../../ajax/felicitaciones', 
+    $.ajax({
+
+        url: '../../ajax/felicitaciones',
         //url:'../ajax/coursesbymodalityid',
-        headers: token ,
-        data: {_nuevo_valor:nuevo_valor,_token:token,_id:id},
-        type:'POST',
-        datatype:'json',
-        success:function(data)
-        {
+        headers: token,
+        data: { _id: id, _token: token },
+        type: 'POST',
+        datatype: 'json',
+        success: function (data) {   
             //console.log(response);
             $('#felicitaciones_'.id).html(data);
         },
         error: function (response) {
             console.log(response);
-          }
-    });*/
+        }
+    });
 
 }
