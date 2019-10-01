@@ -13,7 +13,7 @@ function felicitar(id) {
         success: function (data) {   
             //console.log(response);
             $('#button_'+id).html(data);
-            $('#button_'+id).attr("disabled", "disabled");
+            $('#button_a_'+id).attr("disabled", "disabled");
         },
         error: function (response) {
             console.log(response);
