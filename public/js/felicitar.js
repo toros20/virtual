@@ -12,7 +12,7 @@ function felicitar(id) {
         datatype: 'json',
         success: function (data) {   
             //console.log(response);
-            $('#felicitaciones_'.id).html(data);
+            $('#button_'.id).html(data);
         },
         error: function (response) {
             console.log(response);
