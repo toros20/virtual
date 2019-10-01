@@ -195,7 +195,7 @@
                                         </tbody>
                                     </table>
 
-                                     <a href="#" class="btn btn-primary btn-block">Felicitaciones (45)</a>
+                                     <a  class="btn btn-primary btn-block">Felicitaciones (45)</a>
                                 </div>
                         </div>
                 </div>
