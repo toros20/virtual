@@ -196,7 +196,7 @@
                                     </table>
 
                                     <div id="button_{{$excelencia->id}}">
-                                        <a  onclick="felicitar({{$excelencia->id}})" class="btn btn-primary btn-block" style="color:white">Felicitaciones ({{$excelencia->felicitaciones}})</a>
+                                        <a  onclick="felicitar_by_id({{$excelencia->id}})" class="btn btn-primary btn-block" style="color:white">Felicitaciones ({{$excelencia->felicitaciones}})</a>
                                     </div>
                                 </div>
                         </div>
