@@ -93,6 +93,6 @@
 </div>
 @endforeach
 
-<div align="center" class="col-sm-10 col-md-6 p-4">
-    <button onclick="ver_mas(<?php echo $ultimo_id; ?>)" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
-</div>
+<div id="div_ver_mas_<?php echo $ultimo_id; ?>" align="center" class="col-sm-10 col-md-6 p-4">
+        <button onclick="ver_mas(<?php echo $ultimo_id; ?>)" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
+   </div>
