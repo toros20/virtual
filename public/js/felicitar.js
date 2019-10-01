@@ -65,7 +65,7 @@ function felicitar_by_id(id) {
         error: function (response) {
             console.log(response);
         }
-    });*/
+    });
 
 
-}
+}*/
