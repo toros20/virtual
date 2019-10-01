@@ -1538,6 +1538,11 @@ public function felicitaciones(Request $request){
     return view('ajax/felicitaciones',compact('excelencia'));
 }
 
+public function ver_mas_excelencia(Request $request){
+
+    
+}
+
 
 }
 

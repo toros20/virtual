@@ -45,3 +45,27 @@ function felicitar_by_id(id) {
     });
 
 }
+
+/*function ver_mas(num){
+
+    var token = $("#token").val();
+    
+    $.ajax({
+
+        url: 'ajax/ver_mas_excelencia',
+        headers: token,
+        data: { _num: num, _token: token },
+        type: 'POST',
+        datatype: 'json',
+        success: function (data) {   
+            //console.log(response);
+            $('#estudiantes').html(data);
+            //$('#button_a_'+id).attr("disabled", "disabled");
+        },
+        error: function (response) {
+            console.log(response);
+        }
+    });*/
+
+
+}

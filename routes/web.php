@@ -144,6 +144,9 @@ Route::post('ajax/publicarComentario', 'UserController@publicarComentario');
 //crear ruta para registrar una feliictacion en el area de excelencia academica
 Route::post('ajax/felicitaciones', 'UserController@felicitaciones');
 
+//crear ruta para ver (12)mas estudiantes de excelencia academica
+Route::post('ajax/ver_mas_excelencia', 'UserController@ver_mas_excelencia');
+
 
 
 //rutas CRUD para los users

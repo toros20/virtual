@@ -199,12 +199,18 @@
                                     <div id="button_{{$excelencia->id}}">
                                         <a  onclick="felicitar({{$excelencia->id}})" class="btn btn-primary btn-block" style="color:white">Felicitaciones ({{$excelencia->felicitaciones}})</a>
                                     </div>
+                                    @php
+                                        $ultimo_id = $excelencia->id;
+                                    @endphp
                                 </div>
                         </div>
                 </div>
                @endforeach
                 
-                 <div align="center" class="col-sm-10 col-md-6 p-4"><button class="btn btn-success btn-block">Ver Mas Estuiantes</button></div>
+                 <div align="center" class="col-sm-10 col-md-6 p-4">
+                     <button onclick="ver_mas()" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
+                </div>
+                <input type="hidden" id="ultimo_id" value="<?echo $ultimo_id?>">
             </div>
        
 
