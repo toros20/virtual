@@ -60,7 +60,7 @@ function ver_mas(ultimo_id){
         datatype: 'json',
         success: function (data) {   
             //console.log(response);
-            $('#estudiantes').html(data);
+            $('#estudiantes').append(data);
             //$('#button_a_'+id).attr("disabled", "disabled");
         },
         error: function (response) {
