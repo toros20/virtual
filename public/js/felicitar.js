@@ -9,8 +9,8 @@ function felicitar(id) {
     alert("valor inicial="+valor_actual);
     alert("nuevo valor="+nuevo_valor);*/
 
-    //var token = $("#token").val();
-    var token = document.getElementById('token').value
+    var token = $("#token").val();
+    //var token = document.getElementById('token').value
     alert(token);
     $.ajax({
 
