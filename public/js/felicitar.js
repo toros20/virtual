@@ -48,9 +48,7 @@ function felicitar_by_id(id) {
 
 function ver_mas(ultimo_id){
 
-    var token = $("#token").val();
-    alert(ultimo_id);
-    
+    var token = $("#token").val();    
     $.ajax({
 
         url: 'ajax/ver_mas_excelencia',
@@ -60,7 +58,7 @@ function ver_mas(ultimo_id){
         datatype: 'json',
         success: function (data) {   
             //console.log(response);
-            $('#div_ver_mas_'+ultimo_id).attr("display", "none");
+            $('#div_ver_mas_'+ultimo_id).hide();
             $('#estudiantes').append(data);
             //$('#button_a_'+id).attr("disabled", "disabled");
         },
