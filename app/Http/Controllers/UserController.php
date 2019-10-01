@@ -1540,7 +1540,16 @@ public function felicitaciones(Request $request){
 
 public function ver_mas_excelencia(Request $request){
 
-    
+    $excelencias = DB::table('excelencias')
+                ->join('users', 'excelencias.cuenta', '=', 'users.cuenta')
+                ->Select('excelencias.*','users.name','users.lastname','users.sexo')
+                ->where([
+                    ['users.role', '=', 'student'],
+                    ['excelencias.id','>', $request->_ultimo_id]
+                ])
+                ->limit(4)
+                ->get();
+    return view('ajax/ver_mas_excelencia',compact('excelencias'));
 }
 
 

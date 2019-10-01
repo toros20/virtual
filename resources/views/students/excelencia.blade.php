@@ -110,7 +110,9 @@
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="img/logo_sanjose.png" alt="">
         </div>
+
         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+        
             <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
@@ -208,9 +210,8 @@
                @endforeach
                 
                  <div align="center" class="col-sm-10 col-md-6 p-4">
-                     <button onclick="ver_mas()" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
+                     <button onclick="ver_mas(<?php echo $ultimo_id; ?>)" class="btn btn-success btn-block">Ver Mas Estudiantes</button>
                 </div>
-                <input type="hidden" id="ultimo_id" value="<?echo $ultimo_id?>">
             </div>
        
 

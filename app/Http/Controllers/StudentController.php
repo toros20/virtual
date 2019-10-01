@@ -268,7 +268,7 @@ class StudentController extends Controller
                 ->where([
                     ['users.role', '=', 'student']
                 ])
-                ->limit(12)
+                ->limit(4)
                 ->get();
         return view('students/excelencia',compact('excelencias'));
     }

@@ -46,15 +46,16 @@ function felicitar_by_id(id) {
 
 }
 
-/*function ver_mas(num){
+function ver_mas(ultimo_id){
 
     var token = $("#token").val();
+    alert(ultimo_id);
     
     $.ajax({
 
         url: 'ajax/ver_mas_excelencia',
         headers: token,
-        data: { _num: num, _token: token },
+        data: { _ultimo_id: ultimo_id, _token: token },
         type: 'POST',
         datatype: 'json',
         success: function (data) {   
@@ -68,4 +69,4 @@ function felicitar_by_id(id) {
     });
 
 
-}*/
+}
