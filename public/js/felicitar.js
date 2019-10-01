@@ -5,7 +5,7 @@ function felicitar(id) {
     
     $.ajax({
 
-        url: '../../ajax/felicitaciones',
+        url: 'ajax/felicitaciones',
         headers: token,
         data: { _id: id, _token: token },
         type: 'POST',
