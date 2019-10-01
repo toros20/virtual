@@ -2,13 +2,12 @@
 function felicitar(id){
     
     //obtenemos el valor actual de felicitaciones
-    //var valor_actual = $("felicitaciones_".id).val(); 
     var valor_actual = document.getElementById('felicitaciones_'+id).value
-    //var nuevo_valor = valor_actual +1;
+    var nuevo_valor = valor_actual + 1;
     //document.getElementById("#felicitaciones_".id).value =  valor_actual +1;
 
     alert("valor inicial="+valor_actual);
-    //alert("nuevo valor=".nuevo_valor);
+    alert("nuevo valor="+nuevo_valor);
 
    /* $.ajax({
 
