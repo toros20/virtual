@@ -110,7 +110,7 @@
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="../../img/logo_sanjose.png" alt="">
         </div>
-
+        <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
             <div class="row p-4" id="estudiantes">
                @foreach ($excelencias as $excelencia)
                     <div class="col-md-3">
