@@ -223,5 +223,37 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="{{ URL::asset('js/jquery-3.2.1.js')}}"></script>
     <script src="{{ URL::asset('js/felicitar.js')}}"></script>
+    
+   <script type='text/javascript'>
+    $(function(){
+        $(document).bind("contextmenu",function(e){
+            alert('Acción No Permitida');
+            return false;
+        });
+    });
+
+
+    function copyToClipboard() {
+    // Create a "hidden" input
+    var aux = document.createElement("input");
+    // Assign it the value of the specified element
+    aux.setAttribute("value", "Tambien se Prohibe Realizar Capturas de Pantallas.");
+    // Append it to the body
+    document.body.appendChild(aux);
+    // Highlight its content
+    aux.select();
+    // Copy the highlighted text
+    document.execCommand("copy");
+    // Remove it from the body
+    document.body.removeChild(aux);
+    alert("Tambien se Prohibe realizar Capturas de Pantallas.");
+    }
+
+    $(window).keyup(function(e){
+    if(e.keyCode == 44){
+        copyToClipboard();
+    }
+    }); 
+    </script> 
 </body>
 </html>
