@@ -1547,7 +1547,7 @@ public function ver_mas_excelencia(Request $request){
                     ['users.role', '=', 'student'],
                     ['excelencias.id','>', $request->_ultimo_id]
                 ])
-                ->limit(4)
+                ->limit(8)
                 ->get();
     return view('ajax/ver_mas_excelencia',compact('excelencias'));
 }
