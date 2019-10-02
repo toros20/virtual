@@ -108,7 +108,9 @@
             <p class="lead"><h3>¡¡¡ Felicítalos !!!</h3></p>
             <hr class="my-4">
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
-            <img width="300px" src="../../img/logo_sanjose.png" alt="">
+            <img width="300px" src="../../img/logo_sanjose.png" alt="loso san jose del carmen">
+            <p class="lead" >Los estudiantes de último año, BTP-I y primaria, serán ingresados despues de la semana Morazánica. </p>
+
         </div>
         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
             <div class="row p-4" id="estudiantes">

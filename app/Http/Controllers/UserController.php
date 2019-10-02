@@ -890,7 +890,7 @@ class UserController extends Controller
 
     public function boletas($course_id,$section){
 
-          /*************************SEGURIDAD*******************/
+            /*************************SEGURIDAD*******************/
             //control de seguridad
             // Get the currently authenticated user...
             if ( !($user = Auth::user()) ){
@@ -904,9 +904,9 @@ class UserController extends Controller
         /*************************SEGURIDAD*******************/
 
         //obtenemos los id de los estudiantes matriculados en este curso y seccion
-          $estudiantes = DB::table('enrollments')
-                         ->join('users', 'enrollments.user_id', '=', 'users.id')
-                         ->where ([
+            $estudiantes = DB::table('enrollments')
+                            ->join('users', 'enrollments.user_id', '=', 'users.id')
+                            ->where ([
                                     ['enrollments.course_id', '=', $course_id],
                                     ['enrollments.section', '=', $section],
                                 ])
@@ -921,8 +921,8 @@ class UserController extends Controller
             $seccion = strtolower($section);
         
         //obtenemos las clase que estan asignadas a este curso
-     
-       $clases = DB::table('clasecourses')
+        
+        $clases = DB::table('clasecourses')
                         ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                         //->where('clasecourses.course_id','=',$course_id)
                         ->where ([
@@ -933,11 +933,11 @@ class UserController extends Controller
                         ->Select('clase_id')
                         ->get(); 
         
-       $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
-       $pdf->setPaper('a4','landscape');
-       return $pdf->download('calificaciones.pdf');
-             
-       //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+        $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
+        $pdf->setPaper('a4','landscape');
+        return $pdf->download('calificaciones.pdf');
+                
+        //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
     public function boletas_docentes(){
@@ -1482,8 +1482,6 @@ public function updateExcelencia(Request $request){
             }
 
         /*************************SEGURIDAD*******************/
-        
-        
            
         //comprobamos que desea cambiar la foto
         if($request->file('foto') != null){
