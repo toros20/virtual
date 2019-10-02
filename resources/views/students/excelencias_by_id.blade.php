@@ -110,7 +110,7 @@
             <p class="lead"> <b>Utiliza el menú de navegación para visualizar por curso y sección</b> </p>
             <img width="300px" src="../../img/logo_sanjose.png" alt="loso san jose del carmen">
             <p class="lead" >Los estudiantes de último año, BTP-I y primaria, serán ingresados después de la semana Morazánica. </p>
-
+            <p class="lead">Para consultas o cambios de fotografías: sistemas@sanjosedelcarmen.edu.hn</p>
         </div>
         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
             <div class="row p-4" id="estudiantes">
