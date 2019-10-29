@@ -55,9 +55,9 @@ class UserController extends Controller
         //obtenemos lo estudiantes de este curso y seccion
 
         //solo para el tercer parcial
-       //$parcial=3;
+        $parcial=4;
          /* obtenemos los id de los estudiantes de este curso y seccion*/
-        /*$users = Enrollment::where([
+        $users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
@@ -67,7 +67,7 @@ class UserController extends Controller
 
         $clases = Clasecourse::where([
             ['course_id', '=', $course],
-            ['clase_id', '>', 100],
+            ['clase_id', '>', 100],//solo clases del segundo semestre > 100
         ])->Select('clase_id')->get();
        
         //nombramos las tablas que utiliizaremos
@@ -100,7 +100,7 @@ class UserController extends Controller
                                     [$tabla_historial.'.clase_id', '=',$clase->clase_id ]
                                 ])
                                 ->update(array(
-                                    'Acum3'=>$total
+                                    'Acum4'=>$total
                                     ) );
 
                 }
@@ -108,7 +108,7 @@ class UserController extends Controller
             }
          }
 
-         return "LISTO LAS SUMAS";*/
+         return "LISTO LAS SUMAS";
         
         
         
