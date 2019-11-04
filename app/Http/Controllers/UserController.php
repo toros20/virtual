@@ -66,8 +66,8 @@ class UserController extends Controller
         //VERSION1.   $clases = Clasecourse::where('course_id', '=', $course)->Select('clase_id')->get();
 
         $clases = Clasecourse::where([
-            ['course_id', '=', $course],
-            ['clase_id', '>', 100],//solo clases del segundo semestre > 100
+            ['course_id', '=', $course]//,
+            //['clase_id', '>', 100],//solo clases del segundo semestre > 100
         ])->Select('clase_id')->get();
        
         //nombramos las tablas que utiliizaremos
