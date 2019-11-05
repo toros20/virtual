@@ -115,7 +115,7 @@
                       
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa1}}</td>
-                      @if (($estudiante->Acum3 + $estudiante->Exa3) < 70)
+                      @if (($estudiante->Acum1 + $estudiante->Exa1) < 70)
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
                       @else
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
@@ -124,7 +124,7 @@
                     
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td>
-                      @if (($estudiante->Acum4 + $estudiante->Exa4) < 70)
+                      @if (($estudiante->Acum2 + $estudiante->Exa2) < 70)
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
                       @else
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
