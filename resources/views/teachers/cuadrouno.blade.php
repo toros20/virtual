@@ -80,7 +80,7 @@
                  <td colspan="3" align="center" bgcolor="#CCCCCC" style="font-size:14px;">4to Parcial</td>
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">Nota de Promoción</td>
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">1ra Recuperación</td>
-                 <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">2da Recupreación</td>
+                 {{-- <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">2da Recupreación</td> --}}
                  <td align="center" rowspan="2" style="font-size:14px;">Observaciones</td>
                </tr>
                <tr text-rotate="180">
@@ -164,7 +164,7 @@
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                       @endif
                       
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> --}}
                       <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
                       
                   </tr> 
