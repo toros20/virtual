@@ -117,7 +117,7 @@
                 </tr>
                 <tr>
                   @if ($course->is_semestral == 1)
-                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL SEGUNDO SEMESTRE</strong></td>
                   @else
                     <td style="font-family: Arial;font-size: 12px"><strong>{{$parcial}} PARCIAL</strong></td>
                   @endif
