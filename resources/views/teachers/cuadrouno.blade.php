@@ -87,20 +87,20 @@
                  
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
-                 <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
+                 <td valign="bottom" align="center" style="font-size:14px; background-color: #ccc"><strong>Total</strong></td>
                  {{-- <td valign="bottom" align="center" style="font-size:14px;"></td> --}}
 
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
-                 <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
+                 <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
                 
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
-                 <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
+                 <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
                  
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
-                 <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
+                 <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
                
                  
                </tr>
