@@ -358,16 +358,15 @@
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
                                         {{-- II PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                            @endif
+                                        
+                                        @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @endif 
                                         
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
-                                         
-                                        {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                         @if ($promedio < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio   ?></td>
