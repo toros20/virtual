@@ -926,8 +926,8 @@ class UserController extends Controller
                         //->where('clasecourses.course_id','=',$course_id)
                         ->where ([
                             ['clasecourses.course_id', '=', $course_id],
-                            ['clases.semester', '!=', 1],
-                            ['clases.oficial', '!=', 2],
+                            ['clases.semester', '!=', 2],
+                            //['clases.oficial', '!=', 2],
                         ])
                         ->Select('clase_id')
                         ->get(); 
@@ -1181,6 +1181,7 @@ public function actas($course_id,$section,$parcial){
                     ['clasecourses.course_id', '=', $course_id],
                     //['clases.semester', '<', 2],
                     ['clases.semester', '=', 2],
+                    
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
