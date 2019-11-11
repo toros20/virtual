@@ -201,7 +201,7 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                          @endif
 
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
+                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                             <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
                                             {{--  (
                                                 (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
