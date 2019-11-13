@@ -120,7 +120,10 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                    @foreach ($clases as $clase)
+                                @php
+                                     $suma_promedio = 0;
+                                @endphp    
+                                @foreach ($clases as $clase)
         
                                     <?php 
                                         $resultado = DB::table($historial)
@@ -177,6 +180,8 @@
                                                 ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
                                                 ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
                                                 )/4) ;
+
+                                                $suma_promedio += $PROM_FINAL;
                                             @endphp
                                             
                                             {{-- PROMEDIO FINAL --}}
@@ -237,6 +242,8 @@
                                             ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
                                             ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
                                             )/4) ;
+
+                                            $suma_promedio += $PROM_FINAL;
                                         @endphp
                                     
                                         {{-- PROMEDIO FINAL --}}
@@ -299,7 +306,7 @@
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
                                         @endif
 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo Round(($total4/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round(($suma_promedio /$cont))?></td>
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
                                         
                                     </tr>
