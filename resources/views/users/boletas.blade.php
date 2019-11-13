@@ -134,7 +134,7 @@
                                             $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                            $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                         
                                     ?>
                                     {{-- Codigo para intercalar por colores las filas --}}
@@ -170,16 +170,29 @@
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                             @endif
 
-                                             <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                            {{--  (
-                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                                )/4  --}}
-                                                
-                                                </td>
-                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                            @php
+                                                $PROM_FINAL = (
+                                                ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
+                                                ($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                                ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
+                                                ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
+                                                )/4 ;
+                                            @endphp
+                                            
+                                            {{-- PROMEDIO FINAL --}}
+                                            @if (  $PROM_FINAL < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                            @endif
+
+                                            @if (  $resultado[0]->Recu1 < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                            @endif
+                    
+                                           
                                         </tr>
                                     @else
                                         <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
@@ -213,18 +226,29 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                         @endif
 
+                                        @php
+                                            $PROM_FINAL = (
+                                            ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
+                                            ($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                            ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
+                                            ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
+                                            )/4 ;
+                                        @endphp
+                                    
+                                        {{-- PROMEDIO FINAL --}}
+                                        @if (  $PROM_FINAL < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                        @endif
+
+                                        @if (  $resultado[0]->Recu1 < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                        @endif
                                             
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                            {{--  (
-                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                                )/4  --}}
-                                                
-                                                </td>
-                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
-                                        </tr>
+                                     </tr>
                                     @endif
         
                                 <?php $cont+=1;?>
@@ -235,7 +259,8 @@
                                 <?php 
                                     $promedio1=$total1/$cont;
                                     $promedio2=$total2/$cont; 
-                                    $promedio3=$total3/$cont; 
+                                    $promedio3=$total3/$cont;
+                                    $promedio4=$total4/$cont; 
                                 
                                 ?>
                                 <tr style="border: 1px solid #dee2e6; ">
@@ -256,6 +281,12 @@
                                         <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
                                         @else 
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
+                                        @endif
+
+                                        @if ( round($promedio4) < 70)
+                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
+                                        @else 
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
                                         @endif
 
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
