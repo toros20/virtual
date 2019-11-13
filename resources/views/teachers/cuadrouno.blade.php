@@ -330,7 +330,7 @@ $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first leve
 
 $mpdf->WriteHTML($html);
 
-$mpdf->Output('Cuadro Uno de '. utf8_encode($course->name) . "-". $section,'I');
+$mpdf->Output('Cuadro Uno de '. utf8_encode($course->name) . "-". $section.'.pdf','I');
 
 exit(); 
 //==============================================================
