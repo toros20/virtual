@@ -173,7 +173,7 @@
                                             @php
                                                 $PROM_FINAL = ((
                                                 ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
-                                                ($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                                ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
                                                 ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
                                                 ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
                                                 )/4) ;
@@ -229,7 +229,7 @@
                                         @php
                                             $PROM_FINAL = ((
                                             ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
-                                            ($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
+                                            ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
                                             ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
                                             ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
                                             )/4) ;
