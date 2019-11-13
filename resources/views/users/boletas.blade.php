@@ -991,7 +991,7 @@
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial5; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
