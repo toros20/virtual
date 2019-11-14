@@ -124,11 +124,6 @@ class TeacherController extends Controller
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
                         ->where('assignments.user_id','=',$user_id)
-                         ->where([
-                            ['assignments.user_id', '=', $user_id],
-                            ['clases.semester', '!=', 2],
-                            
-                        ])
                         ->get(); */
         
         // Codigo para ver clases del segundo Semestre
@@ -139,8 +134,6 @@ class TeacherController extends Controller
                         ->where([
                             ['assignments.user_id', '=', $user_id],
                             ['clases.semester', '!=', 1],
-                            ['clases.oficial', '!=', 2],
-
                         ])
                         ->get(); 
 
@@ -685,7 +678,7 @@ class TeacherController extends Controller
                             ->join('clases', $tabla.'.clase_id', '=', 'clases.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
-                                        ['clases.semester', '!=', 2],
+                                        ['clases.semester', '!=', 1],
                                     ])
                             ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
                             ->orderBy('users.sexo','asc')
