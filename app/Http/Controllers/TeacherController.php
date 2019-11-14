@@ -127,6 +127,8 @@ class TeacherController extends Controller
                         ->where([
                             ['assignments.user_id', '=', $user_id],
                             ['clases.semester', '!=', 2],
+                            ['clases.oficial', '!=', 2],
+
                         ])
                         ->get(); 
         
