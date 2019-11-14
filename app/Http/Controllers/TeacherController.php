@@ -123,11 +123,11 @@ class TeacherController extends Controller
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
-                        //->where('assignments.user_id','=',$user_id)
-                        ->where([
+                        ->where('assignments.user_id','=',$user_id)
+                         ->where([
                             ['assignments.user_id', '=', $user_id],
-                            ['clases.semester', '!=', 2],
-                            ['clases.oficial', '!=', 2],
+                            ['clases.semester', '!=', 1],
+                            ['clases.oficial', '!=', 0],
                         ])
                         ->get(); 
         
