@@ -127,7 +127,6 @@ class TeacherController extends Controller
                         ->where([
                             ['assignments.user_id', '=', $user_id],
                             ['clases.semester', '!=', 2],
-                            ['clases.oficial', '!=', 2],
 
                         ])
                         ->get(); 
@@ -684,7 +683,7 @@ class TeacherController extends Controller
                             ->join('clases', $tabla.'.clase_id', '=', 'clases.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
-                                        ['clases.semester', '!=', 1],
+                                        ['clases.semester', '!=', 2],
                                     ])
                             ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
                             ->orderBy('users.sexo','asc')
