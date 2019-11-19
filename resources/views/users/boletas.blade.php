@@ -108,7 +108,8 @@
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
-                                <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
@@ -167,8 +168,8 @@
                                             @endif
 
                                              {{-- IV PARCIAL --}}
-                                            @if (( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) ) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                            @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                             @else 
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                             @endif
@@ -187,20 +188,18 @@
                                             {{-- PROMEDIO FINAL --}}
                                             @if ($PROM_FINAL < 70 )
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
-                                            @endif 
-                                            @if ($PROM_FINAL > 69 )
+                                            @else
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
                                             @endif
 
                                             @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                             @endif 
-
                                             @if ($resultado[0]->Recu1 > 69 )
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                             @endif
                                             @if ($resultado[0]->Recu1 == 0 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
                                             @endif
                     
                                            
@@ -231,7 +230,7 @@
                                          @endif
 
                                          {{-- IV PARCIAL --}}
-                                         @if (( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)) < 70)
+                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
@@ -251,11 +250,9 @@
                                         {{-- PROMEDIO FINAL --}}
                                         @if ($PROM_FINAL < 70 )
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
-                                        @endif 
-                                        @if ($PROM_FINAL > 69 )
+                                        @else
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
                                         @endif
-                                        
 
             
                                         @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
@@ -265,7 +262,7 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
                                         @endif 
                                             
                                      </tr>
