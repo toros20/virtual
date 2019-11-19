@@ -185,9 +185,10 @@
                                             @endphp
                                             
                                             {{-- PROMEDIO FINAL --}}
-                                            @if (  $PROM_FINAL < 70)
+                                            @if ($PROM_FINAL < 70 )
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
-                                            @else 
+                                            @endif 
+                                            @if ($PROM_FINAL > 69 )
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
                                             @endif
 
@@ -248,14 +249,15 @@
                                         @endphp
                                     
                                         {{-- PROMEDIO FINAL --}}
-                                        @if (  $PROM_FINAL < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;  color:red;"><?php echo round($PROM_FINAL)?></td>
-                                        @else 
+                                        @if ($PROM_FINAL < 70 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
+                                        @endif 
+                                        @if ($PROM_FINAL > 69 )
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
                                         @endif
+                                        
 
             
-
                                         @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                         @endif 
