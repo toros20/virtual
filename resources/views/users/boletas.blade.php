@@ -186,7 +186,7 @@
                                             @endphp
                                             
                                             {{-- PROMEDIO FINAL --}}
-                                            @if ($PROM_FINAL < 70 )
+                                            @if ( round($PROM_FINAL) < 70 )
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
                                             @else
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
@@ -248,7 +248,7 @@
                                         @endphp
                                     
                                         {{-- PROMEDIO FINAL --}}
-                                        @if ($PROM_FINAL < 70 )
+                                        @if (round($PROM_FINAL) < 70 )
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
                                         @else
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
