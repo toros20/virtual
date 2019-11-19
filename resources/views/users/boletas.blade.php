@@ -230,7 +230,7 @@
                                          @endif
 
                                          {{-- IV PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa) < 70)
+                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
