@@ -202,7 +202,6 @@
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
                                             @endif
                     
-                                           
                                         </tr>
                                     @else
                                         <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
