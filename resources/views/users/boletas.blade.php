@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Material Design Bootstrap -->
   <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
-  <!-- Your custom styles (optional) css 029c416766-->
+  <!-- Your custom styles (optional) css-->
   <!--<link href="{{ URL::asset('css/style.css')}}" rel="stylesheet">-->
  
   <!-- MDBootstrap Cards Extended Pro  -->
@@ -104,11 +104,12 @@
                         @if ($course->is_semestral == 0)
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; ">
-                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}} ({{$estudiante->cuenta}})</h4> </td>
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
-                                <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
@@ -120,7 +121,10 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                    @foreach ($clases as $clase)
+                                @php
+                                     $suma_promedio = 0;
+                                @endphp    
+                                @foreach ($clases as $clase)
         
                                     <?php 
                                         $resultado = DB::table($historial)
@@ -134,7 +138,7 @@
                                             $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                            $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                         
                                     ?>
                                     {{-- Codigo para intercalar por colores las filas --}}
@@ -163,18 +167,41 @@
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                             @endif
 
+                                             {{-- IV PARCIAL --}}
+                                            @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                            @else 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                            @endif
 
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                            {{--  (
-                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                                )/4  --}}
-                                                
-                                                </td>
-                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
+                                            @php
+                                                $PROM_FINAL = ((
+                                                ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
+                                                ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
+                                                ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
+                                                ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
+                                                )/4) ;
+
+                                                $suma_promedio += $PROM_FINAL;
+                                            @endphp
+                                            
+                                            {{-- PROMEDIO FINAL --}}
+                                            @if ( round($PROM_FINAL) < 70 )
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
+                                            @else
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                            @endif
+
+                                            @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                            @endif 
+                                            @if ($resultado[0]->Recu1 > 69 )
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                            @endif
+                                            @if ($resultado[0]->Recu1 == 0 )
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                            @endif
+                    
                                         </tr>
                                     @else
                                         <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
@@ -201,18 +228,43 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                          @endif
 
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">{{--{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}--}}</td>
-                                            <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;">
-                                            {{--  (
-                                                (($resultado[0]->Acum1) + ($resultado[0]->Exa1))+
-                                                (($resultado[0]->Acum2) + ($resultado[0]->Exa2))+
-                                                (($resultado[0]->Acum3) + ($resultado[0]->Exa3))+
-                                                (($resultado[0]->Acum4) + ($resultado[0]->Exa4))
-                                                )/4  --}}
-                                                
-                                                </td>
-                                            <td style="text-align:center; width:50px; border: 1px solid #dee2e6;">{{--{{$resultado[0]->Recu1}}--}}</td>
-                                        </tr>
+                                         {{-- IV PARCIAL --}}
+                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @endif
+
+                                        @php
+                                            $PROM_FINAL = ((
+                                            ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
+                                            ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
+                                            ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
+                                            ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
+                                            )/4) ;
+
+                                            $suma_promedio += $PROM_FINAL;
+                                        @endphp
+                                    
+                                        {{-- PROMEDIO FINAL --}}
+                                        @if (round($PROM_FINAL) < 70 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;"><?php echo round($PROM_FINAL)?></td>
+                                        @else
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo round($PROM_FINAL)?></td>
+                                        @endif
+
+            
+                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                        @endif 
+                                        @if ($resultado[0]->Recu1 > 69 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                        @endif
+                                        @if ($resultado[0]->Recu1 == 0 )
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                        @endif 
+                                            
+                                     </tr>
                                     @endif
         
                                 <?php $cont+=1;?>
@@ -223,32 +275,40 @@
                                 <?php 
                                     $promedio1=$total1/$cont;
                                     $promedio2=$total2/$cont; 
-                                    $promedio3=$total3/$cont; 
+                                    $promedio3=$total3/$cont;
+                                    $promedio4=$total4/$cont; 
                                 
                                 ?>
                                 <tr style="border: 1px solid #dee2e6; ">
                                         <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                        @if ( round($promedio1) < 70)
-                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                        @else 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                        @endif
+                                            @if ( round($promedio1) < 70)
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            @else 
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            @endif
     
-                                        @if ( round($promedio2) < 70)
-                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                        @else 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
-                                        @endif
-                                        
-                                        @if ( round($promedio3) < 70)
-                                        <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
-                                        @else 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
-                                        @endif
+                                            @if ( round($promedio2) < 70)
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                            @else 
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                            @endif
+                                            
+                                            @if ( round($promedio3) < 70)
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
+                                            @else 
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio3)?></td>
+                                            @endif
 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
+                                            @if ( round($promedio4) < 70)
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
+                                            @else 
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
+                                            @endif
+
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round(($suma_promedio /$cont))?></td>
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
+                                       
+                                        
                                     </tr>
                             </table>
 
@@ -264,8 +324,8 @@
                         @if ($course->is_semestral == 1)
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; ">
-                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}</h4> </td>
-                                    <td ><h4 style="font-weight: bold;"> I SEMESTRE</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}  ({{$estudiante->cuenta}})</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> II SEMESTRE</h4> </td>
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
@@ -294,11 +354,11 @@
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
 
-                                        $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $total1+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                        $total2+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
-                                        $t1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $t2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $t1 = ($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                        $t2 = ($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
                                         $promedio = round(($t1 +  $t2) / 2);
                                         $suma_promedio += $promedio;
@@ -311,28 +371,22 @@
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                         {{-- I PARCIAL --}}
-                                        @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                         @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                         @endif
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                      
-                                        {{-- <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td> --}}
-                                        {{-- II PARCIAL --}}
-                                        @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                        @endif 
 
-                                       {{--  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"></td>
-                                    
-                                       
-                                         --}}
-                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                      
-                                         @if ($promedio < 70)
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
+                                        {{-- II PARCIAL --}}
+                                        @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @endif 
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"></td>
+                                        
+                                        @if ($promedio < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio  ?></td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
@@ -345,9 +399,9 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
                                         @endif
-
+ 
                                     </tr>
 
                                 @else
@@ -355,28 +409,29 @@
                                     <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                        @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                         @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                         @endif
                                         
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
                                         {{-- II PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @endif
-                                         
-                                        {{--{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}--}}
-                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                         @if ($promedio < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio  ?></td>
+                                        
+                                        @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @else 
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                        @endif 
+                                        
+                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
+
+                                        @if ($promedio < 70)
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $promedio   ?></td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $promedio  ?></td>
-                                        @endif
+                                         @endif
 
                                         @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php echo $resultado[0]->Recu1 ?></td>
@@ -385,8 +440,8 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $resultado[0]->Recu1  ?></td>
-                                        @endif
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
+                                        @endif 
                                                                               
                                     </tr>
 
@@ -411,7 +466,7 @@
                                             <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
                                         @endif
 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total1/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total3/$cont),2)?></td>
                                        
                                         @if ( round($promedio2) < 70)
                                          <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
@@ -419,7 +474,7 @@
                                          <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
                                         @endif
                                        
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total2/$cont),2)?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo Round(($total4/$cont),2)?></td>
                                        
                                         @if ( round($promedio_final) < 70)
                                           <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio_final)?></td>
@@ -442,7 +497,7 @@
                             
                                  //obtenemos los datos de personalidad de este alumno en este parcial
                             
-                            $personalidad = DB::table('personalidad')
+                            /*$personalidad = DB::table('personalidad')
                                         ->where ([
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 1],
@@ -454,9 +509,9 @@
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 2],
                                                 ])
-                                        ->get();  
+                                        ->get();  */
 
-                                /*$personalidad_3p = DB::table('personalidad')
+                                $personalidad_3p = DB::table('personalidad')
                                         ->where ([
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 3],
@@ -468,15 +523,15 @@
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 4],
                                                 ])
-                                        ->get();*/
+                                        ->get();
 
-                                    $c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
-                                    $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
-                                    //$c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
-                                    //$c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
+                                    //$c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
+                                   // $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
+                                    $c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
+                                    $c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
 
                                     //**************************PRIMER PARCIAL****************************//
-                                   if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
+                                   /* if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
                                     if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
                                     if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
                                     if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
@@ -510,11 +565,11 @@
                                     if ($personalidad[0]->clase6 == 2) {$c6_parcial1="Necesita Mejorar";}
                                     if ($personalidad[0]->clase6 == 3) {$c6_parcial1="Satisfactorio";}
                                     if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
-                                    if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
+                                    if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} */
 
                                     //**************************SEGUNDO PARCIAL****************************//
 
-                                    if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
+                                   /* if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
                                     if ($personalidad_2p[0]->clase1 == 2) {$c1_parcial2="Necesita Mejorar";}
                                     if ($personalidad_2p[0]->clase1 == 3) {$c1_parcial2="Satisfactorio";}
                                     if ($personalidad_2p[0]->clase1 == 4) {$c1_parcial2="Muy Satisfactorio";}
@@ -548,11 +603,11 @@
                                     if ($personalidad_2p[0]->clase6 == 2) {$c6_parcial2="Necesita Mejorar";}
                                     if ($personalidad_2p[0]->clase6 == 3) {$c6_parcial2="Satisfactorio";}
                                     if ($personalidad_2p[0]->clase6 == 4) {$c6_parcial2="Muy Satisfactorio";}
-                                    if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} */
 
                                     //**************************TERCER PARCIAL****************************//
 
-                                    /*if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
+                                    if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
                                     if ($personalidad_3p[0]->clase1 == 2) {$c1_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase1 == 3) {$c1_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase1 == 4) {$c1_parcial3="Muy Satisfactorio";}
@@ -586,11 +641,11 @@
                                     if ($personalidad_3p[0]->clase6 == 2) {$c6_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase6 == 3) {$c6_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase6 == 4) {$c6_parcial3="Muy Satisfactorio";}
-                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} */
+                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} 
 
                                     //**************************CUARTO PARCIAL****************************//
 
-                                    /*if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
+                                    if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
                                     if ($personalidad_4p[0]->clase1 == 2) {$c1_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase1 == 3) {$c1_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase1 == 4) {$c1_parcial4="Muy Satisfactorio";}
@@ -624,7 +679,7 @@
                                     if ($personalidad_4p[0]->clase6 == 2) {$c6_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase6 == 3) {$c6_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase6 == 4) {$c6_parcial4="Muy Satisfactorio";}
-                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} */
+                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} 
 
                                     ?>
 
@@ -638,43 +693,43 @@
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial1; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial2; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
@@ -690,15 +745,15 @@
                                                 </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <td style="width:300px;border: 1px solid #dee2e6;">Número de Reportes</td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->reportes; ?></td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->reportes; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->reportes; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->inasistencias; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->inasistencias; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->inasistencias; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
                                         </tr>
@@ -908,42 +963,42 @@
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial1; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial2; ?></th>
                                     <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial4; ?></th>
                                 </tr>
                             </table>
 
@@ -960,21 +1015,24 @@
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->reportes; ?></td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->reportes; ?></td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
                                     <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->inasistencias; ?></td>
                                 </tr>
                             </table>
                         @endif
                       
                         @if ($curso == 20)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
-                                   
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                 <tr align="center">
                                         <td >&nbsp;</td>
                                         <td align="center">__________________________</td>
@@ -985,9 +1043,7 @@
                                         <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
                                         <td>&nbsp;</td>
                                     </tr>
-                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
-                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr>
+                            
                             </table>
                         @endif
 
