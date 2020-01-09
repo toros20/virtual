@@ -335,14 +335,14 @@
                        {{-- CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
                        {{--      <tr>
                         <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">**</td>  
-                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">REPROBACIONES POR ASIGNATURAS</td>  
-                          @foreach ($clases as $clase)
+                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">REPROBACIONES POR ASIGNATURAS</td>  --}}
+                         {{--  @foreach ($clases as $clase)
 
                           <?php //$reprobadas_por_clase = 0; ?>
 
                           @foreach ($estudiantes as $estudiante)
 
-                            <?php 
+                            <?php  
                                             
                               /*$resultado = DB::table($historial)
                                           ->join('clases', $historial.'.clase_id', '=', 'clases.id')
