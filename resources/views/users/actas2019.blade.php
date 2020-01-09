@@ -54,7 +54,7 @@
 
                         <tr style="font-family: Arial">
                             <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
-                            <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA FINAL</strong></td>
+                            <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
                             <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
                         </tr>
                         
@@ -76,7 +76,7 @@
 
                         <tr style="font-family: Arial">
                                 <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
-                                <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA FINAL</strong></td>
+                                <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
                                 <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
                             </tr>
                             
@@ -295,18 +295,29 @@
                                               ->Select($historial.'.*')
                                               ->get();
 
-                                              $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                              $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                              $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                              $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-
-                                              $total = round(($total1+$total2+$total3+$total4)/4);
-
+                                              //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                              $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                               if ($total < 70) {
                                                   $clase_reprobada+=1;
                                               }
 
+                                    
+                                              //$total = ($total1 + $total2)/2;
+                                              //se redondea el promedio de clase
+                                              //$total = round($total);
+
+                                              //se suman todos los promedios para obtener el promedio global
+                                              //$promedio += $total;
+
                                               $recuperacion = 0;
+                              
+                                              /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                              $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                              mañana miercoles se suspenden las clases
+                                              debido a la perdida de la Madre Natividd
+                                              Quien partio con el señor este día martes 18 de Junio
+                                              */
                                   
                               ?>
                               @if ( $total < 70)
@@ -363,6 +374,7 @@
                                           if ($total < 70) {
                                               $reprobadas_por_clase+=1;
                                           }
+
                             ?>
 
                           @endforeach {{--fin del ciclo para cada estudiante --}}
