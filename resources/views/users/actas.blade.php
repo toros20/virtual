@@ -325,8 +325,7 @@
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
                                 
-
-                          {{-- <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td> --}}
+                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red">></td> 
                           
                       </tr>
                           <?php $cont+=1;?>
