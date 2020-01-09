@@ -333,7 +333,7 @@
                       @endforeach {{--fin del ciclo para cada estudiante --}}
                       
                        {{-- CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
-                      {{--      <tr>
+                       {{--      <tr>
                         <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">**</td>  
                         <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">REPROBACIONES POR ASIGNATURAS</td>  
                           @foreach ($clases as $clase)
