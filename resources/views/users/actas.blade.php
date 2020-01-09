@@ -119,7 +119,7 @@
                   @if ($course->is_semestral == 1)
                     <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL SEGUNDO SEMESTRE</strong></td>
                   @else
-                    <td style="font-family: Arial;font-size: 12px"><strong>{{$parcial}} PARCIAL</strong></td>
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA FINAL </strong></td>
                   @endif
                  
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
@@ -261,11 +261,11 @@
 
                           <tr style="border: 1px solid #dee2e6; ">
                           <th style="border: 1px solid #dee2e6;">No.</th>
-                          <th  style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                          <th style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
                           
                           @foreach ($clases as $clase)
                               <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;"></th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">Recuperación</th>
                               @php  $cont_clase+=1;   @endphp
                           @endforeach
 
@@ -302,7 +302,7 @@
 
                                               $total = round(($total1+$total2+$total3+$total4)/4);
 
-                                              $recuperacion = 0;
+                                              $recuperacion = $resultado[0]->Recu1;
                                   
                               ?>
                               @if ( $total < 70)
@@ -325,7 +325,7 @@
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
                                 
-                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red">></td> 
+                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"></td> 
                           
                       </tr>
                           <?php $cont+=1;?>
