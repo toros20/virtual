@@ -606,7 +606,7 @@
                             <td align="center" style="font-size: 15px">&nbsp;</td>
                             <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
                             <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                            <td align="center" style="font-size: 15px"><strong></strong></td>
                             <td align="center" style="font-size: 15px">&nbsp;</td>
                             <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
                         </tr>
@@ -615,7 +615,7 @@
                           <td align="center" style="font-size: 15px">&nbsp;</td>
                           <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
                           <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px"><strong>Distrito Educativo #6</strong></td>
+                          <td align="center" style="font-size: 15px"><strong></strong></td>
                           <td align="center" style="font-size: 15px">&nbsp;</td>
                           <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
                         </tr>
