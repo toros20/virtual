@@ -337,7 +337,7 @@
               
             @endif
 
-            @if ($course->id == 9)
+            @if ($course->id == 9 || $course->id == 10)
               <table width="90%" border="0" align="center">
                 <tr>
                   <td align="center">&nbsp;</td>
