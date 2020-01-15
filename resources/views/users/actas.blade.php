@@ -529,7 +529,7 @@
             @endif
 
             {{-- FIN PARA CURSOS SEMESTRALES --}}
-            @if ( $course->id == 15)
+            @if ( $course->id >= 15)
                 <table width="90%" border="0" align="center">
                     <tr>
                       <td align="center">&nbsp;</td>
