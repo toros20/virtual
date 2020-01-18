@@ -610,14 +610,14 @@
 
             @if ($course->id >15)
               <table width="90%" border="0" align="center">
-                <tr>
+               {{--  <tr>
                   <td align="center">&nbsp;</td>
                   <td>&nbsp;</td>
                   <td align="center">&nbsp;</td>
                   <td>&nbsp;</td>
                   <td align="center">&nbsp;</td>
                   <td>&nbsp;</td>
-                </tr>
+                </tr> --}}
                 <tr>
                   <td width="2%" align="center" style="font-size: 15px">1.</td>
                   <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
