@@ -1174,7 +1174,7 @@ public function actas($course_id,$section,$parcial){
                   ->where('clasecourses.course_id','=',$course_id)
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); */
-    $clases = DB::table('clasecourses')
+    /*$clases = DB::table('clasecourses')
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where ([
                     ['clasecourses.course_id', '=', $course_id],
@@ -1183,18 +1183,16 @@ public function actas($course_id,$section,$parcial){
                     
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
-                  ->get(); 
+                  ->get(); */
 
-    /*$clases = DB::table('clasecourses')
+    $clases = DB::table('clasecourses')
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where ([
                     ['clasecourses.course_id', '=', $course_id],
-                    //['clases.semester', '<', 2],
                     ['clases.semester', '=', 2],
-                    
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
-                  ->get(); */
+                  ->get(); 
   
  /*$pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
  $pdf->setPaper('legal','landscape');
