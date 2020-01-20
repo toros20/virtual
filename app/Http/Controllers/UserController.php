@@ -1178,7 +1178,7 @@ public function actas($course_id,$section,$parcial){
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where ([
                     ['clasecourses.course_id', '=', $course_id],
-                    ['clases.semester', '<', 2],
+                    ['clases.semester', '=', 1],
                     //['clases.semester', '=', 2],
                     
                   ])
