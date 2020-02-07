@@ -44,7 +44,7 @@ class LoginController extends Controller
             return redirect()->route('panel_consejeria/{user_id}', ['id' => $user->id]);
         }
 
-        if ( $user->role == 'coordinador' ) {
+        if ( $user->role == 'coord' ) {
           
             return redirect()->route('panel_coordinacion/{user_id}', ['id' => $user->id]);
         }
