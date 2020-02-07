@@ -23,7 +23,7 @@ class LoginController extends Controller
 
     protected function authenticated(Request $request, $user)
     {
-        dd($user);
+        //dd($user);
         if ( $user->role == 'student' ) {
             return redirect()->route('students_panel/{id}', ['id' => $user->id]);
             
@@ -49,7 +49,7 @@ class LoginController extends Controller
             return redirect()->route('users_panel_coordinacion/{user_id}', ['id' => $user->id]);
         }
 
-        //return redirect('login');
+        return redirect('login');
     }
 
     /**
