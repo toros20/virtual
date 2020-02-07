@@ -861,7 +861,7 @@ class UserController extends Controller
             return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
         }
         
-        if( $user->role!='coordinador'){
+        if( $user->role!='coord'){
             return ("ÁREA EXCLUSIVA DE LOS COORDINADORES.");
         }
 
