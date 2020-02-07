@@ -46,7 +46,7 @@ class LoginController extends Controller
 
         if ( $user->role == 'coord' ) {
           
-            return redirect()->route('panel_coordinacion/{user_id}', ['id' => $user->id]);
+            return redirect()->route('users_panel_coordinacion/{user_id}', ['id' => $user->id]);
         }
 
         return redirect('login');
