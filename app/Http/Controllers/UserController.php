@@ -852,6 +852,28 @@ class UserController extends Controller
        
     }
 
+    public function panel_coordinacion($user_id){
+
+         /*************************SEGURIDAD*******************/
+           //control de seguridad
+           // Get the currently authenticated user...
+           if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role!='coordinador'){
+            return ("ÁREA EXCLUSIVA DE LOS COORDINADORES.");
+        }
+
+    /*************************SEGURIDAD*******************/
+
+     //obtenemos los datos del docente
+     $user = User::findOrFail($user_id);
+
+    return view('users/panel_coordinacion',compact('user'));
+
+    }
+
     public function panel_admin($user_id){
 
         /*************************SEGURIDAD*******************/
