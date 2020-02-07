@@ -35,13 +35,18 @@ class LoginController extends Controller
         }
 
         if ( $user->role == 'admin' ) {
-            //return redirect()->route('users.teachers');
+            
             return redirect()->route('users_panel/{user_id}', ['id' => $user->id]);
         }
 
         if ( $user->role == 'consejero' ) {
-            //return redirect()->route('users.teachers');
+          
             return redirect()->route('panel_consejeria/{user_id}', ['id' => $user->id]);
+        }
+
+        if ( $user->role == 'coordinador' ) {
+           
+            return redirect()->route('panel_coordinacion/{user_id}', ['id' => $user->id]);
         }
 
         return redirect('login');
