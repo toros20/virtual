@@ -80,11 +80,7 @@ Route::get('/users/boletas/{course_id}/{section}', 'UserController@boletas')->na
 Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/{user_id}');
 
 //ruta para mostrar la seccion del panel  coordinacion Academica
-//Route::get('/users/panel_coordinacion/{user_id}', 'UserController@panel_coordinacion')->name('users_panel_coordinacion/{user_id}');
-
-Route::get('/users/panel_coordinacion/{user_id}', function () {
-    return "BIENVENIDOSSS";
-});
+Route::get('/users/panel_coordinacion/{user_id}', 'UserController@panel_coordinacion')->name('users_panel_coordinacion/{user_id}');
 
 
 //ruta para mostrar la seccion del panel de administracion, seretaria, coordinacion , sistemas

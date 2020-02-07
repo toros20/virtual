@@ -49,7 +49,7 @@ class LoginController extends Controller
             return redirect()->route('panel_coordinacion/{user_id}', ['id' => $user->id]);
         }
 
-        //return redirect('login');
+        return redirect('login');
     }
 
     /**
