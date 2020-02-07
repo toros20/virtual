@@ -82,6 +82,10 @@ Route::get('/users/panel/{user_id}', 'UserController@panel')->name('users_panel/
 //ruta para mostrar la seccion del panel  coordinacion Academica
 Route::get('/users/panel_coordinacion/{user_id}', 'UserController@panel_coordinacion')->name('users_panel_coordinacion/{user_id}');
 
+Route::get('/users/panel_coordinacion/{user_id}', function () {
+    return "BIENVENIDOSSS";
+});
+
 
 //ruta para mostrar la seccion del panel de administracion, seretaria, coordinacion , sistemas
 Route::get('/users/panel_admin/{user_id}', 'UserController@panel_admin')->name('users_panel_admin/{user_id}');
