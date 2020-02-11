@@ -105,7 +105,7 @@
         <div class="card">
 
           <!-- Card header -->
-          <div class="card-header" role="tab" id="headingUnfiled">
+          <div class="card-header" role="tab" id="headingUnfiled" class="collapse show">
 
             <!--Options-->
             <div class="dropdown float-left">
