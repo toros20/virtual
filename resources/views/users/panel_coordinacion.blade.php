@@ -101,7 +101,7 @@
           <div class="accordion md-accordion accordion-3 z-depth-1-half m-3" id="accordionEx194" role="tablist"
             aria-multiselectable="true">
 
-            <h2 class="text-center text-uppercase red-text py-4 px-3">Gestión Académica</h2>
+            <h2 class="text-center text-uppercase py-4 px-3">Gestión Académica</h2>
 
             <hr class="mb-0">
 
@@ -142,7 +142,7 @@
             <div class="card-header" role="tab" id="heading5">
               <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5"
                 aria-expanded="false" aria-controls="collapse5">
-                <h3 class="mb-0 mt-3 red-text">
+                <h3 class="mb-0 mt-3 ">
                   You're the greatest accordion! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
                 </h3>
               </a>
@@ -172,7 +172,7 @@
             <div class="card-header" role="tab" id="heading6">
               <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse6"
                 aria-expanded="false" aria-controls="collapse6">
-                <h3 class="mb-0 mt-3 red-text">
+                <h3 class="mb-0 mt-3 ">
                   Thank you my dear! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
                 </h3>
               </a>
