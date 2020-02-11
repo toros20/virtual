@@ -188,6 +188,60 @@
                                   <td>2</td>
                                   <td>Ingresado</td>
                                 </tr>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
                               </tbody>
                             </table>
                         </div>
