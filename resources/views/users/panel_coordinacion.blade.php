@@ -72,6 +72,7 @@
           </div>
           <ul class="nav navbar-nav nav-flex-icons ml-auto">
             
+             
             <li class="nav-item">
               <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> Bienvenido {{ $user->name }}</span></a>
             </li>
@@ -97,203 +98,101 @@
         <!--row-->
         <div class="row"> 
 
+            {{-- variables para controlar el cambio de color en las tarjetas --}}
+            @php ($course = $asignaciones[0]->course_id)
+            @php ($con = 1)
 
-          <!-- Accordion card -->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="heading4">
-              <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
-                aria-controls="collapse4">
-                <h3 class="mb-0 mt-3">
-                  Séptimo Grado Sección U <i class="fas fa-angle-down rotate-icon fa-2x"></i>
-                </h3>
-              </a>
+            @foreach ($asignaciones as $asignacion)
+            
+            <?php
+              //obtenemos el id de la primera clase asignada a este curso
+              $clase = DB::table('clasecourses')->where('course_id', $asignacion->course_id)->first();
+            ?>
+            <!--Card column-->
+            <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
+        
+                    <!-- Card -->
+                    <div class="card gradient-card">
+                
+                        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
+                
+                            <!-- Content -->
+                                {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
+                                 @if ($course != $asignacion->course_id)
+                                    @php ($con += 1 ) 
+                                      @if ($con>4)
+                                       @php ($con = 1)                   
+                                      @endif
+                                    @php ($course = $asignacion->course_id ) 
+                                @endif
+                                @if ($con == 1)<div class="text-white d-flex h-100 mask blue-gradient-rgba">        
+                                @endif
+                                @if ($con == 2)<div class="text-white d-flex h-100 mask peach-gradient-rgba">                             
+                                @endif
+                                @if ($con == 3)<div class="text-white d-flex h-100 mask aqua-gradient-rgba">                             
+                                @endif
+                                @if ($con == 4)<div class="text-white d-flex h-100 mask purple-gradient-rgba">                             
+                                @endif 
+                            
+                                <div class="first-content align-self-center p-3">
+                                <h3 class="card-title"> {{$asignacion->course}} - {{$asignacion->section }} </h3>
+                                <p class="lead mb-0">Opciones</p>
+                                </div>
+                                <div class="second-content align-self-center mx-auto text-center">
+                                <i class="fa fa-money fa-3x"></i>
+                                </div>
+                            </div>
+                        
+                
+                        </div>
+                        <div class="card-body card-body-cascade ">
+                                        
+                            <ul class="list-group">
+                                   
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                            <li class="list-group-item">
+                                                <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
+                                            </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                            <li class="list-group-item">
+                                                <div class="md-v-line"></div>
+                                                 <i class="fas fa-user mr-5"></i>Acumulativos
+                                                 <a href=""><div class="list-group-item">
+                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,1])}}" style="width:70px;" class="btn btn-sm btn-primary"> I P </button >
+                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> II P</button >
+                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">III P</button >
+                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button >
+                                                  </div>
+                                                </a>
+                                            </li>
+                                    </a>
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas
+                                        </li>
+                                    </a>
+                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
+                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('actas/{course_id}/{section}/{parcial}', [$asignacion->course_id,$asignacion->section,1])}}"> 
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>ACTAS
+                                        </li>
+                                     </a>
+                            </ul> 
+                        </div>
+                    </div>
+    
             </div>
+            <!-- Card -->
+            @endforeach
+        </div><!--row-->
 
-            <!-- Card body -->
-            <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4"
-              data-parent="#accordionEx194">
-              <div class="card-body pt-0">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Asignatura</th>
-                        <th scope="col">Docente</th>
-                        <th scope="col">Acumulativos</th>
-                        <th scope="col">Archivos</th>
-                        <th scope="col">Videos</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Español</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Ingles</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Civica</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-          </div>
-          <!-- Accordion card -->
-              
-          <!--Accordion wrapper-->
-          <div class="accordion md-accordion accordion-3 z-depth-1-half m-3" id="accordionEx194" role="tablist"
-            aria-multiselectable="true">
-
-            <h2 class="text-center text-uppercase py-4 px-3">Gestión Académica</h2>
-
-            <hr class="mb-0">
-
-          <!-- Accordion card -->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="heading4">
-              <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
-                aria-controls="collapse4">
-                <h3 class="mb-0 mt-3">
-                  Séptimo Grado Sección U <i class="fas fa-angle-down rotate-icon fa-2x"></i>
-                </h3>
-              </a>
-            </div>
-
-            <!-- Card body -->
-            <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4"
-              data-parent="#accordionEx194">
-              <div class="card-body pt-0">
-                  <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Asignatura</th>
-                        <th scope="col">Docente</th>
-                        <th scope="col">Acumulativos</th>
-                        <th scope="col">Archivos</th>
-                        <th scope="col">Videos</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Español</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Ingles</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Civica</td>
-                        <td>Lic. Amaya</td>
-                        <td>30/50</td>
-                        <td>2</td>
-                        <td>2</td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </div>
-          </div>
-          <!-- Accordion card -->
-
-          <!-- Accordion card -->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="heading5">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5"
-                aria-expanded="false" aria-controls="collapse5">
-                <h3 class="mb-0 mt-3 ">
-                  You're the greatest accordion! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
-                </h3>
-              </a>
-            </div>
-
-            <!-- Card body -->
-            <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5"
-              data-parent="#accordionEx194">
-              <div class="card-body pt-0">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Accordion card -->
-
-          <!-- Accordion card -->
-          <div class="card">
-
-            <!-- Card header -->
-            <div class="card-header" role="tab" id="heading6">
-              <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse6"
-                aria-expanded="false" aria-controls="collapse6">
-                <h3 class="mb-0 mt-3 ">
-                  Thank you my dear! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
-                </h3>
-              </a>
-            </div>
-
-            <!-- Card body -->
-            <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6"
-              data-parent="#accordionEx194">
-              <div class="card-body pt-0">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS.</p>
-              </div>
-            </div>
-          </div>
-          <!-- Accordion card -->
-        </div>
-        <!--/.Accordion wrapper-->
-
-      </div><!--row-->
-
-    </main>
-      
-      
-      <!--Main Layout-->
-      <br><br>
+     </main>
+ <!--Main Layout-->
+<br><br>
    
+
+
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="{{ URL::asset('js/jquery-3.3.1.min.js')}}"></script>
