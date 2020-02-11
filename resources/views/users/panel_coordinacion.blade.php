@@ -98,16 +98,10 @@
         <div class="row"> 
               
           <!--Accordion wrapper-->
-          <div class="accordion md-accordion accordion-3 z-depth-1-half m-5" id="accordionEx194" role="tablist"
+          <div class="accordion md-accordion accordion-3 z-depth-1-half m-3" id="accordionEx194" role="tablist"
             aria-multiselectable="true">
 
-            <ul class="list-unstyled d-flex justify-content-center pt-5 red-text">
-              <li><i class="fas fa-anchor mr-3 fa-2x" aria-hidden="true"></i></li>
-              <li><i class="far fa-life-ring mr-3 fa-2x" aria-hidden="true"></i></li>
-              <li><i class="far fa-star fa-2x" aria-hidden="true"></i></li>
-            </ul>
-
-            <h2 class="text-center text-uppercase red-text py-4 px-3">Hello my friends, I am the nicest accordion!</h2>
+            <h2 class="text-center text-uppercase red-text py-4 px-3">Gestión Académica</h2>
 
             <hr class="mb-0">
 
