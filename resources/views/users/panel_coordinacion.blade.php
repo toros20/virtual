@@ -97,183 +97,111 @@
         <!--row-->
         <div class="row"> 
               
-      <!--Accordion wrapper-->
-      <div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist"
-        aria-multiselectable="true">
+          <!--Accordion wrapper-->
+    <div class="accordion md-accordion accordion-3 z-depth-1-half" id="accordionEx194" role="tablist"
+      aria-multiselectable="true">
 
-        <!-- Accordion card -->
-        <div class="card">
+      <ul class="list-unstyled d-flex justify-content-center pt-5 red-text">
+        <li><i class="fas fa-anchor mr-3 fa-2x" aria-hidden="true"></i></li>
+        <li><i class="far fa-life-ring mr-3 fa-2x" aria-hidden="true"></i></li>
+        <li><i class="far fa-star fa-2x" aria-hidden="true"></i></li>
+      </ul>
 
-          <!-- Card header -->
-          <div class="card-header" role="tab" id="headingUnfiled" class="collapse show">
+      <h2 class="text-center text-uppercase red-text py-4 px-3">Hello my friends, I am the nicest accordion!</h2>
 
-            <!--Options-->
-            <div class="dropdown float-left">
-              <button class="btn btn-info btn-sm m-0 mr-3 p-2 dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="false"><i class="fas fa-pencil-alt"></i>
-              </button>
-              <div class="dropdown-menu dropdown-info">
-                <a class="dropdown-item" href="#">Add new condition</a>
-                <a class="dropdown-item" href="#">Rename folder</a>
-                <a class="dropdown-item" href="#">Delete folder</a>
-              </div>
-            </div>
+      <hr class="mb-0">
 
-            <!-- Heading -->
-            <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse79" aria-expanded="true"
-              aria-controls="collapse79">
-              <h5 class="mt-1 mb-0">
-                <span>Folder 1</span>
-                <i class="fas fa-angle-down rotate-icon"></i>
-              </h5>
-            </a>
+    <!-- Accordion card -->
+    <div class="card">
 
-          </div>
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="heading4">
+        <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
+          aria-controls="collapse4">
+          <h3 class="mb-0 mt-3 red-text">
+            How awesome accordion I am? <i class="fas fa-angle-down rotate-icon fa-2x"></i>
+          </h3>
+        </a>
+      </div>
 
-          <!-- Card body -->
-          <div id="collapseUnfiled" class="collapse" role="tabpanel" aria-labelledby="headingUnfiled"
-            data-parent="#accordionEx78">
-            <div class="card-body">
-
-              <!--Top Table UI-->
-              <div class="table-ui p-2 mb-3 mx-3 mb-4">
-
-                <!--Grid row-->
-                <div class="row">
-
-                  <!--Grid column-->
-                  <div class="col-xl-4 col-lg-6 col-md-12">
-
-                    <!--Name-->
-                    <select class="mdb-select colorful-select dropdown-info mx-2">
-                      <option value="" disabled selected>Bulk actions</option>
-                      <option value="1">Delete</option>
-                      <option value="2">Change folder</option>
-                    </select>
-
-                  </div>
-                  <!--Grid column-->
-
-                  <!--Grid column-->
-                  <div class="col-xl-4 col-lg-6 col-md-6">
-
-                    <!--Blue select-->
-                    <select class="mdb-select colorful-select dropdown-info mx-2">
-                      <option value="" disabled>Show only</option>
-                      <option value="1" selected>All <span> (2000)</span></option>
-                      <option value="2">Clicks <span> (200)</span></option>
-                      <option value="3">Page <span> (1800)</span></option>
-                      <option value="4">Scroll <span> (200)</span></option>
-                      <option value="5">Forms <span> (50)</span></option>
-                      <option value="6">Time <span> (50)</span></option>
-                      <option value="7">UTM <span> (50)</span></option>
-                    </select>
-                    <!--/Blue select-->
-
-                  </div>
-                  <!--Grid column-->
-
-                  <!--Grid column-->
-                  <div class="col-xl-4 col-lg-6 col-md-6">
-
-                    <!--Blue select-->
-                    <select class="mdb-select colorful-select dropdown-info mx-2">
-                      <option value="" disabled selected>Filter</option>
-                      <option value="1">All <span> (100)</span></option>
-                      <option value="1">Active <span> (2000)</span></option>
-                      <option value="2">Inactive <span> (1000)</span></option>
-                    </select>
-                    <!--/Blue select-->
-
-                  </div>
-                  <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-              </div>
-              <!--Top Table UI-->
-
-              <!-- Table responsive wrapper -->
-              <div class="table-responsive mx-3">
-                <!--Table-->
-                <table class="table table-hover mb-0">
-
-                  <!--Table head-->
-                  <thead>
-                    <tr>
-                      <th>
-                        <input class="form-check-input" type="checkbox" id="checkbox">
-                        <label for="checkbox" class="mr-2 label-table"></label>
-                      </th>
-                      <th class="th-lg"><a>Name <i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg"><a>Condition<i class="fas fa-sort ml-1"></i></a></th>
-                      <th class="th-lg"><a>Last edited<i class="fas fa-sort ml-1"></i></a></th>
-                      <th></th>
-                    </tr>
-                  </thead>
-                  <!--Table head-->
-
-                  <!--Table body-->
-                  <tbody>
-                    <tr>
-                      <th scope="row">
-                        <input class="form-check-input" type="checkbox" id="checkbox1">
-                        <label for="checkbox1" class="label-table"></label>
-                      </th>
-                      <td>Test subscription</td>
-                      <td>Scroll % is equal or greater than <strong>80</strong></td>
-                      <td>12.06.2017</td>
-                      <td>
-                        <a><i class="fas fa-info mx-1" data-toggle="tooltip" data-placement="top"
-                            title="Tooltip on top"></i></a>
-                        <a><i class="fas fa-pen-square mx-1"></i></a>
-                        <a><i class="fas fa-times mx-1"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <input class="form-check-input" type="checkbox" id="checkbox2">
-                        <label for="checkbox2" class="label-table"></label>
-                      </th>
-                      <td>Product Hunt Visitor</td>
-                      <td>Scroll % is equal or greater than <strong>80</strong></td>
-                      <td>13.06.2017</td>
-                      <td>
-                        <a><i class="fas fa-info mx-1" data-toggle="tooltip" data-placement="top"
-                            title="Tooltip on top"></i></a>
-                        <a><i class="fas fa-pen-square mx-1"></i></a>
-                        <a><i class="fas fa-times mx-1"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <th scope="row">
-                        <input class="form-check-input" type="checkbox" id="checkbox3">
-                        <label for="checkbox3" class="label-table"></label>
-                      </th>
-                      <td>Test subscription</td>
-                      <td>Scroll % is equal or greater than <strong>80</strong></td>
-                      <td>12.06.2017</td>
-                      <td>
-                        <a><i class="fas fa-info mx-1" data-toggle="tooltip" data-placement="top"
-                            title="Tooltip on top"></i></a>
-                        <a><i class="fas fa-pen-square mx-1"></i></a>
-                        <a><i class="fas fa-times mx-1"></i></a>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <!--Table body-->
-                </table>
-                <!--Table-->
-              </div>
-              <!-- Table responsive wrapper -->
-
-            </div>
-          </div>
+      <!-- Card body -->
+      <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4"
+        data-parent="#accordionEx194">
+        <div class="card-body pt-0">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf moon officia aute,
+            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+            3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+            accusamus labore sustainable VHS.</p>
         </div>
-        <!-- Accordion card -->
+      </div>
+    </div>
+    <!-- Accordion card -->
 
-      </div><!--/.Accordion wrapper-->
+    <!-- Accordion card -->
+    <div class="card">
+
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="heading5">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse5"
+          aria-expanded="false" aria-controls="collapse5">
+          <h3 class="mb-0 mt-3 red-text">
+            You're the greatest accordion! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
+          </h3>
+        </a>
+      </div>
+
+      <!-- Card body -->
+      <div id="collapse5" class="collapse" role="tabpanel" aria-labelledby="heading5"
+        data-parent="#accordionEx194">
+        <div class="card-body pt-0">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf moon officia aute,
+            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+            3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+            accusamus labore sustainable VHS.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Accordion card -->
+
+    <!-- Accordion card -->
+    <div class="card">
+
+      <!-- Card header -->
+      <div class="card-header" role="tab" id="heading6">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx194" href="#collapse6"
+          aria-expanded="false" aria-controls="collapse6">
+          <h3 class="mb-0 mt-3 red-text">
+            Thank you my dear! <i class="fas fa-angle-down rotate-icon fa-2x"></i>
+          </h3>
+        </a>
+      </div>
+
+      <!-- Card body -->
+      <div id="collapse6" class="collapse" role="tabpanel" aria-labelledby="heading6"
+        data-parent="#accordionEx194">
+        <div class="card-body pt-0">
+          <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+            wolf moon officia aute,
+            non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
+            3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
+            shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
+            sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
+            farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
+            accusamus labore sustainable VHS.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Accordion card -->
+  </div>
+  <!--/.Accordion wrapper-->
 
       </div><!--row-->
 
