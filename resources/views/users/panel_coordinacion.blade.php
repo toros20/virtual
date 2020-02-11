@@ -127,6 +127,7 @@
                       <tr>
                         <th scope="col">#</th>
                         <th scope="col">Asignatura</th>
+                        <th scope="col">Docente</th>
                         <th scope="col">Acumulativos</th>
                         <th scope="col">Archivos</th>
                         <th scope="col">Videos</th>
@@ -136,6 +137,7 @@
                       <tr>
                         <th scope="row">1</th>
                         <td>Español</td>
+                        <td>Lic. Amaya</td>
                         <td>30/50</td>
                         <td>2</td>
                         <td>2</td>
@@ -143,6 +145,7 @@
                       <tr>
                         <th scope="row">2</th>
                         <td>Ingles</td>
+                        <td>Lic. Amaya</td>
                         <td>30/50</td>
                         <td>2</td>
                         <td>2</td>
@@ -150,6 +153,7 @@
                       <tr>
                         <th scope="row">3</th>
                         <td>Civica</td>
+                        <td>Lic. Amaya</td>
                         <td>30/50</td>
                         <td>2</td>
                         <td>2</td>
