@@ -112,8 +112,8 @@
             <div class="card-header" role="tab" id="heading4">
               <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
                 aria-controls="collapse4">
-                <h3 class="mb-0 mt-3 red-text">
-                  How awesome accordion I am? <i class="fas fa-angle-down rotate-icon fa-2x"></i>
+                <h3 class="mb-0 mt-3">
+                  Séptimo Grado Sección U <i class="fas fa-angle-down rotate-icon fa-2x"></i>
                 </h3>
               </a>
             </div>
@@ -122,15 +122,40 @@
             <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4"
               data-parent="#accordionEx194">
               <div class="card-body pt-0">
-                <p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia aute,
-                  non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch
-                  3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda
-                  shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt
-                  sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer
-                  farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them
-                  accusamus labore sustainable VHS.</p>
-              </div>
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Acumulativos</th>
+                        <th scope="col">Archivos</th>
+                        <th scope="col">Videos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Español</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Ingles</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Civica</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
             </div>
           </div>
           <!-- Accordion card -->
