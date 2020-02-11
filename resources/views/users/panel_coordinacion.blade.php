@@ -103,11 +103,12 @@
             @php ($con = 1)
 
             @foreach ($asignaciones as $asignacion)
-            
-            <?php
-              //obtenemos el id de la primera clase asignada a este curso
-              $clase = DB::table('clasecourses')->where('course_id', $asignacion->course_id)->first();
-            ?>
+                <?php
+                      //obtenemos la primera clase de cada curso
+                      $clase=DB::table('clasecourses')->where('course_id',$asignacion->course_id)->first();
+                      $clase_id = $clase->id;
+                ?>
+              
             <!--Card column-->
             <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
         
@@ -148,34 +149,41 @@
                         <div class="card-body card-body-cascade ">
                                         
                             <ul class="list-group">
-                                   
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                            <li class="list-group-item">
-                                                <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
-                                            </li>
-                                    </a>
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                            <li class="list-group-item">
-                                                <div class="md-v-line"></div>
-                                                 <i class="fas fa-user mr-5"></i>Acumulativos
-                                                 <a href=""><div class="list-group-item">
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,1])}}" style="width:70px;" class="btn btn-sm btn-primary"> I P </button >
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> II P</button >
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">III P</button >
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button >
-                                                  </div>
-                                                </a>
-                                            </li>
-                                    </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
                                         <li class="list-group-item">
                                             <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas
                                         </li>
                                     </a>
+                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} "> --}}
+                                      <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                          <li class="list-group-item">
+                                              <div class="md-v-line"></div>
+                                               <i class="fas fa-user mr-5"></i>Acumulativos
+                                               <a href=""><div class="list-group-item">
+                                                                             
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,1])}}" style="width:70px;" class="btn btn-sm btn-primary">1 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">2 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">3 P </a >
+                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">4 P</a >
+                                                </div>
+                                              </a>
+                                          </li>
+                                      </a>
+                                   {{--  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/documentos/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="far fa-file-pdf mr-5"></i>Documentos
+                                        </li>
+                                    </a> --}}
+                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="#"> 
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen 
+                                        </li>
+                                    </a>
                                     {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
                                      <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('actas/{course_id}/{section}/{parcial}', [$asignacion->course_id,$asignacion->section,1])}}"> 
                                         <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>ACTAS
+                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>ACTAS (IP)
                                         </li>
                                      </a>
                             </ul> 
