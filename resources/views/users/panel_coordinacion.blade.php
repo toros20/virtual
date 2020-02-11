@@ -158,6 +158,9 @@
                                   <th scope="col">Archivos</th>
                                   <th scope="col">Videos</th>
                                   <th scope="col">Examen</th>
+                                  <th scope="col"># Apro</th>
+                                  <th scope="col"># Repro</th>
+                                  
                                 </tr>
                               </thead>
                               <tbody>
@@ -169,6 +172,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
@@ -178,6 +183,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
@@ -187,6 +194,41 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                </tr>
+                               <tr>
+                                  <th scope="row">1</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">1</th>
@@ -196,6 +238,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">2</th>
@@ -205,6 +249,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
+                                  <td>4</td>
+                                  <td>2</td>
                                 </tr>
                                 <tr>
                                   <th scope="row">3</th>
@@ -214,33 +260,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                   <td>Ingresado</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>Lic. Amaya</td>
-                                  <td>Computación</td>
-                                  <td>30/50</td>
                                   <td>4</td>
                                   <td>2</td>
-                                  <td>Ingresado</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>Lic. Amaya</td>
-                                  <td>Computación</td>
-                                  <td>30/50</td>
-                                  <td>4</td>
-                                  <td>2</td>
-                                  <td>Ingresado</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">3</th>
-                                   <td>Lic. Amaya</td>
-                                  <td>Computación</td>
-                                  <td>30/50</td>
-                                  <td>4</td>
-                                  <td>2</td>
-                                  <td>Ingresado</td>
                                 </tr>
                               </tbody>
                             </table>
