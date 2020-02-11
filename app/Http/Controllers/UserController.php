@@ -871,12 +871,13 @@ class UserController extends Controller
      $user = User::findOrFail($user_id);
 
      $asignaciones = DB::table('sectioncourses')
-     ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
-     ->Where('courses.modality_id','=',2)
-     ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
-     ->orderBy('course_id','ASC')
-     ->orderBy('section','ASC')
-     ->get();
+            ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+            ->Where('courses.modality_id','=',2)
+            ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
+            ->orderBy('course_id','ASC')
+            ->orderBy('section','ASC')
+            ->get();
+            dd($asignaciones);
 
      return view('users/panel_coordinacion',compact('asignaciones','user'));
 
