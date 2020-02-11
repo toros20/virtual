@@ -96,6 +96,66 @@
       <div class="container-fluid">
         <!--row-->
         <div class="row"> 
+
+
+          <!-- Accordion card -->
+          <div class="card">
+
+            <!-- Card header -->
+            <div class="card-header" role="tab" id="heading4">
+              <a data-toggle="collapse" data-parent="#accordionEx194" href="#collapse4" aria-expanded="true"
+                aria-controls="collapse4">
+                <h3 class="mb-0 mt-3">
+                  Séptimo Grado Sección U <i class="fas fa-angle-down rotate-icon fa-2x"></i>
+                </h3>
+              </a>
+            </div>
+
+            <!-- Card body -->
+            <div id="collapse4" class="collapse show" role="tabpanel" aria-labelledby="heading4"
+              data-parent="#accordionEx194">
+              <div class="card-body pt-0">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Asignatura</th>
+                        <th scope="col">Docente</th>
+                        <th scope="col">Acumulativos</th>
+                        <th scope="col">Archivos</th>
+                        <th scope="col">Videos</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Español</td>
+                        <td>Lic. Amaya</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Ingles</td>
+                        <td>Lic. Amaya</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Civica</td>
+                        <td>Lic. Amaya</td>
+                        <td>30/50</td>
+                        <td>2</td>
+                        <td>2</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          <!-- Accordion card -->
               
           <!--Accordion wrapper-->
           <div class="accordion md-accordion accordion-3 z-depth-1-half m-3" id="accordionEx194" role="tablist"
