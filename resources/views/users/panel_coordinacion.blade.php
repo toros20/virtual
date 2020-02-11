@@ -148,45 +148,48 @@
                         </div>
                         <div class="card-body card-body-cascade ">
                                         
-                            <ul class="list-group">
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas
-                                        </li>
-                                    </a>
-                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} "> --}}
-                                      <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                          <li class="list-group-item">
-                                              <div class="md-v-line"></div>
-                                               <i class="fas fa-user mr-5"></i>Acumulativos
-                                               <a href=""><div class="list-group-item">
-                                                                             
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,1])}}" style="width:70px;" class="btn btn-sm btn-primary">1 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">2 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">3 P </a >
-                                                 <a href="{{ $url = route('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}',[$user->id,$asignacion->course_id,$asignacion->section,$clase_id,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">4 P</a >
-                                                </div>
-                                              </a>
-                                          </li>
-                                      </a>
-                                   {{--  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/documentos/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="far fa-file-pdf mr-5"></i>Documentos
-                                        </li>
-                                    </a> --}}
-                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="#"> 
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen 
-                                        </li>
-                                    </a>
-                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('actas/{course_id}/{section}/{parcial}', [$asignacion->course_id,$asignacion->section,1])}}"> 
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>ACTAS (IP)
-                                        </li>
-                                     </a>
-                            </ul> 
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th scope="col">#</th>
+                                  <th scope="col">Docente</th>
+                                  <th scope="col">Asignatura</th>
+                                  <th scope="col">Acumulativo</th>
+                                  <th scope="col">Archivos</th>
+                                  <th scope="col">Videos</th>
+                                  <th scope="col">Examen</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <th scope="row">1</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">2</th>
+                                  <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                                <tr>
+                                  <th scope="row">3</th>
+                                   <td>Lic. Amaya</td>
+                                  <td>Computación</td>
+                                  <td>30/50</td>
+                                  <td>4</td>
+                                  <td>2</td>
+                                  <td>Ingresado</td>
+                                </tr>
+                              </tbody>
+                            </table>
                         </div>
                     </div>
     
