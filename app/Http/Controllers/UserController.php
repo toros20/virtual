@@ -877,9 +877,10 @@ class UserController extends Controller
             ->orderBy('course_id','ASC')
             ->orderBy('section','ASC')
             ->get();
-            dd($asignaciones);
 
-     return view('users/panel_coordinacion',compact('asignaciones','user'));
+     $docentes =  User::where('role','teacher')->get();
+            
+     return view('users/panel_coordinacion',compact('asignaciones','user','docentes'));
 
     }
 
