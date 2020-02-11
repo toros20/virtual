@@ -120,10 +120,10 @@
             </div>
 
             <!-- Heading -->
-            <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapseUnfiled" aria-expanded="true"
-              aria-controls="collapseUnfiled">
+            <a data-toggle="collapse" data-parent="#accordionEx78" href="#collapse79" aria-expanded="true"
+              aria-controls="collapse79">
               <h5 class="mt-1 mb-0">
-                <span>Unfiled items</span>
+                <span>Folder 1</span>
                 <i class="fas fa-angle-down rotate-icon"></i>
               </h5>
             </a>
