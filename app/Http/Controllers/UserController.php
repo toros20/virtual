@@ -208,16 +208,15 @@ class UserController extends Controller
         }*/
 
         $users_id = User::where([
-            ['rol', '!=', 'student']
+            ['role', '!=', 'maximo']
         ])->Select('id')->get();
 
         foreach ($users_id as $user) {
-
             DB::table('msj_'.$user->id)->truncate();
         }
        
         
-        return "MENSAJES LISTO" ;
+        return "MENSAJES LISTO TODOS" ;
         
     }
 
