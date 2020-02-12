@@ -888,7 +888,7 @@ class UserController extends Controller
             ->get();
 
      $docentes =  User::where('role','teacher')
-            ->Where('courses.modality_id','=',3)
+            
             ->Select('users.name','users.lastname','users.id','users.cuenta')
             ->get();
             
