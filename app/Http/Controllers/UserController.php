@@ -882,7 +882,7 @@ class UserController extends Controller
      $asignaciones = DB::table('sectioncourses')
             ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
             ->Where('courses.modality_id','=',$modalidad)
-            ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
+            ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section','courses.modality_id')
             ->orderBy('course_id','ASC')
             ->orderBy('section','ASC')
             ->get();
