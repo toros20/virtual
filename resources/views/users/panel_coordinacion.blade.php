@@ -179,7 +179,7 @@
                               @foreach ($asignaciones as $asignacion)
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td>Lic. {{$asignacion->name}} -  {{$asignacion->lastname}}</td>
+                                  <td>Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
                                   <td>{{$asignacion->short_name}}</td>
                                   <td>30/50</td>
                                   <td>0</td>
