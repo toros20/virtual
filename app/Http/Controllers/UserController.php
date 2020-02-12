@@ -866,9 +866,13 @@ class UserController extends Controller
         }
 
     /*************************SEGURIDAD*******************/
-
-     $modalidad = 2; // secundaria
-     $parcial = 2;
+    
+    //este es el id de los usuarios coordinadores
+    if ($user_id == 1473) {$modalidad = 3; /* Secundaria*/ }
+    if ($user_id == 1474) {$modalidad = 2; /* Primaria*/ }
+    if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica*/ }
+     
+    $parcial = 1;
 
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
