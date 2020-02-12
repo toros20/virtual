@@ -208,7 +208,7 @@
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
                                               ->count();
-                                             
+                                     dd($videos)   ;     
                                     $total_videos=$files[0];
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
