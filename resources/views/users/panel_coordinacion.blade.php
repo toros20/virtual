@@ -208,8 +208,8 @@
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
                                               ->count();
-                                     dd($videos)   ;     
-                                    $total_videos=$files[0];
+                                        
+                                    $total_videos=$videos;
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
                                     $files= DB::table('files')
@@ -221,7 +221,7 @@
                                                       ])
                                               ->count();
                                              
-                                     $total_files=$files[0];
+                                     $total_files=$files;
 
                                 ?>
                                 <tr>
