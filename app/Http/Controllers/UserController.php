@@ -867,8 +867,8 @@ class UserController extends Controller
 
     /*************************SEGURIDAD*******************/
 
-     $modalidad = 3; // secundaria
-     $parcial = 1;
+     $modalidad = 1; // secundaria
+     $parcial = 2;
 
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
