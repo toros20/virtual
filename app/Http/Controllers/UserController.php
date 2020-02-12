@@ -872,13 +872,6 @@ class UserController extends Controller
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
 
-     /*$asignaciones =DB::table('assignments') 
-                    ->join('users', 'assignments.user_id', '=', 'users.id')
-                    ->where ([
-                        ['users.role', '=', 'teacher'],
-                        ['enrollments.section', '=', $section],
-                    ])*/
-
      $asignaciones = DB::table('sectioncourses')
             ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
             ->Where('modality_id','=',$modalidad)
@@ -887,9 +880,14 @@ class UserController extends Controller
             ->orderBy('section','ASC')
             ->get();
 
-     $docentes =  User::where('role','teacher')
-            
-            ->Select('users.name','users.lastname','users.id','users.cuenta')
+     $docentes =   DB::table('users')
+            ->join('assignments', 'users.id', '=', 'assignments.user_id')
+            ->join('courses', 'assignments.course_id', '=', 'courses.id')
+            ->where ([
+                ['users.role', '=', 'teacher'],
+                ['courses.modality_id', '=', $modalidad],
+            ])
+            ->Select('users.name','users.lastname','users.id')
             ->get();
             
      return view('users/panel_coordinacion',compact('asignaciones','user','docentes'));
