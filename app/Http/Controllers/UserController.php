@@ -888,6 +888,7 @@ class UserController extends Controller
                 ['courses.modality_id', '=', $modalidad],
             ])
             ->Select('users.name','users.lastname','users.id')
+            ->distinct()
             ->get();
             
      return view('users/panel_coordinacion',compact('asignaciones','user','docentes'));
