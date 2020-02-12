@@ -160,10 +160,27 @@
                                 </tr>
                               </thead>
                               <tbody>
+                               <?php
+                            
+                                  $asignaciones =   DB::table('users')
+                                        ->join('assignments', 'users.id', '=', 'assignments.user_id')
+                                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                                        ->where ([
+                                            ['users.role', '=', 'teacher'],
+                                            ['assignments.course_id', '=', $seccion->course_id],
+                                            ['assignments.section', '=', $seccion->section ]                        
+                                        ])
+                                        ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id',)
+                                        ->distinct()
+                                        ->get(); 
+                                        
+                              ?>
+
+                              @foreach ($asignaciones as $asignacion)
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td>{{$seccion->course}}</td>
-                                  <td>Computación</td>
+                                  <td>Lic. {{$asignacion->name}} -  {{$asignacion->name}}</td>
+                                  <td>{{$asignacion->short_name}}</td>
                                   <td>30/50</td>
                                   <td>4</td>
                                   <td>2</td>
@@ -171,6 +188,8 @@
                                   <td>4</td>
                                   <td>2</td>
                                 </tr>
+                                @endforeach {{-- fin del ciclo para cada asignacion --}}
+
                                </tbody>
                             </table>
                         </div>
