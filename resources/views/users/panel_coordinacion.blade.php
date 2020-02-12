@@ -203,7 +203,14 @@
                                   <th scope="row">1</th>
                                   <td>Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
                                   <td>{{$asignacion->short_name}}</td>
-                                  <td>{{$total_evaluado}}/{{$total_clase}}</td>
+
+                                  <?php 
+                                    if($total_clase == 0){?>
+                                      <td style="color:red">{{$total_evaluado}}/{{$total_clase}}</td>
+                                  <?php } else{?>
+                                      <td >{{$total_evaluado}}/{{$total_clase}}</td>
+                                  <?php }?>
+                                    
                                   <td>0</td>
                                   <td>0</td>
                                   <td>Pendiente</td>
