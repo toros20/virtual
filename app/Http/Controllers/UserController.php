@@ -197,7 +197,7 @@ class UserController extends Controller
         return "LISTO";*/
 
         //codigo para limpiar las tablas de mensajes
-        $mensajes = Enrollment::where([
+       /* $mensajes = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
@@ -205,10 +205,19 @@ class UserController extends Controller
         foreach ($mensajes as $mensaje) {
 
             DB::table('msj_'.$mensaje->user_id)->truncate();
+        }*/
+
+        $users_id = User::where([
+            ['rol', '!=', 'student']
+        ])->Select('id')->get();
+
+        foreach ($users_id as $user) {
+
+            DB::table('msj_'.$user->id)->truncate();
         }
        
         
-        return "MENSAJES LISTO";
+        return "MENSAJES LISTO" ;
         
     }
 
