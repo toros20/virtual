@@ -867,18 +867,30 @@ class UserController extends Controller
 
     /*************************SEGURIDAD*******************/
 
+     $modalidad = 3; // secundaria
+
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
 
+     /*$asignaciones =DB::table('assignments') 
+                    ->join('users', 'assignments.user_id', '=', 'users.id')
+                    ->where ([
+                        ['users.role', '=', 'teacher'],
+                        ['enrollments.section', '=', $section],
+                    ])*/
+
      $asignaciones = DB::table('sectioncourses')
             ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
-            ->Where('courses.modality_id','=',2)
+            ->Where('courses.modality_id','=',$modalidad)
             ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section')
             ->orderBy('course_id','ASC')
             ->orderBy('section','ASC')
             ->get();
 
-     $docentes =  User::where('role','teacher')->get();
+     $docentes =  User::where('role','teacher')
+            ->Where('courses.modality_id','=',3)
+            ->Select('users.name','users.lastname','users.id','users.cuenta')
+            ->get();
             
      return view('users/panel_coordinacion',compact('asignaciones','user','docentes'));
 
