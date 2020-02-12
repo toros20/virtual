@@ -208,7 +208,7 @@
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
                                               ->toSql()
-                                     dd($videos)  ; 
+                                     echo ($videos)  ; 
                                     $total_videos=$videos;
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
