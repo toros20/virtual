@@ -173,7 +173,7 @@ class UserController extends Controller
 
 
         //codigo para crear la table msj_ por cada user
-        /*for ($i=64; $i < 1437  ; $i++) { 
+        /*for ($i=1; $i < 1475  ; $i++) { 
           
             Schema::connection('mysql')->create( 'msj_'.$i, function($table) 
             {
@@ -195,6 +195,20 @@ class UserController extends Controller
         }
 
         return "LISTO";*/
+
+        //codigo para limpiar las tablas de mensajes
+        $mensajes = Enrollment::where([
+            ['course_id', '=', $course],
+            ['section', '=', $section],
+        ])->Select('user_id')->get();
+
+        foreach ($mensajes as $mensaje) {
+
+            DB::table('msj_'.$mensaje->user_id)->truncate();
+        }
+       
+        
+        return "MENSAJES LISTO";
         
     }
 
