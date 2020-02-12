@@ -177,11 +177,33 @@
                               ?>
 
                               @foreach ($asignaciones as $asignacion)
+                                <?php
+                                  $total_clase=0; 
+                                  $total_evaluado=0;
+                                  $tbl_task = 'task_'.$seccion->course_id.'_'.strtolower($seccion->section);
+                                  $resultados= DB::table($tbl_task)
+                                              ->where ([
+                                                          [$tbl_task.'.clase', '=', $asignacion->clase_id],
+                                                          [$tbl_task.'.parcial', '=', $parcial]
+                                                      ])
+                                              ->Select($tbl_task.'.valor',$tbl_task.'.evaluada')
+                                              ->get();
+
+                                    foreach ($resultados as $resultado) {
+                                        
+                                        $total_clase+= $resultado->valor;
+
+                                        if($resultado->evaluada == 1){
+                                            $total_evaluado+= $resultado->valor;
+                                        }                                       
+                                    }// fin del ciclo resultados
+
+                                ?>
                                 <tr>
                                   <th scope="row">1</th>
                                   <td>Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
                                   <td>{{$asignacion->short_name}}</td>
-                                  <td>30/50</td>
+                                  <td>{{$total_clase}}/{{$total_evaluado}}</td>
                                   <td>0</td>
                                   <td>0</td>
                                   <td>Pendiente</td>

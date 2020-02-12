@@ -868,6 +868,7 @@ class UserController extends Controller
     /*************************SEGURIDAD*******************/
 
      $modalidad = 3; // secundaria
+     $parcial = 1;
 
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
@@ -892,7 +893,7 @@ class UserController extends Controller
             ->distinct()
             ->get();
             
-     return view('users/panel_coordinacion',compact('secciones','user','docentes'));
+     return view('users/panel_coordinacion',compact('secciones','user','docentes','modalidad','parcial'));
 
     }
 
