@@ -161,13 +161,14 @@
                               </thead>
                               <tbody>
                                <?php
-                            
+                                  //OJO CON EL SEMESTRE
                                   $asignaciones =   DB::table('users')
                                         ->join('assignments', 'users.id', '=', 'assignments.user_id')
                                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                                         ->where ([
                                             ['users.role', '=', 'teacher'],
                                             ['assignments.course_id', '=', $seccion->course_id],
+                                             ['clases.semester_id', '<',2 ],
                                             ['assignments.section', '=', $seccion->section ]                        
                                         ])
                                         ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id')
@@ -207,10 +208,12 @@
                                   <?php 
                                     if($total_clase == 0){?>
                                       <td style="color:red">{{$total_evaluado}}/{{$total_clase}}</td>
-                                  <?php } else{?>
+                                  <?php } elseif($total_clase == $total_evaluado){?>
+                                      <td style="color:green">{{$total_evaluado}}/{{$total_clase}}</td>
+                                  <?php } else {?>
                                       <td >{{$total_evaluado}}/{{$total_clase}}</td>
-                                  <?php }?>
-                                    
+                                  <?php } ?>
+
                                   <td>0</td>
                                   <td>0</td>
                                   <td>Pendiente</td>
