@@ -209,7 +209,7 @@
                                                       ])
                                               ->count();
                                              
-                                    $total_videos=$files[0]->count;
+                                    $total_videos=$files[0];
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
                                     $files= DB::table('files')
@@ -221,7 +221,7 @@
                                                       ])
                                               ->count();
                                              
-                                     $total_files=$files[0]->count;
+                                     $total_files=$files[0];
 
                                 ?>
                                 <tr>
