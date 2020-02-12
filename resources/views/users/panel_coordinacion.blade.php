@@ -203,7 +203,7 @@
                                   <th scope="row">1</th>
                                   <td>Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
                                   <td>{{$asignacion->short_name}}</td>
-                                  <td>{{$total_clase}}/{{$total_evaluado}}</td>
+                                  <td>{{$total_evaluado}}/{{$total_clase}}</td>
                                   <td>0</td>
                                   <td>0</td>
                                   <td>Pendiente</td>
