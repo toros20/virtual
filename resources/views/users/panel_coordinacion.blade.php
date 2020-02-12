@@ -168,7 +168,7 @@
                                         ->where ([
                                             ['users.role', '=', 'teacher'],
                                             ['assignments.course_id', '=', $seccion->course_id],
-                                             ['clases.semester_id', '<',2 ],
+                                             ['clases.semester', '<',2 ],
                                             ['assignments.section', '=', $seccion->section ]                        
                                         ])
                                         ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id')
