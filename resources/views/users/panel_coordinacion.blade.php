@@ -207,7 +207,7 @@
                                                           ['videos'.'.clase_id', '=', $asignacion->clase_id],
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
-                                              ->toSql()
+                                              ->toSql();
                                      echo ($videos)  ; 
                                     $total_videos=$videos;
                                     // CONTEO DE ARCHIVOS
