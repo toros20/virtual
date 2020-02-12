@@ -170,7 +170,7 @@
                                             ['assignments.course_id', '=', $seccion->course_id],
                                             ['assignments.section', '=', $seccion->section ]                        
                                         ])
-                                        ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id',)
+                                        ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id')
                                         ->distinct()
                                         ->get(); 
                                         
