@@ -207,8 +207,8 @@
                                                           ['videos'.'.clase_id', '=', $asignacion->clase_id],
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
-                                              ->count();
-                                        
+                                              ->sql();
+                                     dd($videos)  ; 
                                     $total_videos=$videos;
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
