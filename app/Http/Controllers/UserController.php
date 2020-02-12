@@ -867,7 +867,7 @@ class UserController extends Controller
 
     /*************************SEGURIDAD*******************/
 
-     $modalidad = 1; // secundaria
+     $modalidad = 2; // secundaria
      $parcial = 2;
 
      //obtenemos los datos del docente
