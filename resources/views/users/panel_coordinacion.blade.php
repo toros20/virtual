@@ -207,8 +207,8 @@
                                                           ['videos'.'.clase_id', '=', $asignacion->clase_id],
                                                           ['videos'.'.parcial', '=', $parcial]
                                                       ])
-                                              ->count()
-                                              ->get();
+                                              ->count();
+                                             
                                     $total_videos=$files[0]->count;
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
@@ -219,8 +219,8 @@
                                                           ['files'.'.clase_id', '=', $asignacion->clase_id],
                                                           ['files'.'.parcial', '=', $parcial]
                                                       ])
-                                              ->count()
-                                              ->get();
+                                              ->count();
+                                             
                                      $total_files=$files[0]->count;
 
                                 ?>
