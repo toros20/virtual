@@ -872,7 +872,7 @@ class UserController extends Controller
      //obtenemos los datos del docente
      $user = User::findOrFail($user_id);
 
-     $asignaciones = DB::table('sectioncourses')
+     $secciones = DB::table('sectioncourses')
             ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
             ->Where('modality_id','=',$modalidad)
             ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section','courses.modality_id')
@@ -880,6 +880,7 @@ class UserController extends Controller
             ->orderBy('section','ASC')
             ->get();
 
+    //docentes para el menu de lado izquierdo
      $docentes =   DB::table('users')
             ->join('assignments', 'users.id', '=', 'assignments.user_id')
             ->join('courses', 'assignments.course_id', '=', 'courses.id')
@@ -891,7 +892,7 @@ class UserController extends Controller
             ->distinct()
             ->get();
             
-     return view('users/panel_coordinacion',compact('asignaciones','user','docentes'));
+     return view('users/panel_coordinacion',compact('secciones','user','docentes'));
 
     }
 

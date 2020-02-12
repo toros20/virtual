@@ -100,16 +100,11 @@
         <div class="row"> 
 
             {{-- variables para controlar el cambio de color en las tarjetas --}}
-            @php ($course = $asignaciones[0]->course_id)
+            @php ($course = $secciones[0]->course_id)
             @php ($con = 1)
 
-            @foreach ($asignaciones as $asignacion)
-                <?php
-                      //obtenemos la primera clase de cada curso
-                      $clase=DB::table('clasecourses')->where('course_id',$asignacion->course_id)->first();
-                      $clase_id = $clase->id;
-                ?>
-              
+            @foreach ($secciones as $seccion)
+                          
             <!--Card column-->
             <div class="col-md-6 col-sm-6 col-lg-6 mb-4">
         
@@ -120,12 +115,12 @@
                 
                             <!-- Content -->
                                 {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
-                                 @if ($course != $asignacion->course_id)
+                                 @if ($course != $seccion->course_id)
                                     @php ($con += 1 ) 
                                       @if ($con>4)
                                        @php ($con = 1)                   
                                       @endif
-                                    @php ($course = $asignacion->course_id ) 
+                                    @php ($course = $seccion->course_id ) 
                                 @endif
                                 @if ($con == 1)<div class="text-white d-flex h-100 mask blue-gradient-rgba">        
                                 @endif
@@ -137,7 +132,7 @@
                                 @endif 
                             
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title"> {{$asignacion->course}} - {{$asignacion->section }} </h3>
+                                <h3 class="card-title"> {{$seccion->course}} - {{$seccion->section }} </h3>
                                 <p class="lead mb-0">Gestión Académica</p>
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
@@ -167,7 +162,7 @@
                               <tbody>
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td>Lic. Amaya</td>
+                                  <td>{{$seccion->course}}</td>
                                   <td>Computación</td>
                                   <td>30/50</td>
                                   <td>4</td>
