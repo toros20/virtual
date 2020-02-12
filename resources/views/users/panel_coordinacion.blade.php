@@ -198,6 +198,30 @@
                                             $total_evaluado+= $resultado->valor;
                                         }                                       
                                     }// fin del ciclo resultados
+                                    // CONTEO DE VIDEOS
+                                    $total_videos=0;
+                                    $videos= DB::table('videos')
+                                              ->where ([
+                                                          ['videos'.'.course_id', '=',$seccion->course_id],
+                                                          ['videos'.'.section', '=',strtolower($seccion->section)],
+                                                          ['videos'.'.clase_id', '=', $asignacion->clase_id],
+                                                          ['videos'.'.parcial', '=', $parcial]
+                                                      ])
+                                              ->count()
+                                              ->get();
+                                    $total_videos=$files[0]->count;
+                                    // CONTEO DE ARCHIVOS
+                                    $total_files=0;
+                                    $files= DB::table('files')
+                                              ->where ([
+                                                          ['files'.'.course_id', '=',$seccion->course_id],
+                                                          ['files'.'.section', '=',strtolower($seccion->section)],
+                                                          ['files'.'.clase_id', '=', $asignacion->clase_id],
+                                                          ['files'.'.parcial', '=', $parcial]
+                                                      ])
+                                              ->count()
+                                              ->get();
+                                     $total_files=$files[0]->count;
 
                                 ?>
                                 <tr>
@@ -214,8 +238,8 @@
                                       <td >{{$total_evaluado}}/{{$total_clase}}</td>
                                   <?php } ?>
 
-                                  <td>0</td>
-                                  <td>0</td>
+                                  <td>{{$total_files}}</td>
+                                  <td>{{$total_videos}}</td>
                                   <td>Pendiente</td>
                                   <td>---</td>
                                   <td>---</td>
