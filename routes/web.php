@@ -75,7 +75,7 @@ Route::get('/users/tablas/{course_id}/{section}', 'UserController@tablas')->name
 //ruta para mostrar la seccion de boletas de calificaciones
 Route::get('/users/boletas/{course_id}/{section}', 'UserController@boletas')->name('users_boletas/{course_id}/{section}');
 //ruta para mostrar la lista de los alumnos por curs y seccion
-Route::get('/users/list_students/{course_id}/{section}', 'UserController@list_students')->name('list_students/{course_id}/{section}');
+Route::get('/users/list_students/{user_id}/{course_id}/{section}', 'UserController@list_students')->name('list_students/{user_id}/{course_id}/{section}');
 
 
 //ruta para mostrar la seccion del panel del administrador
