@@ -17,6 +17,8 @@
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Cuenta</th>
+                <th>Email</th>
+                <th>Email 2</th>
                 <th>Editar</th>
                 <th>Matricula</th>
                
@@ -32,6 +34,8 @@
                         {{$student->name}} </a></td>
                         <td> {{$student->lastname}}</td>
                         <td> {{$student->cuenta}}</td>
+                        <td> {{$student->email}}</td>
+                        <td> {{$student->email2}}</td>
                         <td> <a href=" {{route('users.edit',$student->id)}} ">
                             Editar </a>
                         </td>
