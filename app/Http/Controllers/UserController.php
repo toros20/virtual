@@ -309,9 +309,9 @@ class UserController extends Controller
             ->Select('users.name','users.lastname','users.id','users.cuenta')
             ->get();
             
+        $usuario = User::findOrFail($user_id);
 
-
-        return view('users.list_students',compact('students'));
+        return view('users.list_students',compact('students','usuario'));
     }
 
     public function teachers()
