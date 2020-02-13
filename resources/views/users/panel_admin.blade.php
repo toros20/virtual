@@ -157,12 +157,12 @@
                                     <a class="list-group-item list-group-item-action" style="color:black" href="#">
                                             <li class="list-group-item">
                                                 <div class="md-v-line"></div>
-                                                 <i class="fas fa-user mr-5"></i>Acumulativos
+                                                 <i class="fas fa-user mr-5"></i>Acumulativos33
                                                  <a href=""><div class="list-group-item">
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,1])}}" style="width:70px;" class="btn btn-sm btn-primary"> I P </button >
+                                                  {{--  <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,1])}}" style="width:70px;" class="btn btn-sm btn-primary"> I P </button >
                                                    <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,2])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> II P</button >
                                                    <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,3])}}" style="width:70px;" class="btn btn-sm btn-primary" href="">III P</button >
-                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button >
+                                                   <button onclick="{{ $url = route('users/acumulativos/{user_id}/{curso}/{section}/{clase}/{parcial}', [$user->id,{{$asignacion->course_id}},{{$asignacion->section}},$clase,4])}}" style="width:70px;" class="btn btn-sm btn-primary" href=""> IV P</button > --}}
                                                   </div>
                                                 </a>
                                             </li>
