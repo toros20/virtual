@@ -284,7 +284,7 @@ class UserController extends Controller
 
     }
 
-    public function list_students($course,$section,$user_id) {
+    public function list_students($user_id,$course,$section) {
 
          /*************************SEGURIDAD*******************/
             //control de seguridad
