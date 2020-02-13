@@ -306,7 +306,7 @@ class UserController extends Controller
                 ['enrollments.course_id', '=', $course],
                 ['enrollments.section', '=', $section]
             ])
-            ->Select('users.name','users.lastname','users.id','user.cuenta')
+            ->Select('users.name','users.lastname','users.id','users.cuenta')
             ->get();
             
 
