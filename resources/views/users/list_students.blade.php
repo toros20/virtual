@@ -35,7 +35,7 @@
                         <td> <a href=" {{route('users.edit',$student->id)}} ">
                             Editar </a>
                         </td>
-                        <td> <a href=" {{route('users.matricula',$student->id)}} ">
+                        <td> <a href=" {{route('users.edit',$student->id)}} ">
                             Transferir </a>
                         </td>
                            {{--  <form style="display:inline" method="POST" action=" {{route('users.destroy',$student->id)}} ">
