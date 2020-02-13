@@ -10,7 +10,7 @@
     <body>
 
         <h1>Listado de Estudiantes o <a href="{{route('users.students.create')}} ">crear nuevo estudiante</a></h1>
-        <h3><a href="{{route('panel_admin/{user_id}', $usuario->id)}} ">Volver al Panel</a></h3>
+        <h3><a href="{{route('users_panel_admin/{user_id}', $usuario->id)}} ">Volver al Panel</a></h3>
         <table>
             <thead>
             <tr>
