@@ -207,16 +207,17 @@ class UserController extends Controller
             DB::table('msj_'.$mensaje->user_id)->truncate();
         }*/
 
-        $users_id = User::where([
+        //este ejemplo es mas rapido
+        /*$users_id = User::where([
             ['role', '!=', 'maximo']
         ])->Select('id')->get();
 
         foreach ($users_id as $user) {
             DB::table('msj_'.$user->id)->truncate();
-        }
+        }*/
        
         
-        return "MENSAJES LISTO TODOS" ;
+       // return "MENSAJES LISTO TODOS" ;
         
     }
 
@@ -281,6 +282,36 @@ class UserController extends Controller
         $students = User::where('role','student')->get();
         return view('users.students',compact('students'));
 
+    }
+
+    public function list_students($course,$section) {
+
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+        $students =   DB::table('users')
+            ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
+            ->where ([
+                ['users.role', '=', 'student'],
+                ['enrollments.course_id', '=', $course],
+                ['enrollments.section', '=', $section]
+            ])
+            ->Select('users.name','users.lastname','users.id','user.cuenta')
+            ->get();
+            
+
+
+        return view('users.list_students',compact('students'));
     }
 
     public function teachers()

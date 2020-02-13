@@ -149,6 +149,11 @@
                         <div class="card-body card-body-cascade ">
                                         
                             <ul class="list-group">
+                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('estudiantes/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
+                                        <li class="list-group-item">
+                                            <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
+                                        </li>
+                                    </a>
                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users_boletas/{course_id}/{section}', [$asignacion->course_id,$asignacion->section])}} ">
                                         <li class="list-group-item">
                                             <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Boletas
