@@ -308,10 +308,12 @@ class UserController extends Controller
             ])
             ->Select('users.name','users.lastname','users.id','users.cuenta','users.email','users.email2','enrollments.id as enrollment_id')
             ->get();
+
+        $curso = Course::findOrFail($course);
             
         $usuario = User::findOrFail($user_id);
 
-        return view('users.list_students',compact('students','usuario'));
+        return view('users.list_students',compact('students','usuario','curso','section'));
     }
 
     public function teachers()
