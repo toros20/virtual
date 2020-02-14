@@ -55,7 +55,7 @@ class EnrollmentController extends Controller
      * @param  \App\Enrollment  $enrollment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Enrollment $enrollment)
+    public function edit($id)
     {
         $enrollment = Enrollment::findOrFail($id);
         $courses = Course::all();
