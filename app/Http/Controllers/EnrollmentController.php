@@ -70,8 +70,8 @@ class EnrollmentController extends Controller
                     ['enrollments.id', '=', $id]
                 ])
                 ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
-                ->toSql();
-                 dd($enrollment);
+                ->get();
+                
         return view('enrollments.edit',compact('enrollment','courses'));
     }
 
