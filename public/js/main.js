@@ -778,6 +778,88 @@ function publicarComentario_student(key_msj){
 }
 
 
+function loadcourses_2(){
+
+    //obtenemos  el id de la modalidad seleccionada 
+     var modality = $("#modalities").val();
+     var token = $("#token").val();
+
+    $.ajax({
+
+        //url:'../../ajax/coursesbymodalityid', 
+        url:'../ajax/coursesbymodalityid',
+        headers: token ,
+        data: {modality_id:modality,_token:token},
+        type:'POST',
+        datatype:'json',
+        success:function(data)
+        {
+            //console.log(response);
+            $('#courses').html(data);
+        },
+        error: function (response) {
+            console.log(response);
+          }
+    });
+   
+
+}
+
+//codigo para cargar solo las secciones asignadas al curso seleccionado
+function loadsections_2(){
+
+    //obtenemos  el id de la modalidad seleccionada
+     var course = $("#courses").val();
+     var token = $("#token").val();
+    
+    $.ajax({
+
+        url:'../ajax/sectionsbycoursesid',
+        //url:'../../ajax/sectionsbycoursesid',
+        headers: token ,
+        data: {course_id:course,_token:token},
+        type:'POST',
+        datatype:'json',
+        success:function(data)
+        {
+            //console.log(response);
+            $('#sections').html(data);
+        },
+        error: function (response) {
+            console.log(response);
+          }
+    });
+   
+
+}
+
+//codigo para cargar solo las clases asignadas al curso seleccionado
+function loadclases_2(){
+
+    //obtenemos  el id de la modalidad seleccionada
+     var course = $("#courses").val();
+     var token = $("#token").val();
+    
+    $.ajax({
+
+        url:'../ajax/clasesbycoursesid',
+        headers: token ,
+        data: {course_id:course,_token:token},
+        type:'POST',
+        datatype:'json',
+        success:function(data)
+        {
+            //console.log(response);
+            $('#clases').html(data);
+        },
+        error: function (response) {
+            console.log(response);
+          }
+    });
+   
+
+}
+
 
 //funcion (docente) que se activa al cambiar de grado y seccion en el panel izquierdo
 /*function cambio_de_seccion(curso_id, seccion, short_name){

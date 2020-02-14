@@ -111,7 +111,7 @@
 
                         <p><label for="modality_id">
                             Seleccione Modalidad 
-                             <select name="modality_id" id="modalities" onchange="loadcourses()">
+                             <select name="modality_id" id="modalities" onchange="loadcourses_2()">
                                     <option value= -1 >Seleccione Modalidad</option>
                                 @foreach ($modalities as $modality)
                                     <option value= {{ $modality->id }} >{{ $modality->name }}</option>
@@ -121,14 +121,14 @@
 
                         <p><label for="course_id">
                             Seleccione Curso 
-                             <select name="course_id" id="courses" onchange="loadsections()">
+                             <select name="course_id" id="courses" onchange="loadsections_2()">
                                 <option>Seleccione Curso</option>
                             </select>
                         </label></p>
 
                         <p><label for="sections" >
                             Seleccione Secci&oacute;n 
-                             <select name="section" id="sections" onchange="loadclases()">
+                             <select name="section" id="sections" onchange="loadclases_2()">
                                 <option>Seleccione Secci&oacute;n</option>
                             </select>
                         </label></p>
