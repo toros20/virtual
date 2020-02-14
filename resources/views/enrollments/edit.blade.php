@@ -90,16 +90,10 @@
 
                         @csrf
                         {{ method_field('PUT') }}
-                        <p><label for="name">
-                            anio
+                       
                             <input  type="hidden" name ="name" value=" {{$enrollment->year}} ">
-                        </label></p>
-
-                        <p><label for="user_id">
-                             users_Id 
                             <input type="hidden" name ="user_id" value=" {{$enrollment->user_id}} ">
-                        </label></p>
-
+                    
                         <p><label for="description">
                             Curso
                            
