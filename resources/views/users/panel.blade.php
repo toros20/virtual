@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+@if($errors->any())
+<h4>{{$errors->first()}}</h4>
+@endif
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
