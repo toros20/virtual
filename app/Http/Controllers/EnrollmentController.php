@@ -85,8 +85,8 @@ class EnrollmentController extends Controller
     public function update(Request $request, $id)
     {
         $enrollment = Enrollment::findOrFail($id)->update($request->all());
-        return Redirect::back()->withErrors(['msg', 'Transferencia Completa']);
-        //return redirect()->route('users_panel/{user_id}',63);
+        //return Redirect::back()->withErrors(['msg', 'Transferencia Completa']);
+        return redirect()->route('users_panel/{user_id}',63);
 
     }
 
