@@ -67,9 +67,9 @@ class EnrollmentController extends Controller
         $enrollments =   DB::table('users')
                 ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
                 ->where ([
-                    ['enrollments.id', '=', $id]
+                    ['enrollments.id', '=', $id] 
                 ])
-                ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
+                ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id','enrollments.year','enrollments.user_id')
                 ->get();
                 
         return view('enrollments.edit',compact('enrollments','courses'));
