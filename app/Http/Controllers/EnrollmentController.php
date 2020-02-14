@@ -82,7 +82,7 @@ class EnrollmentController extends Controller
      * @param  \App\Enrollment  $enrollment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Enrollment $enrollment)
+    public function update(Request $request, $id)
     {
         $enrollment = Enrollment::findOrFail($id)->update($request->all());
         return Redirect::back()->withErrors(['msg', 'Transferencia Completa']);
