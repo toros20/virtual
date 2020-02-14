@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Enrollment;
+use App\Course;
 use Illuminate\Http\Request;
 
 class EnrollmentController extends Controller
