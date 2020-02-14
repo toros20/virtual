@@ -83,7 +83,8 @@
             <div class="content">
 
             <div class="title m-b-md">
-                    Transferir Matricula
+                    Transferir Matricula de:
+                    <p> {{$enrollment->name}} {{$enrollment->lastname }} ({{$enrollment->cuenta}}) </p>
                 </div>
                 
                 <form method = "POST" action ={{route('enrollments.update',$enrollment->id)}} >

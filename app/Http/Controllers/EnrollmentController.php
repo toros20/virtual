@@ -58,8 +58,17 @@ class EnrollmentController extends Controller
      */
     public function edit($id)
     {
-        $enrollment = Enrollment::findOrFail($id);
+        //$enrollment = Enrollment::findOrFail($id);
         $courses = Course::all();
+
+        $enrollment =   DB::table('users')
+                ->join('enrollment', 'users.id', '=', 'enrollments.user_id')
+                ->where ([
+                    ['enrollments.id', '=', $id]
+                ])
+                ->Select('users.name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
+                ->get();
+
 
         return view('enrollments.edit',compact('enrollment','courses'));
     }
