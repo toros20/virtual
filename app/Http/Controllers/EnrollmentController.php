@@ -77,8 +77,8 @@ class EnrollmentController extends Controller
             ['id', '=', $id],
         ])->Select('course_id','section')->get();
 
-        $curso = Course::findOrFail($matricula->course_id);
-        $section = $matricula->section;
+        $curso = Course::findOrFail($matricula[0]->course_id);
+        $section = $matricula[0]->section;
                 
         return view('enrollments.edit',compact('enrollments','courses','curso','section'));
     }
