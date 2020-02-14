@@ -87,7 +87,7 @@
                     <p> {{$enrollments[0]->name }} {{$enrollments[0]->lastname }} ({{$enrollments[0]->cuenta}}) </p>
                 </div>
                 
-                <form method = "POST" action ={{route('enrollments.update',$enrollments[0]->id)}} >
+                <form method = "POST" action ={{route('enrollments.update',$enrollments[0]->enrollment_id)}} >
 
                         @csrf
                         {{ method_field('PUT') }}
