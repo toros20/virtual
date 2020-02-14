@@ -84,16 +84,16 @@
 
             <div class="title m-b-md">
                     Transferir Matricula de:
-                    <p> {{$enrollments->name }} {{$enrollments->lastname }} ({{$enrollments->cuenta}}) </p>
+                    <p> {{$enrollments[0]->name }} {{$enrollments[0]->lastname }} ({{$enrollments[0]->cuenta}}) </p>
                 </div>
                 
-                <form method = "POST" action ={{route('enrollments.update',$enrollments->id)}} >
+                <form method = "POST" action ={{route('enrollments.update',$enrollments[0]->id)}} >
 
                         @csrf
                         {{ method_field('PUT') }}
                        
-                            <input  type="hidden" name ="name" value=" {{$enrollments->year}} ">
-                            <input type="hidden" name ="user_id" value=" {{$enrollments->user_id}} ">
+                            <input  type="hidden" name ="name" value=" {{$enrollments[0]->year}} ">
+                            <input type="hidden" name ="user_id" value=" {{$enrollments[0]->user_id}} ">
                     
                         <p><label for="description">
                             Curso
