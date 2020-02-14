@@ -306,7 +306,7 @@ class UserController extends Controller
                 ['enrollments.course_id', '=', $course],
                 ['enrollments.section', '=', $section]
             ])
-            ->Select('users.name','users.lastname','users.id','users.cuenta','users.email','users.email2')
+            ->Select('users.name','users.lastname','users.id','users.cuenta','users.email','users.email2','enrollments.id as enrollment_id')
             ->get();
             
         $usuario = User::findOrFail($user_id);

@@ -21,8 +21,6 @@
                 <th>Email 2</th>
                 <th>Editar</th>
                 <th>Matricula</th>
-               
-
             </tr>
             </thead>
 
@@ -39,7 +37,7 @@
                         <td> <a href=" {{route('users.edit',$student->id)}} ">
                             Editar </a>
                         </td>
-                        <td> <a href=" {{route('users.edit',$student->id)}} ">
+                        <td> <a href=" {{route('enrollments.edit',$student->enrollment_id)}} ">
                             Transferir </a>
                         </td>
                            {{--  <form style="display:inline" method="POST" action=" {{route('users.destroy',$student->id)}} ">
