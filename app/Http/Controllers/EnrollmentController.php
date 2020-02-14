@@ -71,8 +71,16 @@ class EnrollmentController extends Controller
                 ])
                 ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id','enrollments.year','enrollments.user_id')
                 ->get();
+
+    
+        $matricula = Enrollment::where([
+            ['id', '=', $id],
+        ])->Select('course_id','section')->get();
+
+        $curso = Course::findOrFail($matricula->course_id);
+        $section = $matricula->section;
                 
-        return view('enrollments.edit',compact('enrollments','courses'));
+        return view('enrollments.edit',compact('enrollments','courses','curso','section'));
     }
 
     /**
