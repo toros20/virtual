@@ -64,7 +64,7 @@ class EnrollmentController extends Controller
         //$enrollment = Enrollment::findOrFail($id);
         $courses = Course::all();
 
-        $enrollment =   DB::table('users')
+        $enrollments =   DB::table('users')
                 ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
                 ->where ([
                     ['enrollments.id', '=', $id]
@@ -72,7 +72,7 @@ class EnrollmentController extends Controller
                 ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
                 ->get();
                 
-        return view('enrollments.edit',compact('enrollment','courses'));
+        return view('enrollments.edit',compact('enrollments','courses'));
     }
 
     /**
