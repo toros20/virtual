@@ -96,7 +96,7 @@
 
                         <p><label for="year">
                            A&ntilde;o
-                            <input type="text" name ="year" value=" {{old('year')}} ">
+                            <input type="text" name ="year" value="2020">
                         </label></p>
 
                         <p><label for="user_id">
