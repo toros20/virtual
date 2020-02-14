@@ -65,7 +65,7 @@ class EnrollmentController extends Controller
         $courses = Course::all();
 
         $enrollment =   DB::table('users')
-                ->join('enrollment', 'users.id', '=', 'enrollments.user_id')
+                ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
                 ->where ([
                     ['enrollments.id', '=', $id]
                 ])
