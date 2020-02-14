@@ -98,7 +98,7 @@
                     
                         <p><label for="description">
                             Curso
-                            <select name="course_id" value= {{ $curso[0]->id }}> {{ $curso[0]->short_name }}
+                            <select name="course_id" value= {{ $curso->id }}> {{ $curso->short_name }}
                                
                                 @foreach ($courses as $course)
                                     <option value= {{ $course->id }} >{{ $course->short_name}}</option>
