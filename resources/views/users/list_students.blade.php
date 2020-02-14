@@ -11,7 +11,7 @@
 
         <h1>Listado de Estudiantes de {{$curso->short_name}}-{{$section}} </h1>
      
-        <h3><a href="{{route('users_panel_admin/{user_id}', $usuario->id)}} ">Volver al Panel</a></h3>
+        <h3><a href="{{route('users_panel/{user_id}', $usuario->id)}} ">Volver al Panel</a></h3>
         <table>
             <thead>
             <tr>
