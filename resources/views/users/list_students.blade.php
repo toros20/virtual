@@ -52,7 +52,7 @@
             </tbody>
         
         <table>
-
+        <br><br>
         <div>
             <a href="{{route('users.students.create')}} ">crear nuevo estudiante</a>
         </div>
