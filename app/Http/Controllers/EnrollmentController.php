@@ -69,7 +69,7 @@ class EnrollmentController extends Controller
                 ->where ([
                     ['enrollments.id', '=', $id]
                 ])
-                ->Select('users.name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
+                ->Select('users.name as name','users.lastname','users.cuenta','enrollments.id as enrollment_id')
                 ->get();
 
 
