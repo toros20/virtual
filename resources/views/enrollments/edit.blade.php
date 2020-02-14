@@ -96,7 +96,6 @@
                     
                         <p><label for="description">
                             Curso
-                           
                             <select name="course_id" > Seleccione Curso
 
                                 @foreach ($courses as $course)
