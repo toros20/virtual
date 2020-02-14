@@ -109,8 +109,8 @@
 
                         <p><label for="section">
                             Sección
-                             <select name="section" value= {{ $curso->section }} > 
-                             <option value= {{ $curso->section }} >{{ $curso->section }}</option>
+                             <select name="section" value= {{ $section }} > 
+                             <option value= {{ $section }} >{{ $section }}</option>
                                 <option value='U'>U</option>
                                 <option value='A'>A</option>
                                 <option value='B'>B</option>
