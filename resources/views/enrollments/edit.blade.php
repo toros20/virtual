@@ -110,6 +110,7 @@
                         <p><label for="section">
                             Sección
                              <select name="section" > Seleccione Sección
+                             <option value= {{ $curso->section }} >{{ $curso->section }}</option>
                                 <option value='U'>U</option>
                                 <option value='A'>A</option>
                                 <option value='B'>B</option>
