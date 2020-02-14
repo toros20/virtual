@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use DB;
+
 use App\Enrollment;
 use App\Course;
 use App\User;
