@@ -121,7 +121,7 @@ class UserController extends Controller
             //['clase_id', '>', 188],
         ])->Select('clase_id')->get();*/
 
-        $users = Enrollment::where([
+        /*$users = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->Select('user_id')->get();
@@ -135,7 +135,7 @@ class UserController extends Controller
            }
         }
         
-        return "LISTO---Filas Insertadas De:" . $course ."-". $section ;
+        return "LISTO---Filas Insertadas De:" . $course ."-". $section ;*/
 
 
         
