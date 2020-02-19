@@ -135,7 +135,7 @@ class UserController extends Controller
            }
         }
         
-        return "LISTO---Filas Insertadas De:" + $course +"-"+ $section ;
+        return "LISTO---Filas Insertadas De:" . $course +"-". $section ;
 
 
         
