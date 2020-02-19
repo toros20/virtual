@@ -573,7 +573,30 @@ class TeacherController extends Controller
                 ->update(array(
                     'observacion'=>$request->$obs,
                     'valor_obtenido' =>$request->$id
-                    ) );
+                ) );
+
+                /********ACTUALIZAMOS LA TABLA HISTORIAL*******/
+                //nombramos la tabla historial a utilizar
+                $tabla='historial_'.$course.'_'.$seccion;
+                //obtenemos el actual acumulativo en historial
+                $resp_old_acum =DB::table($tabla)
+                ->where([
+                    ['student_id', '=', $enroll->user_id],
+                    [$tabla.'.clase_id', '=', $ClaseA ],
+                ])->get();
+                $old_acum = $resp_old_acum[0]->Acum1;
+                //calculamos el nuevo acumulativo
+                $nuevo_Acum = $old_acum + $request->$id;
+                
+                
+                $resp_historial =DB::table($tabla)
+                ->where([
+                    ['student_id', '=', $enroll->user_id],
+                    [$tabla.'.clase_id', '=', $ClaseA ],
+                    ])
+                ->update(array(
+                    'Acum'.$ParcialA =>$request->$nuevo_Acum
+                ) );
                 
         }//fin del ciclo para cada alumno de este curso
 
@@ -581,6 +604,7 @@ class TeacherController extends Controller
         $update=DB::table($tbl_task)
                     ->where('id',  $request->task_id)
                     ->update(['evaluada' => 1]);
+
 
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
 
@@ -683,7 +707,7 @@ class TeacherController extends Controller
                             ->join('clases', $tabla.'.clase_id', '=', 'clases.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
-                                        ['clases.semester', '!=', 1],
+                                        ['clases.semester', '!=', 2],
                                     ])
                             ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
                             ->orderBy('users.sexo','asc')
