@@ -106,7 +106,7 @@
                             <input type="text" name ="cuenta" value=" {{$user->cuenta}} ">
                         </label></p>
                                                    
-                        <input type="hidden" name ="role" value="estudiante">
+                        <input type="hidden" name ="role" value="student">
 
                         
                         <p><label for="email">
