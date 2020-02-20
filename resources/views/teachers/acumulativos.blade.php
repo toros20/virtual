@@ -164,7 +164,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente()" class="mdb-select" id="select_course">
+                                      <select required onchange="loadclassesfordocente()" class="mdb-select" id="select_course" name="select_course">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -173,7 +173,7 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases">
+                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases" name="select_clases">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
@@ -183,7 +183,7 @@
                                   </div>
                       
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_tipo">
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_tipo" name="select_tipo">
                                           <option value="-1" disabled selected>Tipo de Acumulativo</option>
                                           <option value="1">Trabajo en Clase</option>
                                           <option value="2">Trabajo Extra-Clase</option>
@@ -192,7 +192,7 @@
                                   </div>
 
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial">
+                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial" name="select_parcial">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>
@@ -202,20 +202,20 @@
                                   </div>
                                   
                                   <div class="md-form">
-                                      <input required type="text" id="titulo" class="form-control">
+                                      <input required type="text" id="titulo" id="titulo" class="form-control">
                                       <label for="titulo">Nombre del Acumulativo</label>
                                   </div>
 
                                   <!--Material textarea-->
                                   <div class="md-form">
-                                      <textarea required type="text" id="descripcion" class="md-textarea form-control" rows="3"></textarea>
+                                      <textarea required type="text" id="descripcion" id="descripcion" class="md-textarea form-control" rows="3"></textarea>
                                       <label for="descripcion">Descripción del Acumulativo</label>
                                   </div>
 
 
                                   <div class="input-group mb-3">
                                       <label for="valor">Valor del Acumulativo</label>
-                                      <input id="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                      <input id="valor" name="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                                       <div class="input-group-append">
                                           <span class="input-group-text">%</span>
                                       </div>
@@ -223,7 +223,7 @@
 
 
                                   <div class="md-form">
-                                      <input required placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
+                                      <input required placeholder="Selected date" type="text" id="date-picker-example" name="date-picker-example" class="form-control datepicker">
                                   </div>
                                   
                                   <button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Crear</button>
