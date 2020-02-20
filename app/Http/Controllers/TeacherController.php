@@ -308,9 +308,9 @@ class TeacherController extends Controller
         $teacher=$request->user_id;
 
         //variables utilizadas para volver al curso seccion y clase donde esta actualmente el docente
-        $curso_actual=$request->_curso_actual;
-        $section_actual=$request->_section_actual;
-        $clase_actual=$request->_clase_actual;
+        $curso_actual=$request->curso_actual;
+        $section_actual=$request->section_actual;
+        $clase_actual=$request->clase_actual;
 
         //cambiamos el formato de fecha
         $fecha_entrega = date("Y-m-d",strtotime($fecha_entrega1));
@@ -364,14 +364,15 @@ class TeacherController extends Controller
         
 
         //buscamos las tareas del curso seccion y clase donde esta actualmente el docente
-        $tbl_task_actual='task_'.$curso_actual.'_'.$section_actual;//nombre de la tabla a buscar
+        /*$tbl_task_actual='task_'.$curso_actual.'_'.$section_actual;//nombre de la tabla a buscar
         $tasks = DB::table($tbl_task_actual)
         ->where([
                 ['clase', '=', $clase_actual],
                 ['teacher', '=', $teacher],
                 ])
         ->orderBy('id','ASC')
-        ->get();
+        ->get();*/
+
         return redirect()->route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$teacher,$curso_actual,$section_actual,$clase_actual,$parcial]);
         //return view('ajax/send_task',compact('tasks','curso_actual','section_actual'));
 
