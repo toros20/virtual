@@ -291,8 +291,10 @@ class TeacherController extends Controller
     function send_task(Request $request){
 
         //recibimos los datos de la tarea(task) a crear 
-        $course_id=$request->_course_id;
-        $clase_id=$request->_clase_id;
+        $course_id=$request->curso_actual;
+        //$course_id=$request->_course_id;
+        $clase_id=$request->clase_actual;
+        //$clase_id=$request->_clase_id;
         //$secciones=$request->_secciones;
         $secciones=$request->sections;
 
