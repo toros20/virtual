@@ -173,7 +173,7 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes()" class="mdb-select md-form mb-4 initialized" id="select_clases" name="select_clases">
+                                      <select required onchange="loadsectionsfordocentes()" class="browser-default custom-select" id="select_clases" name="select_clases">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
@@ -183,7 +183,7 @@
                                   </div>
                       
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_tipo" name="select_tipo">
+                                      <select required class="browser-default custom-select" id="select_tipo" name="select_tipo">
                                           <option value="-1" disabled selected>Tipo de Acumulativo</option>
                                           <option value="1">Trabajo en Clase</option>
                                           <option value="2">Trabajo Extra-Clase</option>
@@ -192,7 +192,7 @@
                                   </div>
 
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial" name="select_parcial">
+                                      <select required class="browser-default custom-select" id="select_parcial" name="select_parcial">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>
