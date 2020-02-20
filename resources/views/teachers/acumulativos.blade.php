@@ -202,13 +202,13 @@
                                   </div>
                                   
                                   <div class="md-form">
-                                      <input required type="text" id="titulo" id="titulo" class="form-control">
+                                      <input required type="text" id="titulo" name="titulo" class="form-control">
                                       <label for="titulo">Nombre del Acumulativo</label>
                                   </div>
 
                                   <!--Material textarea-->
                                   <div class="md-form">
-                                      <textarea required type="text" id="descripcion" id="descripcion" class="md-textarea form-control" rows="3"></textarea>
+                                      <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3"></textarea>
                                       <label for="descripcion">Descripción del Acumulativo</label>
                                   </div>
 
@@ -223,7 +223,7 @@
 
 
                                   <div class="md-form">
-                                      <input required placeholder="Selected date" type="text" id="date-picker-example" name="date-picker-example" class="form-control datepicker">
+                                      <input required placeholder="Selected date" type="text" id="date-picker-example" name="date_acum" class="form-control datepicker">
                                   </div>
                                   
                                   <button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Crear</button>
