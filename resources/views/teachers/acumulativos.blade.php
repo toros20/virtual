@@ -261,7 +261,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente_file()" class="mdb-select md-form mb-4 initialized" id="select_course_file" name="select_course_file">
+                                      <select required onchange="loadclassesfordocente_file()" class="browser-default custom-select mt-3" id="select_course_file" name="select_course_file">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -270,7 +270,7 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes_file()" class="mdb-select md-form mb-4 initialized" id="select_clases_file" name="select_clases_file">
+                                      <select required onchange="loadsectionsfordocentes_file()" class="browser-default custom-select mt-3" id="select_clases_file" name="select_clases_file">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
@@ -280,7 +280,7 @@
                                   </div>
                       
                                   <div>
-                                      <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_file" name="select_parcial_file">
+                                      <select required class="browser-default custom-select mt-3" id="select_parcial_file" name="select_parcial_file">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>
@@ -339,7 +339,7 @@
                                     <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
             
                                 <div>
-                                    <select required onchange="loadclassesfordocente_video()" class="mdb-select md-form mb-4 initialized" id="select_course_video" name="select_course_video">
+                                    <select required onchange="loadclassesfordocente_video()" class="browser-default custom-select mt-3" id="select_course_video" name="select_course_video">
                                         <option value="-1" disabled selected>Seleccione Curso</option>
                                         @foreach ($cursos as $curso)
                                             <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -348,7 +348,7 @@
                                 </div>
 
                                 <div>
-                                    <select required onchange="loadsectionsfordocentes_video()" class="mdb-select md-form mb-4 initialized" id="select_clases_video" name="select_clases_video">
+                                    <select required onchange="loadsectionsfordocentes_video()" class="browser-default custom-select mt-3" id="select_clases_video" name="select_clases_video">
                                         <option value="-1" disabled selected>Seleccione Clase</option>
                                     </select>
                                 </div>
@@ -358,7 +358,7 @@
                                 </div>
                     
                                 <div>
-                                    <select required class="mdb-select md-form mb-4 initialized" id="select_parcial_video" name="select_parcial_video">
+                                    <select required class="browser-default custom-select mt-3" id="select_parcial_video" name="select_parcial_video">
                                         <option value="-1" disabled selected>Seleccione Parcial</option>
                                         <option value="1">I Parcial</option>
                                         <option value="2">II Parcial</option>
