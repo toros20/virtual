@@ -298,12 +298,12 @@ class TeacherController extends Controller
         //$secciones=$request->_secciones;
         $secciones=$request->sections;
 
-        $tipo=$request->_tipo;
-        $parcial=$request->_parcial;
+        $tipo=$request->select_tipo;
+        $parcial=$request->select_parcial;
         $titulo=$request->_titulo;
         $descripcion=$request->_descripcion;
-        $valor=$request->_valor;
-        $fecha_entrega1=$request->_fecha_entrega;
+        $valor=$request->valor;
+        $fecha_entrega1=$request->date_acum;
         //$teacher=$request->_user;
         $teacher=$request->user_id;
 
