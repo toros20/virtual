@@ -164,7 +164,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required="required" onchange="loadclassesfordocente()" class="browser-default" id="select_course" name="select_course">
+                                      <select required onchange="loadclassesfordocente()"  id="select_course" name="select_course">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
