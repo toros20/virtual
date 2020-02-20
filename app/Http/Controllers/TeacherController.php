@@ -293,7 +293,9 @@ class TeacherController extends Controller
         //recibimos los datos de la tarea(task) a crear 
         $course_id=$request->_course_id;
         $clase_id=$request->_clase_id;
-        $secciones=$request->_secciones;
+        //$secciones=$request->_secciones;
+        $secciones=$request->sections;
+
         $tipo=$request->_tipo;
         $parcial=$request->_parcial;
         $titulo=$request->_titulo;
