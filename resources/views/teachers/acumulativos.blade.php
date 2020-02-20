@@ -164,7 +164,8 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente()" class="browser-default custom-select" id="select_course" name="select_course">
+                                      <select required="required" onchange="loadclassesfordocente()" class="browser-default custom-select" id="select_course" name="select_course">
+                                         
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
@@ -173,17 +174,17 @@
                                   </div>
 
                                   <div>
-                                      <select required onchange="loadsectionsfordocentes()" class="browser-default custom-select mt-3" id="select_clases" name="select_clases">
+                                      <select required="required" onchange="loadsectionsfordocentes()" class="browser-default custom-select mt-3" id="select_clases" name="select_clases">
                                           <option value="-1" disabled selected>Seleccione Clase</option>
                                       </select>
                                   </div>
                       
-                                  <div required id="checks_sections" class="form-check mb-4">
+                                  <div required="required" id="checks_sections" class="form-check mb-4">
                                     
                                   </div>
                       
                                   <div>
-                                      <select required class="browser-default custom-select mt-3" id="select_tipo" name="select_tipo">
+                                      <select required="required" class="browser-default custom-select mt-3" id="select_tipo" name="select_tipo">
                                           <option value="-1" disabled selected>Tipo de Acumulativo</option>
                                           <option value="1">Trabajo en Clase</option>
                                           <option value="2">Trabajo Extra-Clase</option>
@@ -192,7 +193,7 @@
                                   </div>
 
                                   <div>
-                                      <select required class="browser-default custom-select mt-3" id="select_parcial" name="select_parcial">
+                                      <select required="required" class="browser-default custom-select mt-3" id="select_parcial" name="select_parcial">
                                           <option value="-1" disabled selected>Seleccione Parcial</option>
                                           <option value="1">I Parcial</option>
                                           <option value="2">II Parcial</option>
@@ -215,7 +216,7 @@
 
                                   <div class="input-group mb-3">
                                       <label for="valor">Valor del Acumulativo</label>
-                                      <input id="valor" name="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                      <input required id="valor" name="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                                       <div class="input-group-append">
                                           <span class="input-group-text">%</span>
                                       </div>
