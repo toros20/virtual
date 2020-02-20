@@ -304,7 +304,8 @@ class TeacherController extends Controller
         $descripcion=$request->_descripcion;
         $valor=$request->_valor;
         $fecha_entrega1=$request->_fecha_entrega;
-        $teacher=$request->_user;
+        //$teacher=$request->_user;
+        $teacher=$request->user_id;
 
         //variables utilizadas para volver al curso seccion y clase donde esta actualmente el docente
         $curso_actual=$request->_curso_actual;
