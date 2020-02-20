@@ -155,7 +155,7 @@
                           <!-- Card body -->
                           <div id="collapseOne1" class="collapse" role="tabpanel" aria-labelledby="headingOne1" data-parent="#accordionEx">
                             <div class="card-body">
-                                  <form class="md-form" style="color: #757575;" method = "POST" action ={{route('teachers.send_task')}} >
+                                  <form class="md-form" style="color: #757575;">
                                       {{-- @csrf --}}
                                       <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                       <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
@@ -226,7 +226,7 @@
                                       <input required placeholder="Selected date" type="text" id="date-picker-example" class="form-control datepicker">
                                   </div>
                                   
-                                  <button type="submit" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" >Crear</button>
+                                  <button id="btn_send_task" onclick="send_task()" class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="button">Crear</button>
                                   <div align="center" id="circle"></div>
                               </form>
                             </div>

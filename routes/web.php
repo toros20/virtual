@@ -221,7 +221,9 @@ Route::post('ajax/loadsectionsfordocentes', 'TeacherController@loadsectionsfordo
 Route::post('ajax/loadclassesfordocente', 'TeacherController@loadclassesfordocente');
 
 //crear ruta para enviar una task nueva desde el formulario del docente
-Route::post('ajax/send_task', 'TeacherController@send_task');
+//Route::post('ajax/send_task', 'TeacherController@send_task');
+//crear ruta para enviar una task nueva desde el formulario del docente
+Route::post('teachers/send_task', 'TeacherController@send_task')->name('teachers.send_task');
 
 
 

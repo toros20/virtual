@@ -367,8 +367,8 @@ class TeacherController extends Controller
                 ])
         ->orderBy('id','ASC')
         ->get();
-
-        return view('ajax/send_task',compact('tasks','curso_actual','section_actual'));
+        return redirect()->route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$teacher,$curso_actual,$section_actual,$clase_actual,$parcial]);
+        //return view('ajax/send_task',compact('tasks','curso_actual','section_actual'));
 
     }
 
