@@ -164,7 +164,7 @@
                                       <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
               
                                   <div>
-                                      <select required onchange="loadclassesfordocente()" class="mdb-select validate md-form mb-4 initialized" id="select_course">
+                                      <select required onchange="loadclassesfordocente()" class="form-control" id="select_course">
                                           <option value="-1" disabled selected>Seleccione Curso</option>
                                           @foreach ($cursos as $curso)
                                               <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
