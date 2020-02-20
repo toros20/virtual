@@ -289,7 +289,7 @@
                                       </select>
                                   </div>
                                   
-                                  <div class="file-field">
+                                  <div class="file-field mt-3">
                                       <div class="btn btn-primary btn-sm float-left">
                                         <span>Seleccione Documento</span>
                                         <p><input name ="document" id="document" type="file"></p>
