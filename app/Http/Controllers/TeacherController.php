@@ -593,7 +593,7 @@ class TeacherController extends Controller
                 $old_acum = $resp_old_acum[0]->Acum1;
                 //calculamos el nuevo acumulativo
                 $nuevo_Acum = $old_acum + $request->$id;
-                dd("old_Acum=".$resp_old_acum[0]->Acum1."---VAlor id =".$request->$id."---Nuevo Acum=".$nuevo_Acum);
+               // dd("old_Acum=".$resp_old_acum[0]->Acum1."---VAlor id =".$request->$id."---Nuevo Acum=".$nuevo_Acum);
                 
                 $resp_historial =DB::table($tabla)
                 ->where([
@@ -601,7 +601,7 @@ class TeacherController extends Controller
                     [$tabla.'.clase_id', '=', $ClaseA ],
                     ])
                 ->update(array(
-                    'Acum'.$ParcialA =>$request->$nuevo_Acum
+                    'Acum'.$ParcialA =>$nuevo_Acum
                 ) );
                 
         }//fin del ciclo para cada alumno de este curso
