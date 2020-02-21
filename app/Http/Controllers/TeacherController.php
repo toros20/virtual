@@ -584,15 +584,21 @@ class TeacherController extends Controller
                 /********ACTUALIZAMOS LA TABLA HISTORIAL*******/
                 //nombramos la tabla historial a utilizar
                 $tabla='historial_'.$course.'_'.$seccion;
-                //obtenemos el actual acumulativo en historial
-                $resp_old_acum =DB::table($tabla)
+                //obtenemos todas las tareas de este alumno y esta clase, para sumar sus notas totales
+                $tareas =DB::table($tbl_taskstudent)
                 ->where([
                     ['student_id', '=', $enroll->user_id],
                     [$tabla.'.clase_id', '=', $ClaseA ],
                 ])->get();
-                $old_acum = $resp_old_acum[0]->Acum1;
+                $suma_de_nota=0;
+                //sumar las notas obtenidas en cada tarea
+                foreach ($tareas as $tarea) {
+                    $suma_de_nota+=$tarea->valor_obtenido;
+                }
+                //$old_acum = $resp_old_acum[0]->Acum1;
                 //calculamos el nuevo acumulativo
-                $nuevo_Acum = $old_acum + $request->$id;
+                //$nuevo_Acum = $old_acum + $request->$id;
+                $nuevo_Acum =  $suma_de_nota;
                // dd("old_Acum=".$resp_old_acum[0]->Acum1."---VAlor id =".$request->$id."---Nuevo Acum=".$nuevo_Acum);
                 
                 $resp_historial =DB::table($tabla)
