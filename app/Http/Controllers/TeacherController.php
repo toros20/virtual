@@ -579,17 +579,26 @@ class TeacherController extends Controller
                 ->update(array(
                     'observacion'=>$request->$obs,
                     'valor_obtenido' =>$request->$id
-                ) );
+                ));
 
                 /********ACTUALIZAMOS LA TABLA HISTORIAL*******/
                 //nombramos la tabla historial a utilizar
                 $tabla='historial_'.$course.'_'.$seccion;
-                //obtenemos todas las tareas de este alumno y esta clase, para sumar sus notas totales
-                $tareas =DB::table($tbl_taskstudent)
+
+                //obtenemos todas las tareas creadas en esta clase para este estudiante
+                $tareas =DB::table($tbl_task)
+                ->join($tbl_taskstudent, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
                 ->where([
-                    ['student', '=', $enroll->user_id],
-                    [$tabla.'.clase_id', '=', $ClaseA ],
+                    [$tbl_task.'.clase', '=', $ClaseA ],
+                    [$tbl_taskstudent.'.student', '=', $enroll->user_id ]
                 ])->get();
+                
+                //obtenemos los resultados de 
+                /*$tareas_students =DB::table($tbl_taskstudent)
+                ->where([
+                    ['student', '=', $enroll->user_id]
+                ])->get();*/
+
                 $suma_de_nota=0;
                 //sumar las notas obtenidas en cada tarea
                 foreach ($tareas as $tarea) {
