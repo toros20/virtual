@@ -587,7 +587,7 @@ class TeacherController extends Controller
                 //obtenemos todas las tareas de este alumno y esta clase, para sumar sus notas totales
                 $tareas =DB::table($tbl_taskstudent)
                 ->where([
-                    ['student_id', '=', $enroll->user_id],
+                    ['student', '=', $enroll->user_id],
                     [$tabla.'.clase_id', '=', $ClaseA ],
                 ])->get();
                 $suma_de_nota=0;
