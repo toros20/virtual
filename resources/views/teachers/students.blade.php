@@ -49,7 +49,7 @@
                         <li>
                         <a href="{{ $url = route('teachers/students/{user_id}/{course_id}/{section}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section])}}">
                          
-                             {{$asignacion->course}} - {{$asignacion->section }} - {{$asignacion->clase}}
+                             {{$asignacion->course}} - {{$asignacion->section }}
                           
                         </a>
                       </li>
