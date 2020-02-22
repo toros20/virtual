@@ -110,7 +110,12 @@
 
                 <!-- Card image -->
                 <div class="view view-cascade overlay">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+                    @if ($student->sexo == 'F')
+                        <img class="card-img-top" src="img/student_girl.png" alt="Card image cap">
+                    @endif
+                    @if ($student->sexo == 'M')
+                        <img class="card-img-top" src="img/boy.png" alt="Card image cap">
+                    @endif
                     <a>
                     <div class="mask rgba-white-slight"></div>
                     </a>
