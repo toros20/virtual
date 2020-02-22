@@ -221,7 +221,7 @@ class UserController extends Controller
 
        /*******codigo para insertar filas en la tabla taskstudent */
         //obtenemos los id de estudiates de este curso y seccion
-       $Enrollments = Enrollment::where([
+       /*$Enrollments = Enrollment::where([
             ['course_id', '=', $course],
             ['section', '=', $section],
         ])->get();
@@ -247,7 +247,7 @@ class UserController extends Controller
            
         }//fin del ciclo para cada alumno de este curso
 
-        return "LISTO---tareas Insertadas De:" . $course ."-". $section ;
+        return "LISTO---tareas Insertadas De:" . $course ."-". $section ;*/
         
     }
 

@@ -105,123 +105,39 @@
         
             @foreach ($students as $student)
             
-            <!--Card column-->
-            <div class="col-md-6 col-sm-6 col-lg-3 mb-4">
-        
-                    <!-- Card -->
-                    <div class="card gradient-card">
-                
-                        <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
-                
-                              <div class="text-white d-flex h-100 mask blue-gradient-rgba">        
-                                <div class="first-content align-self-center p-3">
-                                <h3 class="card-title"> TEXTO1 - TEXT 2 </h3>
-                                <p class="lead mb-0">{{$asignacion->clase}}</p>
-                                </div>
-                                <div class="second-content align-self-center mx-auto text-center">
-                                <i class="fa fa-money fa-3x"></i>
-                                </div>
-                            </div>
-                        
-                
-                        </div>
-                        <div class="card-body card-body-cascade ">
-                           {{-- modalidad  Prescolar --}}
-                           @if ($modalidad ==1 )
-                           <ul class="list-group">
-                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                   <li class="list-group-item">
-                                       <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
-                                   </li>
-                               </a>
-                              {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,2])}} ">--}}
-                                   <a class="list-group-item list-group-item-action" style="color:black" href="#"> 
-                                       <li class="list-group-item">
-                                           <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
-                                       </li>
-                                   </a>
-                                    <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="#">--}}
-                                       <li class="list-group-item">
-                                           <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen
-                                       </li>
-                                   </a>
-                               {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                               <a class="list-group-item list-group-item-action" style="color:black" href="#">   
-                                 <li class="list-group-item">
-                                       <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Descargas
-                                   </li>
-                               </a>
-                          </ul> 
-                         @endif 
+            <!-- Card Regular -->
+            <div class="card card-cascade">
 
-
-                          {{-- modalidad de primaria  --}}
-                          @if ($modalidad ==2 )
-                            <ul class="list-group">
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                    <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
-                                    </li>
-                                </a>
-                              {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} "> --}}
-                                   <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
-                                        </li>
-                                    </a>
-                                     {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">--}}
-                                      <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                        <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen
-                                        </li>
-                                    </a>
-                                {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/descargas/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                  <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                    {{-- <a class="list-group-item list-group-item-action" style="color:black" href="#">     --}}
-                                      <li class="list-group-item">
-                                            <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Cuadro Uno
-                                        </li>
-                                    </a>
-                           </ul> 
-                          @endif 
-                          
-                          {{-- modalidad de secudaria --}}
-                          @if ($modalidad >2 )
-                            <ul class="list-group">
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                    <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
-                                    </li>
-                                </a>
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} "> 
-                                 {{--<a class="list-group-item list-group-item-action" style="color:black" href="#">--}}
-                                    <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
-                                    </li>
-                                </a>
-                                 {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                  <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                                    <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Notas
-                                    </li>
-                                </a>
-                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
-                                {{-- <a class="list-group-item list-group-item-action" style="color:black" href="#">     --}}
-                                  <li class="list-group-item">
-                                        <div class="md-v-line"></div><i class="fas fa-download mr-5"></i>Cuadro Uno
-                                    </li>
-                                </a>
-                                
-                            </ul> 
-                          @endif 
-                           
-
-                        </div>
-                    </div>
-    
+            <!-- Card image -->
+            <div class="view view-cascade overlay">
+                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+                <a>
+                <div class="mask rgba-white-slight"></div>
+                </a>
             </div>
-            <!-- Card -->
+
+            <!-- Card content -->
+            <div class="card-body card-body-cascade text-center">
+
+                <!-- Title -->
+                <h4 class="card-title"><strong>{{student->name}} {{student->lastname}}</strong></h4>
+                <!-- Subtitle -->
+                <h6 class="font-weight-bold indigo-text py-2">{{student->cuenta}}</h6>
+                <!-- Text -->
+                <p class="card-text">Estudiante del Instituto San José del Carmen 2020.
+                </p>
+
+                <!-- Facebook -->
+                <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+                <!-- Twitter -->
+                <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+                <!-- Google + -->
+                <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
+
+            </div>
+
+            </div>
+            <!-- Card Regular -->
                    
                 
             @endforeach
