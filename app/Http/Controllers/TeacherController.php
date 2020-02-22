@@ -179,8 +179,21 @@ class TeacherController extends Controller
                     ])
                     ->Select('users.name','users.lastname','users.id','users.cuenta')
                     ->get();
+
+         //obtenemos las asignaciones de este docentes
+         $asignaciones = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
+                        //->where('assignments.user_id','=',$user_id)
+                        ->where([
+                            ['assignments.user_id', '=', $user_id],
+                            ['clases.semester', '!=', 2],
+
+                        ])
+                        ->get(); 
         
-        return view('teachers/students',compact('students'));
+        return view('teachers/students',compact('students','asignaciones'));
 
 
      }
