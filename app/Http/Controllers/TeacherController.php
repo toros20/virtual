@@ -169,6 +169,9 @@ class TeacherController extends Controller
             }
         /*************************SEGURIDAD*******************/
 
+        //obtenemos los datos del docente
+        $user = User::findOrFail($user_id);
+
          //obtenemos los id de los alumnos matriculados en este curso y seccion
          $students =   DB::table('users')
                     ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
@@ -190,7 +193,7 @@ class TeacherController extends Controller
                         ])
                         ->get(); 
         
-        return view('teachers/students',compact('students','asignaciones'));
+        return view('teachers/students',compact('user','students','asignaciones'));
 
 
      }
