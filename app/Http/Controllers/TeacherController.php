@@ -180,8 +180,9 @@ class TeacherController extends Controller
                         ['enrollments.course_id', '=', $course],
                         ['enrollments.section', '=', $section]
                     ])
-                    ->Select('users.name','users.lastname','users.id','users.cuenta')
-                    -orderBy('users.sexo','users.name')
+                    ->Select('users.name','users.lastname','users.sexo','users.id','users.cuenta')
+                    -orderBy('users.sexo','asc')
+                    -orderBy('users.name','asc')
                     ->get();
 
          //obtenemos las asignaciones de este docentes
