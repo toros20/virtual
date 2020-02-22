@@ -149,8 +149,39 @@ class TeacherController extends Controller
 
         return view('teachers/academia',compact('user','asignaciones','modalidad'));
      }
+     //funcion para mostrar los estudiantes
+     function students($user_id,$course,$section){
 
-     function  estudiantes(){
+         /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='teacher'){
+                return ("ÁREA EXCLUSIVA DEL DOCENTE.");
+            }
+
+            $id_user_log = Auth::id();
+            if( $id_user_log != $user_id){
+                return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
+            }
+        /*************************SEGURIDAD*******************/
+
+         //obtenemos los id de los alumnos matriculados en este curso y seccion
+         $students =   DB::table('users')
+                    ->join('enrollments', 'users.id', '=', 'enrollments.user_id')
+                    ->where ([
+                        ['users.role', '=', 'student'],
+                        ['enrollments.course_id', '=', $course],
+                        ['enrollments.section', '=', $section]
+                    ])
+                    ->Select('users.name','users.lastname','users.id','users.cuenta')
+                    ->get();
+        
+        return view('teachers/students',compact('students'));
+
 
      }
      //funcion para enviar datos a la seccion de acumulativos de los docentes

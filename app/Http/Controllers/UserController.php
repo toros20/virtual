@@ -218,6 +218,35 @@ class UserController extends Controller
        
         
        // return "MENSAJES LISTO TODOS" ;
+
+       /*******codigo para insertar filas en la tabla taskstudent */
+        //obtenemos los id de estudiates de este curso y seccion
+       $Enrollments = Enrollment::where([
+            ['course_id', '=', $course],
+            ['section', '=', $section],
+        ])->get();
+
+        //tabla a insertar
+        $tbl_taskstudent='taskstudent_'.$course.'_'.$section;
+
+        //ciclo para cada estudiante 
+        foreach ($Enrollments as $enroll) {
+            //obtenemos los id de las tareas de la seccion c
+            $tareas = DB::table('task_16_c')->Select('id as id_task')->get();
+            //ciclo para cada tarea
+            foreach ($tareas as $tarea) {
+                //insertamos la tarea en la task_student que corresponde al curso y seccion
+                $res_task_16_d= DB::table($tbl_taskstudent)->insert([
+
+                    'student'=>$enroll->user_id,
+                    'task_'.$course.'_'.$section.'_id'=> $tarea->$id_task,
+                    'valor_obtenido'=>0   
+                ]);
+            }
+           
+        }//fin del ciclo para cada alumno de este curso
+
+        return "LISTO---tareas Insertadas De:" . $course ."-". $section ;
         
     }
 

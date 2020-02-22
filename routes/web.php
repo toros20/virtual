@@ -213,6 +213,9 @@ Route::get('teachers/documentos/{user_id}/{course_id}/{section}/{clase}','Teache
 Route::get('teachers/examen/{user_id}/{course_id}/{section}/{clase}','TeacherController@examen')->name('teachers/examen/{user_id}/{course_id}/{section}/{clase}');
 //Route::get('teachers/descargas/{user_id}/{course_id}/{section}/{clase}','TeacherController@descargas')->name('teachers/descargas/{user_id}/{course_id}/{section}/{clase}');
 Route::get('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}','TeacherController@cuadrouno')->name('teachers/cuadrouno/{user_id}/{course_id}/{section}/{clase}');
+//ruta para mostrar el listado de alumnos a los docentes
+Route::get('teachers/students/{user_id}/{course_id}/{section}','TeacherController@students')->name('teachers/students/{user_id}/{course_id}/{section}');
+
 /***************FIN de las Rutas para los botones del panel academico del docente*/
 
 //crear ruta para generar las secciones asignadas a este curso de este docente
