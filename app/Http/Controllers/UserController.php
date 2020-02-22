@@ -233,6 +233,7 @@ class UserController extends Controller
         foreach ($Enrollments as $enroll) {
             //obtenemos los id de las tareas de la seccion c
             $tareas = DB::table('task_16_c')->Select('id as id_task')->get();
+            dd($tareas);
             //ciclo para cada tarea
             foreach ($tareas as $tarea) {
                 //insertamos la tarea en la task_student que corresponde al curso y seccion
