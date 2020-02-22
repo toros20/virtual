@@ -147,7 +147,7 @@
                            {{-- modalidad  Prescolar --}}
                            @if ($modalidad ==1 )
                            <ul class="list-group">
-                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                               <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/students/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
                                    <li class="list-group-item">
                                        <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
                                    </li>
@@ -177,7 +177,7 @@
                           {{-- modalidad de primaria  --}}
                           @if ($modalidad ==2 )
                             <ul class="list-group">
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/students/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
                                     <li class="list-group-item">
                                         <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
                                     </li>
@@ -207,7 +207,7 @@
                           {{-- modalidad de secudaria --}}
                           @if ($modalidad >2 )
                             <ul class="list-group">
-                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/estudiantes/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/students/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
                                     <li class="list-group-item">
                                         <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
                                     </li>
