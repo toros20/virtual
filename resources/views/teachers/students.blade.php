@@ -111,10 +111,10 @@
                 <!-- Card image -->
                 <div class="view view-cascade overlay">
                     @if ($student->sexo == 'F')
-                        <img class="card-img-top" src="img/student_girl.png" alt="Card image cap">
+                        <img class="card-img-top" src="{{ URL::asset('img/boy.png') }}" alt="Card image cap">
                     @endif
                     @if ($student->sexo == 'M')
-                        <img class="card-img-top" src="img/boy.png" alt="Card image cap">
+                        <img class="card-img-top" src="{{ URL::asset('img/student_girl.png') }}" alt="Card image cap">
                     @endif
                     <a>
                     <div class="mask rgba-white-slight"></div>
