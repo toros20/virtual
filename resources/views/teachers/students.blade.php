@@ -120,9 +120,9 @@
             <div class="card-body card-body-cascade text-center">
 
                 <!-- Title -->
-                <h4 class="card-title"><strong>{{student->name}} {{student->lastname}}</strong></h4>
+                <h4 class="card-title"><strong>{{$student->name}} {{$student->lastname}}</strong></h4>
                 <!-- Subtitle -->
-                <h6 class="font-weight-bold indigo-text py-2">{{student->cuenta}}</h6>
+                <h6 class="font-weight-bold indigo-text py-2">{{$student->cuenta}}</h6>
                 <!-- Text -->
                 <p class="card-text">Estudiante del Instituto San José del Carmen 2020.
                 </p>
