@@ -105,45 +105,47 @@
         
             @foreach ($students as $student)
             
-            <!-- Card Regular -->
-            <div class="card card-cascade">
+                <!-- Card Regular -->
+                <div class="card card-cascade col-3">
 
-            <!-- Card image -->
-            <div class="view view-cascade overlay">
-                <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
-                <a>
-                <div class="mask rgba-white-slight"></div>
-                </a>
-            </div>
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/men.jpg" alt="Card image cap">
+                    <a>
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
 
-            <!-- Card content -->
-            <div class="card-body card-body-cascade text-center">
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
 
-                <!-- Title -->
-                <h4 class="card-title"><strong>{{$student->name}} {{$student->lastname}}</strong></h4>
-                <!-- Subtitle -->
-                <h6 class="font-weight-bold indigo-text py-2">{{$student->cuenta}}</h6>
-                <!-- Text -->
-                <p class="card-text">Estudiante del Instituto San José del Carmen 2020.
-                </p>
+                    <!-- Title -->
+                    <h4 class="card-title"><strong>{{$student->name}} {{$student->lastname}}</strong></h4>
+                    <!-- Subtitle -->
+                    <h6 class="font-weight-bold indigo-text py-2">{{$student->cuenta}}</h6>
+                    <!-- Text -->
+                    <p class="card-text">Estudiante del Instituto San José del Carmen 2020.
+                    </p>
 
-                <!-- Facebook -->
-                <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
-                <!-- Twitter -->
-                <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
-                <!-- Google + -->
-                <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
+                    <!-- Facebook -->
+                    <a type="button" class="btn-floating btn-small btn-fb"><i class="fab fa-facebook-f"></i></a>
+                    <!-- Twitter -->
+                    <a type="button" class="btn-floating btn-small btn-tw"><i class="fab fa-twitter"></i></a>
+                    <!-- Google + -->
+                    <a type="button" class="btn-floating btn-small btn-dribbble"><i class="fab fa-dribbble"></i></a>
 
-            </div>
+                </div>
 
-            </div>
-            <!-- Card Regular -->
+                </div>
+                <!-- Card Regular -->
                    
                 
             @endforeach
            
                 
         </div><!--row-->
+
+         </div><!--container-->
 
      </main>
  <!--Main Layout-->
