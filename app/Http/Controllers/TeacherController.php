@@ -336,12 +336,9 @@ class TeacherController extends Controller
     //funcion para almacer una tarea creada por el docente
     function send_task(Request $request){
 
-        //recibimos los datos de la tarea(task) a crear 
-        $course_id=$request->curso_actual;
-        //$course_id=$request->_course_id;
-        $clase_id=$request->clase_actual;
-        //$clase_id=$request->_clase_id;
-        //$secciones=$request->_secciones;
+        $course_id=$request->select_course;
+        $clase_id=$request->select_clases;
+
         $secciones=$request->sections;
 
         $tipo=$request->select_tipo;
@@ -354,16 +351,16 @@ class TeacherController extends Controller
         $teacher=$request->user_id;
 
         //variables utilizadas para volver al curso seccion y clase donde esta actualmente el docente
-        $curso_actual=$request->curso_actual;
-        $section_actual=$request->section_actual;
-        $clase_actual=$request->clase_actual;
-
+        //$curso_actual=$request->curso_actual;
+        //$section_actual=$request->section_actual;
+        //$clase_actual=$request->clase_actual;
+        $ultima_seccion_ingresada = 0;
         //cambiamos el formato de fecha
         $fecha_entrega = date("Y-m-d",strtotime($fecha_entrega1));
 
         //para cada una de las secciones que se ha seleccionado
         foreach ($secciones as  $seccion) {
-
+            
             //convertimos en minuscula la letra de la seccion
             $seccion=strtolower($seccion);
             //nombre de la tabla task principal del curso y seccion a almacenar
@@ -406,20 +403,12 @@ class TeacherController extends Controller
             else{
                 echo "Error Al Almacenar la Tarea, intentelo nuevamente";
             }
+            $ultima_seccion_ingresada = $seccion; // se requiere para redireccinar al final
         }//fin del for each -> fin del ciclo por cada seccion seleccionada
         
 
-        //buscamos las tareas del curso seccion y clase donde esta actualmente el docente
-        /*$tbl_task_actual='task_'.$curso_actual.'_'.$section_actual;//nombre de la tabla a buscar
-        $tasks = DB::table($tbl_task_actual)
-        ->where([
-                ['clase', '=', $clase_actual],
-                ['teacher', '=', $teacher],
-                ])
-        ->orderBy('id','ASC')
-        ->get();*/
 
-        return redirect()->route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$teacher,$curso_actual,$section_actual,$clase_actual,$parcial]);
+        return redirect()->route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$teacher,$course_id,$ultima_seccion_ingresada,$clase_id,$parcial]);
         //return view('ajax/send_task',compact('tasks','curso_actual','section_actual'));
 
     }
