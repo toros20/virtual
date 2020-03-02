@@ -137,21 +137,21 @@ class StudentController extends Controller
          //clases para mostrar en el panel de navegacion del lado derecho
 
          //codigo para ver las clases del primer semestre
-         $clases = DB::table('clasecourses')
+         /*$clases = DB::table('clasecourses')
                         ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                         ->Select('clases.id as clase_id','clases.short_name as clase')
                         ->where('clasecourses.course_id', '=', $enroll[0]->course_id)
-                        ->get();
+                        ->get();*/
         
         //codigo para ver las clases del segundo semestre
-        /*$clases = DB::table('clasecourses')
+        $clases = DB::table('clasecourses')
                     ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                     ->Select('clases.id as clase_id','clases.short_name as clase')
                     ->where([
                         ['clasecourses.course_id', '=', $enroll[0]->course_id],
-                        ['clases.semester', '!=', 1]
+                        ['clases.semester', '!=', 2]
                     ])
-                    ->get();*/
+                    ->get();
 
         //tabla individual de tareas para evaluar
         $tbl_taskstudent='taskstudent_'.$course.'_'.$section;//nombre de la tabla a buscar
