@@ -1094,7 +1094,7 @@ class UserController extends Controller
     /*************************SEGURIDAD*******************/
 
     //obtenemos los id de los estudiantes matriculados en este curso y seccion
-    $estudiantes = User::findOrFail($use_id);
+    $estudiantes = User::findOrFail($user->id);
 
         $curso = $course_id;
         $course =  Course::findOrFail($course_id);
