@@ -176,7 +176,7 @@
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                             {{-- I PARCIAL --}}
                                              
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor}}</td>
                                             
                                             
                                             {{-- II PARCIAL --}}
@@ -224,7 +224,7 @@
                                             <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                             
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1). '/' . $valor}}</td>
                                            
         
                                             {{-- II PARCIAL --}}
