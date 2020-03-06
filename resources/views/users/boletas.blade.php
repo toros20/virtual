@@ -124,7 +124,7 @@
                                 @php
                                      $suma_promedio = 0;
                                 @endphp   
-                                  @php dd($clases) @endphp 
+                                 
                                 @foreach ($clases as $clase)
         
                                     <?php 
@@ -140,7 +140,7 @@
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                        
+                                        dd($resultado);
                                     ?>
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
