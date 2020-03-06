@@ -1048,7 +1048,7 @@ class UserController extends Controller
                         ->orderBy('users.sexo','asc')
                         ->orderBy('users.name','asc')
                         ->get(); 
-                        //dd($estudiantes);
+                        dd($estudiantes);
 
             $curso = $course_id;
             $course =  Course::findOrFail($course_id);
