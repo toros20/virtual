@@ -132,7 +132,7 @@
                                                     ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                     ->where ([
                                                                 [$historial.'.clase_id', '=', $clase->clase_id],
-                                                                [$historial.'.student_id', '=', $estudiante->user_id],
+                                                                [$historial.'.student_id', '=', $estudiante->id],
                                                             ])
                                                     ->Select('clases.name as clase',$historial.'.*')
                                                     ->get();
@@ -142,7 +142,7 @@
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                        
                                     ?>
-                                     @php dd($resultado) @endphp
+                                     
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
                                         <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
