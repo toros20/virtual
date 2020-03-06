@@ -163,7 +163,7 @@
                                         $valor = 0;
                                         foreach ($tasks_IP as $task_ip)
                                             if($task_ip->evaluada == 1 ){
-                                                 $valor += $task_ip->valor
+                                                 $valor += $task_ip->valor;
                                             }  
                                         endforeach
                                     @endphp
@@ -391,7 +391,7 @@
                                         $valor = 0;
                                         foreach ($tasks_IP as $task_ip)
                                             if($task_ip->evaluada == 1 ){
-                                                 $valor += $task_ip->valor
+                                                 $valor += $task_ip->valor;
                                             }  
                                         endforeach
                                     @endphp
