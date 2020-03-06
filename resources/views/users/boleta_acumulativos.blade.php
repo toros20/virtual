@@ -141,7 +141,7 @@
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     ?>
-
+                                     @php dd($resultado) @endphp
                                     @php 
                                         //tabla individual de tareas para evaluar
                                         $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
@@ -168,7 +168,7 @@
                                         }
                                             
                                     @endphp
-                                     @php dd($tasks_IP) @endphp
+                                    
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
                                         <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
