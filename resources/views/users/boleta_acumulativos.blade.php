@@ -324,7 +324,7 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                @php dd($clases)@endphp
+                                
                                 @foreach ($clases as $clase)
                                 
                                 <?php 
@@ -336,8 +336,8 @@
                                                             [$historial.'.student_id', '=', $estudiante->id],
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
-                                                ->get();
-                                    
+                                                ->->toSql();
+                                     dd($resultado) 
                                         $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                         $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
