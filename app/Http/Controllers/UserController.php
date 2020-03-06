@@ -1089,10 +1089,16 @@ class UserController extends Controller
 
       /*************************SEGURIDAD*******************/
 
-        $docentes = DB::table('users')->where ([
+        /*$docentes = DB::table('users')->where ([
                                 ['users.role', '=', 'teacher'],
                                 ['users.cuenta', '>', '20193000'],
                                 ['users.cuenta', '<', '20194702']//no incluyo a los ultimos 3 docentes
+                            ])
+                            ->Select('users.name','users.lastname','users.id','users.cuenta')
+                            ->get();*/
+        $docentes = DB::table('users')->where ([
+                                ['users.role', '=', 'teacher'],
+                               
                             ])
                             ->Select('users.name','users.lastname','users.id','users.cuenta')
                             ->get();
