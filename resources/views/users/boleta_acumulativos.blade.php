@@ -54,7 +54,6 @@
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                
-                @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0;  $suma_promedio=0;?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
@@ -1253,7 +1252,7 @@
                             </table>
                         @endif
                        
-               @endforeach  {{-- fin del foreach de estudiante --}}
+               {{--  @endforeach fin del foreach de estudiante --}}
 
         </div><!--row-->
 
