@@ -109,10 +109,20 @@ Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas
 Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('boletas_docentes');
 
 //ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/boleta_acumulativos/{course_id}/{section}/{user_id}', 'UserController@boleta_acumulativos')->name('boleta_acumulativos/{course_id}/{section}/{user_id}');
+
+
+//ruta para mostrar la seccion de personalidad de los consejeros
 Route::get('/users/reporte_docentes/{parcial}', 'UserController@reporte_docentes')->name('reporte_docentes/{parcial}');
 
 //ruta para mostrar la seccion de acumulativos de las coordinaciones
 Route::get('/users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}', 'UserController@acumulativos')->name('users/acumulativos/{user_id}/{course}/{section}/{clase}/{parcial}');
+
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/inasistencias_docentes', 'UserController@inasistencias_docentes')->name('inasistencias_docentes');
+
+//ruta para mostrar la seccion de personalidad de los consejeros
+Route::get('/users/inasistencias_estudiantes', 'UserController@inasistencias_estudiantes')->name('inasistencias_estudiantes');
 
 
 

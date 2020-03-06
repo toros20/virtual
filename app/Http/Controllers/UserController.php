@@ -1074,6 +1074,51 @@ class UserController extends Controller
         //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
     }
 
+    public function boleta_acumulativos($course_id,$section,$student){
+
+        /*************************SEGURIDAD*******************/
+        //control de seguridad
+        // Get the currently authenticated user...
+        if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role!='student'){
+            return ("ÁREA EXCLUSIVA DEL ESTUDIANTE.");
+        }
+
+        if ($user->id != $student ){
+            return ("ACCESO NO PERMITIDO");
+        }
+
+    /*************************SEGURIDAD*******************/
+
+    //obtenemos los id de los estudiantes matriculados en este curso y seccion
+    $estudiantes = User::findOrFail($user_id);
+
+        $curso = $course_id;
+        $course =  Course::findOrFail($course_id);
+        $seccion = strtolower($section);
+    
+    //obtenemos las clase que estan asignadas a este curso
+    
+    $clases = DB::table('clasecourses')
+                    ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                    ->where ([
+                        ['clasecourses.course_id', '=', $course_id],
+                        ['clases.semester', '!=', 2]
+                        //['clases.oficial', '!=', 2],
+                    ])
+                    ->Select('clase_id')
+                    ->get(); 
+    
+    $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
+    $pdf->setPaper('a4','landscape');
+    return $pdf->download('Acumulativos.pdf');
+            
+    //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
+}
+
     public function boletas_docentes(){
 
         /*************************SEGURIDAD*******************/

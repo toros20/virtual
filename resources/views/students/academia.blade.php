@@ -172,7 +172,7 @@
                             <div class="text-white d-flex h-100 mask blue-gradient-rgba">        
                         
                             <div class="first-content align-self-center p-3">
-                                <h3 class="card-title"> Asignaturas  </h3>
+                                <h3 class="card-title"> OPCIONES  </h3>
                             
                             </div>
                             <div class="second-content align-self-center mx-auto text-center">
@@ -186,6 +186,12 @@
 
                       @if ($asignaciones[0]->is_semestral == 1)
                       <ul class="list-group">
+
+                         <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boelta_acumulativos/{course_id}/{section}/{user_id}}', [$enroll->course_id,$enroll->section,$user->id])}} ">
+                              <li class="list-group-item">
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Acumulativos
+                              </li>
+                          </a>
 
                           <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} ">
                               <li class="list-group-item">

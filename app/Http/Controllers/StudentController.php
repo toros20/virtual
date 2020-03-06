@@ -103,7 +103,7 @@ class StudentController extends Controller
                         ->get();
                        // dd($asignaciones);
 
-        return view('students/academia',compact('user','asignaciones'));
+        return view('students/academia',compact('user','asignaciones','enroll'));
     }
 
     //funcion para la seccion de cada clase, mostraremos acumulativos y documentos por parcial
