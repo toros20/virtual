@@ -122,7 +122,7 @@
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
                                 @php
                                      $suma_promedio = 0;
-                                     dd($suma_promedio);
+                                    
                                 @endphp   
                                  
                                 @foreach ($clases as $clase)
@@ -270,6 +270,7 @@
         
                                 <?php $cont+=1;?>
                                 @endforeach {{-- fin del foreach de cada clase --}}
+                                 @php dd($cont) @endphp
                              </table>
                         
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
