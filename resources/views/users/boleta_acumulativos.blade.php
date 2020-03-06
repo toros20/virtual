@@ -336,7 +336,7 @@
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
-
+                                    dd($resultado);
                                         $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                         $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
