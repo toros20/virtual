@@ -168,7 +168,7 @@
                                         }
                                             
                                     @endphp
-                                     
+                                     @php dd(tasks_IP) @endphp
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
                                         <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
