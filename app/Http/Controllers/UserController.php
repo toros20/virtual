@@ -1103,6 +1103,7 @@ class UserController extends Controller
                             ])
                             ->Select('users.name','users.lastname','users.id','users.cuenta')
                             ->get();
+                            dd($docentes);
       
      $pdf = PDF::loadView('users/boletas_docentes',['docentes' => $docentes] );
      //$pdf->setPaper('a4','portraint');
