@@ -126,7 +126,7 @@
                                 @endphp   
                                  
                                 @foreach ($clases as $clase)
-        
+
                                     <?php 
                                         $resultado = DB::table($historial)
                                                     ->join('clases', $historial.'.clase_id', '=', 'clases.id')
@@ -140,8 +140,33 @@
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                       
                                     ?>
+
+                                    @php 
+                                        //tabla individual de tareas para evaluar
+                                        $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+                                        //tabla global de tareas
+                                        $tbl_task='task_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+
+                                        /*****SOLO 1 PARCIAL****** */
+
+                                        //buscamos las tares de este esudiante por el parcial y clase 
+                                        $tasks_IP = DB::table($tbl_taskstudent)
+                                                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                                                    ->where([
+                                                        ['student', '=', $estudiante->id],
+                                                        ['parcial', '=', 1],
+                                                        ['clase', '=', $clase->id]
+                                                    ])
+                                                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                                                    ->get();
+                                        $valor = 0;
+                                        foreach ($tasks_IP as $task_ip)
+                                            if($task_ip->evaluada == 1 ){
+                                                 $valor += $task_ip->valor
+                                            }  
+                                        endforeach
+                                    @endphp
                                      
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
@@ -149,11 +174,9 @@
                                             <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                             {{-- I PARCIAL --}}
-                                            @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                            @endif
+                                             
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
+                                            
                                             
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
@@ -199,11 +222,9 @@
                                         <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                             <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                            @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                            @endif
+                                            
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
+                                           
         
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
@@ -349,6 +370,32 @@
                                         //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     
                                 ?>
+                                 @php 
+                                        //tabla individual de tareas para evaluar
+                                        $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+                                        //tabla global de tareas
+                                        $tbl_task='task_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+
+                                        /*****SOLO 1 PARCIAL****** */
+
+                                        //buscamos las tares de este esudiante por el parcial y clase 
+                                        $tasks_IP = DB::table($tbl_taskstudent)
+                                                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                                                    ->where([
+                                                        ['student', '=', $estudiante->id],
+                                                        ['parcial', '=', 1],
+                                                        ['clase', '=', $clase->id]
+                                                    ])
+                                                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                                                    ->get();
+                                        $valor = 0;
+                                        foreach ($tasks_IP as $task_ip)
+                                            if($task_ip->evaluada == 1 ){
+                                                 $valor += $task_ip->valor
+                                            }  
+                                        endforeach
+                                    @endphp
+
                                 {{-- Codigo para intercalar por colores las filas --}}
                                 @if ($cont%2==0 ) 
                                     <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
@@ -356,7 +403,7 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                         {{-- I PARCIAL --}}
                                         
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
                                      
 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
@@ -393,7 +440,7 @@
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                        
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)/ $valor}}</td>
                                       
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
