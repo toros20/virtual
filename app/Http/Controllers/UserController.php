@@ -1094,7 +1094,7 @@ class UserController extends Controller
     /*************************SEGURIDAD*******************/
 
     //obtenemos los id de los estudiantes matriculados en este curso y seccion
-    $estudiantes = User::findOrFail($user->id);
+    $estudiante = User::findOrFail($user->id);
 
         $curso = $course_id;
         $course =  Course::findOrFail($course_id);
@@ -1112,7 +1112,7 @@ class UserController extends Controller
                     ->Select('clase_id')
                     ->get(); 
     
-    $pdf = PDF::loadView('users/boleta_acumulativos', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
+    $pdf = PDF::loadView('users/boleta_acumulativos', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiante' => $estudiante,'clases' => $clases]  );
     $pdf->setPaper('a4','landscape');
     return $pdf->download('Acumulativos.pdf');
             
