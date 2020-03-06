@@ -346,7 +346,7 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                
+                                @php dd($clases) @endphp
                                 @foreach ($clases as $clase)
                                 
                                 <?php 
