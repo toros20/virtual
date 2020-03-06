@@ -346,7 +346,7 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                @php dd($clases) @endphp
+                               
                                 @foreach ($clases as $clase)
                                 
                                 <?php 
@@ -354,7 +354,7 @@
                                     $resultado = DB::table($historial)
                                                 ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                 ->where ([
-                                                            [$historial.'.clase_id', '=', $clase->id],
+                                                            [$historial.'.clase_id', '=', $clase->clase_id],
                                                             [$historial.'.student_id', '=', $estudiante->id],
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
