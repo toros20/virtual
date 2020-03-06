@@ -1112,7 +1112,7 @@ class UserController extends Controller
                     ->Select('clase_id')
                     ->get(); 
     
-    $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
+    $pdf = PDF::loadView('users/boleta_acumulativos', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
     $pdf->setPaper('a4','landscape');
     return $pdf->download('Acumulativos.pdf');
             
