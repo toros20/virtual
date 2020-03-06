@@ -53,7 +53,7 @@
         <div class="row" align="center"> 
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
-                @php dd($estudiantes) @endphp
+              
                 @foreach ($estudiantes as $estudiante)
                         <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0;  $suma_promedio=0;?>
                       
@@ -123,7 +123,8 @@
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
                                 @php
                                      $suma_promedio = 0;
-                                @endphp    
+                                @endphp   
+                                  @php dd($clases) @endphp 
                                 @foreach ($clases as $clase)
         
                                     <?php 
