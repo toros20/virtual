@@ -161,11 +161,12 @@
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->get();
                                         $valor = 0;
-                                        foreach ($tasks_IP as $task_ip)
+                                        foreach ($tasks_IP as $task_ip){
                                             if($task_ip->evaluada == 1 ){
                                                  $valor += $task_ip->valor;
                                             }  
-                                        endforeach
+                                        }
+                                            
                                     @endphp
                                      
                                     {{-- Codigo para intercalar por colores las filas --}}
@@ -389,11 +390,11 @@
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->get();
                                         $valor = 0;
-                                        foreach ($tasks_IP as $task_ip)
-                                            if($task_ip->evaluada == 1 ){
+                                        foreach ($tasks_IP as $task_ip){
+                                             if($task_ip->evaluada == 1 ){
                                                  $valor += $task_ip->valor;
-                                            }  
-                                        endforeach
+                                            } 
+                                        }
                                     @endphp
 
                                 {{-- Codigo para intercalar por colores las filas --}}
