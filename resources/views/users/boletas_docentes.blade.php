@@ -138,7 +138,7 @@
                                                             ])
                                                     ->Select($historial.'.Acum1', $historial.'.Exa1')
                                                     ->get();
-
+                                    dd($resultados);
                         
                                     foreach ($resultados as $resultado) {
                                         $total_alumnos+=1;$total_evaluados+=1;
@@ -198,7 +198,7 @@
                             </tr>
                         </table>
 
-
+ 
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
