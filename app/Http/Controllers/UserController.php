@@ -1048,7 +1048,7 @@ class UserController extends Controller
                         ->orderBy('users.sexo','asc')
                         ->orderBy('users.name','asc')
                         ->get(); 
-                        dd($estudiantes);
+                        //dd($estudiantes);
 
             $curso = $course_id;
             $course =  Course::findOrFail($course_id);
@@ -1066,7 +1066,7 @@ class UserController extends Controller
                         ])
                         ->Select('clase_id')
                         ->get(); 
-        
+                        dd($clases);
         $pdf = PDF::loadView('users/boletas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases]  );
         $pdf->setPaper('a4','landscape');
         return $pdf->download('calificaciones.pdf');
