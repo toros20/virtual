@@ -271,7 +271,7 @@
                                 <?php $cont+=1;?>
                                 @endforeach {{-- fin del foreach de cada clase --}}
                              </table>
-                         @php dd($resultado) @endphp 
+                        
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
                                 <?php 
                                     $promedio1=$total1/$cont;
@@ -512,7 +512,7 @@
                                                 ])
                                         ->get();  */
 
-                                $personalidad_3p = DB::table('personalidad')
+                                /*$personalidad_3p = DB::table('personalidad')
                                         ->where ([
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 3],
@@ -524,12 +524,12 @@
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 4],
                                                 ])
-                                        ->get();
+                                        ->get();*/
 
                                     //$c1_parcial1 = ""; $c2_parcial1 = ""; $c3_parcial1 = ""; $c4_parcial1 = ""; $c5_parcial1 = ""; $c6_parcial1 = "";
                                    // $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
-                                    $c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
-                                    $c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
+                                    //$c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
+                                    //$c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
 
                                     //**************************PRIMER PARCIAL****************************//
                                    /* if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
@@ -608,7 +608,7 @@
 
                                     //**************************TERCER PARCIAL****************************//
 
-                                    if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
+                                    /*if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
                                     if ($personalidad_3p[0]->clase1 == 2) {$c1_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase1 == 3) {$c1_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase1 == 4) {$c1_parcial3="Muy Satisfactorio";}
@@ -642,11 +642,11 @@
                                     if ($personalidad_3p[0]->clase6 == 2) {$c6_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase6 == 3) {$c6_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase6 == 4) {$c6_parcial3="Muy Satisfactorio";}
-                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} */
 
                                     //**************************CUARTO PARCIAL****************************//
 
-                                    if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
+                                    /*if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
                                     if ($personalidad_4p[0]->clase1 == 2) {$c1_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase1 == 3) {$c1_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase1 == 4) {$c1_parcial4="Muy Satisfactorio";}
@@ -680,7 +680,7 @@
                                     if ($personalidad_4p[0]->clase6 == 2) {$c6_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase6 == 3) {$c6_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase6 == 4) {$c6_parcial4="Muy Satisfactorio";}
-                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} 
+                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} */
 
                                     ?>
 
@@ -694,43 +694,43 @@
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial3; ?></th>
-                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial4; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial3; ?></th>
+                                            <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial4; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial3; ?></th>
                                             <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"></th>
                                         </tr>
@@ -746,15 +746,15 @@
                                                 </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <td style="width:300px;border: 1px solid #dee2e6;">Número de Reportes</td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->reportes; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->reportes; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                         </tr>
                                         <tr style="border: 1px solid #dee2e6; ">
                                             <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->inasistencias; ?></td>
-                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->inasistencias; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->inasistencias; ?></td>
+                                            <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->inasistencias; ?></td>
                                             <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
                                         </tr>
@@ -766,7 +766,7 @@
                                     <?php 
                                  //obtenemos los datos de personalidad de este alumno en este parcial
                             
-                            $personalidad = DB::table('personalidad')
+                            /*$personalidad = DB::table('personalidad')
                                         ->where ([
                                                     ['personalidad.student_id', '=', $estudiante->user_id],
                                                     ['personalidad.parcial', '=', 1],
@@ -798,9 +798,10 @@
                                     $c1_parcial2 = ""; $c2_parcial2 = ""; $c3_parcial2 = ""; $c4_parcial2 = ""; $c5_parcial2 = ""; $c6_parcial2 = "";
                                     $c1_parcial3 = ""; $c2_parcial3 = ""; $c3_parcial3 = ""; $c4_parcial3 = ""; $c5_parcial3 = ""; $c6_parcial3 = "";
                                     $c1_parcial4 = ""; $c2_parcial4 = ""; $c3_parcial4 = ""; $c4_parcial4 = ""; $c5_parcial4 = ""; $c6_parcial4 = "";
+                                */
 
                                     //**************************PRIMER PARCIAL****************************//
-                                    if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
+                                    /*if ($personalidad[0]->clase1 == 1) {$c1_parcial1="Insuficiente";}
                                     if ($personalidad[0]->clase1 == 2) {$c1_parcial1="Necesita Mejorar";}
                                     if ($personalidad[0]->clase1 == 3) {$c1_parcial1="Satisfactorio";}
                                     if ($personalidad[0]->clase1 == 4) {$c1_parcial1="Muy Satisfactorio";}
@@ -834,11 +835,11 @@
                                     if ($personalidad[0]->clase6 == 2) {$c6_parcial1="Necesita Mejorar";}
                                     if ($personalidad[0]->clase6 == 3) {$c6_parcial1="Satisfactorio";}
                                     if ($personalidad[0]->clase6 == 4) {$c6_parcial1="Muy Satisfactorio";}
-                                    if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} 
+                                    if ($personalidad[0]->clase6 == 5) {$c6_parcial1="Avanzado";} */
 
                                     //**************************SEGUNDO PARCIAL****************************//
 
-                                    if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
+                                    /*if ($personalidad_2p[0]->clase1 == 1) {$c1_parcial2="Insuficiente";}
                                     if ($personalidad_2p[0]->clase1 == 2) {$c1_parcial2="Necesita Mejorar";}
                                     if ($personalidad_2p[0]->clase1 == 3) {$c1_parcial2="Satisfactorio";}
                                     if ($personalidad_2p[0]->clase1 == 4) {$c1_parcial2="Muy Satisfactorio";}
@@ -872,11 +873,11 @@
                                     if ($personalidad_2p[0]->clase6 == 2) {$c6_parcial2="Necesita Mejorar";}
                                     if ($personalidad_2p[0]->clase6 == 3) {$c6_parcial2="Satisfactorio";}
                                     if ($personalidad_2p[0]->clase6 == 4) {$c6_parcial2="Muy Satisfactorio";}
-                                    if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} 
+                                    if ($personalidad_2p[0]->clase6 == 5) {$c6_parcial2="Avanzado";} */
 
                                     //**************************TERCER PARCIAL****************************//
 
-                                    if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
+                                    /*if ($personalidad_3p[0]->clase1 == 1) {$c1_parcial3="Insuficiente";}
                                     if ($personalidad_3p[0]->clase1 == 2) {$c1_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase1 == 3) {$c1_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase1 == 4) {$c1_parcial3="Muy Satisfactorio";}
@@ -910,11 +911,11 @@
                                     if ($personalidad_3p[0]->clase6 == 2) {$c6_parcial3="Necesita Mejorar";}
                                     if ($personalidad_3p[0]->clase6 == 3) {$c6_parcial3="Satisfactorio";}
                                     if ($personalidad_3p[0]->clase6 == 4) {$c6_parcial3="Muy Satisfactorio";}
-                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} 
+                                    if ($personalidad_3p[0]->clase6 == 5) {$c6_parcial3="Avanzado";} */
 
                                     //**************************CUARTO PARCIAL****************************//
 
-                                    if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
+                                    /*if ($personalidad_4p[0]->clase1 == 1) {$c1_parcial4="Insuficiente";}
                                     if ($personalidad_4p[0]->clase1 == 2) {$c1_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase1 == 3) {$c1_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase1 == 4) {$c1_parcial4="Muy Satisfactorio";}
@@ -948,7 +949,7 @@
                                     if ($personalidad_4p[0]->clase6 == 2) {$c6_parcial4="Necesita Mejorar";}
                                     if ($personalidad_4p[0]->clase6 == 3) {$c6_parcial4="Satisfactorio";}
                                     if ($personalidad_4p[0]->clase6 == 4) {$c6_parcial4="Muy Satisfactorio";}
-                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} 
+                                    if ($personalidad_4p[0]->clase6 == 5) {$c6_parcial4="Avanzado";} */
                             ?>
 
                             <table style="margin-top:10px; font-size:1.25rem; border: 1px solid #dee2e6;"  align="center" width="700">
@@ -961,45 +962,45 @@
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Puntualidad</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c1_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c1_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Espíritu de Trabajo</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c2_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c2_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Orden y Presentación</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c3_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c3_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Sociabilidad</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c4_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c4_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem; ">Moralidad y Ética</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c5_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c5_parcial4; ?></th>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <th style="width:300px; padding:0.25rem;">Actitud Cívica y Religiosa</th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial1; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial2; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial3; ?></th>
-                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php echo $c6_parcial4; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial1; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial2; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial3; ?></th>
+                                    <th style="width:100px; padding:0.25rem; text-align:center; border: 1px solid #dee2e6;"><?php //echo $c6_parcial4; ?></th>
                                 </tr>
                             </table>
 
@@ -1013,17 +1014,17 @@
                                         </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="width:300px;border: 1px solid #dee2e6;">Número de Reportes</td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->reportes; ?></td>
                                 </tr>
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td style="width:300px;border: 1px solid #dee2e6;">Número de Inasistencias</td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_2p[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_3p[0]->inasistencias; ?></td>
-                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php echo $personalidad_4p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_2p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_3p[0]->inasistencias; ?></td>
+                                    <td style="text-align:center; width:100px;border: 1px solid #dee2e6;"><?php //echo $personalidad_4p[0]->inasistencias; ?></td>
                                 </tr>
                             </table>
                         @endif
