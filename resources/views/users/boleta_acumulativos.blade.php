@@ -354,7 +354,7 @@
                                     $resultado = DB::table($historial)
                                                 ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                 ->where ([
-                                                            [$historial.'.clase_id', '=', $clase->clase_id],
+                                                            [$historial.'.clase_id', '=', $clase->id],
                                                             [$historial.'.student_id', '=', $estudiante->id],
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
