@@ -156,7 +156,7 @@
                                                     ->where([
                                                         ['student', '=', $estudiante->id],
                                                         ['parcial', '=', 1],
-                                                        ['clase', '=', $clase->id]
+                                                        ['clase', '=', $clase->clase_id]
                                                     ])
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->get();
@@ -385,7 +385,7 @@
                                                     ->where([
                                                         ['student', '=', $estudiante->id],
                                                         ['parcial', '=', 1],
-                                                        ['clase', '=', $clase->id]
+                                                        ['clase', '=', $clase->clase_id]
                                                     ])
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->get();
