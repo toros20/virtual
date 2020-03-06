@@ -142,6 +142,7 @@
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                        
                                     ?>
+                                     @php dd($resultado) @endphp
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
                                         <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
@@ -270,7 +271,7 @@
         
                                 <?php $cont+=1;?>
                                 @endforeach {{-- fin del foreach de cada clase --}}
-                                 @php dd($cont) @endphp
+                                
                              </table>
                         
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
