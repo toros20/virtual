@@ -156,36 +156,30 @@
                                             @endif
                                             
                                             {{-- II PARCIAL --}}
-                                            @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                           {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                             @else 
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @endif
+                                            @endif --}}
                                             
                                             {{-- III PARCIAL --}}
-                                            @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                           {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                             @else 
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                            @endif
+                                            @endif --}}
 
                                              {{-- IV PARCIAL --}}
-                                            @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
+                                          {{--   @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                             @else 
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                            @endif
+                                            @endif --}}
+                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                              <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                               <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
 
-                                            @php
-                                                $PROM_FINAL = ((
-                                                ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
-                                                ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
-                                                ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
-                                                ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
-                                                )/4) ;
-
-                                                $suma_promedio += $PROM_FINAL;
-                                            @endphp
+                                            
                                             
                                             {{-- PROMEDIO FINAL --}}
                                             @if ( round($PROM_FINAL) < 70 )
@@ -216,37 +210,31 @@
                                             @endif
         
                                             {{-- II PARCIAL --}}
-                                            @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                           {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                             @else 
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                             @endif
+                                             @endif --}}
                                             
                                            
                                                {{-- III PARCIAL --}}
-                                          @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                         {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
                                          @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                         @endif
+                                         @endif --}}
 
                                          {{-- IV PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                        {{--  @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                        @endif
+                                        @endif --}}
 
-                                        @php
-                                            $PROM_FINAL = ((
-                                            ($resultado[0]->Acum1) + ($resultado[0]->Exa1)+
-                                            ($resultado[0]->Acum2) + ($resultado[0]->Exa2)+
-                                            ($resultado[0]->Acum3) + ($resultado[0]->Exa3)+
-                                            ($resultado[0]->Acum4) + ($resultado[0]->Exa4)
-                                            )/4) ;
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                       <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
 
-                                            $suma_promedio += $PROM_FINAL;
-                                        @endphp
                                     
                                         {{-- PROMEDIO FINAL --}}
                                         @if (round($PROM_FINAL) < 70 )
