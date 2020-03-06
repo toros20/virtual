@@ -89,7 +89,7 @@
                            
                         </table>
                         <table  style="tabla-striped text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
-                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>BOLETA DE CALIFICACIONES</h5></td>
+                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>BOLETA DE ACUMULATIVOS</h5></td>
                                 <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <td style="padding-top:5px;  border: 1px solid #dee2e6;">
@@ -104,7 +104,7 @@
                         @if ($course->is_semestral == 0)
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; ">
-                                    <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}} ({{$estudiante->cuenta}})</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> {{$estudiante[0]->name}} {{$estudiante[0]->lastname}} ({{$estudiante[0]->cuenta}})</h4> </td>
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
