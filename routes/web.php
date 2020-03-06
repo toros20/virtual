@@ -109,7 +109,7 @@ Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas
 Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('boletas_docentes');
 
 
-Route::get('/users/boleta_acumulativos/{course_id}/{section}/{user_id}', 'UserController@boleta_acumulativos')->name('boleta_acumulativos/{course_id}/{section}/{user_id}');
+Route::get('/users/boleta_acumulativos/{course_id}/{section}/{user_id}', 'UserController@boleta_acumulativos')->name('users/boleta_acumulativos/{course_id}/{section}/{user_id}');
 
 
 //ruta para mostrar la seccion de personalidad de los consejeros
