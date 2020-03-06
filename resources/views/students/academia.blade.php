@@ -187,7 +187,7 @@
                       @if ($asignaciones[0]->is_semestral == 1)
                       <ul class="list-group">
 
-                         <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll->course_id,$enroll->section,$user->id])}} ">
+                         <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} ">
                               <li class="list-group-item">
                                   <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Acumulativos
                               </li>
@@ -223,7 +223,7 @@
 
                       @if ($asignaciones[0]->is_semestral == 0)
                       <ul class="list-group">
-                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll->course_id,$enroll->section,$user->id])}} ">
+                          <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} ">
                               <li class="list-group-item">
                                   <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Acumulativos
                               </li>
