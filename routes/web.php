@@ -105,10 +105,10 @@ Route::post('users/save_personalidad', 'UserController@save_personalidad')->name
 Route::get('/users/actas/{course_id}/{section}/{parcial}', 'UserController@actas')->name('actas/{course_id}/{section}/{parcial}');
 
 
-//ruta para mostrar la seccion de personalidad de los consejeros
+
 Route::get('/users/boletas_docentes', 'UserController@boletas_docentes')->name('boletas_docentes');
 
-//ruta para mostrar la seccion de personalidad de los consejeros
+
 Route::get('/users/boleta_acumulativos/{course_id}/{section}/{user_id}', 'UserController@boleta_acumulativos')->name('boleta_acumulativos/{course_id}/{section}/{user_id}');
 
 
