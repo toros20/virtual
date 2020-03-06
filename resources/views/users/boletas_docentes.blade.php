@@ -147,6 +147,8 @@
                                             $aprobados+=1;$tea+=1;
                                         }
                                     }// fin del ciclo resultados
+
+                                    dd($total_evaluados);
                                 ?>
 
                                 @if ($cont%2==0)
