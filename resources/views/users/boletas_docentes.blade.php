@@ -187,14 +187,14 @@
 
                         <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
                             <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb;">
-                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;">*</td>
-                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">Total de Evaluaaciones Realizadas</td>
-                                
-                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $tea;?></td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($tea*100)/$total_evaluados);?> %</td> 
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo $ter;?></td>
-                                <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo round(($ter*100)/$total_evaluados);?> %</td>
+                                    <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;">*</td>
+                                    <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">Total de Evaluaaciones Realizadas</td>
+                                    @php dd($total_evaluados);@endphp
+                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php echo $tea;?></td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"><?php echo round(($tea*100)/$total_evaluados);?> %</td> 
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo $ter;?></td>
+                                    <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6; color:red;"><?php echo round(($ter*100)/$total_evaluados);?> %</td>
                             </tr>
                         </table>
 
