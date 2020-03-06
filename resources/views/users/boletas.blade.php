@@ -140,7 +140,7 @@
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                        dd($resultado);
+                                       
                                     ?>
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
@@ -271,7 +271,7 @@
                                 <?php $cont+=1;?>
                                 @endforeach {{-- fin del foreach de cada clase --}}
                              </table>
-                        
+                         @php dd($resultado) @endphp 
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
                                 <?php 
                                     $promedio1=$total1/$cont;
