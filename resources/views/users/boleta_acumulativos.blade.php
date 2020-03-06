@@ -332,7 +332,7 @@
                                                 ->join('clases', $historial.'.clase_id', '=', 'clases.id')
                                                 ->where ([
                                                             [$historial.'.clase_id', '=', $clase->clase_id],
-                                                            [$historial.'.student_id', '=', $estudiante->user_id],
+                                                            [$historial.'.student_id', '=', $estudiante->id],
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
