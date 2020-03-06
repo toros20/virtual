@@ -140,7 +140,15 @@
             </li>
             
             <li class="nav-item">
-            <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a>
+              <form action="{{ route('logout') }}" method="POST">
+                <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                <button type="submit">
+                  <svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
+
+                  <span>Salir</span>
+                </button>
+            </form>
+            {{-- <a class="nav-link"> <span class="clearfix d-none d-sm-inline-block"> SALIR</span></a> --}}
             </li>
          
         </ul>
