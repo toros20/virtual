@@ -308,7 +308,7 @@
                             <table class="tabla tabla-striped tabla-bordered"  style=" text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
                                 <tr style="border: 1px solid #dee2e6; ">
                                     <td ><h4 style="font-weight: bold;"> {{$estudiante->name}} {{$estudiante->lastname}}  ({{$estudiante->cuenta}})</h4> </td>
-                                    <td ><h4 style="font-weight: bold;"> II SEMESTRE</h4> </td>
+                                    <td ><h4 style="font-weight: bold;"> I SEMESTRE</h4> </td>
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
@@ -324,6 +324,7 @@
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
+                                @php dd($clases)@endphp
                                 @foreach ($clases as $clase)
                                 
                                 <?php 
@@ -336,7 +337,7 @@
                                                         ])
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
-                                    dd($resultado);
+                                    
                                         $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
                                         $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
