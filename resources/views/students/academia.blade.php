@@ -143,8 +143,6 @@
               <form action="{{ route('logout') }}" method="POST">
                 <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                 <button type="submit">
-                  <svg class="olymp-logout-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
-
                   <span>Salir</span>
                 </button>
             </form>
