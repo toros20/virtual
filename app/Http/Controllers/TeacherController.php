@@ -907,4 +907,40 @@ class TeacherController extends Controller
         $id_task=$request->task_id;
         return view('ajax/editartask',compact('tasks','course_id','seccion','id_task'));
     }
+
+    
+    //funcion para salvar la edicion de la tarea
+    function save_editar_tarea(Request $request){
+        
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->seccion);
+        //obtenemos el curso
+        $course=$request->course_id;
+        //nombramos la tabla de tareas
+        $tbl_task='task_'.$course.'_'.$seccion;
+        //obtenemos los datos de la tarea , parcial, docente, y clase
+        $tarea = DB::table($tbl_task)->where('id','=',$request->task_id)->get();
+
+        //datos actuales para volver al mismo sitio
+        $CursoA= $course;
+        $SectionA= $seccion;
+        $ClaseA= $tarea[0]->clase;
+        $UsuarioA= $tarea[0]->teacher;
+        $ParcialA= $tarea[0]->parcial;
+     
+        //actualizamos la tarea en la tabla correspondiente
+        $update=DB::table($tbl_task)
+            ->where('id',  $request->task_id)
+            ->update(array(
+                'titulo'=>$request->$titulo,
+                'descripcion' =>$request->$descripcion,
+                'valor'=>$request->$valor,
+                'tipo'=>$request->$select_tipo,
+                'parcial'=>$request->$select_parcial,
+                'fecha_entrega'=>$request->$date_acum
+            ));
+
+        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
+
+    }
 }

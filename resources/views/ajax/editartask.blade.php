@@ -22,25 +22,48 @@
                     <input type="hidden" name="course_id" value="{{$course_id}}">
                     <input type="hidden" name="seccion" value="{{$seccion}}">
                     <input type="hidden" name="task_id" value="{{$id_task}}">
+                    <input type="hidden" name="clase_id" value="{{$tasks[0]->clase}}">
 
-                    <table>
-                        <tr>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Nota</th>
-                            <th>Observaci&oacute;n</th>
-                        </tr>
-                        @foreach ($students as $student)
-                            <tr>
-                                <td> {{$student->name}}</td>
-                                <td> {{$student->lastname}}</td>
-                                <td><input required maxlength="2" min=-1 max="{{$tasks[0]->valor}}" name="txt_{{$student->user}}" type="number" value="{{$student->valor_obtenido}}"> </td>
-                                <td><input name="obs_{{$student->user}}" type="text" value=" {{$student->observacion}}"></td>
-                            </tr>
-                        @endforeach
-                       
-                    </table>
-              
+                        <div class="md-form">
+                            <input required type="text" id="titulo" name="titulo" class="form-control" value="{{$tasks[0]->titulo}}">
+                            <label for="titulo">Nombre del Acumulativo</label>
+                        </div>
+
+                        <div class="md-form">
+                            <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" value="{{$tasks[0]->descripcion}}"></textarea>
+                            <label for="descripcion">Descripción del Acumulativo</label>
+                        </div>
+
+                        <div>
+                            <select required="required" class="browser-default custom-select mt-3" id="select_tipo" name="select_tipo">
+                                <option value="{{$tasks[0]->tipo}}" selected>{{$tasks[0]->tipo}}</option>
+                                <option value="1">Trabajo en Clase</option>
+                                <option value="2">Trabajo Extra-Clase</option>      
+                            </select>
+                        </div>
+
+                        <div>
+                            <select required="required" class="browser-default custom-select mt-3" id="select_parcial" name="select_parcial">
+                                <option value="{{$tasks[0]->tipo}}" selected>{{$tasks[0]->parcial}}</option>
+                                <option value="1">I Parcial</option>
+                                <option value="2">II Parcial</option>
+                                <option value="3">III Parcial</option>
+                                <option value="4">IV Parcial</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <label for="valor">Valor del Acumulativo</label>
+                            <input value="{{$tasks[0]->valor}}" required id="valor" name="valor" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                        </div>
+
+                        <div class="md-form">
+                            <input value="{{$tasks[0]->fecha_entrega}}" required placeholder="Selected date" type="text" id="date-picker-example" name="date_acum" class="form-control datepicker">
+                        </div>
+
               </div>
             </div>
 
