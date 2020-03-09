@@ -653,6 +653,7 @@ class TeacherController extends Controller
                 ->update(array(
                     'Acum'.$ParcialA =>$nuevo_Acum
                 ) );
+
                 
         }//fin del ciclo para cada alumno de este curso
 
@@ -891,4 +892,19 @@ class TeacherController extends Controller
 
     }
 
+    //funcion para ver el formulario de Editar los acumulativos
+    function editar_task(Request $request){
+       
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->section_id);
+        //obtenemos el curso
+        $course_id=$request->course_id;
+        //nombramos la tabla de tareas de este curso y seccion
+        $tbl_task='task_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+        //obtenemos los datos de esta tarea, titulo y valor
+        $tasks= DB::table($tbl_task)->where('id','=',$request->task_id)->get();
+        
+        $id_task=$request->task_id;
+        return view('ajax/editartask',compact('tasks','course_id','seccion','id_task'));
+    }
 }
