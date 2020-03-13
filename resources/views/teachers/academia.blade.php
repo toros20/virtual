@@ -152,8 +152,8 @@
                                        <div class="md-v-line"></div><i class="fas fa-user mr-5"></i>Estudiantes
                                    </li>
                                </a>
-                              {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,2])}} ">--}}
-                                   <a class="list-group-item list-group-item-action" style="color:black" href="#"> 
+                              <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id,1])}} ">
+                                   {{--<a class="list-group-item list-group-item-action" style="color:black" href="#"> --}}
                                        <li class="list-group-item">
                                            <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
                                        </li>
@@ -188,8 +188,8 @@
                                             <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
                                         </li>
                                     </a>
-                                     {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">--}}
-                                      <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                     <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                      {{--<a class="list-group-item list-group-item-action" style="color:black" href="#">--}}
                                         <li class="list-group-item">
                                             <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Examen
                                         </li>
@@ -218,8 +218,8 @@
                                         <div class="md-v-line"></div><i class="fas fa-edit mr-5"></i>Acumulativos
                                     </li>
                                 </a>
-                                 {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} "> --}}
-                                  <a class="list-group-item list-group-item-action" style="color:black" href="#">
+                                 <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('teachers/examen/{user_id}/{course_id}/{section}/{clase}', [$asignacion->user_id,$asignacion->course_id,$asignacion->section,$asignacion->clase_id])}} ">
+                                  {{--<a class="list-group-item list-group-item-action" style="color:black" href="#"> --}}
                                     <li class="list-group-item">
                                         <div class="md-v-line"></div><i class="fas fa-user-edit mr-5"></i>Notas
                                     </li>
