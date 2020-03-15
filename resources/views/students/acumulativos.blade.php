@@ -223,7 +223,7 @@
                                               <!--Header-->
                                               <div class="modal-header">
                                                 
-                                                 <p class="heading lead">{{$task->titulo}})</p>
+                                                 <p class="heading lead">{{$task->titulo}}</p>
       
                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                   <span aria-hidden="true" class="white-text">&times;</span>
@@ -245,7 +245,7 @@
                                                   <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
                                                   <input type="hidden" name="parcial" id="parcial" value="{{$parcial}}">
                                                  
-                                                  {{-- <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase}}"> --}}
+                                                  <input type="hidden" name="clase_actual" id="clase_actual" value="{{$claseActual}}"> 
 
                                                   <div class="text-center file-field mt-3">
                                                     <div class="btn btn-primary btn-sm float-left">

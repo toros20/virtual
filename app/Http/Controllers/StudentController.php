@@ -128,7 +128,7 @@ class StudentController extends Controller
 
          //obtenemos los datos del student
          $user = User::findOrFail($user_id);
-
+        
          //obtenemos los datos de su matricula
          $enroll = Enrollment::where('user_id',$user_id)->get();
          $course=$enroll[0]->course_id;
@@ -143,7 +143,7 @@ class StudentController extends Controller
                         ->where('clasecourses.course_id', '=', $enroll[0]->course_id)
                         ->get();*/
         
-        //codigo para ver las clases del segundo semestre
+        //codigo para ver las clases del Primer semestre
         $clases = DB::table('clasecourses')
                     ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                     ->Select('clases.id as clase_id','clases.short_name as clase')
@@ -191,8 +191,9 @@ class StudentController extends Controller
                     ->get();
 
         //dd($tasks);
+        $claseActual = $clase;
 
-        return view('students/acumulativos',compact('user','tasks','clases','clase','parcial','files','videos'));
+        return view('students/acumulativos',compact('user','tasks','clases','claseActual','parcial','files','videos'));
 
     }
 
