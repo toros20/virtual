@@ -221,7 +221,7 @@ class StudentController extends Controller
         //$SectionA= $request->section_actual;
         $ParcialA= $parcial;
         
-        dd($request);
+        
         //insertamos los datos en la base de datos en la tabla files
         $msj= DB::table('filetasks')->insert([
 
@@ -237,6 +237,8 @@ class StudentController extends Controller
             'fecha'=>Carbon::now(),
             
         ]);
+
+            
     
         
         return redirect('students/acumulativos/'.$UsuarioA.'/'.$ClaseA.'/'.$ParcialA);
