@@ -254,6 +254,10 @@
                                               <!--Body-->
                                               <div class="modal-body">
                                                 <div class="text-center">
+
+                                                  @if ($num_files > 0)
+                                                       <h3>La Tarea Ha sido Entregada.</h3>
+                                                  @endif
                                                 
                                                   <p>{{$task->descripcion}}</p>
                                                   <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
