@@ -202,7 +202,7 @@
                                             ])
                                             ->ToSql();
                                            
-                                           dd($filetask) 
+                                           dd("U=".$user->id."CL=".$clase."T=".$task_id); 
                                       //$num_files = $filetask;
                                             
                                   @endphp
