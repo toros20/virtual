@@ -257,6 +257,8 @@
 
                                                   @if ($num_files > 0)
                                                        <h3>La Tarea Ha sido Entregada.</h3>
+                                                      <p>Si se envía otro archivo se sustituirá por el anterior.</p>
+
                                                   @else
                                                       <p>Solo se permite subir un Archivo por Tarea con peso maximo de 20 Megas.</p>
                                                       <p>Para subir varios archivos es necesario comprimirlos en un único archivo utilizando el Programa Winrar.</p>
@@ -264,8 +266,9 @@
                                                 
                                                   <p>{{$task->descripcion}}</p>
                                                   <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
+                                                  
                                                   </div>
-                                                  <p>Si se envía otro archivo se sustituirá por el anterior.</p>
+
 
                                                 <form class="md-form" style="color: #757575;" enctype="multipart/form-data" method = 'POST' action="{{ route('students/send_file') }}">
                                                   <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
