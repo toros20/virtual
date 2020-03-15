@@ -22,6 +22,7 @@
                 <th>Email 2</th>
                 <th>Editar</th>
                 <th>Matricula</th>
+                <th>Password</th>
             </tr>
             </thead>
 
@@ -41,6 +42,11 @@
                         <td> <a href=" {{route('enrollments.edit',$student->enrollment_id)}} ">
                             Transferir </a>
                         </td>
+                        <td> <a href="{{route('users.password_edit',$student->id)}} ">
+                            Password </a>
+                        </td>
+                        
+                       
                            {{--  <form style="display:inline" method="POST" action=" {{route('users.destroy',$student->id)}} ">
                                     @csrf
                                      {{ method_field('DELETE') }}
