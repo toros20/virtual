@@ -256,7 +256,7 @@
                                                 <div class="text-center">
 
                                                   @if ($num_files > 0)
-                                                       <h3>La Tarea Ha sido Entregada.</h3>
+                                                       <h3>La tarea ha sido entregada.</h3>
                                                       <p>Si se envía otro archivo se sustituirá por el anterior.</p>
 
                                                   @else
@@ -264,7 +264,7 @@
                                                       <p>Para subir varios archivos es necesario comprimirlos en un único archivo utilizando el Programa Winrar.</p>
                                                   @endif
                                                 
-                                                  <p>Entraga:{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
+                                                  <p>Fecha de Entrega:{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
                                                   
                                                   </div>
 
