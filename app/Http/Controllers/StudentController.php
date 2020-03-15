@@ -196,6 +196,52 @@ class StudentController extends Controller
 
     }
 
+     //funcion para recibir los datos del formulario para subir un archivo
+     function send_file(Request $request){
+
+        //obtenemos las secciones seleccionadas
+        //$secciones=$request->input('sections');
+        $parcial = $request->parcial;
+       
+        //obtenemos el nombre original del archivo
+        $name_original = $request->file('document')->getClientOriginalName();
+
+        //obtenemos la extension original del archivo
+        $extension = $request->file('document')->getClientOriginalExtension();
+
+        //almacenamos el documento en la carpeta tasks de la carpeta store y obtenemos su nuevo nombre
+        $file = $request->file('document')->store('tasks');
+
+        //datos actuales para volver al mismo sitio
+        //$CursoA= $request->curso_actual;
+        $ClaseA= $request->clase_actual;
+        $UsuarioA= $request->user_id;
+        //$SectionA= $request->section_actual;
+        $ParcialA= $parcial;
+        
+        
+        //insertamos los datos en la base de datos en la tabla files
+        $msj= DB::table('filetasks')->insert([
+
+            'user_id'=>$request->user_id,
+            //'course_id'=>$request->select_course_file,
+            //'section'=>$seccion,
+            'clase_id'=>$request->clase_actual,
+            'parcial'=>$parcial,
+            'filename'=>$file,
+            'name_original'=>$name_original,
+            'typefile'=>$extension,
+            'detalles'=>$request->descripcion,
+            'fecha'=>Carbon::now(),
+            
+        ]);
+    
+        
+        return redirect('students/acumulativos/'.$UsuarioA.'/'.$ClaseA.'/'.$ParcialA);
+       
+    }
+
+
     //funcion para mostrar acumulativos y documentos por parcial despues de seleccionar (filtrar) una clase 
     function acumulativosbyclass(Request $request){
 

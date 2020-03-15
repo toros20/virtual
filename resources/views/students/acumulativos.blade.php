@@ -174,7 +174,13 @@
                                             
                                         </a>
                                     </th>
-                                      
+
+                                    <th class="th-sm">
+                                        <a href="">Subir Tarea
+                                            
+                                        </a>
+                                    </th>
+                                       
                                     
                                     </tr>
                                 </thead>
@@ -198,15 +204,78 @@
                                         
                                         @if ( $task->evaluada == 0)
                                             <td><p style="font-weight: bold;" class="red-text">No Evaluada</p></td>
-                                            <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalInfo_{{$task->id}}">Detalles</button></td>
                                         @else
                                             @php $total_obtenido+=$task->valor_obtenido;@endphp 
                                             @php $total_evaluado+=$task->valor;@endphp
                                             <td><p style="font-weight: bold;" class="green-text">Evaluada</p></td>
-                                            <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalInfo_{{$task->id}}">Detalles</button></td>
                                         @endif
 
-                                        <!-- Central Modal Medium Info {{$task->id}}-->
+                                        <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalInfo_{{$task->id}}">Detalles</button></td>
+                                        
+                                        <td><button type="button" class="btn btn-primary btn-rounded btn-sm m-0" data-toggle="modal" data-target="#ModalSubirFile_{{$task->id}}">Subir Tarea</button></td>
+                                        
+                                        <!-- INICIO Modal Subir File-->
+                                        <div class="modal fade modal-notify info" id="ModalSubirFile_{{$task->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                          aria-hidden="true">
+                                          <div class="modal-dialog modal-notify modal-info" role="document">
+                                            <!--Content-->
+                                            <div class="modal-content">
+                                              <!--Header-->
+                                              <div class="modal-header">
+                                                
+                                                 <p class="heading lead">{{$task->titulo}})</p>
+      
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true" class="white-text">&times;</span>
+                                                </button>
+                                              </div>
+      
+                                              <!--Body-->
+                                              <div class="modal-body">
+                                                <div class="text-center">
+                                                  <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
+                                                  <p>{{$task->descripcion}}</p>
+                                                  <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
+                                                  <p>Solo se permite subir un Archivo por Tarea con peso maximo de 20 Megas.</p>
+                                                  <p>Para subir varios archivos es necesario comprimirlos en un único archivo utilizando el Programa Winrar.</p>
+                                                </div>
+                                                  
+                                                <form class="md-form" style="color: #757575;" enctype="multipart/form-data" method = 'POST' action="{{ route('students/send_file') }}">
+                                                  <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                                  <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                                  <input type="hidden" name="parcial" id="parcial" value="{{$parcial}}">
+                                                 
+                                                  <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clases[0]->id}}">
+
+                                                  <div class="text-center file-field mt-3">
+                                                    <div class="btn btn-primary btn-sm float-left">
+                                                      <span>Seleccione Documento</span>
+                                                      <p><input name ="document" id="document" type="file"></p>
+                                                    </div>
+                                                    <div class="file-path">
+                                                      <input class="file-path validate" type="text" placeholder="Subir Archivo">
+                                                    </div>
+                                                    </div>
+                                                  </div>
+                                                  <div class="md-form">
+                                                      <textarea type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3"></textarea>
+                                                      <label for="descripcion">Puedes dejar un Comentario Sobre la tarea.</label>
+                                                  </div>
+
+                                                  <button id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Enviar Tarea</button>
+                                                </form>
+      
+                                              <!--Footer-->
+                                              <div class="modal-footer justify-content-center">
+                                                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                              </div>
+                                            </div>
+                                            <!--/.Content-->
+                                          </div>
+                                        </div>
+                                        <!-- FINAL Modal Subie File-->
+
+                                        <!-- Central Modal Medium Info-->
                                         <div class="modal fade modal-notify info" id="centralModalInfo_{{$task->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                           aria-hidden="true">
                                           <div class="modal-dialog modal-notify modal-info" role="document">
@@ -347,7 +416,7 @@
                                                     @if ($file->typefile == 'rar' || $file->typefile == 'zip') 
                                                     <td><span style="color: purple;"><i class="fas fa-archive fa-3x"></i></span></td>
                                                     @endif
-                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
+                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt' || $file->typefile == 'pptm') 
                                                       <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
                                                     @endif              
 

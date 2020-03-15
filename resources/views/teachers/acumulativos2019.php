@@ -594,7 +594,7 @@
                                                     @if ($file->typefile == 'rar' || $file->typefile == 'zip') 
                                                     <td><span style="color: purple;"><i class="fas fa-archive fa-3x"></i></span></td>
                                                     @endif
-                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
+                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt' || $file->typefile == 'pptm') 
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
                                                     @endif               
                                                    

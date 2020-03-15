@@ -456,10 +456,7 @@ class TeacherController extends Controller
         }
         
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
-
-        //insertamos el comentario en la tabla que corrsponde a ese curso y seccion
        
-         
     }
 
      //funcion para recibir los datos del formulario para subir un archivo

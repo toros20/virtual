@@ -244,7 +244,8 @@ Route::post('teachers/send_task', 'TeacherController@send_task')->name('teachers
 Route::get('students/academia/{user_id}','StudentController@academia')->name('students/academia/{user_id}');
 //ruta para la seccion de acumulativos y documentos por parcial del student
 Route::get('students/acumulativos/{user_id}/{clase}/{parcial}','StudentController@acumulativos')->name('students/acumulativos/{user_id}/{clase}/{parcial}');
-
+//crear ruta para enviar un documento nuevo desde el formulario del Estudiante
+Route::post('students/send_file', 'StudentController@send_file')->name('students/send_file');
 //ruta para la seccion de acumulativos y documentos por parcial del student despues de filtrar una clase del panel derecho
 Route::post('ajax/acumulativosbyclass', 'StudentController@acumulativosbyclass');
 

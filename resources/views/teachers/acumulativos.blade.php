@@ -247,7 +247,7 @@
                                 Subir Documento <i class="fas fa-angle-down rotate-icon"></i>
                               </h5>
                             </a>
-                          </div>
+                          </div> 
                       
                           <!-- Card body -->
                           <div id="collapseTwo2" class="collapse" role="tabpanel" aria-labelledby="headingTwo2" data-parent="#accordionEx">
@@ -597,7 +597,7 @@
                                                     @if ($file->typefile == 'rar' || $file->typefile == 'zip') 
                                                     <td><span style="color: purple;"><i class="fas fa-archive fa-3x"></i></span></td>
                                                     @endif
-                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt') 
+                                                    @if ($file->typefile== 'pptx' || $file->typefile == 'ppt'  || $file->typefile == 'pptm' ) 
                                                        <td><span style="color: tomato;"><i class="far fa-file-powerpoint fa-3x"></i></span></td>
                                                     @endif               
                                                    
