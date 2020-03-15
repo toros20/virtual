@@ -200,8 +200,8 @@
                                                 ['clase_id', '=', $clase ],
                                                 ['task_id', '=', $task->id ]                    
                                             ])
-                                            ->distinct('id')->count('id')
-                                           ->ToSql();
+                                            ->distinct('id')->count('id');
+                                           
                                            dd($filetask) 
                                       //$num_files = $filetask;
                                             
