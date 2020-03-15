@@ -200,7 +200,7 @@
                                                 ['clase_id', '=', $clase ],
                                                 ['task_id', '=', $task->id ]                    
                                             ])
-                                           ->count('user_id');
+                                           ->count();
                                             
                                       $num_files = $filetask;
                                             
