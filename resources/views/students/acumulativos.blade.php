@@ -193,12 +193,12 @@
 
                                     @php
                                       //OJO CON EL SEMESTRE
-                                      $filetask =   DB::table('filetasks')
+                                      $filetask =  DB::table('filetasks')
                                             
                                             ->where ([
-                                                ['users_id', '=', $user->id ],
+                                                ['user_id', '=', $user->id ],
                                                 ['clase_id', '=', $clase ],
-                                                ['task_id', '=', $task->id ],                     
+                                                ['task_id', '=', $task->id ]                    
                                             ])
                                             ->select('id')
                                             ->count();
