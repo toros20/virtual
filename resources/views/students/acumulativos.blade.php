@@ -190,6 +190,23 @@
                                     @php $total_publicado=0; $total_evaluado=0;$total_obtenido=0; @endphp
                                     @foreach ($tasks as $task)
                                     @php $total_publicado+=$task->valor; @endphp
+
+                                    @php
+                                      //OJO CON EL SEMESTRE
+                                      $filetask =   DB::table('filetasks')
+                                            
+                                            ->where ([
+                                                ['users_id', '=', $user->id ],
+                                                ['clase_id', '=', $clase ],
+                                                ['task_id', '=', $task->id ],                     
+                                            ])
+                                            ->select('id')
+                                            ->count();
+                                      $num_files = $filetask;
+                                            
+                                  @endphp
+
+
                                     <tr>
                                                             
                                         <td>{{$task->titulo}} </td>
@@ -211,8 +228,11 @@
                                         @endif
 
                                         <td><button type="button" class="btn btn-warning btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModalInfo_{{$task->id}}">Detalles</button></td>
-                                        
-                                        <td><button type="button" class="btn btn-primary btn-rounded btn-sm m-0" data-toggle="modal" data-target="#ModalSubirFile_{{$task->id}}">Subir Tarea</button></td>
+                                        @if ($num_files == 0)
+                                          <td><button type="button" class="btn btn-primary btn-rounded btn-sm m-0" data-toggle="modal" data-target="#ModalSubirFile_{{$task->id}}">Subir Tarea</button></td>
+                                        @else
+                                          <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0" data-toggle="modal" data-target="#ModalSubirFile_{{$task->id}}">Tarea Subida</button></td>  
+                                        @endif
                                         
                                         <!-- INICIO Modal Subir File-->
                                         <div class="modal fade modal-notify info" id="ModalSubirFile_{{$task->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
