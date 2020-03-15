@@ -193,15 +193,15 @@
 
                                     @php
                                       //OJO CON EL SEMESTRE
-                                      /*$filetask =  DB::table('filetasks')
+                                      $filetask =  DB::table('filetasks')
                                             
                                             ->where ([
                                                 ['user_id', '=', $user->id ],
                                                 ['clase_id', '=', $clase ],
                                                 ['task_id', '=', $task->id ]                    
                                             ])
-                                           ->count();*/
-                                            
+                                           ->ToSql();
+                                           dd($filetask) 
                                       //$num_files = $filetask;
                                             
                                   @endphp
