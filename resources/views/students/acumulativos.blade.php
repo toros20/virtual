@@ -203,8 +203,8 @@
                                             ->select('id')
                                             ->count();
 
-                                            dd($filetask);
-                                      $num_files = $filetask;
+                                          
+                                      $num_files = $filetask[0];
                                             
                                   @endphp
 
