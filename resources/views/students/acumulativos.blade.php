@@ -187,7 +187,7 @@
                                 <!--Table head--> 
                                 <!--Table body-->
                                 <tbody id="tbody1" >
-                                    @php $total_publicado=0; $total_evaluado=0;$total_obtenido=0; @endphp
+                                    @php $num_files =0; $total_publicado=0; $total_evaluado=0;$total_obtenido=0; @endphp
                                     @foreach ($tasks as $task)
                                     @php $total_publicado+=$task->valor; @endphp
 
