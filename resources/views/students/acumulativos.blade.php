@@ -200,11 +200,9 @@
                                                 ['clase_id', '=', $clase ],
                                                 ['task_id', '=', $task->id ]                    
                                             ])
-                                            ->select('id')
-                                            ->count();
-
-                                          
-                                      $num_files = $filetask[0];
+                                            ->distinct('user_id')->count('user_id');
+                                            
+                                      $num_files = $filetask;
                                             
                                   @endphp
 
