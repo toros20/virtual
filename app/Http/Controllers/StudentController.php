@@ -192,7 +192,7 @@ class StudentController extends Controller
 
         //dd($tasks);
 
-        return view('students/acumulativos',compact('user','tasks','clases','parcial','files','videos'));
+        return view('students/acumulativos',compact('user','tasks','clases','clase','parcial','files','videos'));
 
     }
 
