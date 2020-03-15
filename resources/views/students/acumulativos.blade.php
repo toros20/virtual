@@ -233,7 +233,7 @@
                                               <!--Body-->
                                               <div class="modal-body">
                                                 <div class="text-center">
-                                                  <i class="fas fa-edit fa-4x mb-3 animated rotateIn"></i>
+                                                
                                                   <p>{{$task->descripcion}}</p>
                                                   <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
                                                   <p>Solo se permite subir un Archivo por Tarea con peso maximo de 20 Megas.</p>
@@ -257,17 +257,17 @@
                                                     </div>
                                                     </div>
                                                   </div>
-                                                  <div class="md-form">
+                                                  <div class="md-form mt-3">
                                                       <textarea type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3"></textarea>
                                                       <label for="descripcion">Puedes dejar un Comentario Sobre la tarea.</label>
                                                   </div>
 
-                                                  <button id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Enviar Tarea</button>
+                                                  <button width="80%" id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Enviar Tarea</button>
                                                 </form>
       
                                               <!--Footer-->
                                               <div class="modal-footer justify-content-center">
-                                                <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                                <a type="button" class="btn btn-outline-danger waves-effect" data-dismiss="modal">Cerrar</a>
                                               </div>
                                             </div>
                                             <!--/.Content-->
