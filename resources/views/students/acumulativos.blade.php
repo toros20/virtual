@@ -264,8 +264,7 @@
                                                       <p>Para subir varios archivos es necesario comprimirlos en un único archivo utilizando el Programa Winrar.</p>
                                                   @endif
                                                 
-                                                  <p>{{$task->descripcion}}</p>
-                                                  <p>{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
+                                                  <p>Entraga:{{ \Carbon\Carbon::parse($task->fecha_entrega)->format('d/m/Y')}}</p>
                                                   
                                                   </div>
 
