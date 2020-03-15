@@ -262,7 +262,7 @@
                                                       <label for="descripcion">Puedes dejar un Comentario Sobre la tarea.</label>
                                                   </div>
 
-                                                  <button width="80%" id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Enviar Tarea</button>
+                                                  <button style="width=80%"   id="btn_send_task"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Enviar Tarea</button>
                                                 </form>
       
                                               <!--Footer-->
