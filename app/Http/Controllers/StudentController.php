@@ -229,6 +229,7 @@ class StudentController extends Controller
             //'course_id'=>$request->select_course_file,
             //'section'=>$seccion,
             'clase_id'=>$request->clase_actual,
+            'task_id'=>$request->task,
             'parcial'=>$parcial,
             'filename'=>$file,
             'name_original'=>$name_original,
@@ -238,7 +239,7 @@ class StudentController extends Controller
             
         ]);
 
-            
+
     
         
         return redirect('students/acumulativos/'.$UsuarioA.'/'.$ClaseA.'/'.$ParcialA);
