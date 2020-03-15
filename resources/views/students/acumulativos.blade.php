@@ -202,6 +202,8 @@
                                             ])
                                             ->select('id')
                                             ->count();
+
+                                            dd($filetask);
                                       $num_files = $filetask;
                                             
                                   @endphp
