@@ -257,7 +257,7 @@
                                                     </div>
                                                     </div>
                                                   </div>
-                                                  <div class="md-form mt-3">
+                                                  <div class="md-form m-3">
                                                       <textarea type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3"></textarea>
                                                       <label for="descripcion">Puedes dejar un Comentario Sobre la tarea.</label>
                                                   </div>
