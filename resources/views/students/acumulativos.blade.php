@@ -202,7 +202,7 @@
                                             ])
                                             ->distinct('user_id')->count('user_id');
                                             
-                                      $num_files = $filetask;
+                                      $num_files = $filetask->count(id);
                                             
                                   @endphp
 
