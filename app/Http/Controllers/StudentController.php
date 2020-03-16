@@ -7,6 +7,7 @@ use App\Enrollment;
 use App\Course;
 use App\Clasecourse;
 use App\Assignment;
+use App\Clase;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
