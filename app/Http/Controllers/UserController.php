@@ -954,9 +954,14 @@ class UserController extends Controller
     /*************************SEGURIDAD*******************/
     
     //este es el id de los usuarios coordinadores
-    if ($user_id == 1473) {$modalidad = 3; /* Secundaria*/ }
-    if ($user_id == 1474) {$modalidad = 2; /* Primaria*/ }
-    if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica*/ }
+    if ($user_id == 1473) {$modalidad = 3; /* Secundaria blanquita*/ }
+    if ($user_id == 1671) {$modalidad = 3; /* Secundaria supervcion*/ }
+
+    if ($user_id == 1474) {$modalidad = 2; /* Primaria lizzy*/ }
+    if ($user_id == 1669) {$modalidad = 2; /* Primaria dilma*/ }
+
+    if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica cinthya*/ }
+    if ($user_id == 1670) {$modalidad = 1; /* Pre-Basica vicenta*/ }
      
     $parcial = 1;
 
