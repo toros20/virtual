@@ -260,7 +260,7 @@
                                                       <p>Si se envía otro archivo se sustituirá por el anterior.</p>
 
                                                   @else
-                                                      <p>Solo se permite subir un archivo por tarea, con peso máximo de 20 Megas.</p>
+                                                      <p>Solo se permite subir un archivo por tarea, con peso máximo de 40 Megas.</p>
                                                       <p>Para subir varios archivos es necesario comprimirlos en un único archivo utilizando el Programa Winrar.</p>
                                                   @endif
                                                 
