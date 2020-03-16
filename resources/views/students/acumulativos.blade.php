@@ -126,7 +126,7 @@
                             <!--Card image-->
                             <div align="center" class="view view-cascade gradient-card-header blue-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                         
-                            <h4 class="white-text mx-3">Acumulativos del {{$parcial}} Parcial de {{$clases[0]->clase}} </h4>
+                            <h4 class="white-text mx-3">Acumulativos del {{$parcial}} Parcial de {{$nombre_clase}} </h4>
                         
                             </div>
                             <!--/Card image-->

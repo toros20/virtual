@@ -193,8 +193,15 @@ class StudentController extends Controller
 
         //dd($tasks);
         $claseActual = $clase;
+        /*$NomClase = DB::table('clases')
+                    ->where([
+                        ['id', '=', $clase]
+                    ])->get();*/
 
-        return view('students/acumulativos',compact('user','tasks','clases','claseActual','parcial','files','videos'));
+        $NomClase = Clase::where('id',$clase)->get();
+        $nombre_clase = $NomClase[0]->shor_name;
+
+        return view('students/acumulativos',compact('user','tasks','clases','claseActual','nombre_clase','parcial','files','videos'));
 
     }
 
