@@ -650,7 +650,7 @@
                                         <ul class="list-group ">
     
                                             @foreach ($clases as $clase)
-                                            <a href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase->clase_id,$parcial])}}">
+                                            <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase->clase_id,$parcial])}}">
                                             {{-- <a onclick="acumulativosbyclass({{$clase->clase_id}})" class="list-group-item list-group-item-action" style="color:black" > --}}
                                                 <li class="list-group-item">
                                                     <div class="md-v-line"></div>
