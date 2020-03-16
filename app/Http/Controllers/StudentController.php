@@ -7,6 +7,7 @@ use App\Enrollment;
 use App\Course;
 use App\Clasecourse;
 use App\Assignment;
+use App\Clase;
 use DB;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -193,8 +194,15 @@ class StudentController extends Controller
 
         //dd($tasks);
         $claseActual = $clase;
+        /*$NomClase = DB::table('clases')
+                    ->where([
+                        ['id', '=', $clase]
+                    ])->get();*/
 
-        return view('students/acumulativos',compact('user','tasks','clases','claseActual','parcial','files','videos'));
+        $NomClase = Clase::where('id',$clase)->get();
+        $nombre_clase = $NomClase[0]->short_name;
+
+        return view('students/acumulativos',compact('user','tasks','clases','claseActual','nombre_clase','parcial','files','videos'));
 
     }
 
