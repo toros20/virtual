@@ -30,7 +30,7 @@
                             <th>Tarea</th>
                             <th>Mensaje</th>
                         </tr>
-                        @foreach ($ver_filetasks as $file)
+                        @foreach ($file_tasks as $file)
                             <tr>
                                 <td> {{$file->name}}</td>
                                 <td> {{$file->lastname}}</td>
