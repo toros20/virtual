@@ -583,7 +583,7 @@ class TeacherController extends Controller
 
         //$id_task=$request->task_id;
 
-        return view('ajax/evaluartask',compact('ver_filetasks'));
+        return view('ajax/ver_filetasks',compact('file_tasks'));
     }
     
 
