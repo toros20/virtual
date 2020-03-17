@@ -1,7 +1,7 @@
 <form method="post">
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
     <!-- Central Modal Large success -->
-    <div class="modal fade modal-notify info" id="centralModalevaluar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    <div class="modal fade modal-notify info" id="centralModalver_filetasks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-notify modal-lg modal-success" role="document">
           <!--Content-->
