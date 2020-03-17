@@ -32,11 +32,17 @@
                         </tr>
                         @foreach ($file_tasks as $file)
                             @php 
-                                //$exit = DB::table('enrollments')->where('user_id',$file->id )->exists();
-                                
+                                $exit = DB::table('enrollments')
+                                        ->where([
+                                            ['course_id', '=', $course_id],
+                                            ['section', '=', $seccion],
+                                            ['user_id', '=', $file->id],
+                                        ])
+                                        ->exists();
+                                             
                             @endphp
                             <tr>
-                                <td> {{$file->name}} ({{$file->id}})</td>
+                                <td> {{$file->name}} </td>
                                 <td> {{$file->lastname}}</td>
                                 <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}"  class="btn btn-outline-success waves-effect" type="submit">Descargar Tarea</a> </td>
                                 <td><input  type="text" value=" {{$file->detalles}}"></td>

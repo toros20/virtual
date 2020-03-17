@@ -572,18 +572,18 @@ class TeacherController extends Controller
         //obtenemos el curso
         $course_id=$request->course_id;
        
-        //obtenemos los datos de esta tarea, titulo y valor
+        //obtenemos los archivos de esta clase , tarea y 
         $file_tasks= DB::table('filetasks')
                         ->join('users', 'filetasks.user_id', '=', 'users.id')
                         ->where([
                             ['filetasks.task_id', '=', $request->task_id],
-                            ['filetasks.clase_id', '=', $request->class_id] 
+                            ['filetasks.clase_id', '=', $request->class_id]
                         ])
                         ->get();
 
         //$id_task=$request->task_id;
 
-        return view('ajax/ver_filetasks',compact('file_tasks'));
+        return view('ajax/ver_filetasks',compact('file_tasks','seccion','course_id'));
     }
     
 
