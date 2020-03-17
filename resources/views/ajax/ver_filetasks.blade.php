@@ -41,12 +41,15 @@
                                         ->exists();
                                              
                             @endphp
-                            <tr>
-                                <td> {{$file->name}} </td>
-                                <td> {{$file->lastname}}</td>
-                                <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}"  class="btn btn-outline-success waves-effect" type="submit">Descargar Tarea</a> </td>
-                                <td><input  type="text" value=" {{$file->detalles}}"></td>
-                            </tr>
+
+                            @if ($exit)
+                                <tr>
+                                    <td> {{$file->name}} </td>
+                                    <td> {{$file->lastname}}</td>
+                                    <td><a href="{{ URL::asset('../storage/app/'.$file->filename)}}"  class="btn btn-outline-success waves-effect" type="submit">Descargar Tarea</a> </td>
+                                    <td><input  type="text" value=" {{$file->detalles}}"></td>
+                                </tr>
+                             @endif
                         @endforeach
                        
                     </table>
