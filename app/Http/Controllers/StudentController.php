@@ -54,7 +54,7 @@ class StudentController extends Controller
         //obtenemos los primeros 10 mensajes de este usuario        
         $mensajes = DB::table('msj_'.$id)
                         ->join('users', 'msj_'.$id.'.remitente', '=', 'users.id')
-                        ->limit(10)
+                        ->limit(50)
                         ->orderBy('msj_'.$id.'.id', 'desc')
                         ->Select(
                             'msj_'.$id.'.id as msj_id',
