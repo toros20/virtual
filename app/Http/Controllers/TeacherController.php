@@ -564,6 +564,33 @@ class TeacherController extends Controller
         return view('ajax/evaluartask',compact('students','tasks','course_id','seccion','id_task'));
     }
 
+    //funcion para ver las tareas enviadas por los estudiantes
+    function ver_filetasks(Request $request){
+       
+        //obtemos la seccion del curso y la pasamos a minuscula
+        $seccion=strtolower($request->section_id);
+        //obtenemos el curso
+        $course_id=$request->course_id;
+        //nombramos la tabla de tareas de este curso y seccion
+        //$tbl_task='task_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+        //nombramos la tabla de tareassudent de este curso y seccion
+        //$tbl_taskstudent='taskstudent_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
+
+        //obtenemos los datos de esta tarea, titulo y valor
+        $file_tasks= DB::table('filetasks')
+                        ->join('users', 'filetasks.user_id', '=', 'users.id')
+                        ->where([
+                            ['filetasks.task_id', '=', $request->task_id],
+                            ['filetasks.class_id', '=', $request->class_id] 
+                        ])
+                        ->get();
+
+        //$id_task=$request->task_id;
+
+        return view('ajax/evaluartask',compact('ver_filetasks'));
+    }
+    
+
     //funcion para almacenar las notas enviadas desde el panel de docente
     function save_notas(Request $request){
         

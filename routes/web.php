@@ -275,6 +275,11 @@ Route::post('ajax/editar_task', 'TeacherController@editar_task');
 //crear ruta para salvar la edicion de la tarea desde el formulario modal del docente
 Route::post('teachers/save_editar_tarea', 'TeacherController@save_editar_tarea')->name('teachers/save_editar_tarea');
 
+//crear ruta para ver las tareas enviadas por el estudiante
+Route::post('ajax/ver_filetasks', 'TeacherController@ver_filetasks');
+
+
+
 
 //crear ruta para evaluar notas de examen y finalizar el parcial desde el formulario de examen(notas)  del docente
 Route::post('teachers/save_parcial', 'TeacherController@save_parcial')->name('teachers/save_parcial');
