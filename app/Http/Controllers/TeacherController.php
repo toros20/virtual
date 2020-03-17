@@ -571,17 +571,13 @@ class TeacherController extends Controller
         $seccion=strtolower($request->section_id);
         //obtenemos el curso
         $course_id=$request->course_id;
-        //nombramos la tabla de tareas de este curso y seccion
-        //$tbl_task='task_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
-        //nombramos la tabla de tareassudent de este curso y seccion
-        //$tbl_taskstudent='taskstudent_'.$course_id.'_'.$seccion; //nombre de la tabla principal de tareas
-
+       
         //obtenemos los datos de esta tarea, titulo y valor
         $file_tasks= DB::table('filetasks')
                         ->join('users', 'filetasks.user_id', '=', 'users.id')
                         ->where([
                             ['filetasks.task_id', '=', $request->task_id],
-                            ['filetasks.class_id', '=', $request->class_id] 
+                            ['filetasks.clase_id', '=', $request->class_id] 
                         ])
                         ->get();
 
