@@ -212,7 +212,11 @@ class StudentController extends Controller
         //obtenemos las secciones seleccionadas
         //$secciones=$request->input('sections');
         $parcial = $request->parcial;
-       
+        
+        $enroll = Enrollment::where('user_id',$request->user_id)->get();
+        $course=$enroll[0]->course_id;
+        $section=strtolower($enroll[0]->section);
+
         //obtenemos el nombre original del archivo
         $name_original = $request->file('document')->getClientOriginalName();
 
@@ -221,7 +225,7 @@ class StudentController extends Controller
 
         //almacenamos el documento en la carpeta tasks de la carpeta store y obtenemos su nuevo nombre
         $file = $request->file('document')->store('tasks');
-
+        
         //datos actuales para volver al mismo sitio
         //$CursoA= $request->curso_actual;
         $ClaseA= $request->clase_actual;
@@ -234,8 +238,8 @@ class StudentController extends Controller
         $msj= DB::table('filetasks')->insert([
 
             'user_id'=>$request->user_id,
-            //'course_id'=>$request->select_course_file,
-            //'section'=>$seccion,
+            'course_id'=>$course,
+            'section'=>$section,
             'clase_id'=>$request->clase_actual,
             'task_id'=>$request->task,
             'parcial'=>$parcial,

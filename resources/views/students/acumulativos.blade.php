@@ -273,6 +273,10 @@
                                                   <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                                                   <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
                                                   <input type="hidden" name="parcial" id="parcial" value="{{$parcial}}">
+
+                                                  {{-- <input type="hidden" name="parcial" id="curso" value="{{$parcial}}">
+                                                  <input type="hidden" name="parcial" id="seccion" value="{{$parcial}}"> --}}
+
                                                   <input type="hidden" name="task" id="task" value="{{$task->id}}">
                                                  
                                                   <input type="hidden" name="clase_actual" id="clase_actual" value="{{$claseActual}}"> 
