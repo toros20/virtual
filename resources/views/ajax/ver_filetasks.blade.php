@@ -1,4 +1,4 @@
-<form action="{{ route('teachers/save_notas') }}" method="post">
+<form method="post">
     <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
     <!-- Central Modal Large success -->
     <div class="modal fade modal-notify info" id="centralModalevaluar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -46,7 +46,7 @@
 
             <!--Footer-->
             <div class="modal-footer justify-content-center">
-               <button class="btn btn-outline-success waves-effect" type="submit">GUARDAR NOTAS</button>
+              
               <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
             </div>
           </div>
