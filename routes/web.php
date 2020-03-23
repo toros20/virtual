@@ -125,6 +125,8 @@ Route::get('/users/inasistencias_docentes', 'UserController@inasistencias_docent
 Route::get('/users/inasistencias_estudiantes', 'UserController@inasistencias_estudiantes')->name('inasistencias_estudiantes');
 
 
+//ruta para mostrar la seccion de supervicion de docentes a los coordinadores
+Route::get('/users/coordinacion/{user_id}/{teacher_id}/{parcial}', 'UserController@coordinacion')->name('users/coordinacion/{user_id}/{teacher_id}/{parcial}');
 
 
 

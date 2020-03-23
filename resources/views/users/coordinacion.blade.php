@@ -45,7 +45,7 @@
                        <p align=center> Navegación</p>
                       </li>
                       <hr>
-                         @foreach ($docentes as $docente)
+                          @foreach ($docentes as $docente)
 
                             <li>
                               <a href="{{ $url = route('users/coordinacion/{user_id}/{teacher_id}/{parcial}', [$user->id,$docente->id,1])}} ">
@@ -100,14 +100,9 @@
         <!--row-->
         <div class="row"> 
 
-            {{-- variables para controlar el cambio de color en las tarjetas --}}
-            @php ($course = $secciones[0]->course_id)
-            @php ($con = 1)
-
-            @foreach ($secciones as $seccion)
-                          
+    
             <!--Card column-->
-            <div class="col-md-6 col-sm-6 col-lg-6 mb-4">
+            <div class="col-md-12 col-sm-12 col-lg-12 mb-4">
         
                     <!-- Card -->
                     <div class="card gradient-card">
@@ -115,25 +110,10 @@
                         <div class="card-image" style="background-image: url(https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20%2814%29.jpg)">
                 
                             <!-- Content -->
-                                {{-- Proceso para controlar el cambio de color, soy un crack en esto --}}
-                                 @if ($course != $seccion->course_id)
-                                    @php ($con += 1 ) 
-                                      @if ($con>4)
-                                       @php ($con = 1)                   
-                                      @endif
-                                    @php ($course = $seccion->course_id ) 
-                                @endif
-                                @if ($con == 1)<div class="text-white d-flex h-100 mask blue-gradient-rgba">        
-                                @endif
-                                @if ($con == 2)<div class="text-white d-flex h-100 mask peach-gradient-rgba">                             
-                                @endif
-                                @if ($con == 3)<div class="text-white d-flex h-100 mask aqua-gradient-rgba">                             
-                                @endif
-                                @if ($con == 4)<div class="text-white d-flex h-100 mask purple-gradient-rgba">                             
-                                @endif 
-                            
+                                                         
+                            <div class="text-white d-flex h-100 mask aqua-gradient-rgba">                             
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title"> {{$seccion->course}} - {{$seccion->section }} </h3>
+                                <h3 class="card-title">lic. {{$teacher[0]->name}} {{$asignacion->short_name}} - {{$asignacion->section }} </h3>
                                 <p class="lead mb-0">Gestión Académica</p>
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
@@ -255,7 +235,7 @@
     
             </div>
             <!-- Card -->
-            @endforeach
+          
         </div><!--row-->
 
      </main>

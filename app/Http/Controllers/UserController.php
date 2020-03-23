@@ -910,6 +910,7 @@ class UserController extends Controller
     }
 
     public function panel($user_id){
+        
 
          /*************************SEGURIDAD*******************/
             //control de seguridad
@@ -951,44 +952,105 @@ class UserController extends Controller
             return ("ÁREA EXCLUSIVA DE LOS COORDINADORES.");
         }
 
-    /*************************SEGURIDAD*******************/
+       /*************************SEGURIDAD*******************/
     
-    //este es el id de los usuarios coordinadores
-    if ($user_id == 1473) {$modalidad = 3; /* Secundaria blanquita*/ }
-    if ($user_id == 1671) {$modalidad = 3; /* Secundaria supervcion*/ }
+        //este es el id de los usuarios coordinadores
+        if ($user_id == 1473) {$modalidad = 3; /* Secundaria blanquita*/ }
+        if ($user_id == 1671) {$modalidad = 3; /* Secundaria supervcion*/ }
 
-    if ($user_id == 1474) {$modalidad = 2; /* Primaria lizzy*/ }
-    if ($user_id == 1669) {$modalidad = 2; /* Primaria dilma*/ }
+        if ($user_id == 1474) {$modalidad = 2; /* Primaria lizzy*/ }
+        if ($user_id == 1669) {$modalidad = 2; /* Primaria dilma*/ }
 
-    if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica cinthya*/ }
-    if ($user_id == 1670) {$modalidad = 1; /* Pre-Basica vicenta*/ }
-     
-    $parcial = 1;
+        if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica cinthya*/ }
+        if ($user_id == 1670) {$modalidad = 1; /* Pre-Basica vicenta*/ }
+        
+        $parcial = 1;
 
-     //obtenemos los datos del docente
-     $user = User::findOrFail($user_id);
+        //obtenemos los datos del docente
+        $user = User::findOrFail($user_id);
 
-     $secciones = DB::table('sectioncourses')
-            ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
-            ->Where('modality_id','=',$modalidad)
-            ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section','courses.modality_id')
-            ->orderBy('course_id','ASC')
-            ->orderBy('section','ASC')
-            ->get();
+        $secciones = DB::table('sectioncourses')
+                ->join('courses', 'sectioncourses.course_id', '=', 'courses.id')
+                ->Where('modality_id','=',$modalidad)
+                ->Select('courses.id as course_id','courses.short_name as course','sectioncourses.section','courses.modality_id')
+                ->orderBy('course_id','ASC')
+                ->orderBy('section','ASC')
+                ->get();
 
-    //docentes para el menu de lado izquierdo
-     $docentes =   DB::table('users')
-            ->join('assignments', 'users.id', '=', 'assignments.user_id')
-            ->join('courses', 'assignments.course_id', '=', 'courses.id')
-            ->where ([
-                ['users.role', '=', 'teacher'],
-                ['courses.modality_id', '=', $modalidad],
-            ])
-            ->Select('users.name','users.lastname','users.id')
-            ->distinct()
-            ->get();
-            
-     return view('users/panel_coordinacion',compact('secciones','user','docentes','modalidad','parcial'));
+        //docentes para el menu de lado izquierdo
+        $docentes =   DB::table('users')
+                ->join('assignments', 'users.id', '=', 'assignments.user_id')
+                ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                ->where ([
+                    ['users.role', '=', 'teacher'],
+                    ['courses.modality_id', '=', $modalidad],
+                ])
+                ->Select('users.name','users.lastname','users.id')
+                ->distinct()
+                ->get();
+                
+        return view('users/panel_coordinacion',compact('secciones','user','docentes','modalidad','parcial'));
+
+    }
+
+    public function coordinacion($user_id,$teacher_id,$parcial){
+        
+        /*************************SEGURIDAD*******************/
+           //control de seguridad
+           // Get the currently authenticated user...
+           if ( !($user = Auth::user()) ){
+            return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+        }
+        
+        if( $user->role!='coord'){
+            return ("ÁREA EXCLUSIVA DE LOS COORDINADORES.");
+        }
+
+       /*************************SEGURIDAD*******************/
+    
+        //este es el id de los usuarios coordinadores
+        if ($user_id == 1473) {$modalidad = 3; /* Secundaria blanquita*/ }
+        if ($user_id == 1671) {$modalidad = 3; /* Secundaria supervcion*/ }
+
+        if ($user_id == 1474) {$modalidad = 2; /* Primaria lizzy*/ }
+        if ($user_id == 1669) {$modalidad = 2; /* Primaria dilma*/ }
+
+        if ($user_id == 1475) {$modalidad = 1; /* Pre-Basica cinthya*/ }
+        if ($user_id == 1670) {$modalidad = 1; /* Pre-Basica vicenta*/ }
+        
+        //obtenemos los datos del docente
+        $teacher = User::findOrFail($teacher_id);
+        
+        // Codigo para ver clases del primer Semestre
+         //obtenemos las asignaciones de este docentes
+         $asignaciones = DB::table('assignments')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
+                        //->where('assignments.user_id','=',$user_id)
+                        ->where([
+                            ['assignments.user_id', '=', $teacher_id],
+                            ['clases.semester', '!=', 2],
+
+                        ])
+                        ->orderBy('course_id','ASC')
+                        ->orderBy('section','ASC')
+                        ->get(); 
+
+        //docentes para el menu de lado izquierdo
+        $docentes =   DB::table('users')
+                ->join('assignments', 'users.id', '=', 'assignments.user_id')
+                ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                ->where ([
+                    ['users.role', '=', 'teacher'],
+                    ['courses.modality_id', '=', $modalidad],
+                ])
+                ->Select('users.name','users.lastname','users.id')
+                ->distinct()
+                ->get();
+
+        return view('users/coordinacion',compact('asignaciones','teacher','parcial','docentes'));
+        
 
     }
 
@@ -1096,30 +1158,30 @@ class UserController extends Controller
             return ("ACCESO NO PERMITIDO");
         }
 
-    /*************************SEGURIDAD*******************/
+        /*************************SEGURIDAD*******************/
 
-    //obtenemos los id de los estudiantes matriculados en este curso y seccion
-    $estudiante = User::findOrFail($user->id);
+        //obtenemos los id de los estudiantes matriculados en este curso y seccion
+        $estudiante = User::findOrFail($user->id);
 
-        $curso = $course_id;
-        $course =  Course::findOrFail($course_id);
-        $seccion = strtolower($section);
-    
-    //obtenemos las clase que estan asignadas a este curso
-    
-    $clases = DB::table('clasecourses')
-                    ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
-                    ->where ([
-                        ['clasecourses.course_id', '=', $course_id],
-                        ['clases.semester', '!=', 2]
-                        //['clases.oficial', '!=', 2],
-                    ])
-                    ->Select('clase_id')
-                    ->get(); 
-    
-    $pdf = PDF::loadView('users/boleta_acumulativos', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiante' => $estudiante,'clases' => $clases]  );
-    $pdf->setPaper('a4','landscape');
-    return $pdf->download('Acumulativos.pdf');
+            $curso = $course_id;
+            $course =  Course::findOrFail($course_id);
+            $seccion = strtolower($section);
+        
+        //obtenemos las clase que estan asignadas a este curso
+        
+        $clases = DB::table('clasecourses')
+                        ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
+                        ->where ([
+                            ['clasecourses.course_id', '=', $course_id],
+                            ['clases.semester', '!=', 2]
+                            //['clases.oficial', '!=', 2],
+                        ])
+                        ->Select('clase_id')
+                        ->get(); 
+        
+        $pdf = PDF::loadView('users/boleta_acumulativos', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiante' => $estudiante,'clases' => $clases]  );
+        $pdf->setPaper('a4','landscape');
+        return $pdf->download('Acumulativos.pdf');
             
     //return view('users/boletas',compact('estudiantes','curso','seccion','clases','course','section'));
 }

@@ -70,7 +70,7 @@ class TeacherController extends Controller
          //que sean de este curso y seccion (curso que ha seleccionado)
          $mensajes = DB::table('msj_'.$user_id)
                          ->join('users', 'msj_'.$user_id.'.remitente', '=', 'users.id')
-                         ->limit(30)
+                         ->limit(500)
                          ->orderBy('msj_'.$user_id.'.id', 'desc')
                          ->Select(
                              'msj_'.$user_id.'.id as msj_id',
