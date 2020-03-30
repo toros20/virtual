@@ -678,7 +678,8 @@
 						<p>{{$tarea->titulo}}</p>
 							<span class="post__date">
 								<time class="published" >
-									Publicada:{{\Carbon\Carbon::parse($tarea->fecha_publicada)->format('d/m/Y')}}
+								             
+									Publicada:{{ \Carbon\Carbon::parse($tarea->fecha_publicada)->format('d/m/Y')}}
 								</time>
 								<time class="published ml-2" >
 									Valor:{{$tarea->valor}}%
