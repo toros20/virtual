@@ -180,7 +180,7 @@
 <header class="header" id="site-header">
 
 	<div class="page-title">
-		<h6>ISJC-2019</h6>
+		<h6>ISJC-2020</h6>
 	</div>
 
 	<div class="header-content-wrapper">
@@ -686,7 +686,7 @@
 									Valor:{{$tarea->valor}}%
 								</time>
 							</span>
-							<a class="btn btn-block mb-0 btn-primary" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
+							<a class="btn btn-block mb-0 btn-primary" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user_id,$firstcourse->course_id,$firstcourse->section,$tarea->clase_id,$tarea->parcial])}} " class="link-post">Ver Tarea</a></p>
 
 					    </li>
 					
