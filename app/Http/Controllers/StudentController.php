@@ -75,7 +75,7 @@ class StudentController extends Controller
                                 ->where([
                                     ['users.role', '=', 'teacher'],
                                     ['clases.semester', '!=', 2],
-                                    [$tbl_tareashoy.'.fecha_entrega', '=', date("Y-m-d");],
+                                    [$tbl_tareashoy.'.fecha_entrega', '=', date("Y-m-d")],
                                 ])
                                 ->orderBy($tbl_tareashoy.'.fecha_publicada')
                                 ->Select(
