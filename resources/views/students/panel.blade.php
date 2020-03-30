@@ -672,20 +672,22 @@
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
 								<p class="author-name">{{$tarea->short_name}}</p>
-								<p class="group">Lic. {{$tarea->lastname}}</p>
+								<p class="group">Lic. {{$tarea->name}} {{$tarea->lastname}}</p>
 							</div>
 						</div>
-						<p>{{$tarea->titulo}}
-							<a href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
+						<p>{{$tarea->titulo}}</p>
 							<span class="post__date">
 								<time class="published" >
 									Publicada:{{$tarea->fecha_publicada}}
 								</time>
-								<time class="published" >
+								<time class="published ml-2" >
 									Valor:{{$tarea->valor}}%
 								</time>
 							</span>
+							<a class="btn btn-sm btn-primary" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
+
 					</li>
+					<hr>
 					@endforeach
 					
 				</ul>				
