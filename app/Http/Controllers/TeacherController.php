@@ -43,7 +43,7 @@ class TeacherController extends Controller
          //registrar su ingreso en la tabla login_teachers
          $msj= DB::table('login_teachers')->insert([
 
-            'teacher_id'=>$id,
+            'teacher_id'=>$user_id,
             'fecha_ingreso'=>Carbon::now(),
             'ip'=>$_SERVER['REMOTE_ADDR'],
             'course_id'=>$course_id,
