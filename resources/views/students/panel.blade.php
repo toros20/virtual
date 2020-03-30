@@ -684,7 +684,7 @@
 									Valor:{{$tarea->valor}}%
 								</time>
 							</span>
-							<a class="btn btn-bloack mb-0 btn-primary" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
+							<a class="btn btn-block mb-0 btn-primary" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
 
 					</li>
 					
