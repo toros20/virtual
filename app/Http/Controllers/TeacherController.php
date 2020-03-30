@@ -40,6 +40,18 @@ class TeacherController extends Controller
             }
         /*************************SEGURIDAD*******************/
 
+         //registrar su ingreso en la tabla login_teachers
+         $msj= DB::table('login_teachers')->insert([
+
+            'teacher_id'=>$id,
+            'fecha_ingreso'=>Carbon::now(),
+            'ip'=>$_SERVER['REMOTE_ADDR'],
+            'course_id'=>$course_id,
+            'section'=>$section,
+            'tecnologia'=>$_SERVER['HTTP_USER_AGENT']
+           
+        ]);
+
        
         if ($course_id==0||$section=='x') {
         
@@ -517,8 +529,8 @@ class TeacherController extends Controller
 
    }
 
-   //funcion para eliminar documentos desde el panel acumulativos de docentes
-   function delete_file(Request $request){
+    //funcion para eliminar documentos desde el panel acumulativos de docentes
+    function delete_file(Request $request){
          //eliminamos el archivo de las tabla files
          $res = DB::table('files')->where('id', '=', $request->file_id)->delete();
     }
