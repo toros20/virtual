@@ -102,9 +102,34 @@ class TeacherController extends Controller
                                  ['section', '=', $section],
                              ])
                          ->get();
+
+            //obtenemos las tareas para el panel derecho de tareas
+        $tbl_tareashoy = 'task_'.$course_id.'_'.strtolower($section);
+        
+        $tareas_hoy = DB::table($tbl_tareashoy)
+                                ->join('clases', 'clases.id', '=' , $tbl_tareashoy.'.clase' )
+                                ->join('users', 'users.id', '=' , $tbl_tareashoy.'.teacher' )
+                                ->where([
+                                    [$tbl_tareashoy.'.teacher', '=', $user_id],
+                                    ['clases.semester', '!=', 2],
+                                    [$tbl_tareashoy.'.fecha_entrega', '=', date("Y-m-d")],
+                                ])
+                                ->orderBy($tbl_tareashoy.'.fecha_publicada', 'desc')
+                                ->Select(
+                                    $tbl_tareashoy.'.titulo',
+                                    $tbl_tareashoy.'.valor', 
+                                    $tbl_tareashoy.'.parcial',
+                                    $tbl_tareashoy.'.fecha_publicada',
+                                    $tbl_tareashoy.'.fecha_entrega',
+                                    'clases.short_name',
+                                    'clases.id as clase_id',
+                                    'users.name',
+                                    'users.lastname'
+                                   )
+                                ->get();
          
          //se envian los datos a la vista panel
-         return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes'));
+         return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes','tareas_hoy'));
          
      }
      
