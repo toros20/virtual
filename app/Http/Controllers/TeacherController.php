@@ -40,6 +40,16 @@ class TeacherController extends Controller
             }
         /*************************SEGURIDAD*******************/
 
+       
+        if ($course_id==0||$section=='x') {
+        
+        //obtenemos las asignaciones de curso y clases de este docentes
+         $asignaciones = Assignment::where('user_id',$user_id)->first();
+         $course_id=$asignaciones->course_id;
+         $section=$asignaciones->section;
+
+        }
+
          //registrar su ingreso en la tabla login_teachers
          $msj= DB::table('login_teachers')->insert([
 
@@ -52,15 +62,7 @@ class TeacherController extends Controller
            
         ]);
 
-       
-        if ($course_id==0||$section=='x') {
-        
-        //obtenemos las asignaciones de curso y clases de este docentes
-         $asignaciones = Assignment::where('user_id',$user_id)->first();
-         $course_id=$asignaciones->course_id;
-         $section=$asignaciones->section;
 
-        }
          //obtenemos el id del usuario docente
          $user = User::findOrFail($user_id);
 
