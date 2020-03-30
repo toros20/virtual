@@ -90,8 +90,8 @@ class StudentController extends Controller
                                     'users.name',
                                     'users.lastname'
                                    )
-                                ->ToSql();
-                                dd($tareas_hoy);
+                                ->get();
+                                //dd($tareas_hoy);
         
         //se envian los datos a la vista panel
         return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes','tareas_hoy'));
