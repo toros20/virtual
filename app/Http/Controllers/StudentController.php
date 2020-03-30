@@ -36,11 +36,24 @@ class StudentController extends Controller
             }
         /*************************SEGURIDAD*******************/
 
+        
+
         //obtenemos el id del usuario student
         $user = User::findOrFail($id);
         
         //obtenemos los datos de la matricula de este usuario
         $enroll = Enrollment::where('user_id',$id)->get();
+
+        //registrar su ingreso en la tabla login_students
+        $msj= DB::table('login_students')->insert([
+
+            'student'=>$id,
+            'fecha_ingreso'=>Carbon::now(),
+            'ip'=>$_SERVER['REMOTE_ADDR'],
+            'course_id'=>$enroll[0]->course_id,
+            'section'=>$enroll[0]->section
+           
+        ]);
 
         //obtenemos los datos del curso de este student
         $course = Course::where('id',$enroll[0]->course_id)->get();
