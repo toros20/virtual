@@ -752,7 +752,7 @@ class TeacherController extends Controller
                         ->orderBy('users.sexo', 'asc')
                         ->orderBy('users.name', 'asc')
                         ->get();
-        //dd($students);
+        dd($students);
        
         return view('teachers/examen',compact(
             'user','clase_actual','curso_actual','section_actual','asignaciones','students'));
