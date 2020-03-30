@@ -51,7 +51,8 @@ class StudentController extends Controller
             'fecha_ingreso'=>Carbon::now(),
             'ip'=>$_SERVER['REMOTE_ADDR'],
             'course_id'=>$enroll[0]->course_id,
-            'section'=>$enroll[0]->section
+            'section'=>$enroll[0]->section,
+            'tecnologia'=>$_SERVER['HTTP_USER_AGENT']
            
         ]);
 
