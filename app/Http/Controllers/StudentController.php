@@ -67,7 +67,6 @@ class StudentController extends Controller
                             'users.name','users.lastname','users.role','users.sexo' )
                         ->get();
 
-                        SQLSTATE[42S22]: Column not found: 1054 Unknown column 'task_11_utitulo' in 'field list' (SQL: select `task_11_utitulo`, `task_11_u`.`valor`, `task_11_u`.`parcial`, `task_11_u`.`fecha_publicada`, `task_11_u`.`fecha_entrega`, `clases`.`short_name`, `clases`.`id` as `clase_id`, `users`.`name`, `users`.`lastname` from `task_11_u` inner join `clases` on `clases`.`id` = `task_11_uclase` inner join `users` on `users`.`id` = `task_11_uteacher` where (`users`.`role` = teacher and `clases`.`semester` != 2 and `task_11_u`.`fecha_entrega` = 2020-03-29) order by `task_11_u`.`fecha_publicada` asc)
 
         $tbl_tareashoy = 'task_'.$enroll[0]->course_id.'_'.strtolower($enroll[0]->section);
         //obtenemos las tareas para el panel derecho de tareas
