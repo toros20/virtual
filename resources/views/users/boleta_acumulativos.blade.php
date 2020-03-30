@@ -160,6 +160,8 @@
                                                     ])
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->get();
+
+                                                    dd($tasks_IP);
                                         $valor = 0;
                                         foreach ($tasks_IP as $task_ip){
                                             if($task_ip->evaluada == 1 ){
