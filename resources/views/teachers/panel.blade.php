@@ -686,7 +686,7 @@
 									Valor:{{$tarea->valor}}%
 								</time>
 							</span>
-							<a class="btn btn-block mb-0 btn-primary" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user_id,$firstcourse->course_id,$firstcourse->section,$tarea->clase_id,$tarea->parcial])}} " class="link-post">Ver Tarea</a></p>
+							<a class="btn btn-block mb-0 btn-primary" href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$user->id,$firstcourse->course_id,$firstcourse->section,$tarea->clase_id,$tarea->parcial])}} " class="link-post">Ver Tarea</a></p>
 
 					    </li>
 					
