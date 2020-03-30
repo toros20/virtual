@@ -91,6 +91,7 @@ class StudentController extends Controller
                                     'users.lastname'
                                    )
                                 ->get();
+                                dd($tareas_hoy);
         
         //se envian los datos a la vista panel
         return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes','tareas_hoy'));
