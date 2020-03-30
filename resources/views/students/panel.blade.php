@@ -678,7 +678,7 @@
 						<p>{{$tarea->titulo}}</p>
 							<span class="post__date">
 								<time class="published" >
-									Publicada:{{$tarea->fecha_publicada}}
+									Publicada:{{($tarea->fecha_publicada).date('DD/MM/YYYY')}}
 								</time>
 								<time class="published ml-2" >
 									Valor:{{$tarea->valor}}%
