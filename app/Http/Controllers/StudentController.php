@@ -66,9 +66,33 @@ class StudentController extends Controller
                             'msj_'.$id.'.comentarios',
                             'users.name','users.lastname','users.role','users.sexo' )
                         ->get();
+
+        $tbl_tareashoy = 'task_'.$enroll[0]->course_id.'_'.strtolower($enroll[0]->section)
+        //obtenemos las tareas para el panel derecho de tareas
+        $tareas_hoy = DB::table($tbl_tareashoy)
+                                ->join('clases', 'clases.id', '=' , $tbl_tareashoy.'clase' )
+                                ->join('users', 'users.id', '=' , $tbl_tareashoy.'teacher' )
+                                ->where([
+                                    ['users.role', '=', 'teacher'],
+                                    ['clases.semester', '!=', 2],
+                                    [$tbl_tareashoy.'.fecha_entrega', '=', Date.now()],
+                                ])
+                                ->orderBy($tbl_tareashoy.'.fecha_publicada')
+                                ->Select(
+                                    $tbl_tareashoy.'titulo',
+                                    $tbl_tareashoy.'.valor', 
+                                    $tbl_tareashoy.'.parcial',
+                                    $tbl_tareashoy.'.fecha_publicada',
+                                    $tbl_tareashoy.'.fecha_entrega',
+                                    'clases.short_name',
+                                    'clases.id as clase_id',
+                                    'users.name',
+                                    'users.lastname'
+                                   )
+                                ->get();
         
         //se envian los datos a la vista panel
-        return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes'));
+        return view('students/panel',compact('user','course','enroll','clases','asignaciones','mensajes','tareas_hoy'));
         
     }
 

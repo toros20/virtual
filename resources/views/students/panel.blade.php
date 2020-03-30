@@ -660,28 +660,33 @@
 
 			<div class="ui-block" >
 				<div style="background-color:lightcoral;" class="ui-block-title">
-					<h6 style="color:white"  class="title"><!--Tareas Para Hoy--></h6>
+					<h6 style="color:white"  class="title">Tareas Para Hoy</h6>
 				</div>
 
-				<!-- W-Twitter -->
+				<!-- W-Twitter --> 
 				
 				<ul class="widget w-twitter">
+					@foreach ($tareas_hoy as $tarea)
 					<li class="twitter-item">
 						<div class="author-folder">
 							<img src="{{ URL::asset('img/teacher.png')}}" alt="avatar">
 							<div class="author">
-								<a href="#" class="author-name"><!--Español--></a>
-								<a href="#" class="group"><!--Hoy--></a>
+								<p class="author-name">{{$tarea->short_name}}</p>
+								<p class="group">Lic. {{$tarea->lastname}}</p>
 							</div>
 						</div>
-						<p><!--Presentar el Album de los poetas. con todos los nombre y obras mas famosas.-->
-							<a href="#" class="link-post"><!--Ver Tarea.--></a></p>
-						<span class="post__date">
-							<time class="published" datetime="2017-03-24T18:18">
-								<!--Hace una semana-->
-							</time>
-						</span>
+						<p>{{$tarea->titulo}}
+							<a href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$tarea->clase_id,$tarea->parcial])}}" class="link-post">Ver Tarea</a></p>
+							<span class="post__date">
+								<time class="published" >
+									Publicada:{{$tarea->fecha_publicada}}
+								</time>
+								<time class="published" >
+									Valor:{{$tarea->valor}}%
+								</time>
+							</span>
 					</li>
+					@endforeach
 					
 				</ul>				
 				
