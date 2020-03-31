@@ -30,21 +30,24 @@
                         </div>
 
                         <div class="md-form">
-                            <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" value="{{$tasks[0]->descripcion}}"></textarea>
+                            <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" >{{$tasks[0]->descripcion}}</textarea>
                             <label for="descripcion">Descripción del Acumulativo</label>
                         </div>
 
                         <div>
+                        <label>Tipo de Acumulativo</label>
+                        @php  if($tasks[0]->tipo == 1 {$tipo_trabaho = "Trabajo en Clase"} else{$tipo_trabaho = "Trabajo Extra-Clase"})  @endphp
                             <select required="required" class="browser-default custom-select mt-3" id="select_tipo" name="select_tipo">
-                                <option value="{{$tasks[0]->tipo}}" selected>{{$tasks[0]->tipo}}</option>
+                                <option value="{{$tasks[0]->tipo}}" selected>@php echo $tipo_trabaho @endphp</option>
                                 <option value="1">Trabajo en Clase</option>
                                 <option value="2">Trabajo Extra-Clase</option>      
                             </select>
                         </div>
 
                         <div>
+                        <label>Seleccione Parcial</label>
                             <select required="required" class="browser-default custom-select mt-3" id="select_parcial" name="select_parcial">
-                                <option value="{{$tasks[0]->tipo}}" selected>{{$tasks[0]->parcial}}</option>
+                                <option value="{{$tasks[0]->parcial}}" selected>{{$tasks[0]->parcial}}</option>
                                 <option value="1">I Parcial</option>
                                 <option value="2">II Parcial</option>
                                 <option value="3">III Parcial</option>
