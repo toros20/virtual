@@ -141,7 +141,7 @@
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
-                                             dd($resultado;
+                                             dd($resultado);
                                     ?>
                                      
                                     @php 
