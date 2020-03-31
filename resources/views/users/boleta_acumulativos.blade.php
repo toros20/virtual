@@ -280,8 +280,7 @@
                         
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
                                 <?php 
-
-                                    dd($total1);
+                                  
                                     $promedio1=$total1/$cont;
                                     $promedio2=$total2/$cont; 
                                     $promedio3=$total3/$cont;
