@@ -991,13 +991,12 @@ class TeacherController extends Controller
         $update=DB::table($tbl_task)
             ->where('id',  $request->task_id)
             ->update(array(
-                
-                'descripcion' =>$request->$descripcion,
-                'valor'=>$request->$valor,
-                'titulo'=>$request->$titulo,
-                'tipo'=>$request->$select_tipo,
-                'parcial'=>$request->$select_parcial,
-                'fecha_entrega'=>$request->$date_acum
+                'titulo'=>$request->titulo,
+                'descripcion' =>$request->descripcion,
+                'valor'=>$request->valor,
+                'tipo'=>$request->select_tipo,
+                'parcial'=>$request->select_parcial,
+                'fecha_entrega'=>$request->date_acum
             ));
 
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
