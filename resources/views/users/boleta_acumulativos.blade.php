@@ -180,8 +180,7 @@
                                             {{-- I PARCIAL --}}
                                              
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor}}</td>
-                                            @php dd( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor); @endphp
-                                            
+                                                                                        
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
@@ -281,6 +280,8 @@
                         
                              <table class="tabla tabla-striped tabla-bordered"  style="margin-bottom:20px; border: 1px solid #dee2e6;"  align="center" width="700">
                                 <?php 
+
+                                    dd($total1);
                                     $promedio1=$total1/$cont;
                                     $promedio2=$total2/$cont; 
                                     $promedio3=$total3/$cont;
