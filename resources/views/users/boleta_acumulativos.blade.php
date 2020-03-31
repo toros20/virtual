@@ -141,8 +141,7 @@
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
-                                             dd($resultado);
-                                    ?>
+                                            ?>
                                      
                                     @php 
                                         //tabla individual de tareas para evaluar
@@ -161,7 +160,7 @@
                                                         ['clase', '=', $clase->clase_id]
                                                     ])
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
-                                                    ->ToSql();
+                                                    ->get();
 
                                                    
                                         $valor = 0;
@@ -181,7 +180,7 @@
                                             {{-- I PARCIAL --}}
                                              
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor}}</td>
-                                            
+                                            @php dd({{$resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor}}); @endphp
                                             
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
