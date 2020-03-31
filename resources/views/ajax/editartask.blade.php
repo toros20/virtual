@@ -31,7 +31,7 @@
 
                         <div class="md-form">
                             <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" >@php echo $tasks[0]->descripcion @endphp</textarea>
-                            <label for="descripcion">Descripción del Acumulativo</label>
+                            {{-- <label for="descripcion">Descripción del Acumulativo</label> --}}
                         </div>
 
                         <div>

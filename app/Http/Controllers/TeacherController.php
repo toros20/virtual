@@ -986,7 +986,7 @@ class TeacherController extends Controller
         $ClaseA= $tarea[0]->clase;
         $UsuarioA= $tarea[0]->teacher;
         $ParcialA= $tarea[0]->parcial;
-     
+        dd($request);
         //actualizamos la tarea en la tabla correspondiente
         $update=DB::table($tbl_task)
             ->where('id',  $request->task_id)
