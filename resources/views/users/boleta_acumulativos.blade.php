@@ -140,6 +140,8 @@
                                             $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+
+                                             dd($resultado;
                                     ?>
                                      
                                     @php 
@@ -161,7 +163,7 @@
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
                                                     ->ToSql();
 
-                                                    dd($tasks_IP);
+                                                   
                                         $valor = 0;
                                         foreach ($tasks_IP as $task_ip){
                                             if($task_ip->evaluada == 1 ){
