@@ -37,7 +37,7 @@
                         <div>
                         <label>Tipo de Acumulativo</label>
                         @php $tipo_trabaho = '' @endphp
-                        @php  if($tasks[0]->tipo == 1) {$tipo_trabaho = "Trabajo en Clase"} else{$tipo_trabaho = "Trabajo Extra-Clase"}  @endphp
+                        @php  if($tasks[0]->tipo == 1) {$tipo_trabaho = "Trabajo en Clase";} else{$tipo_trabaho = "Trabajo Extra-Clase";}  @endphp
                             <select required="required" class="browser-default custom-select mt-3" id="select_tipo" name="select_tipo">
                                 <option value="{{$tasks[0]->tipo}}" selected>@php echo $tipo_trabaho @endphp</option>
                                 <option value="1">Trabajo en Clase</option>
