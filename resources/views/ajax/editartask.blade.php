@@ -26,11 +26,11 @@
 
                         <div class="md-form">
                             <input required type="text" id="titulo" name="titulo" class="form-control" value="{{$tasks[0]->titulo}}">
-                            <label for="titulo">Nombre del Acumulativo</label>
+                            {{-- <label for="titulo">Nombre del Acumulativo</label> --}}
                         </div>
 
                         <div class="md-form">
-                            <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" >@php $tasks[0]->descripcion @endphp</textarea>
+                            <textarea required type="text" id="descripcion" name="descripcion" class="md-textarea form-control" rows="3" >@php echo $tasks[0]->descripcion @endphp</textarea>
                             <label for="descripcion">Descripción del Acumulativo</label>
                         </div>
 
