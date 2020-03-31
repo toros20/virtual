@@ -159,7 +159,7 @@
                                                         ['clase', '=', $clase->clase_id]
                                                     ])
                                                     ->orderBy($tbl_taskstudent.'.id','ASC')
-                                                    ->get();
+                                                    ->ToSql();
 
                                                     dd($tasks_IP);
                                         $valor = 0;
