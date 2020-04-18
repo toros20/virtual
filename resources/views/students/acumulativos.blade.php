@@ -385,7 +385,7 @@
                               <!--Card image-->
                                 <div align="center" class="view view-cascade gradient-card-header purple-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                                 
-                                    <h4 class="white-text mx-3">Enlaces del {{$parcial_actual}} Parcial</h4>
+                                    <h4 class="white-text mx-3">Enlaces del {{$parcial}} Parcial</h4>
                                 
                                 </div>
                               <!--/Card image-->
