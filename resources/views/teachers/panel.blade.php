@@ -554,7 +554,7 @@
 								</div>
 						
 								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
-									<ul class="more-dropdown">
+									<ul class="more-dropdown" style="width:140px; margin-bottom: 5px;">
 										
 										<li>
 
@@ -563,7 +563,7 @@
 												<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
 												<input type="hidden" name="curso_id" id="curso_id" value="{{$course_id}}">
 												<input type="hidden" name="seccion_id" id="seccion_id" value="{{$section}}">
-												<input type="hidden" name="post_image" id="post_image" value="{{$mensaje->tipo}}">
+												<input type="hidden" name="post_key" id="post_key" value="{{$mensaje->key}}">
 											<button class="btn btn-danger btn-sm" type="submit">Eliminar Post </button>
 										
 										</form>
