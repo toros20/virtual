@@ -828,7 +828,7 @@
 
 						<div class="file-field">
 							
-							<h6>Subir Imagen</h6>
+							<h6>Publicación de Imagen</h6>
 							<span>Buscar Imagen en Dispositivo</span>
 							<p><input name ="document" id="document" type="file"></p>
 							</div>
