@@ -739,7 +739,7 @@
                           </div><!--fin de DIV ENLACES--> 
 
 
-
+                         <br>
 
 
                           {{-- tabla de recursos --}}
