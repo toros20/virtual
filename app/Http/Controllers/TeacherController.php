@@ -514,7 +514,7 @@ class TeacherController extends Controller
         ])->Select('user_id')->get();
 
           //obtenemos el nombre original del archivo
-          $name_original = $request->file('document')->getClientOriginalName();
+          //$name_original = $request->file('document')->getClientOriginalName();
 
           //obtenemos la extension original del archivo
           $extension = $request->file('document')->getClientOriginalExtension();
@@ -526,57 +526,59 @@ class TeacherController extends Controller
              $file = $request->file('document')->store('teachers_images');
              
               //recorremos todos los usuarios encontrados y les eviamos el mensaje
-            foreach($id_users as $id_user)
-            {
-                $msj= DB::table('msj_'.$id_user->user_id)->insert([
+                foreach($id_users as $id_user)
+                {
+                    $msj= DB::table('msj_'.$id_user->user_id)->insert([
 
-                    'remitente'=>$request->user_id,
-                    'mensaje'=>$request->mensaje_imagen,
-                    'fecha'=>Carbon::now(),
-                    'tipo'=> $file,
-                    'curso_id'=>$request->curso_id,
-                    'section'=>$request->seccion_id,
-                    'key'=>$key
-                    
-                ]);
-            }
+                        'remitente'=>$request->user_id,
+                        'mensaje'=>$request->mensaje_imagen,
+                        'fecha'=>Carbon::now(),
+                        'tipo'=> $file,
+                        'curso_id'=>$request->curso_id,
+                        'section'=>$request->seccion_id,
+                        'key'=>$key
+                        
+                    ]);
+                }
 
-          }
+                //obtenemos los id de los usuarios maestros asignados en este curso y seccion
+                $id_users2 = Assignment::where([
+                    ['course_id', '=', $request->curso_id],
+                    ['section', '=', $request->seccion_id],
+                ])->Select('user_id')->distinct()->get();
+
+                //recorremos todos los usuarios encontrados y les eviamos el mensaje
+                foreach($id_users2 as $id_user2)
+                {
+                    $msj= DB::table('msj_'.$id_user2->user_id)->insert([
+
+                        'remitente'=>$request->user_id,
+                        'mensaje'=>$request->mensaje_imagen,
+                        'fecha'=>Carbon::now(),
+                        'curso_id'=>$request->curso_id,
+                        'section'=>$request->seccion_id,
+                        'tipo'=>$file,
+                        'key'=>$key
+                        
+                    ]);
+                }
+
+                //obtenemos el id del mensaje recien guardado
+                $id = DB::table('msj_'.$request->user_id)->max('id');
+                //obtenemos el mensaje recien almacenado
+                $mensaje = DB::table('msj_'.$request->user_id)
+                                ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
+                                ->where('msj_'.$request->user_id.'.id',$id)
+                                ->get();
+                //enviamos el mensaje recien almacenado,para que aparezca
+                //return view('ajax/post_in_section',compact('mensaje'));
+
+                return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
+
+
+          } // fon del if de la estension.
           
-        //obtenemos los id de los usuarios maestros asignados en este curso y seccion
-        $id_users2 = Assignment::where([
-            ['course_id', '=', $request->curso_id],
-            ['section', '=', $request->seccion_id],
-        ])->Select('user_id')->distinct()->get();
-
-        //recorremos todos los usuarios encontrados y les eviamos el mensaje
-        foreach($id_users2 as $id_user2)
-        {
-            $msj= DB::table('msj_'.$id_user2->user_id)->insert([
-
-                'remitente'=>$request->user_id,
-                'mensaje'=>$request->mensaje_imagen,
-                'fecha'=>Carbon::now(),
-                'curso_id'=>$request->curso_id,
-                'section'=>$request->seccion_id,
-                'tipo'=>$file,
-                'key'=>$key
-                
-            ]);
-        }
-
-        //obtenemos el id del mensaje recien guardado
-        $id = DB::table('msj_'.$request->user_id)->max('id');
-       //obtenemos el mensaje recien almacenado
-        $mensaje = DB::table('msj_'.$request->user_id)
-                        ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
-                        ->where('msj_'.$request->user_id.'.id',$id)
-                        ->get();
-        //enviamos el mensaje recien almacenado,para que aparezca
-        //return view('ajax/post_in_section',compact('mensaje'));
-
-        return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
-
+        
      }
 
      //funcion para recibir los datos del formulario para subir un archivo

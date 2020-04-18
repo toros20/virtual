@@ -571,7 +571,11 @@
 								</div> --}}
 						
 							</div>
-						
+							@if ($mensaje->tipo != 'section')
+								<a href="{{ URL::asset('../storage/app/'.$file->filename)}}">
+									<img src="{{ URL::asset('../storage/app/'.$file->filename)}}" >
+								</a>
+							@endif
 							<p> {{$mensaje->mensaje}}</p>
 						
 							<div id="comentar_{{$mensaje->key}}" class="post-additional-info inline-items">
