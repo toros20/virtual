@@ -47,6 +47,14 @@
                             </div> --}}
                     
                         </div>
+
+                        @if ($mensaje->tipo != 'seccion')
+                            <div align="center">
+                                <a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
+                                    <img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
+                                </a>
+                            </div>
+                        @endif
                     
                         <p> {{$mensaje->mensaje}}</p>
                     
