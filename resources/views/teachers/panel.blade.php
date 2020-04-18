@@ -825,6 +825,9 @@
 
 					<div class="upload-photo-item" style="width:96%">
 						{{-- <svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg> --}}
+
+						<div class="file-field">
+							
 							<h6>Subir Imagen</h6>
 							<span>Buscar Imagen en Dispositivo</span>
 							<p><input name ="document" id="document" type="file"></p>
@@ -838,7 +841,7 @@
 									
 							<button id="btn_send_image"  class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Imagen</button>
 									
-						<
+						</div>
 					</div>
 				</form>
 
