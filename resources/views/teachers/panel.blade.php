@@ -811,7 +811,7 @@
 			</a>
 
 			<div class="modal-header">
-				<h6 class="title">Subir Imagen</h6>
+				<h6 class="title">Publicación de Imagen</h6>
 			</div>
 
 			<div class="modal-body">
@@ -828,7 +828,7 @@
 
 						<div class="file-field">
 							
-							<h6>Publicación de Imagen</h6>
+							<h6>Subir Imagen</h6>
 							<span>Buscar Imagen en Dispositivo</span>
 							<p><input name ="document" id="document" type="file"></p>
 							</div>
