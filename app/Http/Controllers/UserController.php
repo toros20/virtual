@@ -722,6 +722,7 @@ class UserController extends Controller
         
      }
 
+    
      public function filtrar_msj_byteacher(Request $request){
          //obtenemos los ultimos 20 mensajes enviados por este docente
         $mensajes = DB::table('msj_'.$request->user_id)

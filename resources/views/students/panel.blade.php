@@ -799,7 +799,7 @@
 
 <!-- Window-popup Update Header Photo -->
 
-<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+{{-- <div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
@@ -828,7 +828,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div> --}}
 
 {{-- modal para mostrar los mensaje filtrados por docente --}}
 <div class="modal fade" id="modal_msj_byteacher" tabindex="-1" role="dialog" aria-labelledby="modal_msj_byteacher" aria-hidden="true">
@@ -838,7 +838,7 @@
 
 <!-- Window-popup Choose from my Photo -->
 
-<div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo" aria-hidden="true">
+{{-- <div class="modal fade" id="choose-from-my-photo" tabindex="-1" role="dialog" aria-labelledby="choose-from-my-photo" aria-hidden="true">
 	<div class="modal-dialog window-popup choose-from-my-photo" role="document">
 
 		<div class="modal-content">
@@ -1015,7 +1015,7 @@
 		</div>
 
 	</div>
-</div>
+</div> --}}
 
 <!-- ... end Window-popup Choose from my Photo -->
 
@@ -1031,7 +1031,7 @@
 
 <!-- Window-popup-CHAT for responsive min-width: 768px -->
 
-<div class="ui-block popup-chat popup-chat-responsive" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+{{-- <div class="ui-block popup-chat popup-chat-responsive" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
 
 	<div class="modal-content">
 		<div class="modal-header">
@@ -1236,7 +1236,7 @@
 		</div>
 	</div>
 
-</div>
+</div> --}}
 
 <!-- ... end Window-popup-CHAT for responsive min-width: 768px -->
 

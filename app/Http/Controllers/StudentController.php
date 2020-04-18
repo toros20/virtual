@@ -65,7 +65,7 @@ class StudentController extends Controller
             ['section', '=', $enroll[0]->section],
         ])->get();
         
-        //obtenemos los primeros 10 mensajes de este usuario        
+        //obtenemos los primeros 500 mensajes de este usuario        
         $mensajes = DB::table('msj_'.$id)
                         ->join('users', 'msj_'.$id.'.remitente', '=', 'users.id')
                         ->limit(500)

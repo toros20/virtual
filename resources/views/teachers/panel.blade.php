@@ -492,7 +492,7 @@
 			{{-- imagen del load al momento de enviar post. --}}
 			<div align="center" id="circle"></div>
 			<div class="comment-form inline-items" style="background-color: white; margin-bottom: 15px;">
-					<p>Tus consultas o comentario serán vistos por todos los padres, docentes y alumnos de esta sección. Recuerda ser cortes y respetuoso.</p>
+					<p>Tus consultas o comentario serán vistos por todos los padres, docentes y estudiantes de esta sección. Recuerda ser cortes y respetuoso.</p>
 					<div class="post__author author vcard inline-items">
 						<img src="{{ URL::asset('img/teacher.png')}}" >
 						<input id="user" type="hidden" value="{{$user->id}} ">
@@ -820,8 +820,8 @@
 						{{-- @csrf --}}
 						<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
 						<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
-						<input type="hidden" name="course_id" id="course_id" value="{{$course_id}}">
-						<input type="hidden" name="section" id="section" value="{{$section}}">
+						<input type="hidden" name="curso_id" id="curso_id" value="{{$course_id}}">
+						<input type="hidden" name="seccion_id" id="seccion_id" value="{{$section}}">
 
 					<div class="upload-photo-item" style="width:96%">
 						{{-- <svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg> --}}
@@ -835,7 +835,7 @@
 							<div class="file-path">
 						
 							<div class="md-form">
-								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="descripcion_file" name="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
+								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="mensaje_imagen" name="mensaje_imagen" class="md-textarea form-control" rows="3"></textarea>
 								<label for="descripcion">Esta imagen será vista por todos los padres, estudiantes y docentes de esta sección.</label>
 							</div>
 									
