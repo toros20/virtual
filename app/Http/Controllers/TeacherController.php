@@ -497,6 +497,11 @@ class TeacherController extends Controller
         return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
        
     }
+    
+    //funcion para subir una imagen en el panel de mensajeria
+    function send_image(Request $request){
+        
+    }
 
      //funcion para recibir los datos del formulario para subir un archivo
      function send_video(Request $request){
