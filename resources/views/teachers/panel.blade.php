@@ -564,7 +564,7 @@
 												<input type="hidden" name="curso_id" id="curso_id" value="{{$course_id}}">
 												<input type="hidden" name="seccion_id" id="seccion_id" value="{{$section}}">
 												<input type="hidden" name="post_id" id="post_id" value="{{$mensaje->msj_id}}">
-											<button type="submit">Eliminar Post </button>
+											<button class="btn btn-danger btn-sm" type="submit">Eliminar Post </button>
 										
 										</form>
 											

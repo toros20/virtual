@@ -661,7 +661,7 @@ class TeacherController extends Controller
 
         foreach($id_users2 as $id_user2)
         {
-          DB::table('msj_'.$id_user2)->where('id', '=', $request->post_id)->delete();
+          DB::table('msj_'.$id_user2->user_id)->where('id', '=', $request->post_id)->delete();
         }
          
         return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
