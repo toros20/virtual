@@ -553,31 +553,23 @@
 									</div>
 								</div>
 						
-								{{-- <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
+								<div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 									<ul class="more-dropdown">
+										
 										<li>
-											<a href="#">Edit Post</a>
+											<a href="#">Eliminar Post</a>
 										</li>
-										<li>
-											<a href="#">Delete Post</a>
-										</li>
-										<li>
-											<a href="#">Turn Off Notifications</a>
-										</li>
-										<li>
-											<a href="#">Select as Featured</a>
-										</li>
+										
 									</ul>
-								</div> --}}
+								</div>
 						
 							</div>
 							@if ($mensaje->tipo != 'section')
-							<div align="center">
-								<a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
-									<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
-								</a>
-							</div>
-								
+								<div align="center">
+									<a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
+										<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
+									</a>
+								</div>
 							@endif
 							<p> {{$mensaje->mensaje}}</p>
 						
