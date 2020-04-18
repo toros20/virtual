@@ -507,11 +507,11 @@
 						<div class="form-group with-icon-right ">
 							<textarea required ='required' id="mensaje" class="form-control" placeholder=""></textarea>
 							<div class="add-options-message">
-								{{-- <a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
+								 <a href="#" class="options-message" data-toggle="modal" data-target="#update-photo">
 									<svg class="olymp-camera-icon">
 										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 									</svg>
-								</a> --}}
+								</a> 
 							</div>
 						</div>
 					</div>
@@ -803,7 +803,7 @@
 
 <!-- Window-popup Update Header Photo -->
 
-{{-- <div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+ <div class="modal fade" id="update-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
@@ -811,28 +811,26 @@
 			</a>
 
 			<div class="modal-header">
-				<h6 class="title">Update Header Photo</h6>
+				<h6 class="title">Subir Imagen</h6>
 			</div>
 
 			<div class="modal-body">
 				<a href="#" class="upload-photo-item">
 				<svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 
-				<h6>Upload Photo</h6>
-				<span>Browse your computer.</span>
+				<h6>Subir Imagen</h6>
+				<span>Buscar Imagen en Dispositivo</span>
 			</a>
 
-				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
+			<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
 			<svg class="olymp-photos-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 
-			<h6>Choose from My Photos</h6>
-			<span>Choose from your uploaded photos</span>
 		</a>
 			</div>
 		</div>
 	</div>
-</div> --}}
+</div> 
 
 <div class="modal fade" id="modal_clase_actual" tabindex="-1" role="dialog" aria-labelledby="modal_clase_actual" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">

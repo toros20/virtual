@@ -81,9 +81,9 @@ class StudentController extends Controller
                             'users.name','users.lastname','users.role','users.sexo' )
                         ->get();
 
-
-        $tbl_tareashoy = 'task_'.$enroll[0]->course_id.'_'.strtolower($enroll[0]->section);
         //obtenemos las tareas para el panel derecho de tareas
+        $tbl_tareashoy = 'task_'.$enroll[0]->course_id.'_'.strtolower($enroll[0]->section);
+        
         $tareas_hoy = DB::table($tbl_tareashoy)
                                 ->join('clases', 'clases.id', '=' , $tbl_tareashoy.'.clase' )
                                 ->join('users', 'users.id', '=' , $tbl_tareashoy.'.teacher' )
