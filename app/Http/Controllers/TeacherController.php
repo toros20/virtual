@@ -639,6 +639,35 @@ class TeacherController extends Controller
 
    }
 
+   function delete_post(Request $request){
+
+        //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
+        $id_users = Enrollment::where([
+            ['course_id', '=', $request->curso_id],
+            ['section', '=', $request->seccion_id],
+        ])->Select('user_id')->get();
+
+          //recorremos todos los usuarios encontrados y les eviamos el mensaje
+          foreach($id_users as $id_user)
+          {
+            DB::table('msj_'.$id_user)->where('id', '=', $request->post_id)->delete()
+          }
+        
+         //obtenemos los id de los usuarios maestros asignados en este curso y seccion
+         $id_users2 = Assignment::where([
+            ['course_id', '=', $request->curso_id],
+            ['section', '=', $request->seccion_id],
+        ])->Select('user_id')->distinct()->get();
+
+        foreach($id_users2 as $id_user2)
+        {
+          DB::table('msj_'.$id_user2)->where('id', '=', $request->post_id)->delete()
+        }
+         
+        return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
+        
+   }
+
     //funcion para eliminar documentos desde el panel acumulativos de docentes
     function delete_file(Request $request){
          //eliminamos el archivo de las tabla files

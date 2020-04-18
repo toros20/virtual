@@ -557,7 +557,17 @@
 									<ul class="more-dropdown">
 										
 										<li>
-											<a href="#">Eliminar Post</a>
+
+										<form method="POST" action="{{ route('teachers/delete_post') }}" >
+												<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+												<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+												<input type="hidden" name="curso_id" id="curso_id" value="{{$course_id}}">
+												<input type="hidden" name="seccion_id" id="seccion_id" value="{{$section}}">
+												<input type="hidden" name="post_id" id="post_id" value="{{$mensaje->id}}">
+											<button type="submit">Eliminar Post </button>
+										
+										</form>
+											
 										</li>
 										
 									</ul>
