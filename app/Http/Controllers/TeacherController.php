@@ -650,7 +650,7 @@ class TeacherController extends Controller
           //recorremos todos los usuarios encontrados y les eviamos el mensaje
           foreach($id_users as $id_user)
           {
-            DB::table('msj_'.$id_user)->where('id', '=', $request->post_id)->delete();
+            DB::table('msj_'.$id_user->user_id)->where('id', '=', $request->post_id)->delete();
           }
         
          //obtenemos los id de los usuarios maestros asignados en este curso y seccion
