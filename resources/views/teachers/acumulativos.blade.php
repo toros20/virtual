@@ -678,7 +678,7 @@
                                             <tbody id="tbody_recursos" >
                                                 @foreach ($enlaces as $enlace)
                                                 <tr>  
-                                                    <td><span style="color: red;"><i class="fab fa-youtube fa-3x"></i></span></td>
+                                                    <td><span style="color: red;"><i class="fas fa-globe fa-3x"></i></span></td>
                                                     <td><a href="">{{$enlace->titulo}} </a></td>
                                                     <td>{{ \Carbon\Carbon::parse($enlace->fecha)->format('d/m/Y')}}</td>
                                                     
