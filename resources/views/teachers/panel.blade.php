@@ -572,8 +572,8 @@
 						
 							</div>
 							@if ($mensaje->tipo != 'section')
-								<a href="{{ URL::asset('../storage/app/'.$file->filename)}}">
-									<img src="{{ URL::asset('../storage/app/'.$file->filename)}}" >
+								<a href="{{ URL::asset('../storage/app/'.$mensaje->filename)}}">
+									<img src="{{ URL::asset('../storage/app/'.$mensaje->filename)}}" >
 								</a>
 							@endif
 							<p> {{$mensaje->mensaje}}</p>
