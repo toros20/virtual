@@ -60,10 +60,10 @@
                     
                         <div class="post-additional-info inline-items">
                     
-                            <a href="#" class="post-add-icon inline-items">
+                             {{--<a href="#" class="post-add-icon inline-items">
                                 <svg class="olymp-heart-icon"><use xlink:href="../../svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-                                <span> {{$mensaje->megusta}} Me gusta</span>
-                            </a>					
+                                <span> {{$mensaje->megusta}} Me gusta</span> 
+                            </a>--}}
                     
                             <div class="comments-shared">
                                 <a href="#" class="post-add-icon inline-items">
