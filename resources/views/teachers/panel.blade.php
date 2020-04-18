@@ -574,7 +574,7 @@
 							@if ($mensaje->tipo != 'section')
 							<div align="center">
 								<a href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
-									<img class="img-thumbnail" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
+									<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
 								</a>
 							</div>
 								
