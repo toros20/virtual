@@ -815,20 +815,35 @@
 			</div>
 
 			<div class="modal-body">
-				<a href="#" class="upload-photo-item" style="widt:96%">
-					<svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+				 <form class="md-form" style="color: #757575;" enctype="multipart/form-data" method = 'POST' action="{{ route('teachers/send_image') }}">
+						
+						{{-- @csrf --}}
+						<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+						<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+						<input type="hidden" name="course_id" id="course_id" value="{{$course_id}}">
+						<input type="hidden" name="section" id="section" value="{{$section}}">
 
-					<div class="file-field mt-3">
-						
-						<h6>Subir Imagen</h6>
-						<span>Buscar Imagen en Dispositivo</span>
-						<p><input name ="document" id="document" type="file"></p>
+					<a href="#" class="upload-photo-item" style="widt:96%">
+						{{-- <svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg> --}}
+
+						<div class="file-field mt-1">
+							
+							<h6>Subir Imagen</h6>
+							<span>Buscar Imagen en Dispositivo</span>
+							<p><input name ="document" id="document" type="file"></p>
+							</div>
+							<div class="file-path">
+							<input class="file-path validate" type="text" placeholder="Nombre de Imagen">
+							<div class="md-form">
+									<textarea required type="text" id="descripcion_file" name="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
+									<label for="descripcion">Descripción</label>
+								</div>
+									
+								<button id="btn_send_image"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Imagen</button>
+									
 						</div>
-						<div class="file-path">
-						<input class="file-path validate" type="text" placeholder="Subir Archivo">
-						
-					</div>
-				</a>
+					</a>
+				</form>
 
 			</div>
 		</div>

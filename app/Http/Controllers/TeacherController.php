@@ -80,7 +80,7 @@ class TeacherController extends Controller
                             ])
                          ->first(); 
  
-         //obtenemos los primeros 30 mensajes de este usuario 
+         //obtenemos los primeros 500 mensajes de este usuario 
          //que sean de este curso y seccion (curso que ha seleccionado)
          $mensajes = DB::table('msj_'.$user_id)
                          ->join('users', 'msj_'.$user_id.'.remitente', '=', 'users.id')
@@ -129,7 +129,7 @@ class TeacherController extends Controller
                                 ->get();
          
          //se envian los datos a la vista panel
-         return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes','tareas_hoy'));
+         return view('teachers/panel',compact('user','asignaciones','firstcourse','mensajes','tareas_hoy','course_id','section'));
          
      }
      
