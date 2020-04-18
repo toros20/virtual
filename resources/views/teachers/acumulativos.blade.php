@@ -400,8 +400,8 @@
                       
                           <!-- Card header -->
                           <div class="card-header card-header success-color white-text text-center" role="tab" id="headingThree3">
-                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
-                              aria-expanded="false" aria-controls="collapseThree3">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree4"
+                              aria-expanded="false" aria-controls="collapseThree4">
                               <h5 class="white-text mb-0">
                                 Subir Enlace Web <i class="fas fa-angle-down rotate-icon"></i>
                               </h5>
@@ -409,7 +409,7 @@
                           </div>
                       
                           <!-- Card body -->
-                          <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                          <div id="collapseThree4" class="collapse" role="tabpanel" aria-labelledby="headingThree4" data-parent="#accordionEx">
                             <div class="card-body">
                                 <form class="md-form" style="color: #757575;" method="POST" action="{{ route('teachers/send_link') }}">
                                     {{-- @csrf --}}
@@ -621,6 +621,126 @@
                         </div>
 
                         <br>
+
+
+
+                          {{-- tabla de ENLACES --}}
+                           <div  class="card card-cascade narrower">
+
+                              <!--Card image-->
+                                <div align="center" class="view view-cascade gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                                
+                                    <h4 class="white-text mx-3">Enlaces del {{$parcial_actual}} Parcial</h4>
+                                
+                                </div>
+                              <!--/Card image-->
+                  
+                                <div class="px-4">
+                                
+                                    <div class="table-wrapper">
+                                        <!--Table-->
+                                        <table class="table table-hover mb-0 table-responsive-md ">
+                                
+                                            <!--Table head-->
+                                            <thead>
+                                                <tr>
+                                                <th>
+                                                  Tipo
+                                                </th>
+                                                           
+                                                <th class="th-lg">
+                                                    <a>Titulo del Enlace
+                                                    </a>
+                                                </th>
+                                                
+                                                <th class="th-md">
+                                                    <a href="">Fecha publicación
+                                                    </a>
+                                                </th>
+
+                                                <th class="th-sm">
+                                                    <a href="">Visitar Enlace
+                                                    </a>
+                                                </th>
+                                                 <th class="th-sm">
+                                                    <a href="">Instrucciones
+                                                    </a>
+                                                </th>
+                                                <th class="th-sm">
+                                                    <a href="">Eliminar
+                                                    </a>
+                                                </th>
+            
+                                                </tr>
+                                            </thead>
+                                            <!--Table head--> 
+                                            <!--Table body-->
+                                            <tbody id="tbody_recursos" >
+                                                @foreach ($enlaces as $enlace)
+                                                <tr>  
+                                                    <td><span style="color: red;"><i class="fab fa-youtube fa-3x"></i></span></td>
+                                                    <td><a href="">{{$enlace->titulo}} </a></td>
+                                                    <td>{{ \Carbon\Carbon::parse($enlace->fecha)->format('d/m/Y')}}</td>
+                                                    
+                                                    <td><a target="_blank" href="{{$enlace->url}}" class="btn btn-success btn-rounded btn-sm m-0" >Ir a enlace</a></td>
+                                                   
+                                                    <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModallink_{{$enlace->id}}">Instrucciones</button></td>
+                                                    
+                                                      <!-- Central Modal Medium Video {{$video->id}}-->
+                                                     <div class="modal fade modal-notify info" id="centralModallink_{{$enlace->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                                                        aria-hidden="true">
+                                                        <div class="modal-dialog modal-notify modal-danger" role="document">
+                                                          <!--Content-->
+                                                          <div class="modal-content">
+                                                            <!--Header-->
+                                                            <div class="modal-header">
+                                                              
+                                                              <p class="heading lead">{{$enlace->titulo}}</p>
+                    
+                                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true" class="white-text">&times;</span>
+                                                              </button>
+                                                            </div>
+                    
+                                                            <!--Body-->
+                                                            <div class="modal-body">
+                                                              <div class="text-center">
+                                                          
+                                                                <p>Instrucciones: {{$enlace->detalles}}</p>
+                                                                <p>Publicado el:{{ \Carbon\Carbon::parse($enlace->fecha)->format('d/m/Y')}}</p>
+                                                                                                                                   
+                                                              </div>
+                                                            </div>
+                    
+                                                            <!--Footer-->
+                                                            <div class="modal-footer justify-content-center">
+                                                              <a type="button" class="btn btn-outline-primary waves-effect" data-dismiss="modal">Cerrar</a>
+                                                            </div>
+                                                          </div>
+                                                          <!--/.Content-->
+                                                        </div>
+                                                    </div>
+                                                    <!-- Central Modal Medium Info-->
+
+                                                    <td><button onclick="eliminar_enlace({{$enlace->id}})" type="button" class="btn btn-danger btn-rounded btn-sm m-0">Eliminar</button></td>
+                                              
+                                                </tr>
+                                                @endforeach
+                                                
+                                            </tbody>
+                                        
+                                            <!--Table body-->
+                                        </table>
+                                        <!--Table-->
+                                    </div> <!--fin de table-wrapper-->
+        
+                                </div><!--fin de px-4-->
+        
+                          </div><!--fin de DIV ENLACES--> 
+
+
+
+
 
                           {{-- tabla de recursos --}}
                         <div  class="card card-cascade narrower">

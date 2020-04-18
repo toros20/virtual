@@ -326,10 +326,20 @@ class TeacherController extends Controller
                   ])
           ->orderBy('id','ASC')
           ->get();
-
+          //obtenemos los enlaces subidos por este docente a este cursos secion y clase
+          $enlaces = DB::table('links')
+          ->where([
+                  ['clase_id', '=', $clase],
+                  ['course_id', '=', $course],
+                  ['section', '=', $section],
+                  ['user_id', '=', $user_id],
+                  ['parcial', '=', $parcial]
+                  ])
+          ->orderBy('id','ASC')
+          ->get();
 
         return view('teachers/acumulativos',compact(
-            'user','cursos','tasks','clase_actual','curso_actual','section_actual','parcial_actual','asignaciones','files','videos'));
+            'user','cursos','tasks','clase_actual','curso_actual','section_actual','parcial_actual','asignaciones','files','videos','enlaces'));
 
     }
 
@@ -715,6 +725,12 @@ class TeacherController extends Controller
          //eliminamos el archivo de las tabla files
          $res = DB::table('videos')->where('id', '=', $request->video_id)->delete();
     }
+
+     //funcion para eliminar enlace desde el panel acumulativos de docentes
+     function delete_enlace(Request $request){
+        //eliminamos el enlace de las tabla links
+        $res = DB::table('links')->where('id', '=', $request->link_id)->delete();
+   }
 
     //funcion para evaluar los acumulativos
     function evaluar_task(Request $request){
