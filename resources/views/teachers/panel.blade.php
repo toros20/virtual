@@ -573,7 +573,7 @@
 							</div>
 							@if ($mensaje->tipo != 'section')
 							<div align="center">
-								<a href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
+								<a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
 									<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
 								</a>
 							</div>
