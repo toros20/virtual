@@ -628,7 +628,7 @@
                            <div  class="card card-cascade narrower">
 
                               <!--Card image-->
-                                <div align="center" class="view view-cascade gradient-card-header aqua-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
+                                <div align="center" class="view view-cascade gradient-card-header cyan-gradient narrower py-2 mx-4 mb-3 d-flex justify-content-between align-items-center">
                                 
                                     <h4 class="white-text mx-3">Enlaces del {{$parcial_actual}} Parcial</h4>
                                 
