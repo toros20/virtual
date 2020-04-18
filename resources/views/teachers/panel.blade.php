@@ -833,13 +833,13 @@
 							<p><input name ="document" id="document" type="file"></p>
 							</div>
 							<div class="file-path">
-							<input class="file-path validate" type="text" placeholder="Nombre de Imagen">
+						
 							<div class="md-form">
-									<textarea required type="text" id="descripcion_file" name="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
-									<label for="descripcion">Descripción</label>
-								</div>
+								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="descripcion_file" name="descripcion_file" class="md-textarea form-control" rows="3"></textarea>
+								<label for="descripcion">Mensaje</label>
+							</div>
 									
-								<button id="btn_send_image"  class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Imagen</button>
+							<button id="btn_send_image"  class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Imagen</button>
 									
 						</div>
 					</div>
