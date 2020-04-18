@@ -816,17 +816,20 @@
 
 			<div class="modal-body">
 				<a href="#" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+					<svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
 
-				<h6>Subir Imagen</h6>
-				<span>Buscar Imagen en Dispositivo</span>
-			</a>
+					<div class="file-field mt-3">
+						<div class="btn btn-primary btn-sm float-left">
+						<h6>Subir Imagen</h6>
+						<span>Buscar Imagen en Dispositivo</span>
+						<p><input name ="document" id="document" type="file"></p>
+						</div>
+						<div class="file-path">
+						<input class="file-path validate" type="text" placeholder="Subir Archivo">
+						</div>
+					</div>
+				</a>
 
-			<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
-
-			<svg class="olymp-photos-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
-
-		</a>
 			</div>
 		</div>
 	</div>
