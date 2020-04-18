@@ -391,6 +391,91 @@
                       
                         </div>
                         <!-- Accordion card -->
+
+
+
+
+                         <!-- Accordion card -->
+                        <div class="card" style="padding-bottom: 2px;">
+                      
+                          <!-- Card header -->
+                          <div class="card-header card-header success-color white-text text-center" role="tab" id="headingThree3">
+                            <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx" href="#collapseThree3"
+                              aria-expanded="false" aria-controls="collapseThree3">
+                              <h5 class="white-text mb-0">
+                                Subir Enlace Web <i class="fas fa-angle-down rotate-icon"></i>
+                              </h5>
+                            </a>
+                          </div>
+                      
+                          <!-- Card body -->
+                          <div id="collapseThree3" class="collapse" role="tabpanel" aria-labelledby="headingThree3" data-parent="#accordionEx">
+                            <div class="card-body">
+                                <form class="md-form" style="color: #757575;" method="POST" action="{{ route('teachers/send_link') }}">
+                                    {{-- @csrf --}}
+                                    <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+                                    <input type="hidden" name="curso_actual" id="curso_actual" value="{{$curso_actual[0]->id}}">
+                                    <input type="hidden" name="section_actual" id="section_actual" value="{{$section_actual}}">
+                                    <input type="hidden" name="clase_actual" id="clase_actual" value="{{$clase_actual[0]->id}}">
+            
+                                <div>
+                                    <select required onchange="loadclassesfordocente_link()" class="browser-default custom-select mt-3" id="select_course_link" name="select_course_link">
+                                        <option value="-1" disabled selected>Seleccione Curso</option>
+                                        @foreach ($cursos as $curso)
+                                            <option value="{{$curso->course_id}} ">{{$curso->course}} </option>
+                                        @endforeach
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <select required onchange="loadsectionsfordocentes_link()" class="browser-default custom-select mt-3" id="select_clases_link" name="select_clases_link">
+                                        <option value="-1" disabled selected>Seleccione Clase</option>
+                                    </select>
+                                </div>
+                    
+                                <div required id="checks_sections_link" class="form-check mb-4">
+                                  
+                                </div>
+                    
+                                <div>
+                                    <select required class="browser-default custom-select mt-3" id="select_parcial_link" name="select_parcial_link">
+                                        <option value="-1" disabled selected>Seleccione Parcial</option>
+                                        <option value="1">I Parcial</option>
+                                        <option value="2">II Parcial</option>
+                                        <option value="3">III Parcial</option>
+                                        <option value="4">IV Parcial</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="md-form">
+                                    <input required type="text" id="titulo_web" name="titulo_web" class="form-control">
+                                    <label for="video_name">Titulo del Enlace Web</label>
+                                </div>
+
+                                <div class="md-form">
+                                    <input required type="text" id="url_web" name="url_web" class="form-control">
+                                    <label for="url">URL del Enlace Web</label>
+                                </div>
+
+                                <!--Material textarea-->
+                                <div class="md-form">
+                                    <textarea placeholder="Si es un enlace de Video-Conferencia escriba el acceso y contraseña, y horario disponible" required type="text" id="descripcion_link" name="descripcion_link" class="md-textarea form-control" rows="3"></textarea>
+                                    <label for="descripcion_video">Instrucciones para el Enlace Web</label>
+                                </div>
+                                
+                                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir</button>
+                                <div align="center" id="circle"></div>
+                            </form>
+                            </div>
+                          </div>
+                      
+                        </div>
+                        <!-- Accordion card -->
+
+
+
+
                       
                     </div>
                       <!-- Accordion wrapper -->

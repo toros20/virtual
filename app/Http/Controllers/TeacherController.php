@@ -617,6 +617,42 @@ class TeacherController extends Controller
          
     }
 
+      //funcion para recibir los datos del formulario para subir un archivo
+      function send_link(Request $request){
+
+        //obtenemos las secciones seleccionadas
+        $secciones=$request->input('sections');
+        $parcial = $request->select_parcial_link;
+
+        //datos actuales para volver al mismo sitio
+        $CursoA= $request->curso_actual;
+        $ClaseA= $request->clase_actual;
+        $UsuarioA= $request->user_id;
+        $SectionA= $request->section_actual;
+        $ParcialA= $parcial;
+        
+        //proceso para cada una de la secciones seleccionadas
+        foreach ($secciones as  $seccion) {
+            //insertamos los datos en la base de datos en la tabla files
+            $msj= DB::table('links')->insert([
+
+                'user_id'=>$request->user_id,
+                'course_id'=>$request->select_course_link,
+                'section'=>$seccion,
+                'clase_id'=>$request->select_clases_link,
+                'parcial'=>$parcial,
+                'titulo'=>$request->titulo_web,
+                'url'=>$request->url_web,
+                'detalles'=>$request->descripcion_link,
+                'fecha'=>Carbon::now(),
+                
+            ]);
+        }
+        
+        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$request->select_course_link.'/'.$seccion.'/'.$request->select_clases_link.'/'.$ParcialA);       
+         
+    }
+
    function delete_task(Request $request){
 
         //obtemos la seccion del curso y la pasamos a minuscula

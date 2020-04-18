@@ -256,6 +256,9 @@ Route::post('ajax/send_file', 'TeacherController@send_file')->name('teachers/sen
 //crear ruta para enviar un video nuevo desde el formulario del docente
 Route::post('ajax/send_video', 'TeacherController@send_video')->name('teachers/send_video');
 
+//crear ruta para enviar un enlace web nuevo desde el formulario del docente
+Route::post('ajax/send_link', 'TeacherController@send_link')->name('teachers/send_link');
+
 //crear ruta para eliminar una task desde el formulario del docente
 Route::post('ajax/delete_task', 'TeacherController@delete_task');
 
