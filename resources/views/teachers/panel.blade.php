@@ -823,7 +823,7 @@
 						<input type="hidden" name="course_id" id="course_id" value="{{$course_id}}">
 						<input type="hidden" name="section" id="section" value="{{$section}}">
 
-					<div class="upload-photo-item" style="widt:96%">
+					<div class="upload-photo-item" style="width:96%">
 						{{-- <svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg> --}}
 
 						<div class="file-field mt-1">
