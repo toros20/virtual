@@ -686,7 +686,7 @@
                                                    
                                                     <td><button type="button" class="btn btn-success btn-rounded btn-sm m-0" data-toggle="modal" data-target="#centralModallink_{{$enlace->id}}">Instrucciones</button></td>
                                                     
-                                                      <!-- Central Modal Medium Video {{$video->id}}-->
+                                                      <!-- Central Modal Medium Video {{$enlace->id}}-->
                                                      <div class="modal fade modal-notify info" id="centralModallink_{{$enlace->id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                                                         aria-hidden="true">
                                                         <div class="modal-dialog modal-notify modal-danger" role="document">
