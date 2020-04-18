@@ -232,6 +232,18 @@ class StudentController extends Controller
                     ->orderBy('id','ASC')
                     ->get();
 
+         //obtenemos los videos subidos por este docente a este cursos secion y clase
+        $enlaces = DB::table('links')
+                    ->where([
+                            ['clase_id', '=', $clase],
+                            ['course_id', '=', $course],
+                            ['section', '=', $section],
+                            ['parcial', '=', $parcial]
+                            
+                            ])
+                    ->orderBy('id','ASC')
+                    ->get();
+
         //dd($tasks);
         $claseActual = $clase;
         /*$NomClase = DB::table('clases')
@@ -242,7 +254,7 @@ class StudentController extends Controller
         $NomClase = Clase::where('id',$clase)->get();
         $nombre_clase = $NomClase[0]->short_name;
 
-        return view('students/acumulativos',compact('user','tasks','clases','claseActual','nombre_clase','parcial','files','videos'));
+        return view('students/acumulativos',compact('user','tasks','clases','claseActual','nombre_clase','parcial','files','videos','enlaces'));
 
     }
 
