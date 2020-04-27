@@ -993,7 +993,7 @@ class TeacherController extends Controller
                             ->orderBy('users.sexo','asc')
                             ->orderBy('users.name','asc')
                             ->get(); 
-                            dd($estudiantes);
+                            //dd($estudiantes);
 
             $course =  Course::findOrFail($course_id);
             $seccion = strtolower($section);
