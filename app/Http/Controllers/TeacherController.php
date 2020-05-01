@@ -848,6 +848,7 @@ class TeacherController extends Controller
                 ->join($tbl_taskstudent, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
                 ->where([
                     [$tbl_task.'.clase', '=', $ClaseA ],
+                    [$tbl_task.'.parcial', '=', $ParcialA ],
                     [$tbl_taskstudent.'.student', '=', $enroll->user_id ]
                 ])->get();
                 
