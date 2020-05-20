@@ -475,36 +475,44 @@ class TeacherController extends Controller
         //obtenemos la extension original del archivo
         $extension = $request->file('document')->getClientOriginalExtension();
 
-        //almacenamos el documento en la carpeta documentos de la carpeta store y obtenemos su nuevo nombre
-        $file = $request->file('document')->store('documents');
+        if ($extension != '.html' && $extension != '.js' && $extension != '.htm' && $extension != '.xml' ) {
+             
+            //almacenamos el documento en la carpeta documentos de la carpeta store y obtenemos su nuevo nombre
+             $file = $request->file('document')->store('documents');
 
-        //datos actuales para volver al mismo sitio
-        $CursoA= $request->curso_actual;
-        $ClaseA= $request->clase_actual;
-        $UsuarioA= $request->user_id;
-        $SectionA= $request->section_actual;
-        $ParcialA= $parcial;
-        
-        //proceso para cada una de la secciones seleccionadas
-        foreach ($secciones as  $seccion) {
-            //insertamos los datos en la base de datos en la tabla files
-            $msj= DB::table('files')->insert([
+            //proceso para cada una de la secciones seleccionadas
+            foreach ($secciones as  $seccion) {
+                //insertamos los datos en la base de datos en la tabla files
+                $msj= DB::table('files')->insert([
 
-                'user_id'=>$request->user_id,
-                'course_id'=>$request->select_course_file,
-                'section'=>$seccion,
-                'clase_id'=>$request->select_clases_file,
-                'parcial'=>$parcial,
-                'filename'=>$file,
-                'name_original'=>$name_original,
-                'typefile'=>$extension,
-                'detalles'=>$request->descripcion_file,
-                'fecha'=>Carbon::now(),
-                
-            ]);
+                    'user_id'=>$request->user_id,
+                    'course_id'=>$request->select_course_file,
+                    'section'=>$seccion,
+                    'clase_id'=>$request->select_clases_file,
+                    'parcial'=>$parcial,
+                    'filename'=>$file,
+                    'name_original'=>$name_original,
+                    'typefile'=>$extension,
+                    'detalles'=>$request->descripcion_file,
+                    'fecha'=>Carbon::now(),
+                    
+                ]);
+
+            }
+       
+            //datos actuales para volver al mismo sitio
+            $CursoA= $request->curso_actual;
+            $ClaseA= $request->clase_actual;
+            $UsuarioA= $request->user_id;
+            $SectionA= $request->section_actual;
+            $ParcialA= $parcial;
+            
+            return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
+            
+        }else{
+            return "El tipo de archivo no es valido."
         }
         
-        return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
        
     }
 
