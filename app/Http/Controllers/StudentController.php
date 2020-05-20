@@ -275,7 +275,7 @@ class StudentController extends Controller
         //obtenemos la extension original del archivo
         $extension = $request->file('document')->getClientOriginalExtension();
 
-        if ($extension != '.html' || $extension != '.js' || $extension != '.htm' || $extension != '.xml' ) {
+        if ($extension != '.html' && $extension != '.js' && $extension != '.htm' && $extension != '.xml' ) {
              //almacenamos el documento en la carpeta tasks de la carpeta store y obtenemos su nuevo nombre
             $file = $request->file('document')->store('tasks');
 
