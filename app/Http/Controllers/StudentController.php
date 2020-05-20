@@ -275,19 +275,12 @@ class StudentController extends Controller
         //obtenemos la extension original del archivo
         $extension = $request->file('document')->getClientOriginalExtension();
 
-        //almacenamos el documento en la carpeta tasks de la carpeta store y obtenemos su nuevo nombre
-        $file = $request->file('document')->store('tasks');
-        
-        //datos actuales para volver al mismo sitio
-        //$CursoA= $request->curso_actual;
-        $ClaseA= $request->clase_actual;
-        $UsuarioA= $request->user_id;
-        //$SectionA= $request->section_actual;
-        $ParcialA= $parcial;
-        
-        
-        //insertamos los datos en la base de datos en la tabla files
-        $msj= DB::table('filetasks')->insert([
+        if ($extension != '.html' || $extension != '.js' || $extension != '.htm' || $extension != '.xml' ) {
+             //almacenamos el documento en la carpeta tasks de la carpeta store y obtenemos su nuevo nombre
+            $file = $request->file('document')->store('tasks');
+
+            //insertamos los datos en la base de datos en la tabla files
+            $msj= DB::table('filetasks')->insert([
 
             'user_id'=>$request->user_id,
             'course_id'=>$course,
@@ -301,11 +294,21 @@ class StudentController extends Controller
             'detalles'=>$request->descripcion,
             'fecha'=>Carbon::now(),
             
-        ]);
+            ]);
 
+        //datos actuales para volver al mismo sitio
+        //$CursoA= $request->curso_actual;
+        $ClaseA= $request->clase_actual;
+        $UsuarioA= $request->user_id;
+        //$SectionA= $request->section_actual;
+        $ParcialA= $parcial;
         
         return redirect('students/acumulativos/'.$UsuarioA.'/'.$ClaseA.'/'.$ParcialA);
-       
+
+        }else{
+            return "El tipo de archivo no es valido."
+        }
+      
     }
 
 
