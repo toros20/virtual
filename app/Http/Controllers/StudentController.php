@@ -306,7 +306,7 @@ class StudentController extends Controller
         return redirect('students/acumulativos/'.$UsuarioA.'/'.$ClaseA.'/'.$ParcialA);
 
         }else{
-            return "El tipo de archivo no es valido."
+            return "El tipo de archivo no es valido.";
         }
       
     }

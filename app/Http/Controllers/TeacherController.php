@@ -510,7 +510,7 @@ class TeacherController extends Controller
             return redirect('teachers/acumulativos/'.$UsuarioA.'/'.$CursoA.'/'.$SectionA.'/'.$ClaseA.'/'.$ParcialA);
             
         }else{
-            return "El tipo de archivo no es valido."
+            return "El tipo de archivo no es valido.";
         }
         
        
