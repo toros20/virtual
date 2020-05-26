@@ -1104,10 +1104,10 @@ class TeacherController extends Controller
                                 [$tabla.'.clase_id', '=', $clase ],
                                 ])
                             ->update(array(
-                                'Acum3'=>$request->$txtacum1,
-                                'Exa3' =>$request->$txtexa1,
-                                'Acum4'=>$request->$txtacum2,
-                                'Exa4' =>$request->$txtexa2,
+                                'Acum1'=>$request->$txtacum1,
+                                'Exa1' =>$request->$txtexa1,
+                                'Acum2'=>$request->$txtacum2,
+                                'Exa2' =>$request->$txtexa2,
                                
                                 'Promedio'=>$request->$promedio,
                                 'Recu1' =>$request->$recu
