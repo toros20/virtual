@@ -106,9 +106,9 @@
                </tr>
               </thead>
 
-               @php     $cont=0;  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1);     @endphp
+               @php     $cont=0;    @endphp
                @foreach ($estudiantes as $estudiante)
-
+                  @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); @endphp
                   <tr>
                       <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                       <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
@@ -268,9 +268,9 @@
                 </tr>
                 </thead>
 
-                @php     $cont=0;  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1);    @endphp
+                @php     $cont=0;      @endphp
                 @foreach ($estudiantes as $estudiante)
-
+                    @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); @endphp
                     <tr>
                         <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
