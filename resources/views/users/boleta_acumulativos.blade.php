@@ -457,7 +457,7 @@
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
+                                                                    
 
                                         {{-- II PARCIAL --}}
                                         
