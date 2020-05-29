@@ -141,14 +141,36 @@
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
-                                            $nota1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                            $nota2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                            $nota3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            $nota4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                            
                                             ?>
                                      
-                            
+                                    @php 
+                                        //tabla individual de tareas para evaluar
+                                        $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+                                        //tabla global de tareas
+                                        $tbl_task='task_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+
+                                        /*****SOLO 1 PARCIAL****** */
+
+                                        //buscamos las tares de este esudiante por el parcial y clase 
+                                        $tasks_IP = DB::table($tbl_taskstudent)
+                                                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                                                    ->where([
+                                                        ['student', '=', $estudiante->id],
+                                                        ['parcial', '=', 1],
+                                                        ['clase', '=', $clase->clase_id]
+                                                    ])
+                                                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                                                    ->get();
+
+                                                   
+                                        $valor = 0;
+                                        foreach ($tasks_IP as $task_ip){
+                                            if($task_ip->evaluada == 1 ){
+                                                 $valor += $task_ip->valor;
+                                            }  
+                                        }
+                                            
+                                    @endphp
                                     
                                     {{-- Codigo para intercalar por colores las filas --}}
                                     @if ($cont%2==0 ) 
@@ -156,21 +178,8 @@
                                             <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                             {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
+                                             
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1) . '/' . $valor}}</td>
                                                                                         
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
@@ -216,23 +225,9 @@
                                         <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                             <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                             {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
-                                            {{-- FIN I PARCIAL --}}
+                                            
+                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1). '/' . $valor}}</td>
+                                           
         
                                             {{-- II PARCIAL --}}
                                            {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
@@ -368,42 +363,52 @@
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
                                      //dd($resultado) ;
-                                        $nota1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $nota2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $total1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $total2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
-                                        $nota1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $nota2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $t1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $t2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
-                                        $promedio = round(($nota1 +  $nota2) / 2);
+                                        $promedio = round(($t1 +  $t2) / 2);
                                         $suma_promedio += $promedio;
                                         //$total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                     
                                 ?>
-                                 
+                                 @php 
+                                        //tabla individual de tareas para evaluar
+                                        $tbl_taskstudent='taskstudent_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+                                        //tabla global de tareas
+                                        $tbl_task='task_'.$curso.'_'.$seccion;//nombre de la tabla a buscar
+
+                                        /*****SOLO 1 PARCIAL****** */
+
+                                        //buscamos las tares de este esudiante por el parcial y clase 
+                                        $tasks_IP = DB::table($tbl_taskstudent)
+                                                    ->join($tbl_task, $tbl_taskstudent.'.'.$tbl_task.'_id', '=', $tbl_task.'.id')
+                                                    ->where([
+                                                        ['student', '=', $estudiante->id],
+                                                        ['parcial', '=', 1],
+                                                        ['clase', '=', $clase->clase_id]
+                                                    ])
+                                                    ->orderBy($tbl_taskstudent.'.id','ASC')
+                                                    ->get();
+                                        $valor = 0;
+                                        foreach ($tasks_IP as $task_ip){
+                                             if($task_ip->evaluada == 1 ){
+                                                 $valor += $task_ip->valor;
+                                            } 
+                                        }
+                                    @endphp
 
                                 {{-- Codigo para intercalar por colores las filas --}}
                                 @if ($cont%2==0 ) 
                                     <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                        {{-- I PARCIAL --}}
                                         
-                                             {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
-                                            {{-- FIN I PARCIAL --}}
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1). '/' . $valor}}</td>
+                                     
 
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
                                         {{-- II PARCIAL --}}
@@ -439,24 +444,8 @@
                                         <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                        
-                                        {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
-                                            {{-- FIN I PARCIAL --}}
-                                            
+                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1). '/' . $valor}}</td>
+                                      
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
                                         {{-- II PARCIAL --}}
