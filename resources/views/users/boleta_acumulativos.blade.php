@@ -54,7 +54,7 @@
                 {{-- tabla tabla-striped tabla-bordered historial de este curso y seccion --}}
                 <?php $historial = 'historial_'.$curso.'_'.$seccion; ?>
                
-                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0;  $suma_promedio=0;?>
+                        <?php $cont=0; $total1=0; $total2=0; $total3=0; $total4=0; $nota1=0; $nota2=0; $nota3=0; $nota4=0; $suma_promedio=0;?>
                       
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                             @if ($course->is_bilingue == 1)
@@ -456,7 +456,7 @@
                                                  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
                                             @endif
                                             {{-- FIN I PARCIAL --}}
-                                            
+
                                         <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
 
                                         {{-- II PARCIAL --}}
