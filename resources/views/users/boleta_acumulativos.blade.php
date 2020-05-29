@@ -345,7 +345,7 @@
                                 <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                    {{-- <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th> --}}
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
@@ -405,7 +405,7 @@
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>
+                                      
                                         {{-- II PARCIAL --}}
                                       {{--   @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
