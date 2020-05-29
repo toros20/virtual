@@ -342,9 +342,10 @@
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
-                                <tr style="border: 1px solid #dee2e6; "><th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                <tr style="border: 1px solid #dee2e6; ">
+                                    <th style="text-align:center; width:5px;font-weight: bold;">No.</th>
                                     <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
+                                    <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                     {{-- <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th> --}}
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
