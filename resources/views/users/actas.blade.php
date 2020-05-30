@@ -54,7 +54,7 @@
 
                         <tr style="font-family: Arial">
                             <td width="25%" style="font-size: 12px"><strong>CODIGO: 080101680T03</strong></td>
-                            <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
+                            <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA FINAL</strong></td>
                             <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
                         </tr>
                         
@@ -76,7 +76,7 @@
 
                         <tr style="font-family: Arial">
                                 <td width="25%" style="font-size: 12px"><strong>CODIGO: 080100255M02</strong></td>
-                                <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA SEMESTRAL</strong></td>
+                                <td colspan="2" style="font-size: 12px" align="center"><strong>ACTA FINAL</strong></td>
                                 <td colspan="2" style="font-size: 12px" align="center"><strong>CÓDIGO DE PASO</strong></td>
                             </tr>
                             
@@ -117,9 +117,9 @@
                 </tr>
                 <tr>
                   @if ($course->is_semestral == 1)
-                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL SEGUNDO SEMESTRE</strong></td>
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
                   @else
-                    <td style="font-family: Arial;font-size: 12px"><strong>{{$parcial}} PARCIAL</strong></td>
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA FINAL </strong></td>
                   @endif
                  
                   <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>JORNADA: DOBLE</strong></td>
@@ -131,7 +131,7 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "Noviembre 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
+                  <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
@@ -261,15 +261,15 @@
 
                           <tr style="border: 1px solid #dee2e6; ">
                           <th style="border: 1px solid #dee2e6;">No.</th>
-                          <th  style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
+                          <th style="border: 1px solid #dee2e6; font-size:14 px;font-weight: bold;">Nombre de Estudiante</th>
                           
                           @foreach ($clases as $clase)
                               <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">@php echo $cont_clase;  @endphp .{{$clase->short_name}}</th>
-                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;"></th>
+                              <th valign="bottom" style="text-rotate: 90; text-align:center;  border: 1px solid #dee2e6;">Recuperación</th>
                               @php  $cont_clase+=1;   @endphp
                           @endforeach
-
-                          <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Reprobadas</th>
+                  
+                          <th valign="bottom" style="text-rotate: 90; text-align:center; font-weight: bold; border: 1px solid #dee2e6;">Observación</th>
                       </tr>
 
                   </thead>
@@ -295,29 +295,14 @@
                                               ->Select($historial.'.*')
                                               ->get();
 
-                                              //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                              $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                              if ($total < 70) {
-                                                  $clase_reprobada+=1;
-                                              }
-
-                                    
-                                              //$total = ($total1 + $total2)/2;
-                                              //se redondea el promedio de clase
-                                              //$total = round($total);
-
-                                              //se suman todos los promedios para obtener el promedio global
-                                              //$promedio += $total;
-
-                                              $recuperacion = 0;
-                              
-                                              /*$total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                              $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                               $total3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                               $total4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
-                                              mañana miercoles se suspenden las clases
-                                              debido a la perdida de la Madre Natividd
-                                              Quien partio con el señor este día martes 18 de Junio
-                                              */
+
+                                              $total = round(($total1+$total2+$total3+$total4)/4);
+
+                                              $recuperacion = $resultado[0]->Recu1;
                                   
                               ?>
                               @if ( $total < 70)
@@ -340,55 +325,218 @@
                                   
                           @endforeach {{--fin del ciclo para cada clase --}}
                                 
-
-                          <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $clase_reprobada;?></td>
+                           <td style="font-size:1.25rem ;text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6; color:red"></td> 
                           
                       </tr>
                           <?php $cont+=1;?>
                       @endforeach {{--fin del ciclo para cada estudiante --}}
                       
-                       {{-- CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
-                      <tr>
-                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">**</td>  
-                        <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;">REPROBACIONES POR ASIGNATURAS</td>  
-                          @foreach ($clases as $clase)
-
-                          <?php $reprobadas_por_clase = 0; ?>
-
-                          @foreach ($estudiantes as $estudiante)
-
-                            <?php 
-                                            
-                              $resultado = DB::table($historial)
-                                          ->join('clases', $historial.'.clase_id', '=', 'clases.id')
-                                          ->where ([
-                                                      [$historial.'.clase_id', '=', $clase->clase_id],
-                                                      [$historial.'.student_id', '=', $estudiante->user_id],                                                     
-                                                    
-                                                  ])
-                                          ->Select($historial.'.*')
-                                          ->get();
-
-                                          //$total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                          $total=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                          if ($total < 70) {
-                                              $reprobadas_por_clase+=1;
-                                          }
-
-                            ?>
-
-                          @endforeach {{--fin del ciclo para cada estudiante --}}
-
-                          <td style="text-align:center; width:30px;font-weight: bold; border: 1px solid #dee2e6; color:red"><?php echo $reprobadas_por_clase ?> </td>
-                          <td style="text-align:center; width:30px; border: 1px solid #dee2e6;"></td>  
-                        @endforeach {{--fin del ciclo para cada clase --}}
-
-                      </tr>
-                       {{-- FIN DE CALCULAR EL NUMERO DE PROBACIONES POR CLASE --}}
 
                 </table>
 
               
+            @endif
+
+            @if ($course->id == 9 || $course->id == 10 || $course->id == 11 || $course->id == 12)
+              <table width="90%" border="0" align="center">
+                <tr>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr>
+                <tr>
+                  <td width="2%" align="center" style="font-size: 15px">1.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="3%" align="center" style="font-size: 15px">2.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">3.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">4.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+                
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">5.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">6.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">7.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">8.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">9.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">10.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">11.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">12.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                  
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong></strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong></strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
+                </tr>
+              
+              </table>
+            @endif
+
+            @if ($course->id == 13)
+              <table width="90%" border="0" align="center">
+                 <tr>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr> 
+                <tr>
+                  <td width="2%" align="center" style="font-size: 15px">1.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="3%" align="center" style="font-size: 15px">2.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">3.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">4.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+                
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">5.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">6.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">7.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">8.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">9.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">10.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">11.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">12.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">13.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px"></td>
+                    <td width="25%" align="center" style="font-size: 15px"></td>
+                    <td width="2%" align="center" style="font-size: 15px"></td>
+                    <td width="25%" align="center" style="font-size: 15px"></td>
+                    <td width="2%" align="center" style="font-size: 15px"></td>
+                    <td width="25%" align="center" style="font-size: 15px"></td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong></strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong></strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
+                </tr>
+              
+              </table>
             @endif
 
             @if ( $course->id == 14)
@@ -474,7 +622,7 @@
                     <td align="center" style="font-size: 15px">&nbsp;</td>
                     <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
                     <td align="center" style="font-size: 15px">&nbsp;</td>
-                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                    <td align="center" style="font-size: 15px"><strong></strong></td>
                     <td align="center" style="font-size: 15px">&nbsp;</td>
                     <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
                 </tr>
@@ -483,199 +631,205 @@
                   <td align="center" style="font-size: 15px">&nbsp;</td>
                   <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
                   <td align="center" style="font-size: 15px">&nbsp;</td>
-                  <td align="center" style="font-size: 15px"><strong>Distrito Educativo #6</strong></td>
+                  <td align="center" style="font-size: 15px"><strong></strong></td>
                   <td align="center" style="font-size: 15px">&nbsp;</td>
                   <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
                 </tr>
               
               </table>
             @endif
+
             {{-- FIN PARA CURSOS SEMESTRALES --}}
-                  @if ( $course->id == 15)
-                      <table width="90%" border="0" align="center">
-                          <tr>
-                            <td align="center">&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td align="center">&nbsp;</td>
-                            <td>&nbsp;</td>
-                            <td align="center">&nbsp;</td>
-                            <td>&nbsp;</td>
-                          </tr>
-                          <tr>
-                            <td width="2%" align="center" style="font-size: 15px">1.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="3%" align="center" style="font-size: 15px">2.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">3.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                          </tr>
+            @if ( $course->id == 15)
+                <table width="90%" border="0" align="center">
+                    <tr>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                      <td align="center">&nbsp;</td>
+                      <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                      <td width="2%" align="center" style="font-size: 15px">1.</td>
+                      <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                      <td width="3%" align="center" style="font-size: 15px">2.</td>
+                      <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                      <td width="2%" align="center" style="font-size: 15px">3.</td>
+                      <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    </tr>
+                  
+                    <tr>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                    </tr>
+                    
+                    <tr>
+                        <td width="2%" align="center" style="font-size: 15px">4.</td>
+                        <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                        <td width="3%" align="center" style="font-size: 15px">5.</td>
+                        <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                        <td width="2%" align="center" style="font-size: 15px">6.</td>
+                        <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    </tr>
                         
-                          <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                          </tr>
-                          
-                          <tr>
-                              <td width="2%" align="center" style="font-size: 15px">4.</td>
-                              <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                              <td width="3%" align="center" style="font-size: 15px">5.</td>
-                              <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                              <td width="2%" align="center" style="font-size: 15px">6.</td>
-                              <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                          </tr>
-                              
-                        
-                          <tr>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                          </tr>
+                  
+                    <tr>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                    </tr>
 
-                          <tr>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                          </tr>
+                    <tr>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                    </tr>
 
-                          <tr>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                              <td align="center" style="font-size: 15px">&nbsp;</td>
-                              <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                          </tr>
+                    <tr>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px"><strong></strong></td>
+                        <td align="center" style="font-size: 15px">&nbsp;</td>
+                        <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                    </tr>
 
-                          <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>Distrito Educativo #6</strong></td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
-                          </tr>
-                        
-                      </table>
-                  @else
-                    <table width="90%" border="0" align="center">
-                        <tr>
-                          <td align="center">&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td align="center">&nbsp;</td>
-                          <td>&nbsp;</td>
-                          <td align="center">&nbsp;</td>
-                          <td>&nbsp;</td>
-                        </tr>
-                        <tr>
-                          <td width="2%" align="center" style="font-size: 15px">1.</td>
-                          <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                          <td width="3%" align="center" style="font-size: 15px">2.</td>
-                          <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                          <td width="2%" align="center" style="font-size: 15px">3.</td>
-                          <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                          <td width="2%" align="center" style="font-size: 15px">4.</td>
-                          <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                        </tr>
-                       
-                        <tr>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                        </tr>
-                        
-                        <tr>
-                            <td width="2%" align="center" style="font-size: 15px">5.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="3%" align="center" style="font-size: 15px">6.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">7.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">8.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                        </tr>
-                            
-                        <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                        </tr>
+                    <tr>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px"><strong></strong></td>
+                      <td align="center" style="font-size: 15px">&nbsp;</td>
+                      <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
+                    </tr>
+                  
+                </table>
+        
+              
+            @endif
 
-                        <tr>
-                            <td width="2%" align="center" style="font-size: 15px">9.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="3%" align="center" style="font-size: 15px">10.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">11.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">12.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                        </tr>
-                            
-                        <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                        </tr>
+            @if ($course->id >15)
+              <table width="90%" border="0" align="center">
+                 <tr>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                  <td align="center">&nbsp;</td>
+                  <td>&nbsp;</td>
+                </tr> 
+                <tr>
+                  <td width="2%" align="center" style="font-size: 15px">1.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="3%" align="center" style="font-size: 15px">2.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">3.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                  <td width="2%" align="center" style="font-size: 15px">4.</td>
+                  <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
+                
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">5.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">6.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">7.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">8.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
 
-                        <tr>
-                            <td width="2%" align="center" style="font-size: 15px">13.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="3%" align="center" style="font-size: 15px">14.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">15.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                            <td width="2%" align="center" style="font-size: 15px">16.</td>
-                            <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
-                        </tr>
-                            
-                        <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                        </tr>
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">9.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">10.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">11.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">12.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
 
-                        <tr>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                            <td align="center" style="font-size: 15px">&nbsp;</td>
-                            <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
-                        </tr>
+                <tr>
+                    <td width="2%" align="center" style="font-size: 15px">13.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="3%" align="center" style="font-size: 15px">14.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">15.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                    <td width="2%" align="center" style="font-size: 15px">16.</td>
+                    <td width="25%" align="center" style="font-size: 15px">________________________________________________</td>
+                </tr>
+                    
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                </tr>
 
-                        <tr>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px"><strong>Distrito Educativo #6</strong></td>
-                          <td align="center" style="font-size: 15px">&nbsp;</td>
-                          <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
-                        </tr>
-                      
-                    </table>
-                  @endif
+                <tr>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong></strong></td>
+                    <td align="center" style="font-size: 15px">&nbsp;</td>
+                    <td align="center" style="font-size: 15px"><strong>________________________________________________</strong></td>
+                </tr>
+
+                <tr>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Director(a)</strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong></strong></td>
+                  <td align="center" style="font-size: 15px">&nbsp;</td>
+                  <td align="center" style="font-size: 15px"><strong>Secretario(a)</strong></td>
+                </tr>
+              
+              </table>
+            @endif
+
         </div><!--row-->
 
 </body>
