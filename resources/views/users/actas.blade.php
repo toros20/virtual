@@ -305,7 +305,7 @@
                                               $recuperacion = $resultado[0]->Recu1;
                                   
                               ?>
-                              @if ( $total < 70)
+                              @if ( $total1 < 70)
                                   <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total1 ?> </td>
                               @else 
                                   <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
