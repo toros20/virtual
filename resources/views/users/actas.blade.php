@@ -306,9 +306,9 @@
                                   
                               ?>
                               @if ( $total < 70)
-                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total ?> </td>
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6; color:red"><?php echo $total1 ?> </td>
                               @else 
-                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total ?> </td>
+                                  <td style="font-size:14px ;text-align:center; width:30px; border: 1px solid #dee2e6;"><?php echo $total1 ?> </td>
                               @endif
 
                               @if ( $recuperacion < 70 and $recuperacion  > 0)
