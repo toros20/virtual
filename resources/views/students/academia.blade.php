@@ -195,13 +195,13 @@
                           @if ($enroll[0]->course_id > 8)
                             <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} ">
                               <li class="list-group-item">
-                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas (Actualizada Lunes 1/Junio)
                               </li>
                             </a> 
                           @else 
                             <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="#">
                               <li class="list-group-item">
-                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas (Actualizada Lunes 1/Junio)
                               </li>
                           </a> 
                           @endif
@@ -256,7 +256,7 @@
                           @else 
                             <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="#">
                               <li class="list-group-item">
-                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Boleta de Notas (Actualizada Lunes 1/Junio)
                               </li>
                           </a> 
                           @endif
