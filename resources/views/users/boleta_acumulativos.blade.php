@@ -121,7 +121,7 @@
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
                                 @php
-                                     $suma_promedio = 0;
+                                     $suma_promedio = 0; $nota1=0;$nota2=0;$nota3=0;$nota4=0;
                                     
                                 @endphp   
                                  
