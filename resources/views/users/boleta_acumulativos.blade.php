@@ -141,10 +141,10 @@
                                             $total3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
                                             $total4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
 
-                                            $nota1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                            $nota2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
-                                            $nota3+=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                            $nota4+=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                            $nota1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                            $nota2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                            $nota3=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                            $nota4=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                             
                                             ?>
                                      
@@ -369,11 +369,11 @@
                                                 ->Select('clases.name as clase',$historial.'.*')
                                                 ->get();
                                      //dd($resultado) ;
-                                        $nota1+=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $nota2+=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $nota1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $nota2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
-                                        $nota1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                        $nota2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                        $total1 = ($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                        $total2 = ($resultado[0]->Acum2) + ($resultado[0]->Exa2);
 
                                         $promedio = round(($nota1 +  $nota2) / 2);
                                         $suma_promedio += $promedio;
