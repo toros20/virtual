@@ -107,7 +107,7 @@
                 </tr>
                 <tr>
                   <td style="font-family: Arial;font-size: 12px"><strong>SECCIÓN: {{$section}}</strong></td>
-                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2019<?php //echo date('Y'); ?></strong></td>
+                  <td colspan="2" style="font-family: Arial;font-size: 12px"><strong>AÑO: 2020<?php //echo date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>RETRASADA</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
@@ -131,7 +131,7 @@
                   </table></td>
                 </tr>
                 <tr>
-                  <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "JUNIO 2019"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
+                  <td colspan="3" style="font-family: Arial;font-size: 12px"><strong>LUGAR Y FECHA:Tegucigalpa <?php ECHO "JUNIO 2020"  //echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y'); ?></strong></td>
                   <td style="font-family: Arial;font-size: 12px"><strong>PREMISO ESPECIAL</strong></td>
                   <td><table width="100%" style="tabla-striped; border: 1px solid #000; ">
                     <tr>
