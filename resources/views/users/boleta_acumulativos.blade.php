@@ -157,19 +157,19 @@
                                             <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                             {{-- I PARCIAL --}}
                                             @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}} Insuficiente</td>
                                             @endif
                                             @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Necesita Mejorar</td>
                                             @endif
                                             @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 79 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Avanzado</td>
                                             @endif
                                                                                         
                                             {{-- II PARCIAL --}}
