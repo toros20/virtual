@@ -1416,7 +1416,7 @@ public function actas($course_id,$section,$parcial){
                   ->orderBy('users.sexo','asc')
                   ->orderBy('users.name','asc')
                   ->get(); 
-                  //dd($estudiantes);
+                  dd($estudiantes);
 
       $curso = $course_id;
       $course =  Course::findOrFail($course_id);
@@ -1448,7 +1448,7 @@ public function actas($course_id,$section,$parcial){
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
-                dd($clases);
+                //dd($clases);
   
  /*$pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
  $pdf->setPaper('legal','landscape');
