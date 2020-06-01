@@ -165,7 +165,7 @@
                                             @if ( $nota1 > 69 && $nota1 < 81)
                                                  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Satisfactorio</td>
                                             @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
+                                            @if ( $nota1 > 80 && $nota1 < 91)
                                                  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 90)
@@ -226,7 +226,7 @@
                                             @if ( $nota1 > 69 && $nota1 < 81)
                                                  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Satisfactorio</td>
                                             @endif
-                                            @if ( $nota1 > 79 && $nota1 < 91)
+                                            @if ( $nota1 > 80 && $nota1 < 91)
                                                  <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{$nota1}}Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 90)
