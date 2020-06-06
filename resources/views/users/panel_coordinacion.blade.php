@@ -107,7 +107,7 @@
             @foreach ($secciones as $seccion)
                           
             <!--Card column-->
-            <div class="col-md-6 col-sm-6 col-lg-6 mb-4">
+            <div class="col-md-12 col-sm-12 col-lg-12 mb-4">
         
                     <!-- Card -->
                     <div class="card gradient-card">
