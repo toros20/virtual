@@ -248,7 +248,7 @@ class TeacherController extends Controller
                 return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
             }
             
-            if( $user->role=='teacher' || $user->role=='coord' ){
+            if( $user->role!='teacher' && $user->role!='coord' ){
                 return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
