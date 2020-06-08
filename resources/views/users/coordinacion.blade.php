@@ -113,7 +113,7 @@
                                                          
                             <div class="text-white d-flex h-100 mask aqua-gradient-rgba">                             
                                 <div class="first-content align-self-center p-3">
-                                <h3 class="card-title">lic. {{$teacher[0]->name}} {{$asignacion->short_name}} - {{$asignacion->section }} </h3>
+                                <h3 class="card-title">lic. {{$teacher->name}} {{$asignacion->short_name}} - {{$asignacion->section }} </h3>
                                 <p class="lead mb-0">Gestión Académica</p>
                                 </div>
                                 <div class="second-content align-self-center mx-auto text-center">
