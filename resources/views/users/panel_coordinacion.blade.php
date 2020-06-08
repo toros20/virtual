@@ -227,7 +227,7 @@
                                 ?>
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td> <h3> <a style="color:blue" target="_blanck"  href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->teacher_id,$seccion->course_id,$seccion->section,$asignacion->clase_id,2])}} "> Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</a></h3></td>
+                                  <td> <h4> <a style="color:blue" target="_blanck"  href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->teacher_id,$seccion->course_id,$seccion->section,$asignacion->clase_id,2])}} "> Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</a></h4></td>
                                   <td>{{$asignacion->short_name}}</td>
 
                                   <?php 
