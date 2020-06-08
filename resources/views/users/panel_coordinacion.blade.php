@@ -153,6 +153,7 @@
                                   <th scope="col">Acumulativo</th>
                                   <th scope="col">Archivos</th>
                                   <th scope="col">Videos</th>
+                                  <th scope="col">Enlaces</th>
                                   <th scope="col">Examen</th>
                                   <th scope="col"># Apro</th>
                                   <th scope="col"># Repro</th>
@@ -210,6 +211,16 @@
                                               ->count();
                                    
                                     $total_videos=$videos;
+
+                                    $links= DB::table('links')
+                                              ->where ([
+                                                          ['links'.'.course_id', '=',$seccion->course_id],
+                                                          ['links'.'.section', '=',strtolower($seccion->section)],
+                                                          ['links'.'.clase_id', '=', $asignacion->clase_id],
+                                                          ['links'.'.parcial', '=', $parcial]
+                                                      ])
+                                              ->count();
+                                    $total_links=$links;
                                     
                                     // CONTEO DE ARCHIVOS
                                     $total_files=0;
@@ -241,6 +252,7 @@
 
                                   <td>{{$total_files}}</td>
                                   <td>{{$total_videos}}</td>
+                                  <td>{{$total_links}}</td>
                                   <td>Pendiente</td>
                                   <td>---</td>
                                   <td>---</td>
