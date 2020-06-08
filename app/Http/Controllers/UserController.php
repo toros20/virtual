@@ -1050,9 +1050,8 @@ class UserController extends Controller
                 ->distinct()
                 ->get();
 
-        return view('users/coordinacion',compact('asignaciones','teacher','parcial','docentes'));
+        return view('users/coordinacion',compact('user','asignaciones','teacher','parcial','docentes'));
         
-
     }
 
     public function panel_admin($user_id){

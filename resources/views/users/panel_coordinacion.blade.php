@@ -46,7 +46,6 @@
                       </li>
                       <hr>
                          @foreach ($docentes as $docente)
-
                             <li>
                               <a href="{{ $url = route('users/coordinacion/{user_id}/{teacher_id}/{parcial}', [$user->id,$docente->id,1])}} ">
                                   Lic. {{$docente->name }} - {{$docente->lastname }}
@@ -228,7 +227,7 @@
                                 ?>
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td>Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
+                                  <td><a ></a> Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
                                   <td>{{$asignacion->short_name}}</td>
 
                                   <?php 

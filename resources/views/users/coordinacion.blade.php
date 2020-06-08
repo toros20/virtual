@@ -137,7 +137,6 @@
                                   <th scope="col">Examen</th>
                                   <th scope="col"># Apro</th>
                                   <th scope="col"># Repro</th>
-                                  
                                 </tr>
                               </thead>
                               <tbody>
