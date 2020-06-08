@@ -252,10 +252,10 @@ class TeacherController extends Controller
                 return ("ÁREA EXCLUSIVA DEL DOCENTE.");
             }
 
-            /*$id_user_log = Auth::id();
-            if( $id_user_log != $user_id){
+            $id_user_log = Auth::id();
+            if( $id_user_log != $user_id && $user->role!='coord' ){
                 return "ACCESO NO PERMITIDO AL USUARIO ACTUAL."; 
-            }*/
+            }
         /*************************SEGURIDAD*******************/
 
          //obtenemos los datos del docente
