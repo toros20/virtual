@@ -171,7 +171,7 @@
                                              ['clases.semester', '<',2 ],
                                             ['assignments.section', '=', $seccion->section ]                        
                                         ])
-                                        ->Select('users.name','users.lastname','users.id','clases.short_name','clases.id as clase_id')
+                                        ->Select('users.name','users.lastname','users.id as teacher_id','clases.short_name','clases.id as clase_id')
                                         ->distinct()
                                         ->get(); 
                                         
@@ -227,7 +227,7 @@
                                 ?>
                                 <tr>
                                   <th scope="row">1</th>
-                                  <td><a ></a> Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</td>
+                                  <td><a href="{{ $url = route('teachers/acumulativos/{user_id}/{course_id}/{section}/{clase}/{parcial}', [$asignacion->teacher_id,$seccion->course_id,$seccion->section,$asignacion->clase_id,2])}} "> Lic. {{$asignacion->name}}  {{$asignacion->lastname}}</a></td>
                                   <td>{{$asignacion->short_name}}</td>
 
                                   <?php 
