@@ -514,7 +514,7 @@
 								</a> 
 								<a href="#" class="options-message" data-toggle="modal" data-target="#update-photo">
 									<svg class="olymp-multimedia-icon">
-										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-multimedia-icon"></use>
 									</svg>
 								</a> 
 							</div>
