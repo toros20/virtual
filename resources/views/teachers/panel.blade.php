@@ -512,7 +512,7 @@
 										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 									</svg>
 								</a> 
-								<a href="#" class="options-message" data-toggle="modal" data-target="#update-photo">
+								<a href="#" class="options-message" data-toggle="modal" data-target="#update-video">
 									<svg class="olymp-multimedia-icon">
 										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-multimedia-icon"></use>
 									</svg>
@@ -817,7 +817,6 @@
 {{-- FIN DEL PANEL CENTRAL --}}
 
 <!-- Window-popup Update Header Photo -->
-
  <div class="modal fade" id="update-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
@@ -864,6 +863,58 @@
 		</div>
 	</div>
 </div> 
+{{-- FIN Update Header Photo --}}
+
+
+<!-- Window-popup Update Header Video Youtube -->
+ <div class="modal fade" id="update-video" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
+	<div class="modal-dialog window-popup update-header-photo" role="document">
+		<div class="modal-content">
+			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
+				<svg class="olymp-close-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+			</a>
+
+			<div class="modal-header">
+				<h6 class="title">Publicación de Video de Youtube</h6>
+			</div>
+
+			<div class="modal-body">
+				 <form class="md-form" style="color: #757575;" enctype="multipart/form-data" method = 'POST' action="{{ route('teachers/send_videoyoutube') }}">
+						
+						{{-- @csrf --}}
+						<input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
+						<input type="hidden" name="user_id" id="user_id" value="{{ $user->id }}">
+						<input type="hidden" name="curso_id" id="curso_id" value="{{$course_id}}">
+						<input type="hidden" name="seccion_id" id="seccion_id" value="{{$section}}">
+
+					<div class="upload-photo-item" style="width:96%">
+						{{-- <svg class="olymp-computer-icon"><use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg> --}}
+
+						<div class="file-field">
+							<h6>Subir Video de Youtube</h6>
+							<span>Ingrese Url del Vieo</span>
+							<p>
+								<input name ="document" id="document" type="text">
+							</p>
+							</div>
+						<div class="file-path">
+						
+							<div class="md-form">
+								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="mensaje_imagen" name="mensaje_imagen" class="md-textarea form-control" rows="3"></textarea>
+								<label for="descripcion">Esta imagen será vista por todos los padres, estudiantes y docentes de esta sección.</label>
+							</div>
+									
+							<button id="btn_send_videoyoutube"  class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Video</button>
+									
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+</div> 
+{{-- FIN Update Header Video Youtube --}}
 
 <div class="modal fade" id="modal_clase_actual" tabindex="-1" role="dialog" aria-labelledby="modal_clase_actual" aria-hidden="true">
 	<div class="modal-dialog window-popup update-header-photo" role="document">
