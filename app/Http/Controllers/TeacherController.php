@@ -598,6 +598,89 @@ class TeacherController extends Controller
           
         
      }
+     
+     // realizar una publicacion de un video de Youtube (solo para los miembros de una seccion) desde el panel de docente, en la caja de comentarios inicial
+     public function send_videoyoutube(Request $request){
+
+        //generamos un codigo identificador (tamaño 12) aleatorio para el mensaje
+        $key = '';
+        $pattern = '1234567890abcdefghijklmnopqrstuvwxyz';
+        $max = strlen($pattern)-1;
+        for($i=0; $i < 12 ;$i++) $key .= $pattern{mt_rand(0,$max)};
+
+        //obtenemos los id de los usuarios estudiantes matriculados en este curso y seccion
+        $id_users = Enrollment::where([
+            ['course_id', '=', $request->curso_id],
+            ['section', '=', $request->seccion_id],
+        ])->Select('user_id')->get();
+
+          //obtenemos el nombre original del archivo
+          //$name_original = $request->file('document')->getClientOriginalName();
+
+          //obtenemos la extension original del archivo
+          //$extension = $request->file('document')->getClientOriginalExtension();
+
+          //$extension = strtolower($extension);
+            
+          //if( $extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
+             //almacenamos el documento en la carpeta documentos de la carpeta store y obtenemos su nuevo nombre
+             //$file = $request->file('document')->store('teachers_images');
+             
+              //recorremos todos los usuarios encontrados y les eviamos el mensaje
+                foreach($id_users as $id_user)
+                {
+                    $msj= DB::table('msj_'.$id_user->user_id)->insert([
+
+                        'remitente'=>$request->user_id,
+                        'mensaje'=>$request->mensaje_video,
+                        'fecha'=>Carbon::now(),
+                        'tipo'=> $request->url_video,
+                        'curso_id'=>$request->curso_id,
+                        'section'=>$request->seccion_id,
+                        'key'=>$key
+                        
+                    ]);
+                }
+
+                //obtenemos los id de los usuarios maestros asignados en este curso y seccion
+                $id_users2 = Assignment::where([
+                    ['course_id', '=', $request->curso_id],
+                    ['section', '=', $request->seccion_id],
+                ])->Select('user_id')->distinct()->get();
+
+                //recorremos todos los usuarios encontrados y les eviamos el mensaje
+                foreach($id_users2 as $id_user2)
+                {
+                    $msj= DB::table('msj_'.$id_user2->user_id)->insert([
+
+                        'remitente'=>$request->user_id,
+                        'mensaje'=>$request->mensaje_imagen,
+                        'fecha'=>Carbon::now(),
+                        'curso_id'=>$request->curso_id,
+                        'section'=>$request->seccion_id,
+                        'tipo'=>$file,
+                        'key'=>$key
+                        
+                    ]);
+                }
+
+                //obtenemos el id del mensaje recien guardado
+                $id = DB::table('msj_'.$request->user_id)->max('id');
+                //obtenemos el mensaje recien almacenado
+                $mensaje = DB::table('msj_'.$request->user_id)
+                                ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
+                                ->where('msj_'.$request->user_id.'.id',$id)
+                                ->get();
+                //enviamos el mensaje recien almacenado,para que aparezca
+                //return view('ajax/post_in_section',compact('mensaje'));
+
+                return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
+
+
+          //}  fon del if de la estension.
+          
+        
+     }
 
      //funcion para recibir los datos del formulario para subir un archivo
      function send_video(Request $request){

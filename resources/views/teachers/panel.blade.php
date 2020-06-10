@@ -894,13 +894,13 @@
 							<h6>Subir Video de Youtube</h6>
 							<span>Ingrese Url del Vieo</span>
 							<p>
-								<input name ="document" id="document" type="text">
+								<input name ="url_video" id="url_video" type="text">
 							</p>
 							</div>
 						<div class="file-path">
 						
 							<div class="md-form">
-								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="mensaje_imagen" name="mensaje_imagen" class="md-textarea form-control" rows="3"></textarea>
+								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="mensaje_video" name="mensaje_imagen" class="md-textarea form-control" rows="3"></textarea>
 								<label for="descripcion">Esta imagen será vista por todos los padres, estudiantes y docentes de esta sección.</label>
 							</div>
 									

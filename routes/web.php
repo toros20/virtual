@@ -295,6 +295,9 @@ Route::post('teachers/save_parcial', 'TeacherController@save_parcial')->name('te
 //crear ruta para enviar una imagen nuevo desde el panel de mensajes del docente
 Route::post('teachers/send_image', 'TeacherController@post_image_teacher')->name('teachers/send_image');
 
+//crear ruta para enviar un video de youtube nuevo desde el panel de mensajes del docente
+Route::post('teachers/send_videoyoutube', 'TeacherController@send_videoyoutube')->name('teachers/send_videoyoutube');
+
 //crear ruta para eliminar todo un post nuevo desde el panel de mensajes del docente
 Route::post('teachers/delete_post', 'TeacherController@delete_post')->name('teachers/delete_post');
 
