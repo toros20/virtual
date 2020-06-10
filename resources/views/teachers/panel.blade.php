@@ -512,6 +512,11 @@
 										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
 									</svg>
 								</a> 
+								<a href="#" class="options-message" data-toggle="modal" data-target="#update-photo">
+									<svg class="olymp-multimedia-icon">
+										<use xlink:href="../../../../svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+									</svg>
+								</a> 
 							</div>
 						</div>
 					</div>
@@ -581,6 +586,7 @@
 									</a>
 								</div>
 							@endif
+
 							<p> {{$mensaje->mensaje}}</p>
 						
 							<div id="comentar_{{$mensaje->key}}" class="post-additional-info inline-items">
