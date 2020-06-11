@@ -906,6 +906,10 @@
 							<p>
 								<input name ="url_video" id="url_video" type="text">
 							</p>
+
+							<p>Ejemplo de URL. (formato embed)
+								<input name ="url_video" id="url_video" type="text" placeholder="https://www.youtube.com/embed/G2WJG0TlHXg">
+							</p>
 							
 							</div>
 						<div class="file-path">
