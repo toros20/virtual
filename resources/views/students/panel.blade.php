@@ -567,13 +567,24 @@
 									</div> --}}
 							
 								</div>
+								{{-- consultamos si es un mensaje distinto de puro texto --}}
 								@if ($mensaje->tipo != 'seccion')
+									{{-- Ahora consultamos si es un mensaje con video de Youtube --}}
+									@if ($mensaje->tipo == 'video_youtube')
 									<div align="center">
-										<a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
-											<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
-										</a>
+										<iframe width="95%" height="315" src="{{$mensaje->mensaje}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 									</div>
+									@else
+									{{-- En caso contratio es un mensaje con imagen --}}
+										<div align="center">
+											<a target="_blank" href="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}">
+												<img class="img-fluid mx-auto" src="{{ URL::asset('../storage/app/'.$mensaje->tipo)}}" >
+											</a>
+										</div>
+									@endif
+									
 								@endif
+								
 								<p> {{$mensaje->mensaje}}</p>
 							
 								<div id="comentar_{{$mensaje->key}}" class="post-additional-info inline-items">
