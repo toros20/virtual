@@ -584,7 +584,7 @@
 								{{-- Ahora consultamos si es un mensaje con video de Youtube --}}
 								@if ($mensaje->tipo == 'video_youtube')
 								<div align="center">
-                                    {{$mensaje->mensaje}}"
+                                    <iframe width="95%" height="315" src="{{$mensaje->mensaje}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
 								@else
 								{{-- En caso contratio es un mensaje con imagen --}}
