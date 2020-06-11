@@ -896,9 +896,14 @@
 							<p>
 								<input name ="url_video" id="url_video" type="text">
 							</p>
+							
 							</div>
+						<div class="file-path">
+							<button id="btn_send_videoyoutube"  class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Video</button>	
+						</div>
 					</div>
 				</form>
+
 			</div>
 		</div>
 	</div>
