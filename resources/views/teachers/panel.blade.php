@@ -904,11 +904,11 @@
 							<h6>Subir Video de Youtube</h6>
 							<span>Ingrese Url del Vieo</span>
 							<p>
-								<input name ="url_video" id="url_video" type="text">
+								<input name ="url_video" id="url_video" type="text" >
 							</p>
 
-							<p>Ejemplo de URL. (formato embed)
-								<input name ="url_video" id="url_video" type="text" placeholder="https://www.youtube.com/embed/G2WJG0TlHXg">
+							<p><label> Ejemplo de URL. (formato embed): 
+								 "https://www.youtube.com/embed/G2WJG0TlHXg"></label>
 							</p>
 							
 							</div>
