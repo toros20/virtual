@@ -897,19 +897,8 @@
 								<input name ="url_video" id="url_video" type="text">
 							</p>
 							</div>
-						<div class="file-path">
-						
-							<div class="md-form">
-								<textarea placeholder="Puede escribr una mensaje acompañando la imagen." type="text" id="mensaje_video" name="mensaje_imagen" class="md-textarea form-control" rows="3"></textarea>
-								<label for="descripcion">Esta imagen será vista por todos los padres, estudiantes y docentes de esta sección.</label>
-							</div>
-									
-							<button id="btn_send_videoyoutube"  class="btn btn-primary btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Subir Video</button>
-									
-						</div>
 					</div>
 				</form>
-
 			</div>
 		</div>
 	</div>

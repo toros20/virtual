@@ -614,31 +614,17 @@ class TeacherController extends Controller
             ['section', '=', $request->seccion_id],
         ])->Select('user_id')->get();
 
-          //obtenemos el nombre original del archivo
-          //$name_original = $request->file('document')->getClientOriginalName();
-
-          //obtenemos la extension original del archivo
-          //$extension = $request->file('document')->getClientOriginalExtension();
-
-          //$extension = strtolower($extension);
-            
-          //if( $extension == 'jpg' || $extension == 'jpeg' || $extension == 'png'){
-             //almacenamos el documento en la carpeta documentos de la carpeta store y obtenemos su nuevo nombre
-             //$file = $request->file('document')->store('teachers_images');
-             
               //recorremos todos los usuarios encontrados y les eviamos el mensaje
                 foreach($id_users as $id_user)
                 {
                     $msj= DB::table('msj_'.$id_user->user_id)->insert([
-
                         'remitente'=>$request->user_id,
-                        'mensaje'=>$request->mensaje_video,
+                        'mensaje'=>"$request->url_video",
                         'fecha'=>Carbon::now(),
-                        'tipo'=> $request->url_video,
+                        'tipo'=> "video_youtube",
                         'curso_id'=>$request->curso_id,
                         'section'=>$request->seccion_id,
-                        'key'=>$key
-                        
+                        'key'=>$key   
                     ]);
                 }
 
@@ -652,15 +638,13 @@ class TeacherController extends Controller
                 foreach($id_users2 as $id_user2)
                 {
                     $msj= DB::table('msj_'.$id_user2->user_id)->insert([
-
                         'remitente'=>$request->user_id,
-                        'mensaje'=>$request->mensaje_imagen,
+                        'mensaje'=>$request->url_video,
                         'fecha'=>Carbon::now(),
                         'curso_id'=>$request->curso_id,
                         'section'=>$request->seccion_id,
-                        'tipo'=>$file,
+                        'tipo'=>"video_youtube",
                         'key'=>$key
-                        
                     ]);
                 }
 
@@ -671,18 +655,14 @@ class TeacherController extends Controller
                                 ->join('users', 'msj_'.$request->user_id.'.remitente', '=', 'users.id')
                                 ->where('msj_'.$request->user_id.'.id',$id)
                                 ->get();
-                //enviamos el mensaje recien almacenado,para que aparezca
-                //return view('ajax/post_in_section',compact('mensaje'));
-
+    
                 return redirect('teachers/panel/'.$request->user_id.'/'.$request->curso_id.'/'.$request->seccion_id);
-
 
           //}  fon del if de la estension.
           
-        
      }
 
-     //funcion para recibir los datos del formulario para subir un archivo
+     //funcion para recibir los datos del formulario para subir un archivo en la seccion de acumulativos
      function send_video(Request $request){
 
         //obtenemos las secciones seleccionadas
