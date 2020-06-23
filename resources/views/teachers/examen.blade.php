@@ -320,7 +320,7 @@
                                             <td><input maxlength="2" onchange="calcular_semestre1({{$student->user_id}})"type="text" name='exa1_{{$student->user_id}}' id='exa1_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Exa1}}"></td>
                                             <td><input maxlength="2" readonly type="text" name='total1_{{$student->user_id}}' id='total1_{{$student->user_id}}' min="0" required class="form-control" value="{{ ($student->Acum1) + ($student->Exa1)}}"></td>
                                            
-                                            <td><input maxlength="2" readonly  onchange="calcular_semestre2({{$student->user_id}})"type="text" name='acum2_{{$student->user_id}}' id='acum2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Acum2}}"></td>
+                                            <td><input maxlength="2"   onchange="calcular_semestre2({{$student->user_id}})"type="text" name='acum2_{{$student->user_id}}' id='acum2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Acum2}}"></td>
                                             <td><input maxlength="2"   onchange="calcular_semestre2({{$student->user_id}})"type="text" name='exa2_{{$student->user_id}}' id='exa2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Exa2}}"></td>
                                             <td><input maxlength="2" readonly type="text" name='total2_{{$student->user_id}}' id='total2_{{$student->user_id}}' min="0" required class="form-control" value="{{ ($student->Acum2) + ($student->Exa2)}}"></td>
                                              
