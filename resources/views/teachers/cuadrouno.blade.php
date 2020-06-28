@@ -74,10 +74,10 @@
                <tr>
                  <td text-rotate="180" rowspan="2" align="center" valign="middle" style="font-size:14px;" >N°de Orden</td>
                  <td rowspan="2" align="center" valign="middle" style="font-size:14px;">Nombre del Alumno</td>
-                 <td colspan="3" align="center" bgcolor="#CCCCCC" style="font-size:14px;">1er Parcial</td>
-                 <td colspan="3" align="center" bgcolor="#CCCCCC" style="font-size:14px;">2do Parcial</td>
-                 <td colspan="3" align="center" bgcolor="#CCCCCC" style="font-size:14px;">3er Parcial</td>
-                 <td colspan="3" align="center" bgcolor="#CCCCCC" style="font-size:14px;">4to Parcial</td>
+                 <td colspan="4" align="center" bgcolor="#CCCCCC" style="font-size:14px;">1er Parcial</td>
+                 <td colspan="4" align="center" bgcolor="#CCCCCC" style="font-size:14px;">2do Parcial</td>
+                 <td colspan="4" align="center" bgcolor="#CCCCCC" style="font-size:14px;">3er Parcial</td>
+                 <td colspan="4" align="center" bgcolor="#CCCCCC" style="font-size:14px;">4to Parcial</td>
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">Nota de Promoción</td>
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">1ra Recuperación</td>
                  {{-- <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">2da Recupreación</td> --}}
