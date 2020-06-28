@@ -108,7 +108,7 @@
 
                @php     $cont=0;    @endphp
                @foreach ($estudiantes as $estudiante)
-                  @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); @endphp
+                  @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); $nota2 = ($estudiante->Acum2 + $estudiante->Exa2);@endphp
                   <tr>
                       <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                       <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
@@ -138,15 +138,31 @@
                     @endif
                       
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                    
+                    @if ( $nota2 < 36)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                    @endif
+                    @if ( $nota2 > 35 && $nota2 < 70)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                    @endif
+                    @if ( $nota2 > 69 && $nota2 < 81)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
+                    @endif
+                    @if ( $nota2 > 79 && $nota2 < 91)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
+                    @endif
+                    @if ( $nota2 > 90)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
+                    @endif
                       {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td> --}}
-                      @if (($estudiante->Acum2 + $estudiante->Exa2) < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>
+                      {{-- @if (($estudiante->Acum2 + $estudiante->Exa2) < 70) --}}
+                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td> --}}
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td> --}}
-                      @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>
+                      {{-- @else --}}
+                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td> --}}
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td> --}}
-                      @endif
+                      {{-- @endif --}}
 
                       {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td> --}}
@@ -270,7 +286,7 @@
 
                 @php     $cont=0;      @endphp
                 @foreach ($estudiantes as $estudiante)
-                    @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); @endphp
+                    @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); $nota2 = ($estudiante->Acum2 + $estudiante->Exa2); @endphp
                     <tr>
                         <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
@@ -307,7 +323,23 @@
                         @else
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
                         @endif
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                        {{-- nota cualitativa --}}
+                        @if ( $nota2 < 36)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                        @endif
+                        @if ( $nota2 > 35 && $nota2 < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                        @endif
+                        @if ( $nota2 > 69 && $nota2 < 81)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
+                        @endif
+                        @if ( $nota2 > 79 && $nota2 < 91)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
+                        @endif
+                        @if ( $nota2 > 90)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
+                        @endif
+                      {{-- Fin de nota cualitativa --}}
 
                         @if ((round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)) < 70)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
