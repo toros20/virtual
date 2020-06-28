@@ -272,7 +272,7 @@
                   <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">Nota de Promoción</td>
                   <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">1ra Recuperación</td>
                   <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">2da Recupreación</td>
-                  <td align="center" rowspan="2" style="font-size:14px;">Observaciones</td>
+                  <td align="center" rowspan="2" style="font-size:14px;">Resultado</td>
                 </tr>
                 <tr text-rotate="180">
                   
