@@ -139,11 +139,9 @@
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
                     @endif
                       
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                    
-                  
-                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td> --}}
+    
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td> 
                        @if (($estudiante->Acum2 + $estudiante->Exa2) < 70) 
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td> --}}
                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td> 
