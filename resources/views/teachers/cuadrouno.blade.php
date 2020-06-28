@@ -279,12 +279,12 @@
                   <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                   <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                   <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
-                  <td valign="bottom" align="center" style="font-size:14px;"></td>
+                  <td valign="bottom" align="center" style="font-size:14px;">Valor</td>
                   
                   <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                   <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                   <td valign="bottom" align="center" style="font-size:14px;"><strong>Total</strong></td>
-                  <td valign="bottom" align="center" style="font-size:14px;"></td>
+                  <td valign="bottom" align="center" style="font-size:14px;">Valor</td>
                   
                 </tr>
                 </thead>
@@ -304,10 +304,10 @@
                         @endif
                       {{-- nota cualitativa --}}
                         @if ( $nota1 < 36)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
                         @endif
                         @if ( $nota1 > 35 && $nota1 < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Necesita Mejorar</td>
                         @endif
                         @if ( $nota1 > 69 && $nota1 < 81)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
@@ -330,10 +330,10 @@
                         @endif
                         {{-- nota cualitativa --}}
                         @if ( $nota2 < 36)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
                         @endif
                         @if ( $nota2 > 35 && $nota2 < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Necesita Mejorar</td>
                         @endif
                         @if ( $nota2 > 69 && $nota2 < 81)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
