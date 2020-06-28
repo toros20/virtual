@@ -362,14 +362,10 @@
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                         @endif
                         
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                        
                        
-                       
-                         @if (round($nota1 + $nota2) < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
-                        @else
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
-                        @endif
+                        
                       {{-- nota cualitativa --}}
                         @if ( round($nota1 + $nota2) < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
