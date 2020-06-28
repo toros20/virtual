@@ -124,10 +124,10 @@
                       @endif
                      
                     @if ( $nota1 < 36)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
                     @endif
                     @if ( $nota1 > 35 && $nota1 < 70)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Necesita Mejorar</td>
                     @endif
                     @if ( $nota1 > 69 && $nota1 < 81)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
@@ -151,10 +151,10 @@
                        @endif 
 
                          @if ( $nota2 < 36)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Insuficiente</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">Insuficiente</td>
                     @endif
                     @if ( $nota2 > 35 && $nota2 < 70)
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Necesita Mejorar</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">Necesita Mejorar</td>
                     @endif
                     @if ( $nota2 > 69 && $nota2 < 81)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
