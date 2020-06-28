@@ -88,20 +88,22 @@
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                  <td valign="bottom" align="center" style="font-size:14px; background-color: #ccc"><strong>Total</strong></td>
-                 {{-- <td valign="bottom" align="center" style="font-size:14px;"></td> --}}
+                <td valign="bottom" align="center" style="font-size:14px;">Valor</td> 
 
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                  <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
-                
+                 <td valign="bottom" align="center" style="font-size:14px;">Valor</td> 
+
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                  <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
-                 
+                 <td valign="bottom" align="center" style="font-size:14px;">Valor</td> 
+
                  <td valign="bottom" align="center" style="font-size:14px;"> Acumulativo</td>
                  <td valign="bottom" align="center" style="font-size:14px;"> Examen</td>
                  <td valign="bottom" align="center" style="font-size:14px;  background-color: #ccc"><strong>Total</strong></td>
-               
+                <td valign="bottom" align="center" style="font-size:14px;">Valor</td> 
                  
                </tr>
               </thead>
@@ -166,7 +168,7 @@
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
                     @endif
 
-                    
+
 
                       {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td> --}}
