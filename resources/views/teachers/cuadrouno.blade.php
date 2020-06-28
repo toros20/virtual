@@ -81,7 +81,7 @@
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">Nota de Promoción</td>
                  <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">1ra Recuperación</td>
                  {{-- <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">2da Recupreación</td> --}}
-                 <td align="center" rowspan="2" style="font-size:14px;">Observaciones</td>
+                 <td rowspan="2" align="center" valign="bottom" text-rotate="180" style="font-size:14px;">Observaciones</td>
                </tr>
                <tr text-rotate="180">
                  
@@ -184,6 +184,7 @@
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa4}}</td> --}}
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                       @if (($estudiante->Acum4 + $estudiante->Exa4) < 70)
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> --}}
@@ -222,7 +223,7 @@
                       
                       {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> --}}
                       <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
-                      
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                   </tr> 
                   @php     $cont+=1;      @endphp
                @endforeach
