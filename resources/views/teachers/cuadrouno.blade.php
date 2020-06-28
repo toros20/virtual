@@ -363,7 +363,31 @@
                         @endif
                         
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                        <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:center;"></td>
+                       
+                       
+                         @if (round($nota1 + $nota2) < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                        @else
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                        @endif
+                      {{-- nota cualitativa --}}
+                        @if ( round($nota1 + $nota2) < 36)
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
+                        @endif
+                        @if ( round($nota1 + $nota2) > 35 && round($nota1 + $nota2) < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Necesita Mejorar</td>
+                        @endif
+                        @if ( round($nota1 + $nota2) > 69 && round($nota1 + $nota2) < 81)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
+                        @endif
+                        @if ( round($nota1 + $nota2) > 79 && round($nota1 + $nota2) < 91)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
+                        @endif
+                        @if ( round($nota1 + $nota2) > 90)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
+                        @endif
+                      {{-- Fin de nota cualitativa --}}
+
                         
                     </tr> 
                     @php     $cont+=1;      @endphp
