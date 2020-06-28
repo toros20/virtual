@@ -362,7 +362,7 @@
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
                         @endif
                         
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                       
                        
                        
                          @if (round($nota1 + $nota2) < 70)
