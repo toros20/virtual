@@ -132,7 +132,7 @@
                     @if ( $nota1 > 69 && $nota1 < 81)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
                     @endif
-                    @if ( $nota1 > 79 && $nota1 < 91)
+                    @if ( $nota1 > 80 && $nota1 < 91)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
                     @endif
                     @if ( $nota1 > 90)
@@ -159,7 +159,7 @@
                     @if ( $nota2 > 69 && $nota2 < 81)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
                     @endif
-                    @if ( $nota2 > 79 && $nota2 < 91)
+                    @if ( $nota2 > 80 && $nota2 < 91)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
                     @endif
                     @if ( $nota2 > 90)
@@ -312,7 +312,7 @@
                         @if ( $nota1 > 69 && $nota1 < 81)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
                         @endif
-                        @if ( $nota1 > 79 && $nota1 < 91)
+                        @if ( $nota1 > 80 && $nota1 < 91)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
                         @endif
                         @if ( $nota1 > 90)
@@ -338,7 +338,7 @@
                         @if ( $nota2 > 69 && $nota2 < 81)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
                         @endif
-                        @if ( $nota2 > 79 && $nota2 < 91)
+                        @if ( $nota2 > 80 && $nota2 < 91)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
                         @endif
                         @if ( $nota2 > 90)
@@ -376,7 +376,7 @@
                         @if ( round(($nota1 + $nota2)/2) > 69 && round(($nota1 + $nota2)/2) < 81)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Satisfactorio</td>
                         @endif
-                        @if ( round(($nota1 + $nota2)/2) > 79 && round(($nota1 + $nota2)/2) < 91)
+                        @if ( round(($nota1 + $nota2)/2) > 80 && round(($nota1 + $nota2)/2) < 91)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Muy Satisfactorio</td>
                         @endif
                         @if ( round(($nota1 + $nota2)/2) > 90)
