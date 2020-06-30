@@ -107,16 +107,31 @@
                                 </tr>
                             </table>
                             <table class="tabla tabla-striped tabla-bordered"  style="margin-top:10px; border: 1px solid #dee2e6; "  align="center" width="700">
-                                <tr style="border: 1px solid #dee2e6; ">
-                                    <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
-                                    <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">III P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">IV P</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
-                                    <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
-                                </tr>
+                                
+                                @if ($course->id < 9)
+                                    <tr style="border: 1px solid #dee2e6; ">
+                                        <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                        <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                    </tr>
+                                @else
+                                    <tr style="border: 1px solid #dee2e6; ">
+                                        <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                        <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">I P</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">II P</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">III P</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">IV P</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
+                                        <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
+                                    </tr>
+                                @endif
+
                             </table>
 
                             <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
@@ -149,135 +164,272 @@
                                             ?>
                                      
                             
-                                    
-                                    {{-- Codigo para intercalar por colores las filas --}}
-                                    @if ($cont%2==0 ) 
-                                        <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
-                                            <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                            <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                            {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 80 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
-                                                                                        
-                                            {{-- II PARCIAL --}}
-                                           {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @endif --}}
-                                            
-                                            {{-- III PARCIAL --}}
-                                           {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                            @endif --}}
+                                    {{-- PARA PRIMARA  --}}
+                                    @if ($course->id < 9)
+                                          {{-- Codigo para intercalar por colores las filas --}}
+                                        @if ($cont%2==0 ) 
+                                        
+                                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                {{-- I PARCIAL --}}
+                                                @if ( $nota2 < 36)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                @endif
+                                                @if ( $nota2 > 35 && $nota2 < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                @endif
+                                                @if ( $nota2 > 69 && $nota2 < 81)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 80 && $nota2 < 91)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 90)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                @endif
+                                                                                            
+                                                {{-- II PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @endif --}}
+                                                    
+                                                    {{-- III PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                    @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                    @endif --}}
 
-                                             {{-- IV PARCIAL --}}
-                                          {{--   @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                            @else 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                            @endif --}}
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            
-                                            
-                                            {{-- PROMEDIO FINAL --}}
-                                           
-
-                                            @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                            @endif 
-                                            @if ($resultado[0]->Recu1 > 69 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                            @endif
-                                            @if ($resultado[0]->Recu1 == 0 )
+                                                    {{-- IV PARCIAL --}}
+                                                {{--   @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @endif --}}
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            @endif
-                    
-                                        </tr>
-                                    @else
-                                        <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
-                                            <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
-                                            <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                             {{-- I PARCIAL --}}
-                                            @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
-                                            @endif
-                                            @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
-                                            @endif
-                                            @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 80 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
-                                            @endif
-                                            @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                            @endif
-                                            {{-- FIN I PARCIAL --}}
-        
-                                            {{-- II PARCIAL --}}
-                                           {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                            @else 
-                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                             @endif --}}
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                
+                                                
+                                                {{-- PROMEDIO FINAL --}}
                                             
-                                           
-                                               {{-- III PARCIAL --}}
-                                         {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                         @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
-                                         @endif --}}
 
-                                         {{-- IV PARCIAL --}}
-                                        {{--  @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                        @endif --}}
-
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                       <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                    
-                                        {{-- PROMEDIO FINAL --}}
-                                       
-
+                                                @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif 
+                                                @if ($resultado[0]->Recu1 > 69 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif
+                                                @if ($resultado[0]->Recu1 == 0 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                @endif
+                        
+                                            </tr>
+                                        @else
+                                            <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
+                                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                {{-- I PARCIAL --}}
+                                                @if ( $nota2 < 36)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                @endif
+                                                @if ( $nota2 > 35 && $nota2 < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                @endif
+                                                @if ( $nota2 > 69 && $nota2 < 81)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 80 && $nota2 < 91)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 90)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                @endif
+                                                {{-- FIN I PARCIAL --}}
             
-                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                        @endif 
-                                        @if ($resultado[0]->Recu1 > 69 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                        @endif
-                                        @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                        @endif 
+                                                {{-- II PARCIAL --}}
+                                              {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @endif --}}
+                                                
                                             
-                                     </tr>
+                                                {{-- III PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                @endif --}}
+
+                                                {{-- IV PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @endif --}}
+
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                            
+                                                {{-- PROMEDIO FINAL --}}
+                                            
+                                                @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif 
+                                                @if ($resultado[0]->Recu1 > 69 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif
+                                                @if ($resultado[0]->Recu1 == 0 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                @endif 
+                                                
+                                            </tr>
+
+                                        @endif
                                     @endif
-        
+                                    {{-- FIN PARA PRIMARA  --}}
+
+
+                                    {{-- PARA SECUNDARIA  --}}
+                                    @if ($course->id < 9)
+                                        {{-- Codigo para intercalar por colores las filas --}}
+                                        @if ($cont%2==0 ) 
+                                        
+                                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
+                                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                {{-- I PARCIAL --}}
+                                                @if ( $nota1 < 36)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                @endif
+                                                @if ( $nota1 > 35 && $nota1 < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                @endif
+                                                @if ( $nota1 > 69 && $nota1 < 81)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota1 > 80 && $nota1 < 91)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota1 > 90)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                @endif
+                                                                                            
+                                                {{-- II PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @endif --}}
+                                                    
+                                                    {{-- III PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                    @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                    @endif --}}
+
+                                                    {{-- IV PARCIAL --}}
+                                                {{--   @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4)  < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @endif --}}
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                
+                                                
+                                                {{-- PROMEDIO FINAL --}}
+                                            
+
+                                                @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif 
+                                                @if ($resultado[0]->Recu1 > 69 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif
+                                                @if ($resultado[0]->Recu1 == 0 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                @endif
+                        
+                                            </tr>
+                                        @else
+                                            <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
+                                                <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                {{-- I PARCIAL --}}
+                                                @if ( $nota1 < 36)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                @endif
+                                                @if ( $nota1 > 35 && $nota1 < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                @endif
+                                                @if ( $nota1 > 69 && $nota1 < 81)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota1 > 80 && $nota1 < 91)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota1 > 90)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                @endif
+                                                {{-- FIN I PARCIAL --}}
+            
+                                                {{-- II PARCIAL --}}
+                                              {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                @endif --}}
+                                                
+                                            
+                                                {{-- III PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum3) + ($resultado[0]->Exa3) < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum3) + ($resultado[0]->Exa3)}}</td>
+                                                @endif --}}
+
+                                                {{-- IV PARCIAL --}}
+                                                {{--  @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem; color:red;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
+                                                @endif --}}
+
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                            
+                                                {{-- PROMEDIO FINAL --}}
+                                            
+                                                @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif 
+                                                @if ($resultado[0]->Recu1 > 69 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                @endif
+                                                @if ($resultado[0]->Recu1 == 0 )
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                @endif 
+                                                
+                                            </tr>
+
+                                        @endif
+                                    @endif
+                                    {{-- FIN PARA SECUNDARIA  --}}
+
+
                                 <?php $cont+=1;?>
                                 @endforeach {{-- fin del foreach de cada clase --}}
                                 
