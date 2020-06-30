@@ -298,7 +298,7 @@
 
 
                                     {{-- PARA SECUNDARIA  --}}
-                                    @if ($course->id < 9)
+                                    @if ($course->id > 8)
                                         {{-- Codigo para intercalar por colores las filas --}}
                                         @if ($cont%2==0 ) 
                                         
