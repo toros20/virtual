@@ -631,6 +631,27 @@
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
                                             @endif
 
+
+
+                                            @if ($resultado[0]->Recu1 == 0 )
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;"></td>
+                                            @endif
+                                            @if ($resultado[0]->Recu1 > 0 && $resultado[0]->Recu1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">I</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 35 && $resultado[0]->Recu1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">NM</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 69 && $resultado[0]->Recu1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">S</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 80 && $resultado[0]->Recu1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">MS</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">A</td>
+                                            @endif
+
                                        {{--  @if ($promedio < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $promedio  ?></td>
                                         @else 
@@ -715,6 +736,25 @@
                                             @endif
                                             @if ( $promedio > 90)
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
+                                            @endif
+
+                                            @if ($resultado[0]->Recu1 == 0 )
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;"></td>
+                                            @endif
+                                            @if ($resultado[0]->Recu1 > 0 && $resultado[0]->Recu1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">I</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 35 && $resultado[0]->Recu1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">NM</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 69 && $resultado[0]->Recu1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">S</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 80 && $resultado[0]->Recu1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">MS</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">A</td>
                                             @endif
                                                                               
                                     </tr>
