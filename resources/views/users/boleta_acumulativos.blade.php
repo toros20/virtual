@@ -121,14 +121,14 @@
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; ">
-                                        <th style="text-align:center; font-weight: bold;">No. </th>
-                                        <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">I P</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">II P</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">III P</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">IV P</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
-                                        <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
+                                        <th style="border: 1px solid #dee2e6; font-weight: bold; padding:0.35rem;">No. </th>
+                                        <th style="border: 1px solid #dee2e6; text-align:left; padding:0.35rem;">ESPACIOS PEDAGÓGICOS</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">I P</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">II P</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">III P</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">IV P</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">PROM.</th>
+                                        <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">RECU.</th>
                                     </tr>
                                 @endif
 
