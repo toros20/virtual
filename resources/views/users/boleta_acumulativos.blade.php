@@ -121,7 +121,7 @@
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; ">
-                                        <th style="border: 1px solid #dee2e6; font-weight: bold; padding:0.35rem;">No. </th>
+                                        <th style="border: 1px solid #dee2e6; font-weight: bold;  padding:0.35rem;">No. </th>
                                         <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold">ESPACIOS PEDAGÓGICOS</th>
                                         <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold">I P</th>
                                         <th style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold">II P</th>
@@ -132,10 +132,7 @@
                                     </tr>
                                 @endif
 
-                            </table>
-
-                            <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                                @php
+                                 @php
                                      $suma_promedio = 0; $nota1=0;$nota2=0;$nota3=0;$nota4=0;
                                     
                                 @endphp   
