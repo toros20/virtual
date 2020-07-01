@@ -245,7 +245,7 @@
                       @if ($asignaciones[0]->is_semestral == 0)
                       <ul class="list-group">
 
-                           @if ($enroll[0]->course_id > 8)
+                           @if ($enroll[0]->course_id > 2)
                              <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} "> 
                             {{--<a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="#">--}}
                             
