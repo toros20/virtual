@@ -77,7 +77,7 @@
                                     <img src="{{ URL::asset('img/logo_sanjose.png')}}" width="70" height="70" alt=""/>
                                 </td>
                                 <td>
-                                <h4 style="font-weight: bold;">C.E.M.N.G SAN JOSÉ DEL CARMEN </h4>
+                                <h4 style="font-weight: bold;">C.E.B.N.G SAN JOSÉ DEL CARMEN </h4>
                                 <p style="margin-bottom:0px; ">Colonia La Camapaña, Tegucigalpa</p>
                                 <p style="margin-bottom:0px; ">Tel:(+504) 2221-4474 /75</p>
                                 <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
@@ -88,7 +88,7 @@
                            
                         </table>
                         <table  style="tabla-striped text-align:center; border: 1px solid #dee2e6; "  align="center" width="700">
-                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>BOLETA DE ACUMULATIVOS</h5></td>
+                            <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;"> <td style=" border: 1px solid #dee2e6;"><h5>REPORTE DE AVANCE ACADÉMICO</h5></td>
                                 <td style=" border: 1px solid #dee2e6;"><?php echo $arrayDias[date('w')]." ".date('d')."/".$arrayMeses[date('m')-1]."/".date('Y');?></td></tr>
                             <tr style="border: 1px solid #dee2e6; ">
                                 <td style="padding-top:5px;  border: 1px solid #dee2e6;">
@@ -321,8 +321,24 @@
                                                 @if ( $nota1 > 90)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
                                                 @endif
-                                                                                            
+
+                                                                                                                        
                                                 {{-- II PARCIAL --}}
+                                                 @if ( $nota2 < 36)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
+                                                @endif
+                                                @if ( $nota2 > 35 && $nota2 < 70)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Necesita Mejorar</td>
+                                                @endif
+                                                @if ( $nota2 > 69 && $nota2 < 81)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 80 && $nota2 < 91)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Muy Satisfactorio</td>
+                                                @endif
+                                                @if ( $nota2 > 90)
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
+                                                @endif
                                                 {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                                     @else 
@@ -341,8 +357,8 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem; ">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                                 @else 
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
-                                                @endif --}}
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                @endif 
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>--}}
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
