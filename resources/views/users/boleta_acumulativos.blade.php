@@ -1504,7 +1504,33 @@
 //==============================================================
 //==============================================================
 
+include($_SERVER['DOCUMENT_ROOT']."/virtual/vendor/autoload.php");
 
+$html = ob_get_clean();
+
+//$html = utf8_encode($html);
+
+//$mpdf=new mPDF('c','Letter','',''); 
+$mpdf=new \Mpdf\Mpdf([
+    'mode' => 'utf-8',
+    //'format' => [190, 236],
+    'format' => [216, 279],
+    'orientation' => 'P'
+]); 
+
+$mpdf->allow_charset_conversion= true;
+
+$mpdf->charset_in='UTF-8';
+
+//$mpdf->SetDisplayMode('fullpage');
+
+$mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first level of a list
+
+$mpdf->WriteHTML($html);
+
+$mpdf->Output('Boleta de Calificaciones.pdf','I');
+
+exit();
 //==============================================================
 //==============================================================
 //==============================================================
