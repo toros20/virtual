@@ -533,7 +533,7 @@
                                     <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                     {{-- <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;"></th> --}}
                                     <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">II P</th>
-                                    <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;"></th>
+                                    {{-- <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;"></th> --}}
                                     <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
                                     <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
                                 </tr>
@@ -613,10 +613,25 @@
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @endif  --}}
-                                       
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"></td>
                                         
-                                        @if ($promedio < 70)
+                                       
+                                            @if ( $promedio < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Insuficiente</td>
+                                            @endif
+                                            @if ( $promedio > 35 && $promedio < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $promedio > 69 && $promedio < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 80 && $promedio < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
+                                            @endif
+
+                                       {{--  @if ($promedio < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $promedio  ?></td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $promedio  ?></td>
@@ -630,7 +645,7 @@
                                         @endif
                                         @if ($resultado[0]->Recu1 == 0 )
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
-                                        @endif
+                                        @endif --}}
  
                                     </tr>
 
@@ -685,24 +700,22 @@
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @endif  --}}
                                         
-                                        <td style="text-align:center; width:50px ;padding:0.35rem; border: 1px solid #dee2e6;"></td>                                      
-                                                                             
-
-                                        @if ($promedio < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $promedio   ?></td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $promedio  ?></td>
-                                         @endif
-
-                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $resultado[0]->Recu1 ?></td>
-                                        @endif 
-                                        @if ($resultado[0]->Recu1 > 69 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
-                                        @endif
-                                        @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
-                                        @endif 
+                                                                            
+                                            @if ( $promedio < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Insuficiente</td>
+                                            @endif
+                                            @if ( $promedio > 35 && $promedio < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $promedio > 69 && $promedio < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 80 && $promedio < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
+                                            @endif
                                                                               
                                     </tr>
 
