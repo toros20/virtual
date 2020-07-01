@@ -537,10 +537,7 @@
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">PROM.</th>
                                     <th style="text-align:center; width:50px;font-weight: bold; border: 1px solid #dee2e6;">RECU.</th>
                                 </tr>
-                            </table>
-
-                            <table style="border: 1px solid #dee2e6; " class="tabla tabla-bordered"  align="center" width="700"> 
-                               
+                                      
                                 @foreach ($clases as $clase)
                                 
                                 <?php 
