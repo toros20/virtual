@@ -121,7 +121,7 @@
                                     </tr>
                                 @else
                                     <tr style="border: 1px solid #dee2e6; ">
-                                        <th style="text-align:center; width:5px;font-weight: bold;">No. </th>
+                                        <th style="text-align:center; ;font-weight: bold;">No. </th>
                                         <th style="font-weight: bold;">ESPACIOS PEDAGÓGICOS</th>
                                         <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">I P</th>
                                         <th style="text-align:center; font-weight: bold; border: 1px solid #dee2e6;">II P</th>
@@ -361,6 +361,7 @@
                                                 @endif 
                                                 <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>--}}
                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
                                                 
                                                 
                                                 
@@ -441,20 +442,21 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum4) + ($resultado[0]->Exa4)}}</td>
                                                 @endif --}}
 
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
+                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
                                                
                                             
                                                 {{-- PROMEDIO FINAL --}}
                                             
                                                 @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                                 @endif 
                                                 @if ($resultado[0]->Recu1 > 69 )
-                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
                                                 @endif
                                                 @if ($resultado[0]->Recu1 == 0 )
-                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
                                                 @endif 
                                                 
                                             </tr>
