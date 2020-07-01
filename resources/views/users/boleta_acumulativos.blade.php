@@ -572,37 +572,37 @@
                                         
                                              {{-- I PARCIAL --}}
                                             @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                             @endif
                                             @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                             @endif
                                             @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 80 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
                                             {{-- II PARCIAL --}}
                                             @if ( $nota2 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                             @endif
                                             @if ( $nota2 > 35 && $nota2 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                             @endif
                                             @if ( $nota2 > 69 && $nota2 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                             @endif
                                             @if ( $nota2 > 80 && $nota2 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota2 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                             @endif
                                             {{-- FIN II PARCIAL --}}
 
@@ -642,37 +642,37 @@
                                        
                                         {{-- I PARCIAL --}}
                                             @if ( $nota1 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                             @endif
                                             @if ( $nota1 > 35 && $nota1 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                             @endif
                                             @if ( $nota1 > 69 && $nota1 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 80 && $nota1 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota1 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
                                             {{-- II PARCIAL --}}
                                             @if ( $nota2 < 36)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                             @endif
                                             @if ( $nota2 > 35 && $nota2 < 70)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                             @endif
                                             @if ( $nota2 > 69 && $nota2 < 81)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                             @endif
                                             @if ( $nota2 > 80 && $nota2 < 91)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                             @endif
                                             @if ( $nota2 > 90)
-                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado(<?php echo $nota2  ?>)</td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                             @endif
                                             {{-- FIN II PARCIAL --}}
                                                                     
