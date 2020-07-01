@@ -632,7 +632,6 @@
                                             @endif
 
 
-
                                             @if ($resultado[0]->Recu1 == 0 )
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;"></td>
                                             @endif
@@ -652,22 +651,6 @@
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">A</td>
                                             @endif
 
-                                       {{--  @if ($promedio < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $promedio  ?></td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $promedio  ?></td>
-                                        @endif
-                                                                                    
-                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"><?php //echo $resultado[0]->Recu1 ?></td>
-                                        @endif 
-                                        @if ($resultado[0]->Recu1 > 69 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
-                                        @endif
-                                        @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"><?php //echo $resultado[0]->Recu1  ?></td>
-                                        @endif --}}
- 
                                     </tr>
 
                                 @else
