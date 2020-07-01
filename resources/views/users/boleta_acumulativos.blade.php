@@ -661,6 +661,23 @@
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
+                                            {{-- II PARCIAL --}}
+                                            @if ( $nota2 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota2 > 35 && $nota2 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota2 > 69 && $nota2 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 80 && $nota2 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN II PARCIAL --}}
                                                                     
 
                                         {{-- II PARCIAL --}}
