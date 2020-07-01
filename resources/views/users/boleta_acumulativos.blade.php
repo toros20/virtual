@@ -591,6 +591,24 @@
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
+                                            {{-- I PARCIAL --}}
+                                            @if ( $nota2 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota2 > 35 && $nota2 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota2 > 69 && $nota2 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 80 && $nota2 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN I PARCIAL --}}
+
                                       
                                         {{-- II PARCIAL --}}
                                       {{--   @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
@@ -598,7 +616,7 @@
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @endif  --}}
-                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"></td>
+                                       
                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;"></td>
                                         
                                         @if ($promedio < 70)
