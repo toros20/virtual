@@ -322,7 +322,7 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                                 @endif
 
-                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
+                                               
 
                                                 {{-- II PARCIAL --}}
                                                  @if ( $nota2 < 36)
@@ -400,7 +400,7 @@
                                                 @endif
                                                 {{-- FIN I PARCIAL --}}
 
-                                                <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;"></td>
+                                               
                                                 
                                                 {{-- II PARCIAL --}}
                                                 @if ( $nota2 < 36)
