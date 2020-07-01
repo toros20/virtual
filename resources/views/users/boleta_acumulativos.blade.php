@@ -322,7 +322,8 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
                                                 @endif
 
-                                                                                                                        
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+
                                                 {{-- II PARCIAL --}}
                                                  @if ( $nota2 < 36)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
@@ -399,7 +400,11 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
                                                 @endif
                                                 {{-- FIN I PARCIAL --}}
-                                                    @if ( $nota1 < 36)
+
+                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                
+                                                {{-- II PARCIAL --}}
+                                                @if ( $nota2 < 36)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
                                                 @endif
                                                 @if ( $nota2 > 35 && $nota2 < 70)
@@ -415,6 +420,7 @@
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
                                                 @endif
                                                 {{-- II PARCIAL --}}
+
                                               {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                                 @else 
