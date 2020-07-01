@@ -591,7 +591,7 @@
                                             @endif
                                             {{-- FIN I PARCIAL --}}
 
-                                            {{-- I PARCIAL --}}
+                                            {{-- II PARCIAL --}}
                                             @if ( $nota2 < 36)
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                             @endif
@@ -607,7 +607,7 @@
                                             @if ( $nota2 > 90)
                                                  <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                             @endif
-                                            {{-- FIN I PARCIAL --}}
+                                            {{-- FIN II PARCIAL --}}
 
                                       
                                         {{-- II PARCIAL --}}
