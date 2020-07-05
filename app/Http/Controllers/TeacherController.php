@@ -177,7 +177,7 @@ class TeacherController extends Controller
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
                         ->where([
                             ['assignments.user_id', '=', $user_id],
-                            ['clases.semester', '<', 2],
+                            ['clases.semester', '!=', 1],
                         ])
                         ->get(); 
 
