@@ -67,7 +67,16 @@ class TeacherController extends Controller
          $user = User::findOrFail($user_id);
 
          //obtenemos las asignaciones de este curso, clases, y docentes
-         $asignaciones = Assignment::where('user_id',$user_id)->get();
+         // I Parcial = $asignaciones = Assignment::where('user_id',$user_id)->get();
+        
+         //para el II Parcial 
+         $asignaciones = DB::table('assignments')
+                        ->join('clases', 'assignments.clases_id', '=', 'clases.id')
+                        ->where([
+                            ['assignments.user_id','=',$user_id],
+                            ['clases.semester', '!=', 1],
+                            ])
+                        ->get();
  
          //obtenemos las primera clases asignada de este docente en este curso y seccion
          //si es necesaria este variable.
