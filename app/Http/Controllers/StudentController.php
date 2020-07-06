@@ -60,11 +60,21 @@ class StudentController extends Controller
         $course = Course::where('id',$enroll[0]->course_id)->get();
 
         //obtenemos las asignaciones de este curso, clases, y docentes
-        $asignaciones = Assignment::where([
+        /*$asignaciones = Assignment::where([
             ['course_id', '=', $enroll[0]->course_id],
             ['section', '=', $enroll[0]->section],
             ['semester', '!=',1],
-        ])->get();
+        ])->get();*/
+
+        $asignaciones = DB::table('assignments')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
+                        ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->where([
+                            ['course_id', '=', $enroll[0]->course_id],
+                            ['section', '=', $enroll[0]->section],
+                            ['semester', '!=',1],
+                            ])
+                        ->get();
 
         //dd($asignaciones);
         
