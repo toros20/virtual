@@ -116,8 +116,12 @@
 						</div>
 						<div class="notification-event" style="width:100px;">
 							
-							<p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
-							<p>{{$asignacion->clase->short_name}} </p>
+							{{-- <p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
+							<p>{{$asignacion->clase->short_name}} </p> --}}
+
+							<p href="#" class="h6 notification-friend"> {{$asignacion->short_name}}-{{$asignacion->section}} </p>
+							<p>{{$asignacion->short_name}} </p>
+
 						</div>
 						<div class="notification-event" style="padding-left:50px;">
 								<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
