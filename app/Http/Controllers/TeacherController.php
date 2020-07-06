@@ -77,6 +77,8 @@ class TeacherController extends Controller
                             ['clases.semester', '!=', 1],
                             ])
                         ->get();
+
+                        dd($asignaciones);
  
          //obtenemos las primera clases asignada de este docente en este curso y seccion
          //si es necesaria este variable.
