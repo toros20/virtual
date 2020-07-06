@@ -119,8 +119,8 @@
 							{{-- <p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
 							<p>{{$asignacion->clase->short_name}} </p> --}}
 
-							<p href="#" class="h6 notification-friend"> {{$asignacion->short_name}}-{{$asignacion->section}} </p>
-							<p>{{$asignacion->short_name}} </p>
+							<p href="#" class="h6 notification-friend"> {{$asignacion->course_name}}-{{$asignacion->section}} </p>
+							<p>{{$asignacion->clase}} </p>
 
 						</div>
 						<div class="notification-event" style="padding-left:50px;">
@@ -668,9 +668,9 @@
 							<div class="notification-event">
 								{{-- <a href="#" onclick="cambio_de_seccion('{{$asignacion->course->id}}','{{$asignacion->section}}','{{$asignacion->course->short_name}}')" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a> --}}
 								{{-- <a href="/virtual/public/teachers/panel/{{$user->id}}/{{$asignacion->course->id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </a> --}}
-								<a href="/virtual/public/teachers/panel/{{$user->id}}/{{$asignacion->course_id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->short_name}}-{{$asignacion->section}} </a>
+								<a href="/virtual/public/teachers/panel/{{$user->id}}/{{$asignacion->course_id}}/{{$asignacion->section}}" class="h6 notification-friend"> {{$asignacion->course_name}}-{{$asignacion->section}} </a>
 								
-								<span class="chat-message-item">{{$asignacion->short_name}}  </span>
+								<span class="chat-message-item">{{$asignacion->clase}}  </span>
 							</div>
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="ADD TO YOUR FAVS">
 								<a href="#">

@@ -73,6 +73,11 @@ class TeacherController extends Controller
          $asignaciones = DB::table('assignments')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->Select(
+                            'courses.id as courses_id',
+                            'courses.short_name as course_name',
+                            'clases.short_name as clase'
+                         )
                         ->where([
                             ['assignments.user_id','=',$user_id],
                             ['clases.semester', '!=', 1],
