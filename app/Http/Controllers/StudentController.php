@@ -63,7 +63,7 @@ class StudentController extends Controller
         $asignaciones = Assignment::where([
             ['course_id', '=', $enroll[0]->course_id],
             ['section', '=', $enroll[0]->section],
-            ['clases.semester', '!=',1],
+            ['semester', '!=',1],
         ])->get();
 
         //dd($asignaciones);
