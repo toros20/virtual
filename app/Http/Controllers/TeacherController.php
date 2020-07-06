@@ -74,7 +74,7 @@ class TeacherController extends Controller
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->Select(
-                            'courses.id as courses_id',
+                            'courses.id as course_id',
                             'courses.short_name as course_name',
                             'clases.short_name as clase',
                             'assignments.section as section'
