@@ -76,7 +76,9 @@ class TeacherController extends Controller
                         ->Select(
                             'courses.id as courses_id',
                             'courses.short_name as course_name',
-                            'clases.short_name as clase'
+                            'clases.short_name as clase',
+                            'assignments.section as section'
+
                          )
                         ->where([
                             ['assignments.user_id','=',$user_id],
