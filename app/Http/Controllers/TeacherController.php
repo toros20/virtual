@@ -79,7 +79,7 @@ class TeacherController extends Controller
                             ])
                         ->get();
 
-                        //dd($asignaciones);
+                        dd($asignaciones);
  
          //obtenemos las primera clases asignada de este docente en este curso y seccion
          //si es necesaria este variable.
@@ -123,7 +123,7 @@ class TeacherController extends Controller
                                 ->join('users', 'users.id', '=' , $tbl_tareashoy.'.teacher' )
                                 ->where([
                                     [$tbl_tareashoy.'.teacher', '=', $user_id],
-                                    ['clases.semester', '!=', 2],
+                                    ['clases.semester', '!=', 1],
                                     [$tbl_tareashoy.'.fecha_entrega', '=', date("Y-m-d")],
                                 ])
                                 ->orderBy($tbl_tareashoy.'.fecha_publicada', 'desc')
