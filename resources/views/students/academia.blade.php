@@ -215,14 +215,14 @@
                             {{--<a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,1])}} "> --}}
                          <a class="list-group-item list-group-item-action" style="color:black" href="#">
                             
-                              <li style="background-color:#a9a9a9" class="list-group-item">
+                              <li style="background-color:#a9a9a9;cursor: not-allowed;" class="list-group-item">
                                   <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>I Parcial
                               </li>
                           </a>
 
                           {{-- <a class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('students/acumulativos/{user_id}/{clase}/{parcial}', [$user->id,$clase,2])}}"> --}}
                            <a class="list-group-item list-group-item-action" style="color:black" href="#">
-                              <li style="background-color:#a9a9a9" class="list-group-item">
+                              <li style="background-color:#a9a9a9;cursor: not-allowed;" class="list-group-item">
                                   <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>II Parcial 
                               </li>
                           </a> 
