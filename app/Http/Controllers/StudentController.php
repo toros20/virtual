@@ -215,7 +215,7 @@ class StudentController extends Controller
                     ->Select('clases.id as clase_id','clases.short_name as clase')
                     ->where([
                         ['clasecourses.course_id', '=', $enroll[0]->course_id],
-                        ['clases.semester', '!=', 2]
+                        ['clases.semester', '!=', 1]
                     ])
                     ->get();
 
