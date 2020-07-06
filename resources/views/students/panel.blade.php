@@ -118,7 +118,9 @@
 							<img src="{{ URL::asset('img/teacher.PNG') }}" alt="author">
 						</div>
 						<div class="notification-event" style="width:100px;">
-							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  {{$asignacion->clase->short_name}} </a>
+							{{-- <a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  {{$asignacion->clase->short_name}} </a> --}}
+							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  {{$asignacion->short_name}} </a>
+
 						</div>
 						
 						<div class="notification-event" style="padding-left:50px;">
@@ -652,8 +654,10 @@
 								<img src="{{ URL::asset('img/teacher.png')}}">
 							</div>
 							<div class="notification-event">
-								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  </a>
-								<span class="chat-message-item">{{$asignacion->clase->short_name}} </span>
+								{{-- <a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  </a> --}}
+								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  </a>
+								
+								<span class="chat-message-item">{{$asignacion->short_name}} </span>
 							</div>
 
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="Ver Comentarios">
