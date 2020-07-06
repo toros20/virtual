@@ -119,7 +119,7 @@
 						</div>
 						<div class="notification-event" style="width:100px;">
 							{{-- <a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  {{$asignacion->clase->short_name}} </a> --}}
-							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  {{$asignacion->short_name}} </a>
+							<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user_id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  {{$asignacion->clase}} </a>
 
 						</div>
 						
@@ -655,9 +655,9 @@
 							</div>
 							<div class="notification-event">
 								{{-- <a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->user->lastname}}  </a> --}}
-								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  </a>
+								<a style="cursor:pointer;" onclick="filtrar_msj({{$asignacion->user_id}},{{$user->id}} )" class="h6 notification-friend">Lic. {{$asignacion->lastname}}  </a>
 								
-								<span class="chat-message-item">{{$asignacion->short_name}} </span>
+								<span class="chat-message-item">{{$asignacion->clase}} </span>
 							</div>
 
 							<span class="notification-icon" data-toggle="tooltip" data-placement="top" data-original-title="Ver Comentarios">

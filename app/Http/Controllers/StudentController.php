@@ -70,6 +70,11 @@ class StudentController extends Controller
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->join('users', 'assignments.user_id', '=', 'users.id')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
+                        ->Select(
+                            'users.id as user_id',
+                            'users.lastname',
+                            'clases.short_name as clase',
+                         )
                         ->where([
                             ['course_id', '=', $enroll[0]->course_id],
                             ['section', '=', $enroll[0]->section],
