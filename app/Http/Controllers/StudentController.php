@@ -73,7 +73,7 @@ class StudentController extends Controller
                         ->Select(
                             'users.id as user_id',
                             'users.lastname',
-                            'clases.short_name as clase',
+                            'clases.short_name as clase'
                          )
                         ->where([
                             ['course_id', '=', $enroll[0]->course_id],
