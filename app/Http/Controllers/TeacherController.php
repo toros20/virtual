@@ -71,7 +71,7 @@ class TeacherController extends Controller
         
          //para el II Parcial 
          $asignaciones = DB::table('assignments')
-                        ->join('clases', 'assignments.clases_id', '=', 'clases.id')
+                        ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->where([
                             ['assignments.user_id','=',$user_id],
                             ['clases.semester', '!=', 1],
