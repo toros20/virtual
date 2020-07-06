@@ -115,7 +115,7 @@
 							<img src="{{ URL::asset('img/teacher.PNG') }}" >
 						</div>
 						<div class="notification-event" style="width:100px;">
-							{{dd($asignacion->id)}}
+							
 							<p href="#" class="h6 notification-friend"> {{$asignacion->course->short_name}}-{{$asignacion->section}} </p>
 							<p>{{$asignacion->clase->short_name}} </p>
 						</div>
