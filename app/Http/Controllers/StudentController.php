@@ -68,7 +68,7 @@ class StudentController extends Controller
 
         $asignaciones = DB::table('assignments')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
-                        ->join('users', 'assignments.user_id', '=', 'user.id')
+                        ->join('users', 'assignments.user_id', '=', 'users.id')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->where([
                             ['course_id', '=', $enroll[0]->course_id],
