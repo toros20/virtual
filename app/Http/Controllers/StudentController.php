@@ -65,7 +65,7 @@ class StudentController extends Controller
             ['section', '=', $enroll[0]->section],
         ])->get();
 
-        dd($asignaciones);
+        //dd($asignaciones);
         
         //obtenemos los primeros 500 mensajes de este usuario        
         $mensajes = DB::table('msj_'.$id)
