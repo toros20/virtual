@@ -177,7 +177,7 @@ class TeacherController extends Controller
 
         // Codigo para ver clases del primer Semestre
          //obtenemos las asignaciones de este docentes
-         $asignaciones = DB::table('assignments')
+         /**$asignaciones = DB::table('assignments')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
@@ -187,10 +187,10 @@ class TeacherController extends Controller
                             ['clases.semester', '!=', 2],
 
                         ])
-                        ->get();
+                        ->get();*/
         
         // Codigo para ver clases del segundo Semestre
-         /*$asignaciones = DB::table('assignments')
+         $asignaciones = DB::table('assignments')
                         ->join('courses', 'assignments.course_id', '=', 'courses.id')
                         ->join('clases', 'assignments.clase_id', '=', 'clases.id')
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
@@ -198,7 +198,7 @@ class TeacherController extends Controller
                             ['assignments.user_id', '=', $user_id],
                             ['clases.semester', '!=', 1],
                         ])
-                        ->get(); */
+                        ->get(); 
 
 
                         //dd($asignaciones);
@@ -1169,17 +1169,17 @@ class TeacherController extends Controller
             //proceso para cada uno de los estudiantes
             foreach ($students as $student) {
 
-                $txtacum1= 'acum1_'. $student->user_id;
+               /*$txtacum1= 'acum1_'. $student->user_id;
                 $txtacum2= 'acum2_'. $student->user_id;
               
                 $txtexa1= 'exa1_'. $student->user_id;
-                $txtexa2= 'exa2_'. $student->user_id;
+                $txtexa2= 'exa2_'. $student->user_id;*/
 
-                /*$txtacum3= 'acum3_'. $student->user_id;
+                $txtacum3= 'acum3_'. $student->user_id;
                 $txtacum4= 'acum4_'. $student->user_id;
               
                 $txtexa3= 'exa3_'. $student->user_id;
-                $txtexa4= 'exa4_'. $student->user_id;*/
+                $txtexa4= 'exa4_'. $student->user_id;
               
                 $promedio= 'promedio_'. $student->user_id;
                 $recu= 'recu_'. $student->user_id;
@@ -1192,15 +1192,15 @@ class TeacherController extends Controller
                                 [$tabla.'.clase_id', '=', $clase ],
                                 ])
                             ->update(array(
-                                'Acum1'=>$request->$txtacum1,
+                                /*'Acum1'=>$request->$txtacum1,
                                 'Exa1' =>$request->$txtexa1,
                                 'Acum2'=>$request->$txtacum2,
-                                'Exa2' =>$request->$txtexa2,
+                                'Exa2' =>$request->$txtexa2,*/
 
-                                /*'Acum3'=>$request->$txtacum3,
+                                'Acum3'=>$request->$txtacum3,
                                 'Exa3' =>$request->$txtexa3,
                                 'Acum4'=>$request->$txtacum4,
-                                'Exa4' =>$request->$txtexa4,*/
+                                'Exa4' =>$request->$txtexa4,
                                
                                 'Promedio'=>$request->$promedio,
                                 'Recu1' =>$request->$recu
