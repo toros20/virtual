@@ -108,7 +108,7 @@
                             Selecciones Curso 
                              <select name="cursos" id="cursos" onchange="cargarsecciones_gsuit() >
                               @foreach ($cursos as $curso)
-                                    <option value= {{ $curso->curso }} >{{ $curso->curso }}></option>
+                                    <option value= {{ $curso->curso }} >{{ $curso->curso }}</option>
                                 @endforeach
                             </select>
 
