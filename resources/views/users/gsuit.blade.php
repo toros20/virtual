@@ -85,19 +85,21 @@
             <div class="title m-b-md">
                     Usuarios Gsuit
                 </div>
-                
-                <form method = "POST" action ={{ route('courses.store') }} >
 
-                        @csrf
-
-                        <p><button class="btn-primary">
+                <p><button class="btn-primary">
                             Craer acceso Nuevo
                         </button>
                         </p>
+                
+                <form method = "POST" action ={{ route('users.gsuitpdf') }} >
+
+                        @csrf
+
                          <?php
                             //OJO CON EL SEMESTRE
                             $cursos =   DB::table('usuariosgsuit2020')
                                 ->Select('curso')
+                                ->distinct()
                                 ->get(); 
                         ?>
 
