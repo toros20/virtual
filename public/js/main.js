@@ -1091,10 +1091,10 @@ function loadclases_2() {
 
 function cargarsecciones_gsuit() {
 
-    /*var _curso = $("#cursos").val();
+    var _curso = $("#cursos").val();
     var token = $("#token").val();
 
-     $.ajax({
+    $.ajax({
         url: "../../ajax/sectionsbycoursesGsuit",
         //url:'../../ajax/sectionsbycoursesid',
         headers: token,
@@ -1108,7 +1108,7 @@ function cargarsecciones_gsuit() {
         error: function (response) {
             console.log(response);
         },
-    }); */
+    });
 
 }
 
