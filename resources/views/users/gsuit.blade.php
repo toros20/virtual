@@ -103,7 +103,7 @@
                                 ->get(); 
                         ?>
 
-                        <label for="is_semestral">
+                        <label for="cursos">
                             Selecciones Curso 
                              <select name="cursos" id="cursos" onchange="cargarsecciones_gsuit()>
                               @foreach ($cursos as $c)
