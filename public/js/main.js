@@ -1093,9 +1093,9 @@ function cargarsecciones_gsuit() {
 
     var _curso = $("#cursos").val();
     var token = $("#token").val();
-    alert("Si");
+
     $.ajax({
-        url: "../ajax/sectionsbycoursesGsuit",
+        url: "../../ajax/sectionsbycoursesGsuit",
         //url:'../../ajax/sectionsbycoursesid',
         headers: token,
         data: { _curso: _curso, _token: token },
