@@ -32,10 +32,10 @@ var CRUMINA = {};
             var n = parseInt(e(this).next("input").val());
             return (
                 1 !== n &&
-                    e(this)
-                        .next("input")
-                        .val(n - 1)
-                        .change(),
+                e(this)
+                    .next("input")
+                    .val(n - 1)
+                    .change(),
                 !1
             );
         }),
@@ -54,21 +54,21 @@ var CRUMINA = {};
                         (n =
                             "up" == t.attr("data-dir")
                                 ? setInterval(function () {
-                                      void 0 == o.attr("max") ||
-                                      parseInt(o.val()) <
-                                          parseInt(o.attr("max"))
-                                          ? o.val(parseInt(o.val()) + 1)
-                                          : (t.prop("disabled", !0),
+                                    void 0 == o.attr("max") ||
+                                        parseInt(o.val()) <
+                                        parseInt(o.attr("max"))
+                                        ? o.val(parseInt(o.val()) + 1)
+                                        : (t.prop("disabled", !0),
                                             clearInterval(n));
-                                  }, 50)
+                                }, 50)
                                 : setInterval(function () {
-                                      void 0 == o.attr("min") ||
-                                      parseInt(o.val()) >
-                                          parseInt(o.attr("min"))
-                                          ? o.val(parseInt(o.val()) - 1)
-                                          : (t.prop("disabled", !0),
+                                    void 0 == o.attr("min") ||
+                                        parseInt(o.val()) >
+                                        parseInt(o.attr("min"))
+                                        ? o.val(parseInt(o.val()) - 1)
+                                        : (t.prop("disabled", !0),
                                             clearInterval(n));
-                                  }, 50));
+                                }, 50));
                 }
             ),
                 e(document).on(
@@ -86,10 +86,10 @@ var CRUMINA = {};
         e(".js-sidebar-open").on("click", function () {
             return (
                 e("body").outerWidth() <= 560 &&
-                    e(this)
-                        .closest("body")
-                        .find(".popup-chat-responsive")
-                        .removeClass("open-chat"),
+                e(this)
+                    .closest("body")
+                    .find(".popup-chat-responsive")
+                    .removeClass("open-chat"),
                 e(this).toggleClass("active"),
                 e(this).closest(a).toggleClass("open"),
                 !1
@@ -118,18 +118,18 @@ var CRUMINA = {};
         n.keydown(function (n) {
             27 == n.which &&
                 (r.removeClass("open"),
-                o.removeClass("overlay-enable"),
-                e(".profile-menu").removeClass("expanded-menu"),
-                e(".popup-chat-responsive").removeClass("open-chat"),
-                e(".profile-settings-responsive").removeClass("open"),
-                e(".header-menu").removeClass("open"));
+                    o.removeClass("overlay-enable"),
+                    e(".profile-menu").removeClass("expanded-menu"),
+                    e(".popup-chat-responsive").removeClass("open-chat"),
+                    e(".profile-settings-responsive").removeClass("open"),
+                    e(".header-menu").removeClass("open"));
         }),
         t.on("click", function (n) {
             e(n.target).closest(r).length ||
                 (r.removeClass("open"),
-                o.removeClass("overlay-enable"),
-                e(".profile-menu").removeClass("expanded-menu"),
-                e(".header-menu").removeClass("open"));
+                    o.removeClass("overlay-enable"),
+                    e(".profile-menu").removeClass("expanded-menu"),
+                    e(".header-menu").removeClass("open"));
         }),
         e("[data-toggle=tab]").on("click", function () {
             if (
@@ -269,28 +269,28 @@ var CRUMINA = {};
         t.ready(function () {
             CRUMINA.preloader(),
                 e(".call-to-action-animation").length &&
-                    CRUMINA.CallToActionAnimation(),
+                CRUMINA.CallToActionAnimation(),
                 e(".img-scale-animation").length && CRUMINA.ImgScaleAnimation(),
                 e(".subscribe-animation").length &&
-                    CRUMINA.SubscribeAnimation(),
+                CRUMINA.SubscribeAnimation(),
                 e(".planer-animation").length && CRUMINA.PlanerAnimation(),
                 e(".contact-form-animation").length &&
-                    CRUMINA.ContactAnimationAnimation(),
+                CRUMINA.ContactAnimationAnimation(),
                 void 0 !== e.fn.gifplayer && e(".gif-play-image").gifplayer(),
                 void 0 !== e.fn.mediaelementplayer &&
-                    e("#mediaplayer").mediaelementplayer({
-                        features: [
-                            "prevtrack",
-                            "playpause",
-                            "nexttrack",
-                            "loop",
-                            "shuffle",
-                            "current",
-                            "progress",
-                            "duration",
-                            "volume",
-                        ],
-                    }),
+                e("#mediaplayer").mediaelementplayer({
+                    features: [
+                        "prevtrack",
+                        "playpause",
+                        "nexttrack",
+                        "loop",
+                        "shuffle",
+                        "current",
+                        "progress",
+                        "duration",
+                        "volume",
+                    ],
+                }),
                 e(".mCustomScrollbar").perfectScrollbar({
                     wheelPropagation: !1,
                 });
@@ -1089,9 +1089,32 @@ function loadclases_2() {
     });
 }
 
+function cargarsecciones_gsuit() {
+
+    var _curso = $("#cursos").val();
+    var token = $("#token").val();
+
+    $.ajax({
+        url: "../ajax/sectionsbycoursesGsuit",
+        //url:'../../ajax/sectionsbycoursesid',
+        headers: token,
+        data: { _curso: _curso, _token: token },
+        type: "POST",
+        datatype: "json",
+        success: function (data) {
+            //console.log(response);
+            $("#secciones").html(data);
+        },
+        error: function (response) {
+            console.log(response);
+        },
+    });
+
+}
+
 //funcion (docente) que se activa al cambiar de grado y seccion en el panel izquierdo
 /*function cambio_de_seccion(curso_id, seccion, short_name){
-    //actualizamos las variables globales 
+    //actualizamos las variables globales
     $("#course").val(curso_id);
     $("#course_shortname").val(short_name);
     $("#section").val(seccion);
@@ -1101,8 +1124,8 @@ function loadclases_2() {
         "positionClass": "toast-top-center"
         }
         toastr["success"]('<p style = "text-align:center;"> Bienvenido a </p><p style = "text-align:center;">'+short_name+' Grado - Sección '+seccion+'</p>' );
-    
+
     //cargar los mensajes del nuevo curso y seccion
 
-    
+
 }*/

@@ -171,6 +171,9 @@ Route::post('ajax/felicitaciones', 'UserController@felicitaciones');
 //crear ruta para ver (12)mas estudiantes de excelencia academica
 Route::post('ajax/ver_mas_excelencia', 'UserController@ver_mas_excelencia');
 
+//crear ruta para ver secciones segun curso Gsuit
+Route::post('ajax/sectionsbycoursesGsuit', 'UserController@sectionsbycoursesGsuit');
+
 
 
 //rutas CRUD para los users

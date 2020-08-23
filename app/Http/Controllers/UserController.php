@@ -621,6 +621,19 @@ class UserController extends Controller
        return view('users/ajax/coursesbymodalityid',compact('courses'));
     }*/
 
+    public function sectionsbycoursesGsuit(Request $request){
+        //$idcurso=$request->_curso;
+       // $sections = Sectioncourse::where('course_id',$id)->get();
+       $secciones = DB::table('usuariosgsuit2020')
+                
+                ->where('usuariosgsuit2020.curso',$request->_curso)
+                ->Select('seccion')
+                ->distinct()
+                ->get();
+
+        return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
+    }
+
     public function coursesbymodalityid(Request $request){
         
         $id=$request->modality_id;

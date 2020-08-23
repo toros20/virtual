@@ -105,7 +105,7 @@
 
                         <label for="is_semestral">
                             Selecciones Curso 
-                             <select name="cursos">
+                             <select name="cursos" id="cursos" onchange="cargarsecciones_gsuit()>
                               @foreach ($cursos as $c)
                                     <option value= {{ $c->curso }} >{{ $c->curso }}</option>
                                 @endforeach
@@ -114,8 +114,8 @@
 
                         <p><label for="modality">
                             Seccion
-                            <select name="modality_id">
-                             <option value=0>Seleccione Modalidad</option>
+                            <select name="secciones" id="secciones">
+                             <option value=0>Seleccione Seccion</option>
                               
                             </select>
                         </label></p>
