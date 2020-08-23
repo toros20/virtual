@@ -95,8 +95,8 @@
                 
                 <form method = "POST" action ={{ route('users/gsuitpdf') }} >
 
-                        @csrf
-
+                        
+                         <input type="hidden" name="_token" id="token" value="{{ csrf_token() }}">
                          <?php
                             //OJO CON EL SEMESTRE
                             $cursos =   DB::table('usuariosgsuit2020')
