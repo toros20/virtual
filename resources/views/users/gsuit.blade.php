@@ -106,7 +106,7 @@
 
                         <label for="cursos">
                             Selecciones Curso 
-                             <select name="cursos" id="cursos" onchange="cargarsecciones_gsuit() >
+                             <select name="cursos" id="cursos"  >
                                 @foreach ($cursos as $curso)
                                     <option value= {{ $curso->curso }}> {{ $curso->curso }}</option>
                                 @endforeach
