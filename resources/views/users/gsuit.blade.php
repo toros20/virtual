@@ -105,7 +105,7 @@
 
                         <label for="is_semestral">
                             Selecciones Curso 
-                             <select name="is_semestral">
+                             <select name="cursos">
                               @foreach ($cursos as $c)
                                     <option value= {{ $c->curso }} >{{ $c->curso }}</option>
                                 @endforeach
