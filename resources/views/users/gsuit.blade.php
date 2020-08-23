@@ -101,6 +101,8 @@
                                 ->Select('curso')
                                 ->distinct()
                                 ->get(); 
+
+                                dd($cursos);
                         ?>
 
                         <label for="cursos">
@@ -116,7 +118,7 @@
                             Seccion
                             <select name="secciones" id="secciones">
                              <option value=0>Seleccione Seccion</option>
-                              
+            
                             </select>
                         </label></p>
                         <p>                          
