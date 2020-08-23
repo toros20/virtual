@@ -1819,5 +1819,11 @@ public function ver_mas_excelencia(Request $request){
 public function gsuit(Request $request){
     return view('users.gsuit');
 }
+
+public function gsuitpdf(Request $request){
+    //return view('users.gsuit');
+}
+
+
 }
 
