@@ -91,7 +91,7 @@
                         </button>
                         </p>
                 
-                <form method = "POST" action ={{ route('gsuitpdf') }} >
+                <form method = "POST" action ={{ route('users/gsuitpdf') }} >
 
                         @csrf
 
