@@ -62,6 +62,8 @@
                 margin-bottom: 30px;
             }
         </style>
+         <link href="{{ URL::asset('css/mdb.min.css')}}" rel="stylesheet">
+    <script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>  
 
     </head>
     <body>
