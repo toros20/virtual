@@ -1816,6 +1816,8 @@ public function ver_mas_excelencia(Request $request){
     return view('ajax/ver_mas_excelencia',compact('excelencias'));
 }
 
-
+public function gsuit(Request $request){
+    return view('users.gsuit');
+}
 }
 

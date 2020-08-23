@@ -128,6 +128,10 @@ Route::get('/users/inasistencias_estudiantes', 'UserController@inasistencias_est
 //ruta para mostrar la seccion de supervicion de docentes a los coordinadores
 Route::get('/users/coordinacion/{user_id}/{teacher_id}/{parcial}', 'UserController@coordinacion')->name('users/coordinacion/{user_id}/{teacher_id}/{parcial}');
 
+//ruta para generar los acceso de Gsuit2020
+Route::get('/users/gsuit/', 'UserController@gsuit')->name('users/gsuit');
+
+
 
 
 //crear ruta para la seccion de listar cursos segun modalidad seleccionada 
