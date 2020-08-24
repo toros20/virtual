@@ -72,21 +72,21 @@
                         </tr>
                         </table>
 
-                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
+                         <table class=" tabla tabla-striped tabla-bordered" style="align='center'; width='700'; border: 1px solid black; ">
                          <tr>
-                            <td><h3>Usuario</h3></td>
+                            <td width="15%" align="left"><h3>Usuario</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><h3>Email</h3></td>
+                            <td width="15%" align="left"><h3>Email</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><h3>Contraseña</h3></td>
+                            <td width="15%" align="left"><h3>Contraseña</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td><h3>Enlace Web</h3></td>
+                            <td width="15%" align="left"><h3>Enlace Web</h3></td>
                             <td></td>
                         </tr>
                         </table>
