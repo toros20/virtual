@@ -2013,6 +2013,20 @@ public function gsuitpdf(Request $request){
     return view('users.gsuitpdf',compact('usuarios','curso','seccion'));
 }
 
+public function pdfGsuit($email){
+
+    $usuario = DB::table('usuariosgsuit2020')
+    ->where ([
+        ['Email', '=', $email],
+    ])
+    ->get(); 
+
+    $pdf = PDF::loadView('users/pdfgsuit', $usuario );
+    $pdf->setPaper('a4','landscape');
+    return $pdf->download('Gsuit.pdf');
+
+}
+
 
 }
 
