@@ -72,7 +72,7 @@
                         </tr>
                         </table>
 
-                        <table align="center" style="width='100%'; border: 1px solid black; padding: 10px; ">
+                        <table align="center" class="table" style="width='100%'; border: 1px solid black; padding: 10px; ">
                          <tr>
                             <td width="25%" align="center"><h3>Usuario</h3></td>
                             <td><h3>{{$usuario[0]->Firstname}}-{{$usuario[0]->Lastname}}</h3></td>
