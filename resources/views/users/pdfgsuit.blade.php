@@ -91,6 +91,16 @@
                         </tr>
                         </table>
 
+                        <p>Al ingresar por primera vez deberá seguir los siguientes pasos.</p>
+                        <ol>
+                            <li>Ingresar al enlace web : https://accounts.google.com</li>
+                            <li>Ingresar correo y clave asignado.</li>
+                            <li>Aceptar los términos y servicios de Google.</li>
+                            <li>Crear una nueva contraseña y confirmarla. </li>
+                            (8 caracteres mínimo, Mayúsculas y minúsculas, números)</li>
+                            <li>Al completar el proceso será enviado al tablero inicial de aplicaciones.</li>
+                            <li>Le pedimos subir en su perfil una fotografía formal y clara de su rostro de frente.</li>
+                        </ol>
         </div><!--row-->
 
     </div><!--container-fluid-->
