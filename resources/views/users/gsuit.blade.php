@@ -62,6 +62,7 @@
                 margin-bottom: 30px;
             }
         </style>
+    <script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>  
         
     </head>
     <body>
@@ -106,7 +107,7 @@
 
                         <label for="cursos">
                             Selecciones Curso 
-                             <select name="cursos" id="cursos"  >
+                             <select name="cursos" id="cursos"  onchange="cargarsecciones_gsuit()">
                                 @foreach ($cursos as $curso)
                                     <option value= {{ $curso->curso }}> {{ $curso->curso }}</option>
                                 @endforeach
@@ -130,7 +131,6 @@
             </div>
         </div>
     <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.min.js""></script>
-    <script type="text/javascript" language="javascript" src="{{ URL::asset('js/main.js')}}"></script>  
 
     </body>
 </html>
