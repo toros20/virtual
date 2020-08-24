@@ -74,20 +74,20 @@
 
                          <table class=" tabla tabla-striped tabla-bordered" style="align='center'; width='700'; border: 1px solid black; ">
                          <tr>
-                            <td width="5%" align="left"><h3>Usuario</h3></td>
-                            <td>{{$usuario[0]->Firstname}}-{{$usuario[0]->Lastname}}</td>
+                            <td width="25%" align="left"><h3>Usuario</h3></td>
+                            <td><h3>{{$usuario[0]->Firstname}}-{{$usuario[0]->Lastname}}</h3></td>
                         </tr>
                         <tr>
-                            <td width="5%" align="left"><h3>Email</h3></td>
-                            <td>{{$usuario[0]->Email}}</td>
+                            <td width="25%" align="left"><h3>Email</h3></td>
+                            <td><h3>{{$usuario[0]->Email}}</h3></td>
                         </tr>
                         <tr>
-                            <td width="5%" align="left"><h3>Contraseña</h3></td>
-                            <td>{{$usuario[0]->Password}}</td>
+                            <td width="25%" align="left"><h3>Contraseña</h3></td>
+                            <td><h3>{{$usuario[0]->Password}}</h3></td>
                         </tr>
                         <tr>
-                            <td width="5%" align="left"><h3>Enlace Web</h3></td>
-                            <td>https://accounts.google.com</td>
+                            <td width="25%" align="left"><h3>Enlace Web</h3></td>
+                            <td><h3>https://accounts.google.com</h3></td>
                         </tr>
                         </table>
 
