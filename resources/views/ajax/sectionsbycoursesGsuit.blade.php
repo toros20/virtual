@@ -2,9 +2,9 @@
  
    <option value=-1 >Seleccione Secci&oacute;n</option>
 
-    @foreach ($secciones as $seccion)
+    @foreach ($secciones as $s)
 
-        <option value= {{ $seccion->seccion }} >{{ $seccion->seccion }}</option>
+        <option value= {{ $s->seccion }} >{{ $s->seccion }}</option>
 
     @endforeach 
 
