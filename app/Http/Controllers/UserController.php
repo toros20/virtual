@@ -682,7 +682,7 @@ class UserController extends Controller
             $curso="Eighth Grade";
                 break;
 
-            case 'Nineth':
+            case 'Ninth':
                 $curso="Ninth Grade";
                     break;
 
