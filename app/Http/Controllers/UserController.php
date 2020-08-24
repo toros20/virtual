@@ -622,6 +622,7 @@ class UserController extends Controller
     }*/
 
     public function sectionsbycoursesGsuit(Request $request){
+
         //$idcurso=$request->_curso;
        // $sections = Sectioncourse::where('course_id',$id)->get();
        $secciones = DB::table('usuariosgsuit2020')
@@ -631,7 +632,7 @@ class UserController extends Controller
                 ->distinct()
                 ->toSql();
 
-                echo "<script>console.log( 'Debug Objects: " . $secciones . "' );</script>";
+                echo "<script>console.log( 'Debug Objects: " . $request->_curso . "' );</script>";
 
         return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
     }
