@@ -74,19 +74,19 @@
 
                          <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
                          <tr>
-                            <td>Usuario</td>
+                            <td><h3>Usuario</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Email</td>
+                            <td><h3>Email</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td>Contraseña</td>
+                            <td><h3>Contraseña</h3></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td><h3>Enlace Web</h3></td>
                             <td></td>
                         </tr>
                         </table>
