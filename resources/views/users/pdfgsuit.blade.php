@@ -109,7 +109,7 @@
                         <h4 style="text-align: center;">Tegucigalpa, M.D.C. septiembre 2020 </h4>
                          <hr />
                          <br />
-                        <p style="text-align: justify;"> 1.	<span style="font-weight:bond">DESCRIPCION DEL SERVICIO:</span> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, conforme el acuerdo establecido con Google. </p>
+                        <p style="text-align: justify;"> 1.	<span style="font-weight:bold">DESCRIPCION DEL SERVICIO:</span> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, conforme el acuerdo establecido con Google. </p>
                         <br />
                         <p style="text-align: justify;">Al activar un dominio en Google Suite para Educación, se han adoptado un conjunto de soluciones de software que Google ofrece a los centros educativos, bajo el modelo Software as a Service. El acceso a estos recursos está condicionado a la aceptación de la Política de Uso, por parte de los usuarios: administrativos educativos, docentes, alumnado que sea mayor a los 14 años de edad y a padres de familia de alumnos menores a los 14 años de edad, en cuya representación se les entrega una cuenta de uso.</p>
                         <br />
@@ -133,9 +133,9 @@
                         <p>https://gsuite.google.com/dashboard</p>
                        
                         <hr />
-
-                         <p>2.	Condiciones de servicio:</p>
-                         <p>a)	Condiciones Generales: </p>
+                        <br />
+                         <h4>2.	Condiciones de servicio:</h4>
+                         <h4>a)	Condiciones Generales: </h4>
                            <p style="text-align: justify;">a.1) Las cuentas de Google Suite de Instituto San José del Carmen, constituyen un servicio educativo que se ofrece a todo el personal Administrativo educativo, docente y de servicios que trabajan en él y al alumnado y sus familias que están debidamente matriculados.</p>
                            <p style="text-align: justify;">a.2) Las cuentas de Google Suite de Instituto San José del Carmen serán creadas y utilizadas en consonancia con las condiciones establecidas en el acuerdo suscrito entre la Institución y Google. Los términos del acuerdo pueden consultarse en el sitio web de G Suite en la página:</p>
                            <p>http://www.google.com/apps/intl/es/terms/education_terms.html </p>
