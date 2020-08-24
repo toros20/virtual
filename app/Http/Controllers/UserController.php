@@ -627,12 +627,6 @@ class UserController extends Controller
        // $sections = Sectioncourse::where('course_id',$id)->get();
        switch ($request->_curso) {
           
-        case 'Pre-Kinder':
-            $curso="Pre-Kinder";
-             break;
-        case 'Kinder':
-                $curso="Kinder";
-                 break;
         case 'First':
               $curso="First Grade";
                break;
@@ -701,7 +695,7 @@ class UserController extends Controller
                     break;
                     
            default:
-               # code...
+              $curso=$request->_curso
                break;
        }
        $secciones = DB::table('usuariosgsuit2020')
