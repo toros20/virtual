@@ -2021,7 +2021,7 @@ public function pdfGsuit($email){
     ])
     ->get(); 
 
-    $pdf = PDF::loadView('users/pdfgsuit', [$usuario] );
+    $pdf = PDF::loadView('users/pdfgsuit', ['usuario'=>$usuario] );
     $pdf->setPaper('a4','landscape');
     return $pdf->download('Gsuit.pdf');
 
