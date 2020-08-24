@@ -629,7 +629,7 @@ class UserController extends Controller
                 ->where('usuariosgsuit2020.curso',$request->_curso)
                 ->Select('seccion')
                 ->distinct()
-                ->get();
+                ->toSql();
 
                 //dd($secciones);
 
