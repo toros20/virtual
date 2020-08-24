@@ -228,7 +228,7 @@ $mpdf->list_indent_first_level = 0; // 1 or 0 - whether to indent the first leve
 
 $mpdf->WriteHTML($html);
 
-$mpdf->Output('Gsuit-'.$usuario[0]->Firstname.'-'.$usuario[0]->Lastname.'.pdf','I');
+$mpdf->Output('Gsuit-'.$usuario[0]->Firstname.'-'.$usuario[0]->Lastname.'.pdf','D');
 
 exit();
 //==============================================================
