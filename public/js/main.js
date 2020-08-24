@@ -1088,9 +1088,7 @@ function loadclases_2() {
 
 function cargarsecciones_gsuit() {
 
-    alert("HOLA");
-
-    /*var _curso = $("#cursos").val();
+    var _curso = $("#cursos").val();
     var token = $("#token").val();
 
     $.ajax({
@@ -1107,7 +1105,7 @@ function cargarsecciones_gsuit() {
         error: function (response) {
             console.log(response);
         },
-    });*/
+    });
 
 }
 
