@@ -627,70 +627,70 @@ class UserController extends Controller
        // $sections = Sectioncourse::where('course_id',$id)->get();
        switch ($request->_curso) {
            case 'First':
-              $curso="First Grade"
+              $curso="First Grade";
                break;
 
             case 'Second':
-            $curso="Second Grade"
+            $curso="Second Grade";
                  break;
 
             case 'Third':
-            $curso="Third Grade"
+            $curso="Third Grade";
                 break;
 
             case 'Fourth':
-            $curso="Fourth Grade"
+            $curso="Fourth Grade";
                          break;
 
             case 'Fifth':
-            $curso="Fifth Grade"
+            $curso="Fifth Grade";
                              break;
             
             case 'Sixth':
-            $curso="Sixth Grade"
+            $curso="Sixth Grade";
                                  break;
             case 'Séptimo':
-                $curso="Séptimo Grado"
+                $curso="Séptimo Grado";
                     break;
             
             case 'Octavo':
-                $curso="Octavo Grado"
+                $curso="Octavo Grado";
                     break;
             
             case 'Noveno':
-                $curso="Noveno Grado"
+                $curso="Noveno Grado";
                     break;
 
             case 'Décimo':
-                $curso="Décimo Grado"
+                $curso="Décimo Grado";
                     break;
 
             case 'Undécimo':
-                $curso="Undécimo Grado"
+                $curso="Undécimo Grado";
                     break;
 
             case 'III':
-                $curso="III BTP-I"
+                $curso="III BTP-I";
                     break;
 
             case 'Seventh':
-                $curso="Seventh Grade"
+                $curso="Seventh Grade";
                     break;
 
             case 'Eighth':
-            $curso="Eighth Grade"
+            $curso="Eighth Grade";
                 break;
 
             case 'Nineth':
-                $curso="Ninth Grade"
+                $curso="Ninth Grade";
                     break;
 
             case 'Tenth':
-                $curso="Tenth Grade"
+                $curso="Tenth Grade";
                     break;
 
             case 'Eleventh':
-                $curso="Eleventh Grade"
+                $curso="Eleventh Grade";
                     break;
                     
            default:
