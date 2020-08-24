@@ -695,7 +695,7 @@ class UserController extends Controller
                     break;
                     
            default:
-              $curso=$request->_curso
+              $curso=$request->_curso;
                break;
        }
        $secciones = DB::table('usuariosgsuit2020')
