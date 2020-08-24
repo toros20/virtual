@@ -712,6 +712,7 @@ class UserController extends Controller
                 ->toSql();
 
                 echo "<script>console.log( 'Debug Objects: " . $secciones . "' );</script>";
+                echo "<script>console.log( 'Debug Objects: " . $curso . "' );</script>";
 
         return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
     }
