@@ -631,7 +631,7 @@ class UserController extends Controller
                 ->distinct()
                 ->get();
 
-                dd($secciones);
+                echo "<script>console.log( 'Debug Objects: " . $secciones . "' );</script>";
 
         return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
     }
