@@ -105,11 +105,11 @@
                         <p>Al ingresar al tablero de aplicaciones el proceso de registro habrá terminado</p>
                         <img width="70%" src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
 
-                        <h2>POLITICA USO DE CUENTAS G SUITE PARA EDUCACION Tegucigalpa, M.D.C. septiembre 2020 </h2>
+                        <h4>POLITICA USO DE CUENTAS G SUITE PARA EDUCACION Tegucigalpa, M.D.C. septiembre 2020 </h4>
         
-                        <p> 1.	<strong>DESCRIPCION DEL SERVICIO:<strong> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, conforme el acuerdo establecido con Google. </p>
-
-Al activar un dominio en Google Suite para Educación, se han adoptado un conjunto de soluciones de software que Google ofrece a los centros educativos, bajo el modelo Software as a Service. El acceso a estos recursos está condicionado a la aceptación de la Política de Uso, por parte de los usuarios: administrativos educativos, docentes, alumnado que sea mayor a los 14 años de edad y a padres de familia de alumnos menores a los 14 años de edad, en cuya representación se les entrega una cuenta de uso.
+                        <p> 1.	<em>DESCRIPCION DEL SERVICIO:</em> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, conforme el acuerdo establecido con Google. </p>
+                        <br />
+                        <p>Al activar un dominio en Google Suite para Educación, se han adoptado un conjunto de soluciones de software que Google ofrece a los centros educativos, bajo el modelo Software as a Service. El acceso a estos recursos está condicionado a la aceptación de la Política de Uso, por parte de los usuarios: administrativos educativos, docentes, alumnado que sea mayor a los 14 años de edad y a padres de familia de alumnos menores a los 14 años de edad, en cuya representación se les entrega una cuenta de uso.</p>
 
 Las cuentas institucionales se encuentran bajo la plataforma de Google Suite para Educación, e incluye los siguientes servicios integrados: Gmail, Google Calendar, Google Drive, Google Sites y Hangouts.  Todos estos servicios están bajo el dominio: @sanjosedelcarmen.edu.hn a diferencia de las cuentas que normalmente ofrece Google de forma particular.
 
