@@ -629,9 +629,9 @@ class UserController extends Controller
                 ->where('usuariosgsuit2020.curso',$request->_curso)
                 ->Select('seccion')
                 ->distinct()
-                ->toSql();
+                ->get();
 
-                //dd($secciones);
+                dd($secciones);
 
         return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
     }
