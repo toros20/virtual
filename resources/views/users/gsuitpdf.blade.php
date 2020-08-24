@@ -34,7 +34,7 @@
                         <td> {{$usuario->Email}}</td>
                         <td> {{$usuario->Password}}</td>
                         <td> {{$usuario->OrgUnitPath}}</td>
-                        <td> <button>Ver Acceso</button></td>
+                        <td> <button onclick={{ $url = route( 'users/pdfGsuit/{email}',[$usuario->Email])}}>Ver Acceso</button></td>
                     </tr>
                 @endforeach
             </tbody>

@@ -131,6 +131,7 @@ Route::get('/users/coordinacion/{user_id}/{teacher_id}/{parcial}', 'UserControll
 //ruta para generar los acceso de Gsuit2020
 Route::get('/users/gsuit/', 'UserController@gsuit')->name('users/gsuit');
 Route::post('/users/gsuitpdf', 'UserController@gsuitpdf')->name('users/gsuitpdf');
+Route::post('/users/pdfGsuit/{email}', 'UserController@pdfGsuit')->name('users/pdfGsuit/{email}');
 
 
 
