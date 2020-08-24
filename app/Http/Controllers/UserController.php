@@ -626,7 +626,14 @@ class UserController extends Controller
         //$idcurso=$request->_curso;
        // $sections = Sectioncourse::where('course_id',$id)->get();
        switch ($request->_curso) {
-           case 'First':
+          
+        case 'Pre-Kinder':
+            $curso="Pre-Kinder";
+             break;
+        case 'Kinder':
+                $curso="Kinder";
+                 break;
+        case 'First':
               $curso="First Grade";
                break;
 
