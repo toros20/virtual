@@ -103,7 +103,7 @@
                         </ol>
 
                         <p>Al ingresar al tablero de aplicaciones el proceso de registro habrá terminado</p>
-                        <img src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
+                        <img width="70%" src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
         </div><!--row-->
 
     </div><!--container-fluid-->
