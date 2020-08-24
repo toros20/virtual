@@ -709,7 +709,7 @@ class UserController extends Controller
                 ->where('usuariosgsuit2020.curso',$curso)
                 ->Select('seccion')
                 ->distinct()
-                ->toSql();
+                ->get();
 
                 echo "<script>console.log( 'Debug Objects: " . $secciones . "' );</script>";
                 echo "<script>console.log( 'Debug Objects: " . $curso . "' );</script>";

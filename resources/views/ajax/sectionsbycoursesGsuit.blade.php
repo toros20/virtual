@@ -1,4 +1,3 @@
-
 <select name="secciones" id="secciones">
  
    <option value=-1 >Seleccione Secci&oacute;n</option>
