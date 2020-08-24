@@ -123,7 +123,7 @@
                             </select>
                         </label></p>
                         <p>                          
-                            <input type="submit"  value="Enviar">
+                            <input type="submit"  value="Ver Accesos">
                         </p>
 
                 </form>

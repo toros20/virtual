@@ -1911,7 +1911,7 @@ public function gsuit(Request $request){
 }
 
 public function gsuitpdf(Request $request){
-    //return view('users.gsuit');
+    return view('users.gsuitpdf');
 }
 
 
