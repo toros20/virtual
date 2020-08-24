@@ -1911,7 +1911,7 @@ public function gsuit(Request $request){
 }
 
 public function gsuitpdf(Request $request){
-    
+
     $curso=$request->cursos;
     $seccion=$request->secciones;
 
@@ -1922,7 +1922,7 @@ public function gsuitpdf(Request $request){
     ])
     ->get();
 
-    return view('users.gsuitpdf',,compact('usuarios','curso','seccion'));
+    return view('users.gsuitpdf',compact('usuarios','curso','seccion'));
 }
 
 
