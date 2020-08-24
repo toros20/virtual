@@ -623,6 +623,20 @@ class UserController extends Controller
 
     public function sectionsbycoursesGsuit(Request $request){
 
+        /*************************SEGURIDAD*******************/
+            //control de seguridad
+            // Get the currently authenticated user...
+            if ( !($user = Auth::user()) ){
+                return "ACCESO SOLO PARA USUARIOS REGISTRADOS."; 
+            }
+            
+            if( $user->role!='admin'){
+                return ("ÁREA EXCLUSIVA DEL ADMINISTRADOR.");
+            }
+
+        /*************************SEGURIDAD*******************/
+
+
         //$idcurso=$request->_curso;
        // $sections = Sectioncourse::where('course_id',$id)->get();
        switch ($request->_curso) {
@@ -1915,9 +1929,83 @@ public function gsuitpdf(Request $request){
     $curso=$request->cursos;
     $seccion=$request->secciones;
 
+    switch ($request->cursos) {
+          
+        case 'First':
+              $curso="First Grade";
+               break;
+
+            case 'Second':
+            $curso="Second Grade";
+                 break;
+
+            case 'Third':
+            $curso="Third Grade";
+                break;
+
+            case 'Fourth':
+            $curso="Fourth Grade";
+                         break;
+
+            case 'Fifth':
+            $curso="Fifth Grade";
+                             break;
+            
+            case 'Sixth':
+            $curso="Sixth Grade";
+                                 break;
+            case 'Séptimo':
+                $curso="Séptimo Grado";
+                    break;
+            
+            case 'Octavo':
+                $curso="Octavo Grado";
+                    break;
+            
+            case 'Noveno':
+                $curso="Noveno Grado";
+                    break;
+
+            case 'Décimo':
+                $curso="Décimo Grado";
+                    break;
+
+            case 'Undécimo':
+                $curso="Undécimo Grado";
+                    break;
+
+            case 'III':
+                $curso="III BTP-I";
+                    break;
+
+            case 'Seventh':
+                $curso="Seventh Grade";
+                    break;
+
+            case 'Eighth':
+            $curso="Eighth Grade";
+                break;
+
+            case 'Ninth':
+                $curso="Ninth Grade";
+                    break;
+
+            case 'Tenth':
+                $curso="Tenth Grade";
+                    break;
+
+            case 'Eleventh':
+                $curso="Eleventh Grade";
+                    break;
+                    
+           default:
+              $curso=$request->cursos;
+               break;
+       }
+
     $usuarios = DB::table('usuariosgsuit2020')
     ->where([
-        ['curso', '=', $request->cursos],
+        ['curso', '=',$cursos],
         ['seccion','=', $request->secciones]
     ])
     ->get();
