@@ -106,7 +106,7 @@
                         <img width="70%" src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
 
                         <h4 style="text-align: center;">POLITICA USO DE CUENTAS G SUITE PARA EDUCACION</h4> 
-                        <h4 style="text-align: center;">Tegucigalpa, M.D.C. septiembre 2020 </h4>
+                        <h4 style="text-align: center;">Tegucigalpa, M.D.C. agosto 2020 </h4>
                          <hr />
                          <br />
                         <p style="text-align: justify;"> 1.	<span style="font-weight:bold">DESCRIPCION DEL SERVICIO:</span> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, <span style="font-weight:bold">conforme el acuerdo establecido con Google.</span> </p>
@@ -171,16 +171,16 @@
                           <p style="text-align: justify;">d) Todo lo no estipulado en la presente Política de Uso de G Suite para Educación, será retomado y resuelto por las autoridades de Instituto San José del Carmen en consonancia con lo estipulado y convenido con Google para Educación.</p>
                           
                           <br />
-                          <p style="text-align: center;">Tegucigalpa, M.D.C. 24 de Agosto de 2020</p>
+                          <p style="text-align: center;">Tegucigalpa, M.D.C. Agosto de 2020</p>
                           <hr>
 
                           <p>En Conformidad:</p>
                           <br />
-                           <p  style="text-align: center;">Firma________________________________________</p>
+                           <p>Firma________________________________________</p>
                           <br />
-                           <p  style="text-align: center;">Nombre de Usuario/Representante________________________________________</p>
+                           <p>Nombre de Usuario/Representante________________________________________</p>
                           <br />
-                           <p  style="text-align: center;">Identidad____________________</p>
+                           <p>Identidad____________________</p>
                           <br />
 
 
