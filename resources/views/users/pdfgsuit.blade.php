@@ -75,19 +75,19 @@
                         <table align="center" class="table" style="width='100%'; border: 1px solid black; padding: 10px; ">
                          <tr>
                             <td style="border: 1px solid black;" width="25%" align="center"><h3>Usuario</h3></td>
-                            <td style="border: 1px solid black;"><h3>{{$usuario[0]->Firstname}}-{{$usuario[0]->Lastname}}</h3></td>
+                            <td style="border: 1px solid black;" align="center"><h3>{{$usuario[0]->Firstname}}-{{$usuario[0]->Lastname}}</h3></td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid black;" width="25%" align="center"><h3>Email</h3></td>
-                            <td style="border: 1px solid black;"><h3>{{$usuario[0]->Email}}</h3></td>
+                            <td style="border: 1px solid black;" align="center"><h3>{{$usuario[0]->Email}}</h3></td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid black;" width="25%" align="center"><h3>Contraseña</h3></td>
-                            <td style="border: 1px solid black;"><h3>{{$usuario[0]->Password}}</h3></td>
+                            <td style="border: 1px solid black;" align="center"><h3>{{$usuario[0]->Password}}</h3></td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid black;" width="25%" align="center"><h3>Enlace Web</h3></td>
-                            <td style="border: 1px solid black;"><h3>https://accounts.google.com</h3></td>
+                            <td style="border: 1px solid black;" align="center"><h3>https://accounts.google.com</h3></td>
                         </tr>
                         </table>
 
