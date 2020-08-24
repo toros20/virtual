@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <h1>Listado de Usuarios de {{$cursos}}-{{$seccion}} </h1>
+        <h1>Listado de Usuarios de {{$curso}}-{{$seccion}} </h1>
      
         <h3><a href="{{route('users/gsuit}', $usuario->id)}} ">Volver</a></h3>
         <table>
