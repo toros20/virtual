@@ -297,9 +297,9 @@ var CRUMINA = {};
         });
 })(jQuery);
 
-/*$(document).ready(function(){
+$(document).ready(function () {
     alert("HOLAAA");
-   });*/
+});
 
 function loadcourses() {
     //obtenemos  el id de la modalidad seleccionada
