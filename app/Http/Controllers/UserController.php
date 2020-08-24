@@ -631,7 +631,7 @@ class UserController extends Controller
                 ->distinct()
                 ->get();
 
-                dd($secciones);
+                //dd($secciones);
 
         return view('ajax/sectionsbycoursesGsuit',compact('secciones'));
     }
