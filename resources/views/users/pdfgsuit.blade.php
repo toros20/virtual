@@ -176,11 +176,11 @@
 
                           <p>En Conformidad:</p>
                           <br />
-                           <p>Firma____________________</p>
+                           <p  style="text-align: center;">Firma________________________________________</p>
                           <br />
-                           <p>Nombre de Usuario/Representante____________________</p>
+                           <p  style="text-align: center;">Nombre de Usuario/Representante________________________________________</p>
                           <br />
-                           <p>Identidad____________________</p>
+                           <p  style="text-align: center;">Identidad____________________</p>
                           <br />
 
 
