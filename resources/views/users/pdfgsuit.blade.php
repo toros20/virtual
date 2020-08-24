@@ -87,7 +87,7 @@
                         </tr>
                         <tr>
                             <td style="border: 1px solid black;" width="25%" align="center"><h3>Enlace Web</h3></td>
-                            <td style="border: 1px solid black;" align="center"><h3>https://accounts.google.com</h3></td>
+                            <td style="border: 1px solid black;" align="center"><h3>https://gsuite.google.com/dashboard</h3></td>
                         </tr>
                         </table>
 
@@ -101,6 +101,9 @@
                             <li>Al completar el proceso será enviado al tablero inicial de aplicaciones.</li>
                             <li>Le pedimos subir en su perfil una fotografía formal y clara de su rostro de frente.</li>
                         </ol>
+
+                        <p>Al ingresar al tablero de aplicaciones el proceso de registro habrá terminado</p>
+                        <img src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
         </div><!--row-->
 
     </div><!--container-fluid-->
