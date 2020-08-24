@@ -67,9 +67,27 @@
                                 </tr>
                         </table>
                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
-
                          <tr>
                             <td><img src="{{ URL::asset('img/gsuit.jpg')}}" alt=""/></td>
+                        </tr>
+                        </table>
+
+                         <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
+                         <tr>
+                            <td>Usuario</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Contraseña</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
                         </tr>
                         </table>
 
