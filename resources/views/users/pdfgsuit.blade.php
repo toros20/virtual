@@ -104,6 +104,67 @@
 
                         <p>Al ingresar al tablero de aplicaciones el proceso de registro habrá terminado</p>
                         <img width="70%" src="{{ URL::asset('img/tablerogsuit.jpg')}}" alt=""/>
+
+                        <h2>POLITICA USO DE CUENTAS G SUITE PARA EDUCACION Tegucigalpa, M.D.C. septiembre 2020 </h2>
+        
+                        <p> 1.	<strong>DESCRIPCION DEL SERVICIO:<strong> Las cuentas de Google Suite para Educación, son proporcionadas por Instituto San José del Carmen, con el objeto de apoyar el proceso académico institucional, así como las funciones de comunicación con todo el personal administrativo educativo y docente, alumnado y padres de familia, conforme el acuerdo establecido con Google. </p>
+
+Al activar un dominio en Google Suite para Educación, se han adoptado un conjunto de soluciones de software que Google ofrece a los centros educativos, bajo el modelo Software as a Service. El acceso a estos recursos está condicionado a la aceptación de la Política de Uso, por parte de los usuarios: administrativos educativos, docentes, alumnado que sea mayor a los 14 años de edad y a padres de familia de alumnos menores a los 14 años de edad, en cuya representación se les entrega una cuenta de uso.
+
+Las cuentas institucionales se encuentran bajo la plataforma de Google Suite para Educación, e incluye los siguientes servicios integrados: Gmail, Google Calendar, Google Drive, Google Sites y Hangouts.  Todos estos servicios están bajo el dominio: @sanjosedelcarmen.edu.hn a diferencia de las cuentas que normalmente ofrece Google de forma particular.
+
+Se ha elegido esta plataforma como parte de nuestra mejora continua en calidad educativa y ofrecer herramientas que nos permitan: 
+a)	Alta disponibilidad de servicio
+b)	Integración de aplicaciones de productividad y colaboración con e-mail, proporcionando así un ecosistema de trabajo corporativo
+c)	Elevada operatividad al ser una solución integrada multidispositivos y multiplataforma
+d)	Accesibilidad desde navegador web sin necesidad de instalar software extra
+e)	Disponer de herramientas como Clasrroom, para la gestión del aprendizaje
+
+El administrador del dominio de Instituto San José del Carmen, es la persona que administra Google Suite y será el responsable último de la administración y gestión de cuentas y aplicaciones en el Panel de Control. 
+
+El conjunto de aplicaciones principales de Google Suite se describe en: 
+http://www.google.com/enterprise/apps/education/products.html
+ 
+
+El acceso a las cuentas de Google Suite institucionales se realiza de forma unificada en:
+https://accounts.google.com/
+
+2.	Condiciones de servicio:
+a)	Condiciones Generales: 
+a.1) Las cuentas de Google Suite de Instituto San José del Carmen, constituyen un servicio educativo que se ofrece a todo el personal Administrativo educativo, docente y de servicios que trabajan en él y al alumnado y sus familias que están debidamente matriculados.
+a.2) Las cuentas de Google Suite de Instituto San José del Carmen serán creadas y utilizadas en consonancia con las condiciones establecidas en el acuerdo suscrito entre la Institución y Google. Los términos del acuerdo pueden consultarse en el sitio web de G Suite en la página:
+ http://www.google.com/apps/intl/es/terms/education_terms.html
+a.3) Las cuentas de G Suite de la Institución, sólo podrán ser utilizadas por Instituto San José del Carmen, personal administrativo, administrativo educativo, docentes y alumnado o sus representantes (en el caso de los menores de 14 años) que estén debidamente matriculados y para las tareas relacionadas con su actividad educativa.
+a.4) La publicación y distribución de cualquier tipo de contenido, mediante los servicios y aplicaciones vinculadas a las cuentas de G Suite de Instituto San José del Carmen, deberá realizarse de acuerdo con la legislación vigente sobre protección de datos de carácter personal.
+a.5) Queda estrictamente prohibido el uso de las cuentas de G Suite de Instituto San José del Carmen y de todos los servicios y aplicaciones vinculadas a ellas, para actividades personales, comerciales, publicitarias o de cualquier otra índole que no vayan en consonancia con el proceso formativo académico para el cual han sido creadas. De igual forma, no es permitido a ningún miembro del personal de la Institución y/o alumnado y familias, instalar o utilizar aplicaciones fuera de lo establecido en G Suite para Educación.
+a.6) Las cuentas de G Suite serán nominales y responderán siempre a una persona física. Podrá utilizarse “Alias” para asignar otras direcciones por cargo o grupo. Será el Departamento de Sistemas de la Institución el único que, previa autorización, puede crear y/o eliminar dichas cuentas. 
+ 
+
+a.7) Todo oficio, invitación o trámite que no requiera firma y sello institucional, se realizará vía correo electrónico institucional.
+a.8) Los usuarios y representantes legales son responsables de todas las actividades realizadas con su cuenta de acceso y buzón asociado a la Institución y se atienen a las consecuencias correspondientes por el mal uso de las mismas.  
+a.9) Es una falta grave facilitar y ofrecer acceso a la propia cuenta, a personas no autorizadas por Instituto San José del Carmen. Cada cuenta es personal e intransferible.
+a.10) Es una falta grave hacer uso inadecuado de la cuenta personal, para ocasionar daños a terceros (interrumpir clases, agraviar, amenazar, acosar, denigrar, etc.) lo cual ocasiona suspensión inmediata del servicio, de acuerdo a lo estipulado y convenido con las políticas Institucionales y de Google.
+a.11) Es responsabilidad de cada usuario, salvaguardar los datos contenidos en las aplicaciones de G Suite, haciendo uso periódico de la aplicación Google Vault, ofrecido por el programa Data Liberation.
+a.12) Instituto San José del Carmen podrá crear cuentas para la administración de backups, así como habilitar LDAP y Single Sign On para la autenticación con terceros servicios.
+a.13) Cada alumno y miembro del personal de la Institución, podrá tener una única cuenta de G Suite, bajo el dominio de Instituto San José de Carmen, y su uso es exclusivo para el ámbito escolar y educativo.
+a.14) Cuando un miembro del personal administrativo y/o docente deje de laborar en Instituto San José del Carmen, se procederá a suspender y/o eliminar la cuenta correspondiente.
+b) Condiciones para las cuentas de alumnos y familias:
+b.1) Instituto San José del Carmen podrá registrar cuentas para el alumnado y familias de acuerdo a su reglamentación propia y a las condiciones de matrícula.
+b.2) El uso de las cuentas por parte del alumnado requiere manifestar la conformidad con la Política de Uso de Cuentas de G Suite establecidas para alumnos mayores y menores a los 14 años. Esta conformidad es de uso obligatorio.
+ 
+
+b.3) Cada alumno podrá tener una única cuenta de G Suite, bajo el dominio de Instituto San José de Carmen, y su uso es exclusivo para el ámbito escolar y educativo.
+b.4) Cuando un alumno deje de estar matriculado en Instituto San José del Carmen, se procederá a suspender y/o eliminar la cuenta correspondiente.
+b.5) El uso de la cuenta personal de alumnos y familias, deberá respetar en todo momento, las normas y condiciones establecidas por Instituto San José del Carmen y lo contemplado en las políticas de uso de Google. Debido a que todo lo que sea escrito, enviado, publicado, grabado, etc. en cada cuenta de alumnos y familias (en el caso de los alumnos menores de 14 años), será visto y supervisado por Instituto San José del Carmen, todo acto en contra de lo anteriormente establecido ocasionará la limitación inmediata del acceso a la misma y por consiguiente del proceso académico.
+b.6) Instituto San José del Carmen se reserva el derecho a condicionar el despliegue de las aplicaciones de G Suite, según criterios pedagógicos y la edad de los alumnos.
+
+     3. CLAUSULAS GENERALES:
+a) Todos los miembros del personal de Instituto San José del Carmen, alumnado y familias con cuenta G Suite, deben manifestar su conformidad con la presente Política Uso de Cuentas de G Suite para Educación.
+b) Todos los miembros del personal administrativo educativo y docente, por la Presente Política de Uso, asume la responsabilidad y se obliga a hacer uso único de G Suite para Educación, en todo el proceso académico, debiendo suspender el uso de otras aplicaciones para el desarrollo de las clases virtuales, comunicaciones, envío y/o recepción de tareas, mensajes, notas, etc. Esta cláusula entrará en vigor, el día y fecha que estipule la Dirección General de la Institución.
+c) En caso de advertirse incumplimiento en las condiciones antes manifestadas sobre este servicio prestado, Instituto San José del Carmen se reserva la potestad de desactivar cualquier cuenta de G Suite, incluso sin previo aviso, o bien aplicar las medidas administrativo laborales correspondientes.
+d) Todo lo no estipulado en la presente Política de Uso de G Suite para Educación, será retomado y resuelto por las autoridades de Instituto San José del Carmen en consonancia con lo estipulado y convenido con Google para Educación.
+
+        
         </div><!--row-->
 
     </div><!--container-fluid-->
