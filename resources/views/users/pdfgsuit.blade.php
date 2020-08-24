@@ -66,7 +66,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><img src="{{ URL::asset('img/gsuit.jpeg')}}" alt=""/></td>
+                                    <td><img src="{{ URL::asset('img/gsuit.jpg')}}" alt=""/></td>
                                 </tr>
                           
                         </table>
