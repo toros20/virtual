@@ -2005,7 +2005,7 @@ public function gsuitpdf(Request $request){
 
     $usuarios = DB::table('usuariosgsuit2020')
     ->where([
-        ['curso', '=',$cursos],
+        ['curso', '=',$curso],
         ['seccion','=', $request->secciones]
     ])
     ->get();
