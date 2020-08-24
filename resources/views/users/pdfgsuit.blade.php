@@ -65,12 +65,13 @@
                                     <p style="margin-bottom:0px; ">Web: sanjosedelcarmen.edu.hn</p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><img src="{{ URL::asset('img/gsuit.jpg')}}" alt=""/></td>
-                                </tr>
-                          
                         </table>
-                        
+                        <table class=" tabla tabla-striped tabla-bordered" style=" text-align:center " align="center" width="700">
+
+                         <tr>
+                            <td><img src="{{ URL::asset('img/gsuit.jpg')}}" alt=""/></td>
+                        </tr>
+                        </table>
 
         </div><!--row-->
 
