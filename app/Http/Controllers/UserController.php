@@ -1911,7 +1911,18 @@ public function gsuit(Request $request){
 }
 
 public function gsuitpdf(Request $request){
-    return view('users.gsuitpdf');
+    
+    $curso=$request->cursos;
+    $seccion=$request->secciones;
+
+    $usuarios = DB::table('usuariosgsuit2020')
+    ->where([
+        ['curso', '=', $request->cursos],
+        ['seccion','=', $request->secciones]
+    ])
+    ->get();
+
+    return view('users.gsuitpdf',,compact('usuarios','curso','seccion'));
 }
 
 
