@@ -304,38 +304,38 @@
                                                 <td style="border: 1px solid #dee2e6; text-align:left; padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                                 {{-- I PARCIAL --}}
                                                 @if ( $nota1 < 36)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                                 @endif
                                                 @if ( $nota1 > 35 && $nota1 < 70)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                                 @endif
                                                 @if ( $nota1 > 69 && $nota1 < 81)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota1 > 80 && $nota1 < 91)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota1 > 90)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                                 @endif
 
                                                
 
                                                 {{-- II PARCIAL --}}
                                                  @if ( $nota2 < 36)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                                 @endif
                                                 @if ( $nota2 > 35 && $nota2 < 70)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                                 @endif
                                                 @if ( $nota2 > 69 && $nota2 < 81)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota2 > 80 && $nota2 < 91)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota2 > 90)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                                 @endif
                                                 {{--  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center;  color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
@@ -382,19 +382,19 @@
                                                 <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
                                                 {{-- I PARCIAL --}}
                                                 @if ( $nota1 < 36)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                                 @endif
                                                 @if ( $nota1 > 35 && $nota1 < 70)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                                 @endif
                                                 @if ( $nota1 > 69 && $nota1 < 81)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota1 > 80 && $nota1 < 91)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota1 > 90)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota1}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                                 @endif
                                                 {{-- FIN I PARCIAL --}}
 
@@ -402,19 +402,19 @@
                                                 
                                                 {{-- II PARCIAL --}}
                                                 @if ( $nota2 < 36)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
                                                 @endif
                                                 @if ( $nota2 > 35 && $nota2 < 70)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
                                                 @endif
                                                 @if ( $nota2 > 69 && $nota2 < 81)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota2 > 80 && $nota2 < 91)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
                                                 @endif
                                                 @if ( $nota2 > 90)
-                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">{{$nota2}}</td>
+                                                    <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
                                                 @endif
                                                 {{-- II PARCIAL --}}
 
@@ -480,15 +480,15 @@
                                 <tr style="border: 1px solid #dee2e6; ">
                                         <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
                                             @if ( round($promedio1) < 70)
-                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio1)?></td>
                                             @else 
-                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio1)?></td>
                                             @endif
     
                                             @if ( round($promedio2) < 70)
-                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio2)?></td>
                                             @else 
-                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio2)?></td>
                                             @endif
                                             
                                             @if ( round($promedio3) < 70)
@@ -570,42 +570,86 @@
                                         <td style="border: 1px solid #dee2e6; font-weight: bold;  padding:0.35rem;"><?php echo $cont+1; ?></td>
                                         <td style="border: 1px solid #dee2e6; text-align:left;">{{$resultado[0]->clase}}</td>
                                         
-                                            
-                                        {{-- I PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                        @endif  
+                                             {{-- I PARCIAL --}}
+                                            @if ( $nota1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota1 > 35 && $nota1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota1 > 69 && $nota1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota1 > 80 && $nota1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN I PARCIAL --}}
+
+                                            {{-- II PARCIAL --}}
+                                            @if ( $nota2 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota2 > 35 && $nota2 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota2 > 69 && $nota2 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 80 && $nota2 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN II PARCIAL --}}
 
                                       
                                         {{-- II PARCIAL --}}
-                                         @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                      {{--   @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                        @endif  
+                                        @endif  --}}
                                         
-                                       @if ($promedio < 70 and $promedio > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $promedio }}</td>
-                                        @endif 
-                                        @if ($promedio > 69 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $promedio }}</td>
-                                        @endif
-                                        @if ($promedio == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                        @endif 
+                                       
+                                            @if ( $promedio < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Insuficiente</td>
+                                            @endif
+                                            @if ( $promedio > 35 && $promedio < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $promedio > 69 && $promedio < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 80 && $promedio < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
+                                            @endif
 
-                          
-                                        @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                        @endif 
-                                        @if ($resultado[0]->Recu1 > 69 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                        @endif
-                                        @if ($resultado[0]->Recu1 == 0 )
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                        @endif
+
+                                            @if ($resultado[0]->Recu1 == 0 )
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;"></td>
+                                            @endif
+                                            @if ($resultado[0]->Recu1 > 0 && $resultado[0]->Recu1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">I</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 35 && $resultado[0]->Recu1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">NM</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 69 && $resultado[0]->Recu1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">S</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 80 && $resultado[0]->Recu1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">MS</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">A</td>
+                                            @endif
 
                                     </tr>
 
@@ -616,41 +660,84 @@
                                         <td style="border: 1px solid #dee2e6; text-align:left;">{{$resultado[0]->clase}}</td>
                                        
                                         {{-- I PARCIAL --}}
-                                           
-                                        @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                        @else 
-                                            <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
-                                        @endif  
-                                          
+                                            @if ( $nota1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota1 > 35 && $nota1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota1 > 69 && $nota1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota1 > 80 && $nota1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN I PARCIAL --}}
+
+                                            {{-- II PARCIAL --}}
+                                            @if ( $nota2 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Insuficiente</td>
+                                            @endif
+                                            @if ( $nota2 > 35 && $nota2 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $nota2 > 69 && $nota2 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 80 && $nota2 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $nota2 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem;">Avanzado</td>
+                                            @endif
+                                            {{-- FIN II PARCIAL --}}
                                                                     
+
                                         {{-- II PARCIAL --}}
                                         
-                                         @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                       {{--  @if ( ($resultado[0]->Acum4) + ($resultado[0]->Exa4) < 70)
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
                                         @else 
                                             <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
-                                        @endif  
+                                        @endif  --}}
                                         
-                                            @if ($promedio < 70 and $promedio > 0)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $promedio }}</td>
-                                            @endif 
-                                            @if ($promedio > 69 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $promedio }}</td>
+                                                                            
+                                            @if ( $promedio < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Insuficiente</td>
                                             @endif
-                                            @if ($promedio == 0 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
-                                            @endif                      
-                                           
+                                            @if ( $promedio > 35 && $promedio < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Necesita Mejorar</td>
+                                            @endif
+                                            @if ( $promedio > 69 && $promedio < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 80 && $promedio < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Muy Satisfactorio</td>
+                                            @endif
+                                            @if ( $promedio > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">Avanzado</td>
+                                            @endif
 
-                                             @if ($resultado[0]->Recu1 < 70 and $resultado[0]->Recu1 > 0)
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                            @endif 
-                                            @if ($resultado[0]->Recu1 > 69 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{ $resultado[0]->Recu1 }}</td>
-                                            @endif
                                             @if ($resultado[0]->Recu1 == 0 )
-                                                <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;"></td>
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;"></td>
+                                            @endif
+                                            @if ($resultado[0]->Recu1 > 0 && $resultado[0]->Recu1 < 36)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">I</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 35 && $resultado[0]->Recu1 < 70)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">NM</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 69 && $resultado[0]->Recu1 < 81)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">S</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 80 && $resultado[0]->Recu1 < 91)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">MS</td>
+                                            @endif
+                                            @if ( $resultado[0]->Recu1 > 90)
+                                                 <td style="border: 1px solid #dee2e6; text-align:center;  padding:0.35rem; font-weight: bold;">A</td>
                                             @endif
                                                                               
                                     </tr>
