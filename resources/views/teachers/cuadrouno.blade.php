@@ -168,16 +168,16 @@
 
 
 
-                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td> --}}
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td>
+                      {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> --}}
                       @if (($estudiante->Acum3 + $estudiante->Exa3) < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> --}}
+                          {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>--}}
+                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> 
                       @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> --}}
+                           {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>--}}
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> 
                       @endif
 
                       {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4}}</td>
@@ -295,12 +295,12 @@
                     <tr>
                         <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1}}</td>
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa1}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td>
                         @if (($estudiante->Acum1 + $estudiante->Exa1) < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum3 + $estudiante->Exa3}}</td>
                         @else
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3 + $estudiante->Exa3}}</td>
                         @endif
                       {{-- nota cualitativa --}}
                         @if ( $nota1 < 36)
