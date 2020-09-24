@@ -196,7 +196,7 @@
                             {{-- <a target="_blank" class="list-group-item list-group-item-action" style="color:black; background-color:#a9a9a9;cursor: not-allowed;" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} "> --}}
                             <a target="_blank" class="list-group-item list-group-item-action" style="color:black; background-color:#a9a9a9;cursor: not-allowed;" href="#">
                               <li class="list-group-item">
-                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Reporte Académico (II Parcial)
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Reporte Académico (III Parcial)
                               </li>
                             </a> 
                           @else 
