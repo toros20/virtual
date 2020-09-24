@@ -193,15 +193,15 @@
                       @if ($asignaciones[0]->is_semestral == 1)
                       <ul class="list-group">
                           @if ($enroll[0]->course_id > 8)
-                            <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} ">
+                            <a target="_blank" class="list-group-item list-group-item-action" style="color:black; background-color:#a9a9a9;cursor: not-allowed;" href="{{ $url = route('users/boleta_acumulativos/{course_id}/{section}/{user_id}', [$enroll[0]->course_id,$enroll[0]->section,$user->id])}} ">
                               <li class="list-group-item">
                                   <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Reporte Académico (II Parcial)
                               </li>
                             </a> 
                           @else 
-                            <a target="_blank" class="list-group-item list-group-item-action" style="color:black" href="#">
+                            <a target="_blank" class="list-group-item list-group-item-action" style="color:black background-color:#a9a9a9;cursor: not-allowed;" href="#">
                               <li class="list-group-item">
-                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Reporte Académico (II Parcial)
+                                  <div class="md-v-line"></div><i class="fas fa-star mr-5"></i>Reporte Académico (III Parcial)
                               </li>
                           </a> 
                           @endif
