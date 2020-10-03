@@ -1239,7 +1239,7 @@
                             </table>
                         @endif
 
-                        @if ($curso > 2 and $curso < 12)
+                        @if ($curso > 8 and $curso < 12)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
@@ -1265,6 +1265,27 @@
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
                                    
                             
+                            </table>
+                        @endif
+
+                        @if ($curso > 2 and $curso < 9)
+                            <table  style="margin-top:20px; " border='0' align="center" width="700">
+
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
+                                    <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr>                       
+                                
+                                    <tr align="center">
+                                            <td >&nbsp;</td>
+                                            <td align="center">__________________________</td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                        <tr align="center">
+                                                <td>&nbsp;</td>
+                                            <td align="center" style="font-family: Arial; font-size: 14px;"><strong>DIRECCIÓN</strong></td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+
                             </table>
                         @endif
                        
