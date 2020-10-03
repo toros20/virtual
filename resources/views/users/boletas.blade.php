@@ -1239,7 +1239,7 @@
                             </table>
                         @endif
 
-                        @if ($curso > 8 and $curso < 12)
+                        @if ($curso > 2 and $curso < 12)
                             <table  style="margin-top:20px; " border='0' align="center" width="700">
 
                                     <tr><td>&nbsp;</td><td>&nbsp;</td> <td>&nbsp;</td></tr> 
