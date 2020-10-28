@@ -150,7 +150,7 @@
                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
                        @endif 
 
-                         @if ( $nota2 < 36)
+                    @if ( $nota2 < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">Insuficiente</td>
                     @endif
                     @if ( $nota2 > 35 && $nota2 < 70)
@@ -180,29 +180,26 @@
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> 
                       @endif
 
-                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4}}</td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa4}}</td> --}}
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4}}</td>
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa4}}</td>
                       @if (($estudiante->Acum4 + $estudiante->Exa4) < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> --}}
-
+                          {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc"></td>--}}
+                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> 
                       @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> --}}
-
+                           {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>--}}
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> 
                       @endif
-                     
 
+                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> --}}
+                      @php
+                       $promedioFinal = round( ($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4 );
+                      @endphp
 
-                      @if ((round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)) < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red"></td>
+                      @if ( $promedioFinal < 70)
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">$promedioFinal</td>
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
                       @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
-                          
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">$promedioFinal</td>
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
                       @endif
                    
