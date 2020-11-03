@@ -521,18 +521,19 @@
                                 <tr style="border: 1px solid #dee2e6; ">
                                         <td style="text-align:center; width:5px;font-weight: bold;">* </td>
                                         <td style="font-weight: bold;">PROMEDIO DE PARCIAL</td>
-                                            
-                                            {{-- @if ( round($promedio1) < 70)
-                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                            @else 
-                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio1)?></td>
-                                            @endif --}}
-    
                                             @if ( round($promedio2) < 70)
                                             <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
                                             @else 
                                             <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio2)?></td>
                                             @endif
+                                            
+                                            {{-- @if ( round($promedio1) < 70)
+                                            <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio1)?></td>
+                                            @else 
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio1)?></td>
+                                            @endif --}}
+    
+                                            
                                             
                                             @if ( round($promedio3) < 70)
                                             <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php //echo round($promedio3)?></td>
