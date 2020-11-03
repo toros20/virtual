@@ -244,7 +244,19 @@
                                             <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                                 <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                                 <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
-                                                {{-- I PARCIAL --}}
+                                               
+                                                @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                                  @else 
+                                                    <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum1) + ($resultado[0]->Exa1)}}</td>
+                                                  @endif 
+
+                                                  @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @else 
+                                                        <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
+                                                    @endif 
+                                                {{-- I PARCIAL 
                                                 @if ( $nota2 < 36)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Insuficiente</td>
                                                 @endif
@@ -259,7 +271,7 @@
                                                 @endif
                                                 @if ( $nota2 > 90)
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">Avanzado</td>
-                                                @endif
+                                                @endif--}}
                                                 {{-- FIN I PARCIAL --}}
             
                                                 {{-- II PARCIAL --}}
