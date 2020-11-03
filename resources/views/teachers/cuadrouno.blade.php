@@ -196,22 +196,22 @@
                       @endphp
 
                       @if ( $promedioFinal < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">$promedioFinal</td>
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$promedioFinal}}</td>
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
                       @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">$promedioFinal</td>
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$promedioFinal}}</td>
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
                       @endif
                    
                       @if (($estudiante->Recu1)<70 and ($estudiante->Recu1)>0)
-                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red"></td>
+                            {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red"></td>--}}
                            
-                           {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">{{$estudiante->Recu1}}</td>--}}
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">{{$estudiante->Recu1}}</td>
                       @endif
                       @if (($estudiante->Recu1)>=70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
+                           {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>--}}
                           
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu1}}</td> --}}
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Recu1}}</td> 
                       @endif
                       @if (($estudiante->Recu1)==0)
                         
@@ -403,6 +403,7 @@
                     <?php echo "<br />"; ?>
                         <tr>
                         <td>
+                        
                             <STRONG>Firma de Catedrático:______________________________</STRONG>
                         </td>
                     </tr>
