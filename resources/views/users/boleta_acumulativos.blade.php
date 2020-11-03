@@ -169,12 +169,13 @@
                                             <tr style="border: 1px solid #dee2e6; background-color:#f2f2f2;">
                                                 <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                                 <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;"></td>
 
-                                                  @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                                  {{-- @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{/*($resultado[0]->Acum1) + ($resultado[0]->Exa1)*/}}</td>
                                                   @else 
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{/*($resultado[0]->Acum1) + ($resultado[0]->Exa1)*/}}</td>
-                                                  @endif 
+                                                  @endif  --}}
 
                                                   @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
@@ -244,12 +245,13 @@
                                             <tr style="border: 1px solid #dee2e6; background-color:#fbfbfb; ">
                                                 <td style="border: 1px solid #dee2e6; font-weight: bold; width:5px; padding:0.35rem;"><?php echo $cont+1; ?></td>
                                                 <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;">{{$resultado[0]->clase}}</td>
+                                                <td style="border: 1px solid #dee2e6; text-align:left;padding:0.35rem;"></td>
                                                
-                                                 @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
+                                               {{--   @if ( ($resultado[0]->Acum1) + ($resultado[0]->Exa1) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{/*($resultado[0]->Acum1) + ($resultado[0]->Exa1)*/}}</td>
                                                   @else 
                                                     <td style="border: 1px solid #dee2e6; text-align:center; width:50px; padding:0.35rem;">{{/*($resultado[0]->Acum1) + ($resultado[0]->Exa1)*/}}</td>
-                                                  @endif  
+                                                  @endif  --}} 
 
                                                   @if ( ($resultado[0]->Acum2) + ($resultado[0]->Exa2) < 70)
                                                         <td style="border: 1px solid #dee2e6; text-align:center; width:50px; color:red; padding:0.35rem;">{{($resultado[0]->Acum2) + ($resultado[0]->Exa2)}}</td>
