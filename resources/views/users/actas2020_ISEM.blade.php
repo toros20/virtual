@@ -186,8 +186,8 @@
                                               ->Select($historial.'.*')
                                               ->get();
 
-                                              $total1=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
-                                              $total2=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
+                                              $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
+                                              $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
                                               $total = ($total1 + $total2)/2;
                                               //se redondea el promedio de clase
                                               $total = round($total);
