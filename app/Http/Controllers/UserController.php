@@ -1549,11 +1549,11 @@ public function actas($course_id,$section,$parcial){
                   ->join('clases', 'clasecourses.clase_id', '=', 'clases.id')
                   ->where ([
                     ['clasecourses.course_id', '=', $course_id],
-                    ['clases.semester', '=', 1],
+                    ['clases.semester', '!=', 2],
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
-                dd($clases);
+                //dd($clases);
   
  /*$pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
  $pdf->setPaper('legal','landscape');
