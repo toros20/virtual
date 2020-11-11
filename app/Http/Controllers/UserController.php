@@ -1553,7 +1553,7 @@ public function actas($course_id,$section,$parcial){
                   ])
                   ->Select('clasecourses.clase_id','clases.short_name')
                   ->get(); 
-                dd($clases);
+                //dd($clases);
   
  /*$pdf = PDF::loadView('users/actas', ['curso' => $curso,'seccion' => $seccion,'course' => $course,'section' => $section,'estudiantes' => $estudiantes,'clases' => $clases,'parcial' => $parcial]  );
  $pdf->setPaper('legal','landscape');
