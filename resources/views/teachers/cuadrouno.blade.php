@@ -197,11 +197,11 @@
                       @endphp
 
                       @if ( $promedioFinal < 70)
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$promedioFinal}}</td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
+                           {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$promedioFinal}}</td>--}}
+                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> 
                       @else
-                          <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$promedioFinal}}</td>
-                          {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> --}}
+                          {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$promedioFinal}}</td>--}}
+                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4)}}</td> 
                       @endif
                    
                       @if (($estudiante->Recu1)<70 and ($estudiante->Recu1)>0)
