@@ -317,7 +317,7 @@
                                         <tr>
                                             <td>{{$student->name}} {{$student->lastname}}</td>
 
-                                             {{--PRIMER SEMESTRE --}}
+                                             {{--PRIMER SEMESTRE 
                                             <td><input maxlength="2" onchange="calcular_semestre1({{$student->user_id}})" type="text" name='acum1_{{$student->user_id}}' id='acum1_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Acum1}}"></td>
                                             <td><input maxlength="2" onchange="calcular_semestre1({{$student->user_id}})"type="text" name='exa1_{{$student->user_id}}' id='exa1_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Exa1}}"></td>
                                             <td><input maxlength="2" readonly type="text" name='total1_{{$student->user_id}}' id='total1_{{$student->user_id}}' min="0" required class="form-control" value="{{ ($student->Acum1) + ($student->Exa1)}}"></td>
@@ -329,9 +329,9 @@
                                             <td><input maxlength="2" readonly type="text" name='promedio_{{$student->user_id}}' id='promedio_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Promedio}}" ></td>
                                             <td><input maxlength="3"  type="text" name='recu_{{$student->user_id}}' id='recu_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu1}}" ></td>
                                             <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> 
-                                            
+                                            --}}
 
-                                             {{--SEGUNDO SEMESTRE 
+                                             {{--SEGUNDO SEMESTRE  --}}
                                             <td><input maxlength="2" onchange="calcular_semestre1({{$student->user_id}})" type="text" name='acum3_{{$student->user_id}}' id='acum3_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Acum3}}"></td>
                                             <td><input maxlength="2" onchange="calcular_semestre1({{$student->user_id}})"type="text" name='exa3_{{$student->user_id}}' id='exa3_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Exa3}}"></td>
                                             <td><input maxlength="2" readonly type="text" name='total1_{{$student->user_id}}' id='total1_{{$student->user_id}}' min="0" required class="form-control" value="{{ ($student->Acum3) + ($student->Exa3)}}"></td>
@@ -343,7 +343,7 @@
                                             <td><input maxlength="2" readonly type="text" name='promedio_{{$student->user_id}}' id='promedio_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Promedio}}" ></td>
                                             <td><input maxlength="3"  type="text" name='recu_{{$student->user_id}}' id='recu_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu1}}" ></td>
                                             <td><input maxlength="2" disabled type="text" name='recu2_{{$student->user_id}}' id='recu2_{{$student->user_id}}' min="0" required class="form-control" value="{{$student->Recu2}} "></td> 
-                                            --}}
+                                           
                                         </tr>
                                     @endforeach
                                     <tr><td><button class="btn btn-lg btn-block btn-success" type="submit" >SALVAR NOTAS</button></td></tr>
