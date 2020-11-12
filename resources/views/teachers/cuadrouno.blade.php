@@ -347,7 +347,7 @@
                         @endif
                       {{-- Fin de nota cualitativa --}}
 
-                        @if ((round(($estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/2)) < 70)
+                        @if ((round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)) < 70)
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
                         @else
                             <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
