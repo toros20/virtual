@@ -1078,8 +1078,8 @@ class TeacherController extends Controller
                             ->join('clases', $tabla.'.clase_id', '=', 'clases.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
-                                        ['clases.semester', '!=', 1],
-                                       // ['clases.semester', '!=', 2],
+                                        ['clases.semester', '!=', 2],
+                                       // ['clases.semester', '!=', 1],
                                     ])
                             ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
                             ->orderBy('users.sexo','asc')
