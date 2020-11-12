@@ -123,7 +123,7 @@
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
                       @endif
                      
-                    @if ( $nota1 < 36)
+                    {{-- @if ( $nota1 < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
                     @endif
                     @if ( $nota1 > 35 && $nota1 < 70)
@@ -137,7 +137,7 @@
                     @endif
                     @if ( $nota1 > 90)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
-                    @endif
+                    @endif --}}
                       
     
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
@@ -150,7 +150,7 @@
                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
                        @endif 
 
-                    @if ( $nota2 < 36)
+                    {{-- @if ( $nota2 < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">Insuficiente</td>
                     @endif
                     @if ( $nota2 > 35 && $nota2 < 70)
@@ -164,7 +164,7 @@
                     @endif
                     @if ( $nota2 > 90)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">Avanzado</td>
-                    @endif
+                    @endif --}}
 
 
 
