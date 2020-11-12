@@ -191,7 +191,7 @@
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum4 + $estudiante->Exa4}}</td> 
                       @endif
 
-                      {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> --}}
+                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> 
                       @php
                        $promedioFinal = round( ($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2 +$estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/4 );
                       @endphp
