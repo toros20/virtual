@@ -123,6 +123,8 @@
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
                       @endif
                      
+                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> 
+
                     {{-- @if ( $nota1 < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;color:red">Insuficiente</td>
                     @endif
@@ -149,6 +151,8 @@
                           {{-- <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td> --}}
                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
                        @endif 
+
+                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td> 
 
                     {{-- @if ( $nota2 < 36)
                         <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">Insuficiente</td>
