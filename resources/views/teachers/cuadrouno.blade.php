@@ -244,7 +244,7 @@
                 </tr>
                 <tr>
                   <td colspan="2" style="font-family: Arial"><strong>MUNICIPIO:DISTRITO CENTRAL</strong></td>
-                <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II SEMESTRE     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
+                <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
               
                 </tr>
                 <tr>
@@ -397,7 +397,7 @@
                 <table>
                     <tr>
                         <td>
-                            <STRONG>Fecha: <?php echo date("Y-m-d"); ?></STRONG>
+                            <STRONG>Fecha: 31 Julio 2020<?php //echo date("Y-m-d"); ?></STRONG>
                         </td>
                     </tr>
                     <?php echo "<br />"; ?>
