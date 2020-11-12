@@ -179,6 +179,7 @@
                            {{--<td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc"></td>--}}
                           <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; background-color: #ccc">{{$estudiante->Acum3 + $estudiante->Exa3}}</td> 
                       @endif
+                      <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;"></td>
 
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4}}</td>
                       <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa4}}</td>
