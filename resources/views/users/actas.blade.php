@@ -117,7 +117,7 @@
                 </tr>
                 <tr>
                   @if ($course->is_semestral == 1)
-                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL PRIMER SEMESTRE</strong></td>
+                    <td style="font-family: Arial;font-size: 12px"><strong>ACTA DEL SEGUNDO SEMESTRE</strong></td>
                   @else
                     <td style="font-family: Arial;font-size: 12px"><strong>ACTA FINAL </strong></td>
                   @endif
@@ -185,9 +185,9 @@
                                                       ])
                                               ->Select($historial.'.*')
                                               ->get();
-
-                                              $total1=($resultado[0]->Acum1) + ($resultado[0]->Exa1);
-                                              $total2=($resultado[0]->Acum2) + ($resultado[0]->Exa2);
+                                              //sdd($resultado);
+                                              $total1=($resultado[0]->Acum3) + ($resultado[0]->Exa3);
+                                              $total2=($resultado[0]->Acum4) + ($resultado[0]->Exa4);
                                               $total = ($total1 + $total2)/2;
                                               //se redondea el promedio de clase
                                               $total = round($total);
