@@ -196,12 +196,12 @@ class TeacherController extends Controller
                         ->Select('assignments.user_id','courses.id as course_id','clases.id as clase_id','courses.short_name as course','clases.short_name as clase','assignments.section','courses.modality_id')
                         ->where([
                             ['assignments.user_id', '=', $user_id],
-                            ['clases.semester', '!=', 1],
+                            ['clases.semester', '!=', 2],
                         ])
                         ->get();
 
 
-                        //dd($asignaciones);
+                        //dd($asignaciones); pruebas
         //obtenemos la modalidad del primer grado asignado, para determinar a que modalidad pertenece el docente
         $modalidad=$asignaciones[0]->modality_id;
 
@@ -1078,7 +1078,7 @@ class TeacherController extends Controller
                             ->join('clases', $tabla.'.clase_id', '=', 'clases.id')
                             ->where ([
                                         [$tabla.'.clase_id', '=', $clase],
-                                        ['clases.semester', '!=', 1],
+                                        ['clases.semester', '!=', 2],
                                        // ['clases.semester', '!=', 1],
                                     ])
                             ->Select('users.name','users.lastname','users.id as user_id','users.sexo',$tabla.'.*','clases.name as clase')
