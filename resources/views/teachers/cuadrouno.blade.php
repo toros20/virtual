@@ -249,7 +249,7 @@
                 </tr>
                 <tr>
                   <td colspan="2" style="font-family: Arial"><strong>MUNICIPIO:DISTRITO CENTRAL</strong></td>
-                <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I SEMESTRE     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
+                <td colspan="3" style="font-family: Arial"><strong>LUGAR: LA CAMPAÑA     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; II SEMESTRE     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASIGNATURA:{{$estudiantes[0]->clase}}</strong></td>
               
                 </tr>
                 <tr>
@@ -294,19 +294,19 @@
                 @php     $cont=0;      @endphp
                 @foreach ($estudiantes as $estudiante)
                     {{-- PARA EL PRIMER SEMESTRE --}}
-                     @php  $nota1 = ($estudiante->Acum1 + $estudiante->Exa1); $nota2 = ($estudiante->Acum2 + $estudiante->Exa2); @endphp
+                     @php  $nota1 = ($estudiante->Acum3 + $estudiante->Exa3); $nota2 = ($estudiante->Acum4 + $estudiante->Exa4); @endphp
                     
                      {{--PARA EL SEGUNDO SEMESTRE 
                     @php  $nota1 = ($estudiante->Acum3 + $estudiante->Exa3); $nota2 = ($estudiante->Acum4 + $estudiante->Exa4); @endphp--}}
                     <tr>
                         <td style="font-size:14px; width:20px; border: 1px solid #dee2e6; text-align:left;"><?php echo $cont+1; ?></td>
                         <td style="font-size:14px; width:100px; border: 1px solid #dee2e6; text-align:left;"><p> {{$estudiante->name}} {{$estudiante->lastname}}</p></td>
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1}}</td>
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa1}}</td>
-                        @if (($estudiante->Acum1 + $estudiante->Exa1) < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa3}}</td>
+                        @if (($estudiante->Acum3 + $estudiante->Exa3) < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum3 + $estudiante->Exa3}}</td>
                         @else
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum1 + $estudiante->Exa1}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum3 + $estudiante->Exa3}}</td>
                         @endif
                       {{-- nota cualitativa --}}
                         @if ( $nota1 < 36)
@@ -327,12 +327,12 @@
                       {{-- Fin de nota cualitativa --}}
 
 
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2}}</td>
-                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa2}}</td>
-                        @if (($estudiante->Acum2 + $estudiante->Exa2) < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4}}</td>
+                        <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Exa4}}</td>
+                        @if (($estudiante->Acum4 + $estudiante->Exa4) < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{$estudiante->Acum4 + $estudiante->Exa4}}</td>
                         @else
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum2 + $estudiante->Exa2}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{$estudiante->Acum4 + $estudiante->Exa4}}</td>
                         @endif
                         {{-- nota cualitativa --}}
                         @if ( $nota2 < 36)
@@ -352,10 +352,10 @@
                         @endif
                       {{-- Fin de nota cualitativa --}}
 
-                        @if ((round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)) < 70)
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+                        @if ((round(($estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/2)) < 70)
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center; color:red">{{round(($estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/2)}}</td>
                         @else
-                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum1 + $estudiante->Exa1 + $estudiante->Acum2 + $estudiante->Exa2)/2)}}</td>
+                            <td style="font-size:14px; width:40px; border: 1px solid #dee2e6; text-align:center;">{{round(($estudiante->Acum3 + $estudiante->Exa3 + $estudiante->Acum4 + $estudiante->Exa4)/2)}}</td>
                         @endif
                     
                         @if (($estudiante->Recu1)<70 and ($estudiante->Recu1)>0)
