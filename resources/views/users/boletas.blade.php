@@ -286,6 +286,8 @@
                                     $promedio2=$total2/$cont; 
                                     $promedio3=$total3/$cont;
                                     $promedio4=$total4/$cont; 
+
+                                    $PromedioFinal = round(($promedio1+$promedio2+$promedio3+$promedio4)/4)
                                 
                                 ?>
                                 <tr style="border: 1px solid #dee2e6; ">
@@ -311,10 +313,10 @@
                                             @if ( round($promedio4) < 70)
                                             <td style="text-align:center; color:red; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
                                             @else 
-                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php /echo round($promedio4)?></td>
+                                            <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round($promedio4)?></td>
                                             @endif
 
-                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo round(($suma_promedio /$cont))?></td>
+                                        <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"><?php echo $PromedioFinal?></td>
                                         <td style="text-align:center; width:50px;font-weight: bold; padding:0.5rem; border: 1px solid #dee2e6;"></td>
                                        
                                         
