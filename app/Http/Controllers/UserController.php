@@ -1232,8 +1232,8 @@ class UserController extends Controller
                         //->where('clasecourses.course_id','=',$course_id)
                         ->where ([
                             ['clasecourses.course_id', '=', $course_id],
-                            ['clases.semester', '!=', 2],
-                            ['clases.oficial', '!=', 2],
+                            ['clases.semester', '!=', 1],
+                            ['clases.oficial', '!=', 1],
                         ])
                         ->Select('clase_id')
                         ->get(); 
